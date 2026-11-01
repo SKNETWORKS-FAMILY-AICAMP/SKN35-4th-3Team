@@ -1,0 +1,46 @@
+# Python 가상환경 
+.venv/ 
+# Python 캐시 및 컴파일 파일 
+__pycache__/ 
+*.py[cod] 
+*.pyc
+# pytest 캐시 
+.pytest_cache/ 
+# 환경변수 및 비밀정보 
+.env 
+.env.* 
+
+# 공개 가능한 설정 템플릿은 추적한다. 
+!.env.example 
+
+*.egg-info/
+
+# SQLite 데이터베이스 
+*.sqlite3 
+*.sqlite3-journal 
+
+# VS Code 개인 설정 
+.vscode/ 
+
+# 운영체제 생성 파일 
+.DS_Store 
+Thumbs.db 
+
+# Python 빌드 결과 
+build/ 
+dist/ 
+*.egg-info/ 
+
+# 테스트 커버리지 결과 
+.coverage 
+htmlcov/ 
+
+# 테스트 및 분석 캐시 
+.pytest_cache/ 
+.mypy_cache/ 
+.ruff_cache/
+
+# 사용자 업로드 파일 
+media/ 
+
+.cache/
