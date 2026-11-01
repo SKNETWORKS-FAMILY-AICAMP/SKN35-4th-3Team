@@ -1,0 +1,83 @@
+{
+  "source_id": "moel_wage_procedure",
+  "title": "임금체불 진정·고소 신고 및 처리 절차",
+  "source_url": "https://labor.moel.go.kr/minwonSysInfo/wagesolway.do",
+  "document_type": "official_guide",
+  "domain": "임금체불",
+  "publisher": "고용노동부",
+  "collection_status": "pending",
+  "review_status": "pending",
+  "resolved_url": "https://labor.moel.go.kr/minwonSysInfo/wagesolway.do",
+  "raw_file": "data/raw/consumer_sources/moel_wage_procedure_9c52aa51a2d0ec54.html",
+  "raw_sha256": "9c52aa51a2d0ec54ecf1dd2c1bbbf1d0178bb80f38be77bcf48acce864bc8122",
+  "collected_at": "2026-10-11T02:53:40.600746+00:00",
+  "format": "html",
+  "schema_version": 1,
+  "units": [
+    {
+      "unit_id": "procedure_0",
+      "role": "procedure",
+      "text": "진정/고소\n임금을 지급받지 못한 근로자는 밀린 임금을 지급 받을 수 있도록 해달라고 요구(진정)하거나, 사용자를 근로기준법 위반으로 처벌해 달라고 요구(고소)할 수 있습니다.",
+      "source_locator": "#tabpanel01 > h4: 진정/고소",
+      "atomic": true
+    },
+    {
+      "unit_id": "procedure_1",
+      "role": "procedure",
+      "text": "신청방법\n홈페이지 \"노동포털\"에서 온라인으로 \"임금체불 진정\"을 제기하거나, 사업장 소재지 관할 고용노동관서 고객지원실을 방문하여 사전 상담 후 진정 또는 고소하실 수 있습니다.",
+      "source_locator": "#tabpanel01 > h4: 신청방법",
+      "atomic": true
+    },
+    {
+      "unit_id": "procedure_2",
+      "role": "procedure",
+      "text": "진정 제기\n홈페이지 \"노동포털\" > 민원신청·조회 - 민원신청 - 근로기준 분야 민원신청 > \"진정서(임금체불, 기타 근로기준 분야)\" 신청",
+      "source_locator": "#tabpanel01 > h4: 진정 제기",
+      "atomic": true
+    },
+    {
+      "unit_id": "procedure_3",
+      "role": "procedure",
+      "text": "진정 취하\n홈페이지 \"노동포털\" > 마이페이지-나의민원 > 로그인 > \"진정 취하\" 버튼 클릭",
+      "source_locator": "#tabpanel01 > h4: 진정 취하",
+      "atomic": true
+    },
+    {
+      "unit_id": "procedure_4",
+      "role": "procedure",
+      "text": "처리절차\n① 근로감독관이 진정인과 피진정인에게 출석을 요구하여 조사 진행 - 처리기간은 25일(토요일·공휴일 제외)이며, 2차에 걸쳐 연장 가능 - 진정인이 2회 이상 불출석 시, 신고의사가 없는 것으로 간주되어 사건을 종결(향후 재 진정 가능) ② 근로감독관의 조사로 임금체불 등 법 위반 사실이 확인되는 경우 사업주에게 시정지시 → 법 위반이 시정되면 사건을 종결 ③ 시정지시 미이행 시 형사입건 후 수사 착수 후 검찰에 송치 - 임금체불 사업주는 3년 이하의 징역 또는 3,000만원 이하의 벌금형에 처함\n진정인이 진정제기를 하면 이후 근로감독관이 피진정인에게 출석을 요구하여 사실관계조사를 진행합니다. 처리기간은 토요일 공휴일을 제외한 25일이며, 2차에 걸쳐 연장이 가능합니다. 1차는 근로감독관의 직권, 2차는 진정인의 동의가 필요합니다. 체불임금이 확정되면 근로감독관이 피진정인에게 임금 지급을 지시합니다. 이후 지급이 완료되면 사건을 종결합니다. 만약 피진정인이 시정지시를 미이행 하면 형사입건 후 수사를 착수하고 이후 검찰에 송치됩니다. 이때 기간은 2개월 이며, 검사의 지휘에 따라 연장 될 수 있습니다. 임금체불 사업주는 3년 이하의 징역 또는 3,000만원 이하의 벌금형에 처하게 됩니다.",
+      "source_locator": "#tabpanel01 > h4: 처리절차",
+      "atomic": true
+    }
+  ],
+  "embedding_candidate": true,
+  "needs_manual_review": false,
+  "publication_date": null,
+  "updated_date": null,
+  "decision_date": null,
+  "effective_date": null,
+  "warnings": [
+    "공식 절차 안내이며 법령·판례와 구분. 수집 이후 접수 화면·절차 변경 가능.",
+    "준비자료는 상담을 돕는 예시이며 모든 자료가 있어야만 신고할 수 있다는 의미가 아님."
+  ],
+  "processed_at": "2026-10-11T07:18:36.624978+00:00",
+  "scope_included": [
+    "진정/고소",
+    "신청방법",
+    "진정 제기",
+    "진정 취하",
+    "처리절차"
+  ],
+  "scope_excluded": [
+    {
+      "scope": "본문 외 메뉴·로그인·서식 버튼",
+      "reason": "안내 본문이 아닌 화면 요소"
+    },
+    {
+      "scope": "다른 탭의 대지급금·융자·민사소송·도산 및 연령별 지원 안내",
+      "reason": "이번 신고 절차·준비자료 보강 범위 밖. 원본 HTML에는 보존"
+    }
+  ],
+  "source_date_note": "페이지에 게시·수정일 미표시. 수집일을 시행일로 대체하지 않음.",
+  "guide_id": "moel_wage_procedure"
+}

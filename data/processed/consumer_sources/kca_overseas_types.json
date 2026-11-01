@@ -1,0 +1,240 @@
+{
+  "source_id": "kca_overseas_types",
+  "title": "해외직구 유형 및 과정",
+  "document_type": "official_guide",
+  "source_url": "https://www.kca.go.kr/home/sub.do?menukey=7825",
+  "domain": "shopping_return",
+  "publisher": "한국소비자원",
+  "collection_status": "pending",
+  "review_status": "pending",
+  "resolved_url": "https://www.kca.go.kr/home/sub.do?menukey=7825",
+  "raw_file": "data/raw/consumer_sources/kca_overseas_types_8b985f72ecc984e9.html",
+  "raw_sha256": "8b985f72ecc984e9e7c0c844c3cd1e285de51915f24e9620f0ab55dcf17ff832",
+  "collected_at": "2026-10-11T03:07:11.622618+00:00",
+  "format": "html",
+  "schema_version": 1,
+  "units": [
+    {
+      "unit_id": "definition",
+      "role": "trade_definition",
+      "text": "해외직구 국내 소비자가 외국의 온라인 쇼핑몰 등을 통해 물품을 직접 구매(수입)하는 것으로 거래형태에 따라 세 유형으로 구분",
+      "atomic": true,
+      "source_locator": "#contents > div.border",
+      "trade_types": [],
+      "warnings": []
+    },
+    {
+      "unit_id": "type_direct_delivery",
+      "role": "trade_definition",
+      "text": "직접배송 해외 온라인 쇼핑몰에서 직접 주문·결제하고, 국내로 직접 배송 받는 방식",
+      "atomic": true,
+      "source_locator": "#contents > ul.novice type > li: 직접배송",
+      "trade_types": [
+        "direct_delivery"
+      ],
+      "warnings": []
+    },
+    {
+      "unit_id": "type_forwarding",
+      "role": "trade_definition",
+      "text": "배송대행 배송대행업체가 운영하는 현지 물류창고에서 주문물품을 대신 수령한 후 배송대행 서비스를 이용하여 제품을 배송 받는 방식",
+      "atomic": true,
+      "source_locator": "#contents > ul.novice type > li: 배송대행",
+      "trade_types": [
+        "forwarding"
+      ],
+      "warnings": []
+    },
+    {
+      "unit_id": "type_purchase_agent",
+      "role": "trade_definition",
+      "text": "구매대행 쇼핑몰형 : 구매대행 쇼핑몰에 게재된 해외제품을 바로 주문하는 방식 위임형 : 구매하고자 하는 해외제품의 견적을 요청한 후 예상비용을 통보받아 이를 결제하여 구매하는 방식",
+      "atomic": true,
+      "source_locator": "#contents > ul.novice type > li: 구매대행",
+      "trade_types": [
+        "purchase_agent"
+      ],
+      "warnings": []
+    },
+    {
+      "unit_id": "process_direct_delivery",
+      "role": "trade_process",
+      "text": "직접배송 해외쇼핑몰 주문 및 결제 국제운송 통관절차 국내배송 제품수령",
+      "atomic": true,
+      "source_locator": "#contents > ul.novice process > li: 직접배송",
+      "trade_types": [
+        "direct_delivery"
+      ],
+      "warnings": []
+    },
+    {
+      "unit_id": "process_forwarding",
+      "role": "trade_process",
+      "text": "배송대행 해외쇼핑몰 주문 및 결제 배송대행신청 배송대행지로 이동 및 검수 배송대행지 결제 국제운송 및 통관 국내배송 및 제품 수령",
+      "atomic": true,
+      "source_locator": "#contents > ul.novice process > li: 배송대행",
+      "trade_types": [
+        "forwarding"
+      ],
+      "warnings": []
+    },
+    {
+      "unit_id": "process_purchase_agent",
+      "role": "trade_process",
+      "text": "구매대행 구매대행 쇼핑몰 주문 및 결제 구매대행업체 현지 제품 구입 및 발송 국제운송 통관절차 국내배송 및 제품수령",
+      "atomic": true,
+      "source_locator": "#contents > ul.novice process > li: 구매대행",
+      "trade_types": [
+        "purchase_agent"
+      ],
+      "warnings": []
+    },
+    {
+      "unit_id": "comparison",
+      "role": "trade_comparison",
+      "text": "해외직구 유형별 장·단점 점검\n유형: 직접배송 | 이런 점이 좋아요!: 무료배송이 된다면 가장 저렴 (수수료 등이 절감) | 이런 점은 유의하세요!: 피해발생 시 해결이 어려움 국제배송비가 비싼 경우가 많음\n유형: 배송대행 | 이런 점이 좋아요!: 국내로 직접 배송되지 않은 제품도 구입이 가능 배대지(배송대행지)에서 검수,검품 서비스가 있어 직접배송보다 교환 또는 반품이 용이 | 이런 점은 유의하세요!: 제품종류, 배대지(배송대행지), 배송 대행업체별로 수수료 책정기준이 달라 비교 필요\n유형: 구매대행 | 이런 점이 좋아요!: 복잡한 해외직구를 비교적 편리하게 이용 가능 | 이런 점은 유의하세요!: 수수료가 가장 비싼 편 반품수수료, 조건이 업체별로 다름 (과다한 반품수수료 주의)",
+      "atomic": true,
+      "source_locator": "#contents > table: 해외직구 유형별 장·단점",
+      "trade_types": [
+        "direct_delivery",
+        "forwarding",
+        "purchase_agent"
+      ],
+      "warnings": [],
+      "official_table": {
+        "headers": [
+          "유형",
+          "이런 점이 좋아요!",
+          "이런 점은 유의하세요!"
+        ],
+        "rows": [
+          [
+            {
+              "tag": "th",
+              "text": "유형",
+              "rowspan": 1,
+              "colspan": 1,
+              "scope": "col"
+            },
+            {
+              "tag": "th",
+              "text": "이런 점이 좋아요!",
+              "rowspan": 1,
+              "colspan": 1,
+              "scope": "col"
+            },
+            {
+              "tag": "th",
+              "text": "이런 점은 유의하세요!",
+              "rowspan": 1,
+              "colspan": 1,
+              "scope": "col"
+            }
+          ],
+          [
+            {
+              "tag": "td",
+              "text": "직접배송",
+              "rowspan": 1,
+              "colspan": 1,
+              "scope": null
+            },
+            {
+              "tag": "td",
+              "text": "무료배송이 된다면 가장 저렴 (수수료 등이 절감)",
+              "rowspan": 1,
+              "colspan": 1,
+              "scope": null
+            },
+            {
+              "tag": "td",
+              "text": "피해발생 시 해결이 어려움 국제배송비가 비싼 경우가 많음",
+              "rowspan": 1,
+              "colspan": 1,
+              "scope": null
+            }
+          ],
+          [
+            {
+              "tag": "td",
+              "text": "배송대행",
+              "rowspan": 1,
+              "colspan": 1,
+              "scope": null
+            },
+            {
+              "tag": "td",
+              "text": "국내로 직접 배송되지 않은 제품도 구입이 가능 배대지(배송대행지)에서 검수,검품 서비스가 있어 직접배송보다 교환 또는 반품이 용이",
+              "rowspan": 1,
+              "colspan": 1,
+              "scope": null
+            },
+            {
+              "tag": "td",
+              "text": "제품종류, 배대지(배송대행지), 배송 대행업체별로 수수료 책정기준이 달라 비교 필요",
+              "rowspan": 1,
+              "colspan": 1,
+              "scope": null
+            }
+          ],
+          [
+            {
+              "tag": "td",
+              "text": "구매대행",
+              "rowspan": 1,
+              "colspan": 1,
+              "scope": null
+            },
+            {
+              "tag": "td",
+              "text": "복잡한 해외직구를 비교적 편리하게 이용 가능",
+              "rowspan": 1,
+              "colspan": 1,
+              "scope": null
+            },
+            {
+              "tag": "td",
+              "text": "수수료가 가장 비싼 편 반품수수료, 조건이 업체별로 다름 (과다한 반품수수료 주의)",
+              "rowspan": 1,
+              "colspan": 1,
+              "scope": null
+            }
+          ]
+        ]
+      }
+    }
+  ],
+  "embedding_candidate": true,
+  "needs_manual_review": false,
+  "publication_date": null,
+  "updated_date": null,
+  "decision_date": null,
+  "effective_date": null,
+  "warnings": [
+    "한국소비자원의 공식 소비자 안내이며 법령·판례가 아님. 직접배송·배송대행·구매대행을 구분.",
+    "해외 판매자에 국내 구매대행 기준을 일괄 적용하지 않음. 계약 상대방·거래조건·적용 법령은 개별 확인."
+  ],
+  "processed_at": "2026-10-11T07:18:36.843487+00:00",
+  "scope_included": [
+    "#contents > div.border",
+    "#contents > ul.novice type > li: 직접배송",
+    "#contents > ul.novice type > li: 배송대행",
+    "#contents > ul.novice type > li: 구매대행",
+    "#contents > ul.novice process > li: 직접배송",
+    "#contents > ul.novice process > li: 배송대행",
+    "#contents > ul.novice process > li: 구매대행",
+    "#contents > table: 해외직구 유형별 장·단점"
+  ],
+  "scope_excluded": [
+    {
+      "scope": "본문 밖 메뉴·대기 화면·로그인·푸터 및 장식 이미지",
+      "reason": "안내 본문이 아닌 화면 요소. 이미지 별도 의미 추론 없음. 원본 보존"
+    },
+    {
+      "scope": "배송 가능 여부 tip·나에게 맞는 유형선택",
+      "reason": "이번 유형 정의·과정·조건 비교 범위 밖. 원본 보존"
+    }
+  ],
+  "source_date_note": "안내 페이지에 게시·수정일 미표시. 수집일을 법령 시행일 또는 안내 기준일로 대체하지 않음.",
+  "guide_id": "kca_overseas_types"
+}

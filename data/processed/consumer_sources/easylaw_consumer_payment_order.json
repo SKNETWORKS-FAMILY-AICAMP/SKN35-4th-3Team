@@ -1,0 +1,104 @@
+{
+  "source_id": "easylaw_consumer_payment_order",
+  "title": "소비자분쟁해결: 지급명령 신청하기",
+  "source_url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=5&cciNo=1&cnpClsNo=2&csmSeq=669",
+  "document_type": "official_guide",
+  "domain": "fitness_refund",
+  "publisher": "법제처 찾기쉬운 생활법령정보",
+  "resolved_url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=5&cciNo=1&cnpClsNo=2&csmSeq=669",
+  "raw_file": "data/raw/consumer_sources/easylaw_consumer_payment_order_ea994a1979330dba.html",
+  "raw_sha256": "ea994a1979330dba43f686720c4651aba525d64f120ef995bdb27dc39f1b6fdd",
+  "collected_at": "2026-10-11T04:20:36.157671+00:00",
+  "format": "html",
+  "schema_version": 1,
+  "units": [
+    {
+      "unit_id": "definition",
+      "role": "civil_recovery_definition",
+      "text": "지급명령(독촉절차)\n민사분쟁에서 채권자(여기서 소비자)에게 금전 또는 동일한 종류의 것으로 대체될 수 있는 대체물이나 수표와 같은 유가증권을 지급하라는 청구에 대해 변론이나 판결 없이 곧바로 지급명령을 내리도록 하는 간이소송절차를 \"독촉절차\"라고 합니다( 「민사소송법」 제462조 ).\n실제로 2011년에는 A사의 스마트폰 사용자인 K씨가 'A사의 스마트폰이 사용자의 위치정보를 저장하여 위치추적으로 피해를 입었다'며 A사를 상대로 낸 지급명령 신청사건에서 법원은 A사에 지급명령을 내렸고, 이에 대해 A사는 명령을 받은 날로부터 2주 동안 주어진 이의신청 기간 동안 아무런 이의를 신청하지 않아 A사는 K씨에게 손해배상금을 지급하였습니다.\n지급명령(독촉절차)은 분쟁 당사자를 소환하지 않고, 별다른 소명절차도 없으며, 당사자가 신청한 서류만으로 심리한다는 점에서 일반적인 소송 절차에 비해 비용이 적게 들고, 청구금액이 정해져 있지 않아 비교적 큰 금액에 대해서도 청구가 가능합니다( 「민사소송법」 제467조 ).\n지급명령 신청 시 법원에 납부하는 수수료는 기본적으로 소송 제기 시 첨부할 인지액의 1/10 정도이며, 예납할 송달료도 당사자 1인당 6회분으로 소송절차 중 액수가 가장 적은 소액사건(당사자 1명당 10회분)보다 적습니다( 「민사소송 등 인지법」 제7조 제2항 및 「송달료규칙의 시행에 따른 업무처리요령(재일 87-4)」 별표 1 ).",
+      "atomic": true,
+      "source_locator": ".ovDivbox > 지급명령(독촉절차)",
+      "source_node_ids": [
+        "div669.5.1.2.6068981",
+        "div669.5.1.2.6068982",
+        "div669.5.1.2.6068983",
+        "div669.5.1.2.6068984",
+        "div669.5.1.2.6068985"
+      ],
+      "warnings": []
+    },
+    {
+      "unit_id": "filing",
+      "role": "civil_recovery_filing",
+      "text": "지급명령의 신청\n지급명령을 신청하려면 지급명령신청서를 작성해서 채무자의 주소지·근무지·사무소·영업소·거소지·의무이행지·어음 또는 수표의 지급지·불법행위지 등을 관할하는 법원에 제출합니다( 「민사소송법」 제463조 ).",
+      "atomic": true,
+      "source_locator": ".ovDivbox > 지급명령의 신청",
+      "source_node_ids": [
+        "div669.5.1.2.6068989",
+        "div669.5.1.2.6068990"
+      ],
+      "warnings": []
+    },
+    {
+      "unit_id": "service",
+      "role": "civil_recovery_service",
+      "text": "지급명령의 발령\n법원은 분쟁 당사자(소비자와 사업자)의 출석 없이 지급명령서를 심사해서 청구가 적합하다고 판단되면 지급명령을 발령하고, 당사자에게 지급명령 정본을 송달합니다( 「민사소송법」 제467조 , 제468조 및 제469조 ).\n만약, 채무자인 상대방이 지급명령신청서에 기재된 주소에 실제로 거주하지 않는 등의 이유로 지급명령 정본이 송달되지 않으면 법원은 신청자에게 주소를 정정할 것을 요청해서 보정된 주소로 재송달해야 하며, 주소보정이 어렵거나 외국으로 송달해야 하는 경우에는 법원이 해당 사건을 소송에 부칠 수 있습니다( 「민사소송법」 제466조 ).",
+      "atomic": true,
+      "source_locator": ".ovDivbox > 지급명령의 발령",
+      "source_node_ids": [
+        "div669.5.1.2.6068991",
+        "div669.5.1.2.6068992",
+        "div669.5.1.2.6068993"
+      ],
+      "warnings": []
+    },
+    {
+      "unit_id": "objection_finality",
+      "role": "civil_recovery_objection_finality",
+      "text": "지급명령의 확정\n채무자인 상대방은 이 지급명령에 대해 송달일을 기준으로 2주 이내에 이의신청을 할 수 있습니다( 「민사소송법」 제468조 및 제469조 ).\n상대방이 ① 이의신청을 하지 않거나 ② 이의신청의 각하결정이 확정되거나 ③ 이의신청이 취하된 경우에는 지급명령이 확정되어 확정판결과 같은 효력이 생기기 때문에 명령내용이 이행되지 않을 경우 신청자는 법원에 강제집행을 신청해서 지급받을 수 있습니다( 「민사소송법」 제474조 ).\n한편, 상대방이 지급명령에 대해 적법한 이의신청을 하면 지급명령은 이의신청한 범위에서 효력을 잃고, 그 범위에서 지급명령을 신청한 때에 소가 제기된 것으로 보아 통상의 민사소송절차로 이어집니다( 「민사소송법」 제470조 제1항 및 제472조 제2항).",
+      "atomic": true,
+      "source_locator": ".ovDivbox > 지급명령의 확정",
+      "source_node_ids": [
+        "div669.5.1.2.6068994",
+        "div669.5.1.2.6068995",
+        "div669.5.1.2.6068996",
+        "div669.5.1.2.6068997"
+      ],
+      "warnings": []
+    }
+  ],
+  "embedding_candidate": true,
+  "needs_manual_review": false,
+  "publication_date": null,
+  "updated_date": null,
+  "decision_date": null,
+  "effective_date": null,
+  "warnings": [
+    "공식 생활법령 해설이며 법령 원문·판례와 구분. 안내 기준일 이후 개정 및 계약 당사자·환급청구액·증빙·송달주소 확인 필요.",
+    "헬스장·필라테스 현금·일시불·이미 지급한 이용료 환급 청구의 민사절차 참고용. 카드사 잔여 할부금 지급 거절과 구분. 승소·확정이 실제 회수를 보장하지 않으며 집행 가능한 채무자 재산·권리 순위·도산 여부를 별도 확인."
+  ],
+  "processed_at": "2026-10-11T07:18:39.497736+00:00",
+  "information_as_of": "2026-09-15",
+  "source_update_notices": [],
+  "source_date_note": "안내 작성 기준일만 보존. 게시일·법령 시행일로 대체하지 않음. 개정 검토 공지는 경고에 보존.",
+  "scope_included": [
+    ".ovDivbox > 지급명령(독촉절차)",
+    ".ovDivbox > 지급명령의 신청",
+    ".ovDivbox > 지급명령의 발령",
+    ".ovDivbox > 지급명령의 확정"
+  ],
+  "scope_excluded": [
+    {
+      "scope": "메뉴·푸터·첨부·외부 접수 화면·이미지 흐름도·tplv 외부참조/전자소송 안내",
+      "reason": "검토한 HTML 문자 본문만 검색. 이미지 alt를 절차 본문으로 대체하지 않음"
+    },
+    {
+      "scope": [
+        "지급명령절차의 흐름"
+      ],
+      "reason": "이번 민사 회수 범위 밖 소제목. 원본 HTML 보존; 대여금 사례·가압류를 환급 집행권원으로 임의 확대하지 않음"
+    }
+  ],
+  "citation_discrepancies": [],
+  "guide_id": "easylaw_consumer_payment_order"
+}

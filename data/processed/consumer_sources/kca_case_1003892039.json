@@ -1,0 +1,63 @@
+{
+  "source_id": "kca_case_1003892039",
+  "title": "PT 강습 계약 해지에 따른 잔여 대금 환급 요구",
+  "document_type": "mediation_case",
+  "source_url": "https://www.kca.go.kr/odr/bj/br/osBjDecisionExamDetW.do?brdId=00000007&dataStts=Y&seq=1003892039",
+  "domain": "fitness_refund",
+  "publisher": "한국소비자원",
+  "resolved_url": "https://www.kca.go.kr/odr/bj/br/osBjDecisionExamDetW.do?brdId=00000007&dataStts=Y&seq=1003892039",
+  "raw_file": "data/raw/consumer_sources/kca_case_1003892039_935b3cc418eb4f8f.html",
+  "raw_sha256": "935b3cc418eb4f8fb49efff0977c15b2666b048d122ca7e1f2324a283bff45f9",
+  "collected_at": "2026-10-10T12:34:39.375061+00:00",
+  "format": "html",
+  "schema_version": 1,
+  "units": [
+    {
+      "unit_id": "case_facts",
+      "role": "facts",
+      "text": "□ 신청인은 2021. 8. 25. 피신청인과 PT 30회 수강(기간: 2021. 8. 25. ~2022. 2. 25.) 및 헬스장 이용(기간: 2021. 8. 25. ~2022. 8. 25.) 계약을 체결해 대금 1,650,000원을 결제했으며, 이후 스타 트레이너를 배정받기 위해 390,000원을 추가 지급함.\n□ 신청인은 2021. 9. 14. 담당 트레이너의 불성실한 태도를 이유로 트레이너 교체를 요구함.\n□ 피신청인은 신청인의 담당 트레이너를 변경해 2021. 10. 1. 첫 수업을 진행하였고 스타 트레이너 명목으로 지급받은 390,000원을 환급함.\n□ 신청인은 2022. 3. 4.까지 총 13회의 수업을 진행하였고 2022. 3. 25. 피신청인으로부터 담당 트레이너가 퇴사했는데 계약을 해지할 것인지 문의받고, 2022. 5. 이 사건 계약에 대한 해지 및 환급을 요구하였으나 피신청인은 PT 계약기간 만료로 환급이 불가하다고 답변함.",
+      "source_label": "사건개요",
+      "source_locator": "HTML table row th=사건개요"
+    },
+    {
+      "unit_id": "case_party_claims",
+      "role": "party_claims",
+      "text": "□ (신청인) 위약금과 남은 17회에 대한 이용대금 환급, 내용증명 제작 및 발송비용 9,700원의 배상, 내용증명 발송일(2022. 5. 23.)을 기준으로 계산된 연체이자 20%의 지급을 요구함.\n□ (피신청인) 이 사건 계약서상 PT 계약은 2022. 2. 25.까지이고, 트레이너 교체 등으로 51일이 연장되어 실제 계약기간은 2022. 4. 16.까지임. 따라서 신청인이 계약 해지를 요구한 2022. 5.은 이미 계약기간이 만료된 시점이므로 환급이 불가하고, 헬스장 이용권은 PT 수강에 따른 부가서비스로 환급 대상이 아니라고 주장함.",
+      "source_label": "당사자주장",
+      "source_locator": "HTML table row th=당사자주장"
+    },
+    {
+      "unit_id": "case_reasoning",
+      "role": "reasoning",
+      "text": "□ 신청인은 2022. 3. 25. 피신청인이 이 사건 계약 해지 여부를 문의하여 숙고 후 2022. 5. 해지를 요구했다고 주장하나, 신청인의 주장을 객관적으로 증빙할 만한 자료가 없고, 그 무렵 신청인과 피신청인의 문자 대화 내용에도 계약 해지에 대한 문의나 권유는 따로 없는 점 등을 고려했을 때, 신청인의 계약 해지 요구일은 계약이 만료된 후이므로 계약 해지 및 환급 요구는 받아들이기 어려움.\n□ 다만, 신청인이 이용하지 못한 PT 횟수가 17회에 달하는 점, 신청인의 PT 수강이 해지된 경위에 트레이너의 퇴사 등 피신청인의 귀책이 일부 있었던 점, 별도의 대금 책정은 없었으나 이 사건 계약에는 헬스장 이용권이 포함되어 있고 그 기간이 상당히 남아있는 점 등을 종합해 보면, 피신청인은 이 사건 계약 총 대금 1,650,000원의 20%인 330,000원을 신청인에게 배상하도록 조정하는 것이 타당함.\n□ 이때 신청인은 이 사건 분쟁 과정에서 피신청인에게 발송한 내용증명 제작 및 발송 비용 9,700원과 내용증명 발송일 기준으로 계산된 연체이자 20%를 피신청인이 지급해야 한다고 주장하는데, 내용증명 우편 관련 비용은 신청인이 피신청인에게 계약 해지 의사표시 도달을 증명하기 위해 지급한 것으로서 신청인이 부담함이 타당하고, 「상법」 제54조에 따른 연 6% 비율의 지연손해금은 우리 위원회에서 정한 지급기일 이후부터 부과하는 것으로 결정함(연 20% 비율의 지연손해금은 그 근거가 없어 인정하기 어려움).",
+      "source_label": "판단",
+      "source_locator": "HTML table row th=판단"
+    },
+    {
+      "unit_id": "case_decision",
+      "role": "decision",
+      "text": "□ 피신청인은 신청인에게 330,000원을 지급하는 것으로 조정결정함.",
+      "source_label": "결정사항",
+      "source_locator": "HTML table row th=결정사항"
+    },
+    {
+      "unit_id": "case_cited_law",
+      "role": "cited_law",
+      "text": "방문판매 등에 관한 법률 제2조, 제9조, 제31조, 제32조, 제52조, 상법 제54조",
+      "source_label": "관련법률",
+      "source_locator": "HTML table row th=관련법률"
+    }
+  ],
+  "embedding_candidate": true,
+  "needs_manual_review": false,
+  "publication_date": null,
+  "updated_date": "2025-07-03",
+  "decision_date": null,
+  "effective_date": null,
+  "warnings": [
+    "분쟁조정 사례이며 법원 판례가 아님. 게시 수정일을 결정일로 대체하지 않음.",
+    "사례 당시 사실관계·법령 적용에 따른 판단. 현행 일반 기준으로 단정하지 않음."
+  ],
+  "processed_at": "2026-10-11T07:18:21.615125+00:00",
+  "source_missing_fields": []
+}

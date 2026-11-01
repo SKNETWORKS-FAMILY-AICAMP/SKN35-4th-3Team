@@ -1,0 +1,63 @@
+{
+  "source_id": "kca_case_1003817065",
+  "title": "헬스장 이용 계약의 중도해지 및 잔여대금 환급 요구",
+  "document_type": "mediation_case",
+  "source_url": "https://www.kca.go.kr/odr/bj/br/osBjDecisionExamDetW.do?brdId=00000007&dataStts=Y&seq=1003817065",
+  "domain": "fitness_refund",
+  "publisher": "한국소비자원",
+  "resolved_url": "https://www.kca.go.kr/odr/bj/br/osBjDecisionExamDetW.do?brdId=00000007&dataStts=Y&seq=1003817065",
+  "raw_file": "data/raw/consumer_sources/kca_case_1003817065_808f552f2da36aeb.html",
+  "raw_sha256": "808f552f2da36aeb33becc2c39808266d6c5ef093d5aafe0e051d83b95013f22",
+  "collected_at": "2026-10-10T12:34:39.940055+00:00",
+  "format": "html",
+  "schema_version": 1,
+  "units": [
+    {
+      "unit_id": "case_facts",
+      "role": "facts",
+      "text": "□ 신청인은 2023. 12. 29. 피신청인(사업자)과 헬스장 이용계약(계약기간 : 2024. 3. 4. ~ 2025. 3. 3.)을 체결하고 대금 168,000원을 지급함.\n□ 2024. 8. 2.(계약 개시일로부터 152일 경과한 시점) 주로 오후 10시 이후 헬스장을 이용하였으나 피신청인의 운영 시간 변경을 이유로 계약 해지를 요청하니, 피신청인은 약관에 따르면 환급할 금액이 없다고 하여 분쟁이 발생함.",
+      "source_label": "사건개요",
+      "source_locator": "HTML table row th=사건개요"
+    },
+    {
+      "unit_id": "case_party_claims",
+      "role": "party_claims",
+      "text": "□ (신청인) 계약 해지에 따른 위약금이 과다하므로 환급금 조정을 요구함.\n□ (피신청인) 계약서 약관에 따라 헬스장 이용금액을 정상가 기준으로 산정하는 것이 부당하다고 볼 수 없음.",
+      "source_label": "당사자주장",
+      "source_locator": "HTML table row th=당사자주장"
+    },
+    {
+      "unit_id": "case_reasoning",
+      "role": "reasoning",
+      "text": "□ 피신청인의 운영 시간 변경은 신청인이 이 사건 계약의 목적을 달성할 수 없을 정도로 볼 수 있는바 이 사건 계약은 피신청인의 사유로 해지되었다고 봄이 타당함.\n□ ‘장기 이용으로 할인을 받은 회원이 중도 탈회하는 경우 정상가 (월 100,000원) 기준으로 계산한다’는 조항은 「방문판매 등에 관한 법률」 제32조를 위반한 것으로 동법 제52조에 따라 효력이 없음.\n□ 이에 「소비자분쟁해결기준」 - 56. 체육시설업, 레저용역업 및 할인회원권업을 적용하는 것이 적절함.",
+      "source_label": "판단",
+      "source_locator": "HTML table row th=판단"
+    },
+    {
+      "unit_id": "case_decision",
+      "role": "decision",
+      "text": "□ 피신청인은 신청인에게 114,839원[총 계약대금 168,000원, 이용대금 69,961원{(168,000원 / 365일) x 152일}, 위약금 16,800원(총 계약대금 168,000원 *10%)]을 지급하는 것으로 조정결정함.",
+      "source_label": "결정사항",
+      "source_locator": "HTML table row th=결정사항"
+    },
+    {
+      "unit_id": "case_cited_law",
+      "role": "cited_law",
+      "text": "방문판매 등에 관한 법률 제2조, 제31조, 제32조, 제52조",
+      "source_label": "관련법률",
+      "source_locator": "HTML table row th=관련법률"
+    }
+  ],
+  "embedding_candidate": true,
+  "needs_manual_review": false,
+  "publication_date": null,
+  "updated_date": "2025-02-13",
+  "decision_date": null,
+  "effective_date": null,
+  "warnings": [
+    "분쟁조정 사례이며 법원 판례가 아님. 게시 수정일을 결정일로 대체하지 않음.",
+    "사례 당시 사실관계·법령 적용에 따른 판단. 현행 일반 기준으로 단정하지 않음."
+  ],
+  "processed_at": "2026-10-11T07:18:21.654141+00:00",
+  "source_missing_fields": []
+}

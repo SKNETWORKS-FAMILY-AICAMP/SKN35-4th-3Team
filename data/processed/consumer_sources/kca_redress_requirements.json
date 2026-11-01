@@ -1,0 +1,76 @@
+{
+  "source_id": "kca_redress_requirements",
+  "title": "한국소비자원 피해구제 신청 요건 및 신청서 양식 안내",
+  "source_url": "https://www.kca.go.kr/odr/pg/ma/pgProcssInfo1.do",
+  "document_type": "official_guide",
+  "domain": "consumer",
+  "publisher": "한국소비자원",
+  "resolved_url": "https://www.kca.go.kr/odr/pg/ma/pgProcssInfo1.do",
+  "raw_file": "data/raw/consumer_sources/kca_redress_requirements_f5048b0525c401e4.html",
+  "raw_sha256": "f5048b0525c401e490afe2cf7e89fba8f882477c0a5f23a25d89c3cce6668857",
+  "collected_at": "2026-10-11T05:39:30.965711+00:00",
+  "format": "html",
+  "schema_version": 1,
+  "units": [
+    {
+      "unit_id": "eligibility",
+      "role": "redress_eligibility",
+      "text": "소비자가 사업자가 제공하는 물품 또는 용역을 사용하거나 이용하는 과정에서 피해가 발생할 경우 피해구제 접수를 할 수 있습니다. 다만, 아래 사항에 해당될 경우 피해구제 대상에서 제외 됩니다. - 사업자의 부도 , 폐업 등으로 연락이 불가능하거나 소재파악이 안 되는 경우 - 신청인(소비자)의 주장을 입증(입증서류 미제출 포함)할 수 없는 경우 - 영리활동과 관련하여 발생한 분쟁, 임금 등 근로자와 고용인 사이의 분쟁, 개인간 거래 등 소비자와 사업자 사이의 분쟁이 아닌 경우 - 국가 또는 지방자치단체가 제공한 물품 등으로 인하여 발생한 피해인 경우 - 소비자분쟁조정위원회에 준하는 분쟁조정기구에 피해구제가 신청되어 있거나 피해구제절차를 거친 경우 - 법원에 소송 진행중인 경우 등",
+      "source_locator": "h4: 피해구제 접수 해당 요건 > .cnsut_box",
+      "atomic": true,
+      "warnings": [],
+      "required_context_chunk_ids": [
+        "001589_283837_20260911_art_55_0_chunk_0000",
+        "001589_283837_20260911_art_57_0_chunk_0000",
+        "001589_283837_20260911_art_58_0_chunk_0000",
+        "003979_289451_20260911_art_44_0_chunk_0000",
+        "kca_damage_redress_procedure_redress_exclusions_0000"
+      ]
+    },
+    {
+      "unit_id": "specialized_forms",
+      "role": "specialized_application_forms",
+      "text": "일반분야를 제외한 모든 전문분야 피해구제 신청시 ①신청서와 ②각 필수제출 서류 두가지 모두 제출 되어야 합니다.(하나라도 제출되지 않을 경우 접수불가능합니다.)",
+      "source_locator": "h4: 피해구제 접수 신청서 양식 + div.mt10",
+      "atomic": true,
+      "warnings": [
+        "이 필수제출 조건은 원문이 명시한 전문분야에 관한 안내. 일반분야의 모든 신청에 동일하게 확대하지 않음. 첨부 양식 자체는 미변환·미검토."
+      ],
+      "required_context_chunk_ids": [
+        "001589_283837_20260911_art_55_0_chunk_0000",
+        "001589_283837_20260911_art_57_0_chunk_0000",
+        "001589_283837_20260911_art_58_0_chunk_0000",
+        "003979_289451_20260911_art_44_0_chunk_0000",
+        "kca_damage_redress_procedure_redress_exclusions_0000"
+      ]
+    }
+  ],
+  "embedding_candidate": true,
+  "needs_manual_review": false,
+  "publication_date": null,
+  "updated_date": null,
+  "decision_date": null,
+  "effective_date": null,
+  "warnings": [
+    "공식 소비자 절차 안내이며 법령·판례가 아님. 연결한 소비자기본법·시행령은 수집 시점 현행본이며 안내의 작성 시점은 확인되지 않음. 법령 시행일은 연결 청크에서 확인.",
+    "피해구제 합의권고와 분쟁조정 성립의 효력은 다름. 접수·상담·조정 신청이 환급이나 강제집행을 보장하지 않음."
+  ],
+  "processed_at": "2026-10-11T07:18:41.931287+00:00",
+  "information_as_of": null,
+  "source_date_note": "페이지에 확인 가능한 작성·수정 기준일이 없어 null로 보존. 수집일을 안내 작성일이나 법령 시행일로 대체하지 않음.",
+  "scope_included": [
+    "h4: 피해구제 접수 해당 요건 > .cnsut_box",
+    "h4: 피해구제 접수 신청서 양식 + div.mt10"
+  ],
+  "scope_excluded": [
+    {
+      "scope": "첨부 HWP/DOC 양식·필독사항·작성 예시 및 신청 화면/영상/절차도 이미지",
+      "reason": "링크 안내와 HTML 본문만 검토. 첨부 파일 내용·온라인 신청 기능은 미검증. 원본 HTML 보존"
+    },
+    {
+      "scope": "개인정보 안내·메뉴·푸터 및 알렛츠/티몬/위메프/해피머니 특정 사건 팝업",
+      "reason": "일반 절차 범위 밖. 특정 사건의 제출 조건·마감일을 일반 신청에 적용하지 않음"
+    }
+  ],
+  "guide_id": "kca_redress_requirements"
+}

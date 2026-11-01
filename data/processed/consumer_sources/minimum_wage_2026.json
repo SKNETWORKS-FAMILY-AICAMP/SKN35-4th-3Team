@@ -1,0 +1,90 @@
+{
+  "source_id": "minimum_wage_2026",
+  "title": "2026년 적용 최저임금 고시",
+  "document_type": "administrative_rule",
+  "domain": "임금",
+  "administrative_id": "2100000262710",
+  "expected_effective_date": "20260101",
+  "source_url": "https://www.law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000262710",
+  "raw_file": "data/raw/consumer_sources/minimum_wage_2026_c0a8b9413dbfebc6.xml",
+  "raw_sha256": "c0a8b9413dbfebc6e660bb48daa7e20843bced7d5f64a95ed4f0e2542ad139c5",
+  "collected_at": "2026-10-11T01:17:12.081053+00:00",
+  "format": "xml",
+  "body_pdf_file": "data/raw/consumer_sources/minimum_wage_2026_attachment_body_b87d3570ff339e04.pdf",
+  "body_pdf_sha256": "b87d3570ff339e04747d7835228e20c2faeffa7c9fbcdfe79d719e6ed096a30d",
+  "body_pdf_url": "https://law.go.kr/flDownload.do?flSeq=155278071",
+  "schema_version": 1,
+  "units": [
+    {
+      "unit_id": "notice_body",
+      "role": "notice_body",
+      "text": "고용노동부고시 제2025–47호\n2026년 적용 최저임금 고시\n「최저임금법」제10조제1항에 따라 2026년 1월 1일부터 2026년\n12월 31일까지 적용되는 최저임금액을 다음과 같이 고시합니다.\n2025. 8. 5.\n고 용 노 동 부 장 관\n1. 최저임금액\n결정단위\n시 간 급\n업 종\n모 든 산 업 10,320원\n◈ 월 환산액 2,156,880원: 주 소정근로 40시간을 근무할 경우,\n월 환산 기준시간 수 209시간(주당 유급주휴 8시간 포함) 기준\n2. 최저임금의 사업의 종류별 구분 여부\n○ 사업의 종류별 구분 없이 모든 사업장에 동일하게 적용\n3. 최저임금 적용 기간: 2026. 1. 1. ~ 2026. 12. 31.",
+      "atomic": true,
+      "source_locator": "공식 고시 첨부 PDF 전문",
+      "page_numbers": [
+        1
+      ]
+    }
+  ],
+  "embedding_candidate": true,
+  "needs_manual_review": false,
+  "publication_date": null,
+  "updated_date": null,
+  "decision_date": null,
+  "effective_date": "20260101",
+  "warnings": [
+    "공식 고시. 적용 범위·예외·유효 기간과 상위 법령을 함께 확인. 계산 자동화는 별도 검증."
+  ],
+  "processed_at": "2026-10-11T07:18:36.375178+00:00",
+  "derived_pdf_file": "data/raw/consumer_sources/minimum_wage_2026_attachment_body_b87d3570ff339e04.pdf",
+  "derived_pdf_sha256": "b87d3570ff339e04747d7835228e20c2faeffa7c9fbcdfe79d719e6ed096a30d",
+  "pdf_pages": [
+    {
+      "page_number": 1,
+      "text": "고용노동부고시 제2025–47호\n2026년 적용 최저임금 고시\n「최저임금법」제10조제1항에 따라 2026년 1월 1일부터 2026년\n12월 31일까지 적용되는 최저임금액을 다음과 같이 고시합니다.\n2025. 8. 5.\n고 용 노 동 부 장 관\n1. 최저임금액\n결정단위\n시 간 급\n업 종\n모 든 산 업 10,320원\n◈ 월 환산액 2,156,880원: 주 소정근로 40시간을 근무할 경우,\n월 환산 기준시간 수 209시간(주당 유급주휴 8시간 포함) 기준\n2. 최저임금의 사업의 종류별 구분 여부\n○ 사업의 종류별 구분 없이 모든 사업장에 동일하게 적용\n3. 최저임금 적용 기간: 2026. 1. 1. ~ 2026. 12. 31.",
+      "tables": [
+        [
+          [
+            "결정단위\n업 종",
+            "시 간 급"
+          ],
+          [
+            "모 든 산 업",
+            "10,320원"
+          ]
+        ]
+      ]
+    }
+  ],
+  "valid_from": "2026-01-01",
+  "valid_until": "2026-12-31",
+  "body_source_url": "https://law.go.kr/flDownload.do?flSeq=155278071",
+  "body_review": "공식 PDF 1페이지 표·본문 시각 대조 완료",
+  "additional_materials": {
+    "부칙": "<부칙>\n</부칙>",
+    "첨부파일": "<첨부파일>\n<첨부파일명>2026년 적용 최저임금 고시(고용노동부 고시 제2025-47호).pdf\n</첨부파일명>\n<첨부파일링크>http://law.go.kr/flDownload.do?flSeq=155278071\n</첨부파일링크>\n<첨부파일명>최저임금 고시 재개정 이유서.pdf\n</첨부파일명>\n<첨부파일링크>http://law.go.kr/flDownload.do?flSeq=155278073\n</첨부파일링크>\n</첨부파일>\n"
+  },
+  "additional_materials_policy": "개정별 부칙·이유·첨부 목록은 정제에 보존. 과거 적용을 확정하지 않아 기본 검색 제외.",
+  "administrative_metadata": {
+    "행정규칙일련번호": "2100000262710",
+    "행정규칙명": "2026년 적용 최저임금 고시",
+    "행정규칙종류": "고시",
+    "행정규칙종류코드": "B0003",
+    "발령일자": "20250805",
+    "발령번호": "2025-47",
+    "제개정구분명": "제정",
+    "제개정구분코드": "200401",
+    "조문형식여부": "Y",
+    "행정규칙ID": "2002374",
+    "소관부처명": "고용노동부",
+    "소관부처코드": "1492000",
+    "상위부처명": "고용노동부",
+    "담당부서기관코드": "1494749",
+    "담당부서기관명": "고용노동부(근로기준정책과)",
+    "담당자명": "김형준",
+    "전화번호": "044-202-7535",
+    "현행여부": "Y",
+    "시행일자": "20260101",
+    "생성일자": "20260101"
+  }
+}

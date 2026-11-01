@@ -1,0 +1,53 @@
+{
+  "source_id": "moel_wage_evidence_1000323154",
+  "title": "임금체불 진정 준비자료와 증빙 부족 시 조사 안내",
+  "source_url": "https://1350.moel.go.kr/rtmview.do?id=1000323154",
+  "document_type": "official_guide",
+  "domain": "임금체불",
+  "publisher": "고용노동부",
+  "collection_status": "pending",
+  "review_status": "pending",
+  "resolved_url": "https://1350.moel.go.kr/rtmview.do?id=1000323154",
+  "raw_file": "data/raw/consumer_sources/moel_wage_evidence_1000323154_7492a58ac0c94d39.html",
+  "raw_sha256": "7492a58ac0c94d39e099c999175696084026eddf014736756bc5afdb52e4af5a",
+  "collected_at": "2026-10-11T02:53:41.134898+00:00",
+  "format": "html",
+  "schema_version": 1,
+  "units": [
+    {
+      "unit_id": "evidence_0",
+      "role": "supporting_documents",
+      "text": "- 진정 제기 시 귀하의 구체적 근로사실관계 입증자료(예: 급여자료,근로계약서, 근로시간 증빙자료등)를 준비하여 상담하시면 보다 원활한 상담을 받으실 수 있으며, 별도 증빙이 어려운 경우 진정 제기 이후 담당감독관 출석 이후 대질 조사 등의 방법으로 확인 가능할 것이니 자세한 확인 및 상담은 사업장 소재지 관할 지방고용노동지청으로 질의하여 추가 상담 받으시길 바랍니다.",
+      "source_locator": "1350 상담 ID 1000323154 > 준비자료 답변 구간",
+      "atomic": true,
+      "start": 155,
+      "end": 362,
+      "offset_basis": "normalized_answer_text"
+    }
+  ],
+  "embedding_candidate": true,
+  "needs_manual_review": false,
+  "publication_date": null,
+  "updated_date": null,
+  "decision_date": null,
+  "effective_date": null,
+  "warnings": [
+    "공식 절차 안내이며 법령·판례와 구분. 수집 이후 접수 화면·절차 변경 가능.",
+    "준비자료는 상담을 돕는 예시이며 모든 자료가 있어야만 신고할 수 있다는 의미가 아님."
+  ],
+  "processed_at": "2026-10-11T07:18:36.819242+00:00",
+  "normalized_answer_text": "고용노동부 1350모바일 상담을 이용해 주셔서 감사합니다. (진정신고) 재직근로자의 임금은 정기지급일 이후, 퇴직근로자의 임금 및 퇴직금은 퇴직일로부터 14일 이내 지급받지 못한 경우 근무지 관할 노동청에서 진정 제기가능합니다.(근기법제49조 임금채권 소멸시효는 3년입니다.) - 진정 제기 시 귀하의 구체적 근로사실관계 입증자료(예: 급여자료,근로계약서, 근로시간 증빙자료등)를 준비하여 상담하시면 보다 원활한 상담을 받으실 수 있으며, 별도 증빙이 어려운 경우 진정 제기 이후 담당감독관 출석 이후 대질 조사 등의 방법으로 확인 가능할 것이니 자세한 확인 및 상담은 사업장 소재지 관할 지방고용노동지청으로 질의하여 추가 상담 받으시길 바랍니다. ◆ 진정제기 방법(택1) ① 인터넷을 통한 진정 제기 : <고용노동부 홈페이지(www.moel.go.kr) → 민원 → 민원신청 → 온라인 민원신청 → \"진정서\" 검색 → 신청(처리기간 25일 이내<토요일, 공휴일 제외>) ② 사업장 관할 지방고용노동청에 방문하여 신고 (지연이자) 임금체불액 지연이자로 인한 채권발생은 근로기준법에서 다루질 않아 민사로 해결해야 할 부분으로 해당 채권에 관한 금전문제는 대한법률구조공단(국번없이 132번)으로 문의하여 상담을 받아보시기 바랍니다. 답변일 : 2026.05.14 13:09",
+  "information_as_of": "2026-05-14",
+  "source_date_note": "information_as_of는 해당 상담 답변일. 법령 시행일·페이지 전체 최종 수정일이 아님.",
+  "scope_included": [
+    "진정 준비자료 예시",
+    "증빙 부족 시 조사 안내"
+  ],
+  "scope_excluded": [
+    {
+      "scope": "질문·다른 상담 답변 및 신고시점·소멸시효·지연이자·접수 경로",
+      "reason": "이번 준비자료 구간 밖. 신고 경로는 노동포털 안내 사용. 원본 HTML에는 보존"
+    }
+  ],
+  "guide_id": "moel_wage_evidence_1000323154"
+}

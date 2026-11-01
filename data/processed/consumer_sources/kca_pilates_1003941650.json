@@ -1,0 +1,63 @@
+{
+  "source_id": "kca_pilates_1003941650",
+  "title": "필라테스 계약 중도해지에 따른 환급 요구",
+  "document_type": "mediation_case",
+  "source_url": "https://www.kca.go.kr/odr/bj/br/osBjDecisionExamDetW.do?brdId=00000007&dataStts=Y&seq=1003941650",
+  "domain": "fitness_refund",
+  "publisher": "한국소비자원",
+  "resolved_url": "https://www.kca.go.kr/odr/bj/br/osBjDecisionExamDetW.do?brdId=00000007&dataStts=Y&seq=1003941650",
+  "raw_file": "data/raw/consumer_sources/kca_pilates_1003941650_1066de99b588fb09.html",
+  "raw_sha256": "1066de99b588fb09284a24d2d271d83993784d8eb24ce1ab3a3e0fa17ae81a61",
+  "collected_at": "2026-10-10T12:34:31.729685+00:00",
+  "format": "html",
+  "schema_version": 1,
+  "units": [
+    {
+      "unit_id": "case_facts",
+      "role": "facts",
+      "text": "□ 신청인은 2020. 9. 23. 피신청인과 그룹 필라테스 수강 계약(횟수: 144회, 대금: 840,000원, 이하 ‘이 사건 계약’)을 체결함.\n□ 신청인은 개인 사유로 피신청인에게 휴회를 요청하여 계약 만료일은 2022. 7. 15.로 변경됨.\n□ 신청인은 2022. 5. 2. 피신청인으로부터 1일 수강 가능 횟수가 기존 2회에서 1회로 변경 예정임을 통보받아 84회를 수강한 상태에서 계약해지 및 잔여 이용료 환급을\n요구하였으나 피신청인이 거부함.",
+      "source_label": "사건개요",
+      "source_locator": "HTML table row th=사건개요"
+    },
+    {
+      "unit_id": "case_party_claims",
+      "role": "party_claims",
+      "text": "□ (신청인) 계약과정에서 1일 2회 수강 허용에 대해 피신청인과 협의했는데, 일방적으로 1일 수강 가능 횟수를 변경한 것은 계약위반이므로 잔여 이용료 환급을 요구함.\n□ (피신청인) 그룹 필라테스의 경우 1일 1회 수강이 원칙으로 신청인에게 1일 2회 수강을 허용한 것은 배려 차원이었고, 계약서에 레슨 연기 또는 정지 후 환급 신청 시에는 연기 또는 정지 기간을 수업이 진행된 것으로 인정한다고 기재된 점을 근거로 신청인의 계약기간은 만료되어 환급 가능 금액이 없다고 주장함.",
+      "source_label": "당사자주장",
+      "source_locator": "HTML table row th=당사자주장"
+    },
+    {
+      "unit_id": "case_reasoning",
+      "role": "reasoning",
+      "text": "□ 이 사건 계약은 ？방문판매 등에 관한 법률(이하 ‘방문판매법’)？ 제2조 및 같은 법 제31조에 따라 2022. 5. 2.에 적법하게 해지됨.\n□ 신청인이 제출한 자료에 따르면 피신청인이 1일 수강 가능 횟수를 제한하는 것이 이 사건 계약을 유지할 수 없는 사업자의 귀책 사유라고 단정하기 어려우므로 본 사건은 별도 위약금 또는 배상금 없이 잔여 이용료를 환급하는 것이 타당함.\n□ 한편, 피신청인은 이 사건 계약서의 약관에 의해 휴회 후 환급 신청할 경우, 휴회한 기간을 수업이 진행된 것으로 인정하므로 신청인의 계약기간이 만료되어 환급이 불가하고 환급하더라도 1회 정상가(55,000원) 기준으로 차감해야 한다고 주장하나, 당사자 사이의 합의에 따른 휴회 기간이 있었다면 이 기간에는 서로 채권과 채무의 이행을 청구하지 않기로 약정한 것이므로 피신청인이 환급을 거부하는 것은 소비자에게 실제 공급된 재화 등의 대가를 초과하여 수령한 대금의 환급을 부당하게 거부하는 행위에 해당함.\n□ 또한, 해지로 발생하는 손실을 현저하게 초과하는 위약금을 청구하는 것에 해당하는 피신청인의 약관조항들은 「방문판매법」 제32조를 위반하는 것으로 그 효력을 인정하기 어려움.\n□ 따라서 피신청인은 신청인에게 같은 법 제32조 제4항에서 정한 공정거래위원회가 제정·고시한 「계속거래 등의 해지·해제에 따른 위약금 및 대금의 환급에 관한 산정기준」 제5조 제1항에 따라 350,028원을 환급하는 것이 타당함.\n※ 총 계약금액: 840,000원, 공제금액: 489,972원{5,833원(840,000원/144회)*84회}",
+      "source_label": "판단",
+      "source_locator": "HTML table row th=판단"
+    },
+    {
+      "unit_id": "case_decision",
+      "role": "decision",
+      "text": "피신청인은 신청인에게 350,028원을 지급하는 것으로 조정결정함.",
+      "source_label": "결정사항",
+      "source_locator": "HTML table row th=결정사항"
+    },
+    {
+      "unit_id": "case_cited_law",
+      "role": "cited_law",
+      "text": "방문판매 등에 관한 법률 제2조, 제9조, 제31조, 제32조, 제52조, 방문판매 등에 관한 법률 시행령 제13조, 계속거래 등의 해지·해제에 따른 위약금 및 대금의 환급에 관한 산정기준 제2조, 제3조, 제4조, 제5조",
+      "source_label": "관련법률",
+      "source_locator": "HTML table row th=관련법률"
+    }
+  ],
+  "embedding_candidate": true,
+  "needs_manual_review": false,
+  "publication_date": null,
+  "updated_date": "2025-10-27",
+  "decision_date": null,
+  "effective_date": null,
+  "warnings": [
+    "분쟁조정 사례이며 법원 판례가 아님. 게시 수정일을 결정일로 대체하지 않음.",
+    "사례 당시 사실관계·법령 적용에 따른 판단. 현행 일반 기준으로 단정하지 않음."
+  ],
+  "processed_at": "2026-10-11T07:18:21.416204+00:00",
+  "source_missing_fields": []
+}

@@ -1,0 +1,116 @@
+{
+  "source_id": "easylaw_consumer_small_claim",
+  "title": "소비자분쟁해결: 소액사건심판 신청하기",
+  "source_url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=5&cciNo=1&cnpClsNo=1&csmSeq=669",
+  "document_type": "official_guide",
+  "domain": "fitness_refund",
+  "publisher": "법제처 찾기쉬운 생활법령정보",
+  "resolved_url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=5&cciNo=1&cnpClsNo=1&csmSeq=669",
+  "raw_file": "data/raw/consumer_sources/easylaw_consumer_small_claim_3650e2b8cbaaccd3.html",
+  "raw_sha256": "3650e2b8cbaaccd3b8fec83cae0e27955d4c76f316c770736e6e90ea46452ca9",
+  "collected_at": "2026-10-11T04:20:35.651231+00:00",
+  "format": "html",
+  "schema_version": 1,
+  "units": [
+    {
+      "unit_id": "scope",
+      "role": "civil_recovery_scope",
+      "text": "소액사건심판의 대상\n소액사건심판은 분쟁금액이 3,000만원 이하인 금전이나 그 밖에 동일한 종류의 것으로 대체될 수 있는 대체물이나 유가증권의 지급을 목적으로 하는 제1심의 민사사건을 대상으로 합니다( 「소액사건심판법」 제2조 제1항 및 「소액사건심판규칙」 제1조의2 ).\n총 분쟁금액이 3,000만원을 넘어서는 사건에 대해 이를 분할해서 청구하는 것은 인정되지 않습니다( 「소액사건심판법」 제5조의2 및 「소액사건심판규칙」 제1조의2 본문).\n※ 예를 들어, 분쟁금액이 4,000만원인 경우 분쟁금액을 3,000만원과 1,000만원으로 나누어 두 번에 걸쳐 소액사건심판을 청구하는 것은 불가능합니다.",
+      "atomic": true,
+      "source_locator": ".ovDivbox > 소액사건심판의 대상",
+      "source_node_ids": [
+        "div669.5.1.1.6068838",
+        "div669.5.1.1.6068839",
+        "div669.5.1.1.6068840",
+        "div669.5.1.1.6068841"
+      ],
+      "warnings": []
+    },
+    {
+      "unit_id": "filing",
+      "role": "civil_recovery_filing",
+      "text": "소액사건심판의 제기\n소액사건심판을 원하는 소비자 또는 소비자의 배우자·직계혈족·형제자매(이하 “원고”라 함)는 서면이나 말로 소액사건심판을 제기할 수 있습니다( 「소액사건심판법」 제8조 및 「소액사건심판규칙」 제3조 ).",
+      "atomic": true,
+      "source_locator": ".ovDivbox > 소액사건심판의 제기",
+      "source_node_ids": [
+        "div669.5.1.1.6068845",
+        "div669.5.1.1.6068846"
+      ],
+      "warnings": []
+    },
+    {
+      "unit_id": "recommendation",
+      "role": "civil_recovery_recommendation",
+      "text": "피고에 대한 이행 권고\n소송이 제기되면 법원은 피고(여기서는 사업자)에게 소장부본이나 제소조서등본 등을 첨부해서 원고의 청구취지대로 이행할 것을 권고할 수 있습니다( 「소액사건심판법」 제5조의3 ).\n이행의 권고를 받은 피고가 2주 이내에 이의신청을 하면, 변론기일을 정해 소액사건심판절차가 진행됩니다( 「소액사건심판법」 제5조의4 ).\n※ ① 피고가 위의 기간 내에 이의신청을 하지 않은 경우, ② 이의신청에 대한 각하결정이 확정된 경우, 또는 ③ 이의신청이 취하된 경우 위 이행권고결정은 확정판결과 같은 효력을 가지게 됩니다( 「소액사건심판법」 제5조의7 제1항).",
+      "atomic": true,
+      "source_locator": ".ovDivbox > 피고에 대한 이행 권고",
+      "source_node_ids": [
+        "div669.5.1.1.6068847",
+        "div669.5.1.1.6068848",
+        "div669.5.1.1.6068849",
+        "div669.5.1.1.6068850"
+      ],
+      "warnings": []
+    },
+    {
+      "unit_id": "hearing",
+      "role": "civil_recovery_hearing",
+      "text": "변론\n변론은 보통 1회로 진행되며, 이 변론기일에 판사는 소송 당사자와 관계자를 심문합니다. 이 때 판사가 상당하다고 인정하는 경우에는 증인 또는 감정인에게 신문을 갈음하여 서면을 제출하게 할 수 있습니다( 「소액사건심판법」 제7조 , 제10조 및 「소액사건심판규칙」 제6조 참조).",
+      "atomic": true,
+      "source_locator": ".ovDivbox > 변론",
+      "source_node_ids": [
+        "div669.5.1.1.6068851",
+        "div669.5.1.1.6068852"
+      ],
+      "warnings": []
+    },
+    {
+      "unit_id": "judgment",
+      "role": "civil_recovery_judgment",
+      "text": "판결의 선고\n변론이 끝나면 판결이 즉시 선고될 수 있습니다( 「소액사건심판법」 제11조의2 ).",
+      "atomic": true,
+      "source_locator": ".ovDivbox > 판결의 선고",
+      "source_node_ids": [
+        "div669.5.1.1.6068853",
+        "div669.5.1.1.6068854"
+      ],
+      "warnings": []
+    }
+  ],
+  "embedding_candidate": true,
+  "needs_manual_review": false,
+  "publication_date": null,
+  "updated_date": null,
+  "decision_date": null,
+  "effective_date": null,
+  "warnings": [
+    "공식 생활법령 해설이며 법령 원문·판례와 구분. 안내 기준일 이후 개정 및 계약 당사자·환급청구액·증빙·송달주소 확인 필요.",
+    "헬스장·필라테스 현금·일시불·이미 지급한 이용료 환급 청구의 민사절차 참고용. 카드사 잔여 할부금 지급 거절과 구분. 승소·확정이 실제 회수를 보장하지 않으며 집행 가능한 채무자 재산·권리 순위·도산 여부를 별도 확인."
+  ],
+  "processed_at": "2026-10-11T07:18:39.443937+00:00",
+  "information_as_of": "2026-09-15",
+  "source_update_notices": [],
+  "source_date_note": "안내 작성 기준일만 보존. 게시일·법령 시행일로 대체하지 않음. 개정 검토 공지는 경고에 보존.",
+  "scope_included": [
+    ".ovDivbox > 소액사건심판의 대상",
+    ".ovDivbox > 소액사건심판의 제기",
+    ".ovDivbox > 피고에 대한 이행 권고",
+    ".ovDivbox > 변론",
+    ".ovDivbox > 판결의 선고"
+  ],
+  "scope_excluded": [
+    {
+      "scope": "메뉴·푸터·첨부·외부 접수 화면·이미지 흐름도·tplv 외부참조/전자소송 안내",
+      "reason": "검토한 HTML 문자 본문만 검색. 이미지 alt를 절차 본문으로 대체하지 않음"
+    },
+    {
+      "scope": [
+        "소액사건심판의 의의",
+        "소액사건심판의 흐름"
+      ],
+      "reason": "이번 민사 회수 범위 밖 소제목. 원본 HTML 보존; 대여금 사례·가압류를 환급 집행권원으로 임의 확대하지 않음"
+    }
+  ],
+  "citation_discrepancies": [],
+  "guide_id": "easylaw_consumer_small_claim"
+}

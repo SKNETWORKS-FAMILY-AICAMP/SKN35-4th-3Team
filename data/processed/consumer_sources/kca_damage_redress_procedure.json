@@ -1,0 +1,82 @@
+{
+  "source_id": "kca_damage_redress_procedure",
+  "title": "한국소비자원 피해구제 절차 및 처리 제외 안내",
+  "source_url": "https://www.kca.go.kr/odr/pg/ma/pgProcssInfo.do",
+  "document_type": "official_guide",
+  "domain": "fitness_refund",
+  "publisher": "한국소비자원",
+  "collection_status": "pending",
+  "review_status": "pending",
+  "resolved_url": "https://www.kca.go.kr/odr/pg/ma/pgProcssInfo.do",
+  "raw_file": "data/raw/consumer_sources/kca_damage_redress_procedure_a76de09b87f6e095.html",
+  "raw_sha256": "a76de09b87f6e09531234b7ae3c2a4cf5c0939170d95a5f3456d1b9b89dfe863",
+  "collected_at": "2026-10-11T03:19:13.278419+00:00",
+  "format": "html",
+  "schema_version": 1,
+  "units": [
+    {
+      "unit_id": "redress_definition",
+      "role": "redress_definition",
+      "text": "\"피해구제”란 소비자가 사업자가 제공하는 물품 또는 용역을 사용하거나 이용하는 과정에서 발생하는 피해를 구제하기 위하여 사실조사, 전문가 자문 등을 거쳐 관련법률 및 규정에 따라 양 당사자에게 공정하고 객관적으로 합의를 권고하는 제도 입니다. 분쟁의 해결은 원칙적으로 민사소송을 통해 해결하여야 하나 소송은 비용, 기간, 절차 등의 번거로움이 발생할 수 있는 반면, 한국소비자원 피해구제는 법원 판결과 달리 강제력은 없지만 비용 없이 신속히 분쟁을 해결할 수 있습니다.",
+      "source_locator": "h4: 피해구제란?",
+      "atomic": true,
+      "warnings": [
+        "공식 안내는 사업자의 부도·폐업 등으로 연락이 불가능하거나 소재파악이 안 되는 경우를 피해구제 제외 대상으로 명시. 상담·피해구제 신청이 환급이나 강제집행을 보장하지 않음."
+      ],
+      "required_context_chunk_ids": [
+        "kca_damage_redress_procedure_redress_exclusions_0000"
+      ]
+    },
+    {
+      "unit_id": "redress_exclusions",
+      "role": "redress_exclusions",
+      "text": "사업자의 부도 , 폐업 등으로 연락이 불가능하거나 소재파악이 안 되는 경우 신청인(소비자)의 주장을 입증(입증서류 미제출 포함)할 수 없는 경우 영리활동과 관련하여 발생한 분쟁, 임금 등 근로자와 고용인 사이의 분쟁, 개인간 거래 등 소비자와 사업자 사이의 분쟁이 아닌 경우 국가 또는 지방자치단체가 제공한 물품 등으로 인하여 발생한 피해인 경우 소비자분쟁조정위원회에 준하는 분쟁조정기구에 피해구제가 신청되어 있거나 피해구제절차를 거친 경우 법원에 소송 진행중인 경우 등",
+      "source_locator": "h4: 이런 경우에는 피해구제 대상에서 제외됩니다.",
+      "atomic": true,
+      "warnings": []
+    },
+    {
+      "unit_id": "redress_procedure",
+      "role": "redress_procedure",
+      "text": "01.소비자 상담 소비자피해 발생 시 소비자상담을 신청 하면 대응 방법 안내 등 신속한 문제해결에 도움을 드립니다. 피해구제 신청 전 먼저 상담을 받아야 합니다. 02. 피해구제 신청 소비자상담으로 문제가 해결되지 않을 경우 방문, 우편, 인터넷을 통하여 피해구제를 신청할 수 있습니다. 접수된 피해구제는 30일 이내에 처리하며 사안에 따라 90일까지 연장이 가능합니다(토·일요일 및 법정공휴일 제외). 03. 사업자 통보 피해구제가 접수되면 해당 사업자에게 피해구제 접수사실이 통보됩니다. 접수사실을 통보 받은 사업자는 사건 발생 경위 등에 대한 해명과 합의 의사를 전달해 오는 경우도 있습니다. 04. 사실조사 소비자의 주장과 사업자의 해명을 토대로 ‘서류검토’, ‘시험검사’, ‘현장조사’, ‘전문가자문’ 등을 통해 사실조사를 실시합니다. 05. 합의권고 사실조사를 바탕으로 관련 법률 및 규정에 따라 공정하고 객관적으로 양 당사자에게 합의를 권고하며 합의가 이루어질 경우에는 사건은 종결됩니다. 사실조사 결과 사업자에게 귀책사유가 없는 것으로 판명된 때에는 합의권고 없이 사건이 종결됩니다. 06. 소비자분쟁조정위원회 조정 원만한 합의가 이루어지지 않은 경우 소비자분쟁조정위원회에 조정을 신청합니다.",
+      "source_locator": "h4: 피해구제 절차 안내",
+      "atomic": true,
+      "warnings": [
+        "공식 안내는 사업자의 부도·폐업 등으로 연락이 불가능하거나 소재파악이 안 되는 경우를 피해구제 제외 대상으로 명시. 상담·피해구제 신청이 환급이나 강제집행을 보장하지 않음."
+      ],
+      "required_context_chunk_ids": [
+        "kca_damage_redress_procedure_redress_exclusions_0000"
+      ]
+    }
+  ],
+  "embedding_candidate": true,
+  "needs_manual_review": false,
+  "publication_date": null,
+  "updated_date": null,
+  "decision_date": null,
+  "effective_date": null,
+  "warnings": [
+    "공식 소비자 안내이며 법령·판례가 아님. 안내 시점 이후 변경 및 구체적 계약·결제 조건 확인 필요.",
+    "사업자에게 환급 요구, 카드사에 잔여 할부금 지급 거절, 소비자원 상담·피해구제를 구분. 환급금의 실제 회수·민사집행은 별도 검토."
+  ],
+  "processed_at": "2026-10-11T07:18:39.391887+00:00",
+  "publication_period": null,
+  "legal_basis": {},
+  "source_date_note": "게시 등록일 또는 웹진 발행 연월만 보존. 수정일·법령 시행일·현행 적용일로 대체하지 않음.",
+  "scope_included": [
+    "h4: 피해구제란?",
+    "h4: 이런 경우에는 피해구제 대상에서 제외됩니다.",
+    "h4: 피해구제 절차 안내"
+  ],
+  "scope_excluded": [
+    {
+      "scope": "본문 밖 메뉴·대기 화면·팝업·푸터·담당자 연락처·통계·장식 이미지",
+      "reason": "이번 폐업·증빙·대응 절차 범위 밖. 원본 HTML 보존"
+    },
+    {
+      "scope": "첨부 PDF·외부 접수 페이지·온라인 기능 안내·청렴 안내",
+      "reason": "이번 HTML 본문 수집 범위 밖. 개별 접수 화면·첨부·이미지 전수 검증은 하지 않음"
+    }
+  ],
+  "guide_id": "kca_damage_redress_procedure"
+}

@@ -1,0 +1,120 @@
+{
+  "source_id": "kca_fitness_closure_gym",
+  "title": "헬스장 계약·폐업 피해예방 안내",
+  "source_url": "https://www.kca.go.kr/home/sub.do?menukey=4005&mode=view&no=1003802911",
+  "document_type": "official_guide",
+  "domain": "fitness_refund",
+  "publisher": "한국소비자원",
+  "collection_status": "pending",
+  "review_status": "pending",
+  "resolved_url": "https://www.kca.go.kr/home/sub.do?menukey=4005&mode=view&no=1003802911",
+  "raw_file": "data/raw/consumer_sources/kca_fitness_closure_gym_c624ab16f714fd3f.html",
+  "raw_sha256": "c624ab16f714fd3ffebcff2a683e0502592338d17da021b41c4abb64ff66940a",
+  "collected_at": "2026-10-11T03:19:12.315741+00:00",
+  "format": "html",
+  "schema_version": 1,
+  "units": [
+    {
+      "unit_id": "closure_risk",
+      "role": "closure_risk",
+      "text": "헬스장을 이용하는 소비자들은 개인 강습(PT) * 계약을 체결하는 경우가 많다. 그러나 사업자의 갑작스러운 폐업으로 잔여 이용료를 환급받지 못하는 피해가 계속 발생하고 있으므로 계약 시 더욱 주의가 필요하다.",
+      "source_locator": "#view_wrap > h5: 헬스장 ‘폐업’으로 인한 피해도 지속적으로 발생",
+      "atomic": true,
+      "warnings": [
+        "현금·일시불·기지급 이용료의 민사 회수 참고 안내를 연결. 안내의 개정 검토 공지와 현행 법령·송달 가능성·채무자 재산을 함께 확인. 실제 환급 보장 아님."
+      ],
+      "required_context_chunk_ids": [
+        "easylaw_consumer_small_claim_scope_0000",
+        "easylaw_consumer_small_claim_filing_0000",
+        "easylaw_consumer_small_claim_recommendation_0000",
+        "easylaw_consumer_small_claim_hearing_0000",
+        "easylaw_consumer_small_claim_judgment_0000",
+        "easylaw_consumer_payment_order_definition_0000",
+        "easylaw_consumer_payment_order_filing_0000",
+        "easylaw_consumer_payment_order_service_0000",
+        "easylaw_consumer_payment_order_objection_finality_0000",
+        "easylaw_payment_order_application_application_0000",
+        "easylaw_payment_order_application_service_0000",
+        "easylaw_payment_order_application_objection_0000",
+        "easylaw_payment_order_application_litigation_0000",
+        "easylaw_payment_order_application_stamp_correction_0000",
+        "easylaw_civil_enforcement_execution_copy_0000",
+        "easylaw_civil_enforcement_property_disclosure_0000",
+        "easylaw_civil_enforcement_property_inquiry_0000",
+        "easylaw_civil_enforcement_movables_claims_0000"
+      ]
+    },
+    {
+      "unit_id": "card_evidence",
+      "role": "payment_and_evidence",
+      "text": "한국소비자원은 소비자에게 관련 피해를 예방하기 위해 ▲이벤트, 프로모션 등 가격 할인에 현혹되지 말고 실제 이용 가능한 기간(횟수)으로 신중히 계약을 체결할 것, ▲중도 해지 시 환급기준 등 계약의 중요 내용을 꼼꼼히 확인할 것, ▲사업자 폐업 등으로 인한 피해에 대비해 신용카드 할부(20만 원 이상, 3개월 이상) 결제를 할 것, ▲분쟁에 대비하여 내용증명, 문자 등 의사 표시 관련 입증자료를 확보할 것 등을 당부했다.",
+      "source_locator": "#view_wrap > h5: 장기 또는 다회 계약은 신중히 결정하고 신용카드 할부 결제 이용",
+      "atomic": true,
+      "warnings": [
+        "할부항변권은 요건에 맞는 거래의 잔여 할부금 지급 거절에 관한 안내. 이미 낸 이용료의 자동 환급이나 일시불·현금 결제의 동일한 지급 거절을 보장하지 않음. 결제 방식·할부 조건·채무불이행 및 카드사 확인 필요. 연결한 할부거래법·시행령 근거의 기간·횟수·금액·통지·예외 조건을 함께 확인. 개별 계약일·거래에 대한 법률 적용은 별도 검토.",
+        "안내 원문의 3개월 할부 표현을 보존하고 법 제2조의 2개월 이상에 걸쳐 3회 이상 지급 요건을 함께 확인. 법 제16조의 사유·신용제공자 통지·당시 미지급 잔여금·서면 효력 및 시행령 제11조의 금액 조건, 적용제외·다른 법률 관계를 연결. 연결본은 수집 시점 현행 법령이며 2024/2025 안내 당시 구법·개별 계약일의 적용을 확정하지 않음."
+      ],
+      "required_context_chunk_ids": [
+        "000355_289407_20260908_art_2_0_chunk_0000",
+        "000355_289407_20260908_art_2_0_chunk_0001",
+        "000355_289407_20260908_art_3_0_chunk_0000",
+        "000355_289407_20260908_art_4_0_chunk_0000",
+        "000355_289407_20260908_art_16_0_chunk_0000",
+        "005498_287001_20260701_art_2_0_chunk_0000",
+        "005498_287001_20260701_art_4_0_chunk_0000",
+        "005498_287001_20260701_art_11_0_chunk_0000"
+      ]
+    }
+  ],
+  "embedding_candidate": true,
+  "needs_manual_review": false,
+  "publication_date": "2024-12-11",
+  "updated_date": null,
+  "decision_date": null,
+  "effective_date": null,
+  "warnings": [
+    "공식 소비자 안내이며 법령·판례가 아님. 안내 시점 이후 변경 및 구체적 계약·결제 조건 확인 필요.",
+    "사업자에게 환급 요구, 카드사에 잔여 할부금 지급 거절, 소비자원 상담·피해구제를 구분. 환급금의 실제 회수·민사집행은 별도 검토."
+  ],
+  "processed_at": "2026-10-11T07:18:38.065176+00:00",
+  "publication_period": null,
+  "legal_basis": {
+    "required_context_chunk_ids": [
+      "000355_289407_20260908_art_2_0_chunk_0000",
+      "000355_289407_20260908_art_2_0_chunk_0001",
+      "000355_289407_20260908_art_3_0_chunk_0000",
+      "000355_289407_20260908_art_4_0_chunk_0000",
+      "000355_289407_20260908_art_16_0_chunk_0000",
+      "005498_287001_20260701_art_2_0_chunk_0000",
+      "005498_287001_20260701_art_4_0_chunk_0000",
+      "005498_287001_20260701_art_11_0_chunk_0000"
+    ],
+    "versions": {
+      "할부거래에 관한 법률": {
+        "document_id": "law:000355_289407_20260908",
+        "effective_date": "2026-09-08"
+      },
+      "할부거래에 관한 법률 시행령": {
+        "document_id": "law:005498_287001_20260701",
+        "effective_date": "2026-07-01"
+      }
+    },
+    "review_note": "안내 원문의 3개월 할부 표현을 보존하고 법 제2조의 2개월 이상에 걸쳐 3회 이상 지급 요건을 함께 확인. 법 제16조의 사유·신용제공자 통지·당시 미지급 잔여금·서면 효력 및 시행령 제11조의 금액 조건, 적용제외·다른 법률 관계를 연결. 연결본은 수집 시점 현행 법령이며 2024/2025 안내 당시 구법·개별 계약일의 적용을 확정하지 않음."
+  },
+  "source_date_note": "게시 등록일 또는 웹진 발행 연월만 보존. 수정일·법령 시행일·현행 적용일로 대체하지 않음.",
+  "scope_included": [
+    "#view_wrap > h5: 헬스장 ‘폐업’으로 인한 피해도 지속적으로 발생",
+    "#view_wrap > h5: 장기 또는 다회 계약은 신중히 결정하고 신용카드 할부 결제 이용"
+  ],
+  "scope_excluded": [
+    {
+      "scope": "본문 밖 메뉴·대기 화면·팝업·푸터·담당자 연락처·통계·장식 이미지",
+      "reason": "이번 폐업·증빙·대응 절차 범위 밖. 원본 HTML 보존"
+    },
+    {
+      "scope": "첨부 PDF·외부 접수 페이지·온라인 기능 안내·청렴 안내",
+      "reason": "이번 HTML 본문 수집 범위 밖. 개별 접수 화면·첨부·이미지 전수 검증은 하지 않음"
+    }
+  ],
+  "guide_id": "kca_fitness_closure_gym"
+}

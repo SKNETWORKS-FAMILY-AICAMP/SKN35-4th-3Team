@@ -1,0 +1,121 @@
+{
+  "source_id": "kca_overseas_checklist",
+  "title": "해외직구 체크리스트",
+  "document_type": "official_guide",
+  "source_url": "https://www.kca.go.kr/home/sub.do?menukey=7827",
+  "domain": "shopping_return",
+  "publisher": "한국소비자원",
+  "collection_status": "pending",
+  "review_status": "pending",
+  "resolved_url": "https://www.kca.go.kr/home/sub.do?menukey=7827",
+  "raw_file": "data/raw/consumer_sources/kca_overseas_checklist_8a7c044d6fb1eb22.html",
+  "raw_sha256": "8a7c044d6fb1eb22d7dd5eaf6edc2778c3dd0dec0a709e1513964ead3706dcac",
+  "collected_at": "2026-10-11T03:07:12.301220+00:00",
+  "format": "html",
+  "schema_version": 1,
+  "units": [
+    {
+      "unit_id": "payment_evidence",
+      "role": "purchase_evidence",
+      "text": "반품 · 취소에 대비하여 송금 등 현금거래를 유도하는 경우, 문제발생 시 피해보상을 받기 어려울 수 있으므로 가급적 이용하지 않는 것이 좋고 문제발생에 대비하여 구매 및 결제내역을 캡처하는 등 증빙자료를 남겨두는 것이 필요",
+      "atomic": true,
+      "source_locator": "#contents > div.itemList: 반품·취소 대비",
+      "trade_types": [],
+      "warnings": []
+    },
+    {
+      "unit_id": "direct_delivery",
+      "role": "trade_conditions",
+      "text": "1 해외직접배송을 이용한 해외직구 해외유명 브랜드 제품을 지나치게 싼 가격으로 판매하거나, 잘 알려지지 않은 해외 온라인 쇼핑몰은 이용을 자제한다. 가급적 대형 해외유명 인터넷 쇼핑몰을 이용하여 구매한다. 피해보상제도 및 교환/환불 조건이 국내와 다르므로 사전에 확인하고 구매한다.",
+      "atomic": true,
+      "source_locator": "#contents > div.tip_layout > 직접배송 안내",
+      "trade_types": [
+        "direct_delivery"
+      ],
+      "warnings": []
+    },
+    {
+      "unit_id": "direct_contact",
+      "role": "dispute_procedure",
+      "text": "문제발생시 대처방안 해외 쇼핑몰의 경우 우선 해당 쇼핑몰 고객센터로 직접 문의 해야 함 Contact Us 또 는 Help메뉴 이용 : 이메일, 라이브채팅, 유선전화 등 문의할 경우 주문번호와 영문이름을 알려주어야 하므로 미리 준비할 것",
+      "atomic": true,
+      "source_locator": "#contents > div.tip_layout > 해외 쇼핑몰 대처방안",
+      "trade_types": [
+        "direct_delivery"
+      ],
+      "warnings": []
+    },
+    {
+      "unit_id": "forwarding_evidence",
+      "role": "trade_conditions",
+      "text": "배송대행업체를 통한 거래 시에는 운송 중 사고로 인한 제품누락, 파손 또는 분실 등과 관련하여 분쟁이 발생할 수 있으므로, 사전에 배송조건과 보상내용을 확인하고 이용해야 하며, 제품 수령 시 무게, 포장 상자를 확인하고 필요에 따라 사진 및 동영상 등 증거 자료를 확보해야 함.",
+      "atomic": true,
+      "source_locator": "#contents > div.tip_layout > 배송대행 > 운송 사고·증거",
+      "trade_types": [
+        "forwarding"
+      ],
+      "warnings": []
+    },
+    {
+      "unit_id": "purchase_agent",
+      "role": "trade_conditions",
+      "text": "3 구매대행업체를 이용한 해외직구 해외배송 등을 이유로 주문취소, 반품, 환불이 되지 않는다고 안내하는 경우가 많이 있으나 국내소재의 구매대행은 국내법이 적용된다.(7일 이내 청약철회 가능 등) 홈페이지에 게재된 교환 및 반품, 환불규정을 사전에 고지하고 있는지 여부와 구매 당시의 배송비용과 차이가 있는지 등을 꼼꼼히 확인한다. 인터넷 쇼핑몰 사업자 신고여부 및 에스크로제 또는 소비자피해보상 보험가입 여부를 확인하고 가급적 신용카드 결제를 이용한다.",
+      "atomic": true,
+      "source_locator": "#contents > div.tip_layout > 구매대행 안내",
+      "trade_types": [
+        "purchase_agent"
+      ],
+      "warnings": [
+        "국내소재 구매대행에 관한 안내. 7일 청약철회 안내만으로 모든 거래의 반품 가능 여부를 단정하지 않음. 전자상거래법 제17·18조의 예외·비용 조건을 함께 확인."
+      ],
+      "required_context_chunk_ids": [
+        "009318_282793_20260721_art_17_0_chunk_0000",
+        "009318_282793_20260721_art_17_0_chunk_0001",
+        "009318_282793_20260721_art_18_0_chunk_0000",
+        "009318_282793_20260721_art_18_0_chunk_0001"
+      ]
+    },
+    {
+      "unit_id": "purchase_agent_contact",
+      "role": "dispute_procedure",
+      "text": "문제발생시 대처방안 해외 쇼핑몰의 경우 우선 해당 쇼핑몰 고객센터로 직접 문의 해야 함 국내업체와 원만히 해결이 어려운 경우에는 1372소비자상담센터 (국번없이 1372)를 통해 피해구제 방법 등을 상담하거나, 한국소비자원에 거래내역 증빙서류 등을 갖춰 피해구제 신청",
+      "atomic": true,
+      "source_locator": "#contents > div.tip_layout > 국내업체 피해구제",
+      "trade_types": [
+        "purchase_agent"
+      ],
+      "warnings": []
+    }
+  ],
+  "embedding_candidate": true,
+  "needs_manual_review": false,
+  "publication_date": null,
+  "updated_date": null,
+  "decision_date": null,
+  "effective_date": null,
+  "warnings": [
+    "한국소비자원의 공식 소비자 안내이며 법령·판례가 아님. 직접배송·배송대행·구매대행을 구분.",
+    "해외 판매자에 국내 구매대행 기준을 일괄 적용하지 않음. 계약 상대방·거래조건·적용 법령은 개별 확인."
+  ],
+  "processed_at": "2026-10-11T07:18:36.904999+00:00",
+  "scope_included": [
+    "#contents > div.itemList: 반품·취소 대비",
+    "#contents > div.tip_layout > 직접배송 안내",
+    "#contents > div.tip_layout > 해외 쇼핑몰 대처방안",
+    "#contents > div.tip_layout > 배송대행 > 운송 사고·증거",
+    "#contents > div.tip_layout > 구매대행 안내",
+    "#contents > div.tip_layout > 국내업체 피해구제"
+  ],
+  "scope_excluded": [
+    {
+      "scope": "본문 밖 메뉴·대기 화면·로그인·푸터 및 장식 이미지",
+      "reason": "안내 본문이 아닌 화면 요소. 이미지 별도 의미 추론 없음. 원본 보존"
+    },
+    {
+      "scope": "구매품목·관세 한도·지역별 세금·유형 선택 및 외부 조회 링크",
+      "reason": "이번 반품·거래조건 범위 밖. 관세·지역 세금의 현행성은 검증하지 않음. 원본 보존"
+    }
+  ],
+  "source_date_note": "안내 페이지에 게시·수정일 미표시. 수집일을 법령 시행일 또는 안내 기준일로 대체하지 않음.",
+  "guide_id": "kca_overseas_checklist"
+}

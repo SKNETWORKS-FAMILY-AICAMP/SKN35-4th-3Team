@@ -1,0 +1,231 @@
+{
+  "source_id": "kca_case_1003739114",
+  "title": "그룹필라테스 폐강으로 인한 중도해지에 따른 잔여이용료 환급 요구",
+  "document_type": "mediation_case",
+  "source_url": "https://www.kca.go.kr/odr/bj/br/osBjDecisionExamDetW.do?brdId=00000007&dataStts=Y&seq=1003739114",
+  "domain": "fitness_refund",
+  "publisher": "한국소비자원",
+  "resolved_url": "https://www.kca.go.kr/odr/bj/br/osBjDecisionExamDetW.do?brdId=00000007&dataStts=Y&seq=1003739114",
+  "raw_file": "data/raw/consumer_sources/kca_case_1003739114_63d4b26cb7f7f468.html",
+  "raw_sha256": "63d4b26cb7f7f468a265fb52a4766d16427feda787ffb7eee42b7d410263a3ad",
+  "collected_at": "2026-10-10T12:34:40.530985+00:00",
+  "format": "html",
+  "schema_version": 1,
+  "units": [
+    {
+      "unit_id": "case_facts",
+      "role": "facts",
+      "text": "가. 신청인은 2023. 4. 피신청인과 그룹 필라테스 수강계약(프로그램 종류: 그룹 필라테스 4개월(레슨 22회), 운동복/수건/헬스 회원권 포함, 시작일: 2023. 4. 24., 만료일: 2023. 8. 23., 이하 ‘이 사건 계약’)을 체결하고 653,400원을 지급하였다.\n- 이 사건 계약서의 ‘프로그램 종류’에는 “그룹 필라테스”란에 체크사항이 표시되어 있고, 하단에 “그룹 필라테스 4개월(레슨 22회), 운동복/수건/헬스 회원권 포함”이라고 기재되어 있다.\n- 신청인은 이 사건 계약 내용을 ‘그룹 필라테스 강습 22회’로 인지하였고, 헬스장 및 운동복 등을 이용한 사실이 없다고 한다.\n- 피신청인은 이 사건 계약 내용은 ‘그룹 필라테스’, ‘운동복’, ‘수건’, ‘헬스 회원권’이 모두 포함된 것이고, 위 서비스의 개별적 가격이 합산되어 이 사건 계약대금인 653,400원이 산정된 과정에 대하여는 계약 체결 당시 직원이 재직을 하고 있지 않아 확인이 불가하다고 한다.\n- 피신청인은 피신청인이 사용하는 전산 시스템상 횟수 변경이 자유롭지 않기에, 센터 회원들이 앱을 이용하여 직접 예약 가능한 횟수를 월 5회로 제한하고 있고, 센터 회원들이 유선으로 요청할 경우 추가로 1~2회 예약을 제공한다고 답변하였다.\n나. 2023. 6. 13. 피신청인은 그룹 필라테스 수업이 2023. 7. 31. 이후 폐강된다고 고지하였다.\n다. 2023. 6. 30.까지 신청인이 이 사건 계약에 따른 그룹 필라테스 9회를 이용하였다.\n라. 2023. 7. 14. 신청인과 피신청인 간에 문자로 이 사건 계약에 따른 그룹 필라테스의 1:1 필라테스로의 전환 및 환불에 대하여 상담이 이루어졌다.",
+      "source_label": "사건개요",
+      "source_locator": "HTML table row th=사건개요"
+    },
+    {
+      "unit_id": "case_party_claims",
+      "role": "party_claims",
+      "text": "신청인은 이 사건 계약 체결 당시 그룹 필라테스 22회권으로 안내받았고, 계약 내용이었던 그룹 필라테스 수업이 폐강되는 이유로 이 사건 계약을 해지하는 것이라며 이 사건 계약 잔여 횟수에 대한 환급을 요구한다.\n피신청인은 그룹 필라테스를 기간제로 판매하고 있고, 신청인은 2023. 7. 14. 그룹 필라테스 폐강을 이유로 환불을 요구하였으며, 2023. 7. 31. 이후부터는 그룹 필라테스 폐강으로 수업 진행이 어렵기 때문에 피신청인측 귀책사유로 여겨지나 그 이전 환불 요구는 신청인의 개인사유로 보아 3개월간의 계약대금에 대하여 위약금 10%가 발생한다고 주장한다.\n또한, 피신청인은 이 사건 계약은 그룹 필라테스 4개월, 653,400원에 체결되었고, 3개월 이용료 490,050원 및 3개월 계약기간에 대한 위약금 49,005원을 공제하고 114,345원이 환불 금액이나, 분쟁의 원만한 해결을 위하여 자체적으로 산정한 212,355원 환급이 가능하다고 주장한다.",
+      "source_label": "당사자주장",
+      "source_locator": "HTML table row th=당사자주장"
+    },
+    {
+      "unit_id": "case_reasoning",
+      "role": "reasoning",
+      "text": "필라테스 강습 이용대금에 대하여 살피건대, 이 사건 계약서의 ‘프로그램 종류’에는 “그룹 필라테스”란에 체크사항이 표시되어 있고, “그룹 필라테스 4개월(레슨 22회), 운동복/수건/헬스 회원권 포함”이라고 기재되어 있는 점, 이 사건 계약 대금인 653,400원에 위 서비스 대금이 구분되어 산정된 자료가 없는 점을 종합적으로 고려하면, 이 사건 계약의 주요 내용은 그룹 필라테스를 4개월간(2023. 4. 24.부터 2023. 8. 23.까지) 22회 이용하는 것으로 판단된다. 이 사건 계약서의 환불정산규정에는 “이용일수(할인가가 아닌 정상가로 책정, 5일 이상시 1개월 이용료로 책정)”, “1개월 필라테스 이용권 381,150원”이라고 정하고 있는데, 이러한 약관 조항은 계약의 해지로 인한 원상회복의무를 상당한 이유 없이 신청인에게 과중하게 부담시키는 조항으로 ？약관의 규제에 관한 법률？ 제9조 제4호에 따라 무효일 뿐 아니라, 신청인에게 해지로 발생하는 손실을 현저하게 초과하는 위약금을 청구하는 것에 해당하여 「방문판매법」 제32조를 위반하는 것으로 같은 법 제52조에 따라 효력이 없다고 판단된다.\n따라서, 이 사건 계약 해지에 따른 환급금액의 산정은「방문판매법」제32조 제4항에 따라 공정거래위원회가 제정·고시한 「계속거래 등의 해지·해제에 따른 위약금 및 대금의 환급에 관한 산정기준」(이하 ‘산정기준’)의 제5조 제1항 따라 산정하는 것이 적절하다.\n피신청인은 그룹 필라테스 수업 폐강일 이전 환불 요구는 신청인의 개인사유로 인한 계약해지로 위약금이 발생한다고 주장하나, 이 사건 계약 내용은 그룹 필라테스를 2023. 8. 23.까지 22회 이용하는 것이고, 2023. 6. 13. 피신청인이 신청인에게 이 사건 계약 내용인 그룹 필라테스 수업을 2023. 7. 31.까지만 진행한다고 고지하였으며, 신청인과 피신청인 간에 그룹 필라테스의 개인 필라테스로의 전환에 관하여 주고받은 문자 메시지 및 위 과정에서 합의점을 찾지 못하여 이 사건 계약 해지에 이르게 된 사정에 비추어 볼 때, 이 사건 계약 해지가 신청인의 사정에서 비롯되었다는 피신청인의 주장은 인정하기 어렵다. 다만, 이 사건 계약에 따른 그룹 필라테스는 2023. 7. 31.까지 진행될 예정이었고, 이 사건 계약해지가 2023. 7. 14.에 이루어진 점, 피신청인이 신청인에게 그룹 필라테스 수업을 개인 필라테스 수업으로 전환하여 이 사건 계약을 유지 할 것을 제안한 사정이 있는 점, 상호 양보와 이해를 통한 분쟁의 해결이라는 조정의 취지 등을 고려하여 이 사건 계약 해지에 따른 위약금은 서로 청구하지 않는 것으로 함이 적절하다고 판단된다.",
+      "source_label": "판단",
+      "source_locator": "HTML table row th=판단"
+    },
+    {
+      "unit_id": "case_decision",
+      "role": "decision",
+      "text": "이상을 종합하면, 「산정기준」에 따라 피신청인이 아래와 같이 산정된 환급금액 386,100원을 신청인에게 지급함이 타당하다.",
+      "source_label": "결정사항",
+      "source_locator": "HTML table row th=결정사항"
+    },
+    {
+      "unit_id": "case_cited_law",
+      "role": "cited_law",
+      "text": "방문판매 등에 관한 법률 제2조, 제9조, 제31조, 제32조, 제52조, 방문판매 등에 관한 법률 시행령 제13조, 계속거래 등의 해지·해제에 따른 위약금 및 대금의 환급에 관한 산정기준 제2조, 제3조, 제4조, 제5조",
+      "source_label": "관련법률",
+      "source_locator": "HTML table row th=관련법률"
+    }
+  ],
+  "embedding_candidate": true,
+  "needs_manual_review": false,
+  "publication_date": null,
+  "updated_date": "2024-10-14",
+  "decision_date": null,
+  "effective_date": null,
+  "warnings": [
+    "분쟁조정 사례이며 법원 판례가 아님. 게시 수정일을 결정일로 대체하지 않음.",
+    "사례 당시 사실관계·법령 적용에 따른 판단. 현행 일반 기준으로 단정하지 않음.",
+    "계약·해지 시점의 관련 조문 대조. 조정일은 확인되지 않아 null 유지.",
+    "폐강·양도 사례의 귀책사유·환급액·연 15% 지급 조건을 일반 계약에 자동 적용하지 않음.",
+    "2023년 조문과 수집본의 일치는 법령 전체 동일·최신 개정 전수 검증·개별 계약 적용 확정이 아님."
+  ],
+  "processed_at": "2026-10-11T07:18:21.694510+00:00",
+  "source_missing_fields": [],
+  "law_version_review": {
+    "source_id": "kca_case_1003739114",
+    "case_raw_file": "data/raw/consumer_sources/kca_case_1003739114_63d4b26cb7f7f468.html",
+    "case_raw_sha256": "63d4b26cb7f7f468a265fb52a4766d16427feda787ffb7eee42b7d410263a3ad",
+    "case_source_url": "https://www.kca.go.kr/odr/bj/br/osBjDecisionExamDetW.do?brdId=00000007&dataStts=Y&seq=1003739114",
+    "decision_date": null,
+    "events": [
+      {
+        "event": "contract",
+        "value": "2023-04",
+        "precision": "month",
+        "evidence_unit_id": "case_facts",
+        "evidence_start": 8,
+        "evidence_end": 16,
+        "evidence_text": "2023. 4.",
+        "law_versions": {
+          "방문판매 등에 관한 법률": "249019",
+          "방문판매 등에 관한 법률 시행령": "248655",
+          "방문판매 등에 관한 법률 시행규칙": "223955",
+          "약관의 규제에 관한 법률": "225063"
+        }
+      },
+      {
+        "event": "termination",
+        "value": "2023-07-14",
+        "precision": "day",
+        "evidence_unit_id": "case_reasoning",
+        "evidence_start": 1125,
+        "evidence_end": 1137,
+        "evidence_text": "2023. 7. 14.",
+        "law_versions": {
+          "방문판매 등에 관한 법률": "252407",
+          "방문판매 등에 관한 법률 시행령": "248655",
+          "방문판매 등에 관한 법률 시행규칙": "223955",
+          "약관의 규제에 관한 법률": "225063"
+        }
+      }
+    ],
+    "unit_text_sha256": {
+      "case_facts": "3b9ed9f7067da6a801bbe1761b137d1958d07ed0d56b3c66b9c6461d79a12cfa",
+      "case_party_claims": "9f27f750281f3005bc03d0d2d6206ae3c3f79a5d917d2b8e62a671b5045e808a",
+      "case_reasoning": "8d861076adbe9975144c62ecaf8f5fe29246ef2b079ec077ef8f3e3b1bf8c20a",
+      "case_decision": "268d124275bb3cd4da0407b054f84183a9362a8fe9b8f34e784f89454b53116b",
+      "case_cited_law": "6d017f2079ca2097006da4a92c8f11daf5cc2142e2bb9e73c44508c154fd28e3"
+    },
+    "comparison_status": "relevant_provisions_compared_at_documented_events",
+    "required_context_chunk_ids": [
+      "000354_290239_20261002_art_2_0_chunk_0000",
+      "000354_290239_20261002_art_2_0_chunk_0001",
+      "000354_290239_20261002_art_2_0_chunk_0002",
+      "000354_290239_20261002_art_31_0_chunk_0000",
+      "000354_290239_20261002_art_32_0_chunk_0000",
+      "000354_290239_20261002_art_52_0_chunk_0000",
+      "003572_286997_20260701_art_13_0_chunk_0000",
+      "003572_286997_20260701_art_40_0_chunk_0000",
+      "003572_286997_20260701_art_41_0_chunk_0000",
+      "007196_284567_20260317_art_22_0_chunk_0000"
+    ],
+    "supporting_law_context": "[시점 대조 참고 원문: 약관의 규제에 관한 법률 제9조 / 시행 2021-12-30 / https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=225063]\n제9조(계약의 해제ㆍ해지) 계약의 해제ㆍ해지에 관하여 정하고 있는 약관의 내용 중 다음 각 호의 어느 하나에 해당되는 내용을 정하고 있는 조항은 무효로 한다.\n1. 법률에 따른 고객의 해제권 또는 해지권을 배제하거나 그 행사를 제한하는 조항\n2. 사업자에게 법률에서 규정하고 있지 아니하는 해제권 또는 해지권을 부여하여 고객에게 부당하게 불이익을 줄 우려가 있는 조항\n3. 법률에 따른 사업자의 해제권 또는 해지권의 행사 요건을 완화하여 고객에게 부당하게 불이익을 줄 우려가 있는 조항\n4. 계약의 해제 또는 해지로 인한 원상회복의무를 상당한 이유 없이 고객에게 과중하게 부담시키거나 고객의 원상회복 청구권을 부당하게 포기하도록 하는 조항\n5. 계약의 해제 또는 해지로 인한 사업자의 원상회복의무나 손해배상의무를 부당하게 경감하는 조항\n6. 계속적인 채권관계의 발생을 목적으로 하는 계약에서 그 존속기간을 부당하게 단기 또는 장기로 하거나 묵시적인 기간의 연장 또는 갱신이 가능하도록 정하여 고객에게 부당하게 불이익을 줄 우려가 있는 조항",
+    "warnings": [
+      "계약·해지 시점의 관련 조문 대조. 조정일은 확인되지 않아 null 유지.",
+      "폐강·양도 사례의 귀책사유·환급액·연 15% 지급 조건을 일반 계약에 자동 적용하지 않음.",
+      "2023년 조문과 수집본의 일치는 법령 전체 동일·최신 개정 전수 검증·개별 계약 적용 확정이 아님."
+    ],
+    "review_record_file": "data/processed/consumer_sources/pilates_law_version_comparison_pmh.json",
+    "review_record_sha256": "8f712ed763d456b42b610544356c60133a45d3e3425daa82a572bf4befe10eac",
+    "law_sources": {
+      "237455": {
+        "raw_file": "data/raw/law_history/237455_20221208.json",
+        "raw_sha256": "30b78b989a54e3be3629430c992c2db91712de8898d67acabf8ada5e582000cf",
+        "law_name": "방문판매 등에 관한 법률",
+        "master_id": "237455",
+        "effective_date": "20221208",
+        "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=237455"
+      },
+      "249019": {
+        "raw_file": "data/raw/law_history/249019_20230321.json",
+        "raw_sha256": "ca2f3d6b394aa698d91a11f07a916dae4069e2f0197cd3e6a84c416b34b22e3d",
+        "law_name": "방문판매 등에 관한 법률",
+        "master_id": "249019",
+        "effective_date": "20230321",
+        "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=249019"
+      },
+      "252407": {
+        "raw_file": "data/raw/law_history/252407_20230711.json",
+        "raw_sha256": "ed9adb9aae28ecd0f4e4f79dee9551a7fd6e3a8407007cd6760a29a568a10505",
+        "law_name": "방문판매 등에 관한 법률",
+        "master_id": "252407",
+        "effective_date": "20230711",
+        "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=252407"
+      },
+      "246957": {
+        "raw_file": "data/raw/law_history/246957_20221227.json",
+        "raw_sha256": "86ff7c3ae27338b61ceccb92b67626019d8cf2e9e4d4bdc3e6dee4b4aa51acb1",
+        "law_name": "방문판매 등에 관한 법률 시행령",
+        "master_id": "246957",
+        "effective_date": "20221227",
+        "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=246957"
+      },
+      "248655": {
+        "raw_file": "data/raw/law_history/248655_20230307.json",
+        "raw_sha256": "382acffe3fa465973af6d43798debc5e85d214992a9e75e0a78a6f323199b396",
+        "law_name": "방문판매 등에 관한 법률 시행령",
+        "master_id": "248655",
+        "effective_date": "20230307",
+        "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=248655"
+      },
+      "223955": {
+        "raw_file": "data/raw/law_history/223955_20201204.json",
+        "raw_sha256": "736b783e32406fbc0d46f3e40d154bfe8bf7edee8c35683a5d802217251631a6",
+        "law_name": "방문판매 등에 관한 법률 시행규칙",
+        "master_id": "223955",
+        "effective_date": "20201204",
+        "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=223955"
+      },
+      "225063": {
+        "raw_file": "data/raw/law_history/225063_20211230.json",
+        "raw_sha256": "fb4e5710f84b07a1ef27ec96c850e30df9d21134ff98579b901ea2011e8c79ec",
+        "law_name": "약관의 규제에 관한 법률",
+        "master_id": "225063",
+        "effective_date": "20211230",
+        "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=225063"
+      },
+      "260021": {
+        "raw_file": "data/raw/law_history/260021_20240807.json",
+        "raw_sha256": "e9eb20f5c86befc82aaf008ce85ba2cc8723f62fcf059b9ebd42a96c08bb9161",
+        "law_name": "약관의 규제에 관한 법률",
+        "master_id": "260021",
+        "effective_date": "20240807",
+        "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=260021"
+      },
+      "290239": {
+        "raw_file": "data/raw/laws/000354_290239_20261002.json",
+        "raw_sha256": "88f7cc1dd03a0fc421f69ffd0e2186126fb5d99fcf6e7a570e2e0856ba6dc3bc",
+        "law_name": "방문판매 등에 관한 법률",
+        "master_id": "290239",
+        "effective_date": "20261002",
+        "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=290239"
+      },
+      "286997": {
+        "raw_file": "data/raw/laws/003572_286997_20260701.json",
+        "raw_sha256": "e5849da615e34eb625ffddb0f8a8535dfb189c6d8043235704204deac8c21cfd",
+        "law_name": "방문판매 등에 관한 법률 시행령",
+        "master_id": "286997",
+        "effective_date": "20260701",
+        "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=286997"
+      },
+      "284567": {
+        "raw_file": "data/raw/laws/007196_284567_20260317.json",
+        "raw_sha256": "ebbb435a4e84400c843f214d45420533b8a80ee8705e5c6be3fd136655dff51a",
+        "law_name": "방문판매 등에 관한 법률 시행규칙",
+        "master_id": "284567",
+        "effective_date": "20260317",
+        "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567"
+      }
+    },
+    "refund_notice": {
+      "source_id": "continual_contract_refund",
+      "raw_file": "data/raw/consumer_sources/continual_contract_refund_6b47303e7142fc41.xml",
+      "raw_sha256": "6b47303e7142fc41b1b0512c02d1b4ad56fa5311134fde4cc4bf974990fcf7d3",
+      "effective_date": "20191119",
+      "notice_number": "2019-9",
+      "status": "same_version_cited_by_case"
+    }
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "source_id": "kca_redress_submission",
+  "title": "한국소비자원 피해구제 접수 방법 및 증빙서류 안내",
+  "source_url": "https://www.kca.go.kr/odr/pg/ma/pgProcssInfo2.do",
+  "document_type": "official_guide",
+  "domain": "consumer",
+  "publisher": "한국소비자원",
+  "resolved_url": "https://www.kca.go.kr/odr/pg/ma/pgProcssInfo2.do",
+  "raw_file": "data/raw/consumer_sources/kca_redress_submission_c98aa847ed1f68d5.html",
+  "raw_sha256": "c98aa847ed1f68d56261e4fb49fcd06bc1c32a06e02f6cdab9bd9b7d4bc798c9",
+  "collected_at": "2026-10-11T05:39:31.405384+00:00",
+  "format": "html",
+  "schema_version": 1,
+  "units": [
+    {
+      "unit_id": "evidence",
+      "role": "application_evidence",
+      "text": "피해구제 신청은 피해구제 신청서를 다운로드 하여 작성 후 증빙서류 와 함께 아래의 방법으로 접수를 해주시기 바랍니다. 증빙서류 : 계약관련 근거자료(계약서, 영수증 등), 사업자에 이의를 제기한 서면, 전자문서 혹은 게시판 자료 사본(화면 캡처 또는 프린트) 등의 증빙자료 첨부 요망 피해구제신청서 양식",
+      "source_locator": "h4: 피해구제 접수 안내 > .cnsut_box",
+      "atomic": true,
+      "warnings": [],
+      "required_context_chunk_ids": [
+        "001589_283837_20260911_art_55_0_chunk_0000",
+        "001589_283837_20260911_art_57_0_chunk_0000",
+        "001589_283837_20260911_art_58_0_chunk_0000",
+        "003979_289451_20260911_art_44_0_chunk_0000",
+        "kca_damage_redress_procedure_redress_exclusions_0000"
+      ]
+    },
+    {
+      "unit_id": "online",
+      "role": "submission_method",
+      "text": "온라인신청 증빙서류를 첨부하여 온라인으로 피해구제 신청 할 수 있습니다. 소비자상담 을 통해 피해구제 절차를 안내받은 분 에 한하여 6개월 이내에 신청하는 경우에만 가능합니다. 온라인 신청 바로가기 소비자상담 바로가기",
+      "source_locator": ".step_txtbx > p.stepnum: 온라인신청",
+      "atomic": true,
+      "warnings": [
+        "6개월은 이 페이지의 온라인 신청 이용 조건. 일반적인 청구권 소멸시효 또는 모든 접수 방법의 기한으로 해석하지 않음."
+      ],
+      "required_context_chunk_ids": [
+        "001589_283837_20260911_art_55_0_chunk_0000",
+        "001589_283837_20260911_art_57_0_chunk_0000",
+        "001589_283837_20260911_art_58_0_chunk_0000",
+        "003979_289451_20260911_art_44_0_chunk_0000",
+        "kca_damage_redress_procedure_redress_exclusions_0000"
+      ]
+    },
+    {
+      "unit_id": "visit",
+      "role": "submission_method",
+      "text": "방문신청 피해구제 양식을 다운로드하여 작성하신 후, 증빙서류를 지참 하여 한국소비자원을 직접 방문 하여 신청할 수 있습니다.",
+      "source_locator": ".step_txtbx > p.stepnum: 방문신청",
+      "atomic": true,
+      "warnings": [
+        "방문·우편 주소와 접수 기능은 수집 후 변경될 수 있으므로 신청 전 원문 페이지에서 확인."
+      ],
+      "required_context_chunk_ids": [
+        "001589_283837_20260911_art_55_0_chunk_0000",
+        "001589_283837_20260911_art_57_0_chunk_0000",
+        "001589_283837_20260911_art_58_0_chunk_0000",
+        "003979_289451_20260911_art_44_0_chunk_0000",
+        "kca_damage_redress_procedure_redress_exclusions_0000"
+      ]
+    },
+    {
+      "unit_id": "postal",
+      "role": "submission_method",
+      "text": "우편신청 피해구제 양식을 다운로드하여 작성하신 후, 증빙서류를 첨부 하여 아래의 주소 로 보내주시기 바랍니다.",
+      "source_locator": ".step_txtbx > p.stepnum: 우편신청",
+      "atomic": true,
+      "warnings": [
+        "방문·우편 주소와 접수 기능은 수집 후 변경될 수 있으므로 신청 전 원문 페이지에서 확인."
+      ],
+      "required_context_chunk_ids": [
+        "001589_283837_20260911_art_55_0_chunk_0000",
+        "001589_283837_20260911_art_57_0_chunk_0000",
+        "001589_283837_20260911_art_58_0_chunk_0000",
+        "003979_289451_20260911_art_44_0_chunk_0000",
+        "kca_damage_redress_procedure_redress_exclusions_0000"
+      ]
+    },
+    {
+      "unit_id": "postal_address",
+      "role": "submission_address",
+      "text": "충청북도 음성군 맹동면 용두로 54 한국소비자원 6층 소비자상담팀(우편번호 27738) 일반우편 이용시 분실의 위험이 있사오니 가급적 등기우편을 이용하여 주시기 바랍니다. 단, 섬유·신발 은 아래의 주소로 보내주시기 바랍니다. - 섬유 : 경기도 수원시 영통구 에듀타운로 102 광교중앙역SK뷰 B동 301호 한국소비자원 경기인천지원 (우편번호 16509) - 신발 : 부산광역시 부산진구 황령대로 24 (부산상공회의소) 10층 한국소비자원 부산울산경남지원 (우편번호 47354)",
+      "source_locator": ".help_txt: 우편 접수 주소·섬유/신발 예외",
+      "atomic": true,
+      "warnings": [
+        "원문 수집 시점의 주소. 최신 접수 주소는 원문에서 재확인."
+      ],
+      "required_context_chunk_ids": [
+        "001589_283837_20260911_art_55_0_chunk_0000",
+        "001589_283837_20260911_art_57_0_chunk_0000",
+        "001589_283837_20260911_art_58_0_chunk_0000",
+        "003979_289451_20260911_art_44_0_chunk_0000",
+        "kca_damage_redress_procedure_redress_exclusions_0000"
+      ]
+    }
+  ],
+  "embedding_candidate": true,
+  "needs_manual_review": false,
+  "publication_date": null,
+  "updated_date": null,
+  "decision_date": null,
+  "effective_date": null,
+  "warnings": [
+    "공식 소비자 절차 안내이며 법령·판례가 아님. 연결한 소비자기본법·시행령은 수집 시점 현행본이며 안내의 작성 시점은 확인되지 않음. 법령 시행일은 연결 청크에서 확인.",
+    "피해구제 합의권고와 분쟁조정 성립의 효력은 다름. 접수·상담·조정 신청이 환급이나 강제집행을 보장하지 않음."
+  ],
+  "processed_at": "2026-10-11T07:18:42.696686+00:00",
+  "information_as_of": null,
+  "source_date_note": "페이지에 확인 가능한 작성·수정 기준일이 없어 null로 보존. 수집일을 안내 작성일이나 법령 시행일로 대체하지 않음.",
+  "scope_included": [
+    "h4: 피해구제 접수 안내 > .cnsut_box",
+    ".step_txtbx > p.stepnum: 온라인신청",
+    ".step_txtbx > p.stepnum: 방문신청",
+    ".step_txtbx > p.stepnum: 우편신청",
+    ".help_txt: 우편 접수 주소·섬유/신발 예외"
+  ],
+  "scope_excluded": [
+    {
+      "scope": "첨부 HWP/DOC 양식·필독사항·작성 예시 및 신청 화면/영상/절차도 이미지",
+      "reason": "링크 안내와 HTML 본문만 검토. 첨부 파일 내용·온라인 신청 기능은 미검증. 원본 HTML 보존"
+    },
+    {
+      "scope": "개인정보 안내·메뉴·푸터 및 알렛츠/티몬/위메프/해피머니 특정 사건 팝업",
+      "reason": "일반 절차 범위 밖. 특정 사건의 제출 조건·마감일을 일반 신청에 적용하지 않음"
+    }
+  ],
+  "guide_id": "kca_redress_submission"
+}

@@ -1,0 +1,63 @@
+{
+  "source_id": "kca_case_1003890245",
+  "title": "과대 광고한 가정용 온풍기 반품 후 환급 요구",
+  "document_type": "mediation_case",
+  "source_url": "https://www.kca.go.kr/odr/bj/br/osBjDecisionExamDetW.do?brdId=00000007&dataStts=Y&seq=1003890245",
+  "domain": "shopping_return",
+  "publisher": "한국소비자원",
+  "resolved_url": "https://www.kca.go.kr/odr/bj/br/osBjDecisionExamDetW.do?brdId=00000007&dataStts=Y&seq=1003890245",
+  "raw_file": "data/raw/consumer_sources/kca_case_1003890245_1814d21e1873b6f5.html",
+  "raw_sha256": "1814d21e1873b6f5568ee89f1f14489ad8bf8f3c24d2287d3f8c631efd840a77",
+  "collected_at": "2026-10-10T12:34:47.331155+00:00",
+  "format": "html",
+  "schema_version": 1,
+  "units": [
+    {
+      "unit_id": "case_facts",
+      "role": "facts",
+      "text": "□ 신청인은 2022. 10. 13. 피신청인 1이 운영하는 통신판매중개사이트에서 피신청인 2가 판매하는 가정용 온풍기(대금: 243,000원, 이하 ‘이 사건 제품’)를 구매함.\n□ 신청인은 하루 5시간 이용 시 월 15,000원 전기요금이 부과된다는 광고를 믿고 구매하였으나, 계약과 달리 이행된 제품에 대해 반품에 따른 대금 환급 및 전기요금 차액 배상을 요구함.\n□ ’22년 11월~ ’23년 1월까지 3개월간 신청인 자택에 발생한 전기요금은 아래와 같음.\n1. '22년 11월 청구: 75,280원{(사용기간: '22.10.5.~'22.11.4.), (당월 사용량: 393kWh, 전월 동월311kWh)\n2. '22년 12월 청구: 141,790원{(사용기간: '22.11.5.~'22.12.4.), (당월 사용량: 571kWh, 전월 동월269kWh)\n3. '23년 1월 청구: 200,450원{(사용기간: '22.12.5.~'23.1.4.), (당월 사용량: 746kWh, 전월 동월276kWh)",
+      "source_label": "사건개요",
+      "source_locator": "HTML table row th=사건개요"
+    },
+    {
+      "unit_id": "case_party_claims",
+      "role": "party_claims",
+      "text": "□ (신청인) 피신청인 2가 전기요금에 대해 과대광고를 했으므로 구매대금 환급 및 전기세 차액분 배상을 요구함.\n□ (피신청인 2) 이 사건 제품의 전력량을 1,400w로 표기하였고, 일 5시간, 30일 사용 시 전력량 210kw가 사용되고 이를 한전 전력계산기로 계산하면 15,000원 정도의 전기요금이 나오는 것을 확인하였으며, 사용 환경에 따라 요금이 달라질 수 있다고 안내하였으므로 신청인의 요구를 수용하기 어렵다고 주장함.",
+      "source_label": "당사자주장",
+      "source_locator": "HTML table row th=당사자주장"
+    },
+    {
+      "unit_id": "case_reasoning",
+      "role": "reasoning",
+      "text": "□ 피신청인 2는 이 사건 제품의 표시·광고에서 “초절전 난방비 하루 5시간 한달 사용시 15,000원” 등과 같이 전기세가 절약되는 내용을 강조하였으나, 15,000원의 요금은 주택용 고압, 5인 이상 가구 할인이 적용된 결과이고 일반적인 주택용 저압, 할인 적용 미대상인 경우를 적용해본 결과 29,850원으로 그 차이가 큰 점을 비추어 볼 때 신청인의 합리적인 구매 결정을 방해하였다고 볼 여지가 있는바, 이 사건 제품은 표시광고와 다르게 이행되었다고 판단됨.\n□ 통신판매업자는 이미 재화 등이 일부 사용되거나 일부 소비된 경우에 의하여 소비자가 얻은 이익 또는 그 재화 등의 공급에 든 비용에 상당하는 금액으로서 대통령령으로 정하는 범위의 금액을 소비자에게 청구할 수 있는데, 신청인이 이 사건 제품을 약 2개월 이상의 기간을 사용하여 발생한 이익이 있다고 판단되나, 신청인이 표시·광고와 다른 이 사건 제품을 사용함으로써 추가적으로 전기요금이 과다하게 발생한 사실을 고려하여 피신청인 2의 사용 이익에 대한 향후 청구와 신청인의 전기요금 배상 요구는 인정하지 않는 것으로 함.\n□ 피신청인 1은 통신판매중개업자로 이 사건 계약의 대금을 받은 자에 해당하므로 대금 환급과 관련한 의무의 이행에 대하여 연대하여 책임지는 것으로 결정함.",
+      "source_label": "판단",
+      "source_locator": "HTML table row th=판단"
+    },
+    {
+      "unit_id": "case_decision",
+      "role": "decision",
+      "text": "□ 피신청인 2는 자신의 비용부담으로 신청으로부터 이 사건 제품을 반환받고, 반환받은 날로부터 3영업일 이내에 피신청인 1, 2는 연대하여 신청인에게 243,000원을 지급하는 것으로 조정결정함.",
+      "source_label": "결정사항",
+      "source_locator": "HTML table row th=결정사항"
+    },
+    {
+      "unit_id": "case_cited_law",
+      "role": "cited_law",
+      "text": "전자상거래 등에서의 소비자보호에 관한 법률 제17조, 표시·광고의 공정화에 관한 법률 제3조, 제10조, 제11조, 상법 제54조, 부당한 표시·광고행위의 유형 및 기준 지정고시",
+      "source_label": "관련법률",
+      "source_locator": "HTML table row th=관련법률"
+    }
+  ],
+  "embedding_candidate": true,
+  "needs_manual_review": false,
+  "publication_date": null,
+  "updated_date": "2025-07-03",
+  "decision_date": null,
+  "effective_date": null,
+  "warnings": [
+    "분쟁조정 사례이며 법원 판례가 아님. 게시 수정일을 결정일로 대체하지 않음.",
+    "사례 당시 사실관계·법령 적용에 따른 판단. 현행 일반 기준으로 단정하지 않음."
+  ],
+  "processed_at": "2026-10-11T07:18:26.305568+00:00",
+  "source_missing_fields": []
+}
