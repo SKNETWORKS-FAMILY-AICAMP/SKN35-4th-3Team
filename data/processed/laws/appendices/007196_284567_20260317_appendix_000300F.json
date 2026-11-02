@@ -1,0 +1,53 @@
+{
+  "schema_version": 3,
+  "document_id": "007196_284567_20260317_appendix_000300F",
+  "title": "방문판매 등에 관한 법률 시행규칙",
+  "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000300F.pdf",
+  "raw_sha256": "55a6104b1c84e9e9ded27f9335e7d6e5147884366679932825c13e2c6f3106e5",
+  "units": [
+    {
+      "document_id": "007196_284567_20260317_appendix_000300F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000300F.pdf",
+      "raw_sha256": "55a6104b1c84e9e9ded27f9335e7d6e5147884366679932825c13e2c6f3106e5",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "unit_id": "007196_284567_20260317_appendix_000300F:p1:body",
+      "text": "■ 방문판매 등에 관한 법률 시행규칙 [별지 제3호서식]\n제 호\n전화권유판매업 신고증\n1. 상호\n2. 소재지\n3. 대표자의 성명\n4. 대표자의 생년월일(남ㆍ여)\n5. 전자우편주소\n「방문판매 등에 관한 법률 시행령」 제8조제3항 및 같은 법 시행규\n칙 제5조제2항에 따라 전화권유판매업을 신고하였음을 증명합니다.\n년 월 일\n공정거래위원회\n특별자치시장ㆍ특별자치도지사 직인\n시장ㆍ군수ㆍ구청장\n2210mm× 297mm[백상지 120g/㎡]",
+      "locator": "PDF 1페이지 / 1. 상호 > 2. 소재지 > 3. 대표자의 성명",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "pdf_body",
+      "removed_margin_lines": [],
+      "images": []
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "■ 방문판매 등에 관한 법률 시행규칙 [별지 제3호서식]\n제 호\n전화권유판매업 신고증\n1. 상호\n2. 소재지\n3. 대표자의 성명\n4. 대표자의 생년월일(남ㆍ여)\n5. 전자우편주소\n「방문판매 등에 관한 법률 시행령」 제8조제3항 및 같은 법 시행규\n칙 제5조제2항에 따라 전화권유판매업을 신고하였음을 증명합니다.\n년 월 일\n공정거래위원회\n특별자치시장ㆍ특별자치도지사 직인\n시장ㆍ군수ㆍ구청장\n2210mm× 297mm[백상지 120g/㎡]",
+      "body_text": "■ 방문판매 등에 관한 법률 시행규칙 [별지 제3호서식]\n제 호\n전화권유판매업 신고증\n1. 상호\n2. 소재지\n3. 대표자의 성명\n4. 대표자의 생년월일(남ㆍ여)\n5. 전자우편주소\n「방문판매 등에 관한 법률 시행령」 제8조제3항 및 같은 법 시행규\n칙 제5조제2항에 따라 전화권유판매업을 신고하였음을 증명합니다.\n년 월 일\n공정거래위원회\n특별자치시장ㆍ특별자치도지사 직인\n시장ㆍ군수ㆍ구청장\n2210mm× 297mm[백상지 120g/㎡]",
+      "tables": [],
+      "images": [],
+      "removed_margin_lines": []
+    }
+  ]
+}

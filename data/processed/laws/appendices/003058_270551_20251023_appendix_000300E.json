@@ -1,0 +1,158 @@
+{
+  "schema_version": 3,
+  "document_id": "003058_270551_20251023_appendix_000300E",
+  "title": "근로기준법 시행령",
+  "source_path": "data/raw/law_appendices/003058_270551_20251023_appendix_000300E.pdf",
+  "raw_sha256": "b6c249bb95d71b478d5289526d8d9f14d1311e2408977088d1b1d1479623d2fd",
+  "units": [
+    {
+      "document_id": "003058_270551_20251023_appendix_000300E",
+      "title": "근로기준법 시행령",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=270551",
+      "document_type": "law",
+      "domains": [
+        "labor_general"
+      ],
+      "dates": {
+        "effective_date": "2025-10-23",
+        "article_effective_date": "2025-10-23",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-10"
+      },
+      "source_path": "data/raw/law_appendices/003058_270551_20251023_appendix_000300E.pdf",
+      "raw_sha256": "b6c249bb95d71b478d5289526d8d9f14d1311e2408977088d1b1d1479623d2fd",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "unit_id": "003058_270551_20251023_appendix_000300E:p1:body",
+      "text": "■ 근로기준법 시행령 [별표 3] <개정 2021. 11. 19.>\n이행강제금의 부과기준(제13조 관련)\n※ 비고 : 구체적인 이행강제금의 금액은 위반행위의 종류에 따른 부과금액의\n범위에서 위반행위의 동기, 고의·과실 등 사용자의 귀책 정도, 구제명령 이행\n을 위한 노력의 정도, 구제명령을 이행하지 않은 기간, 해당 사업 또는 사업장\n에 상시 사용하는 근로자 수 등을 고려하여 결정한다.",
+      "locator": "PDF 1페이지",
+      "embedding_candidate": true,
+      "page_number": 1,
+      "content_type": "pdf_body",
+      "removed_margin_lines": [],
+      "images": []
+    },
+    {
+      "document_id": "003058_270551_20251023_appendix_000300E",
+      "title": "근로기준법 시행령",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=270551",
+      "document_type": "law",
+      "domains": [
+        "labor_general"
+      ],
+      "dates": {
+        "effective_date": "2025-10-23",
+        "article_effective_date": "2025-10-23",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-10"
+      },
+      "source_path": "data/raw/law_appendices/003058_270551_20251023_appendix_000300E.pdf",
+      "raw_sha256": "b6c249bb95d71b478d5289526d8d9f14d1311e2408977088d1b1d1479623d2fd",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "003058_270551_20251023_appendix_000300E:p1:table0",
+      "text": "위반행위 | 해당 법조문 | 금액\n정당한 이유 없는 해고에 대한 구제명령을 이\n행하지 않은 자 | 법 제33조\n제1항 | 500만원 이상\n3,000만원 이하\n정당한 이유 없는 휴직, 정직(停職)에 대한 구\n제명령을 이행하지 않은 자 | 법 제33조\n제1항 | 250만원 이상\n1,500만원 이하\n정당한 이유 없는 전직(轉職), 감봉에 대한 구\n제명령을 이행하지 않은 자 | 법 제33조\n제1항 | 200만원 이상\n750만원 이하\n정당한 이유 없는 그 밖의 징벌(懲罰)에 대한 구\n제명령을 이행하지 않은 자 | 법 제33조\n제1항 | 100만원 이상\n750만원 이하",
+      "locator": "PDF 1페이지 / 표 1",
+      "embedding_candidate": true,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          73.76,
+          127.65999999999997,
+          521.36,
+          331.198
+        ],
+        "rows": [
+          [
+            "위반행위",
+            "해당 법조문",
+            "금액"
+          ],
+          [
+            "정당한 이유 없는 해고에 대한 구제명령을 이\n행하지 않은 자",
+            "법 제33조\n제1항",
+            "500만원 이상\n3,000만원 이하"
+          ],
+          [
+            "정당한 이유 없는 휴직, 정직(停職)에 대한 구\n제명령을 이행하지 않은 자",
+            "법 제33조\n제1항",
+            "250만원 이상\n1,500만원 이하"
+          ],
+          [
+            "정당한 이유 없는 전직(轉職), 감봉에 대한 구\n제명령을 이행하지 않은 자",
+            "법 제33조\n제1항",
+            "200만원 이상\n750만원 이하"
+          ],
+          [
+            "정당한 이유 없는 그 밖의 징벌(懲罰)에 대한 구\n제명령을 이행하지 않은 자",
+            "법 제33조\n제1항",
+            "100만원 이상\n750만원 이하"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "■ 근로기준법 시행령 [별표 3] <개정 2021. 11. 19.>\n이행강제금의 부과기준(제13조 관련)\n위반행위 해당 법조문 금액\n정당한 이유 없는 해고에 대한 구제명령을 이 법 제33조 500만원 이상\n행하지 않은 자 제1항 3,000만원 이하\n정당한 이유 없는 휴직, 정직(停職)에 대한 구 법 제33조 250만원 이상\n제명령을 이행하지 않은 자 제1항 1,500만원 이하\n정당한 이유 없는 전직(轉職), 감봉에 대한 구 법 제33조 200만원 이상\n제명령을 이행하지 않은 자 제1항 750만원 이하\n정당한 이유 없는 그 밖의 징벌(懲罰)에 대한 구 법 제33조 100만원 이상\n제명령을 이행하지 않은 자 제1항 750만원 이하\n※ 비고 : 구체적인 이행강제금의 금액은 위반행위의 종류에 따른 부과금액의\n범위에서 위반행위의 동기, 고의·과실 등 사용자의 귀책 정도, 구제명령 이행\n을 위한 노력의 정도, 구제명령을 이행하지 않은 기간, 해당 사업 또는 사업장\n에 상시 사용하는 근로자 수 등을 고려하여 결정한다.",
+      "body_text": "■ 근로기준법 시행령 [별표 3] <개정 2021. 11. 19.>\n이행강제금의 부과기준(제13조 관련)\n※ 비고 : 구체적인 이행강제금의 금액은 위반행위의 종류에 따른 부과금액의\n범위에서 위반행위의 동기, 고의·과실 등 사용자의 귀책 정도, 구제명령 이행\n을 위한 노력의 정도, 구제명령을 이행하지 않은 기간, 해당 사업 또는 사업장\n에 상시 사용하는 근로자 수 등을 고려하여 결정한다.",
+      "tables": [
+        {
+          "bbox": [
+            73.76,
+            127.65999999999997,
+            521.36,
+            331.198
+          ],
+          "rows": [
+            [
+              "위반행위",
+              "해당 법조문",
+              "금액"
+            ],
+            [
+              "정당한 이유 없는 해고에 대한 구제명령을 이\n행하지 않은 자",
+              "법 제33조\n제1항",
+              "500만원 이상\n3,000만원 이하"
+            ],
+            [
+              "정당한 이유 없는 휴직, 정직(停職)에 대한 구\n제명령을 이행하지 않은 자",
+              "법 제33조\n제1항",
+              "250만원 이상\n1,500만원 이하"
+            ],
+            [
+              "정당한 이유 없는 전직(轉職), 감봉에 대한 구\n제명령을 이행하지 않은 자",
+              "법 제33조\n제1항",
+              "200만원 이상\n750만원 이하"
+            ],
+            [
+              "정당한 이유 없는 그 밖의 징벌(懲罰)에 대한 구\n제명령을 이행하지 않은 자",
+              "법 제33조\n제1항",
+              "100만원 이상\n750만원 이하"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        }
+      ],
+      "images": [],
+      "removed_margin_lines": []
+    }
+  ]
+}

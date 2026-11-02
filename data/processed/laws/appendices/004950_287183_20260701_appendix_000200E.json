@@ -1,0 +1,219 @@
+{
+  "schema_version": 3,
+  "document_id": "004950_287183_20260701_appendix_000200E",
+  "title": "주택임대차보호법 시행령",
+  "source_path": "data/raw/law_appendices/004950_287183_20260701_appendix_000200E.pdf",
+  "raw_sha256": "609d4b47f2a694e32e8343782748a117f09c89b3c01227f40fdaed40a9e1c5c7",
+  "units": [
+    {
+      "document_id": "004950_287183_20260701_appendix_000200E",
+      "title": "주택임대차보호법 시행령",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=287183",
+      "document_type": "law",
+      "domains": [
+        "housing_lease"
+      ],
+      "dates": {
+        "effective_date": "2026-07-01",
+        "article_effective_date": "2026-07-01",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/004950_287183_20260701_appendix_000200E.pdf",
+      "raw_sha256": "609d4b47f2a694e32e8343782748a117f09c89b3c01227f40fdaed40a9e1c5c7",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "unit_id": "004950_287183_20260701_appendix_000200E:p1:body",
+      "text": "■ 주택임대차보호법 시행령 [별표 2]\n수수료(제33조제1항 관련)\n비고\n※ 조정목적의 값을 산정할 수 없는 경우 신청인이 내야 하는 수수료는 1만원으\n로 한다.",
+      "locator": "PDF 1페이지",
+      "embedding_candidate": true,
+      "page_number": 1,
+      "content_type": "pdf_body",
+      "removed_margin_lines": [],
+      "images": []
+    },
+    {
+      "document_id": "004950_287183_20260701_appendix_000200E",
+      "title": "주택임대차보호법 시행령",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=287183",
+      "document_type": "law",
+      "domains": [
+        "housing_lease"
+      ],
+      "dates": {
+        "effective_date": "2026-07-01",
+        "article_effective_date": "2026-07-01",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/004950_287183_20260701_appendix_000200E.pdf",
+      "raw_sha256": "609d4b47f2a694e32e8343782748a117f09c89b3c01227f40fdaed40a9e1c5c7",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "004950_287183_20260701_appendix_000200E:p1:table0",
+      "text": "<신설 2017. 5. 29. | >",
+      "locator": "PDF 1페이지 / 표 1",
+      "embedding_candidate": true,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          219.602,
+          56.577999999999975,
+          309.074,
+          65.56799999999998
+        ],
+        "rows": [
+          [
+            "<신설 2017. 5. 29.",
+            ">"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    },
+    {
+      "document_id": "004950_287183_20260701_appendix_000200E",
+      "title": "주택임대차보호법 시행령",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=287183",
+      "document_type": "law",
+      "domains": [
+        "housing_lease"
+      ],
+      "dates": {
+        "effective_date": "2026-07-01",
+        "article_effective_date": "2026-07-01",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/004950_287183_20260701_appendix_000200E.pdf",
+      "raw_sha256": "609d4b47f2a694e32e8343782748a117f09c89b3c01227f40fdaed40a9e1c5c7",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "004950_287183_20260701_appendix_000200E:p1:table1",
+      "text": "조정목적의 값 | 수수료\n1억원 미만 | 10,000원\n1억원 이상 3억원 미만 | 20,000원\n3억원 이상 5억원 미만 | 30,000원\n5억원 이상 10억원 미만 | 50,000원\n10억원 이상 | 100,000원",
+      "locator": "PDF 1페이지 / 표 2",
+      "embedding_candidate": true,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          58.049,
+          113.995,
+          514.163,
+          327.24199999999996
+        ],
+        "rows": [
+          [
+            "조정목적의 값",
+            "수수료"
+          ],
+          [
+            "1억원 미만",
+            "10,000원"
+          ],
+          [
+            "1억원 이상 3억원 미만",
+            "20,000원"
+          ],
+          [
+            "3억원 이상 5억원 미만",
+            "30,000원"
+          ],
+          [
+            "5억원 이상 10억원 미만",
+            "50,000원"
+          ],
+          [
+            "10억원 이상",
+            "100,000원"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "■ 주택임대차보호법 시행령 [별표 2] <신설 2017. 5. 29.>\n수수료(제33조제1항 관련)\n조정목적의 값 수수료\n1억원 미만 10,000원\n1억원 이상 3억원 미만 20,000원\n3억원 이상 5억원 미만 30,000원\n5억원 이상 10억원 미만 50,000원\n10억원 이상 100,000원\n비고\n※ 조정목적의 값을 산정할 수 없는 경우 신청인이 내야 하는 수수료는 1만원으\n로 한다.",
+      "body_text": "■ 주택임대차보호법 시행령 [별표 2]\n수수료(제33조제1항 관련)\n비고\n※ 조정목적의 값을 산정할 수 없는 경우 신청인이 내야 하는 수수료는 1만원으\n로 한다.",
+      "tables": [
+        {
+          "bbox": [
+            219.602,
+            56.577999999999975,
+            309.074,
+            65.56799999999998
+          ],
+          "rows": [
+            [
+              "<신설 2017. 5. 29.",
+              ">"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        },
+        {
+          "bbox": [
+            58.049,
+            113.995,
+            514.163,
+            327.24199999999996
+          ],
+          "rows": [
+            [
+              "조정목적의 값",
+              "수수료"
+            ],
+            [
+              "1억원 미만",
+              "10,000원"
+            ],
+            [
+              "1억원 이상 3억원 미만",
+              "20,000원"
+            ],
+            [
+              "3억원 이상 5억원 미만",
+              "30,000원"
+            ],
+            [
+              "5억원 이상 10억원 미만",
+              "50,000원"
+            ],
+            [
+              "10억원 이상",
+              "100,000원"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        }
+      ],
+      "images": [],
+      "removed_margin_lines": []
+    }
+  ]
+}

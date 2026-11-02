@@ -1,0 +1,124 @@
+{
+  "schema_version": 3,
+  "document_id": "008480_282351_20260102_appendix_000300E",
+  "title": "최저임금법 시행규칙",
+  "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000300E.pdf",
+  "raw_sha256": "bd82bb88449dbc87b70ef9e0cf207933d2314942a572a6a7bfae3019c4dd4d8e",
+  "units": [
+    {
+      "document_id": "008480_282351_20260102_appendix_000300E",
+      "title": "최저임금법 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=282351",
+      "document_type": "law",
+      "domains": [
+        "labor_wage"
+      ],
+      "dates": {
+        "effective_date": "2026-01-02",
+        "article_effective_date": "2026-01-02",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000300E.pdf",
+      "raw_sha256": "bd82bb88449dbc87b70ef9e0cf207933d2314942a572a6a7bfae3019c4dd4d8e",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "unit_id": "008480_282351_20260102_appendix_000300E:p1:body",
+      "text": "[별표 3] <개정 2011.12.19>\n최저임금 적용 제외의 인가 기준(제3조제1항 관련)",
+      "locator": "PDF 1페이지",
+      "embedding_candidate": true,
+      "page_number": 1,
+      "content_type": "pdf_body",
+      "removed_margin_lines": [],
+      "images": []
+    },
+    {
+      "document_id": "008480_282351_20260102_appendix_000300E",
+      "title": "최저임금법 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=282351",
+      "document_type": "law",
+      "domains": [
+        "labor_wage"
+      ],
+      "dates": {
+        "effective_date": "2026-01-02",
+        "article_effective_date": "2026-01-02",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000300E.pdf",
+      "raw_sha256": "bd82bb88449dbc87b70ef9e0cf207933d2314942a572a6a7bfae3019c4dd4d8e",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "008480_282351_20260102_appendix_000300E:p1:table0",
+      "text": "구 분 | 인 가 기 준\n근로자의 정신 또는 신체의 장\n애가 그 근로자를 종사시키려는\n업무를 수행하는 데에 직접적으\n로 현저한 지장을 주는 것이 명\n백하다고 인정되는 사람 | 1. 정신 또는 신체 장애인으로서 담당하는 업\n무를 수행하는 경우에 그 정신 또는 신체의\n장애로 같거나 유사한 직종에서 최저임금을\n받는 다른 근로자 중 가장 낮은 근로능력자\n의 평균작업능력에도 미치지 못하는 사람(작\n업능력은 「장애인고용촉진 및 직업재활법」\n제43조에 따른 한국장애인고용공단의 의견을\n들어 판단하여야 한다)을 말한다.\n2. 인가기간은 1년을 초과할 수 없다.",
+      "locator": "PDF 1페이지 / 표 1",
+      "embedding_candidate": true,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          72.321,
+          153.07299999999998,
+          519.92,
+          372.313
+        ],
+        "rows": [
+          [
+            "구 분",
+            "인 가 기 준"
+          ],
+          [
+            "근로자의 정신 또는 신체의 장\n애가 그 근로자를 종사시키려는\n업무를 수행하는 데에 직접적으\n로 현저한 지장을 주는 것이 명\n백하다고 인정되는 사람",
+            "1. 정신 또는 신체 장애인으로서 담당하는 업\n무를 수행하는 경우에 그 정신 또는 신체의\n장애로 같거나 유사한 직종에서 최저임금을\n받는 다른 근로자 중 가장 낮은 근로능력자\n의 평균작업능력에도 미치지 못하는 사람(작\n업능력은 「장애인고용촉진 및 직업재활법」\n제43조에 따른 한국장애인고용공단의 의견을\n들어 판단하여야 한다)을 말한다.\n2. 인가기간은 1년을 초과할 수 없다."
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "[별표 3] <개정 2011.12.19>\n최저임금 적용 제외의 인가 기준(제3조제1항 관련)\n구 분 인 가 기 준\n1. 정신 또는 신체 장애인으로서 담당하는 업\n무를 수행하는 경우에 그 정신 또는 신체의\n근로자의 정신 또는 신체의 장 장애로 같거나 유사한 직종에서 최저임금을\n애가 그 근로자를 종사시키려는 받는 다른 근로자 중 가장 낮은 근로능력자\n업무를 수행하는 데에 직접적으 의 평균작업능력에도 미치지 못하는 사람(작\n로 현저한 지장을 주는 것이 명 업능력은 「장애인고용촉진 및 직업재활법」\n백하다고 인정되는 사람 제43조에 따른 한국장애인고용공단의 의견을\n들어 판단하여야 한다)을 말한다.\n2. 인가기간은 1년을 초과할 수 없다.",
+      "body_text": "[별표 3] <개정 2011.12.19>\n최저임금 적용 제외의 인가 기준(제3조제1항 관련)",
+      "tables": [
+        {
+          "bbox": [
+            72.321,
+            153.07299999999998,
+            519.92,
+            372.313
+          ],
+          "rows": [
+            [
+              "구 분",
+              "인 가 기 준"
+            ],
+            [
+              "근로자의 정신 또는 신체의 장\n애가 그 근로자를 종사시키려는\n업무를 수행하는 데에 직접적으\n로 현저한 지장을 주는 것이 명\n백하다고 인정되는 사람",
+              "1. 정신 또는 신체 장애인으로서 담당하는 업\n무를 수행하는 경우에 그 정신 또는 신체의\n장애로 같거나 유사한 직종에서 최저임금을\n받는 다른 근로자 중 가장 낮은 근로능력자\n의 평균작업능력에도 미치지 못하는 사람(작\n업능력은 「장애인고용촉진 및 직업재활법」\n제43조에 따른 한국장애인고용공단의 의견을\n들어 판단하여야 한다)을 말한다.\n2. 인가기간은 1년을 초과할 수 없다."
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        }
+      ],
+      "images": [],
+      "removed_margin_lines": []
+    }
+  ]
+}

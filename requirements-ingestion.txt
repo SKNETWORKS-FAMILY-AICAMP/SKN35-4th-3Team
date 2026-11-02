@@ -1,0 +1,3 @@
+# Optional raw-document ingestion dependencies (separate from Django runtime).
+pdfplumber==0.11.9
+lxml==6.1.1

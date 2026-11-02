@@ -1,0 +1,5373 @@
+{
+  "preprocessing_mode": "raw_extraction",
+  "raw_reextraction_performed": true,
+  "old_processed_body_text_used": false,
+  "ocr_performed": false,
+  "raw_file_count": 125,
+  "file_status_counts": {
+    "extracted": 124,
+    "metadata_or_index_only": 1
+  },
+  "parent_count": 3703,
+  "size_chars": 900,
+  "overlap_chars": 100,
+  "new": {
+    "count": 4294,
+    "min_chars": 5,
+    "median_chars": 217,
+    "p95_chars": 883,
+    "max_chars": 900,
+    "under_100_chars": 927,
+    "over_2000_chars": 0,
+    "max_embedding_chars": 1109
+  },
+  "old": {
+    "count": 3963,
+    "min_chars": 5,
+    "median_chars": 191,
+    "p95_chars": 1153,
+    "max_chars": 14573,
+    "under_100_chars": 939,
+    "over_2000_chars": 19,
+    "max_embedding_chars": 8905
+  },
+  "exclusions": [
+    {
+      "source_path": "data/raw/consumer_sources/consumer_dispute_standard_appendix_2_efd94a7a06c489da.pdf",
+      "unit_id": "consumer_dispute_standard_appendix_2_efd94a7a06c489da:p2:body",
+      "reason": "empty_or_image_only"
+    },
+    {
+      "source_path": "data/raw/consumer_sources/consumer_dispute_standard_appendix_2_efd94a7a06c489da.pdf",
+      "unit_id": "consumer_dispute_standard_appendix_2_efd94a7a06c489da:p3:body",
+      "reason": "empty_or_image_only"
+    },
+    {
+      "source_path": "data/raw/consumer_sources/minimum_wage_2026_c0a8b9413dbfebc6.xml",
+      "unit_id": "minimum_wage_2026:article0",
+      "reason": "empty_or_image_only"
+    },
+    {
+      "source_path": "data/raw/consumer_sources/minimum_wage_2026_c0a8b9413dbfebc6.xml",
+      "unit_id": "minimum_wage_2026:supplement0",
+      "reason": "empty_or_image_only"
+    },
+    {
+      "source_path": "data/raw/guides/[pdf]인터넷 쇼핑.pdf",
+      "unit_id": "guide_383b62bce56bf1ce:p1:body",
+      "reason": "cover_or_toc"
+    },
+    {
+      "source_path": "data/raw/guides/[pdf]인터넷 쇼핑.pdf",
+      "unit_id": "guide_383b62bce56bf1ce:p3:body",
+      "reason": "cover_or_toc"
+    },
+    {
+      "source_path": "data/raw/guides/[pdf]주택임대차.pdf",
+      "unit_id": "guide_23ffe4c8fd5715cb:p1:body",
+      "reason": "cover_or_toc"
+    },
+    {
+      "source_path": "data/raw/guides/[pdf]주택임대차.pdf",
+      "unit_id": "guide_23ffe4c8fd5715cb:p3:body",
+      "reason": "cover_or_toc"
+    },
+    {
+      "source_path": "data/raw/guides/[pdf]주택임대차.pdf",
+      "unit_id": "guide_23ffe4c8fd5715cb:p4:body",
+      "reason": "cover_or_toc"
+    },
+    {
+      "source_path": "data/raw/guides/[pdf]주택임대차.pdf",
+      "unit_id": "guide_23ffe4c8fd5715cb:p69:body",
+      "reason": "image_layout_review_required"
+    },
+    {
+      "source_path": "data/raw/guides/[pdf]해고근로자.pdf",
+      "unit_id": "guide_cad7b1de1e4dc64c:p1:body",
+      "reason": "cover_or_toc"
+    },
+    {
+      "source_path": "data/raw/guides/[pdf]해고근로자.pdf",
+      "unit_id": "guide_cad7b1de1e4dc64c:p3:body",
+      "reason": "cover_or_toc"
+    },
+    {
+      "source_path": "data/raw/guides/[pdf]해고근로자.pdf",
+      "unit_id": "guide_cad7b1de1e4dc64c:p4:body",
+      "reason": "cover_or_toc"
+    },
+    {
+      "source_path": "data/raw/guides/[pdf]해고근로자.pdf",
+      "unit_id": "guide_cad7b1de1e4dc64c:p44:body",
+      "reason": "image_layout_review_required"
+    },
+    {
+      "source_path": "data/raw/guides/[pdf]해고근로자.pdf",
+      "unit_id": "guide_cad7b1de1e4dc64c:p66:body",
+      "reason": "image_layout_review_required"
+    },
+    {
+      "source_path": "data/raw/guides/[pdf]해고근로자.pdf",
+      "unit_id": "guide_cad7b1de1e4dc64c:p70:body",
+      "reason": "image_layout_review_required"
+    },
+    {
+      "source_path": "data/raw/guides/[pdf]해고근로자.pdf",
+      "unit_id": "guide_cad7b1de1e4dc64c:p79:body",
+      "reason": "image_layout_review_required"
+    },
+    {
+      "source_path": "data/raw/law_appendices/003979_289451_20260911_appendix_000100F.pdf",
+      "unit_id": "003979_289451_20260911_appendix_000100F:p1:body",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/003979_289451_20260911_appendix_000100F.pdf",
+      "unit_id": "003979_289451_20260911_appendix_000100F:p1:table0",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/003979_289451_20260911_appendix_000100F.pdf",
+      "unit_id": "003979_289451_20260911_appendix_000100F:p1:table1",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/003979_289451_20260911_appendix_000100F.pdf",
+      "unit_id": "003979_289451_20260911_appendix_000100F:p1:table2",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/003979_289451_20260911_appendix_000100F.pdf",
+      "unit_id": "003979_289451_20260911_appendix_000100F:p1:table3",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/003979_289451_20260911_appendix_000200F.pdf",
+      "unit_id": "003979_289451_20260911_appendix_000200F:p1:body",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/003979_289451_20260911_appendix_000200F.pdf",
+      "unit_id": "003979_289451_20260911_appendix_000200F:p1:table0",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/003979_289451_20260911_appendix_000300F.pdf",
+      "unit_id": "003979_289451_20260911_appendix_000300F:p1:body",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/003979_289451_20260911_appendix_000300F.pdf",
+      "unit_id": "003979_289451_20260911_appendix_000300F:p1:table0",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/003979_289451_20260911_appendix_000300F.pdf",
+      "unit_id": "003979_289451_20260911_appendix_000300F:p1:table1",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000100F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000100F:p1:body",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000100F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000100F:p1:table0",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000100F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000100F:p1:table1",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000100F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000100F:p1:table2",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000100F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000100F:p1:table3",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000200F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000200F:p1:body",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000300F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000300F:p1:body",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000302F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000302F:p1:body",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000302F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000302F:p1:table0",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000302F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000302F:p1:table1",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000302F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000302F:p1:table2",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000400F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000400F:p1:body",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000400F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000400F:p1:table0",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000400F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000400F:p1:table1",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000400F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000400F:p1:table2",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000400F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000400F:p1:table3",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000500F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000500F:p1:body",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000500F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000500F:p1:table0",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000500F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000500F:p1:table1",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000500F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000500F:p1:table2",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000500F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000500F:p1:table3",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000500F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000500F:p1:table4",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000600F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000600F:p1:body",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000600F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000600F:p1:table0",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000700F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000700F:p1:body",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000700F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000700F:p1:table0",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000700F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000700F:p1:table1",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000700F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000700F:p1:table2",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000700F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000700F:p1:table3",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000800F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000800F:p1:body",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000800F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000800F:p2:body",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000800F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000800F:p2:table0",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000900F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000900F:p1:body",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000900F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000900F:p2:body",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000900F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_000900F:p2:table0",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001000F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_001000F:p1:body",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001000F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_001000F:p1:table0",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001000F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_001000F:p1:table1",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001000F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_001000F:p1:table2",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001000F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_001000F:p1:table3",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001100F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_001100F:p1:body",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001100F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_001100F:p1:table0",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001100F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_001100F:p1:table1",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001100F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_001100F:p1:table2",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001100F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_001100F:p1:table3",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001100F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_001100F:p1:table4",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001200F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_001200F:p1:body",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001200F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_001200F:p1:table0",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001200F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_001200F:p2:body",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001200F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_001200F:p2:table0",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001300F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_001300F:p1:body",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001300F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_001300F:p1:table0",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001300F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_001300F:p1:table1",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001300F.pdf",
+      "unit_id": "007196_284567_20260317_appendix_001300F:p1:table2",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000100F.pdf",
+      "unit_id": "008480_282351_20260102_appendix_000100F:p1:body",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000100F.pdf",
+      "unit_id": "008480_282351_20260102_appendix_000100F:p1:table0",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000100F.pdf",
+      "unit_id": "008480_282351_20260102_appendix_000100F:p1:table1",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000100F.pdf",
+      "unit_id": "008480_282351_20260102_appendix_000100F:p1:table2",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000100F.pdf",
+      "unit_id": "008480_282351_20260102_appendix_000100F:p1:table3",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000100F.pdf",
+      "unit_id": "008480_282351_20260102_appendix_000100F:p2:body",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000200F.pdf",
+      "unit_id": "008480_282351_20260102_appendix_000200F:p1:body",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000200F.pdf",
+      "unit_id": "008480_282351_20260102_appendix_000200F:p1:table0",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000200F.pdf",
+      "unit_id": "008480_282351_20260102_appendix_000200F:p1:table1",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000300F.pdf",
+      "unit_id": "008480_282351_20260102_appendix_000300F:p1:body",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000400F.pdf",
+      "unit_id": "008480_282351_20260102_appendix_000400F:p1:body",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000500F.pdf",
+      "unit_id": "008480_282351_20260102_appendix_000500F:p1:body",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000600F.pdf",
+      "unit_id": "008480_282351_20260102_appendix_000600F:p1:body",
+      "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/009325_272631_20250712_appendix_000000E.pdf",
+      "unit_id": "009325_272631_20250712_appendix_000000E:p1:body",
+      "reason": "empty_or_image_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/009325_272631_20250712_appendix_000000E.pdf",
+      "unit_id": "009325_272631_20250712_appendix_000000E:p2:body",
+      "reason": "empty_or_image_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/009338_288143_20260721_appendix_000300E.pdf",
+      "unit_id": "009338_288143_20260721_appendix_000300E:p2:body",
+      "reason": "empty_or_image_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/009338_288143_20260721_appendix_000300E.pdf",
+      "unit_id": "009338_288143_20260721_appendix_000300E:p4:body",
+      "reason": "empty_or_image_only"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:article0",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:article1",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:article2",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:article3",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:article4",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:article5",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:article6",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:article7",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:article8",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:article9",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:article10",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:article11",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:article12",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:article13",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:article14",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:article15",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:article16",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:article17",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:article18",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:article19",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:article20",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:article21",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:article22",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:article23",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:article24",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:article25",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:supplement0",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:supplement1",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:supplement2",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:supplement3",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:supplement4",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:supplement5",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:appendix0",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:appendix1",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:appendix2",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:appendix3",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:appendix4",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:appendix5",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:appendix6",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:appendix7",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:appendix8",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:appendix9",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:appendix10",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:appendix11",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:appendix12",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/223955_20201204.json",
+      "unit_id": "223955_20201204:appendix13",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article1",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article2",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article3",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article4",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article5",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article7",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article8",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article9",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article10",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article11",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article12",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article13",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article14",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article15",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article16",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article17",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article19",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article20",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article21",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article22",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article23",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article24",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article25",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article26",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article27",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article28",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article30",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article31",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article32",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article33",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article34",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article35",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article36",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article37",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article38",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article40",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article41",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article42",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article43",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article45",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article46",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:article47",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:supplement0",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:supplement1",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:supplement2",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:supplement3",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:supplement4",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:supplement5",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:supplement6",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:supplement7",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:supplement8",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:supplement9",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:supplement10",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:supplement11",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:supplement12",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:supplement13",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:supplement14",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:supplement15",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/225063_20211230.json",
+      "unit_id": "225063_20211230:supplement16",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article1",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article2",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article3",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article4",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article6",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article7",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article8",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article9",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article10",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article11",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article12",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article13",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article14",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article16",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article17",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article18",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article19",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article20",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article21",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article22",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article23",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article24",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article25",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article26",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article27",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article28",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article29",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article30",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article31",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article32",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article34",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article35",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article36",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article37",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article38",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article40",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article41",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article42",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article43",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article44",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article45",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article46",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article47",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article49",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article50",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article51",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article52",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article53",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article54",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article55",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article57",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article58",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article59",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article60",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article62",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article63",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article64",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article65",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article66",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article67",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article69",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article70",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article71",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article72",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article73",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article74",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article75",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article76",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article77",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:article78",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:supplement0",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:supplement1",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:supplement2",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:supplement3",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:supplement4",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:supplement5",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:supplement6",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:supplement7",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:supplement8",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:supplement9",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/237455_20221208.json",
+      "unit_id": "237455_20221208:supplement10",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article1",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article2",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article3",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article4",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article5",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article6",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article8",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article9",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article10",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article11",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article12",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article13",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article14",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article15",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article16",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article17",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article18",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article19",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article20",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article22",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article23",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article24",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article25",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article26",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article27",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article28",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article29",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article30",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article31",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article32",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article33",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article34",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article35",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article36",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article37",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article38",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article40",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article41",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article42",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article43",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article44",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article45",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article47",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article48",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article49",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article50",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article51",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article52",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article53",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article54",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article55",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article57",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article58",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article59",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article60",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article61",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article62",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article64",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article65",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article66",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article67",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article68",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article69",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article70",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article71",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article73",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article74",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article75",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:article77",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:supplement0",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:supplement1",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:supplement2",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:supplement3",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:supplement4",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:supplement5",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:supplement6",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:supplement7",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:supplement8",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:supplement9",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:supplement10",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:supplement11",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:supplement12",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:supplement13",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:supplement14",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:supplement15",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:supplement16",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:supplement17",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:supplement18",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:supplement19",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:supplement20",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:appendix0",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:appendix1",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:appendix2",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/246957_20221227.json",
+      "unit_id": "246957_20221227:appendix3",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article1",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article2",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article3",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article4",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article5",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article6",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article8",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article9",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article10",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article11",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article12",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article13",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article14",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article15",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article16",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article17",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article18",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article19",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article20",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article22",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article23",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article24",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article25",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article26",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article27",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article28",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article29",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article30",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article31",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article32",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article33",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article34",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article35",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article36",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article37",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article38",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article40",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article41",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article42",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article43",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article44",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article45",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article47",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article48",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article49",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article50",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article51",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article52",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article53",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article54",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article55",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article57",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article58",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article59",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article60",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article61",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article62",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article64",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article65",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article66",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article67",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article68",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article69",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article70",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article71",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article73",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article74",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article75",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:article77",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:supplement0",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:supplement1",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:supplement2",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:supplement3",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:supplement4",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:supplement5",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:supplement6",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:supplement7",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:supplement8",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:supplement9",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:supplement10",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:supplement11",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:supplement12",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:supplement13",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:supplement14",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:supplement15",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:supplement16",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:supplement17",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:supplement18",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:supplement19",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:supplement20",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:supplement21",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:appendix0",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:appendix1",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:appendix2",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/248655_20230307.json",
+      "unit_id": "248655_20230307:appendix3",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article1",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article2",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article3",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article4",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article6",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article7",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article8",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article9",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article10",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article11",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article12",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article13",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article14",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article16",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article17",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article18",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article19",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article20",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article21",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article22",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article23",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article24",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article25",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article26",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article27",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article28",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article29",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article30",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article31",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article32",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article34",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article35",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article36",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article37",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article38",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article40",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article41",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article42",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article43",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article44",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article45",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article46",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article47",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article49",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article50",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article51",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article52",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article53",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article54",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article55",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article57",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article58",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article59",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article60",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article61",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article62",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article63",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article64",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article66",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article67",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article68",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article69",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article70",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article71",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article73",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article74",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article75",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article76",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article77",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article78",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article79",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article80",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article81",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:article82",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:supplement0",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:supplement1",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:supplement2",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:supplement3",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:supplement4",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:supplement5",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:supplement6",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:supplement7",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:supplement8",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:supplement9",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:supplement10",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:supplement11",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/249019_20230321.json",
+      "unit_id": "249019_20230321:supplement12",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article1",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article2",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article3",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article4",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article6",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article7",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article8",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article9",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article10",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article11",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article12",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article13",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article14",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article16",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article17",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article18",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article19",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article20",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article21",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article22",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article23",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article24",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article25",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article26",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article27",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article28",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article29",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article30",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article31",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article32",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article34",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article35",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article36",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article37",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article38",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article40",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article41",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article42",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article43",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article44",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article45",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article46",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article47",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article49",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article50",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article51",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article52",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article53",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article54",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article55",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article57",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article58",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article59",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article60",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article61",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article62",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article63",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article64",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article66",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article67",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article68",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article69",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article70",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article71",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article73",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article74",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article75",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article76",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article77",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article78",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article79",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article80",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article81",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:article82",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:supplement0",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:supplement1",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:supplement2",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:supplement3",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:supplement4",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:supplement5",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:supplement6",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:supplement7",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:supplement8",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:supplement9",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:supplement10",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:supplement11",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:supplement12",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/252407_20230711.json",
+      "unit_id": "252407_20230711:supplement13",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article1",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article2",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article3",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article4",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article5",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article7",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article8",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article9",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article10",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article11",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article12",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article13",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article14",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article15",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article16",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article17",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article19",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article20",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article21",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article22",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article23",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article24",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article25",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article26",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article27",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article28",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article30",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article31",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article32",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article33",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article34",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article35",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article36",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article37",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article38",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article39",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article41",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article42",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article43",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article44",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article46",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article47",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:article48",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:supplement0",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:supplement1",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:supplement2",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:supplement3",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:supplement4",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:supplement5",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:supplement6",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:supplement7",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:supplement8",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:supplement9",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:supplement10",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:supplement11",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:supplement12",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:supplement13",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:supplement14",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:supplement15",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:supplement16",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:supplement17",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:supplement18",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/law_history/260021_20240807.json",
+      "unit_id": "260021_20240807:supplement19",
+      "reason": "historical_reference_not_current"
+    },
+    {
+      "source_path": "data/raw/laws/000129_218303_20200526.json",
+      "unit_id": "000129_218303_20200526:article34",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/000129_218303_20200526.json",
+      "unit_id": "000129_218303_20200526:article37",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001215_286417_20260602.json",
+      "unit_id": "001215_286417_20260602:article6",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001215_286417_20260602.json",
+      "unit_id": "001215_286417_20260602:article7",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001215_286417_20260602.json",
+      "unit_id": "001215_286417_20260602:article8",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001215_286417_20260602.json",
+      "unit_id": "001215_286417_20260602:article9",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001215_286417_20260602.json",
+      "unit_id": "001215_286417_20260602:article10",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001215_286417_20260602.json",
+      "unit_id": "001215_286417_20260602:article11",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001215_286417_20260602.json",
+      "unit_id": "001215_286417_20260602:article12",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001215_286417_20260602.json",
+      "unit_id": "001215_286417_20260602:article13",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001215_286417_20260602.json",
+      "unit_id": "001215_286417_20260602:article14",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001215_286417_20260602.json",
+      "unit_id": "001215_286417_20260602:article15",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001215_286417_20260602.json",
+      "unit_id": "001215_286417_20260602:article16",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001215_286417_20260602.json",
+      "unit_id": "001215_286417_20260602:article17",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001215_286417_20260602.json",
+      "unit_id": "001215_286417_20260602:article18",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001215_286417_20260602.json",
+      "unit_id": "001215_286417_20260602:article20",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001215_286417_20260602.json",
+      "unit_id": "001215_286417_20260602:article21",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001215_286417_20260602.json",
+      "unit_id": "001215_286417_20260602:article22",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001215_286417_20260602.json",
+      "unit_id": "001215_286417_20260602:article23",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001215_286417_20260602.json",
+      "unit_id": "001215_286417_20260602:article31",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001248_276291_20260102.json",
+      "unit_id": "001248_276291_20260102:article10",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001654_283713_20260828.json",
+      "unit_id": "001654_283713_20260828:article7",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001654_283713_20260828.json",
+      "unit_id": "001654_283713_20260828:article39",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001654_283713_20260828.json",
+      "unit_id": "001654_283713_20260828:article40",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001654_283713_20260828.json",
+      "unit_id": "001654_283713_20260828:article41",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article488",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article729",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article873",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article874",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article879",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article881",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article883",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article884",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article885",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article886",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article887",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article888",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article889",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article890",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article891",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article892",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article893",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article894",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article895",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article896",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article897",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article898",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article899",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article900",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article915",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article926",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article937",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article972",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article992",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article996",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article999",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1000",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1003",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1004",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1016",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1018",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1021",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1027",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1028",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1029",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1056",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1058",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1084",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1085",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1086",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1146",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1147",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1148",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1149",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1150",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1151",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1152",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1153",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1154",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1155",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1156",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1157",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1158",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1159",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1169",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1170",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1171",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1172",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1174",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1175",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1176",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1177",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1178",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1179",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1180",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1181",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1182",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1183",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1184",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1186",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1187",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001706_284415_20260317.json",
+      "unit_id": "001706_284415_20260317:article1198",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/001872_285279_20261008.json",
+      "unit_id": "001872_285279_20261008:article36",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/003058_270551_20251023.json",
+      "unit_id": "003058_270551_20251023:article17",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/003058_270551_20251023.json",
+      "unit_id": "003058_270551_20251023:article45",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/003058_270551_20251023.json",
+      "unit_id": "003058_270551_20251023:article51",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/003058_270551_20251023.json",
+      "unit_id": "003058_270551_20251023:article60",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/003058_270551_20251023.json",
+      "unit_id": "003058_270551_20251023:article68",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/003572_286997_20260701.json",
+      "unit_id": "003572_286997_20260701:article25",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/005247_206564_20190101.json",
+      "unit_id": "005247_206564_20190101:article1",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/007196_284567_20260317.json",
+      "unit_id": "007196_284567_20260317:article25",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/008480_282351_20260102.json",
+      "unit_id": "008480_282351_20260102:article7",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/009290_268837_20260201.json",
+      "unit_id": "009290_268837_20260201:article320",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/009318_282793_20260721.json",
+      "unit_id": "009318_282793_20260721:article18",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/009318_282793_20260721.json",
+      "unit_id": "009318_282793_20260721:article58",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/009325_272631_20250712.json",
+      "unit_id": "009325_272631_20250712:article163",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/009325_272631_20250712.json",
+      "unit_id": "009325_272631_20250712:article245",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/009338_288143_20260721.json",
+      "unit_id": "009338_288143_20260721:article17",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/009338_288143_20260721.json",
+      "unit_id": "009338_288143_20260721:article41",
+      "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/009338_288143_20260721.json",
+      "unit_id": "009338_288143_20260721:article61",
+      "reason": "deleted_article"
+    }
+  ],
+  "excluded_by_reason": {
+    "empty_or_image_only": 8,
+    "cover_or_toc": 8,
+    "image_layout_review_required": 5,
+    "application_form_reference_only": 77,
+    "historical_reference_not_current": 609,
+    "deleted_article": 124
+  },
+  "files": [
+    {
+      "path": "data/raw/consumer_sources/consumer_dispute_standard_64e922b28e0d2e2b.xml",
+      "sha256": "64e922b28e0d2e2b79c275cf1acec392e97d60975226d383201511e1a9e9a7f1",
+      "format": ".xml",
+      "status": "extracted",
+      "extracted_units": 9,
+      "indexed_units": 9
+    },
+    {
+      "path": "data/raw/consumer_sources/consumer_dispute_standard_appendix_2_efd94a7a06c489da.pdf",
+      "sha256": "efd94a7a06c489dab45e1160aa558be638af0176bec932f74fe0385616b11dd7",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 6,
+      "indexed_units": 4,
+      "page_count": 3,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/consumer_sources/consumer_dispute_standard_appendix_2_efd94a7a06c489da.json"
+    },
+    {
+      "path": "data/raw/consumer_sources/consumer_dispute_standard_appendix_3_f6d4e6570d0bd34f.pdf",
+      "sha256": "f6d4e6570d0bd34f527d023e1a5f4ee13ff4a7c0730515b8cb6a7845296704e4",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 2,
+      "indexed_units": 2,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/consumer_sources/consumer_dispute_standard_appendix_3_f6d4e6570d0bd34f.json"
+    },
+    {
+      "path": "data/raw/consumer_sources/continual_contract_refund_6b47303e7142fc41.xml",
+      "sha256": "6b47303e7142fc41b1b0512c02d1b4ad56fa5311134fde4cc4bf974990fcf7d3",
+      "format": ".xml",
+      "status": "extracted",
+      "extracted_units": 10,
+      "indexed_units": 10
+    },
+    {
+      "path": "data/raw/consumer_sources/easylaw_civil_enforcement_344f615b7ca0b3e2.html",
+      "sha256": "344f615b7ca0b3e2daad9990ce08c5f9666577640fbd6f1beaae9425614ed545",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/easylaw_consumer_payment_order_ea994a1979330dba.html",
+      "sha256": "ea994a1979330dba43f686720c4651aba525d64f120ef995bdb27dc39f1b6fdd",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/easylaw_consumer_small_claim_3650e2b8cbaaccd3.html",
+      "sha256": "3650e2b8cbaaccd3b8fec83cae0e27955d4c76f316c770736e6e90ea46452ca9",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/easylaw_housing_distribution_b665db61357ab62b.html",
+      "sha256": "b665db61357ab62b7816aab6c046e2d9859b347d62705340ee44fd02b4628b1b",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/easylaw_housing_restoration_095ff325282e7a26.html",
+      "sha256": "095ff325282e7a26f3522067c37976e75af69bb8d66984f2a8328b8cd3d981fe",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/easylaw_housing_termination_99c0cd5e05a96ba2.html",
+      "sha256": "99c0cd5e05a96ba24645b505a9b53ce954838520400767846d882fd344501477",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/easylaw_payment_order_application_95a740b53c356d13.html",
+      "sha256": "95a740b53c356d13fe35206b6005f73022718bcf5985b481e47db7a73ae56b54",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/ftc_terms_46118_file_5b139f26_fcf0aa7eecd0b131.hwpx",
+      "sha256": "fcf0aa7eecd0b131edf896b91693d8df024e4ebf4f8c1743e825cb88718c39a0",
+      "format": ".hwpx",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/ftc_terms_47762_file_05d51a47_c57b37993e3956ba.hwpx",
+      "sha256": "c57b37993e3956ba38b45ff786eb733b44adce50c98d91856bb6dfa9ef62c767",
+      "format": ".hwpx",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/kca_case_1003164054_d051f101fa29e5e1.html",
+      "sha256": "d051f101fa29e5e13d221bdb4d7405fa00323b943d0d928a267a4029ffc1893b",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/kca_case_1003604873_e157fd0bf9c121c6.html",
+      "sha256": "e157fd0bf9c121c6854d456865368b07cc242d79d7e29ab749c3a282344acc83",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/kca_case_1003640779_9ce0ceec579098a5.html",
+      "sha256": "9ce0ceec579098a58ec8be86c328c829563e5bf97fcb158788a8945e9ff8e97a",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/kca_case_1003641375_83af2d2845fa537b.html",
+      "sha256": "83af2d2845fa537bfa4bd9f7ecc3730ce26c760181f0e1dc7831678686bde25c",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/kca_case_1003641715_f501641ba298f828.html",
+      "sha256": "f501641ba298f828acdf81e0e9bad6f7f2fa4611247455b58462f2d9307e0c14",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/kca_case_1003739114_63d4b26cb7f7f468.html",
+      "sha256": "63d4b26cb7f7f468a265fb52a4766d16427feda787ffb7eee42b7d410263a3ad",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/kca_case_1003817065_808f552f2da36aeb.html",
+      "sha256": "808f552f2da36aeb33becc2c39808266d6c5ef093d5aafe0e051d83b95013f22",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/kca_case_1003890245_1814d21e1873b6f5.html",
+      "sha256": "1814d21e1873b6f5568ee89f1f14489ad8bf8f3c24d2287d3f8c631efd840a77",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/kca_case_1003892039_935b3cc418eb4f8f.html",
+      "sha256": "935b3cc418eb4f8fb49efff0977c15b2666b048d122ca7e1f2324a283bff45f9",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/kca_case_1003892170_04b05e15688f90d3.html",
+      "sha256": "04b05e15688f90d3781109debc43f99b834ea2d509bf9eda84d1c9a807549bb8",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/kca_case_1003940398_7891d2ba00baa19d.html",
+      "sha256": "7891d2ba00baa19d3ac1af443fce63252241d5d98dff918bfa8a7daec05858f5",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/kca_case_1003941875_4544e34afa87ee89.html",
+      "sha256": "4544e34afa87ee89561deb404e156dd6a157132f40bf07ee03326155feb100e7",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/kca_damage_redress_procedure_a76de09b87f6e095.html",
+      "sha256": "a76de09b87f6e09531234b7ae3c2a4cf5c0939170d95a5f3456d1b9b89dfe863",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/kca_fitness_closure_gym_c624ab16f714fd3f.html",
+      "sha256": "c624ab16f714fd3ffebcff2a683e0502592338d17da021b41c4abb64ff66940a",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/kca_fitness_closure_pilates_0c85b3eaed61bd88.html",
+      "sha256": "0c85b3eaed61bd88aa4f958522b4afde87f3266352849d09b27ebccfb44ddf74",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/kca_mediation_procedure_30422ca02b9d5a45.html",
+      "sha256": "30422ca02b9d5a45a056c8501be866eff5cd3643b83cc3d3ae6baadad9b0e6bb",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/kca_overseas_checklist_8a7c044d6fb1eb22.html",
+      "sha256": "8a7c044d6fb1eb22d7dd5eaf6edc2778c3dd0dec0a709e1513964ead3706dcac",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/kca_overseas_returns_bc2e743fc2f1ec0b.html",
+      "sha256": "bc2e743fc2f1ec0b040b03f275fb2e89619ec75e536f35aa3a1503b7116c0c04",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/kca_overseas_types_8b985f72ecc984e9.html",
+      "sha256": "8b985f72ecc984e9e7c0c844c3cd1e285de51915f24e9620f0ab55dcf17ff832",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/kca_pilates_1003941650_1066de99b588fb09.html",
+      "sha256": "1066de99b588fb09284a24d2d271d83993784d8eb24ce1ab3a3e0fa17ae81a61",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/kca_redress_requirements_f5048b0525c401e4.html",
+      "sha256": "f5048b0525c401e490afe2cf7e89fba8f882477c0a5f23a25d89c3cce6668857",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/kca_redress_submission_c98aa847ed1f68d5.html",
+      "sha256": "c98aa847ed1f68d56261e4fb49fcd06bc1c32a06e02f6cdab9bd9b7d4bc798c9",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/minimum_wage_2026_attachment_body_b87d3570ff339e04.pdf",
+      "sha256": "b87d3570ff339e04747d7835228e20c2faeffa7c9fbcdfe79d719e6ed096a30d",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 2,
+      "indexed_units": 2,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/consumer_sources/minimum_wage_2026_attachment_body_b87d3570ff339e04.json"
+    },
+    {
+      "path": "data/raw/consumer_sources/minimum_wage_2026_c0a8b9413dbfebc6.xml",
+      "sha256": "c0a8b9413dbfebc6e660bb48daa7e20843bced7d5f64a95ed4f0e2542ad139c5",
+      "format": ".xml",
+      "status": "metadata_or_index_only",
+      "extracted_units": 2,
+      "indexed_units": 0
+    },
+    {
+      "path": "data/raw/consumer_sources/minimum_wage_simple_labor_df8550c1d3d7570d.xml",
+      "sha256": "df8550c1d3d7570dd9fe920885c4dbe8a75339f2592ca19a294a546a1c84e848",
+      "format": ".xml",
+      "status": "extracted",
+      "extracted_units": 2,
+      "indexed_units": 2
+    },
+    {
+      "path": "data/raw/consumer_sources/moel_wage_evidence_1000323154_7492a58ac0c94d39.html",
+      "sha256": "7492a58ac0c94d39e099c999175696084026eddf014736756bc5afdb52e4af5a",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/consumer_sources/moel_wage_procedure_9c52aa51a2d0ec54.html",
+      "sha256": "9c52aa51a2d0ec54ecf1dd2c1bbbf1d0178bb80f38be77bcf48acce864bc8122",
+      "format": ".html",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1
+    },
+    {
+      "path": "data/raw/guides/[pdf]인터넷 쇼핑.pdf",
+      "sha256": "41f96f93f3a9d71182f8e178ef7fe753423753fe4ab8d2c0c296b593329227dc",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 49,
+      "indexed_units": 47,
+      "page_count": 35,
+      "pages_with_images": 1,
+      "page_extraction_file": "processed/guides/guide_383b62bce56bf1ce.json"
+    },
+    {
+      "path": "data/raw/guides/[pdf]주택임대차.pdf",
+      "sha256": "98b42f3b414d49761277ed9dbcadd4569d5c9705963686d22ad8e9a55f7fc7e7",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 106,
+      "indexed_units": 102,
+      "page_count": 87,
+      "pages_with_images": 2,
+      "page_extraction_file": "processed/guides/guide_23ffe4c8fd5715cb.json"
+    },
+    {
+      "path": "data/raw/guides/[pdf]해고근로자.pdf",
+      "sha256": "4c68ec8ed9916cb983a26f719aff85abbb6bf76852c9966185c988df07f0c039",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 122,
+      "indexed_units": 115,
+      "page_count": 102,
+      "pages_with_images": 5,
+      "page_extraction_file": "processed/guides/guide_cad7b1de1e4dc64c.json"
+    },
+    {
+      "path": "data/raw/law_appendices/001872_285279_20261008_appendix_000000E.pdf",
+      "sha256": "cb05ba17f5cf163ae6bae2242c3c04b766f23ca734d018a7671f811b93222120",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 2,
+      "indexed_units": 2,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/001872_285279_20261008_appendix_000000E.json"
+    },
+    {
+      "path": "data/raw/law_appendices/003058_270551_20251023_appendix_000100E.pdf",
+      "sha256": "02b9522854d9eb74c6bc3288ef97e210ab417174cc7ae28e2eb981efb5bbeb44",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 2,
+      "indexed_units": 2,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/003058_270551_20251023_appendix_000100E.json"
+    },
+    {
+      "path": "data/raw/law_appendices/003058_270551_20251023_appendix_000200E.pdf",
+      "sha256": "67b16dab2b8fdc26ad253c1bc03a2fb8a141c59b05633f93e29503843eba0fee",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/003058_270551_20251023_appendix_000200E.json"
+    },
+    {
+      "path": "data/raw/law_appendices/003058_270551_20251023_appendix_000300E.pdf",
+      "sha256": "b6c249bb95d71b478d5289526d8d9f14d1311e2408977088d1b1d1479623d2fd",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 2,
+      "indexed_units": 2,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/003058_270551_20251023_appendix_000300E.json"
+    },
+    {
+      "path": "data/raw/law_appendices/003058_270551_20251023_appendix_000400E.pdf",
+      "sha256": "b94833cc9750ec08fc3cc8ce0a15aee55e97774529a6edf6896bafc80fe2511e",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 4,
+      "indexed_units": 4,
+      "page_count": 2,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/003058_270551_20251023_appendix_000400E.json"
+    },
+    {
+      "path": "data/raw/law_appendices/003058_270551_20251023_appendix_000500E.pdf",
+      "sha256": "ad0d9b1ccc68044fb2b70d1c7788a0148e1aa004924629faf8211746068071cb",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 4,
+      "indexed_units": 4,
+      "page_count": 3,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/003058_270551_20251023_appendix_000500E.json"
+    },
+    {
+      "path": "data/raw/law_appendices/003058_270551_20251023_appendix_000600E.pdf",
+      "sha256": "8d1121e1634d311ae4fdb359e65bc68c8cce5d7ea74341a22fbe24cc88c0ab07",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 11,
+      "indexed_units": 11,
+      "page_count": 6,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/003058_270551_20251023_appendix_000600E.json"
+    },
+    {
+      "path": "data/raw/law_appendices/003058_270551_20251023_appendix_000700E.pdf",
+      "sha256": "ef9745baa39da59281913cf924d8cdc978ac917646a0fe4e22118919cc4870e6",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 6,
+      "indexed_units": 6,
+      "page_count": 5,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/003058_270551_20251023_appendix_000700E.json"
+    },
+    {
+      "path": "data/raw/law_appendices/003572_286997_20260701_appendix_000100E.pdf",
+      "sha256": "7a13ac31f8e977753d576b127a557078a20a918f88e8aa964e6285a90d2bec4d",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 2,
+      "indexed_units": 2,
+      "page_count": 2,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/003572_286997_20260701_appendix_000100E.json"
+    },
+    {
+      "path": "data/raw/law_appendices/003572_286997_20260701_appendix_000200E.pdf",
+      "sha256": "c949d8381e314e5affd2b5f8b1261a02ec32ffe5d46f43a8b319a3dd91eb45f3",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 5,
+      "indexed_units": 5,
+      "page_count": 4,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/003572_286997_20260701_appendix_000200E.json"
+    },
+    {
+      "path": "data/raw/law_appendices/003572_286997_20260701_appendix_000300E.pdf",
+      "sha256": "1bf0cce19c553151cf9c7a631d78ae51b48b1cf88d9b97633cf340e5a63db240",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 2,
+      "indexed_units": 2,
+      "page_count": 2,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/003572_286997_20260701_appendix_000300E.json"
+    },
+    {
+      "path": "data/raw/law_appendices/003572_286997_20260701_appendix_000400E.pdf",
+      "sha256": "22f9339d4ad8845f190bc937b3e4aaf20557479b7d2fff6288d2a26bd2129c19",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 8,
+      "indexed_units": 8,
+      "page_count": 4,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/003572_286997_20260701_appendix_000400E.json"
+    },
+    {
+      "path": "data/raw/law_appendices/003979_289451_20260911_appendix_000100E.pdf",
+      "sha256": "b64ececef72314f0ce389abd8579d2c8b930568f6066422c285f191bbcd6c591",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 2,
+      "indexed_units": 2,
+      "page_count": 2,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/003979_289451_20260911_appendix_000100E.json"
+    },
+    {
+      "path": "data/raw/law_appendices/003979_289451_20260911_appendix_000100F.pdf",
+      "sha256": "ffc76ce11d0257c7ded6fd799dfe87a3ca7086dfb5ee56f2d1808ed714d924b6",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 5,
+      "indexed_units": 0,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/003979_289451_20260911_appendix_000100F.json"
+    },
+    {
+      "path": "data/raw/law_appendices/003979_289451_20260911_appendix_000200E.pdf",
+      "sha256": "6d8d1ebcbe20866079ffb086f9c3ad84b9e1126aebc20c8c7660af436b0ea3e0",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 2,
+      "indexed_units": 2,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/003979_289451_20260911_appendix_000200E.json"
+    },
+    {
+      "path": "data/raw/law_appendices/003979_289451_20260911_appendix_000200F.pdf",
+      "sha256": "10a8a094cdc65a4a11953e540c4e7eb9a0617cb6bbffc61f780c3f1ae504c124",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 2,
+      "indexed_units": 0,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/003979_289451_20260911_appendix_000200F.json"
+    },
+    {
+      "path": "data/raw/law_appendices/003979_289451_20260911_appendix_000300F.pdf",
+      "sha256": "3ae6945dbadb94028be4209ccb18d076405cffd1e350da663b9728247e351634",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 3,
+      "indexed_units": 0,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/003979_289451_20260911_appendix_000300F.json"
+    },
+    {
+      "path": "data/raw/law_appendices/004950_287183_20260701_appendix_000100E.pdf",
+      "sha256": "9500277f40b52926f7eb8299612fed3b465c190baef977445c45da4a2aae150d",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 3,
+      "indexed_units": 3,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/004950_287183_20260701_appendix_000100E.json"
+    },
+    {
+      "path": "data/raw/law_appendices/004950_287183_20260701_appendix_000200E.pdf",
+      "sha256": "609d4b47f2a694e32e8343782748a117f09c89b3c01227f40fdaed40a9e1c5c7",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 3,
+      "indexed_units": 3,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/004950_287183_20260701_appendix_000200E.json"
+    },
+    {
+      "path": "data/raw/law_appendices/005247_206564_20190101_appendix_000000E.pdf",
+      "sha256": "b488667fa7ef85ea045462a522741b176a3564d9404b0c7d6a3d9dcfdbbd830e",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 2,
+      "indexed_units": 2,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/005247_206564_20190101_appendix_000000E.json"
+    },
+    {
+      "path": "data/raw/law_appendices/005498_287001_20260701_appendix_000100E.pdf",
+      "sha256": "a9f7680c083545a8e64788abc17499b22a02b348555c2c84120e7f9d309dbefa",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/005498_287001_20260701_appendix_000100E.json"
+    },
+    {
+      "path": "data/raw/law_appendices/005498_287001_20260701_appendix_000200E.pdf",
+      "sha256": "63135f7a52f4609a19f0297e96864d74f618df7dad8a0e717596b0f49003e00c",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 2,
+      "indexed_units": 2,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/005498_287001_20260701_appendix_000200E.json"
+    },
+    {
+      "path": "data/raw/law_appendices/005498_287001_20260701_appendix_000300E.pdf",
+      "sha256": "d4d6ff4b949ca908cfad6b4cee5c4100b2b495a8107f92b920063a8b69c8cbb1",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 2,
+      "indexed_units": 2,
+      "page_count": 2,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/005498_287001_20260701_appendix_000300E.json"
+    },
+    {
+      "path": "data/raw/law_appendices/005498_287001_20260701_appendix_000400E.pdf",
+      "sha256": "49487ff800fd79b09a9f329558a7c880b2a4302b05c7f286c73bf43fe1242393",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 6,
+      "indexed_units": 6,
+      "page_count": 5,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/005498_287001_20260701_appendix_000400E.json"
+    },
+    {
+      "path": "data/raw/law_appendices/007196_284567_20260317_appendix_000100F.pdf",
+      "sha256": "ffbda411aad9d4c054a989c8bd8ed21456106eefdcc1dae608fc18b4c04d8a21",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 5,
+      "indexed_units": 0,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/007196_284567_20260317_appendix_000100F.json"
+    },
+    {
+      "path": "data/raw/law_appendices/007196_284567_20260317_appendix_000200F.pdf",
+      "sha256": "ccf6e4cda07084e700e01de23d335eb9b9e973d23393e3bbd40aa56fbacad7d0",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 0,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/007196_284567_20260317_appendix_000200F.json"
+    },
+    {
+      "path": "data/raw/law_appendices/007196_284567_20260317_appendix_000300F.pdf",
+      "sha256": "55a6104b1c84e9e9ded27f9335e7d6e5147884366679932825c13e2c6f3106e5",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 0,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/007196_284567_20260317_appendix_000300F.json"
+    },
+    {
+      "path": "data/raw/law_appendices/007196_284567_20260317_appendix_000302F.pdf",
+      "sha256": "60071277ea16d4cac12dcf1f0809e4cd8bb6e0e102d7c9086119353066205f17",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 4,
+      "indexed_units": 0,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/007196_284567_20260317_appendix_000302F.json"
+    },
+    {
+      "path": "data/raw/law_appendices/007196_284567_20260317_appendix_000400F.pdf",
+      "sha256": "b5b4e1f5478cef71457b3b9112930c274e88bb9d4530c3e6760a203eac8418a7",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 5,
+      "indexed_units": 0,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/007196_284567_20260317_appendix_000400F.json"
+    },
+    {
+      "path": "data/raw/law_appendices/007196_284567_20260317_appendix_000500F.pdf",
+      "sha256": "deba4a6c41796ff078ed217c581d4de0c71a853be7299516440e342680881bfc",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 6,
+      "indexed_units": 0,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/007196_284567_20260317_appendix_000500F.json"
+    },
+    {
+      "path": "data/raw/law_appendices/007196_284567_20260317_appendix_000600F.pdf",
+      "sha256": "c175f709313410806e571dad751b0c718b9fc8d231d0cc396a50721fd5d44508",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 2,
+      "indexed_units": 0,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/007196_284567_20260317_appendix_000600F.json"
+    },
+    {
+      "path": "data/raw/law_appendices/007196_284567_20260317_appendix_000700F.pdf",
+      "sha256": "48a6ae951ac99864c725503049127d13f1708224dc0b62744cadfd3535cc4b83",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 5,
+      "indexed_units": 0,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/007196_284567_20260317_appendix_000700F.json"
+    },
+    {
+      "path": "data/raw/law_appendices/007196_284567_20260317_appendix_000800F.pdf",
+      "sha256": "a88da1eebc473862f70fc4767685b26ce759259d32630af3c7a3d7e0680b488a",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 3,
+      "indexed_units": 0,
+      "page_count": 2,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/007196_284567_20260317_appendix_000800F.json"
+    },
+    {
+      "path": "data/raw/law_appendices/007196_284567_20260317_appendix_000900F.pdf",
+      "sha256": "7fed6ba6498d141878080e6ea573f1a3511045d24f9b9edeba2ff50d5eeb8276",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 3,
+      "indexed_units": 0,
+      "page_count": 2,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/007196_284567_20260317_appendix_000900F.json"
+    },
+    {
+      "path": "data/raw/law_appendices/007196_284567_20260317_appendix_001000F.pdf",
+      "sha256": "69b09ecb5452fbb040227a9b1f47ff0a15c94f50d0a9d828d4d54491838fd2a0",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 5,
+      "indexed_units": 0,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/007196_284567_20260317_appendix_001000F.json"
+    },
+    {
+      "path": "data/raw/law_appendices/007196_284567_20260317_appendix_001100F.pdf",
+      "sha256": "fa7336d74a7b160f60383494eafd7871a3f4870bcbdcb98576cc12f9bcd6aca5",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 6,
+      "indexed_units": 0,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/007196_284567_20260317_appendix_001100F.json"
+    },
+    {
+      "path": "data/raw/law_appendices/007196_284567_20260317_appendix_001200F.pdf",
+      "sha256": "c5d7162f3a9d0180f8c3821ec78231cebe23b4b003b2902d08cc59ad400e369e",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 4,
+      "indexed_units": 0,
+      "page_count": 2,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/007196_284567_20260317_appendix_001200F.json"
+    },
+    {
+      "path": "data/raw/law_appendices/007196_284567_20260317_appendix_001300F.pdf",
+      "sha256": "06106d51b340c86acc9f5dd5cc4b11ed60b920ce73c26611cfb4302bdb87351a",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 4,
+      "indexed_units": 0,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/007196_284567_20260317_appendix_001300F.json"
+    },
+    {
+      "path": "data/raw/law_appendices/008480_282351_20260102_appendix_000100E.pdf",
+      "sha256": "925503067eb89f7413160a7b43647346af412b413d9a0fb9c882fa8d20dff851",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/008480_282351_20260102_appendix_000100E.json"
+    },
+    {
+      "path": "data/raw/law_appendices/008480_282351_20260102_appendix_000100F.pdf",
+      "sha256": "8339d500fc8735060cb83b87bb3141a4ef6b9ede9a03d9a1d17beda6ab46ffcc",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 6,
+      "indexed_units": 0,
+      "page_count": 2,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/008480_282351_20260102_appendix_000100F.json"
+    },
+    {
+      "path": "data/raw/law_appendices/008480_282351_20260102_appendix_000200E.pdf",
+      "sha256": "96bd9b1551c18baa010cf16e980c482a036153098611ae5fdd9bb068e54a27c5",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 1,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/008480_282351_20260102_appendix_000200E.json"
+    },
+    {
+      "path": "data/raw/law_appendices/008480_282351_20260102_appendix_000200F.pdf",
+      "sha256": "ceb92937137e627bcb093e89666f123ab3a5ccdee3ceebe8b9aca05aaed8cef2",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 3,
+      "indexed_units": 0,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/008480_282351_20260102_appendix_000200F.json"
+    },
+    {
+      "path": "data/raw/law_appendices/008480_282351_20260102_appendix_000300E.pdf",
+      "sha256": "bd82bb88449dbc87b70ef9e0cf207933d2314942a572a6a7bfae3019c4dd4d8e",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 2,
+      "indexed_units": 2,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/008480_282351_20260102_appendix_000300E.json"
+    },
+    {
+      "path": "data/raw/law_appendices/008480_282351_20260102_appendix_000300F.pdf",
+      "sha256": "441d21569bc45a603d3b74241547a38d30a0144cced6043b7ed633551eb3bac3",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 0,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/008480_282351_20260102_appendix_000300F.json"
+    },
+    {
+      "path": "data/raw/law_appendices/008480_282351_20260102_appendix_000400F.pdf",
+      "sha256": "e460ccfa21dfc9bb57c31efaae99f59b223d2742349ca052d24756edb573d96a",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 0,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/008480_282351_20260102_appendix_000400F.json"
+    },
+    {
+      "path": "data/raw/law_appendices/008480_282351_20260102_appendix_000500F.pdf",
+      "sha256": "34641b5939a67437e2ec0a7d34b456e79db1726415b4a4936c49c2e85d1f3cb6",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 0,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/008480_282351_20260102_appendix_000500F.json"
+    },
+    {
+      "path": "data/raw/law_appendices/008480_282351_20260102_appendix_000600F.pdf",
+      "sha256": "82ea3dd3f3aed6c2e6d4bdd2560b0aefa2b4812bd85dfff1cd5be0de9f9d10b7",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 1,
+      "indexed_units": 0,
+      "page_count": 1,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/008480_282351_20260102_appendix_000600F.json"
+    },
+    {
+      "path": "data/raw/law_appendices/009325_272631_20250712_appendix_000000E.pdf",
+      "sha256": "975125c7d0c2b93a239d0eed9dc77eb46a28b0adc3784df30cc8a6454a4c559d",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 5,
+      "indexed_units": 3,
+      "page_count": 2,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/009325_272631_20250712_appendix_000000E.json"
+    },
+    {
+      "path": "data/raw/law_appendices/009338_288143_20260721_appendix_000100E.pdf",
+      "sha256": "7fee592cfcf1c56d4a8a49b49336ee51f21e46332f5a767000809e0dbc8b85e5",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 7,
+      "indexed_units": 7,
+      "page_count": 5,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/009338_288143_20260721_appendix_000100E.json"
+    },
+    {
+      "path": "data/raw/law_appendices/009338_288143_20260721_appendix_000200E.pdf",
+      "sha256": "ba2af6f67ff6fefa918f6e2b1d99d1cda28ea3a8b1ff9db4efd58256f617d176",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 2,
+      "indexed_units": 2,
+      "page_count": 2,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/009338_288143_20260721_appendix_000200E.json"
+    },
+    {
+      "path": "data/raw/law_appendices/009338_288143_20260721_appendix_000300E.pdf",
+      "sha256": "2999e2386b1b36772d567b4bb7871a004e5bf525e80f68cea0b6c76f820fca74",
+      "format": ".pdf",
+      "status": "extracted",
+      "extracted_units": 8,
+      "indexed_units": 6,
+      "page_count": 4,
+      "pages_with_images": 0,
+      "page_extraction_file": "processed/laws/appendices/009338_288143_20260721_appendix_000300E.json"
+    },
+    {
+      "path": "data/raw/law_history/223955_20201204.json",
+      "sha256": "736b783e32406fbc0d46f3e40d154bfe8bf7edee8c35683a5d802217251631a6",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 46,
+      "indexed_units": 0
+    },
+    {
+      "path": "data/raw/law_history/225063_20211230.json",
+      "sha256": "fb4e5710f84b07a1ef27ec96c850e30df9d21134ff98579b901ea2011e8c79ec",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 59,
+      "indexed_units": 0
+    },
+    {
+      "path": "data/raw/law_history/237455_20221208.json",
+      "sha256": "30b78b989a54e3be3629430c992c2db91712de8898d67acabf8ada5e582000cf",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 81,
+      "indexed_units": 0
+    },
+    {
+      "path": "data/raw/law_history/246957_20221227.json",
+      "sha256": "86ff7c3ae27338b61ceccb92b67626019d8cf2e9e4d4bdc3e6dee4b4aa51acb1",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 94,
+      "indexed_units": 0
+    },
+    {
+      "path": "data/raw/law_history/248655_20230307.json",
+      "sha256": "382acffe3fa465973af6d43798debc5e85d214992a9e75e0a78a6f323199b396",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 95,
+      "indexed_units": 0
+    },
+    {
+      "path": "data/raw/law_history/249019_20230321.json",
+      "sha256": "ca2f3d6b394aa698d91a11f07a916dae4069e2f0197cd3e6a84c416b34b22e3d",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 87,
+      "indexed_units": 0
+    },
+    {
+      "path": "data/raw/law_history/252407_20230711.json",
+      "sha256": "ed9adb9aae28ecd0f4e4f79dee9551a7fd6e3a8407007cd6760a29a568a10505",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 88,
+      "indexed_units": 0
+    },
+    {
+      "path": "data/raw/law_history/260021_20240807.json",
+      "sha256": "e9eb20f5c86befc82aaf008ce85ba2cc8723f62fcf059b9ebd42a96c08bb9161",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 63,
+      "indexed_units": 0
+    },
+    {
+      "path": "data/raw/laws/000129_218303_20200526.json",
+      "sha256": "f99fb4802eda02477157dc1f89eae3f533bbbd85437b4f9c1089e7b892a7442e",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 49,
+      "indexed_units": 47
+    },
+    {
+      "path": "data/raw/laws/000354_290239_20261002.json",
+      "sha256": "88f7cc1dd03a0fc421f69ffd0e2186126fb5d99fcf6e7a570e2e0856ba6dc3bc",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 91,
+      "indexed_units": 91
+    },
+    {
+      "path": "data/raw/laws/000355_289407_20260908.json",
+      "sha256": "841148707253468f71f936357bba04912674f1b77b9162d23acf98311e1f4f3a",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 76,
+      "indexed_units": 76
+    },
+    {
+      "path": "data/raw/laws/001215_286417_20260602.json",
+      "sha256": "ae991452da4ca280e0e09bdcea2058719c7016050d405dfdeaec5e9470714a07",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 73,
+      "indexed_units": 55
+    },
+    {
+      "path": "data/raw/laws/001248_276291_20260102.json",
+      "sha256": "0233541979a1cfb3de916560b5805497f71553dc9ce20df051f78e22c9ed10bc",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 67,
+      "indexed_units": 66
+    },
+    {
+      "path": "data/raw/laws/001589_283837_20260911.json",
+      "sha256": "0d6ff5e8383b61eb4d9535d0a4bb8e4fde773e47bffd643fc5b8abe2d1574930",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 117,
+      "indexed_units": 117
+    },
+    {
+      "path": "data/raw/laws/001654_283713_20260828.json",
+      "sha256": "c49be7a614da9de5dda43870cfa06d855249e5f479ba5f22fcca6c6a919d4b59",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 101,
+      "indexed_units": 97
+    },
+    {
+      "path": "data/raw/laws/001706_284415_20260317.json",
+      "sha256": "17bb0545a87e1b27097240544dc25fa4f136006e7b780ad0693216baad0a4748",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 1230,
+      "indexed_units": 1153
+    },
+    {
+      "path": "data/raw/laws/001872_285279_20261008.json",
+      "sha256": "9284f4c033ada77aee55db55ca2fd6de31b7d8d9273e2bb71a78044244c56c1c",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 163,
+      "indexed_units": 162
+    },
+    {
+      "path": "data/raw/laws/003058_270551_20251023.json",
+      "sha256": "fb0b4239a7cd38164ec6fc0d39073bb750de57eb92d7ceebc7bc7a4255fe0d49",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 116,
+      "indexed_units": 111
+    },
+    {
+      "path": "data/raw/laws/003572_286997_20260701.json",
+      "sha256": "e5849da615e34eb625ffddb0f8a8535dfb189c6d8043235704204deac8c21cfd",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 99,
+      "indexed_units": 98
+    },
+    {
+      "path": "data/raw/laws/003979_289451_20260911.json",
+      "sha256": "f9287f8e0ae51b14bb8ff52f4aefc8b7f8ee368ba9f351619905870115046ba2",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 118,
+      "indexed_units": 118
+    },
+    {
+      "path": "data/raw/laws/003984_208701_20190601.json",
+      "sha256": "cb3ea141f1d83ba8b19da20a4f0f377b7bf5c87cd5c68bac5a06ea0bd51f604e",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 2,
+      "indexed_units": 2
+    },
+    {
+      "path": "data/raw/laws/004950_287183_20260701.json",
+      "sha256": "618150cedec156125efa9cd5c0bfcfe6f6a9ead25209e080a5d8345fc337f47e",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 69,
+      "indexed_units": 69
+    },
+    {
+      "path": "data/raw/laws/005247_206564_20190101.json",
+      "sha256": "dc5185ad76d11a41b4655c384ad1a617ada756457f3274fbd1743b1224d9bcb5",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 46,
+      "indexed_units": 45
+    },
+    {
+      "path": "data/raw/laws/005498_287001_20260701.json",
+      "sha256": "706abf87390c25b82344547796aae291ef1bd4da6aff59c60f4f7e9b51abb8e8",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 56,
+      "indexed_units": 56
+    },
+    {
+      "path": "data/raw/laws/007196_284567_20260317.json",
+      "sha256": "ebbb435a4e84400c843f214d45420533b8a80ee8705e5c6be3fd136655dff51a",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 48,
+      "indexed_units": 47
+    },
+    {
+      "path": "data/raw/laws/008480_282351_20260102.json",
+      "sha256": "aa84359e59bd88b8919c2bb5a776df526d6cc93b608055cf57369f798b934fa8",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 32,
+      "indexed_units": 31
+    },
+    {
+      "path": "data/raw/laws/009290_268837_20260201.json",
+      "sha256": "995eb8ddd10f934c74db29636e752d0d44339ea6d2541ebc8d8fd870c0630994",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 327,
+      "indexed_units": 326
+    },
+    {
+      "path": "data/raw/laws/009318_282793_20260721.json",
+      "sha256": "b91f8ec561bab576fe85c292db100cccbd46e3141f95139a4c359636f5f89bdd",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 77,
+      "indexed_units": 75
+    },
+    {
+      "path": "data/raw/laws/009325_272631_20250712.json",
+      "sha256": "bf9277724562098d44cf34f8eaa1b2cbe7a438c19df68e8319aed3216d136250",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 268,
+      "indexed_units": 266
+    },
+    {
+      "path": "data/raw/laws/009338_288143_20260721.json",
+      "sha256": "da2080993c065d925b7d054a1124db4537c50a89691dd65d29c39087ce4c24f5",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 103,
+      "indexed_units": 100
+    },
+    {
+      "path": "data/raw/laws/009883_284455_20260918.json",
+      "sha256": "3900c8877edf4002198cb24465ac1ed02897dc91590778636e56f8d612fadc28",
+      "format": ".json",
+      "status": "extracted",
+      "extracted_units": 75,
+      "indexed_units": 75
+    }
+  ],
+  "validation": "unique IDs, parent offsets, full eligible text coverage, chunk size limits passed"
+}

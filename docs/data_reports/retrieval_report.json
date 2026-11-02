@@ -1,0 +1,472 @@
+{
+  "method": "Offline Korean bigram BM25 scorer; 14 hand-authored smoke queries",
+  "limitations": "Small, development-only set; not held out. No embedding, reranker, or answer evaluation.",
+  "new": {
+    "hit_at_5": 0.9285714285714286,
+    "mrr_at_5": 0.6964285714285714,
+    "cases": [
+      {
+        "query": "헬스장 이용 계약 중도해지 잔여대금 환급",
+        "expected_document": "kca_case_1003817065",
+        "expected_locator": null,
+        "rank_at_5": 1,
+        "top5": [
+          {
+            "id": "2d070e1933ca4e132a2be4e8",
+            "locator": ".board_view",
+            "source": "data/raw/consumer_sources/kca_case_1003817065_808f552f2da36aeb.html"
+          },
+          {
+            "id": "42bb0d65daf5f22f4664738a",
+            "locator": ".board_view",
+            "source": "data/raw/consumer_sources/kca_case_1003817065_808f552f2da36aeb.html"
+          },
+          {
+            "id": "165df63a682f018b276a50d8",
+            "locator": ".board_view",
+            "source": "data/raw/consumer_sources/kca_case_1003941875_4544e34afa87ee89.html"
+          },
+          {
+            "id": "f9e6a7302486655ed070e56d",
+            "locator": ".board_view",
+            "source": "data/raw/consumer_sources/kca_case_1003892170_04b05e15688f90d3.html"
+          },
+          {
+            "id": "5e95072a81a9acc19f36e814",
+            "locator": ".board_view",
+            "source": "data/raw/consumer_sources/kca_case_1003941875_4544e34afa87ee89.html"
+          }
+        ]
+      },
+      {
+        "query": "필라테스 계약 중도해지 환급",
+        "expected_document": "kca_pilates_1003941650",
+        "expected_locator": null,
+        "rank_at_5": 4,
+        "top5": [
+          {
+            "id": "c84566b013dfe05856795deb",
+            "locator": ".board_view",
+            "source": "data/raw/consumer_sources/kca_case_1003739114_63d4b26cb7f7f468.html"
+          },
+          {
+            "id": "e9e01ab8b6bbee341dd5c358",
+            "locator": ".board_view",
+            "source": "data/raw/consumer_sources/kca_case_1003739114_63d4b26cb7f7f468.html"
+          },
+          {
+            "id": "c6450a0b1c78804d69c91d91",
+            "locator": ".board_view",
+            "source": "data/raw/consumer_sources/kca_case_1003739114_63d4b26cb7f7f468.html"
+          },
+          {
+            "id": "d75ddda9ea43b2a05ed64fef",
+            "locator": ".board_view",
+            "source": "data/raw/consumer_sources/kca_pilates_1003941650_1066de99b588fb09.html"
+          },
+          {
+            "id": "278f830674cb804156608fcc",
+            "locator": ".board_view",
+            "source": "data/raw/consumer_sources/kca_case_1003739114_63d4b26cb7f7f468.html"
+          }
+        ]
+      },
+      {
+        "query": "맞춤제작 한복 반품 거절 청약철회",
+        "expected_document": "kca_case_1003164054",
+        "expected_locator": null,
+        "rank_at_5": 1,
+        "top5": [
+          {
+            "id": "7cff9ce2c68d0a2e2df7adab",
+            "locator": ".board_view",
+            "source": "data/raw/consumer_sources/kca_case_1003164054_d051f101fa29e5e1.html"
+          },
+          {
+            "id": "1677ad260de1f7ad6eac5ac2",
+            "locator": ".board_view",
+            "source": "data/raw/consumer_sources/kca_case_1003164054_d051f101fa29e5e1.html"
+          },
+          {
+            "id": "ad64c0d1b2edddd9579d2b2a",
+            "locator": ".board_view",
+            "source": "data/raw/consumer_sources/kca_case_1003164054_d051f101fa29e5e1.html"
+          },
+          {
+            "id": "57b04d019e62f6d230d33150",
+            "locator": ".board_view",
+            "source": "data/raw/consumer_sources/kca_case_1003164054_d051f101fa29e5e1.html"
+          },
+          {
+            "id": "17b124080286b82bbd87aa1c",
+            "locator": "PDF 27페이지 / 4. 반품 및 환불하기 > 4.1. 반품·환불 > 4.1.2. 반품 및 환불",
+            "source": "data/raw/guides/[pdf]인터넷 쇼핑.pdf"
+          }
+        ]
+      },
+      {
+        "query": "하자 반복 반지 반품 구입대금 환급",
+        "expected_document": "kca_case_1003604873",
+        "expected_locator": null,
+        "rank_at_5": 1,
+        "top5": [
+          {
+            "id": "8a1448ac0e1501b86b4825b7",
+            "locator": ".board_view",
+            "source": "data/raw/consumer_sources/kca_case_1003604873_e157fd0bf9c121c6.html"
+          },
+          {
+            "id": "7405691915c7bd8c050cc513",
+            "locator": ".board_view",
+            "source": "data/raw/consumer_sources/kca_case_1003604873_e157fd0bf9c121c6.html"
+          },
+          {
+            "id": "a18fe023d24a09faea0e3119",
+            "locator": ".board_view",
+            "source": "data/raw/consumer_sources/kca_case_1003604873_e157fd0bf9c121c6.html"
+          },
+          {
+            "id": "cdee0aa9b75f76151c2cc480",
+            "locator": "PDF 32페이지 / 4. 반품 및 환불하기 > 4.1. 반품·환불 > 4.1.2. 반품 및 환불 / 표 1",
+            "source": "data/raw/guides/[pdf]인터넷 쇼핑.pdf"
+          },
+          {
+            "id": "95f2f184e1bfb466c0f141b9",
+            "locator": ".board_view",
+            "source": "data/raw/consumer_sources/kca_case_1003641715_f501641ba298f828.html"
+          }
+        ]
+      },
+      {
+        "query": "소비자 피해구제 신청 증빙서류 접수 방법",
+        "expected_document": "kca_redress_submission",
+        "expected_locator": null,
+        "rank_at_5": 1,
+        "top5": [
+          {
+            "id": "ab39d6d9ede92e94d5003159",
+            "locator": "#content",
+            "source": "data/raw/consumer_sources/kca_redress_submission_c98aa847ed1f68d5.html"
+          },
+          {
+            "id": "a95ec4a1961806a4b85a4cdc",
+            "locator": "#content",
+            "source": "data/raw/consumer_sources/kca_redress_submission_c98aa847ed1f68d5.html"
+          },
+          {
+            "id": "67ed3fc2e713d07716b00d3d",
+            "locator": "#content",
+            "source": "data/raw/consumer_sources/kca_redress_submission_c98aa847ed1f68d5.html"
+          },
+          {
+            "id": "23c974a195421e919be44db2",
+            "locator": "#content",
+            "source": "data/raw/consumer_sources/kca_redress_requirements_f5048b0525c401e4.html"
+          },
+          {
+            "id": "e30b59ac1986f22137dca46f",
+            "locator": "#content",
+            "source": "data/raw/consumer_sources/kca_damage_redress_procedure_a76de09b87f6e095.html"
+          }
+        ]
+      },
+      {
+        "query": "임금체불 진정 고소 신고 절차",
+        "expected_document": "moel_wage_procedure",
+        "expected_locator": null,
+        "rank_at_5": 1,
+        "top5": [
+          {
+            "id": "3e87fddc0e0907769eb7dea7",
+            "locator": ".contents",
+            "source": "data/raw/consumer_sources/moel_wage_procedure_9c52aa51a2d0ec54.html"
+          },
+          {
+            "id": "a7503ddb17b13b26328bbb01",
+            "locator": ".contents",
+            "source": "data/raw/consumer_sources/moel_wage_procedure_9c52aa51a2d0ec54.html"
+          },
+          {
+            "id": "7ff121e88059c36a6d8e3ba8",
+            "locator": ".contents",
+            "source": "data/raw/consumer_sources/moel_wage_procedure_9c52aa51a2d0ec54.html"
+          },
+          {
+            "id": "3b81fb4dd6dcc7fa4cd5769c",
+            "locator": ".contents",
+            "source": "data/raw/consumer_sources/moel_wage_procedure_9c52aa51a2d0ec54.html"
+          },
+          {
+            "id": "0de623e40f2b7414f12bf1a6",
+            "locator": ".contents",
+            "source": "data/raw/consumer_sources/moel_wage_procedure_9c52aa51a2d0ec54.html"
+          }
+        ]
+      },
+      {
+        "query": "임금체불 근로계약서 급여자료 증빙 준비",
+        "expected_document": "moel_wage_evidence_1000323154",
+        "expected_locator": null,
+        "rank_at_5": 1,
+        "top5": [
+          {
+            "id": "d384af979dfcad337435610e",
+            "locator": ".body03_g",
+            "source": "data/raw/consumer_sources/moel_wage_evidence_1000323154_7492a58ac0c94d39.html"
+          },
+          {
+            "id": "3e87fddc0e0907769eb7dea7",
+            "locator": ".contents",
+            "source": "data/raw/consumer_sources/moel_wage_procedure_9c52aa51a2d0ec54.html"
+          },
+          {
+            "id": "a7503ddb17b13b26328bbb01",
+            "locator": ".contents",
+            "source": "data/raw/consumer_sources/moel_wage_procedure_9c52aa51a2d0ec54.html"
+          },
+          {
+            "id": "f87e143fcb0da297622a1511",
+            "locator": ".contents",
+            "source": "data/raw/consumer_sources/moel_wage_procedure_9c52aa51a2d0ec54.html"
+          },
+          {
+            "id": "3b81fb4dd6dcc7fa4cd5769c",
+            "locator": ".contents",
+            "source": "data/raw/consumer_sources/moel_wage_procedure_9c52aa51a2d0ec54.html"
+          }
+        ]
+      },
+      {
+        "query": "주택임대차 계약 묵시적 갱신",
+        "expected_document": "001248_276291_20260102",
+        "expected_locator": "제6조(",
+        "rank_at_5": null,
+        "top5": [
+          {
+            "id": "f501a0fde1b1d2d23daf3558",
+            "locator": "PDF 56페이지 / 4.4. 임대차계약 갱신 > 4.4.1. 임대차계약의 갱신",
+            "source": "data/raw/guides/[pdf]주택임대차.pdf"
+          },
+          {
+            "id": "d8f08abeec04bd436e9b6e3d",
+            "locator": "제6조의2(묵시적 갱신의 경우 계약의 해지)",
+            "source": "data/raw/laws/001248_276291_20260102.json"
+          },
+          {
+            "id": "1d8583845e49914693e48efe",
+            "locator": "PDF 56페이지 / 4.4. 임대차계약 갱신 > 4.4.1. 임대차계약의 갱신",
+            "source": "data/raw/guides/[pdf]주택임대차.pdf"
+          },
+          {
+            "id": "5a29f5319595a06c78446997",
+            "locator": "PDF 58페이지 / 4.4. 임대차계약 갱신 > 4.4.1. 임대차계약의 갱신",
+            "source": "data/raw/guides/[pdf]주택임대차.pdf"
+          },
+          {
+            "id": "36f46ebad69613eed442d07c",
+            "locator": "PDF 55페이지 / 4.4. 임대차계약 갱신 > 4.4.1. 임대차계약의 갱신",
+            "source": "data/raw/guides/[pdf]주택임대차.pdf"
+          }
+        ]
+      },
+      {
+        "query": "주택임대차 묵시적 갱신 계약 해지 통지 3개월",
+        "expected_document": "001248_276291_20260102",
+        "expected_locator": "제6조의2",
+        "rank_at_5": 2,
+        "top5": [
+          {
+            "id": "a597243730fa6ad50d1204eb",
+            "locator": "PDF 84페이지 / 5.3. 투하 비용의 회수 > 5.3.1. 유익비상환청구 / 표 1",
+            "source": "data/raw/guides/[pdf]주택임대차.pdf"
+          },
+          {
+            "id": "d8f08abeec04bd436e9b6e3d",
+            "locator": "제6조의2(묵시적 갱신의 경우 계약의 해지)",
+            "source": "data/raw/laws/001248_276291_20260102.json"
+          },
+          {
+            "id": "f501a0fde1b1d2d23daf3558",
+            "locator": "PDF 56페이지 / 4.4. 임대차계약 갱신 > 4.4.1. 임대차계약의 갱신",
+            "source": "data/raw/guides/[pdf]주택임대차.pdf"
+          },
+          {
+            "id": "5a29f5319595a06c78446997",
+            "locator": "PDF 58페이지 / 4.4. 임대차계약 갱신 > 4.4.1. 임대차계약의 갱신",
+            "source": "data/raw/guides/[pdf]주택임대차.pdf"
+          },
+          {
+            "id": "36f46ebad69613eed442d07c",
+            "locator": "PDF 55페이지 / 4.4. 임대차계약 갱신 > 4.4.1. 임대차계약의 갱신",
+            "source": "data/raw/guides/[pdf]주택임대차.pdf"
+          }
+        ]
+      },
+      {
+        "query": "보증금 반환 임차권등기명령 신청",
+        "expected_document": "001248_276291_20260102",
+        "expected_locator": "제3조의3",
+        "rank_at_5": 4,
+        "top5": [
+          {
+            "id": "0175ad506bb15382ee7ed664",
+            "locator": "PDF 66페이지 / 5.2. 보증금의 회수 > 5.2.1. 임차권등기명령 신청",
+            "source": "data/raw/guides/[pdf]주택임대차.pdf"
+          },
+          {
+            "id": "fa9a60db31ca1a2cac32be26",
+            "locator": "PDF 63페이지 / 5.2. 보증금의 회수 > 5.2.1. 임차권등기명령 신청",
+            "source": "data/raw/guides/[pdf]주택임대차.pdf"
+          },
+          {
+            "id": "52c534f38687ff4edfe9b587",
+            "locator": "PDF 64페이지 / 5.2. 보증금의 회수 > 5.2.1. 임차권등기명령 신청",
+            "source": "data/raw/guides/[pdf]주택임대차.pdf"
+          },
+          {
+            "id": "bb4a35cf439e689e3b5f6f65",
+            "locator": "제3조의3(임차권등기명령)",
+            "source": "data/raw/laws/001248_276291_20260102.json"
+          },
+          {
+            "id": "c2661dcc7aaf40426b1b39d7",
+            "locator": "PDF 65페이지 / 5.2. 보증금의 회수 > 5.2.1. 임차권등기명령 신청",
+            "source": "data/raw/guides/[pdf]주택임대차.pdf"
+          }
+        ]
+      },
+      {
+        "query": "근로기준법 해고 예고 30일 통상임금",
+        "expected_document": "001872_285279_20261008",
+        "expected_locator": "제26조(",
+        "rank_at_5": 4,
+        "top5": [
+          {
+            "id": "c5695453eb018918eea335b3",
+            "locator": "PDF 34페이지 / 3.2. 해고 절차의 제한 > 3.2.1. 해고예고",
+            "source": "data/raw/guides/[pdf]해고근로자.pdf"
+          },
+          {
+            "id": "86e3dfa390b4c40342b5cb06",
+            "locator": "PDF 34페이지 / 3.2. 해고 절차의 제한 > 3.2.1. 해고예고",
+            "source": "data/raw/guides/[pdf]해고근로자.pdf"
+          },
+          {
+            "id": "5fd0bb6d4ea6f969edc7dd9a",
+            "locator": "PDF 12페이지 / 15. 선고 2010가합4196 확정판결).",
+            "source": "data/raw/guides/[pdf]해고근로자.pdf"
+          },
+          {
+            "id": "8b0090a798005c8c8b2119b4",
+            "locator": "제26조(해고의 예고)",
+            "source": "data/raw/laws/001872_285279_20261008.json"
+          },
+          {
+            "id": "1922185983f0c06d274f2d40",
+            "locator": "제6조(통상임금)",
+            "source": "data/raw/laws/003058_270551_20251023.json"
+          }
+        ]
+      },
+      {
+        "query": "근로기준법 해고 사유 시기 서면 통지",
+        "expected_document": "001872_285279_20261008",
+        "expected_locator": "제27조(",
+        "rank_at_5": 2,
+        "top5": [
+          {
+            "id": "efb987ec18955f7dc175a05e",
+            "locator": "PDF 36페이지 / 3.2.2. 해고 사유 등의 서면 명시",
+            "source": "data/raw/guides/[pdf]해고근로자.pdf"
+          },
+          {
+            "id": "b86ca12e18f67b91a5ba7dad",
+            "locator": "제27조(해고사유 등의 서면통지)",
+            "source": "data/raw/laws/001872_285279_20261008.json"
+          },
+          {
+            "id": "d563fbd27d9883609b251680",
+            "locator": "PDF 12페이지 / 15. 선고 2010가합4196 확정판결).",
+            "source": "data/raw/guides/[pdf]해고근로자.pdf"
+          },
+          {
+            "id": "5fd0bb6d4ea6f969edc7dd9a",
+            "locator": "PDF 12페이지 / 15. 선고 2010가합4196 확정판결).",
+            "source": "data/raw/guides/[pdf]해고근로자.pdf"
+          },
+          {
+            "id": "a69500b1eec307a96fed8c74",
+            "locator": "PDF 13페이지 / 15. 선고 2010가합4196 확정판결).",
+            "source": "data/raw/guides/[pdf]해고근로자.pdf"
+          }
+        ]
+      },
+      {
+        "query": "퇴직 임금 금품 청산 14일",
+        "expected_document": "001872_285279_20261008",
+        "expected_locator": "제36조(",
+        "rank_at_5": 1,
+        "top5": [
+          {
+            "id": "0a9383db76db37fe04035f44",
+            "locator": "제36조(금품 청산)",
+            "source": "data/raw/laws/001872_285279_20261008.json"
+          },
+          {
+            "id": "67c90bcc05b07c4ab1953028",
+            "locator": "PDF 73페이지 / 5.2. 임금, 퇴직금 등 지급 > 5.2.1. 금품청산 > 1. 「채무자 회생 및 파산에 관한 법률」에 따른 회생절차개시의 결정이 있는 경우",
+            "source": "data/raw/guides/[pdf]해고근로자.pdf"
+          },
+          {
+            "id": "e56b04c82f18cd2503c7d29a",
+            "locator": "PDF 73페이지 / 5.2. 임금, 퇴직금 등 지급 > 5.2.1. 금품청산 > 1. 「채무자 회생 및 파산에 관한 법률」에 따른 회생절차개시의 결정이 있는 경우",
+            "source": "data/raw/guides/[pdf]해고근로자.pdf"
+          },
+          {
+            "id": "30b01e7fe13132353cc46dd2",
+            "locator": "PDF 77페이지 / 5.2.3. 미지급 임금ㆍ퇴직금(체불임금) 구제 절차 > 1. 「채무자 회생 및 파산에 관한 법률」에 따른 회생절차개시의 결정이 있는 경우 > 2. 「채무자 회생 및 파산에 관한 법률」에 따른 파산선고의 결정이 있는 경우",
+            "source": "data/raw/guides/[pdf]해고근로자.pdf"
+          },
+          {
+            "id": "c84f5c8c869155d4509b81b8",
+            "locator": "제23조의2(체불사업주 명단 공개 제외 대상)",
+            "source": "data/raw/laws/003058_270551_20251023.json"
+          }
+        ]
+      },
+      {
+        "query": "임금 직접 전액 지급 매월 일정한 날짜",
+        "expected_document": "001872_285279_20261008",
+        "expected_locator": "제43조(",
+        "rank_at_5": 1,
+        "top5": [
+          {
+            "id": "3a1a06c4072a6d224e21e358",
+            "locator": "제43조(임금 지급)",
+            "source": "data/raw/laws/001872_285279_20261008.json"
+          },
+          {
+            "id": "6a28d44e3e06291198e18b81",
+            "locator": "제23조(매월 1회 이상 지급하여야 할 임금의 예외)",
+            "source": "data/raw/laws/003058_270551_20251023.json"
+          },
+          {
+            "id": "30b01e7fe13132353cc46dd2",
+            "locator": "PDF 77페이지 / 5.2.3. 미지급 임금ㆍ퇴직금(체불임금) 구제 절차 > 1. 「채무자 회생 및 파산에 관한 법률」에 따른 회생절차개시의 결정이 있는 경우 > 2. 「채무자 회생 및 파산에 관한 법률」에 따른 파산선고의 결정이 있는 경우",
+            "source": "data/raw/guides/[pdf]해고근로자.pdf"
+          },
+          {
+            "id": "dcaa570bfeb3e25cb5c5fa37",
+            "locator": "제250조(채권자의 추심최고)",
+            "source": "data/raw/laws/009290_268837_20260201.json"
+          },
+          {
+            "id": "896fe801bb59fa5a5b3f36ca",
+            "locator": "제5조의3(일반택시운송사업 운전 근로자의 최저임금에 산입되는 임금의 범위)",
+            "source": "data/raw/laws/005247_206564_20190101.json"
+          }
+        ]
+      }
+    ]
+  }
+}

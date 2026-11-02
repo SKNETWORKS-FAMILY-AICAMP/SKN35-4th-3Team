@@ -1,0 +1,386 @@
+{
+  "schema_version": 3,
+  "document_id": "008480_282351_20260102_appendix_000100F",
+  "title": "최저임금법 시행규칙",
+  "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000100F.pdf",
+  "raw_sha256": "8339d500fc8735060cb83b87bb3141a4ef6b9ede9a03d9a1d17beda6ab46ffcc",
+  "units": [
+    {
+      "document_id": "008480_282351_20260102_appendix_000100F",
+      "title": "최저임금법 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=282351",
+      "document_type": "law",
+      "domains": [
+        "labor_wage"
+      ],
+      "dates": {
+        "effective_date": "2026-01-02",
+        "article_effective_date": "2026-01-02",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000100F.pdf",
+      "raw_sha256": "8339d500fc8735060cb83b87bb3141a4ef6b9ede9a03d9a1d17beda6ab46ffcc",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "unit_id": "008480_282351_20260102_appendix_000100F:p1:body",
+      "text": "[ ] 정신\n장애로 인한 최저임금 적용 제외 인가신청서\n[ ] 신체\n※[ ]에는 해당하는 곳에 √표시를 합니다. (앞쪽)\n전화번호\n생년월일\n신청인\n주소(사업장 소재지)\n사업의 종류\n성명 생년월일 (남/여)\n장애인\n근로자 주소\n신청내용\n「최저임금법 시행령」 제6조 및 「최저임금법 시행규칙」 제3조제2항에 따라 위와 같이 최저임금 적용\n제외의 인가를 신청합니다.\n년 월 일\n신청인\n(서명 또는 인)\n○○지방고용노동청(지청)장 귀하\n1. 신청일이 속하는 달의 직전 달의 사업장 전체 근로자 임금대장 사본 1부\n2. 정신장애인이나 신체장애인임을 증명할 수 있는 서류 사본 1부 수수료\n첨부서류\n3. 친권자 의견서 사본 1부(지적장애, 정신장애 또는 자폐성장애 등으로 인한 신청의 경우만 없음\n해당합니다)\n210mm×297mm(백상지 80g/㎡)",
+      "locator": "PDF 1페이지 / 1. 신청일이 속하는 달의 직전 달의 사업장 전체 근로자 임금대장 사본 1부 > 2. 정신장애인이나 신체장애인임을 증명할 수 있는 서류 사본 1부 수수료 > 3. 친권자 의견서 사본 1부(지적장애, 정신장애 또는 자폐성장애 등으로 인한 신청의 경우만 없음",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "pdf_body",
+      "removed_margin_lines": [],
+      "images": []
+    },
+    {
+      "document_id": "008480_282351_20260102_appendix_000100F",
+      "title": "최저임금법 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=282351",
+      "document_type": "law",
+      "domains": [
+        "labor_wage"
+      ],
+      "dates": {
+        "effective_date": "2026-01-02",
+        "article_effective_date": "2026-01-02",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000100F.pdf",
+      "raw_sha256": "8339d500fc8735060cb83b87bb3141a4ef6b9ede9a03d9a1d17beda6ab46ffcc",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "008480_282351_20260102_appendix_000100F:p1:table0",
+      "text": "■ 최저임금법 시행규칙 [별지 제1호서식] <개정 2018. 12. 31. | >",
+      "locator": "PDF 1페이지 / 1. 신청일이 속하는 달의 직전 달의 사업장 전체 근로자 임금대장 사본 1부 > 2. 정신장애인이나 신체장애인임을 증명할 수 있는 서류 사본 1부 수수료 > 3. 친권자 의견서 사본 1부(지적장애, 정신장애 또는 자폐성장애 등으로 인한 신청의 경우만 없음 / 표 1",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          59.488,
+          60.773000000000025,
+          314.351,
+          69.76400000000001
+        ],
+        "rows": [
+          [
+            "■ 최저임금법 시행규칙 [별지 제1호서식] <개정 2018. 12. 31.",
+            ">"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    },
+    {
+      "document_id": "008480_282351_20260102_appendix_000100F",
+      "title": "최저임금법 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=282351",
+      "document_type": "law",
+      "domains": [
+        "labor_wage"
+      ],
+      "dates": {
+        "effective_date": "2026-01-02",
+        "article_effective_date": "2026-01-02",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000100F.pdf",
+      "raw_sha256": "8339d500fc8735060cb83b87bb3141a4ef6b9ede9a03d9a1d17beda6ab46ffcc",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "008480_282351_20260102_appendix_000100F:p1:table1",
+      "text": "접수번호 | 접수일 | 처리기간 21일",
+      "locator": "PDF 1페이지 / 1. 신청일이 속하는 달의 직전 달의 사업장 전체 근로자 임금대장 사본 1부 > 2. 정신장애인이나 신체장애인임을 증명할 수 있는 서류 사본 1부 수수료 > 3. 친권자 의견서 사본 1부(지적장애, 정신장애 또는 자폐성장애 등으로 인한 신청의 경우만 없음 / 표 2",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          59.488,
+          132.21500000000003,
+          536.232,
+          156.30899999999997
+        ],
+        "rows": [
+          [
+            "접수번호",
+            "접수일",
+            "처리기간 21일"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    },
+    {
+      "document_id": "008480_282351_20260102_appendix_000100F",
+      "title": "최저임금법 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=282351",
+      "document_type": "law",
+      "domains": [
+        "labor_wage"
+      ],
+      "dates": {
+        "effective_date": "2026-01-02",
+        "article_effective_date": "2026-01-02",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000100F.pdf",
+      "raw_sha256": "8339d500fc8735060cb83b87bb3141a4ef6b9ede9a03d9a1d17beda6ab46ffcc",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "008480_282351_20260102_appendix_000100F:p1:table2",
+      "text": "상호(법인명)\n성명(대표자)",
+      "locator": "PDF 1페이지 / 1. 신청일이 속하는 달의 직전 달의 사업장 전체 근로자 임금대장 사본 1부 > 2. 정신장애인이나 신체장애인임을 증명할 수 있는 서류 사본 1부 수수료 > 3. 친권자 의견서 사본 1부(지적장애, 정신장애 또는 자폐성장애 등으로 인한 신청의 경우만 없음 / 표 3",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          118.736,
+          161.94299999999998,
+          347.453,
+          215.764
+        ],
+        "rows": [
+          [
+            "상호(법인명)"
+          ],
+          [
+            "성명(대표자)"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    },
+    {
+      "document_id": "008480_282351_20260102_appendix_000100F",
+      "title": "최저임금법 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=282351",
+      "document_type": "law",
+      "domains": [
+        "labor_wage"
+      ],
+      "dates": {
+        "effective_date": "2026-01-02",
+        "article_effective_date": "2026-01-02",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000100F.pdf",
+      "raw_sha256": "8339d500fc8735060cb83b87bb3141a4ef6b9ede9a03d9a1d17beda6ab46ffcc",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "008480_282351_20260102_appendix_000100F:p1:table3",
+      "text": "장애의 상태\n장애인근로자의 취급\n업무\n장애인근로자의 작업\n능력\n같거나 유사한 직종의\n평균작업능력\n지급하려는\n시간 당 임금액\n같거나 유사한 직종의\n시간 당 임금액\n최저임금 적용 제외가\n필요한 사유",
+      "locator": "PDF 1페이지 / 1. 신청일이 속하는 달의 직전 달의 사업장 전체 근로자 임금대장 사본 1부 > 2. 정신장애인이나 신체장애인임을 증명할 수 있는 서류 사본 1부 수수료 > 3. 친권자 의견서 사본 1부(지적장애, 정신장애 또는 자폐성장애 등으로 인한 신청의 경우만 없음 / 표 4",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          118.736,
+          334.674,
+          219.002,
+          565.302
+        ],
+        "rows": [
+          [
+            "장애의 상태"
+          ],
+          [
+            "장애인근로자의 취급\n업무"
+          ],
+          [
+            "장애인근로자의 작업\n능력"
+          ],
+          [
+            "같거나 유사한 직종의\n평균작업능력"
+          ],
+          [
+            "지급하려는\n시간 당 임금액"
+          ],
+          [
+            "같거나 유사한 직종의\n시간 당 임금액"
+          ],
+          [
+            "최저임금 적용 제외가\n필요한 사유"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    },
+    {
+      "document_id": "008480_282351_20260102_appendix_000100F",
+      "title": "최저임금법 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=282351",
+      "document_type": "law",
+      "domains": [
+        "labor_wage"
+      ],
+      "dates": {
+        "effective_date": "2026-01-02",
+        "article_effective_date": "2026-01-02",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000100F.pdf",
+      "raw_sha256": "8339d500fc8735060cb83b87bb3141a4ef6b9ede9a03d9a1d17beda6ab46ffcc",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "unit_id": "008480_282351_20260102_appendix_000100F:p2:body",
+      "text": "(뒤쪽)\n작성방법 및 유의사항\n1. 신청 대상 장애인 근로자가 복수인 경우에는 대상자별로 신청서를 제출하고, 신청 대상 장애인 근로자가 ｢근로기준법｣상 근로자로 볼 수 없\n거나 취급업무가 장애와 직접적인 관련이 없고 실제 수행하지 않는 작업으로 신청한 경우에는 신청서는 반려됩니다.\n2. 신청 대상 장애인근로자의 취급업무는 구체적으로 전부 적습니다.\n예)쇼핑백제작 : ①쇼핑백 상단부분을 안쪽으로 접어 넣음 ②쇼핑백 안쪽으로 간지를 넣음 ③ 쇼핑백 하단을 팔각형 모양이 되게 접음\n부품 조립 : ①탁자위에 부품1과 부품2 놓기 ②부품1을 부품2에 정해진 위치에 고정하고 돌리기 ③부품1과 부품2를 박스에 넣기\n3. 신청 대상 장애인근로자의 작업능력은 같거나 유사한 직종의 평균작업능력과 비교하여 취급업무 전부에 대하여 적습니다.\n예) 장애인근로자 작업능력 쇼핑백 제작 100개, 부품조립 70개\n같거나 유사한 직종의 평균작업능력 쇼핑백 제작 150개, 부품조립 100개\n4. 같거나 유사한 직종의 평균작업능력은 신청 대상 장애인 근로자와 동일 또는 유사한 직종의 최저임금을 받는 근로자 중 임금이 가장\n낮은 근로자의 평균작업능력을 의미하며, 해당되는 근로자가 2인 이상일 경우에는 그 중 가장 최근 입사한 근로자로 선정하여야 합\n니다. 다만, 현장조사 과정에서 보다 적합한 근로자가 있는 것으로 확인될 경우 변경될 수 있습니다.\n5. 작업능력은 신청 대상 장애인 근로자의 업무에 대하여 일정 시간 동안 수행한 작업량으로 측정하고, 신청 대상 장애인 근로자의 작업능\n력은 백분율 값으로 표시합니다.(같거나 유사한 직종의 최저임금을 받는 근로자와 작업능력이 같을 때의 백분율 값은 100입니다) 다\n만, 백분율 값으로 표시가 불가능한 경우에는 같거나 유사한 직종의 최저임금을 받는 근로자와 신청 대상 장애인 근로자를 비교하여\n우수, 보통, 미흡, 매우미흡으로 적습니다.\n처리절차\n※ 이 신청서는 아래와 같이 처리됩니다.\n처리기관\n신청인\n지방고용노동청(지청)장\n(제출)\n신청서 작성 ▶ 접수\n▲\n(서무과)\n▼\n검토\n(근로개선지도과)\n(한국장애인고용공단\n에 평가 의뢰)\n▼\n(통보)\n결재\n(청장ㆍ지청장)",
+      "locator": "PDF 2페이지 / 1. 신청 대상 장애인 근로자가 복수인 경우에는 대상자별로 신청서를 제출하고, 신청 대상 장애인 근로자가 ｢근로기준법｣상 근로자로 볼 수 없 > 2. 신청 대상 장애인근로자의 취급업무는 구체적으로 전부 적습니다. > 3. 신청 대상 장애인근로자의 작업능력은 같거나 유사한 직종의 평균작업능력과 비교하여 취급업무 전부에 대하여 적습니다.",
+      "embedding_candidate": false,
+      "page_number": 2,
+      "content_type": "pdf_body",
+      "removed_margin_lines": [],
+      "images": []
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "■ 최저임금법 시행규칙 [별지 제1호서식] <개정 2018. 12. 31.>\n[ ] 정신\n장애로 인한 최저임금 적용 제외 인가신청서\n[ ] 신체\n※[ ]에는 해당하는 곳에 √표시를 합니다. (앞쪽)\n접수번호 접수일 처리기간 21일\n상호(법인명) 전화번호\n성명(대표자) 생년월일\n신청인\n주소(사업장 소재지)\n사업의 종류\n성명 생년월일 (남/여)\n장애인\n근로자 주소\n장애의 상태\n장애인근로자의 취급\n업무\n장애인근로자의 작업\n능력\n같거나 유사한 직종의\n신청내용\n평균작업능력\n지급하려는\n시간 당 임금액\n같거나 유사한 직종의\n시간 당 임금액\n최저임금 적용 제외가\n필요한 사유\n「최저임금법 시행령」 제6조 및 「최저임금법 시행규칙」 제3조제2항에 따라 위와 같이 최저임금 적용\n제외의 인가를 신청합니다.\n년 월 일\n신청인\n(서명 또는 인)\n○○지방고용노동청(지청)장 귀하\n1. 신청일이 속하는 달의 직전 달의 사업장 전체 근로자 임금대장 사본 1부\n2. 정신장애인이나 신체장애인임을 증명할 수 있는 서류 사본 1부 수수료\n첨부서류\n3. 친권자 의견서 사본 1부(지적장애, 정신장애 또는 자폐성장애 등으로 인한 신청의 경우만 없음\n해당합니다)\n210mm×297mm(백상지 80g/㎡)",
+      "body_text": "[ ] 정신\n장애로 인한 최저임금 적용 제외 인가신청서\n[ ] 신체\n※[ ]에는 해당하는 곳에 √표시를 합니다. (앞쪽)\n전화번호\n생년월일\n신청인\n주소(사업장 소재지)\n사업의 종류\n성명 생년월일 (남/여)\n장애인\n근로자 주소\n신청내용\n「최저임금법 시행령」 제6조 및 「최저임금법 시행규칙」 제3조제2항에 따라 위와 같이 최저임금 적용\n제외의 인가를 신청합니다.\n년 월 일\n신청인\n(서명 또는 인)\n○○지방고용노동청(지청)장 귀하\n1. 신청일이 속하는 달의 직전 달의 사업장 전체 근로자 임금대장 사본 1부\n2. 정신장애인이나 신체장애인임을 증명할 수 있는 서류 사본 1부 수수료\n첨부서류\n3. 친권자 의견서 사본 1부(지적장애, 정신장애 또는 자폐성장애 등으로 인한 신청의 경우만 없음\n해당합니다)\n210mm×297mm(백상지 80g/㎡)",
+      "tables": [
+        {
+          "bbox": [
+            59.488,
+            60.773000000000025,
+            314.351,
+            69.76400000000001
+          ],
+          "rows": [
+            [
+              "■ 최저임금법 시행규칙 [별지 제1호서식] <개정 2018. 12. 31.",
+              ">"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        },
+        {
+          "bbox": [
+            59.488,
+            132.21500000000003,
+            536.232,
+            156.30899999999997
+          ],
+          "rows": [
+            [
+              "접수번호",
+              "접수일",
+              "처리기간 21일"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        },
+        {
+          "bbox": [
+            118.736,
+            161.94299999999998,
+            347.453,
+            215.764
+          ],
+          "rows": [
+            [
+              "상호(법인명)"
+            ],
+            [
+              "성명(대표자)"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        },
+        {
+          "bbox": [
+            118.736,
+            334.674,
+            219.002,
+            565.302
+          ],
+          "rows": [
+            [
+              "장애의 상태"
+            ],
+            [
+              "장애인근로자의 취급\n업무"
+            ],
+            [
+              "장애인근로자의 작업\n능력"
+            ],
+            [
+              "같거나 유사한 직종의\n평균작업능력"
+            ],
+            [
+              "지급하려는\n시간 당 임금액"
+            ],
+            [
+              "같거나 유사한 직종의\n시간 당 임금액"
+            ],
+            [
+              "최저임금 적용 제외가\n필요한 사유"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        }
+      ],
+      "images": [],
+      "removed_margin_lines": []
+    },
+    {
+      "page_number": 2,
+      "raw_text": "(뒤쪽)\n작성방법 및 유의사항\n1. 신청 대상 장애인 근로자가 복수인 경우에는 대상자별로 신청서를 제출하고, 신청 대상 장애인 근로자가 ｢근로기준법｣상 근로자로 볼 수 없\n거나 취급업무가 장애와 직접적인 관련이 없고 실제 수행하지 않는 작업으로 신청한 경우에는 신청서는 반려됩니다.\n2. 신청 대상 장애인근로자의 취급업무는 구체적으로 전부 적습니다.\n예)쇼핑백제작 : ①쇼핑백 상단부분을 안쪽으로 접어 넣음 ②쇼핑백 안쪽으로 간지를 넣음 ③ 쇼핑백 하단을 팔각형 모양이 되게 접음\n부품 조립 : ①탁자위에 부품1과 부품2 놓기 ②부품1을 부품2에 정해진 위치에 고정하고 돌리기 ③부품1과 부품2를 박스에 넣기\n3. 신청 대상 장애인근로자의 작업능력은 같거나 유사한 직종의 평균작업능력과 비교하여 취급업무 전부에 대하여 적습니다.\n예) 장애인근로자 작업능력 쇼핑백 제작 100개, 부품조립 70개\n같거나 유사한 직종의 평균작업능력 쇼핑백 제작 150개, 부품조립 100개\n4. 같거나 유사한 직종의 평균작업능력은 신청 대상 장애인 근로자와 동일 또는 유사한 직종의 최저임금을 받는 근로자 중 임금이 가장\n낮은 근로자의 평균작업능력을 의미하며, 해당되는 근로자가 2인 이상일 경우에는 그 중 가장 최근 입사한 근로자로 선정하여야 합\n니다. 다만, 현장조사 과정에서 보다 적합한 근로자가 있는 것으로 확인될 경우 변경될 수 있습니다.\n5. 작업능력은 신청 대상 장애인 근로자의 업무에 대하여 일정 시간 동안 수행한 작업량으로 측정하고, 신청 대상 장애인 근로자의 작업능\n력은 백분율 값으로 표시합니다.(같거나 유사한 직종의 최저임금을 받는 근로자와 작업능력이 같을 때의 백분율 값은 100입니다) 다\n만, 백분율 값으로 표시가 불가능한 경우에는 같거나 유사한 직종의 최저임금을 받는 근로자와 신청 대상 장애인 근로자를 비교하여\n우수, 보통, 미흡, 매우미흡으로 적습니다.\n처리절차\n※ 이 신청서는 아래와 같이 처리됩니다.\n처리기관\n신청인\n지방고용노동청(지청)장\n(제출)\n신청서 작성 ▶ 접수\n▲\n(서무과)\n▼\n검토\n(근로개선지도과)\n(한국장애인고용공단\n에 평가 의뢰)\n▼\n(통보)\n결재\n(청장ㆍ지청장)",
+      "body_text": "(뒤쪽)\n작성방법 및 유의사항\n1. 신청 대상 장애인 근로자가 복수인 경우에는 대상자별로 신청서를 제출하고, 신청 대상 장애인 근로자가 ｢근로기준법｣상 근로자로 볼 수 없\n거나 취급업무가 장애와 직접적인 관련이 없고 실제 수행하지 않는 작업으로 신청한 경우에는 신청서는 반려됩니다.\n2. 신청 대상 장애인근로자의 취급업무는 구체적으로 전부 적습니다.\n예)쇼핑백제작 : ①쇼핑백 상단부분을 안쪽으로 접어 넣음 ②쇼핑백 안쪽으로 간지를 넣음 ③ 쇼핑백 하단을 팔각형 모양이 되게 접음\n부품 조립 : ①탁자위에 부품1과 부품2 놓기 ②부품1을 부품2에 정해진 위치에 고정하고 돌리기 ③부품1과 부품2를 박스에 넣기\n3. 신청 대상 장애인근로자의 작업능력은 같거나 유사한 직종의 평균작업능력과 비교하여 취급업무 전부에 대하여 적습니다.\n예) 장애인근로자 작업능력 쇼핑백 제작 100개, 부품조립 70개\n같거나 유사한 직종의 평균작업능력 쇼핑백 제작 150개, 부품조립 100개\n4. 같거나 유사한 직종의 평균작업능력은 신청 대상 장애인 근로자와 동일 또는 유사한 직종의 최저임금을 받는 근로자 중 임금이 가장\n낮은 근로자의 평균작업능력을 의미하며, 해당되는 근로자가 2인 이상일 경우에는 그 중 가장 최근 입사한 근로자로 선정하여야 합\n니다. 다만, 현장조사 과정에서 보다 적합한 근로자가 있는 것으로 확인될 경우 변경될 수 있습니다.\n5. 작업능력은 신청 대상 장애인 근로자의 업무에 대하여 일정 시간 동안 수행한 작업량으로 측정하고, 신청 대상 장애인 근로자의 작업능\n력은 백분율 값으로 표시합니다.(같거나 유사한 직종의 최저임금을 받는 근로자와 작업능력이 같을 때의 백분율 값은 100입니다) 다\n만, 백분율 값으로 표시가 불가능한 경우에는 같거나 유사한 직종의 최저임금을 받는 근로자와 신청 대상 장애인 근로자를 비교하여\n우수, 보통, 미흡, 매우미흡으로 적습니다.\n처리절차\n※ 이 신청서는 아래와 같이 처리됩니다.\n처리기관\n신청인\n지방고용노동청(지청)장\n(제출)\n신청서 작성 ▶ 접수\n▲\n(서무과)\n▼\n검토\n(근로개선지도과)\n(한국장애인고용공단\n에 평가 의뢰)\n▼\n(통보)\n결재\n(청장ㆍ지청장)",
+      "tables": [],
+      "images": [],
+      "removed_margin_lines": []
+    }
+  ]
+}

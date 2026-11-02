@@ -1,0 +1,182 @@
+{
+  "schema_version": 3,
+  "document_id": "007196_284567_20260317_appendix_000900F",
+  "title": "방문판매 등에 관한 법률 시행규칙",
+  "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000900F.pdf",
+  "raw_sha256": "7fed6ba6498d141878080e6ea573f1a3511045d24f9b9edeba2ff50d5eeb8276",
+  "units": [
+    {
+      "document_id": "007196_284567_20260317_appendix_000900F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000900F.pdf",
+      "raw_sha256": "7fed6ba6498d141878080e6ea573f1a3511045d24f9b9edeba2ff50d5eeb8276",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "unit_id": "007196_284567_20260317_appendix_000900F:p1:body",
+      "text": "■ 방문판매 등에 관한 법률 시행규칙 [별지 제9호서식]\n(앞 쪽)\n후원방문판매업 등록증\n1. 등록번호\n2. 상호\n3. 소재지\n4. 대표자의 성명\n5. 대표자의 생년월일(남ㆍ여)\n6. 전자우편주소\n「방문판매 등에 관한 법률 시행령」 제20조제2항 및 같은 법 시행규칙\n제11조제2항에 따라 위와 같이 후원방문판매업을 등록하였음을 증명합니다.\n년 월 일\n공정거래위원회\n특별시장ㆍ광역시장ㆍ특별자치시장ㆍ 직인\n도지사ㆍ특별자치도지사\n210mm× 297mm[백상지 120g/㎡]",
+      "locator": "PDF 1페이지 / 1. 등록번호 > 2. 상호 > 3. 소재지",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "pdf_body",
+      "removed_margin_lines": [],
+      "images": []
+    },
+    {
+      "document_id": "007196_284567_20260317_appendix_000900F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000900F.pdf",
+      "raw_sha256": "7fed6ba6498d141878080e6ea573f1a3511045d24f9b9edeba2ff50d5eeb8276",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "unit_id": "007196_284567_20260317_appendix_000900F:p2:body",
+      "text": "(뒤 쪽)",
+      "locator": "PDF 2페이지 / 1. 등록번호 > 2. 상호 > 3. 소재지",
+      "embedding_candidate": false,
+      "page_number": 2,
+      "content_type": "pdf_body",
+      "removed_margin_lines": [],
+      "images": []
+    },
+    {
+      "document_id": "007196_284567_20260317_appendix_000900F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000900F.pdf",
+      "raw_sha256": "7fed6ba6498d141878080e6ea573f1a3511045d24f9b9edeba2ff50d5eeb8276",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "007196_284567_20260317_appendix_000900F:p2:table0",
+      "text": "변경사항 및 처분사항 등 | |\n연월일 | 변경 및 처분 내용 | 담당자(서명 또는 인)\n| |",
+      "locator": "PDF 2페이지 / 1. 등록번호 > 2. 상호 > 3. 소재지 / 표 1",
+      "embedding_candidate": false,
+      "page_number": 2,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          59.488,
+          84.86699999999996,
+          539.83,
+          759.369
+        ],
+        "rows": [
+          [
+            "변경사항 및 처분사항 등",
+            null,
+            null
+          ],
+          [
+            "연월일",
+            "변경 및 처분 내용",
+            "담당자(서명 또는 인)"
+          ],
+          [
+            "",
+            "",
+            ""
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "■ 방문판매 등에 관한 법률 시행규칙 [별지 제9호서식]\n(앞 쪽)\n후원방문판매업 등록증\n1. 등록번호\n2. 상호\n3. 소재지\n4. 대표자의 성명\n5. 대표자의 생년월일(남ㆍ여)\n6. 전자우편주소\n「방문판매 등에 관한 법률 시행령」 제20조제2항 및 같은 법 시행규칙\n제11조제2항에 따라 위와 같이 후원방문판매업을 등록하였음을 증명합니다.\n년 월 일\n공정거래위원회\n특별시장ㆍ광역시장ㆍ특별자치시장ㆍ 직인\n도지사ㆍ특별자치도지사\n210mm× 297mm[백상지 120g/㎡]",
+      "body_text": "■ 방문판매 등에 관한 법률 시행규칙 [별지 제9호서식]\n(앞 쪽)\n후원방문판매업 등록증\n1. 등록번호\n2. 상호\n3. 소재지\n4. 대표자의 성명\n5. 대표자의 생년월일(남ㆍ여)\n6. 전자우편주소\n「방문판매 등에 관한 법률 시행령」 제20조제2항 및 같은 법 시행규칙\n제11조제2항에 따라 위와 같이 후원방문판매업을 등록하였음을 증명합니다.\n년 월 일\n공정거래위원회\n특별시장ㆍ광역시장ㆍ특별자치시장ㆍ 직인\n도지사ㆍ특별자치도지사\n210mm× 297mm[백상지 120g/㎡]",
+      "tables": [],
+      "images": [],
+      "removed_margin_lines": []
+    },
+    {
+      "page_number": 2,
+      "raw_text": "(뒤 쪽)\n변경사항 및 처분사항 등\n연월일 변경 및 처분 내용 담당자(서명 또는 인)",
+      "body_text": "(뒤 쪽)",
+      "tables": [
+        {
+          "bbox": [
+            59.488,
+            84.86699999999996,
+            539.83,
+            759.369
+          ],
+          "rows": [
+            [
+              "변경사항 및 처분사항 등",
+              null,
+              null
+            ],
+            [
+              "연월일",
+              "변경 및 처분 내용",
+              "담당자(서명 또는 인)"
+            ],
+            [
+              "",
+              "",
+              ""
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        }
+      ],
+      "images": [],
+      "removed_margin_lines": []
+    }
+  ]
+}
