@@ -35,19 +35,19 @@ uv pip install -r requirements-ingestion.txt
 원본 전처리만 실행 (`raw/` → `processed/`):
 
 ```powershell
-uv run --no-sync python -m src.rag.raw_preprocessing
+uv run --no-sync python -m src.scripts.preprocess_data
 ```
 
 전처리 결과로 청킹 실행 (`processed/` → `chunk/`):
 
 ```powershell
-uv run --no-sync python -m src.rag.chunking --size 900 --overlap 100
+uv run --no-sync python -m src.scripts.chunk_data --size 900 --overlap 100
 ```
 
 검증:
 
 ```powershell
-uv run --no-sync python -m src.rag.retrieval_check
+uv run --no-sync python -m src.evaluation.retrieval_check
 uv run --no-sync python -m unittest discover -s tests -v
 ```
 
@@ -74,7 +74,7 @@ locator에 포함될 조문·페이지 문자열이다. 위치를 제한하지 �
 ```
 
 ```powershell
-uv run --no-sync python -m src.rag.retrieval_check --cases tests/data/retrieval_cases.json
+uv run --no-sync python -m src.evaluation.retrieval_check --cases tests/data/retrieval_cases.json
 ```
 
 옵션을 생략해도 위 파일을 사용한다. 실행하면 docs/data_reports/retrieval_report.json을 갱신한다.
@@ -88,7 +88,7 @@ expected_locator의 null은 위치 제한 없음, rank_at_5의 null은 기대 �
 기본 실행은 enhanced 모드이며 같은 데이터·같은 질문으로 기존 baseline 점수도 함께 기록한다.
 
 ```powershell
-uv run --no-sync python -m src.rag.retrieval_check --mode enhanced
+uv run --no-sync python -m src.evaluation.retrieval_check --mode enhanced
 ```
 
 검색 코드에서만 다음을 적용한다. raw/processed/chunk 및 평가 질문·기대 근거는 바꾸지 않는다.
@@ -101,15 +101,15 @@ uv run --no-sync python -m src.rag.retrieval_check --mode enhanced
 이는 어휘 검색 개선이며 임베딩·학습된 리랭커가 아니다.
 정규화는 법률 판단이나 정답 문서 ID를 지정하지 않는다. 문서 다양성 제한은 여러 관련 조항을
 동시에 찾아야 하는 질문에는 불리할 수도 있으므로 별도 질문으로 추가 검증해야 한다.
-현재 29개는 개선 과정에서 확인한 개발 질문이며 독립 평가셋으로 간주하지 않는다.
+앞선 29개는 개선 과정에서 확인한 개발 질문이며 독립 평가셋으로 간주하지 않는다.
 
 ## 파일의 역할
 
 다른 Python 코드에서는 아래처럼 독립적으로 호출할 수 있다.
 
 ```python
-from src.rag.raw_preprocessing import preprocess_data
-from src.rag.chunking import chunk_data
+from src.scripts.preprocess_data import preprocess_data
+from src.scripts.chunk_data import chunk_data
 
 preprocessing_result = preprocess_data(
     raw_dir="data/raw",
@@ -132,10 +132,10 @@ print(chunking_result["chunk_count"])
 report_dir 인자로 보고서 위치를, progress 인자로 전처리 진행 메시지 함수를 지정할 수 있다.
 기본적으로 Python 함수는 결과 딕셔너리를 반환하며 진행 메시지를 출력하지 않는다.
 전처리 실패나 잘못된 경로·청크 설정은 예외로 호출자에게 알린다.
-기존 run()은 두 단계를 함께 호출하는 호환용 함수로 남겨 두었다.
+전처리·청킹은 각각 preprocess_data(), chunk_data()로 호출한다.
 명령줄 기본 실행은 두 단계로 분리했으며 Django 연결은 추가하지 않았다.
 
-raw_preprocessing.py 내부도 다음 역할로 나누었다. 외부 호출은 preprocess_data()를 사용하면 된다.
+preprocess_data.py 내부도 다음 역할로 나누었다. 외부 호출은 preprocess_data()를 사용하면 된다.
 
 - preprocess_file(): 원본 파일 하나의 처리 결과·제외 내역 반환.
 - build_pdf_entries(): PDF 페이지의 본문·표·제목 문맥과 검토 조건 구성.
@@ -154,10 +154,9 @@ units에 조문·본문·표와 검토 상태를 저장하고, PDF 문서는 pag
 
 - `src/const/data_sources.json`: 원본별 제목·출처 URL·날짜·주제 설정. 본문은 포함하지 않는다.
 - `docs/data_reports/`: 처리 제외 내역과 검색 점검 결과. 데이터 검색 경로와 분리했다.
-- `src/rag/raw_preprocessing.py`: 원본 XML·HTML·HWPX·PDF 추출.
-- `src/rag/preprocessing.py`: 전처리 결과 읽기와 원본 해시 검증.
-- `src/rag/chunking.py`: 문자 수·경계 기준 청킹.
-- `src/rag/data_layout.py`: 자료 종류별 저장·읽기 경로 관리.
+- `src/scripts/preprocess_data.py`: 원본 XML·HTML·HWPX·PDF 추출.
+- `src/scripts/data_io.py`: 자료 종류별 읽기·저장 및 원본 해시 검증.
+- `src/scripts/chunk_data.py`: 문자 수·경계 기준 청킹.
 
 저장 함수도 save_processed_data()와 save_chunks()로 분리했다.
 load_processed_data()는 검색 대상으로 선별된 전처리 근거를 읽고 원본 해시를 검증한다.
@@ -186,3 +185,33 @@ OCR은 수행하지 않아 이미지와 복잡한 표는 추가 검토가 필요
 
 재실행하면 같은 종류별 경로에 결과를 갱신한다.
 원본 처리 실패가 있으면 검색용 데이터는 교체하지 않고 보고서에 남긴다.
+
+## 코드 정리
+
+현재 문서별 JSON과 종류별 JSONL만 지원한다. 예전 parents.jsonl·3차 전처리 형식 변환과
+호환용 run(), --source 옵션은 제거했다. 저장은 save_processed_data(), save_chunks()로 분리한다.
+검색 청크는 load_chunks()로 읽으며 백업 자동 탐색은 하지 않는다.
+
+## 코드 폴더 구조
+
+```text
+src/
+├─ scripts/
+│  ├─ preprocess_data.py     # 원본 전처리
+│  ├─ chunk_data.py          # 청킹
+│  └─ data_io.py             # 읽기·저장·검증
+├─ evaluation/
+│  └─ retrieval_check.py     # 개발용 검색 평가
+├─ rag/                     # 팀의 서비스 RAG 모듈 유지
+└─ const/
+   └─ data_sources.json
+
+tests/
+├─ test_preprocessing.py
+├─ test_chunking.py
+├─ test_retrieval.py
+└─ data/retrieval_cases.json
+```
+
+기존 Django 앱과 설정, 그래프·도구 코드는 이동하지 않았다.
+전처리·청킹 함수 이름과 data 폴더 내부 구조도 유지한다.

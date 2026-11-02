@@ -1,4 +1,4 @@
-"""Offline lexical smoke comparison; this does not evaluate embedding or answer quality."""
+"""어휘 검색 결과를 평가 질문과 비교한다."""
 
 from collections import Counter, defaultdict
 import argparse
@@ -7,10 +7,15 @@ import math
 import re
 from pathlib import Path
 
-from .preprocessing import ROOT, old_chunks
+from src.scripts.data_io import ROOT, load_chunks
 
 
 DEFAULT_CASES_PATH = ROOT / "tests/data/retrieval_cases.json"
+CANDIDATE_COUNT = 100
+RRF_OFFSET = 60
+PREVIEW_CHARS = 300
+BM25_K1 = 1.5
+BM25_B = 0.75
 
 
 def load_cases(path=DEFAULT_CASES_PATH):
@@ -35,7 +40,7 @@ def load_cases(path=DEFAULT_CASES_PATH):
 
 
 def tokens(text):
-    # Korean character bigrams reduce sensitivity to spacing/particles without a model.
+    # 띄어쓰기와 조사 차이를 줄이기 위해 두 글자 단위도 사용한다.
     words = re.findall(r"[가-힣A-Za-z0-9]+", text.lower())
     return [token for word in words for token in ([word] + [word[i:i+2] for i in range(len(word)-1)])]
 
@@ -62,7 +67,7 @@ def normalize_query(query):
     text = query
     for pattern, replacement in replacements:
         text = re.sub(pattern, replacement, text)
-    # These conversational endings should not outrank the substantive terms.
+    # 질문의 핵심 단어보다 말끝 표현이 높은 점수를 받지 않도록 한다.
     text = re.sub(r"어떻게|언제까지|하나요|건가요|아닌가요|있나요|되나요|해야|제가|저도|그런데", " ", text)
     return re.sub(r"\s+", " ", text).strip()
 
@@ -105,22 +110,22 @@ class LexicalIndex:
             posting = self.postings.get(token, [])
             idf = math.log(1 + (len(self.rows) - len(posting) + .5) / (len(posting) + .5))
             for index, frequency in posting:
-                denominator = frequency + 1.5 * (.25 + .75 * self.lengths[index] / self.average)
-                scores[index] += idf * frequency * 2.5 / denominator
+                denominator = frequency + BM25_K1 * (1 - BM25_B + BM25_B * self.lengths[index] / self.average)
+                scores[index] += idf * frequency * (BM25_K1 + 1) / denominator
         return [self.rows[i] for i in sorted(scores, key=lambda i: (-scores[i], i))[:k]]
 
 
 class EnhancedLexicalIndex(LexicalIndex):
     def search(self, query, k=5):
-        # Fuse the original and normalized query rankings; preserve exact legal terms.
-        original = super().search(query, k=100)
-        normalized = super().search(normalize_query(query), k=100)
+        # 원래 질문의 법률 용어도 유지하도록 두 검색 순위를 합친다.
+        original = super().search(query, k=CANDIDATE_COUNT)
+        normalized = super().search(normalize_query(query), k=CANDIDATE_COUNT)
         scores, hits = defaultdict(float), {}
         for weight, ranking in ((1.0, original), (1.0, normalized)):
             for rank, hit in enumerate(ranking, 1):
                 key = hit["chunk_id"]
                 hits[key] = hit
-                scores[key] += weight / (60 + rank)
+                scores[key] += weight / (RRF_OFFSET + rank)
         ranking = [hits[key] for key in sorted(scores, key=lambda key: (-scores[key], key))]
         return diversify_hits(ranking, k=k)
 
@@ -136,7 +141,51 @@ def parent_evidence(hits, parents):
     return result
 
 
-def evaluate(rows, cases=None, *, preview_chars=300, mode="baseline"):
+def matches_expected(hit, case):
+    """검색 결과가 지정한 문서와 위치에 해당하는지 확인한다."""
+    if case.get("evaluation_status", "scored") != "scored":
+        return False
+    document = case["expected_document"]
+    identity = hit.get("document_id", "")
+    same_document = identity == document or identity.endswith(":" + document) or document in (
+        hit.get("version_id"), hit.get("source_id"), hit.get("guide_id")
+    )
+    locator = case.get("expected_locator")
+    heading = hit.get("locator", hit.get("context_header", ""))
+    return same_document and (locator is None or locator in heading)
+
+
+def preview_hit(hit, preview_chars):
+    """보고서에 필요한 출처와 본문 일부를 담는다."""
+    return {
+        "id": hit["chunk_id"],
+        "parent_id": hit.get("parent_id"),
+        "title": hit.get("title", hit.get("law_name")),
+        "locator": hit.get("locator", hit.get("context_header")),
+        "source": hit.get("source_path"),
+        "text_preview": hit["text"][:preview_chars],
+        "text_length": len(hit["text"]),
+        "preview_truncated": len(hit["text"]) > preview_chars,
+    }
+
+
+def summarize_results(results):
+    evaluated = [result for result in results if result["evaluation_status"] == "scored"]
+    hit_at_5 = None
+    mrr_at_5 = None
+    if evaluated:
+        hit_at_5 = sum(result["rank_at_5"] is not None for result in evaluated) / len(evaluated)
+        mrr_at_5 = sum(1 / result["rank_at_5"] if result["rank_at_5"] else 0 for result in evaluated) / len(evaluated)
+    return {
+        "evaluated_case_count": len(evaluated),
+        "unscored_case_count": len(results) - len(evaluated),
+        "hit_at_5": hit_at_5,
+        "mrr_at_5": mrr_at_5,
+        "cases": results,
+    }
+
+
+def evaluate(rows, cases=None, *, preview_chars=PREVIEW_CHARS, mode="baseline"):
     """Evaluate document/locator ranks and expose excerpts for manual review."""
     cases = load_cases() if cases is None else cases
     if not cases:
@@ -152,30 +201,14 @@ def evaluate(rows, cases=None, *, preview_chars=300, mode="baseline"):
         scored = case.get("evaluation_status", "scored") == "scored"
         locator = case.get("expected_locator")
         hits = index.search(query)
-        def relevant(row):
-            if not scored:
-                return False
-            identity = row.get("document_id", "")
-            same_document = identity == document or identity.endswith(":" + document) or document in (
-                row.get("version_id"), row.get("source_id"), row.get("guide_id"))
-            heading = row.get("locator", row.get("context_header", ""))
-            return same_document and (locator is None or locator in heading)
-        rank = next((i + 1 for i, row in enumerate(hits) if relevant(row)), None)
+        rank = next((i + 1 for i, hit in enumerate(hits) if matches_expected(hit, case)), None)
         results.append({"query": query, "normalized_query": normalize_query(query) if mode == "enhanced" else query,
                         "evaluation_status": "scored" if scored else "needs_evidence_review",
                         **({"evidence_note": case["evidence_note"]} if "evidence_note" in case else {}),
                         "expected_document": document, "expected_locator": locator,
-                        "rank_at_5": rank, "top5": [{"id": r["chunk_id"],
-                            "parent_id": r.get("parent_id"), "title": r.get("title", r.get("law_name")),
-                            "locator": r.get("locator", r.get("context_header")),
-                            "source": r.get("source_path"), "text_preview": r["text"][:preview_chars],
-                            "text_length": len(r["text"]), "preview_truncated": len(r["text"]) > preview_chars}
-                            for r in hits]})
-    evaluated = [r for r in results if r["evaluation_status"] == "scored"]
-    return {"evaluated_case_count": len(evaluated), "unscored_case_count": len(results) - len(evaluated),
-            "hit_at_5": sum(r["rank_at_5"] is not None for r in evaluated) / len(evaluated) if evaluated else None,
-            "mrr_at_5": sum(1 / r["rank_at_5"] if r["rank_at_5"] else 0 for r in evaluated) / len(evaluated) if evaluated else None,
-            "cases": results}
+                        "rank_at_5": rank,
+                        "top5": [preview_hit(hit, preview_chars) for hit in hits]})
+    return summarize_results(results)
 
 
 def main():
@@ -193,20 +226,17 @@ def main():
     output = args.data_dir.resolve()
     if output != (ROOT / "data").resolve() and not output.is_relative_to((ROOT / "data/rebuilt").resolve()):
         raise ValueError("Data directory must be data or inside data/rebuilt")
-    new = list(old_chunks(output.parent)) if output.name == "data" else [
-        json.loads(line) for path in sorted((output / "chunk").rglob("*.jsonl"))
-        for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
-    snapshots = sorted(p for p in (ROOT / ".data_backups").glob("*") if (p / "data/chunk").is_dir())
-    baseline = args.baseline_root or (snapshots[-1] if snapshots else None)
+    chunks = list(load_chunks(output / "chunk"))
+    baseline = args.baseline_root
     report = {"method": "Offline Korean bigram BM25; enhanced mode uses query normalization, reciprocal rank fusion and diversity",
               "mode": args.mode,
               "cases_file": str(args.cases.resolve()), "case_count": len(cases),
               "limitations": "Small development set used during improvement; not held out. Single expected evidence may miss other valid results. No embedding, learned reranker, or answer evaluation.",
-              "baseline": evaluate(new, cases, mode="baseline"),
-              "new": evaluate(new, cases, mode=args.mode)}
+              "baseline": evaluate(chunks, cases, mode="baseline"),
+              "new": evaluate(chunks, cases, mode=args.mode)}
     if baseline:
         report["baseline_root"] = str(baseline)
-        report["old"] = evaluate(list(old_chunks(baseline)), cases, mode=args.mode)
+        report["old"] = evaluate(list(load_chunks(baseline / "data/chunk")), cases, mode=args.mode)
     report_path = (ROOT / "docs/data_reports" if output == ROOT / "data" else output / "reports") / "retrieval_report.json"
     report_path.parent.mkdir(parents=True, exist_ok=True)
     report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

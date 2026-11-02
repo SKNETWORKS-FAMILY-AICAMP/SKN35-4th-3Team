@@ -1,7 +1,4 @@
-"""Extract evidence directly from raw XML, HTML, HWPX and PDF files.
-
-Existing processed documents supply bibliographic metadata only, never body text.
-Run with ingestion dependencies: python -m src.rag.raw_preprocessing
+"""원본 XML·HTML·HWPX·PDF에서 본문과 근거 정보를 추출한다.
 """
 
 import argparse
@@ -15,8 +12,8 @@ import re
 import xml.etree.ElementTree as ET
 import zipfile
 
-from .preprocessing import ROOT, old_chunks, read_json
-from .data_layout import processed_path, save_processed_data
+from .data_io import ROOT, load_chunks, read_json
+from .data_io import processed_path, save_processed_data
 
 
 def clean(text):
@@ -27,7 +24,7 @@ def clean(text):
 
 
 def decode_html(data):
-    # Most archive HTML is UTF-8; passing bytes without a charset can yield mojibake.
+    # 인코딩 자동 감지가 한글을 잘못 읽을 수 있어 UTF-8부터 확인한다.
     for encoding in ("utf-8-sig", "cp949"):
         try:
             return data.decode(encoding), encoding
@@ -45,11 +42,11 @@ def element_text(node):
 
 
 def content_text(node):
-    """Read each XML content field once, preserving article/paragraph/item order."""
+    """조·항·호 순서를 유지하며 내용 필드를 한 번씩 읽는다."""
     parts = []
     for child in node.iter():
         if tag(child).endswith("내용"):
-            # Parent content nodes occasionally contain nested content fields.
+            # 중첩된 내용 필드를 중복으로 읽지 않는다.
             if not any(tag(n).endswith("내용") for n in child.iter() if n is not child):
                 value = element_text(child)
                 if value:
@@ -67,7 +64,7 @@ def catalog(root):
     if saved.exists():
         return read_json(saved)
     result, document_meta = {}, {}
-    for chunk in old_chunks(root):
+    for chunk in load_chunks(root / "data/chunk"):
         key = chunk.get("source_id") or chunk.get("version_id") or chunk.get("guide_id")
         document_meta.setdefault(key, {k: chunk.get(k) for k in ("domains", "dates")})
     for path in sorted((root / "data/processed").rglob("*.json")):
@@ -153,7 +150,7 @@ def html_extract(data, filename):
 
 
 def extract_consumer_industry_tables(body, number='0002'):
-    """Select complete fitness-refund and shopping-return industry sections."""
+    """체육시설·인터넷쇼핑 업종의 표 전체를 선별한다."""
     result = []
     headings = list(re.finditer('(?m)^[ \\t]*<[^>\\n]+>', body))
     selected = set()
@@ -162,7 +159,18 @@ def extract_consumer_industry_tables(body, number='0002'):
             if name not in match.group():
                 continue
             end = headings[i + 1].start() if i + 1 < len(headings) else len(body)
-            result.append({'key': f'industry:{domain}', 'text': body[match.start():end], 'locator': f'별표 {number} / {name}', 'content_type': 'industry_table', 'domains': [domain], 'source_start': match.start(), 'source_end': end, 'source_offset_basis': '별표단위[별표번호=0002].별표내용', 'calculation_restricted': True, 'warnings': ['XML 문자 표: 조건·예외 전체 보존, PDF 셀 배치 대조 전 수치 계산 금지']})
+            result.append({
+                'key': f'industry:{domain}',
+                'text': body[match.start():end],
+                'locator': f'별표 {number} / {name}',
+                'content_type': 'industry_table',
+                'domains': [domain],
+                'source_start': match.start(),
+                'source_end': end,
+                'source_offset_basis': '별표단위[별표번호=0002].별표내용',
+                'calculation_restricted': True,
+                'warnings': ['XML 문자 표: 조건·예외 전체 보존, PDF 셀 배치 대조 전 수치 계산 금지'],
+            })
             selected.add(domain)
     if selected != {'fitness_refund', 'shopping_return'}:
         raise ValueError('Required consumer refund sections not found in raw XML')
@@ -170,7 +178,7 @@ def extract_consumer_industry_tables(body, number='0002'):
 
 
 def extract_consumer_product_tables(body, number='0002'):
-    """Select complete jewelry and electronics tables with source offsets."""
+    """귀금속·전자제품 표와 원문 위치를 추출한다."""
     result = []
     product_heads = list(re.finditer('(?m)^┃[ \\t]*[①-⑳][^│\\n]*┃[ \\t]*$', body))
     for name in ('귀금속', '전자제품'):
@@ -182,24 +190,46 @@ def extract_consumer_product_tables(body, number='0002'):
         end = body.rfind('┏', product_heads[last].end(), product_heads[last + 1].start()) if last + 1 < len(product_heads) else len(body)
         if start < 0 or end <= product_heads[last].end():
             raise ValueError(f'Product table boundary invalid: {name}')
-        result.append({'key': f'product:{name}', 'text': body[start:end], 'locator': f'별표 {number} / {name}', 'content_type': 'product_table', 'domains': ['shopping_return'], 'source_start': start, 'source_end': end, 'source_offset_basis': '별표단위[별표번호=0002].별표내용', 'calculation_restricted': True, 'warnings': ['XML 표의 병합 관계 미확인: 전체 조건 확인 및 PDF 대조 필요']})
+        result.append({
+            'key': f'product:{name}',
+            'text': body[start:end],
+            'locator': f'별표 {number} / {name}',
+            'content_type': 'product_table',
+            'domains': ['shopping_return'],
+            'source_start': start,
+            'source_end': end,
+            'source_offset_basis': '별표단위[별표번호=0002].별표내용',
+            'calculation_restricted': True,
+            'warnings': ['XML 표의 병합 관계 미확인: 전체 조건 확인 및 PDF 대조 필요'],
+        })
     return result
 
 
 def extract_consumer_refund_tables(body, number='0002'):
-    """Select the supported consumer topics without changing table text."""
+    """대상 업종과 품목의 표를 원문 그대로 모은다."""
     return extract_consumer_industry_tables(body, number) + extract_consumer_product_tables(body, number)
 
 
 def extract_administrative_xml(tree):
-    """Extract administrative-rule articles, supplements and selected appendices."""
+    """행정규칙의 조문·부칙·대상 별표를 읽는다."""
     result = []
     title = tree.findtext('행정규칙기본정보/행정규칙명')
     date = iso_date(tree.findtext('행정규칙기본정보/시행일자'))
     for index, child in enumerate(tree.findall('조문내용')):
-        result.append({'key': f'article{index}', 'text': element_text(child), 'locator': next(iter(element_text(child).splitlines()), '빈 조문')[:120], 'content_type': 'administrative_rule', 'effective_date': date})
+        result.append({
+            'key': f'article{index}',
+            'text': element_text(child),
+            'locator': next(iter(element_text(child).splitlines()), '빈 조문')[:120],
+            'content_type': 'administrative_rule',
+            'effective_date': date,
+        })
     for index, child in enumerate(tree.findall('부칙')):
-        result.append({'key': f'supplement{index}', 'text': element_text(child), 'locator': '부칙', 'content_type': 'supplement'})
+        result.append({
+            'key': f'supplement{index}',
+            'text': element_text(child),
+            'locator': '부칙',
+            'content_type': 'supplement',
+        })
     for index, appendix in enumerate(tree.findall('.//별표단위')):
         body = appendix.findtext('별표내용', '')
         number = appendix.findtext('별표번호', '')
@@ -209,12 +239,18 @@ def extract_administrative_xml(tree):
                 result.extend(extract_consumer_refund_tables(body, number))
             continue
         if body:
-            result.append({'key': f'appendix{index}', 'text': body, 'locator': f'별표 {number} / {heading}', 'content_type': 'appendix', 'calculation_restricted': True})
+            result.append({
+                'key': f'appendix{index}',
+                'text': body,
+                'locator': f'별표 {number} / {heading}',
+                'content_type': 'appendix',
+                'calculation_restricted': True,
+            })
     return (title, result)
 
 
 def extract_law_xml(tree):
-    """Extract law articles, supplements and appendices in their original order."""
+    """법령의 조문·부칙·별표를 원문 순서로 읽는다."""
     result = []
     title = tree.findtext('.//기본정보/법령명_한글')
     for index, article in enumerate(tree.findall('.//조문/조문단위')):
@@ -224,18 +260,38 @@ def extract_law_xml(tree):
         label = f'제{number}조' + (f'의{branch}' if branch else '')
         heading = article.findtext('조문제목', '')
         text = content_text(article)
-        result.append({'key': f'article{index}', 'text': text, 'locator': label + (f'({heading})' if heading else ''), 'article_number': number, 'branch_number': branch, 'effective_date': iso_date(article.findtext('조문시행일자')), 'content_type': 'main_article', 'deleted': bool(re.match('^제\\d+조(?:의\\d+)?\\s*삭제', text))})
+        result.append({
+            'key': f'article{index}',
+            'text': text,
+            'locator': label + (f'({heading})' if heading else ''),
+            'article_number': number,
+            'branch_number': branch,
+            'effective_date': iso_date(article.findtext('조문시행일자')),
+            'content_type': 'main_article',
+            'deleted': bool(re.match('^제\\d+조(?:의\\d+)?\\s*삭제', text)),
+        })
     for index, supplement in enumerate(tree.findall('.//부칙/부칙단위')):
-        result.append({'key': f'supplement{index}', 'text': content_text(supplement), 'locator': '부칙 / ' + supplement.findtext('부칙공포일자', ''), 'content_type': 'supplement', 'temporal_scope': 'historical_supplement'})
+        result.append({
+            'key': f'supplement{index}',
+            'text': content_text(supplement),
+            'locator': '부칙 / ' + supplement.findtext('부칙공포일자', ''),
+            'content_type': 'supplement',
+            'temporal_scope': 'historical_supplement',
+        })
     for index, appendix in enumerate(tree.findall('.//별표/별표단위')):
         text = appendix.findtext('별표내용', '')
         if text:
-            result.append({'key': f'appendix{index}', 'text': clean(text), 'locator': appendix.findtext('별표제목', '별표'), 'content_type': 'appendix'})
+            result.append({
+                'key': f'appendix{index}',
+                'text': clean(text),
+                'locator': appendix.findtext('별표제목', '별표'),
+                'content_type': 'appendix',
+            })
     return (title, result)
 
 
 def xml_extract(data, historical=False):
-    """Dispatch XML parsing; keep the existing public return type and signature."""
+    """XML 종류에 따라 법령 또는 행정규칙 추출 함수를 호출한다."""
     tree = ET.fromstring(data)
     if tree.tag == 'AdmRulService':
         return extract_administrative_xml(tree)
@@ -297,7 +353,7 @@ def extract_pdf(path):
                       for i in page.images]
             pages.append({"page_number": number, "raw_text": text, "body_text": body,
                           "tables": tables, "images": images})
-        # Remove only recurrent margin lines, not arbitrary repeated legal conditions.
+        # 반복되는 법률 조건을 지우지 않도록 페이지 가장자리만 확인한다.
         margins = Counter()
         for page in pages:
             lines = page["body_text"].splitlines()
@@ -315,7 +371,7 @@ def extract_pdf(path):
 
 
 def get_exclusion_reason(text, *, reason=None, historical=False):
-    """Apply explicit, temporal, character-quality and empty-text gates in order."""
+    """지정된 사유, 과거 자료, 깨진 문자, 빈 본문 순으로 제외 여부를 판단한다."""
     if not reason and historical:
         reason = "historical_reference_not_current"
     if not reason and ("\ufffd" in text or re.search(r"\(cid:\d+\)", text)):
@@ -326,17 +382,21 @@ def get_exclusion_reason(text, *, reason=None, historical=False):
 
 
 def build_evidence_unit(common, key, text, locator, *, reason=None, historical=False, **extra):
-    """Build one normalized unit and its optional exclusion record."""
+    """근거 하나를 구성하고 제외 사유가 있으면 함께 반환한다."""
     text = clean(text)
     reason = get_exclusion_reason(text, reason=reason, historical=historical)
     unit = {**common, "unit_id": f"{common['document_id']}:{key}", "text": text,
             "locator": locator, "embedding_candidate": reason is None, **extra}
-    exclusion = {"source_path": common["source_path"], "unit_id": unit["unit_id"], "reason": reason} if reason else None
+    exclusion = {
+        "source_path": common["source_path"],
+        "unit_id": unit["unit_id"],
+        "reason": reason,
+    } if reason else None
     return unit, exclusion
 
 
 def build_source_metadata(path, raw_dir, metadata, data):
-    """Resolve bibliographic metadata and the digest for one raw source."""
+    """원본 하나의 출처 정보와 해시를 구성한다."""
     relative = "data/raw/" + path.relative_to(raw_dir).as_posix()
     meta = dict(metadata.get(relative, {}))
     identity = meta.get("document_id") or path.stem
@@ -356,7 +416,7 @@ def build_source_metadata(path, raw_dir, metadata, data):
 
 
 def build_pdf_entries(path, pages):
-    """Yield page bodies and tables, keeping headings and review gates together."""
+    """PDF 본문과 표에 제목 문맥과 검토 조건을 붙인다."""
     heading = ""
     for page in pages:
         number, body = page["page_number"], page["body_text"]
@@ -382,7 +442,7 @@ def build_pdf_entries(path, pages):
 
 
 def extract_source_entries(path, data, common):
-    """Dispatch format extraction, updating XML-derived metadata when available."""
+    """파일 형식에 맞게 추출하고 XML에 있는 출처 정보를 반영한다."""
     historical = path.parent.name == "law_history"
     if path.suffix == ".json":
         raw = json.loads(data.decode("utf-8-sig"))
@@ -421,7 +481,7 @@ def extract_source_entries(path, data, common):
 
 
 def preprocess_file(path, raw_dir, metadata):
-    """Read one source and return its units, exclusions, file record and PDF pages."""
+    """파일 하나의 근거·제외 내역·처리 기록·PDF 페이지를 반환한다."""
     path, raw_dir = Path(path), Path(raw_dir)
     data = path.read_bytes()
     common = build_source_metadata(path, raw_dir, metadata, data)
@@ -451,7 +511,7 @@ def preprocess_file(path, raw_dir, metadata):
 
 
 def build_preprocessing_report(file_records, documents, excluded, processed_dir):
-    """Validate evidence IDs and summarize extraction without writing files."""
+    """근거 ID 중복을 검사하고 전처리 결과를 집계한다."""
     units = [unit for unit in documents if unit["embedding_candidate"]]
     ids = [unit["unit_id"] for unit in units]
     if len(ids) != len(set(ids)):
@@ -465,7 +525,7 @@ def build_preprocessing_report(file_records, documents, excluded, processed_dir)
 
 
 def save_preprocessing_report(report, report_dir):
-    """Save an extraction report and return its path."""
+    """전처리 보고서를 저장하고 경로를 반환한다."""
     path = Path(report_dir) / "quality_report.json"
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -473,7 +533,7 @@ def save_preprocessing_report(report, report_dir):
 
 
 def preprocess_data(raw_dir=None, processed_dir=None, *, root=ROOT, report_dir=None, progress=None):
-    """Orchestrate preprocessing only; keep paths, callbacks and return format stable."""
+    """원본 파일을 처리하고 전처리 결과와 보고서를 저장한다."""
     root = Path(root).resolve()
     raw_dir = Path(raw_dir or root / "data/raw").resolve()
     processed_dir = Path(processed_dir or root / "data/processed").resolve()
@@ -509,20 +569,6 @@ def preprocess_data(raw_dir=None, processed_dir=None, *, root=ROOT, report_dir=N
     report["processed_file_count"] = len(saved)
     save_preprocessing_report(report, report_dir)
     return report
-
-
-def run(root=ROOT, output=None, size=900, overlap=100):
-    """Compatibility wrapper: explicitly run both independent stages."""
-    from .chunking import chunk_data, split_spans
-    list(split_spans("", size, overlap))
-    root = Path(root).resolve()
-    output = Path(output or root / "data").resolve()
-    report_dir = root / "docs/data_reports" if output == root / "data" else output / "reports"
-    report = preprocess_data(root=root, processed_dir=output / "processed", report_dir=report_dir)
-    chunks = chunk_data(processed_dir=output / "processed", chunk_dir=output / "chunk",
-                        chunk_size=size, overlap=overlap, raw_dir=root / "data/raw",
-                        root=root, report_dir=report_dir)
-    return {**report, "new": chunks["new"], "chunk_count": chunks["chunk_count"]}
 
 
 def main():

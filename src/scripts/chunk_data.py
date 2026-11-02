@@ -1,6 +1,6 @@
 """Bounded retrieval children with lossless, complete parent evidence.
 
-Run: python -m src.rag.chunking
+Run: python -m src.scripts.chunk_data
 This entry point reads processed data only. No API keys are required.
 """
 
@@ -10,13 +10,18 @@ import json
 from pathlib import Path
 import re
 
-from .preprocessing import ROOT, load_processed_data
+from .data_io import ROOT, load_processed_data
+
+
+def validate_chunk_options(size, overlap):
+    """청크 크기와 중복 길이가 허용 범위인지 확인한다."""
+    if type(size) is not int or type(overlap) is not int or size < 100 or not 0 <= overlap < size // 2:
+        raise ValueError("size >= 100 and 0 <= overlap < size / 2 are required")
 
 
 def split_spans(text, size=900, overlap=100):
-    """Prefer paragraph/list/sentence boundaries, retain exact character coverage."""
-    if type(size) is not int or type(overlap) is not int or size < 100 or not 0 <= overlap < size // 2:
-        raise ValueError("size >= 100 and 0 <= overlap < size / 2 are required")
+    """문단·문장 경계를 우선하여 원문 구간을 나눈다."""
+    validate_chunk_options(size, overlap)
     boundaries = sorted({m.end() for m in re.finditer(r"\n+|[.!?。](?:\s+|$)|다\.(?:\s+|$)", text)} | {len(text)})
     start = 0
     while start < len(text):
@@ -27,13 +32,13 @@ def split_spans(text, size=900, overlap=100):
             yield start, end
         if end == len(text):
             break
-        # Overlap is intentional for provisos and sentences adjacent to a boundary.
+        # 경계에 걸친 조건이나 예외를 놓치지 않도록 일부 구간을 겹친다.
         start = max(start + 1, end - overlap)
 
 
 def make_chunks(unit, size=900, overlap=100):
     header = f"[{unit['title']} / {unit['locator']}]"
-    # Keep search text bounded even for very long headings. Full locator is metadata.
+    # 긴 제목은 검색 입력에서만 줄이고 원래 위치 정보는 유지한다.
     header = header[:350]
     for start, end in split_spans(unit["text"], size, overlap):
         text = unit["text"][start:end]
@@ -84,11 +89,6 @@ def validate(units, chunks, size):
             raise ValueError(f"Uncovered source tail: {key}")
 
 
-def write_jsonl(path, rows):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text("".join(json.dumps(row, ensure_ascii=False) + "\n" for row in rows), encoding="utf-8")
-
-
 def chunk_data(processed_dir=None, chunk_dir=None, *, chunk_size=900, overlap=100,
                raw_dir=None, root=ROOT, report_dir=None):
     """Read processed documents, validate sources, and save retrieval chunks only.
@@ -96,8 +96,8 @@ def chunk_data(processed_dir=None, chunk_dir=None, *, chunk_size=900, overlap=10
     Return chunk_count, parent_count, saved file paths, and length statistics.
     This function never extracts raw files or rewrites processed documents.
     """
-    from .data_layout import save_chunks
-    list(split_spans("", chunk_size, overlap))
+    from .data_io import save_chunks
+    validate_chunk_options(chunk_size, overlap)
     root = Path(root).resolve()
     processed_dir = Path(processed_dir or root / "data/processed").resolve()
     chunk_dir = Path(chunk_dir or root / "data/chunk").resolve()
@@ -128,8 +128,6 @@ def main():
     parser.add_argument("--report-dir", type=Path)
     parser.add_argument("--size", type=int, default=900)
     parser.add_argument("--overlap", type=int, default=100)
-    # Accept the previous explicit processed-data command without changing its meaning.
-    parser.add_argument("--source", choices=("existing",), default="existing", help=argparse.SUPPRESS)
     args = parser.parse_args()
     report = chunk_data(args.processed_dir, args.chunk_dir, chunk_size=args.size,
                         overlap=args.overlap, raw_dir=args.raw_dir, report_dir=args.report_dir)

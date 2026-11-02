@@ -8,10 +8,10 @@ import unittest
 import zipfile
 from unittest.mock import patch
 
-from src.rag.raw_preprocessing import ROOT, html_extract, hwpx_extract, preprocess_data, run, xml_extract
-from src.rag.chunking import chunk_data
-from src.rag.preprocessing import load_processed_data
-from src.rag.raw_preprocessing import build_pdf_entries, get_exclusion_reason, preprocess_file
+from src.scripts.preprocess_data import ROOT, html_extract, hwpx_extract, preprocess_data, xml_extract
+from src.scripts.chunk_data import chunk_data
+from src.scripts.data_io import load_processed_data
+from src.scripts.preprocess_data import build_pdf_entries, get_exclusion_reason, preprocess_file
 
 
 class RawPreprocessingTests(unittest.TestCase):
@@ -35,7 +35,7 @@ class RawPreprocessingTests(unittest.TestCase):
             path = raw_dir / "guides/manual.pdf"
             path.parent.mkdir()
             path.write_bytes(b"mocked PDF")
-            with patch("src.rag.raw_preprocessing.extract_pdf", return_value=pages):
+            with patch("src.scripts.preprocess_data.extract_pdf", return_value=pages):
                 result = preprocess_file(path, raw_dir, {})
             self.assertEqual(result["record"]["extracted_units"], 4)
             self.assertEqual(result["record"]["indexed_units"], 0)
@@ -140,7 +140,7 @@ class RawPreprocessingTests(unittest.TestCase):
         self.assertIn("계약해지", text)
         self.assertEqual(meta["tables"][0]["rows"][0][0]["spans"][0]["rowSpan"], "2")
 
-    def test_raw_run_ignores_poisoned_old_body(self):
+    def test_preprocessing_ignores_old_body(self):
         with tempfile.TemporaryDirectory(dir=Path(__file__).parent) as folder:
             root = Path(folder)
             raw = root / "data/raw/consumer_sources/source.xml"
@@ -150,7 +150,8 @@ class RawPreprocessingTests(unittest.TestCase):
             processed.parent.mkdir(parents=True)
             processed.write_text(json.dumps({"source_id": "source", "title": "기존 제목", "raw_file": "data/raw/consumer_sources/source.xml", "units": [{"text": "잘못된 이전 본문"}]}), encoding="utf-8")
             with contextlib.redirect_stdout(io.StringIO()):
-                report = run(root=root)
+                report = preprocess_data(root=root)
+                chunk_data(root=root)
             output = (root / "data/processed/consumer_sources/source.json").read_text(encoding="utf-8")
             self.assertIn("원본 계약 조건", output)
             self.assertNotIn("잘못된 이전 본문", output)

@@ -1,11 +1,61 @@
-"""Keep raw, processed and chunk outputs grouped by their original source type."""
+"""자료 종류별 데이터 읽기·저장과 원본 해시 검증."""
 
 from collections import defaultdict
+import hashlib
 import json
 from pathlib import Path, PurePosixPath
 
-
+ROOT = Path(__file__).resolve().parents[2]
 KINDS = ("consumer_sources", "guides", "laws")
+
+
+def read_json(path):
+    return json.loads(path.read_text(encoding="utf-8-sig"))
+
+
+def load_chunks(chunk_dir=None):
+    """자료 종류별 JSONL에서 검색 청크를 읽는다."""
+    chunk_dir = Path(chunk_dir or ROOT / "data/chunk")
+    for path in sorted(chunk_dir.rglob("*.jsonl")):
+        for line in path.read_text(encoding="utf-8-sig").splitlines():
+            if line.strip():
+                yield json.loads(line)
+
+
+def validate_source_hashes(units, raw_dir):
+    """원본별 해시를 한 번씩 검사한다."""
+    raw_dir = Path(raw_dir).resolve()
+    expected_hashes = {}
+    for unit in units:
+        relative = Path(unit["source_path"])
+        if relative.parts[:2] != ("data", "raw"):
+            raise ValueError(f"Invalid raw source path: {relative}")
+        path = (raw_dir / Path(*relative.parts[2:])).resolve()
+        if not path.is_relative_to(raw_dir):
+            raise ValueError("Raw source path escapes its directory")
+        expected = unit["raw_sha256"]
+        if path in expected_hashes and expected_hashes[path] != expected:
+            raise ValueError(f"Inconsistent source hashes: {relative}")
+        expected_hashes[path] = expected
+    for path, expected in expected_hashes.items():
+        if hashlib.sha256(path.read_bytes()).hexdigest() != expected:
+            raise ValueError(f"Raw source changed: {path}")
+
+
+def load_processed_data(processed_dir=None, *, raw_dir=None, verify_sources=True):
+    """청킹할 근거를 읽고 원본 변경 여부를 검증한다."""
+    processed_dir = Path(processed_dir or ROOT / "data/processed").resolve()
+    if not processed_dir.is_dir():
+        raise FileNotFoundError(f"Processed directory does not exist: {processed_dir}")
+    units = list(iter_processed_units(processed_dir))
+    if not units:
+        raise ValueError(f"No eligible processed evidence found: {processed_dir}")
+    ids = [u["unit_id"] for u in units]
+    if len(ids) != len(set(ids)):
+        raise ValueError("Duplicate processed evidence IDs")
+    if verify_sources:
+        validate_source_hashes(units, raw_dir or processed_dir.parent / "raw")
+    return units
 
 
 def kind_for(source_path):
@@ -24,7 +74,7 @@ def processed_path(source_path, document_id):
 
 
 def save_processed_data(processed_dir, documents, pdf_pages=None):
-    """Save document-level extraction results; do not write chunk files."""
+    """원본 문서별 전처리 결과를 저장한다."""
     processed_dir = Path(processed_dir)
     pdf_pages = pdf_pages or {}
     saved = []
@@ -51,7 +101,7 @@ def save_processed_data(processed_dir, documents, pdf_pages=None):
 
 
 def save_chunks(chunk_dir, chunks):
-    """Save chunks by source kind; leave processed documents unchanged."""
+    """청크를 자료 종류별 JSONL에 저장한다."""
     chunk_dir = Path(chunk_dir)
     grouped = {kind: [] for kind in KINDS}
     for chunk in chunks:
@@ -66,19 +116,8 @@ def save_chunks(chunk_dir, chunks):
     return saved
 
 
-def write_dataset(output, documents, chunks, pdf_pages=None):
-    """Compatibility wrapper for callers that deliberately save both stages."""
-    output = Path(output)
-    return {"processed": save_processed_data(output / "processed", documents, pdf_pages),
-            "chunk": save_chunks(output / "chunk", chunks)}
-
-
-def read_processed_units(data_dir):
-    yield from iter_processed_units(Path(data_dir) / "processed")
-
-
 def iter_processed_units(processed_dir):
-    """Yield eligible evidence from a supplied processed directory."""
+    """전처리 문서에서 검색 대상 근거만 읽는다."""
     for path in sorted(Path(processed_dir).rglob("*.json")):
         doc = json.loads(path.read_text(encoding="utf-8-sig"))
         if isinstance(doc, dict) and doc.get("schema_version") == 3:
