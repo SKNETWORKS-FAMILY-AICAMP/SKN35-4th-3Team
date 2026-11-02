@@ -185,7 +185,7 @@ def summarize_results(results):
     }
 
 
-def evaluate(rows, cases=None, *, preview_chars=PREVIEW_CHARS, mode="baseline"):
+def evaluate(rows, cases=None, *, preview_chars=PREVIEW_CHARS, mode="baseline", index_class=None):
     """Evaluate document/locator ranks and expose excerpts for manual review."""
     cases = load_cases() if cases is None else cases
     if not cases:
@@ -194,7 +194,8 @@ def evaluate(rows, cases=None, *, preview_chars=PREVIEW_CHARS, mode="baseline"):
         raise ValueError("preview_chars must be a positive integer")
     if mode not in ("baseline", "enhanced"):
         raise ValueError("Unknown retrieval mode")
-    index = (EnhancedLexicalIndex if mode == "enhanced" else LexicalIndex)(rows)
+    index_class = index_class or (EnhancedLexicalIndex if mode == "enhanced" else LexicalIndex)
+    index = index_class(rows)
     results = []
     for case in cases:
         query, document = case["query"], case.get("expected_document")

@@ -785,7 +785,7 @@
       "unit_id": "008480_282351_20260102:appendix0",
       "text": "[별표 1] 삭제 <2018. 12. 31.>",
       "locator": "삭제 &lt;2018. 12. 31.&gt;",
-      "embedding_candidate": true,
+      "embedding_candidate": false,
       "content_type": "appendix"
     },
     {
@@ -816,7 +816,7 @@
       "unit_id": "008480_282351_20260102:appendix1",
       "text": "[별표 2] 삭제 <2018. 12. 31.>",
       "locator": "삭제 &lt;2018. 12. 31.&gt;",
-      "embedding_candidate": true,
+      "embedding_candidate": false,
       "content_type": "appendix"
     },
     {
@@ -940,7 +940,7 @@
       "unit_id": "008480_282351_20260102:appendix5",
       "text": "[별지 제3호서식] 삭제 <1994.11.14>",
       "locator": "삭제 &lt;1994.11.14&gt;",
-      "embedding_candidate": true,
+      "embedding_candidate": false,
       "content_type": "appendix"
     },
     {
@@ -1002,7 +1002,7 @@
       "unit_id": "008480_282351_20260102:appendix7",
       "text": "[별지 제5호서식] 삭제 <2005.8.31>",
       "locator": "삭제 &lt;2005.8.31&gt;",
-      "embedding_candidate": true,
+      "embedding_candidate": false,
       "content_type": "appendix"
     },
     {
@@ -1033,7 +1033,7 @@
       "unit_id": "008480_282351_20260102:appendix8",
       "text": "[별지 제6호서식] 삭제 <1994.11.14>",
       "locator": "삭제 &lt;1994.11.14&gt;",
-      "embedding_candidate": true,
+      "embedding_candidate": false,
       "content_type": "appendix"
     }
   ]

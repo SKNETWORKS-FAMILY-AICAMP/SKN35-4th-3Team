@@ -3,6 +3,7 @@ import importlib.util
 import io
 import json
 from pathlib import Path
+import re
 import tempfile
 import unittest
 import zipfile
@@ -11,10 +12,39 @@ from unittest.mock import patch
 from src.scripts.preprocess_data import ROOT, html_extract, hwpx_extract, preprocess_data, xml_extract
 from src.scripts.chunk_data import chunk_data
 from src.scripts.data_io import load_processed_data
-from src.scripts.preprocess_data import build_pdf_entries, get_exclusion_reason, preprocess_file
+from src.scripts.preprocess_data import build_evidence_unit, build_pdf_entries, get_exclusion_reason, preprocess_file
 
 
 class RawPreprocessingTests(unittest.TestCase):
+    def test_non_content_is_excluded_but_short_articles_remain(self):
+        common = {"document_id": "sample", "source_path": "data/raw/laws/sample.json"}
+        for text in ("[별표 1] 삭제 <2018. 12. 31.>", "[별지 제3호서식] 삭제 <1994.11.14>"):
+            unit, exclusion = build_evidence_unit(common, "deleted", text, "별표", content_type="appendix")
+            self.assertFalse(unit["embedding_candidate"])
+            self.assertEqual(unit["text"], text)
+            self.assertEqual(exclusion["reason"], "deleted_notice")
+        unit, exclusion = build_evidence_unit(common, "heading", "제2조의2", "제2조의2", content_type="main_article")
+        self.assertFalse(unit["embedding_candidate"])
+        self.assertEqual(exclusion["reason"], "heading_only")
+        for text in ("제68조(임금의 청구) 미성년자는 독자적으로 임금을 청구할 수 있다.",
+                     "제1조(삭제 요청) 개인정보 삭제를 요청할 수 있다."):
+            unit, exclusion = build_evidence_unit(common, "article", text, "제1조", content_type="main_article")
+            self.assertTrue(unit["embedding_candidate"])
+            self.assertIsNone(exclusion)
+
+    def test_pdf_title_body_is_excluded_while_table_and_conditions_remain(self):
+        def page(body):
+            return {"page_number": 1, "body_text": body, "images": [], "removed_margin_lines": [],
+                    "tables": [{"rows": [["품목", "내용연수"], ["예시", "5년"]], "bbox": [0, 0, 1, 1]}]}
+        path = Path("consumer_sources/table.pdf")
+        entries = list(build_pdf_entries(path, [page("<별표 Ⅳ>\n품목별 내용연수표")]))
+        self.assertEqual(entries[0]["reason"], "heading_only")
+        self.assertIsNone(entries[1]["reason"])
+        self.assertIn("5년", entries[1]["text"])
+        entries = list(build_pdf_entries(path, [page("<별표 Ⅳ>\n다만, 적용 조건을 확인한다.")]))
+        self.assertIsNone(entries[0]["reason"])
+        self.assertIsNone(entries[1]["reason"])
+
     def test_pdf_entries_keep_heading_tables_and_review_precedence(self):
         def page(number, body, images=None):
             return {"page_number": number, "body_text": body,
@@ -130,6 +160,29 @@ class RawPreprocessingTests(unittest.TestCase):
         self.assertEqual(meta["tables"][0]["rows"][1][0]["rowspan"], "2")
         self.assertEqual(meta["encoding"], "utf-8-sig")
 
+    @unittest.skipUnless(importlib.util.find_spec("lxml"), "Optional ingestion dependency")
+    def test_case_page_metadata_is_separate_from_case_content(self):
+        source = '''<div class="board_view"><table class="v_tbl resp_tb">
+        <caption>이표는 수정일, 조회수, 질문, 답변의 항목으로 구성되어 있습니다.</caption>
+        <tr class="web"><th>수정일</th><td>2025-02-13</td><th>조회수</th><td>2977</td></tr>
+        <tr class="mobile"><th>수정일</th><td>2025-02-13</td></tr>
+        <tr class="mobile"><th>조회수</th><td>2977</td></tr>
+        <tr class="v_mobchg"><th>사건개요</th><td>수정일 2025-02-13에 조회수 2977을 확인했다.</td></tr>
+        <tr><th>판단</th><td>환급 조건과 예외를 보존한다.</td></tr></table>
+        <table><caption>환급 금액 기준</caption><tr><th>조회수</th><td>본문 표</td></tr></table></div>'''
+        text, meta = html_extract(source.encode(), "kca_case_fixture.html")
+        self.assertNotIn("항목으로 구성되어 있습니다", text)
+        self.assertIn("수정일 2025-02-13에 조회수 2977을 확인했다.", text)
+        self.assertIn("환급 조건과 예외를 보존한다.", text)
+        self.assertIn("환급 금액 기준", text)
+        self.assertEqual(meta["page_metadata"], {"수정일": ["2025-02-13"], "조회수": ["2977"]})
+        self.assertEqual(len(meta["tables"][0]["rows"]), 2)
+        # 다른 사이트의 같은 이름 필드는 이 규칙으로 제거하지 않는다.
+        other = source.replace('class="board_view"', 'id="contents"')
+        text, meta = html_extract(other.encode(), "other.html")
+        self.assertIn("항목으로 구성되어 있습니다", text)
+        self.assertNotIn("page_metadata", meta)
+
     def test_hwpx_text_runs_join_and_table_spans_remain(self):
         xml = '<section><p><run><t>계약</t></run><run><t>해지</t></run></p><tbl><tr><tc><cellSpan rowSpan="2" colSpan="1"/><p><t>전액 환급</t></p></tc></tr></tbl></section>'
         with tempfile.TemporaryDirectory(dir=Path(__file__).parent) as folder:
@@ -139,6 +192,30 @@ class RawPreprocessingTests(unittest.TestCase):
             text, meta = hwpx_extract(path)
         self.assertIn("계약해지", text)
         self.assertEqual(meta["tables"][0]["rows"][0][0]["spans"][0]["rowSpan"], "2")
+
+    @unittest.skipUnless(importlib.util.find_spec("lxml"), "Optional ingestion dependency")
+    def test_real_case_content_survives_page_metadata_removal(self):
+        from lxml import html
+        from src.scripts.preprocess_data import clean, decode_html
+
+        files = sorted(path for path in (ROOT / "data/raw/consumer_sources").glob("kca_*.html")
+                       if path.name.startswith(("kca_case_", "kca_pilates_")))
+        if not files:
+            self.skipTest("Optional source-data regression check")
+        checked_rows = 0
+        for path in files:
+            with self.subTest(source=path.name):
+                data = path.read_bytes()
+                text, meta = html_extract(data, path.name)
+                tree = html.fromstring(decode_html(data)[0])
+                for row in tree.xpath('//tr[contains(concat(" ",normalize-space(@class)," ")," v_mobchg ")]'):
+                    for cell in row.xpath('./th|./td'):
+                        expected = re.sub(r"\s+", "", clean(cell.text_content()))
+                        self.assertIn(expected, re.sub(r"\s+", "", text))
+                    checked_rows += 1
+                self.assertIn("page_metadata", meta)
+                self.assertNotIn("항목으로 구성되어 있습니다", text)
+        self.assertGreater(checked_rows, 0)
 
     def test_preprocessing_ignores_old_body(self):
         with tempfile.TemporaryDirectory(dir=Path(__file__).parent) as folder:

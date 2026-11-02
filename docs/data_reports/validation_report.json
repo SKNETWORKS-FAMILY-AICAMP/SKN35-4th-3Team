@@ -1,0 +1,48 @@
+{
+  "raw_files": 125,
+  "processed_documents": 125,
+  "extracted_units": 4534,
+  "eligible_units": 3690,
+  "raw_unchanged": true,
+  "raw_to_processed_mismatches": [],
+  "extraction_failures": [],
+  "orphan_processed_sources": [],
+  "duplicate_unit_ids": 0,
+  "replacement_char_in_eligible_units": 0,
+  "empty_chunks": 0,
+  "chunk_validation": "passed",
+  "regenerated_chunks_match": true,
+  "chunks": {
+    "count": 4274,
+    "min_chars": 19,
+    "median_chars": 217,
+    "p95_chars": 883,
+    "max_chars": 900,
+    "under_100_chars": 914,
+    "over_2000_chars": 0,
+    "max_embedding_chars": 1109
+  },
+  "duplicate_full_parent_text_groups": 13,
+  "excluded_by_reason": {
+    "empty_or_image_only": 8,
+    "heading_only": 6,
+    "cover_or_toc": 8,
+    "image_layout_review_required": 5,
+    "application_form_reference_only": 77,
+    "deleted_notice": 7,
+    "historical_reference_not_current": 609,
+    "deleted_article": 124
+  },
+  "baseline": {
+    "evaluated_case_count": 43,
+    "unscored_case_count": 1,
+    "hit_at_5": 0.5348837209302325,
+    "mrr_at_5": 0.37984496124031003
+  },
+  "enhanced": {
+    "evaluated_case_count": 43,
+    "unscored_case_count": 1,
+    "hit_at_5": 0.5813953488372093,
+    "mrr_at_5": 0.4476744186046512
+  }
+}

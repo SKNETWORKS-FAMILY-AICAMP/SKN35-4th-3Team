@@ -88,6 +88,35 @@ def catalog(root):
     return result
 
 
+def remove_case_page_metadata(node):
+    """소비자원 게시판의 화면 정보만 본문에서 분리한다."""
+    page_metadata = {}
+    for table in node.xpath('.//table[contains(concat(" ", normalize-space(@class), " "), " v_tbl ")]'):
+        for row in table.xpath('./thead/tr|./tbody/tr|./tr'):
+            if not {"web", "mobile"}.intersection(row.get("class", "").split()):
+                continue
+            cells = row.xpath('./th|./td')
+            if not cells or len(cells) % 2:
+                continue
+            pairs = list(zip(cells[::2], cells[1::2]))
+            if not all(key.tag == "th" and value.tag == "td"
+                       and clean(key.text_content()) in {"수정일", "조회수"}
+                       for key, value in pairs):
+                continue
+            for key, value in pairs:
+                label = clean(key.text_content())
+                values = page_metadata.setdefault(label, [])
+                text = clean(value.text_content())
+                if text not in values:
+                    values.append(text)
+            row.drop_tree()
+        for caption in table.xpath('./caption'):
+            text = re.sub(r"\s+", "", caption.text_content())
+            if text.startswith("이표는") and "항목으로구성되어있습니다" in text:
+                caption.drop_tree()
+    return page_metadata
+
+
 def html_extract(data, filename):
     from lxml import html
 
@@ -120,6 +149,9 @@ def html_extract(data, filename):
     for bad in node.xpath('.//*[contains(@class,"board_v_btn") or contains(@class,"board_v_info") or contains(@class,"location") or contains(@class,"sns_")]'):
         if bad.getparent() is not None:
             bad.drop_tree()
+    page_metadata = {}
+    if filename.startswith(("kca_case_", "kca_pilates_")):
+        page_metadata = remove_case_page_metadata(node)
     tables = []
     for index, table in enumerate(node.xpath('.//table')):
         if table.xpath('.//table'):
@@ -144,9 +176,12 @@ def html_extract(data, filename):
     body = clean(node.text_content())
     image_refs = [{"src": img.get("src"), "alt": img.get("alt", "")}
                   for img in node.xpath('.//img') if img.get("src")]
-    return body, {"selector": selector, "encoding": encoding, "tables": tables,
+    details = {"selector": selector, "encoding": encoding, "tables": tables,
                   "image_references": image_refs,
                   "images_downloaded_or_ocr_performed": False}
+    if page_metadata:
+        details["page_metadata"] = page_metadata
+    return body, details
 
 
 def extract_consumer_industry_tables(body, number='0002'):
@@ -370,21 +405,28 @@ def extract_pdf(path):
         return pages
 
 
-def get_exclusion_reason(text, *, reason=None, historical=False):
-    """지정된 사유, 과거 자료, 깨진 문자, 빈 본문 순으로 제외 여부를 판단한다."""
+def get_exclusion_reason(text, *, reason=None, historical=False, locator="", content_type=None):
+    """제외 사유를 판단한다. 짧다는 이유만으로 정상 본문을 제외하지 않는다."""
     if not reason and historical:
         reason = "historical_reference_not_current"
     if not reason and ("\ufffd" in text or re.search(r"\(cid:\d+\)", text)):
         reason = "broken_characters"
     if not reason and not text:
         reason = "empty_or_image_only"
+    if not reason and re.fullmatch(r"(?:\[(?:별표|별지)[^\]\n]*\]\s*)?삭제\s*(?:<[^<>\n]+>)?", text):
+        reason = "deleted_notice"
+    if not reason and content_type == "main_article":
+        compact = re.sub(r"\s+", "", text)
+        if compact == re.sub(r"\s+", "", locator) and re.fullmatch(r"제\d+조(?:의\d+)?(?:\([^()\n]+\))?", compact):
+            reason = "heading_only"
     return reason
 
 
 def build_evidence_unit(common, key, text, locator, *, reason=None, historical=False, **extra):
     """근거 하나를 구성하고 제외 사유가 있으면 함께 반환한다."""
     text = clean(text)
-    reason = get_exclusion_reason(text, reason=reason, historical=historical)
+    reason = get_exclusion_reason(text, reason=reason, historical=historical,
+                                  locator=locator, content_type=extra.get("content_type"))
     unit = {**common, "unit_id": f"{common['document_id']}:{key}", "text": text,
             "locator": locator, "embedding_candidate": reason is None, **extra}
     exclusion = {
@@ -430,7 +472,15 @@ def build_pdf_entries(path, pages):
         reason = "cover_or_toc" if is_cover or is_toc else "image_layout_review_required" if image_review else None
         if path.parent.name == "law_appendices" and re.search(r"_\d+F$", path.stem):
             reason = "application_form_reference_only"
-        yield {"key": f"p{number}:body", "text": body, "locator": locator, "reason": reason,
+        body_reason = reason
+        # 표는 별도 근거로 보존하고, 별표 번호와 제목뿐인 페이지 본문은 검색에서 뺀다.
+        lines = [line.strip() for line in body.splitlines() if line.strip()]
+        if not reason and page["tables"] and len(lines) == 2:
+            appendix_label = re.fullmatch(r"(?:<별표[^<>]+>|(?:■\s*[^\[\n]+\s*)?\[별표[^\]\n]*\](?:\s*<[^<>]+>)?)", lines[0])
+            title = re.fullmatch(r"[^.!?\n]+(?:표|기준|규정|관할구역|직종|수수료)(?:\([^()]*\))?", lines[1])
+            if appendix_label and title:
+                body_reason = "heading_only"
+        yield {"key": f"p{number}:body", "text": body, "locator": locator, "reason": body_reason,
                "page_number": number, "content_type": "pdf_body",
                "removed_margin_lines": page["removed_margin_lines"], "images": page["images"]}
         for index, table in enumerate(page["tables"]):

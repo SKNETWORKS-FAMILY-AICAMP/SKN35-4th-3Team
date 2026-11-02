@@ -32,7 +32,7 @@
       "unit_id": "008480_282351_20260102_appendix_000200E:p1:body",
       "text": "[별표 2] 삭제 <2018. 12. 31.>",
       "locator": "PDF 1페이지",
-      "embedding_candidate": true,
+      "embedding_candidate": false,
       "page_number": 1,
       "content_type": "pdf_body",
       "removed_margin_lines": [],

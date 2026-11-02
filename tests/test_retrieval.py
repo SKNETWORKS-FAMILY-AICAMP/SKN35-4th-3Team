@@ -6,9 +6,45 @@ import tempfile
 from src.evaluation.retrieval_check import (
     EnhancedLexicalIndex, diversify_hits, evaluate, load_cases, normalize_query,
 )
+from src.evaluation.retrieval_experiment import (
+    AnchoredRerankIndex, CharacterIndex, CharacterFusionIndex, CoverageRerankIndex, ExpandedCandidateIndex,
+)
 
 
 class RetrievalCaseTests(unittest.TestCase):
+    def test_character_search_ignores_spaces_and_returns_no_unrelated_matches(self):
+        rows = [{"chunk_id": "rent", "text": "계약 종료 보증금 반환"},
+                {"chunk_id": "wage", "text": "근로자 임금 지급"},
+                {"chunk_id": "empty", "text": ""}]
+        index = CharacterIndex(rows)
+        self.assertEqual(index.search("계약종료보증금반환")[0]["chunk_id"], "rent")
+        self.assertEqual(index.search("xyzxyzxyz"), [])
+        self.assertEqual(index.search("보증금", k=0), [])
+
+    def test_expanded_candidates_include_matches_beyond_original_cutoff(self):
+        rows = [{"chunk_id": str(i), "document_id": str(i), "text": "임금 지급"} for i in range(150)]
+        ranking = ExpandedCandidateIndex(rows).candidate_ranking("임금")
+        self.assertEqual(len(ranking), 150)
+        self.assertIn("149", [row["chunk_id"] for row, _ in ranking])
+
+    def test_experimental_search_preserves_rows_and_parent_diversity(self):
+        rows = [{"chunk_id": "a", "parent_id": "same", "document_id": "law", "text": "임금 지급"},
+                {"chunk_id": "b", "parent_id": "same", "document_id": "law", "text": "임금 지급 기한"},
+                {"chunk_id": "c", "parent_id": "other", "document_id": "guide", "text": "임금 지급 안내"}]
+        before = json.dumps(rows)
+        for cls in (ExpandedCandidateIndex, CharacterFusionIndex, CoverageRerankIndex, AnchoredRerankIndex):
+            index = cls(rows)
+            result = index.search("월급 지급")
+            self.assertEqual(len({row["parent_id"] for row in result}), len(result))
+            self.assertEqual(index.search("xyzxyzxyz"), [])
+            self.assertEqual(index.search("임금", k=0), [])
+        self.assertEqual(json.dumps(rows), before)
+        cases = [{"query": "월급 지급", "expected_document": "law"}]
+        self.assertEqual(evaluate(rows, cases, mode="enhanced"),
+                         evaluate(rows, cases, mode="enhanced", index_class=EnhancedLexicalIndex))
+        anchored = AnchoredRerankIndex(rows)
+        self.assertEqual(anchored.search("임금 지급")[0], EnhancedLexicalIndex(rows).search("임금 지급")[0])
+
     def test_pending_evidence_is_searched_but_not_counted_as_success_or_failure(self):
         rows = [{"chunk_id": "a", "document_id": "fixture", "text": "벽지 원상회복"}]
         pending = {"query": "벽지 원상회복", "expected_document": None,

@@ -25,6 +25,17 @@ data/
 
 ## 실행
 
+소비자원 HTML은 사건 본문과 표를 유지하고, 게시판의 조회수·수정일 행과
+표 항목을 나열하는 화면 안내 문구를 검색 본문에서 제외한다.
+조회수·수정일은 전처리 결과의 `evidence_metadata.page_metadata`에 따로 보관하며,
+수정일을 사건 결정일이나 법령 시행일로 사용하지 않는다.
+
+삭제 안내만 있거나 조문 번호·제목만 있는 근거는 전처리 결과에 보관하되
+`embedding_candidate: false`로 표시하여 청크 생성과 검색에서 제외한다.
+PDF에서 별표 번호와 제목만 있는 본문도 같은 페이지에 표가 따로 추출된 경우 제외하며,
+실제 표는 유지한다. 길이가 짧아도 내용이 완전한 조문은 제외하지 않는다.
+제외 목록과 검색 지표 비교는 `docs/data_reports/content_filter_report.json`에서 확인한다.
+
 최초 한 번:
 
 ```powershell
@@ -50,6 +61,31 @@ uv run --no-sync python -m src.scripts.chunk_data --size 900 --overlap 100
 uv run --no-sync python -m src.evaluation.retrieval_check
 uv run --no-sync python -m unittest discover -s tests -v
 ```
+
+조건별 환불표 청킹과 PDF 표 추출 설정을 비교하는 실험:
+
+```powershell
+uv run --no-sync python -m src.evaluation.table_chunking_experiment
+```
+
+이 명령은 `data/`를 수정하지 않고 `docs/data_reports/table_chunking_experiment.json`에
+비교 지표와 실험 청크, PDF 표 추출 결과를 저장한다. 검색 방식과 평가 질문은 그대로 사용한다.
+조건별 청크는 원문 위치와 전체 근거 연결을 유지하지만, 여러 행에 걸친 비고·예외는
+전체 표와 함께 확인해야 한다. 원본 XML의 불완전한 계산식은 보완하거나 추정하지 않는다.
+현재 조건별 청킹은 평가 지표가 개선되지 않아 기본 파이프라인에는 적용하지 않았다.
+
+후보 수 확대·문자 TF-IDF 검색 결합·어휘 포함 비율 재순위화 비교:
+
+```powershell
+uv run --no-sync python -m src.evaluation.retrieval_experiment
+```
+
+`docs/data_reports/retrieval_experiment.json`에 각 방법의 지표와 질문별 순위 변화를 저장한다.
+기존 1위를 유지하고 나머지를 재순위화하는 방법도 포함한다. 기본 검색 동작은 변경하지 않는다.
+기존 개발용 질문으로 비교하므로, 채택 전 별도의 평가 질문으로 재검증해야 한다.
+이 실험은 어휘 검색 개선이며 의미 임베딩이나 학습된 재순위 모델은 사용하지 않는다.
+PDF 검증은 표본 2~3페이지의 4개 행과 페이지 간 연결에 한정하며,
+다른 PDF나 환불 계산식의 정확성을 보장하지 않는다.
 
 ### 검색 테스트 질문 추가
 

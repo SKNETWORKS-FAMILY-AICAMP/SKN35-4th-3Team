@@ -101,7 +101,7 @@
       "unit_id": "004950_287183_20260701:article2",
       "text": "제2조의2",
       "locator": "제2조의2",
-      "embedding_candidate": true,
+      "embedding_candidate": false,
       "article_number": "2",
       "branch_number": "2",
       "effective_date": "2026-07-01",

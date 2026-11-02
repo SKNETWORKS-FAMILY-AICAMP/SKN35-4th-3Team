@@ -8,29 +8,8 @@
     "extracted": 124,
     "metadata_or_index_only": 1
   },
-  "parent_count": 3703,
-  "size_chars": 900,
-  "overlap_chars": 100,
-  "new": {
-    "count": 4294,
-    "min_chars": 5,
-    "median_chars": 217,
-    "p95_chars": 883,
-    "max_chars": 900,
-    "under_100_chars": 927,
-    "over_2000_chars": 0,
-    "max_embedding_chars": 1109
-  },
-  "old": {
-    "count": 3963,
-    "min_chars": 5,
-    "median_chars": 191,
-    "p95_chars": 1153,
-    "max_chars": 14573,
-    "under_100_chars": 939,
-    "over_2000_chars": 19,
-    "max_embedding_chars": 8905
-  },
+  "parent_count": 3690,
+  "processed_dir": "C:\\study\\SKN35-4th-3Team\\data\\processed",
   "exclusions": [
     {
       "source_path": "data/raw/consumer_sources/consumer_dispute_standard_appendix_2_efd94a7a06c489da.pdf",
@@ -41,6 +20,11 @@
       "source_path": "data/raw/consumer_sources/consumer_dispute_standard_appendix_2_efd94a7a06c489da.pdf",
       "unit_id": "consumer_dispute_standard_appendix_2_efd94a7a06c489da:p3:body",
       "reason": "empty_or_image_only"
+    },
+    {
+      "source_path": "data/raw/consumer_sources/consumer_dispute_standard_appendix_3_f6d4e6570d0bd34f.pdf",
+      "unit_id": "consumer_dispute_standard_appendix_3_f6d4e6570d0bd34f:p1:body",
+      "reason": "heading_only"
     },
     {
       "source_path": "data/raw/consumer_sources/minimum_wage_2026_c0a8b9413dbfebc6.xml",
@@ -118,6 +102,16 @@
       "reason": "image_layout_review_required"
     },
     {
+      "source_path": "data/raw/law_appendices/001872_285279_20261008_appendix_000000E.pdf",
+      "unit_id": "001872_285279_20261008_appendix_000000E:p1:body",
+      "reason": "heading_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/003058_270551_20251023_appendix_000100E.pdf",
+      "unit_id": "003058_270551_20251023_appendix_000100E:p1:body",
+      "reason": "heading_only"
+    },
+    {
       "source_path": "data/raw/law_appendices/003979_289451_20260911_appendix_000100F.pdf",
       "unit_id": "003979_289451_20260911_appendix_000100F:p1:body",
       "reason": "application_form_reference_only"
@@ -166,6 +160,11 @@
       "source_path": "data/raw/law_appendices/003979_289451_20260911_appendix_000300F.pdf",
       "unit_id": "003979_289451_20260911_appendix_000300F:p1:table1",
       "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/004950_287183_20260701_appendix_000100E.pdf",
+      "unit_id": "004950_287183_20260701_appendix_000100E:p1:body",
+      "reason": "heading_only"
     },
     {
       "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000100F.pdf",
@@ -438,6 +437,11 @@
       "reason": "application_form_reference_only"
     },
     {
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000100E.pdf",
+      "unit_id": "008480_282351_20260102_appendix_000100E:p1:body",
+      "reason": "deleted_notice"
+    },
+    {
       "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000100F.pdf",
       "unit_id": "008480_282351_20260102_appendix_000100F:p1:body",
       "reason": "application_form_reference_only"
@@ -468,6 +472,11 @@
       "reason": "application_form_reference_only"
     },
     {
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000200E.pdf",
+      "unit_id": "008480_282351_20260102_appendix_000200E:p1:body",
+      "reason": "deleted_notice"
+    },
+    {
       "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000200F.pdf",
       "unit_id": "008480_282351_20260102_appendix_000200F:p1:body",
       "reason": "application_form_reference_only"
@@ -481,6 +490,11 @@
       "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000200F.pdf",
       "unit_id": "008480_282351_20260102_appendix_000200F:p1:table1",
       "reason": "application_form_reference_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000300E.pdf",
+      "unit_id": "008480_282351_20260102_appendix_000300E:p1:body",
+      "reason": "heading_only"
     },
     {
       "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000300F.pdf",
@@ -4133,6 +4147,11 @@
       "reason": "deleted_article"
     },
     {
+      "source_path": "data/raw/laws/004950_287183_20260701.json",
+      "unit_id": "004950_287183_20260701:article2",
+      "reason": "heading_only"
+    },
+    {
       "source_path": "data/raw/laws/005247_206564_20190101.json",
       "unit_id": "005247_206564_20190101:article1",
       "reason": "deleted_article"
@@ -4146,6 +4165,31 @@
       "source_path": "data/raw/laws/008480_282351_20260102.json",
       "unit_id": "008480_282351_20260102:article7",
       "reason": "deleted_article"
+    },
+    {
+      "source_path": "data/raw/laws/008480_282351_20260102.json",
+      "unit_id": "008480_282351_20260102:appendix0",
+      "reason": "deleted_notice"
+    },
+    {
+      "source_path": "data/raw/laws/008480_282351_20260102.json",
+      "unit_id": "008480_282351_20260102:appendix1",
+      "reason": "deleted_notice"
+    },
+    {
+      "source_path": "data/raw/laws/008480_282351_20260102.json",
+      "unit_id": "008480_282351_20260102:appendix5",
+      "reason": "deleted_notice"
+    },
+    {
+      "source_path": "data/raw/laws/008480_282351_20260102.json",
+      "unit_id": "008480_282351_20260102:appendix7",
+      "reason": "deleted_notice"
+    },
+    {
+      "source_path": "data/raw/laws/008480_282351_20260102.json",
+      "unit_id": "008480_282351_20260102:appendix8",
+      "reason": "deleted_notice"
     },
     {
       "source_path": "data/raw/laws/009290_268837_20260201.json",
@@ -4190,9 +4234,11 @@
   ],
   "excluded_by_reason": {
     "empty_or_image_only": 8,
+    "heading_only": 6,
     "cover_or_toc": 8,
     "image_layout_review_required": 5,
     "application_form_reference_only": 77,
+    "deleted_notice": 7,
     "historical_reference_not_current": 609,
     "deleted_article": 124
   },
@@ -4222,7 +4268,7 @@
       "format": ".pdf",
       "status": "extracted",
       "extracted_units": 2,
-      "indexed_units": 2,
+      "indexed_units": 1,
       "page_count": 1,
       "pages_with_images": 0,
       "page_extraction_file": "processed/consumer_sources/consumer_dispute_standard_appendix_3_f6d4e6570d0bd34f.json"
@@ -4565,7 +4611,7 @@
       "format": ".pdf",
       "status": "extracted",
       "extracted_units": 2,
-      "indexed_units": 2,
+      "indexed_units": 1,
       "page_count": 1,
       "pages_with_images": 0,
       "page_extraction_file": "processed/laws/appendices/001872_285279_20261008_appendix_000000E.json"
@@ -4576,7 +4622,7 @@
       "format": ".pdf",
       "status": "extracted",
       "extracted_units": 2,
-      "indexed_units": 2,
+      "indexed_units": 1,
       "page_count": 1,
       "pages_with_images": 0,
       "page_extraction_file": "processed/laws/appendices/003058_270551_20251023_appendix_000100E.json"
@@ -4752,7 +4798,7 @@
       "format": ".pdf",
       "status": "extracted",
       "extracted_units": 3,
-      "indexed_units": 3,
+      "indexed_units": 2,
       "page_count": 1,
       "pages_with_images": 0,
       "page_extraction_file": "processed/laws/appendices/004950_287183_20260701_appendix_000100E.json"
@@ -4983,7 +5029,7 @@
       "format": ".pdf",
       "status": "extracted",
       "extracted_units": 1,
-      "indexed_units": 1,
+      "indexed_units": 0,
       "page_count": 1,
       "pages_with_images": 0,
       "page_extraction_file": "processed/laws/appendices/008480_282351_20260102_appendix_000100E.json"
@@ -5005,7 +5051,7 @@
       "format": ".pdf",
       "status": "extracted",
       "extracted_units": 1,
-      "indexed_units": 1,
+      "indexed_units": 0,
       "page_count": 1,
       "pages_with_images": 0,
       "page_extraction_file": "processed/laws/appendices/008480_282351_20260102_appendix_000200E.json"
@@ -5027,7 +5073,7 @@
       "format": ".pdf",
       "status": "extracted",
       "extracted_units": 2,
-      "indexed_units": 2,
+      "indexed_units": 1,
       "page_count": 1,
       "pages_with_images": 0,
       "page_extraction_file": "processed/laws/appendices/008480_282351_20260102_appendix_000300E.json"
@@ -5294,7 +5340,7 @@
       "format": ".json",
       "status": "extracted",
       "extracted_units": 69,
-      "indexed_units": 69
+      "indexed_units": 68
     },
     {
       "path": "data/raw/laws/005247_206564_20190101.json",
@@ -5326,7 +5372,7 @@
       "format": ".json",
       "status": "extracted",
       "extracted_units": 32,
-      "indexed_units": 31
+      "indexed_units": 26
     },
     {
       "path": "data/raw/laws/009290_268837_20260201.json",
@@ -5369,5 +5415,6 @@
       "indexed_units": 75
     }
   ],
-  "validation": "unique IDs, parent offsets, full eligible text coverage, chunk size limits passed"
+  "validation": "unique parent IDs passed",
+  "processed_file_count": 125
 }
