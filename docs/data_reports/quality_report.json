@@ -8,8 +8,9 @@
     "extracted": 124,
     "metadata_or_index_only": 1
   },
-  "parent_count": 3690,
+  "parent_count": 3694,
   "processed_dir": "C:\\study\\SKN35-4th-3Team\\data\\processed",
+  "supplemental_source_count": 1,
   "exclusions": [
     {
       "source_path": "data/raw/consumer_sources/consumer_dispute_standard_appendix_2_efd94a7a06c489da.pdf",
@@ -525,6 +526,11 @@
       "source_path": "data/raw/law_appendices/009325_272631_20250712_appendix_000000E.pdf",
       "unit_id": "009325_272631_20250712_appendix_000000E:p2:body",
       "reason": "empty_or_image_only"
+    },
+    {
+      "source_path": "data/raw/law_appendices/009338_288143_20260721_appendix_000100E.pdf",
+      "unit_id": "009338_288143_20260721_appendix_000100E:p2:table0",
+      "reason": "superseded_by_reviewed_rows"
     },
     {
       "source_path": "data/raw/law_appendices/009338_288143_20260721_appendix_000300E.pdf",
@@ -4239,6 +4245,7 @@
     "image_layout_review_required": 5,
     "application_form_reference_only": 77,
     "deleted_notice": 7,
+    "superseded_by_reviewed_rows": 1,
     "historical_reference_not_current": 609,
     "deleted_article": 124
   },
@@ -4577,8 +4584,8 @@
       "sha256": "41f96f93f3a9d71182f8e178ef7fe753423753fe4ab8d2c0c296b593329227dc",
       "format": ".pdf",
       "status": "extracted",
-      "extracted_units": 49,
-      "indexed_units": 47,
+      "extracted_units": 50,
+      "indexed_units": 48,
       "page_count": 35,
       "pages_with_images": 1,
       "page_extraction_file": "processed/guides/guide_383b62bce56bf1ce.json"
@@ -5138,8 +5145,8 @@
       "sha256": "7fee592cfcf1c56d4a8a49b49336ee51f21e46332f5a767000809e0dbc8b85e5",
       "format": ".pdf",
       "status": "extracted",
-      "extracted_units": 7,
-      "indexed_units": 7,
+      "extracted_units": 11,
+      "indexed_units": 10,
       "page_count": 5,
       "pages_with_images": 0,
       "page_extraction_file": "processed/laws/appendices/009338_288143_20260721_appendix_000100E.json"

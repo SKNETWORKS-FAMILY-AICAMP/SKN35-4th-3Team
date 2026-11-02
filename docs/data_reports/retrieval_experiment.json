@@ -1,5 +1,7 @@
 {
-  "applied_to_default_search": false,
+  "applied_to_default_search": true,
+  "promoted_method": "keep_first_rerank",
+  "experiment_changes_settings": false,
   "data_files_unchanged": true,
   "settings": {
     "expanded_candidates_per_channel": 300,
@@ -906,13 +908,13 @@
               "preview_truncated": true
             },
             {
-              "id": "20b6c1f909648ffb8aa6a21d",
-              "parent_id": "kca_case_1003892039:body",
-              "title": "PT 강습 계약 해지에 따른 잔여 대금 환급 요구",
+              "id": "52d8cf42febe82b6df454a2b",
+              "parent_id": "kca_case_1003892170:body",
+              "title": "PT 수강 계약해지에 따른 잔여 대금 환급 및 배상 요구",
               "locator": ".board_view",
-              "source": "data/raw/consumer_sources/kca_case_1003892039_935b3cc418eb4f8f.html",
-              "text_preview": "PT 강습 계약 해지에 따른 잔여 대금 환급 요구\n\n사건개요 |\n\n□ 신청인은 2021. 8. 25. 피신청인과 PT 30회 수강(기간: 2021. 8. 25. ~2022. 2. 25.) 및 헬스장 이용(기간: 2021. 8. 25. ~2022. 8. 25.) 계약을 체결해 대금 1,650,000원을 결제했으며, 이후 스타 트레이너를 배정받기 위해 390,000원을 추가 지급함.\n□ 신청인은 2021. 9. 14. 담당 트레이너의 불성실한 태도를 이유로 트레이너 교체를 요구함.\n□ 피신청인은 신청인의 담당 트레이너를 변경해 2021",
-              "text_length": 866,
+              "source": "data/raw/consumer_sources/kca_case_1003892170_04b05e15688f90d3.html",
+              "text_preview": "인할 수 있는 객관적인 근거자료가 제출되지 않아 이 사건 계약해지에 피신청인의 귀책이 있다고 단정하기 어려운바, 이 사건 계약은 신청인의 선택에 따라 해지된 것으로 봄이 타당함.\n□ 피신청인은 이 사건 계약 횟수가 30회이며 1회 대금을 60,000원으로 산정해야 한다고 주장하고, 신청인은 PT 횟수는 서비스 3회를 포함해 33회로 보아야 하고 1회 대금을 54,545원(1,800,000원÷33회)으로 산정해야 한다고 주장함.\n□ 이 사건 계약서에는 총 수강 횟수가 ‘30+3’으로 표시되어 있고, 3회의 서비스는 이 사건 계약을 유",
+              "text_length": 885,
               "preview_truncated": true
             }
           ]
@@ -3555,13 +3557,13 @@
               "preview_truncated": true
             },
             {
-              "id": "20b6c1f909648ffb8aa6a21d",
-              "parent_id": "kca_case_1003892039:body",
-              "title": "PT 강습 계약 해지에 따른 잔여 대금 환급 요구",
+              "id": "52d8cf42febe82b6df454a2b",
+              "parent_id": "kca_case_1003892170:body",
+              "title": "PT 수강 계약해지에 따른 잔여 대금 환급 및 배상 요구",
               "locator": ".board_view",
-              "source": "data/raw/consumer_sources/kca_case_1003892039_935b3cc418eb4f8f.html",
-              "text_preview": "PT 강습 계약 해지에 따른 잔여 대금 환급 요구\n\n사건개요 |\n\n□ 신청인은 2021. 8. 25. 피신청인과 PT 30회 수강(기간: 2021. 8. 25. ~2022. 2. 25.) 및 헬스장 이용(기간: 2021. 8. 25. ~2022. 8. 25.) 계약을 체결해 대금 1,650,000원을 결제했으며, 이후 스타 트레이너를 배정받기 위해 390,000원을 추가 지급함.\n□ 신청인은 2021. 9. 14. 담당 트레이너의 불성실한 태도를 이유로 트레이너 교체를 요구함.\n□ 피신청인은 신청인의 담당 트레이너를 변경해 2021",
-              "text_length": 866,
+              "source": "data/raw/consumer_sources/kca_case_1003892170_04b05e15688f90d3.html",
+              "text_preview": "인할 수 있는 객관적인 근거자료가 제출되지 않아 이 사건 계약해지에 피신청인의 귀책이 있다고 단정하기 어려운바, 이 사건 계약은 신청인의 선택에 따라 해지된 것으로 봄이 타당함.\n□ 피신청인은 이 사건 계약 횟수가 30회이며 1회 대금을 60,000원으로 산정해야 한다고 주장하고, 신청인은 PT 횟수는 서비스 3회를 포함해 33회로 보아야 하고 1회 대금을 54,545원(1,800,000원÷33회)으로 산정해야 한다고 주장함.\n□ 이 사건 계약서에는 총 수강 횟수가 ‘30+3’으로 표시되어 있고, 3회의 서비스는 이 사건 계약을 유",
+              "text_length": 885,
               "preview_truncated": true
             }
           ]

@@ -1,0 +1,280 @@
+{
+  "refund_verification": {
+    "xml_source": "data/raw/consumer_sources/consumer_dispute_standard_64e922b28e0d2e2b.xml",
+    "xml_sha256": "64e922b28e0d2e2b79c275cf1acec392e97d60975226d383201511e1a9e9a7f1",
+    "pdf_path": "docs/data_reports/source_verification/consumer_dispute_standard_appendix_0002_159470209.pdf",
+    "pdf_sha256": "242401b8ae436e786a1b3c33aa5f568d7c8cb3a0927484a25ed933346bf72083",
+    "official_url": "https://www.law.go.kr/LSW/flDownload.do?flSeq=159470209",
+    "reference_matches_saved_xml": true,
+    "raw_xml_matches_processed": false,
+    "raw_xml_matches_preserved_original": true,
+    "missing_fractions_in_xml": 4,
+    "verified_formulas": [
+      {
+        "responsibility": "business",
+        "contract_basis": "period",
+        "timing": "after_start",
+        "page": 101,
+        "normalized_transcription": "반환금액 = 이용료 - (이용료 × (이미 경과한 기간(일수) / 계약상 이용기간(일수))) + 위약금",
+        "numerator_bbox": {
+          "x0": 320.03999999999996,
+          "top": 426.069,
+          "x1": 385.32,
+          "bottom": 435.069
+        },
+        "denominator_bbox": {
+          "x0": 320.03999999999996,
+          "top": 437.709,
+          "x1": 385.32,
+          "bottom": 446.709
+        },
+        "crop_text": "ㆍ반환금액=[이용료-(이용료×\n이미경과한기간일수\n) ] +\n계약상이용기간일수\n위약금",
+        "visually_reviewed": true,
+        "calculation_enabled": false,
+        "applied_to_processed": true
+      },
+      {
+        "responsibility": "consumer",
+        "contract_basis": "period",
+        "timing": "after_start",
+        "page": 101,
+        "normalized_transcription": "반환금액 = 이용료 - (이용료 × (이미 경과한 기간(일수) / 계약상 이용기간(일수))) - 위약금",
+        "numerator_bbox": {
+          "x0": 320.03999999999996,
+          "top": 654.429,
+          "x1": 385.32,
+          "bottom": 663.429
+        },
+        "denominator_bbox": {
+          "x0": 320.03999999999996,
+          "top": 666.189,
+          "x1": 385.32,
+          "bottom": 675.189
+        },
+        "crop_text": "ㆍ반환금액=[이용료-(이용료×\n이미경과한기간일수\n)] -\n계약상이용기간일수\n위약금",
+        "visually_reviewed": true,
+        "calculation_enabled": false,
+        "applied_to_processed": true
+      },
+      {
+        "responsibility": "business",
+        "contract_basis": "count",
+        "timing": "after_start",
+        "page": 101,
+        "normalized_transcription": "반환금액 = 이용료 - (이용료 × (이미 이용한 횟수 / 계약상 이용횟수)) + 위약금",
+        "numerator_bbox": {
+          "x0": 320.03999999999996,
+          "top": 496.74899999999997,
+          "x1": 385.32,
+          "bottom": 505.74899999999997
+        },
+        "denominator_bbox": {
+          "x0": 320.03999999999996,
+          "top": 508.389,
+          "x1": 385.32,
+          "bottom": 517.389
+        },
+        "crop_text": "ㆍ반환금액=[이용료-(이용료×\n이미이용한횟수\n)]+위약금\n계약상이용횟수",
+        "visually_reviewed": true,
+        "calculation_enabled": false,
+        "applied_to_processed": true
+      },
+      {
+        "responsibility": "consumer",
+        "contract_basis": "count",
+        "timing": "after_start",
+        "page": 101,
+        "normalized_transcription": "반환금액 = 이용료 - (이용료 × (이미 이용한 횟수 / 계약상 이용횟수)) - 위약금",
+        "numerator_bbox": {
+          "x0": 315.84,
+          "top": 725.1089999999999,
+          "x1": 381.12,
+          "bottom": 734.1089999999999
+        },
+        "denominator_bbox": {
+          "x0": 315.84,
+          "top": 736.869,
+          "x1": 381.12,
+          "bottom": 745.869
+        },
+        "crop_text": "ㆍ반환금액=[이용료-(이용료×\n이미이용한횟수\n)] - 위약금\n계약상이용횟수",
+        "visually_reviewed": true,
+        "calculation_enabled": false,
+        "applied_to_processed": true
+      }
+    ],
+    "context_checks": {
+      "membership_facility_exclusion_present": true,
+      "deposit_excluded_from_fee_present": true,
+      "penalty_one_tenth_present": true,
+      "gift_return_notes_present": true,
+      "yoga_pilates_scope_note_present": true
+    },
+    "context_pages": [
+      101,
+      102
+    ],
+    "sign_review": "Final plus/minus assignments were visually reviewed on the pinned PDF; crop checks alone are not a symbolic formula parser.",
+    "status": "applied_with_pdf_provenance",
+    "limitations": "Visual transcription and geometry verification of the archived attachment; not current legal advice or a refund calculator. Scope notes remain required."
+  },
+  "additional_pdf_verification": {
+    "sample_pages": 10,
+    "classification_counts": {
+      "valid_short_table": 2,
+      "title_or_revision_artifact": 5,
+      "layout_review_required": 3
+    },
+    "samples": [
+      {
+        "source_path": "data/raw/consumer_sources/minimum_wage_2026_attachment_body_b87d3570ff339e04.pdf",
+        "page": 1,
+        "table_index": 0,
+        "text": "결정단위\n업 종 | 시 간 급 | 모 든 산 업 | 10,320원",
+        "reason": "short_table_requires_visual_review",
+        "classification": "valid_short_table",
+        "observation": "시급 표와 월 환산액·근로시간 조건이 각각 보존됨",
+        "visually_reviewed": true,
+        "eligible_unit_ids": [
+          "minimum_wage_2026_attachment_body_b87d3570ff339e04:p1:body",
+          "minimum_wage_2026_attachment_body_b87d3570ff339e04:p1:table0"
+        ]
+      },
+      {
+        "source_path": "data/raw/guides/[pdf]해고근로자.pdf",
+        "page": 77,
+        "table_index": 0,
+        "text": "퇴직금 수령과 부당해고 구제신청",
+        "reason": "short_table_requires_visual_review",
+        "classification": "title_or_revision_artifact",
+        "observation": "표로 인식된 부분은 제목 상자이며 Q&A 본문은 별도로 보존됨",
+        "visually_reviewed": true,
+        "eligible_unit_ids": [
+          "guide_cad7b1de1e4dc64c:p77:body",
+          "guide_cad7b1de1e4dc64c:p77:table0"
+        ]
+      },
+      {
+        "source_path": "data/raw/law_appendices/003058_270551_20251023_appendix_000500E.pdf",
+        "page": 1,
+        "table_index": 0,
+        "text": "■ 근로기준법 시행령 [별표 5] <개정 2019. 7. 2. | >",
+        "reason": "short_table_requires_visual_review",
+        "classification": "title_or_revision_artifact",
+        "observation": "개정 표시를 표로 인식했으며 실제 내용은 문단 목록임",
+        "visually_reviewed": true,
+        "eligible_unit_ids": [
+          "003058_270551_20251023_appendix_000500E:p1:body",
+          "003058_270551_20251023_appendix_000500E:p1:table0"
+        ]
+      },
+      {
+        "source_path": "data/raw/law_appendices/003572_286997_20260701_appendix_000200E.pdf",
+        "page": 1,
+        "table_index": 0,
+        "text": "위반사항 | 근거\n법조문 | 영업정지 및 등록취소 | 1차 | 2차 | 3차",
+        "reason": "short_table_requires_visual_review",
+        "classification": "layout_review_required",
+        "observation": "표에는 제목만 추출되고 실제 처분 행은 본문으로 평탄화됨",
+        "visually_reviewed": true,
+        "eligible_unit_ids": [
+          "003572_286997_20260701_appendix_000200E:p1:body",
+          "003572_286997_20260701_appendix_000200E:p1:table0"
+        ]
+      },
+      {
+        "source_path": "data/raw/law_appendices/004950_287183_20260701_appendix_000100E.pdf",
+        "page": 1,
+        "table_index": 0,
+        "text": "<개정 2026. 6. 23. | >",
+        "reason": "short_table_requires_visual_review",
+        "classification": "title_or_revision_artifact",
+        "observation": "개정 표시와 실제 관할구역 표가 별도 추출됨; 병합 셀 주의",
+        "visually_reviewed": true,
+        "eligible_unit_ids": [
+          "004950_287183_20260701_appendix_000100E:p1:table0",
+          "004950_287183_20260701_appendix_000100E:p1:table1"
+        ]
+      },
+      {
+        "source_path": "data/raw/law_appendices/004950_287183_20260701_appendix_000200E.pdf",
+        "page": 1,
+        "table_index": 0,
+        "text": "<신설 2017. 5. 29. | >",
+        "reason": "short_table_requires_visual_review",
+        "classification": "title_or_revision_artifact",
+        "observation": "신설 표시와 실제 수수료 표가 별도 추출됨",
+        "visually_reviewed": true,
+        "eligible_unit_ids": [
+          "004950_287183_20260701_appendix_000200E:p1:body",
+          "004950_287183_20260701_appendix_000200E:p1:table0",
+          "004950_287183_20260701_appendix_000200E:p1:table1"
+        ]
+      },
+      {
+        "source_path": "data/raw/law_appendices/005498_287001_20260701_appendix_000400E.pdf",
+        "page": 1,
+        "table_index": 0,
+        "text": "위반행위 | 근거 법조문 | 과태료 금액 | 1차\n위반 | 2차\n위반 | 3차 이상\n위반",
+        "reason": "short_table_requires_visual_review",
+        "classification": "layout_review_required",
+        "observation": "표에는 제목만 추출됨; 본문의 수치에는 단위와 공통기준 결합이 필요함",
+        "visually_reviewed": true,
+        "eligible_unit_ids": [
+          "005498_287001_20260701_appendix_000400E:p1:body",
+          "005498_287001_20260701_appendix_000400E:p1:table0"
+        ]
+      },
+      {
+        "source_path": "data/raw/law_appendices/009325_272631_20250712_appendix_000000E.pdf",
+        "page": 1,
+        "table_index": 0,
+        "text": "■ 민사집행규칙 [별표] <개정 2018. 12. 31. | >",
+        "reason": "short_table_requires_visual_review",
+        "classification": "title_or_revision_artifact",
+        "observation": "개정 표시와 실제 기관·재산 표가 별도 추출됨",
+        "visually_reviewed": true,
+        "eligible_unit_ids": [
+          "009325_272631_20250712_appendix_000000E:p1:table0",
+          "009325_272631_20250712_appendix_000000E:p1:table1"
+        ]
+      },
+      {
+        "source_path": "data/raw/law_appendices/009325_272631_20250712_appendix_000000E.pdf",
+        "page": 2,
+        "table_index": 0,
+        "text": "17 | 한국교통안전공단 | 자동차ㆍ건설기계의 소유권",
+        "reason": "short_table_requires_visual_review",
+        "classification": "valid_short_table",
+        "observation": "짧지만 정상적인 마지막 행이며 이전 페이지의 열 제목을 함께 봐야 함",
+        "visually_reviewed": true,
+        "eligible_unit_ids": [
+          "009325_272631_20250712_appendix_000000E:p2:table0"
+        ]
+      },
+      {
+        "source_path": "data/raw/law_appendices/009338_288143_20260721_appendix_000100E.pdf",
+        "page": 1,
+        "table_index": 0,
+        "text": "위반행위 | 근거\n법조문 | 영업정지 처분 내용 | 1차 | 2차 | 3차",
+        "reason": "short_table_requires_visual_review",
+        "classification": "layout_review_required",
+        "observation": "첫 페이지 표는 제목만 추출되고 실제 행은 본문으로 평탄화됨",
+        "visually_reviewed": true,
+        "eligible_unit_ids": [
+          "009338_288143_20260721_appendix_000100E:p1:body",
+          "009338_288143_20260721_appendix_000100E:p1:table0"
+        ]
+      }
+    ],
+    "content_checks": {
+      "wage_and_monthly_conditions": true,
+      "five_fee_rows": true,
+      "fee_exception_preserved": true,
+      "last_page_row_preserved": true
+    },
+    "limitations": "Reviewed candidate pages only, not all PDFs. Layout-review cases are not missing-text claims. No production filtering or table reconstruction applied."
+  },
+  "production_changes_applied": true,
+  "data_files_unchanged": true
+}

@@ -30,11 +30,19 @@ data/
 조회수·수정일은 전처리 결과의 `evidence_metadata.page_metadata`에 따로 보관하며,
 수정일을 사건 결정일이나 법령 시행일로 사용하지 않는다.
 
+소비자원 접수 안내의 `layerPopupNotice` 팝업은 일반 안내와 분리한다.
+지정된 팝업 ID·클래스가 함께 일치할 때만 검색 본문에서 제외하고, 내용은
+`evidence_metadata.excluded_popups`에 보관한다. 일반 증빙서류·접수방법은 유지한다.
+
+검토한 인터넷 쇼핑 PDF의 29~30페이지는 청약철회 방해문구 예시가 이어지는 구간이다.
+30페이지의 예시에는 29페이지 설명을 붙이고, 출처 표시 뒤의 물품반환 비용 안내는 별도 근거로 저장한다.
+`content_role`과 위치 정보로 예시·일반 안내를 구분하고, 원래 페이지 구간과 문맥 출처를 메타데이터에 보존한다.
+원본 페이지 추출 내용은 바꾸지 않는다. 이 처리는 검토한 PDF 버전에서만 적용한다.
+
 삭제 안내만 있거나 조문 번호·제목만 있는 근거는 전처리 결과에 보관하되
 `embedding_candidate: false`로 표시하여 청크 생성과 검색에서 제외한다.
 PDF에서 별표 번호와 제목만 있는 본문도 같은 페이지에 표가 따로 추출된 경우 제외하며,
 실제 표는 유지한다. 길이가 짧아도 내용이 완전한 조문은 제외하지 않는다.
-제외 목록과 검색 지표 비교는 `docs/data_reports/content_filter_report.json`에서 확인한다.
 
 최초 한 번:
 
@@ -62,6 +70,18 @@ uv run --no-sync python -m src.evaluation.retrieval_check
 uv run --no-sync python -m unittest discover -s tests -v
 ```
 
+검색 검증 명령의 기본 모드는 `reranked`다. 기존 1위 결과는 유지하고 나머지를 재순위화한다.
+이전 방식은 `--mode enhanced`, 최초 어휘 검색은 `--mode baseline`으로 실행한다.
+이는 오프라인 검색 검증 코드의 적용이며, Django 서비스 연결은 별도 작업이다.
+
+새 표현 질문 15개를 별도 보고서로 검증하려면:
+
+```powershell
+uv run --no-sync python -m src.evaluation.retrieval_check --cases tests/data/retrieval_followup_cases.json --report-path docs/data_reports/retrieval_followup_report.json
+```
+
+새 질문은 기존 법률 주제의 다른 표현을 확인하는 용도이며 독립된 주제의 평가셋은 아니다.
+
 조건별 환불표 청킹과 PDF 표 추출 설정을 비교하는 실험:
 
 ```powershell
@@ -71,7 +91,7 @@ uv run --no-sync python -m src.evaluation.table_chunking_experiment
 이 명령은 `data/`를 수정하지 않고 `docs/data_reports/table_chunking_experiment.json`에
 비교 지표와 실험 청크, PDF 표 추출 결과를 저장한다. 검색 방식과 평가 질문은 그대로 사용한다.
 조건별 청크는 원문 위치와 전체 근거 연결을 유지하지만, 여러 행에 걸친 비고·예외는
-전체 표와 함께 확인해야 한다. 원본 XML의 불완전한 계산식은 보완하거나 추정하지 않는다.
+전체 표와 함께 확인해야 한다. 원본에서 확인할 수 없는 계산식은 추정하지 않는다.
 현재 조건별 청킹은 평가 지표가 개선되지 않아 기본 파이프라인에는 적용하지 않았다.
 
 후보 수 확대·문자 TF-IDF 검색 결합·어휘 포함 비율 재순위화 비교:
@@ -81,11 +101,37 @@ uv run --no-sync python -m src.evaluation.retrieval_experiment
 ```
 
 `docs/data_reports/retrieval_experiment.json`에 각 방법의 지표와 질문별 순위 변화를 저장한다.
-기존 1위를 유지하고 나머지를 재순위화하는 방법도 포함한다. 기본 검색 동작은 변경하지 않는다.
-기존 개발용 질문으로 비교하므로, 채택 전 별도의 평가 질문으로 재검증해야 한다.
+기존 1위를 유지하고 나머지를 재순위화하는 방법도 포함한다. 비교 명령 자체는 설정을 바꾸지 않는다.
+이 방법은 새 표현 질문 15개에서 지표 저하가 없어 검색 검증 명령의 기본값으로 반영했다.
+개발용 질문에 대한 결과이므로 독립적인 상담 질문을 이용한 추가 검증은 계속 필요하다.
 이 실험은 어휘 검색 개선이며 의미 임베딩이나 학습된 재순위 모델은 사용하지 않는다.
 PDF 검증은 표본 2~3페이지의 4개 행과 페이지 간 연결에 한정하며,
 다른 PDF나 환불 계산식의 정확성을 보장하지 않는다.
+
+추가 PDF 표본 및 환불 계산식 대조:
+
+```powershell
+uv run --no-sync python -m src.evaluation.pdf_source_verification
+```
+
+검증용 PDF는 저장된 XML의 별표 0002가 가리키는 공식 첨부를
+`docs/data_reports/source_verification/`에 별도로 보관한다. `raw/`에는 추가하거나 덮어쓰지 않는다.
+이 명령은 고정한 PDF 해시, 네 분수의 분자·분모 좌표, 적용 범위 비고와
+기존 PDF의 짧은 표 후보 10개 페이지를 대조해 `docs/data_reports/pdf_source_verification.json`을 저장한다.
+계산식의 부호는 원본 화면과 대조한 기록이며, 좌표·문자 검사는 수식 해석기를 대신하지 않는다.
+검증한 XML·PDF 해시가 일치하는 체육시설업 표 한 개에 한해 네 분수를 전처리·청크에 보완한다.
+보완 전 본문은 부모 근거의 `evidence_metadata.formula_supplement.original_text`에 보관한다.
+각 수정의 원본·보완 후 위치와 PDF 경로·해시·공식 URL·101~102페이지 정보를 함께 기록한다.
+원본 XML의 `source_start/end`는 보완 전 본문 구간이며, 청크의 `start/end`는 보완된 부모 본문 기준이다.
+`supplemental_sources`는 청크에도 전달되며, 청킹 시 검증 PDF의 해시까지 확인한다.
+따라서 `source_verification/`의 이 PDF는 재실행과 출처 검증에 필요한 입력 파일이다.
+이 작업은 수식 텍스트 보완이며 자동 환급액 계산은 활성화하지 않는다.
+이 결과는 저장한 버전의 자료 품질 검증이며 현재 법률 적용 여부나 실제 환급액 계산을 검증하지 않는다.
+
+`src/scripts/pdf_tables.py`는 검증한 PDF의 네 행만 공통기준과 함께 전처리 근거로 구성한다.
+원본 파일명·SHA-256과 표본 검증이 일치해야 적용하며, PDF 버전이 달라지면 재검토를 요구한다.
+기존의 불완전한 문장 조각 하나는 `superseded_by_reviewed_rows`로 검색에서 제외한다.
+나머지 PDF에는 기존 추출 방식을 유지한다.
 
 ### 검색 테스트 질문 추가
 

@@ -12,6 +12,9 @@ from src.scripts.chunk_data import make_chunks, stats, validate
 from src.scripts.data_io import ROOT, load_chunks, load_processed_data, read_json
 from src.scripts.preprocess_data import clean
 from .retrieval_check import evaluate
+from src.scripts.pdf_tables import (
+    extract_pdf_trial_page, group_pdf_rows, trial_pdf_extraction, validate_pdf_extraction,
+)
 
 
 def condition_spans(text):
@@ -88,121 +91,19 @@ def audit_tables(units):
         source = clean(body[unit["source_start"]:unit["source_end"]])
         solution = "".join(line.split("│")[1] for line in source.splitlines() if "│" in line)
         missing = len(re.findall(r"이용료×\)", re.sub(r"\s+", "", solution)))
+        supplement = unit.get("evidence_metadata", {}).get("formula_supplement", {})
+        processed_solution = "".join(line.split("│")[1] for line in unit["text"].splitlines() if "│" in line)
         source_checks.append({"unit_id": unit["unit_id"], "source_path": unit["source_path"],
                               "raw_span_matches_processed": source == unit["text"],
+                              "raw_span_matches_preserved_original": source == supplement.get("original_text", unit["text"]),
                               "incomplete_formula_count_in_raw": missing,
+                              "incomplete_formula_count_in_processed": len(re.findall(r"이용료×\)", re.sub(r"\s+", "", processed_solution))),
+                              "pdf_formula_alignment_verified": bool(supplement),
                               "calculation_restricted": unit.get("calculation_restricted", False),
                               "pdf_cell_alignment_verified": False})
     return {"pdf_table_count": table_count, "short_table_candidates": suspicious,
             "refund_source_checks": source_checks,
-            "limitations": "Short tables are review candidates, not proven errors. Refund XML formulas are not repaired; matching refund PDF still needs review."}
-
-
-def extract_pdf_trial_page(page):
-    # 페이지를 길게 가로지르는 실제 세로선만 열 경계로 사용한다.
-    edges = sorted({round(edge["x0"], 3) for edge in page.edges
-                    if edge.get("orientation") == "v"
-                    and abs(edge["bottom"] - edge["top"]) > page.height / 2})
-    if len(edges) < 2:
-        return {"status": "not_enough_column_boundaries"}
-    settings = {"vertical_strategy": "explicit", "explicit_vertical_lines": edges,
-                "horizontal_strategy": "text", "intersection_x_tolerance": 20}
-    trials = {}
-    for label, options in (("default", {}), ("vertical_boundaries", settings)):
-        tables = [table.extract() for table in page.find_tables(options)]
-        trials[label] = {"tables": tables, "table_count": len(tables),
-                         "row_count": sum(len(rows) for rows in tables),
-                         "cell_chars": sum(len(cell or "") for rows in tables for row in rows for cell in row),
-                         "column_counts": sorted({len(row) for rows in tables for row in rows})}
-    return {"settings": settings, "trials": trials}
-
-
-def trial_pdf_extraction():
-    """문장 조각만 추출됐던 PDF 한 페이지에서 세로 경계 기반 추출을 비교한다."""
-    import pdfplumber
-
-    source = "data/raw/law_appendices/009338_288143_20260721_appendix_000100E.pdf"
-    path = ROOT / source
-    if not path.exists():
-        return {"status": "sample_not_available"}
-    with pdfplumber.open(path) as document:
-        result = extract_pdf_trial_page(document.pages[1])
-    return {"source_path": source, "page": 2, **result,
-            "applied_to_search": False,
-            "limitations": "Physical text lines, not complete logical rows. Cross-page conditions and headers are not reconstructed. More extracted text does not alone prove correctness."}
-
-
-def group_pdf_rows(pages):
-    """같은 열의 줄바꿈만 합친다. 시작·끝이 불명확한 조각은 따로 표시한다."""
-    rows, orphan_fragments, pending = [], [], None
-    previous_page = None
-    for page_number, physical_rows in pages:
-        if previous_page is not None and page_number != previous_page + 1:
-            pending = None
-        previous_page = page_number
-        for index, cells in enumerate(physical_rows):
-            if not any(cells):
-                continue
-            if len(cells) != 5:
-                raise ValueError("Expected five columns in the reviewed table")
-            label = re.match(r"^[가-힣]+(?:의\d+)?\.", cells[0] or "")
-            if label:
-                if pending:
-                    pending["end_confirmed"] = True
-                pending = {"label": label.group(), "cells": ["" for _ in cells],
-                           "fragments": [], "end_confirmed": False}
-                rows.append(pending)
-            fragment = {"page": page_number, "physical_row": index, "cells": cells}
-            if pending is None:
-                orphan_fragments.append(fragment)
-                continue
-            pending["fragments"].append(fragment)
-            for column, text in enumerate(cells):
-                if text:
-                    pending["cells"][column] = (pending["cells"][column] + " " + text).strip()
-    return rows, orphan_fragments
-
-
-def validate_pdf_extraction():
-    """원본 화면으로 확인한 열 값과 페이지를 걸친 행 연결을 검증한다."""
-    import pdfplumber
-
-    source = "data/raw/law_appendices/009338_288143_20260721_appendix_000100E.pdf"
-    path = ROOT / source
-    if not path.exists():
-        return {"status": "sample_not_available"}
-    pages, trials = [], []
-    with pdfplumber.open(path) as document:
-        for number in (2, 3):
-            result = extract_pdf_trial_page(document.pages[number - 1])
-            if "trials" not in result:
-                return {"status": "column_detection_failed", "page": number}
-            tables = result["trials"]["vertical_boundaries"]["tables"]
-            if len(tables) != 1:
-                return {"status": "ambiguous_tables", "page": number}
-            pages.append((number, tables[0]))
-            trials.append({"page": number, **result})
-    rows, orphans = group_pdf_rows(pages)
-    # 원본 2~3페이지에서 눈으로 대조한 표본이다. 검색 정답에는 사용하지 않는다.
-    expected = {"마.": ["1개월", "3개월", "6개월"],
-                "바.": ["3개월", "6개월", "12개월"],
-                "하.": ["1개월", "3개월", "6개월"],
-                "버.": ["3개월", "6개월", "12개월"]}
-    by_label = {row["label"]: row for row in rows}
-    checks = []
-    for label, months in expected.items():
-        row = by_label.get(label)
-        actual = [re.findall(r"\d+개월", cell) for cell in row["cells"][-3:]] if row else []
-        checks.append({"label": label, "expected_months": months, "actual": actual,
-                       "passed": bool(row and row["end_confirmed"] and actual == [[m] for m in months])})
-    cross_page = by_label.get("하.")
-    cross_page_passed = bool(cross_page and {f["page"] for f in cross_page["fragments"]} == {2, 3}
-                             and "신고를 하지 않은" in cross_page["cells"][0])
-    return {"source_path": source, "pages": [2, 3], "applied_to_production": False,
-            "trials": trials, "logical_rows": rows, "orphan_fragments": orphans,
-            "manual_sample_checks": checks, "cross_page_sample_passed": cross_page_passed,
-            "all_sample_checks_passed": all(c["passed"] for c in checks) and cross_page_passed,
-            "limitations": "Only the reviewed five-column table on two consecutive pages. Leading fragments and unconfirmed final rows are not complete evidence. Shared conditions on page 1 remain required; no general PDF accuracy claim."}
+            "limitations": "Short tables are review candidates, not proven errors. Four reviewed fractions may be supplemented from the pinned PDF with provenance; other table layout claims still require review."}
 
 
 def main():

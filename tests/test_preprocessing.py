@@ -16,6 +16,163 @@ from src.scripts.preprocess_data import build_evidence_unit, build_pdf_entries, 
 
 
 class RawPreprocessingTests(unittest.TestCase):
+    @unittest.skipUnless(importlib.util.find_spec("lxml"), "Optional ingestion dependency")
+    def test_submission_popup_is_separated_without_removing_general_evidence(self):
+        source = '''<div id="content"><h1>피해구제 접수방법</h1>
+        <p>증빙서류: 계약서, 영수증, 사업자에게 이의를 제기한 전자문서</p>
+        <div id="layerPopupNotice1" class="layer_pop pgnotice"><h2>기간 한정 공지</h2><p>특정 업체 사건</p></div>
+        <div id="generalNotice" class="notice"><p>일반적인 신청 유의사항</p></div></div>'''
+        text, meta = html_extract(source.encode(), "kca_redress_submission_fixture.html")
+        self.assertIn("계약서, 영수증", text)
+        self.assertIn("일반적인 신청 유의사항", text)
+        self.assertNotIn("기간 한정 공지", text)
+        self.assertNotIn("특정 업체 사건", text)
+        self.assertIn("특정 업체 사건", meta["excluded_popups"][0]["text"])
+        self.assertEqual(meta["excluded_popups"][0]["id"], "layerPopupNotice1")
+        text, meta = html_extract(source.encode(), "other_site.html")
+        self.assertIn("특정 업체 사건", text)
+        self.assertNotIn("excluded_popups", meta)
+
+    def test_pdf_example_context_stops_before_normal_guidance(self):
+        from src.scripts.preprocess_data import pdf_example_sections
+
+        first = "※ 청약철회 방해문구 사례\n구매자에게 불리한 판매자 문구의 예시입니다.\n<예시>\n반품 불가"
+        second = "포장을 개봉하면 반품 불가\n< 출처: 2021년 전자거래분쟁조정사례집, 56~57쪽 >\n물품반환 비용 부담\n사업자 귀책 시 사업자 부담"
+        pages = [{"page_number": 29, "body_text": first}, {"page_number": 30, "body_text": second}]
+        sections = pdf_example_sections(pages)
+        self.assertEqual("".join(s["original_text"] for s in sections[30]), second)
+        self.assertIn("청약철회 방해문구 사례", sections[30][0]["text"])
+        self.assertEqual(sections[30][0]["context_source"]["page_number"], 29)
+        self.assertNotIn("사업자 귀책", sections[30][0]["text"])
+        self.assertEqual(sections[30][1]["role"], "guidance")
+        self.assertNotIn("반품 불가", sections[30][1]["text"])
+        pages[1]["body_text"] = "다음 페이지의 다른 내용"
+        with self.assertRaises(ValueError):
+            pdf_example_sections(pages)
+
+    def test_real_pdf_example_context_reaches_every_retrieval_chunk(self):
+        from src.scripts.data_io import read_json
+        from src.scripts.chunk_data import make_chunks
+
+        path = ROOT / "data/processed/guides/guide_383b62bce56bf1ce.json"
+        if not path.exists():
+            self.skipTest("Optional source-data regression check")
+        entries = list(build_pdf_entries(Path("guides/[pdf]인터넷 쇼핑.pdf"), read_json(path)["pages"]))
+        quote = next(e for e in entries if e["key"] == "p30:body")
+        rules = next(e for e in entries if e["key"] == "p30:body:rules")
+        self.assertIn("판매자의 위법 부당 행위", quote["text"])
+        self.assertNotIn("물품반환 비용 부담", quote["text"])
+        self.assertIn("제18조제10항", rules["text"])
+        unit = {**quote, "unit_id": "shopping:quote", "title": "인터넷 쇼핑"}
+        self.assertTrue(all("청약철회 방해문구 사례" in row["embedding_text"] for row in make_chunks(unit, 300, 40)))
+
+    def test_supplemental_pdf_hash_and_path_are_checked(self):
+        import hashlib
+        from src.scripts.data_io import validate_source_hashes
+
+        with tempfile.TemporaryDirectory(dir=Path(__file__).parent) as folder:
+            root = Path(folder).resolve()
+            raw = root / "data/raw/laws/source.xml"
+            raw.parent.mkdir(parents=True)
+            raw.write_bytes(b"raw source")
+            pdf = root / "docs/data_reports/source_verification/example.pdf"
+            pdf.parent.mkdir(parents=True)
+            pdf.write_bytes(b"reviewed PDF")
+            unit = {"source_path": "data/raw/laws/source.xml", "raw_sha256": hashlib.sha256(raw.read_bytes()).hexdigest(),
+                    "supplemental_sources": [{"path": pdf.relative_to(root).as_posix(),
+                                              "sha256": hashlib.sha256(pdf.read_bytes()).hexdigest()}]}
+            with patch("src.scripts.data_io.ROOT", root):
+                validate_source_hashes([unit], root / "data/raw")
+                pdf.write_bytes(b"modified PDF")
+                with self.assertRaisesRegex(ValueError, "Supplemental source changed"):
+                    validate_source_hashes([unit], root / "data/raw")
+                unit["supplemental_sources"][0]["path"] = "docs/data_reports/source_verification/../../outside.pdf"
+                with self.assertRaisesRegex(ValueError, "escapes"):
+                    validate_source_hashes([unit], root / "data/raw")
+
+    def test_fraction_geometry_uses_position_instead_of_extraction_order(self):
+        from src.evaluation.pdf_source_verification import fraction_pairs
+
+        def box(top, x=300):
+            return {"x0": x, "x1": x + 60, "top": top, "bottom": top + 8}
+        numerators = [box(200), box(100)]
+        denominators = [box(112), box(212)]
+        pairs = fraction_pairs(numerators, denominators)
+        self.assertEqual([(a["top"], b["top"]) for a, b in pairs], [(100, 112), (200, 212)])
+        for invalid in ([box(90)], [box(112, x=400)], []):
+            with self.assertRaises(ValueError):
+                fraction_pairs([box(100)], invalid)
+        with self.assertRaises(ValueError):
+            fraction_pairs([box(100)], [box(112), box(212)])
+
+    @unittest.skipUnless(importlib.util.find_spec("pdfplumber"), "Optional ingestion dependency")
+    def test_refund_attachment_confirms_four_fractions_with_scope_notes(self):
+        from src.evaluation.pdf_source_verification import REFUND_PDF, verify_refund_formulas
+
+        if not REFUND_PDF.exists():
+            self.skipTest("Optional verification attachment")
+        result = verify_refund_formulas(load_processed_data())
+        self.assertEqual(result["missing_fractions_in_xml"], 4)
+        self.assertEqual(len(result["verified_formulas"]), 4)
+        self.assertTrue(all(result["context_checks"].values()))
+        self.assertEqual({(f["responsibility"], f["contract_basis"]) for f in result["verified_formulas"]},
+                         {("business", "period"), ("business", "count"), ("consumer", "period"), ("consumer", "count")})
+        self.assertTrue(all(not f["calculation_enabled"] for f in result["verified_formulas"]))
+        self.assertTrue(result["raw_xml_matches_preserved_original"])
+
+    @unittest.skipUnless(importlib.util.find_spec("pdfplumber"), "Optional ingestion dependency")
+    def test_refund_supplement_is_traceable_complete_and_idempotent(self):
+        from src.scripts.pdf_tables import REFUND_PDF, apply_refund_formulas, verify_refund_formulas
+        from src.scripts.chunk_data import make_chunks, validate
+        from src.scripts.preprocess_data import catalog
+
+        path = ROOT / "data/raw/consumer_sources/consumer_dispute_standard_64e922b28e0d2e2b.xml"
+        if not REFUND_PDF.exists() or not path.exists():
+            self.skipTest("Optional verification sources")
+        result = preprocess_file(path, ROOT / "data/raw", catalog(ROOT))
+        self.assertEqual(result["record"]["status"], "extracted")
+        unit = next(u for u in result["units"] if u["unit_id"].endswith(":industry:fitness_refund"))
+        self.assertTrue(unit["calculation_restricted"])
+        supplement = unit["evidence_metadata"]["formula_supplement"]
+        original = unit["text"]
+        for correction in reversed(supplement["corrections"]):
+            start = correction["processed_start"]
+            original = original[:start] + correction["before"] + original[start + len(correction["after"]):]
+        self.assertEqual(original, supplement["original_text"])
+        self.assertEqual(len(supplement["corrections"]), 4)
+        self.assertEqual(apply_refund_formulas(unit), unit)
+        self.assertTrue(all(f["applied_to_processed"] for f in verify_refund_formulas([unit])["verified_formulas"]))
+        chunks = list(make_chunks(unit))
+        validate([unit], chunks, 900)
+        self.assertTrue(all(c["supplemental_sources"] == unit["supplemental_sources"] for c in chunks))
+
+    def test_reviewed_pdf_requires_the_reviewed_source_hash(self):
+        from src.scripts.pdf_tables import REVIEWED_PDF_NAME, reviewed_pdf_entries
+
+        with tempfile.TemporaryDirectory(dir=Path(__file__).parent) as folder:
+            path = Path(folder) / REVIEWED_PDF_NAME
+            path.write_bytes(b"changed PDF")
+            with self.assertRaisesRegex(ValueError, "Reviewed PDF changed"):
+                reviewed_pdf_entries(path, [])
+            self.assertEqual(reviewed_pdf_entries(Path(folder) / "other.pdf", []), [])
+
+    @unittest.skipUnless(importlib.util.find_spec("pdfplumber"), "Optional ingestion dependency")
+    def test_reviewed_pdf_rows_include_common_conditions_and_source_fragments(self):
+        from src.scripts.pdf_tables import REVIEWED_PDF_NAME, reviewed_pdf_entries
+        from src.scripts.preprocess_data import extract_pdf
+
+        path = ROOT / "data/raw/law_appendices" / REVIEWED_PDF_NAME
+        if not path.exists():
+            self.skipTest("Optional source-data regression check")
+        entries = reviewed_pdf_entries(path, extract_pdf(path))
+        self.assertEqual(len(entries), 4)
+        for entry in entries:
+            self.assertIn("1. 일반기준", entry["text"])
+            self.assertIn("2. 개별기준", entry["text"])
+            self.assertIn(1, entry["page_numbers"])
+            self.assertTrue(entry["evidence_metadata"]["fragments"])
+            self.assertTrue(entry["calculation_restricted"])
+
     def test_non_content_is_excluded_but_short_articles_remain(self):
         common = {"document_id": "sample", "source_path": "data/raw/laws/sample.json"}
         for text in ("[별표 1] 삭제 <2018. 12. 31.>", "[별지 제3호서식] 삭제 <1994.11.14>"):

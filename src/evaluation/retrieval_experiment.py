@@ -12,8 +12,9 @@ import re
 
 from src.scripts.data_io import ROOT, load_chunks
 from .retrieval_check import (
+    AnchoredRerankIndex, CoverageRerankIndex, ExpandedCandidateIndex,
     RRF_OFFSET, EnhancedLexicalIndex, LexicalIndex,
-    diversify_hits, evaluate, normalize_query, tokens,
+    evaluate, normalize_query,
 )
 
 
@@ -54,29 +55,6 @@ class CharacterIndex:
         return [self.rows[i] for i in sorted(scores, key=lambda i: (-scores[i], self.rows[i]["chunk_id"]))[:k]]
 
 
-class ExpandedCandidateIndex(LexicalIndex):
-    candidate_count = 300
-
-    def candidate_ranking(self, query):
-        rankings = [LexicalIndex.search(self, query, k=self.candidate_count),
-                    LexicalIndex.search(self, normalize_query(query), k=self.candidate_count)]
-        return self.fuse(rankings)
-
-    @staticmethod
-    def fuse(rankings):
-        scores, hits = defaultdict(float), {}
-        for ranking in rankings:
-            for rank, row in enumerate(ranking, 1):
-                key = row["chunk_id"]
-                hits[key] = row
-                scores[key] += 1 / (RRF_OFFSET + rank)
-        ordered = sorted(scores, key=lambda key: (-scores[key], key))
-        return [(hits[key], scores[key]) for key in ordered]
-
-    def search(self, query, k=5):
-        return diversify_hits([row for row, _ in self.candidate_ranking(query)], k=k)
-
-
 class CharacterFusionIndex(ExpandedCandidateIndex):
     def __init__(self, rows):
         super().__init__(rows)
@@ -87,46 +65,6 @@ class CharacterFusionIndex(ExpandedCandidateIndex):
         return self.fuse([LexicalIndex.search(self, query, k=self.candidate_count),
                           LexicalIndex.search(self, normalized, k=self.candidate_count),
                           self.character_index.search(normalized, k=self.candidate_count)])
-
-
-class CoverageRerankIndex(ExpandedCandidateIndex):
-    """상위 후보의 순위 점수와 질문 어휘의 포함 비율을 함께 사용한다."""
-
-    def __init__(self, rows):
-        super().__init__(rows)
-        self.row_tokens = {row["chunk_id"]: set(tokens(row.get("embedding_text", row["text"]))) for row in rows}
-
-    def search(self, query, k=5):
-        candidates = self.candidate_ranking(query)[:100]
-        if not candidates or k <= 0:
-            return []
-        weights = {token: math.log(1 + (len(self.rows) + .5) / (len(self.postings.get(token, [])) + .5))
-                   for token in set(tokens(normalize_query(query))) if token in self.postings}
-        total = sum(weights.values()) or 1
-        maximum = candidates[0][1]
-        scored = []
-        for row, rank_score in candidates:
-            coverage = sum(weight for token, weight in weights.items()
-                           if token in self.row_tokens[row["chunk_id"]]) / total
-            score = .5 * rank_score / maximum + .5 * coverage
-            scored.append((row, score))
-        scored.sort(key=lambda item: (-item[1], item[0]["chunk_id"]))
-        return diversify_hits([row for row, _ in scored], k=k)
-
-
-class AnchoredRerankIndex(CoverageRerankIndex):
-    """기존 1위는 유지하고 나머지 검색 결과에 재순위화를 적용한다."""
-
-    def __init__(self, rows):
-        super().__init__(rows)
-        self.current_index = EnhancedLexicalIndex(rows)
-
-    def search(self, query, k=5):
-        if k <= 0:
-            return []
-        first = self.current_index.search(query, k=1)
-        reranked = super().search(query, k=max(20, k + 1))
-        return diversify_hits(first + reranked, k=k)
 
 
 def main():
@@ -152,7 +90,8 @@ def main():
                          if old["rank_at_5"] != new["rank_at_5"]]
     assert set(paths) == {p for p in (ROOT / "data").rglob("*") if p.is_file()}
     assert all(hashlib.sha256(path.read_bytes()).hexdigest() == digest for path, digest in hashes.items())
-    report = {"applied_to_default_search": False, "data_files_unchanged": True,
+    report = {"applied_to_default_search": True, "promoted_method": "keep_first_rerank",
+              "experiment_changes_settings": False, "data_files_unchanged": True,
               "settings": {"expanded_candidates_per_channel": 300, "rerank_candidates": 100,
                            "rrf_offset": RRF_OFFSET, "rerank_weights": {"rank": .5, "coverage": .5}},
               "results": results, "rank_changes": changes,

@@ -130,6 +130,69 @@ class EnhancedLexicalIndex(LexicalIndex):
         return diversify_hits(ranking, k=k)
 
 
+class ExpandedCandidateIndex(LexicalIndex):
+    candidate_count = 300
+
+    def candidate_ranking(self, query):
+        rankings = [LexicalIndex.search(self, query, k=self.candidate_count),
+                    LexicalIndex.search(self, normalize_query(query), k=self.candidate_count)]
+        return self.fuse(rankings)
+
+    @staticmethod
+    def fuse(rankings):
+        scores, hits = defaultdict(float), {}
+        for ranking in rankings:
+            for rank, row in enumerate(ranking, 1):
+                key = row["chunk_id"]
+                hits[key] = row
+                scores[key] += 1 / (RRF_OFFSET + rank)
+        ordered = sorted(scores, key=lambda key: (-scores[key], key))
+        return [(hits[key], scores[key]) for key in ordered]
+
+    def search(self, query, k=5):
+        return diversify_hits([row for row, _ in self.candidate_ranking(query)], k=k)
+
+
+class CoverageRerankIndex(ExpandedCandidateIndex):
+    """상위 후보의 순위 점수와 질문 어휘의 포함 비율을 함께 사용한다."""
+
+    def __init__(self, rows):
+        super().__init__(rows)
+        self.row_tokens = {row["chunk_id"]: set(tokens(row.get("embedding_text", row["text"]))) for row in rows}
+
+    def search(self, query, k=5):
+        candidates = self.candidate_ranking(query)[:100]
+        if not candidates or k <= 0:
+            return []
+        weights = {token: math.log(1 + (len(self.rows) + .5) / (len(self.postings.get(token, [])) + .5))
+                   for token in set(tokens(normalize_query(query))) if token in self.postings}
+        total = sum(weights.values()) or 1
+        maximum = candidates[0][1]
+        scored = []
+        for row, rank_score in candidates:
+            coverage = sum(weight for token, weight in weights.items()
+                           if token in self.row_tokens[row["chunk_id"]]) / total
+            score = .5 * rank_score / maximum + .5 * coverage
+            scored.append((row, score))
+        scored.sort(key=lambda item: (-item[1], item[0]["chunk_id"]))
+        return diversify_hits([row for row, _ in scored], k=k)
+
+
+class AnchoredRerankIndex(CoverageRerankIndex):
+    """기존 1위는 유지하고 나머지 검색 결과에 재순위화를 적용한다."""
+
+    def __init__(self, rows):
+        super().__init__(rows)
+        self.current_index = EnhancedLexicalIndex(rows)
+
+    def search(self, query, k=5):
+        if k <= 0:
+            return []
+        first = self.current_index.search(query, k=1)
+        reranked = super().search(query, k=max(20, k + 1))
+        return diversify_hits(first + reranked, k=k)
+
+
 def parent_evidence(hits, parents):
     """Expand retrieval children to complete evidence; never treat a table slice as a rule."""
     result, seen = [], set()
@@ -192,9 +255,10 @@ def evaluate(rows, cases=None, *, preview_chars=PREVIEW_CHARS, mode="baseline", 
         raise ValueError("At least one test case is required")
     if type(preview_chars) is not int or preview_chars < 1:
         raise ValueError("preview_chars must be a positive integer")
-    if mode not in ("baseline", "enhanced"):
+    if mode not in ("baseline", "enhanced", "reranked"):
         raise ValueError("Unknown retrieval mode")
-    index_class = index_class or (EnhancedLexicalIndex if mode == "enhanced" else LexicalIndex)
+    index_class = index_class or {"baseline": LexicalIndex, "enhanced": EnhancedLexicalIndex,
+                                  "reranked": AnchoredRerankIndex}[mode]
     index = index_class(rows)
     results = []
     for case in cases:
@@ -203,7 +267,7 @@ def evaluate(rows, cases=None, *, preview_chars=PREVIEW_CHARS, mode="baseline", 
         locator = case.get("expected_locator")
         hits = index.search(query)
         rank = next((i + 1 for i, hit in enumerate(hits) if matches_expected(hit, case)), None)
-        results.append({"query": query, "normalized_query": normalize_query(query) if mode == "enhanced" else query,
+        results.append({"query": query, "normalized_query": normalize_query(query) if mode != "baseline" else query,
                         "evaluation_status": "scored" if scored else "needs_evidence_review",
                         **({"evidence_note": case["evidence_note"]} if "evidence_note" in case else {}),
                         "expected_document": document, "expected_locator": locator,
@@ -217,8 +281,9 @@ def main():
     parser.add_argument("--data-dir", type=Path, default=ROOT / "data")
     parser.add_argument("--baseline-root", type=Path, help="Snapshot root containing data/chunk")
     parser.add_argument("--cases", type=Path, default=DEFAULT_CASES_PATH, help="JSON file containing test queries and expected evidence")
-    parser.add_argument("--mode", choices=("baseline", "enhanced"), default="enhanced",
-                        help="Compare the original scorer with normalized-query fusion and diverse results")
+    parser.add_argument("--report-path", type=Path, help="Optional report path for a separate evaluation set")
+    parser.add_argument("--mode", choices=("baseline", "enhanced", "reranked"), default="reranked",
+                        help="reranked keeps the enhanced first result and reranks the remaining results")
     args = parser.parse_args()
     try:
         cases = load_cases(args.cases)
@@ -229,19 +294,22 @@ def main():
         raise ValueError("Data directory must be data or inside data/rebuilt")
     chunks = list(load_chunks(output / "chunk"))
     baseline = args.baseline_root
-    report = {"method": "Offline Korean bigram BM25; enhanced mode uses query normalization, reciprocal rank fusion and diversity",
+    report = {"method": "Offline Korean bigram BM25; enhanced uses query normalization, fusion and diversity; reranked preserves enhanced top1 and reranks by lexical coverage",
               "mode": args.mode,
               "cases_file": str(args.cases.resolve()), "case_count": len(cases),
               "limitations": "Small development set used during improvement; not held out. Single expected evidence may miss other valid results. No embedding, learned reranker, or answer evaluation.",
               "baseline": evaluate(chunks, cases, mode="baseline"),
+              "enhanced": evaluate(chunks, cases, mode="enhanced"),
               "new": evaluate(chunks, cases, mode=args.mode)}
     if baseline:
         report["baseline_root"] = str(baseline)
         report["old"] = evaluate(list(load_chunks(baseline / "data/chunk")), cases, mode=args.mode)
-    report_path = (ROOT / "docs/data_reports" if output == ROOT / "data" else output / "reports") / "retrieval_report.json"
+    report_path = args.report_path or (ROOT / "docs/data_reports" if output == ROOT / "data" else output / "reports") / "retrieval_report.json"
+    if report_path.resolve().is_relative_to((ROOT / "data").resolve()):
+        raise ValueError("Evaluation reports must be outside the data directory")
     report_path.parent.mkdir(parents=True, exist_ok=True)
     report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({k: {m: v for m, v in report[k].items() if m != "cases"} for k in ("baseline", "old", "new") if k in report}, indent=2))
+    print(json.dumps({k: {m: v for m, v in report[k].items() if m != "cases"} for k in ("baseline", "enhanced", "old", "new") if k in report}, indent=2))
 
 
 if __name__ == "__main__":

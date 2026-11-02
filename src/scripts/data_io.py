@@ -26,6 +26,7 @@ def validate_source_hashes(units, raw_dir):
     """원본별 해시를 한 번씩 검사한다."""
     raw_dir = Path(raw_dir).resolve()
     expected_hashes = {}
+    attachments = {}
     for unit in units:
         relative = Path(unit["source_path"])
         if relative.parts[:2] != ("data", "raw"):
@@ -37,9 +38,21 @@ def validate_source_hashes(units, raw_dir):
         if path in expected_hashes and expected_hashes[path] != expected:
             raise ValueError(f"Inconsistent source hashes: {relative}")
         expected_hashes[path] = expected
+        for source in unit.get("supplemental_sources", []):
+            relative_attachment = Path(source["path"])
+            attachment = (ROOT / relative_attachment).resolve()
+            allowed = (ROOT / "docs/data_reports/source_verification").resolve()
+            if relative_attachment.is_absolute() or not attachment.is_relative_to(allowed):
+                raise ValueError("Supplemental source path escapes the verification directory")
+            if attachment in attachments and attachments[attachment] != source["sha256"]:
+                raise ValueError("Inconsistent supplemental source hashes")
+            attachments[attachment] = source["sha256"]
     for path, expected in expected_hashes.items():
         if hashlib.sha256(path.read_bytes()).hexdigest() != expected:
             raise ValueError(f"Raw source changed: {path}")
+    for path, expected in attachments.items():
+        if hashlib.sha256(path.read_bytes()).hexdigest() != expected:
+            raise ValueError(f"Supplemental source changed: {path}")
 
 
 def load_processed_data(processed_dir=None, *, raw_dir=None, verify_sources=True):

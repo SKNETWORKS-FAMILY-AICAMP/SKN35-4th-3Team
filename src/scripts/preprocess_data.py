@@ -117,11 +117,8 @@ def remove_case_page_metadata(node):
     return page_metadata
 
 
-def html_extract(data, filename):
-    from lxml import html
-
-    decoded, encoding = decode_html(data)
-    tree = html.fromstring(decoded)
+def select_html_body(tree, filename):
+    """사이트별로 확인한 본문 영역을 선택한다."""
     if filename.startswith("easylaw_"):
         candidates = tree.xpath('//*[@id="contents"]/div[not(@id) and not(@class)]')
         selector = '#contents > div without navigation classes'
@@ -143,19 +140,27 @@ def html_extract(data, filename):
                 break
     if not candidates:
         raise ValueError("No reviewed site-specific body selector matched")
-    node = deepcopy(max(candidates, key=lambda n: len(n.text_content())))
-    for bad in node.xpath('.//script|.//style|.//nav|.//footer|.//form|.//button|.//noscript|.//comment()'):
-        bad.drop_tree() if hasattr(bad, "drop_tree") else bad.getparent().remove(bad)
-    for bad in node.xpath('.//*[contains(@class,"board_v_btn") or contains(@class,"board_v_info") or contains(@class,"location") or contains(@class,"sns_")]'):
-        if bad.getparent() is not None:
-            bad.drop_tree()
-    page_metadata = {}
-    if filename.startswith(("kca_case_", "kca_pilates_")):
-        page_metadata = remove_case_page_metadata(node)
+    return deepcopy(max(candidates, key=lambda n: len(n.text_content()))), selector
+
+
+def remove_submission_popups(node):
+    """일반 접수 안내와 구분되는 팝업을 분리하고 원문을 보관한다."""
+    excluded_popups = []
+    for popup in node.xpath('.//*[@id]'):
+        classes = set(popup.get("class", "").split())
+        if re.fullmatch(r"layerPopupNotice\d+", popup.get("id", "")) and {"layer_pop", "pgnotice"} <= classes:
+            excluded_popups.append({"id": popup.get("id"), "text": clean(popup.text_content()),
+                                    "reason": "event_specific_popup", "search_excluded": True})
+            popup.drop_tree()
+    return excluded_popups
+
+
+def extract_html_tables(node):
+    """본문의 표를 그대로 두고 셀 경계와 병합 정보를 따로 기록한다."""
     tables = []
     for index, table in enumerate(node.xpath('.//table')):
         if table.xpath('.//table'):
-            continue  # Nested layout tables are handled at their innermost evidence tables.
+            continue  # 중첩 표는 가장 안쪽 표에서 읽는다.
         rows = []
         for row in table.xpath('.//tr'):
             cells = []
@@ -165,7 +170,26 @@ def html_extract(data, filename):
             if cells:
                 rows.append(cells)
         tables.append({"table_index": index, "rows": rows, "merged_cells_preserved": True})
-        # Keep the table in the complete body; separate metadata preserves cell boundaries.
+    return tables
+
+
+def html_extract(data, filename):
+    from lxml import html
+
+    decoded, encoding = decode_html(data)
+    node, selector = select_html_body(html.fromstring(decoded), filename)
+    for bad in node.xpath('.//script|.//style|.//nav|.//footer|.//form|.//button|.//noscript|.//comment()'):
+        bad.drop_tree() if hasattr(bad, "drop_tree") else bad.getparent().remove(bad)
+    for bad in node.xpath('.//*[contains(@class,"board_v_btn") or contains(@class,"board_v_info") or contains(@class,"location") or contains(@class,"sns_")]'):
+        if bad.getparent() is not None:
+            bad.drop_tree()
+    page_metadata = {}
+    if filename.startswith(("kca_case_", "kca_pilates_")):
+        page_metadata = remove_case_page_metadata(node)
+    excluded_popups = []
+    if filename.startswith("kca_redress_submission_"):
+        excluded_popups = remove_submission_popups(node)
+    tables = extract_html_tables(node)
     for element in node.iter():
         if not isinstance(element.tag, str):
             continue
@@ -181,6 +205,8 @@ def html_extract(data, filename):
                   "images_downloaded_or_ocr_performed": False}
     if page_metadata:
         details["page_metadata"] = page_metadata
+    if excluded_popups:
+        details["excluded_popups"] = excluded_popups
     return body, details
 
 
@@ -457,9 +483,34 @@ def build_source_metadata(path, raw_dir, metadata, data):
             "warnings": [], "dates": meta.get("dates", {})}
 
 
+def pdf_example_sections(pages):
+    """검토한 쇼핑 안내의 예시 문맥을 다음 페이지의 출처 표시까지 연결한다."""
+    by_number = {page["page_number"]: page for page in pages}
+    if 29 not in by_number or 30 not in by_number:
+        raise ValueError("Reviewed example pages are missing")
+    first, second = by_number[29]["body_text"], by_number[30]["body_text"]
+    title = "※ 청약철회 방해문구 사례"
+    marker = first.find("<예시>")
+    end = re.search(r"(?m)^<\s*출처:.*전자거래분쟁조정사례집.*>[^\S\n]*\n?", second)
+    if not first.startswith(title) or marker < 0 or not end or not second[end.end():].startswith("물품반환 비용 부담"):
+        raise ValueError("Reviewed example context or ending has changed; review the PDF again")
+    context = first[:marker + len("<예시>")]
+    return {
+        29: [{"start": 0, "end": len(first), "original_text": first,
+              "text": first, "role": "misleading_merchant_examples", "label": "청약철회 방해문구 사례"}],
+        30: [{"start": 0, "end": end.end(), "original_text": second[:end.end()],
+              "text": context + "\n" + second[:end.end()], "role": "misleading_merchant_examples",
+              "label": "청약철회 방해문구 사례", "context_source": {"page_number": 29, "start": 0,
+                  "end": marker + len("<예시>"), "text": context}},
+             {"start": end.end(), "end": len(second), "original_text": second[end.end():],
+              "text": second[end.end():], "role": "guidance", "label": "물품반환 비용 부담"}],
+    }
+
+
 def build_pdf_entries(path, pages):
     """PDF 본문과 표에 제목 문맥과 검토 조건을 붙인다."""
     heading = ""
+    sections = pdf_example_sections(pages) if path.name == "[pdf]인터넷 쇼핑.pdf" else {}
     for page in pages:
         number, body = page["page_number"], page["body_text"]
         found = re.findall(r"(?m)^\d+(?:\.\d+)*\.\s+[^\n]+", body)
@@ -480,9 +531,19 @@ def build_pdf_entries(path, pages):
             title = re.fullmatch(r"[^.!?\n]+(?:표|기준|규정|관할구역|직종|수수료)(?:\([^()]*\))?", lines[1])
             if appendix_label and title:
                 body_reason = "heading_only"
-        yield {"key": f"p{number}:body", "text": body, "locator": locator, "reason": body_reason,
-               "page_number": number, "content_type": "pdf_body",
-               "removed_margin_lines": page["removed_margin_lines"], "images": page["images"]}
+        base = {"key": f"p{number}:body", "text": body, "locator": locator, "reason": body_reason,
+                "page_number": number, "content_type": "pdf_body",
+                "removed_margin_lines": page["removed_margin_lines"], "images": page["images"]}
+        if number in sections:
+            for index, section in enumerate(sections[number]):
+                yield {**base, "key": base["key"] + (":rules" if index else ""), "text": section["text"],
+                       "locator": locator + " / " + section["label"], "content_role": section["role"],
+                       "evidence_metadata": {"pdf_body_section": {"page_number": number,
+                           "start": section["start"], "end": section["end"],
+                           "original_text": section["original_text"]},
+                           "context_source": section.get("context_source")}}
+        else:
+            yield base
         for index, table in enumerate(page["tables"]):
             table_text = "\n".join(" | ".join(str(c or "") for c in row) for row in table["rows"])
             yield {"key": f"p{number}:table{index}", "text": table_text,
@@ -525,8 +586,19 @@ def extract_source_entries(path, data, common):
         return [{"key": "body", "text": text, "locator": "HWPX section XML", "evidence_metadata": details,
                  "content_type": "terms", "warnings": ["표 셀 배치 검토 전: 수치 계산 근거로 단독 사용 금지"]}], None
     if path.suffix == ".pdf":
+        from .pdf_tables import reviewed_pdf_entries
+
+        if path.name == "[pdf]인터넷 쇼핑.pdf" and common["raw_sha256"] != "41f96f93f3a9d71182f8e178ef7fe753423753fe4ab8d2c0c296b593329227dc":
+            raise ValueError("Shopping guide differs from the reviewed PDF version")
         pages = extract_pdf(path)
-        return build_pdf_entries(path, pages), pages
+        entries = list(build_pdf_entries(path, pages))
+        reviewed = reviewed_pdf_entries(path, pages)
+        if reviewed:
+            for entry in entries:
+                if entry["key"] == "p2:table0" and entry["text"] == "법 제12조제1항부터 제3항 | 까":
+                    entry["reason"] = "superseded_by_reviewed_rows"
+            entries.extend(reviewed)
+        return entries, pages
     raise ValueError(f"Unsupported format: {path.suffix}")
 
 
@@ -542,6 +614,10 @@ def preprocess_file(path, raw_dir, metadata):
         entries, pages = extract_source_entries(path, data, common)
         for entry in entries:
             unit, exclusion = build_evidence_unit(common, historical=path.parent.name == "law_history", **entry)
+            if unit["unit_id"] == "consumer_dispute_standard:industry:fitness_refund":
+                from .pdf_tables import apply_refund_formulas
+
+                unit = apply_refund_formulas(unit, raw_dir=raw_dir)
             extracted.append(unit)
             if exclusion:
                 excluded.append(exclusion)
@@ -570,6 +646,7 @@ def build_preprocessing_report(file_records, documents, excluded, processed_dir)
             "old_processed_body_text_used": False, "ocr_performed": False,
             "raw_file_count": len(file_records), "file_status_counts": dict(Counter(r["status"] for r in file_records)),
             "parent_count": len(units), "processed_dir": str(processed_dir),
+            "supplemental_source_count": len({source["path"] for unit in documents for source in unit.get("supplemental_sources", [])}),
             "exclusions": excluded, "excluded_by_reason": dict(Counter(x["reason"] for x in excluded)),
             "files": file_records, "validation": "unique parent IDs passed"}
 

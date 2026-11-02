@@ -44,6 +44,8 @@ class RetrievalCaseTests(unittest.TestCase):
                          evaluate(rows, cases, mode="enhanced", index_class=EnhancedLexicalIndex))
         anchored = AnchoredRerankIndex(rows)
         self.assertEqual(anchored.search("임금 지급")[0], EnhancedLexicalIndex(rows).search("임금 지급")[0])
+        self.assertEqual(evaluate(rows, cases, mode="reranked"),
+                         evaluate(rows, cases, mode="enhanced", index_class=AnchoredRerankIndex))
 
     def test_pending_evidence_is_searched_but_not_counted_as_success_or_failure(self):
         rows = [{"chunk_id": "a", "document_id": "fixture", "text": "벽지 원상회복"}]
