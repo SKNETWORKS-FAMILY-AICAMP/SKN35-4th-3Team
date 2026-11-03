@@ -71,16 +71,20 @@ if __name__ == "__main__":
 
 
         print("\n[Dense 검색 결과]")
-        for i, result in enumerate(results["dense_results"][:3], start=1):
+        for i, result in enumerate(results["dense_results"][:5], start=1):
             print(f"\n{i}위 | Score: {result['score']:.4f}")
+            print("Point ID:", result["point_id"])
+            print("Chunk ID:", result["payload"].get("chunk_id"))
             print("문서:", result["payload"].get("source_name"))
-            print("내용:", result["payload"].get("text", "")[:200])
+            print("내용:", result["payload"].get("text", ""))
 
         print("\n[BM25 검색 결과]")
-        for i, result in enumerate(results["bm25_results"][:3], start=1):
+        for i, result in enumerate(results["bm25_results"][:5], start=1):
             print(f"\n{i}위 | Score: {result['score']:.4f}")
+            print("Point ID:", result["point_id"])
+            print("Chunk ID:", result["payload"].get("chunk_id"))
             print("문서:", result["payload"].get("source_name"))
-            print("내용:", result["payload"].get("text", "")[:200])
+            print("내용:", result["payload"].get("text", ""))
 
     finally:
         client, _, _ = _search_resources()
