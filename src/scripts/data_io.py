@@ -15,6 +15,7 @@ def read_json(path):
 
 def load_chunks(chunk_dir=None):
     """자료 종류별 JSONL에서 검색 청크를 읽는다."""
+    # generator이므로 여러 번 순회할 때는 호출부에서 list로 만들어 보관한다.
     chunk_dir = Path(chunk_dir or ROOT / "data/chunk")
     for path in sorted(chunk_dir.rglob("*.jsonl")):
         for line in path.read_text(encoding="utf-8-sig").splitlines():
@@ -37,8 +38,10 @@ def validate_source_hashes(units, raw_dir):
         expected = unit["raw_sha256"]
         if path in expected_hashes and expected_hashes[path] != expected:
             raise ValueError(f"Inconsistent source hashes: {relative}")
+        # 같은 원본에서 나온 근거가 많아도 실제 파일은 마지막에 한 번만 읽는다.
         expected_hashes[path] = expected
         for source in unit.get("supplemental_sources", []):
+            # 환불 수식 보완 PDF도 실행 입력이다. 원본 XML과 함께 변경 여부를 검사한다.
             relative_attachment = Path(source["path"])
             attachment = (ROOT / relative_attachment).resolve()
             allowed = (ROOT / "docs/data_reports/source_verification").resolve()
@@ -94,6 +97,7 @@ def save_processed_data(processed_dir, documents, pdf_pages=None):
     grouped = defaultdict(list)
     for unit in documents:
         grouped[unit["source_path"]].append(unit)
+    # 검색 제외 근거까지 원본별로 함께 저장해, 제외 사유와 원래 내용을 추적할 수 있게 한다.
     for source, units in grouped.items():
         first = units[0]
         relative = processed_path(source, first["document_id"]).relative_to("processed")

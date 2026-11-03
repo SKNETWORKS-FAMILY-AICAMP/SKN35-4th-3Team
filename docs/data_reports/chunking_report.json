@@ -12,7 +12,7 @@
     "max_chars": 900,
     "under_100_chars": 913,
     "over_2000_chars": 0,
-    "max_embedding_chars": 1109
+    "max_embedding_chars": 1069
   },
   "saved_files": [
     "C:\\study\\SKN35-4th-3Team\\data\\chunk\\consumer_sources\\chunks.jsonl",

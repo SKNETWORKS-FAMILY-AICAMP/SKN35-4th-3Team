@@ -6,6 +6,7 @@ import xml.etree.ElementTree as ET
 
 from .data_io import ROOT
 
+# 아래 좌표·표본 값은 이 원본 버전을 대조한 결과다. 해시가 바뀌면 그대로 적용하지 않는다.
 REVIEWED_PDF_NAME = "009338_288143_20260721_appendix_000100E.pdf"
 REVIEWED_PDF_SHA256 = "7fee592cfcf1c56d4a8a49b49336ee51f21e46332f5a767000809e0dbc8b85e5"
 REVIEWED_PDF_SOURCE = "data/raw/law_appendices/" + REVIEWED_PDF_NAME
@@ -16,7 +17,8 @@ REFUND_URL = "https://www.law.go.kr/LSW/flDownload.do?flSeq=159470209"
 REFUND_XML_SHA256 = "64e922b28e0d2e2b79c275cf1acec392e97d60975226d383201511e1a9e9a7f1"
 
 
-def extract_pdf_trial_page(page):
+def extract_pdf_table_candidates(page):
+    """기본 추출과 세로선 기준 추출 결과를 모아 검토한 표를 확인하는 데 사용한다."""
     # 페이지를 길게 가로지르는 실제 세로선만 열 경계로 사용한다.
     edges = sorted({round(edge["x0"], 3) for edge in page.edges
                     if edge.get("orientation") == "v"
@@ -35,27 +37,13 @@ def extract_pdf_trial_page(page):
     return {"settings": settings, "trials": trials}
 
 
-def trial_pdf_extraction():
-    """문장 조각만 추출됐던 PDF 한 페이지에서 세로 경계 기반 추출을 비교한다."""
-    import pdfplumber
-
-    source = REVIEWED_PDF_SOURCE
-    path = ROOT / source
-    if not path.exists():
-        return {"status": "sample_not_available"}
-    with pdfplumber.open(path) as document:
-        result = extract_pdf_trial_page(document.pages[1])
-    return {"source_path": source, "page": 2, **result,
-            "applied_to_search": False,
-            "limitations": "Physical text lines, not complete logical rows. Cross-page conditions and headers are not reconstructed. More extracted text does not alone prove correctness."}
-
-
 def group_pdf_rows(pages):
     """같은 열의 줄바꿈만 합친다. 시작·끝이 불명확한 조각은 따로 표시한다."""
     rows, orphan_fragments, pending = [], [], None
     previous_page = None
     for page_number, physical_rows in pages:
         if previous_page is not None and page_number != previous_page + 1:
+            # 중간 페이지가 빠지면 이전 행의 연속인지 확인할 수 없다.
             pending = None
         previous_page = page_number
         for index, cells in enumerate(physical_rows):
@@ -92,7 +80,7 @@ def validate_pdf_extraction(path=None):
     pages, trials = [], []
     with pdfplumber.open(path) as document:
         for number in (2, 3):
-            result = extract_pdf_trial_page(document.pages[number - 1])
+            result = extract_pdf_table_candidates(document.pages[number - 1])
             if "trials" not in result:
                 return {"status": "column_detection_failed", "page": number}
             tables = result["trials"]["vertical_boundaries"]["tables"]
@@ -120,7 +108,10 @@ def validate_pdf_extraction(path=None):
             "trials": trials, "logical_rows": rows, "orphan_fragments": orphans,
             "manual_sample_checks": checks, "cross_page_sample_passed": cross_page_passed,
             "all_sample_checks_passed": all(c["passed"] for c in checks) and cross_page_passed,
-            "limitations": "Only the reviewed five-column table on two consecutive pages. Leading fragments and unconfirmed final rows are not complete evidence. Shared conditions on page 1 remain required; no general PDF accuracy claim."}
+            "limitations": (
+                "Only the reviewed five-column table on two consecutive pages. "
+                "Leading fragments and unconfirmed final rows are not complete evidence. "
+                "Shared conditions on page 1 remain required; no general PDF accuracy claim.")}
 
 
 def reviewed_pdf_entries(path, pages):
@@ -175,6 +166,7 @@ def fraction_pairs(numerators, denominators):
             width = min(numerator["x1"] - numerator["x0"], denominator["x1"] - denominator["x0"])
             overlap = min(numerator["x1"], denominator["x1"]) - max(numerator["x0"], denominator["x0"])
             gap = denominator["top"] - numerator["bottom"]
+            # 같은 열에 있고 분모가 아래에 가까이 놓인 경우만 한 분수로 연결한다.
             if index not in used and width > 0 and overlap / width >= .8 and 0 < gap < 30:
                 candidates.append((gap, index, denominator))
         if not candidates:
@@ -279,9 +271,13 @@ def build_refund_verification_result(unit, source_text, supplement, missing_coun
             "raw_xml_matches_preserved_original": True,
             "missing_fractions_in_xml": missing_count, "verified_formulas": checked,
             "context_checks": notes_checks, "context_pages": [101, 102],
-            "sign_review": "Final plus/minus assignments were visually reviewed on the pinned PDF; crop checks alone are not a symbolic formula parser.",
+            "sign_review": (
+                "Final plus/minus assignments were visually reviewed on the pinned PDF; "
+                "crop checks alone are not a symbolic formula parser."),
             "status": "applied_with_pdf_provenance" if applied else "verified_for_review_not_promoted",
-            "limitations": "Visual transcription and geometry verification of the archived attachment; not current legal advice or a refund calculator. Scope notes remain required."}
+            "limitations": (
+                "Visual transcription and geometry verification of the archived attachment; "
+                "not current legal advice or a refund calculator. Scope notes remain required.")}
 
 
 def verify_refund_formulas(units, *, raw_dir=None):
@@ -316,6 +312,7 @@ def supplement_formula_text(original, formulas):
                             "processed_start": match.start() + delta,
                             "processed_end": match.start() + delta + len(replacement),
                             "before": match.group(), "after": replacement, **formula})
+        # 삽입한 글자 수만큼 뒤쪽 수정 위치가 달라진다. 원본·보완 후 위치를 모두 보존한다.
         delta += len(replacement) - len(match.group())
         cursor = match.end()
     parts.append(original[cursor:])
@@ -328,6 +325,7 @@ def apply_refund_formulas(unit, *, raw_dir=None):
         return unit
     result = verify_refund_formulas([unit], raw_dir=raw_dir)
     if unit.get("evidence_metadata", {}).get("formula_supplement"):
+        # 재실행 시 이미 보완한 분수를 또 삽입하지 않는다. 출처 검증은 위에서 다시 수행한다.
         return unit
     text, corrections = supplement_formula_text(unit["text"], result["verified_formulas"])
     for correction in corrections:

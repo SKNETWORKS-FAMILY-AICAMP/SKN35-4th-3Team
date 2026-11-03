@@ -15,8 +15,29 @@ import zipfile
 from .data_io import ROOT, load_chunks, read_json
 from .data_io import processed_path, save_processed_data
 
+# 같은 별표라도 추출 배치가 다를 수 있어, 직접 대조한 두 버전만 출처를 연결한다.
+REVIEWED_APPENDIX_MEMBERS = {
+    "003058_270551_20251023:appendix1": "fb0b4239a7cd38164ec6fc0d39073bb750de57eb92d7ceebc7bc7a4255fe0d49",
+    "003058_270551_20251023_appendix_000200E:p1:body": "67b16dab2b8fdc26ad253c1bc03a2fb8a141c59b05633f93e29503843eba0fee",
+}
+SHOPPING_GUIDE_SHA256 = "41f96f93f3a9d71182f8e178ef7fe753423753fe4ab8d2c0c296b593329227dc"
+
+
+def attach_canonical_source(unit):
+    """검토한 동일 버전 별표의 출처를 연결한다. 본문 동일성을 뜻하지 않는다."""
+    expected_hash = REVIEWED_APPENDIX_MEMBERS.get(unit["unit_id"])
+    if expected_hash is None:
+        return unit
+    if unit["raw_sha256"] != expected_hash:
+        raise ValueError("Reviewed canonical source changed; review grouping again")
+    return {**unit,
+            "canonical_source_id": "003058_270551_20251023:appendix:000200E",
+            "canonical_source_scope": "same_version_appendix_document",
+            "canonical_source_url": "https://www.law.go.kr/LSW/flDownload.do?flSeq=150839759"}
+
 
 def clean(text):
+    """HTML 엔티티·줄바꿈·공백을 정리하고 조문 번호와 표 구분 문자는 유지한다."""
     text = html_std.unescape(text).replace("\r\n", "\n").replace("\r", "\n")
     text = text.replace("\u00a0", " ").replace("\u200b", "")
     lines = [re.sub(r"[ \t]+", " ", line).strip() for line in text.splitlines()]
@@ -60,6 +81,7 @@ def iso_date(value):
 
 
 def catalog(root):
+    """출처 설정을 읽는다. 설정 파일이 없으면 이전 형식의 메타데이터만 복구한다."""
     saved = root / "src/const/data_sources.json"
     if saved.exists():
         return read_json(saved)
@@ -115,6 +137,46 @@ def remove_case_page_metadata(node):
             if text.startswith("이표는") and "항목으로구성되어있습니다" in text:
                 caption.drop_tree()
     return page_metadata
+
+
+def separate_board_screen_elements(node):
+    """확인한 소비자원 게시판 구조의 화면 문구를 따로 보관한다."""
+    excluded = []
+    page_metadata = {}
+
+    def separate(element, reason):
+        excluded.append({"reason": reason, "text": clean(element.text_content()),
+                         "selector": element.getroottree().getpath(element),
+                         "search_excluded": True})
+        element.drop_tree()
+
+    for table in node.xpath('.//table[contains(concat(" ", normalize-space(@class), " "), " board_insert ")]'):
+        # 상담 내용에 등장하는 같은 단어를 지우지 않도록 직속 행만 확인한다.
+        for row in table.xpath('./thead/tr|./tbody/tr|./tr'):
+            cells = row.xpath('./th|./td')
+            if not cells or len(cells) % 2:
+                continue
+            pairs = list(zip(cells[::2], cells[1::2]))
+            labels = [clean(key.text_content()) for key, _ in pairs]
+            if not all(key.tag == "th" and value.tag == "td" for key, value in pairs):
+                continue
+            if set(labels) <= {"등록일", "조회수"}:
+                for key, value in pairs:
+                    page_metadata.setdefault(clean(key.text_content()), []).append(clean(value.text_content()))
+                separate(row, "board_metadata")
+            elif len(pairs) == 1 and labels[0] in {"이전글", "다음글"}:
+                value = pairs[0][1]
+                if {"prev_cont", "next_cont"}.intersection(value.get("class", "").split()):
+                    separate(row, "adjacent_post")
+        for caption in table.xpath('./caption'):
+            if "게시글 상세보기" in caption.text_content() and "조회수" in caption.text_content():
+                separate(caption, "board_accessibility_caption")
+
+    for footer in node.xpath('.//div[contains(concat(" ", normalize-space(@class), " "), " footerIn ")]'):
+        popup = footer.xpath('./div[@id="popup_layer" and contains(concat(" ", normalize-space(@class), " "), " popup_layer ")]')
+        if popup and "삭제사유" in popup[0].text_content() and "홈페이지 게시물 관리" in popup[0].text_content():
+            separate(footer, "board_management_footer")
+    return page_metadata, excluded
 
 
 def select_html_body(tree, filename):
@@ -174,18 +236,31 @@ def extract_html_tables(node):
 
 
 def html_extract(data, filename):
+    """사이트별 본문을 읽고, 분리한 화면 정보와 표 구조를 함께 반환한다."""
     from lxml import html
 
     decoded, encoding = decode_html(data)
     node, selector = select_html_body(html.fromstring(decoded), filename)
     for bad in node.xpath('.//script|.//style|.//nav|.//footer|.//form|.//button|.//noscript|.//comment()'):
-        bad.drop_tree() if hasattr(bad, "drop_tree") else bad.getparent().remove(bad)
-    for bad in node.xpath('.//*[contains(@class,"board_v_btn") or contains(@class,"board_v_info") or contains(@class,"location") or contains(@class,"sns_")]'):
+        if hasattr(bad, "drop_tree"):
+            bad.drop_tree()
+        else:
+            bad.getparent().remove(bad)
+    screen_elements_xpath = (
+        './/*[contains(@class,"board_v_btn") or contains(@class,"board_v_info") '
+        'or contains(@class,"location") or contains(@class,"sns_")]'
+    )
+    for bad in node.xpath(screen_elements_xpath):
         if bad.getparent() is not None:
             bad.drop_tree()
     page_metadata = {}
     if filename.startswith(("kca_case_", "kca_pilates_")):
         page_metadata = remove_case_page_metadata(node)
+    excluded_screen_elements = []
+    if filename.startswith("kca_"):
+        board_metadata, excluded_screen_elements = separate_board_screen_elements(node)
+        for key, values in board_metadata.items():
+            page_metadata.setdefault(key, []).extend(values)
     excluded_popups = []
     if filename.startswith("kca_redress_submission_"):
         excluded_popups = remove_submission_popups(node)
@@ -207,6 +282,8 @@ def html_extract(data, filename):
         details["page_metadata"] = page_metadata
     if excluded_popups:
         details["excluded_popups"] = excluded_popups
+    if excluded_screen_elements:
+        details["excluded_screen_elements"] = excluded_screen_elements
     return body, details
 
 
@@ -248,7 +325,10 @@ def extract_consumer_product_tables(body, number='0002'):
             raise ValueError(f'Product heading missing: {name}')
         first, last = (positions[0], positions[-1])
         start = body.rfind('┏', 0, product_heads[first].start())
-        end = body.rfind('┏', product_heads[last].end(), product_heads[last + 1].start()) if last + 1 < len(product_heads) else len(body)
+        if last + 1 < len(product_heads):
+            end = body.rfind('┏', product_heads[last].end(), product_heads[last + 1].start())
+        else:
+            end = len(body)
         if start < 0 or end <= product_heads[last].end():
             raise ValueError(f'Product table boundary invalid: {name}')
         result.append({
@@ -360,31 +440,46 @@ def xml_extract(data, historical=False):
 
 
 def hwpx_extract(data_path):
+    """HWPX의 XML 순서로 본문을 읽고 표 셀의 병합 정보를 별도로 보관한다."""
     with zipfile.ZipFile(data_path) as archive:
         sections = sorted(n for n in archive.namelist() if re.fullmatch(r"Contents/section\d+\.xml", n))
         if not sections:
             raise ValueError("HWPX section XML missing")
         parts, tables = [], []
         def render(node):
+            # 한 단어가 여러 run으로 나뉠 수 있으므로 글자 조각 사이에 공백을 넣지 않는다.
             name = tag(node)
             if name == "t":
                 return "".join(node.itertext())
             if name in {"lineBreak", "br"}:
                 return "\n"
             text = "".join(render(child) for child in node)
-            return text + ("\n" if name in {"p", "tr"} else " | " if name == "tc" else "")
+            if name in {"p", "tr"}:
+                return text + "\n"
+            if name == "tc":
+                return text + " | "
+            return text
         for section in sections:
             tree = ET.fromstring(archive.read(section))
             parts.append(render(tree))
             for node in tree.iter():
-                if tag(node) == "tbl":
-                    rows = []
-                    for row in node:
-                        if tag(row) == "tr":
-                            rows.append([{"text": clean(render(cell)),
-                                          "spans": [dict(c.attrib) for c in cell if tag(c) in {"cellSpan", "cellAddr"}]}
-                                         for cell in row if tag(cell) == "tc"])
-                    tables.append({"rows": rows})
+                if tag(node) != "tbl":
+                    continue
+                rows = []
+                for row in node:
+                    if tag(row) != "tr":
+                        continue
+                    cells = []
+                    for cell in row:
+                        if tag(cell) != "tc":
+                            continue
+                        spans = []
+                        for child in cell:
+                            if tag(child) in {"cellSpan", "cellAddr"}:
+                                spans.append(dict(child.attrib))
+                        cells.append({"text": clean(render(cell)), "spans": spans})
+                    rows.append(cells)
+                tables.append({"rows": rows})
         return clean("\n".join(parts)), {"sections": sections,
             "tables": tables,
             "table_structure_policy": "source XML order and cell spans preserved; no inferred cell meaning",
@@ -392,6 +487,7 @@ def hwpx_extract(data_path):
 
 
 def extract_pdf(path):
+    """페이지별 전체 텍스트·표 밖 본문·표·이미지 위치를 추출한다. OCR은 하지 않는다."""
     import pdfplumber
 
     with pdfplumber.open(path) as document:
@@ -403,6 +499,7 @@ def extract_pdf(path):
                 tables.append({"bbox": list(table.bbox), "rows": rows,
                                "merged_cells_policy": "null cells preserved, not forward-filled"})
             def outside(obj):
+                # 표는 별도 근거로 저장하므로 본문 추출에서는 표 안의 글자만 제외한다.
                 if obj.get("object_type") != "char":
                     return True
                 x, y = (obj["x0"] + obj["x1"]) / 2, (obj["top"] + obj["bottom"]) / 2
@@ -453,6 +550,7 @@ def build_evidence_unit(common, key, text, locator, *, reason=None, historical=F
     text = clean(text)
     reason = get_exclusion_reason(text, reason=reason, historical=historical,
                                   locator=locator, content_type=extra.get("content_type"))
+    # 제외된 근거도 전처리 결과에는 남기고, 청킹 여부만 embedding_candidate로 구분한다.
     unit = {**common, "unit_id": f"{common['document_id']}:{key}", "text": text,
             "locator": locator, "embedding_candidate": reason is None, **extra}
     exclusion = {
@@ -507,20 +605,84 @@ def pdf_example_sections(pages):
     }
 
 
+def read_pdf_toc(pages):
+    """점선·쪽수가 있는 목차 행에서 제목과 목차 페이지 번호를 읽는다."""
+    toc = {}
+    toc_pages = set()
+    pattern = re.compile(r"(?m)^(\d+(?:\.\d+)*)\.\s+(.+?)\s+(?:\.\s*){5,}(\d+)\s*$")
+    for page in pages:
+        # 목차의 점선과 쪽수가 함께 있는 행만 제목 후보로 등록한다.
+        for match in pattern.finditer(page["body_text"]):
+            key, title, _ = match.groups()
+            toc[key] = key + ". " + title.strip()
+            toc_pages.add(page["page_number"])
+    return toc, toc_pages
+
+
+def pdf_page_heading_paths(body, toc):
+    """본문과 목차에서 일치한 제목을 골라 같은 페이지의 상하 관계를 구성한다."""
+    matches = []
+    # 번호만 같아서는 부족하다. 목차와 제목까지 일치해야 날짜·번호 목록을 피할 수 있다.
+    for match in re.finditer(r"(?m)^(\d+(?:\.\d+)*)\.\s+[^\n]+", body):
+        key = match.group(1)
+        if key in toc and re.sub(r"\s+", "", match.group()) == re.sub(r"\s+", "", toc[key]):
+            matches.append(key)
+    visible_keys = set(matches)
+    def hierarchy(key, visible_keys):
+        parts = key.split(".")
+        return " > ".join(toc[prefix] for depth in range(1, len(parts) + 1)
+                          if (prefix := ".".join(parts[:depth])) in visible_keys)
+    return [hierarchy(key, visible_keys) for key in matches]
+
+
+def pdf_heading_contexts(pages):
+    """목차와 일치하는 제목만 사용해 안내서의 페이지 문맥을 구성한다."""
+    toc, toc_pages = read_pdf_toc(pages)
+    if len(toc) < 3 or not any("." in key for key in toc):
+        return {}
+
+    contexts = {}
+    active = ""
+    for page in pages:
+        number, body = page["page_number"], page["body_text"]
+        if number in toc_pages:
+            contexts[number] = ""
+            continue
+        paths = pdf_page_heading_paths(body, toc)
+        if not paths:
+            contexts[number] = active
+            continue
+        active = paths[-1]
+        # 같은 페이지의 형제 절을 상하 관계로 연결하지 않는다.
+        paths = list(dict.fromkeys(paths))
+        contexts[number] = " | ".join(path for path in paths
+                                      if not any(other.startswith(path + " > ") for other in paths))
+    return contexts
+
+
 def build_pdf_entries(path, pages):
     """PDF 본문과 표에 제목 문맥과 검토 조건을 붙인다."""
     heading = ""
+    guide_headings = pdf_heading_contexts(pages) if path.parent.name == "guides" else {}
     sections = pdf_example_sections(pages) if path.name == "[pdf]인터넷 쇼핑.pdf" else {}
     for page in pages:
         number, body = page["page_number"], page["body_text"]
         found = re.findall(r"(?m)^\d+(?:\.\d+)*\.\s+[^\n]+", body)
-        if found:
+        if guide_headings:
+            heading = guide_headings[number]
+        elif found:
             heading = " > ".join(found[:3])
         locator = f"PDF {number}페이지" + (f" / {heading}" if heading else "")
         is_cover = path.parent.name == "guides" and number == 1
         is_toc = bool(re.search(r"(?:\.\s*){5,}\d+\s*$", body, re.M))
-        image_review = any((img["width"] or 0) > 80 and (img["height"] or 0) > 50 for img in page["images"])
-        reason = "cover_or_toc" if is_cover or is_toc else "image_layout_review_required" if image_review else None
+        has_large_image = any((img["width"] or 0) > 80 and (img["height"] or 0) > 50
+                              for img in page["images"])
+        if is_cover or is_toc:
+            reason = "cover_or_toc"
+        elif has_large_image:
+            reason = "image_layout_review_required"
+        else:
+            reason = None
         if path.parent.name == "law_appendices" and re.search(r"_\d+F$", path.stem):
             reason = "application_form_reference_only"
         body_reason = reason
@@ -588,7 +750,7 @@ def extract_source_entries(path, data, common):
     if path.suffix == ".pdf":
         from .pdf_tables import reviewed_pdf_entries
 
-        if path.name == "[pdf]인터넷 쇼핑.pdf" and common["raw_sha256"] != "41f96f93f3a9d71182f8e178ef7fe753423753fe4ab8d2c0c296b593329227dc":
+        if path.name == "[pdf]인터넷 쇼핑.pdf" and common["raw_sha256"] != SHOPPING_GUIDE_SHA256:
             raise ValueError("Shopping guide differs from the reviewed PDF version")
         pages = extract_pdf(path)
         entries = list(build_pdf_entries(path, pages))
@@ -618,6 +780,7 @@ def preprocess_file(path, raw_dir, metadata):
                 from .pdf_tables import apply_refund_formulas
 
                 unit = apply_refund_formulas(unit, raw_dir=raw_dir)
+            unit = attach_canonical_source(unit)
             extracted.append(unit)
             if exclusion:
                 excluded.append(exclusion)
@@ -642,11 +805,13 @@ def build_preprocessing_report(file_records, documents, excluded, processed_dir)
     ids = [unit["unit_id"] for unit in units]
     if len(ids) != len(set(ids)):
         raise ValueError("Duplicate parent IDs in raw extraction")
+    supplemental_paths = {source["path"] for unit in documents
+                          for source in unit.get("supplemental_sources", [])}
     return {"preprocessing_mode": "raw_extraction", "raw_reextraction_performed": True,
             "old_processed_body_text_used": False, "ocr_performed": False,
             "raw_file_count": len(file_records), "file_status_counts": dict(Counter(r["status"] for r in file_records)),
             "parent_count": len(units), "processed_dir": str(processed_dir),
-            "supplemental_source_count": len({source["path"] for unit in documents for source in unit.get("supplemental_sources", [])}),
+            "supplemental_source_count": len(supplemental_paths),
             "exclusions": excluded, "excluded_by_reason": dict(Counter(x["reason"] for x in excluded)),
             "files": file_records, "validation": "unique parent IDs passed"}
 
@@ -690,6 +855,7 @@ def preprocess_data(raw_dir=None, processed_dir=None, *, root=ROOT, report_dir=N
             progress(f"[{file_index}/{len(raw_files)}] {record['path']}: {record['status']} ({record['indexed_units']} units)")
     report = build_preprocessing_report(file_records, documents, excluded, processed_dir)
     report_path = save_preprocessing_report(report, report_dir)
+    # 추출 실패가 있으면 보고서만 남기고 기존 전처리 파일을 덮어쓰지 않는다.
     if report["file_status_counts"].get("failed"):
         raise ValueError(f"Raw extraction failed; see {report_path}")
     saved = save_processed_data(processed_dir, documents, pdf_pages)

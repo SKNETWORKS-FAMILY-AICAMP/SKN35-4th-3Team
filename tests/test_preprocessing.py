@@ -16,6 +16,125 @@ from src.scripts.preprocess_data import build_evidence_unit, build_pdf_entries, 
 
 
 class RawPreprocessingTests(unittest.TestCase):
+    def test_reviewed_appendix_formats_share_origin_but_keep_distinct_parents(self):
+        from src.scripts.preprocess_data import attach_canonical_source, REVIEWED_APPENDIX_MEMBERS
+        from src.scripts.chunk_data import make_chunks
+
+        linked = []
+        for identity, digest in REVIEWED_APPENDIX_MEMBERS.items():
+            unit = {"unit_id": identity, "raw_sha256": digest, "title": "근로기준법 시행령",
+                    "locator": "별표 2", "text": "근로계약서를 작성하여 근로자에게 내주어야 한다."}
+            result = attach_canonical_source(unit)
+            self.assertNotIn("canonical_source_id", unit)
+            self.assertEqual(result["text"], unit["text"])
+            chunk = next(make_chunks(result))
+            self.assertEqual(chunk["canonical_source_id"], result["canonical_source_id"])
+            self.assertEqual(chunk["parent_id"], identity)
+            linked.append(result)
+        self.assertEqual(linked[0]["canonical_source_id"], linked[1]["canonical_source_id"])
+        self.assertNotEqual(linked[0]["unit_id"], linked[1]["unit_id"])
+        self.assertEqual(linked[0]["canonical_source_scope"], "same_version_appendix_document")
+
+    def test_canonical_source_rejects_changed_hash_and_does_not_group_other_versions(self):
+        from src.scripts.preprocess_data import attach_canonical_source, REVIEWED_APPENDIX_MEMBERS
+
+        identity = next(iter(REVIEWED_APPENDIX_MEMBERS))
+        with self.assertRaisesRegex(ValueError, "canonical source changed"):
+            attach_canonical_source({"unit_id": identity, "raw_sha256": "modified"})
+        for other in ("003058_another_version:appendix1", "003058_270551_20251023:appendix0"):
+            unit = {"unit_id": other, "raw_sha256": "unreviewed", "text": "같은 제목"}
+            self.assertIs(attach_canonical_source(unit), unit)
+
+    def test_pdf_heading_uses_toc_titles_and_ignores_numbered_body_items(self):
+        from src.scripts.preprocess_data import pdf_heading_contexts
+
+        pages = [
+            {"page_number": 1, "body_text": "1. 큰 제목 . . . . . 2\n1.1. 첫 절 . . . . . 2\n1.2. 다음 절 . . . . . 4"},
+            {"page_number": 2, "body_text": "1. 큰 제목\n1.1. 첫 절\n정상 본문"},
+            {"page_number": 3, "body_text": "10. 25. 선고 99도4837 판결\n1. 재직증명서\n2. 임금명세서"},
+            {"page_number": 4, "body_text": "1.2. 다음 절\n새 본문"},
+        ]
+        headings = pdf_heading_contexts(pages)
+        self.assertEqual(headings[1], "")
+        self.assertEqual(headings[2], "1. 큰 제목 > 1.1. 첫 절")
+        self.assertEqual(headings[3], headings[2])
+        self.assertEqual(headings[4], "1.2. 다음 절")
+        self.assertEqual(pdf_heading_contexts([{"page_number": 1, "body_text": "1. 임의 목록"}]), {})
+
+    def test_pdf_heading_keeps_sibling_sections_separate(self):
+        from src.scripts.preprocess_data import pdf_heading_contexts
+
+        pages = [
+            {"page_number": 1, "body_text": "1. 안내 . . . . . 2\n1.1. 계약 . . . . . 2\n1.2. 해지 . . . . . 2"},
+            {"page_number": 2, "body_text": "1. 안내\n1.1. 계약\n계약 본문\n1.2. 해지\n해지 본문"},
+            {"page_number": 3, "body_text": "해지 본문 계속"},
+        ]
+        headings = pdf_heading_contexts(pages)
+        self.assertEqual(headings[2], "1. 안내 > 1.1. 계약 | 1. 안내 > 1.2. 해지")
+        self.assertEqual(headings[3], "1. 안내 > 1.2. 해지")
+
+    def test_real_guide_heading_removes_citation_noise_without_changing_evidence(self):
+        from src.scripts.preprocess_data import clean
+
+        path = ROOT / "data/processed/guides/guide_cad7b1de1e4dc64c.json"
+        if not path.exists():
+            self.skipTest("Optional source-data regression check")
+        document = json.loads(path.read_text(encoding="utf-8-sig"))
+        entries = {e["key"]: e for e in build_pdf_entries(Path(document["source_path"]), document["pages"])}
+        self.assertIn("해고의 제한 및 적용범위", entries["p13:body"]["locator"])
+        self.assertNotIn("선고", entries["p28:body"]["locator"])
+        self.assertIn("미지급 임금", entries["p78:body"]["locator"])
+        self.assertNotIn("재직증명서", entries["p95:body"]["locator"])
+        for unit in document["units"]:
+            key = unit["unit_id"].split(":", 1)[1]
+            self.assertEqual(unit["text"], clean(entries[key]["text"]))
+            if "table" in unit:
+                self.assertEqual(unit["table"], entries[key]["table"])
+
+    @unittest.skipUnless(importlib.util.find_spec("lxml"), "Optional ingestion dependency")
+    def test_board_screen_elements_are_archived_and_body_tables_remain(self):
+        source = '''<div id="contentBody"><table class="board_insert">
+        <caption>피해 안내 게시글 상세보기 - 등록일, 조회수</caption>
+        <tr><th class="title">피해 안내</th></tr>
+        <tr><th>등록일</th><td>2024-12-11</td><th>조회수</th><td>5027</td></tr>
+        <tr><th>첨부파일</th><td><a href="guide.pdf">안내.pdf</a></td></tr>
+        <tr><td class="substance"><p>환불 신청 등록일과 삭제 안내도 증빙으로 보관하세요.</p>
+        <table><tr><th>조건</th><th>환급</th></tr><tr><td>해지</td><td>잔여대금</td></tr></table></td></tr>
+        <tr><th>이전글</th><td class="prev_cont">다른 보험 안내</td></tr></table>
+        <div class="footerIn"><div class="con_manager">게시물담당자</div>
+        <div id="popup_layer" class="popup_layer">삭제사유 제17조(홈페이지 게시물 관리)</div></div></div>'''
+        text, meta = html_extract(source.encode(), "kca_fitness_closure_fixture.html")
+        self.assertIn("환불 신청 등록일과 삭제 안내도 증빙으로 보관하세요.", text)
+        self.assertIn("잔여대금", text)
+        self.assertIn("안내.pdf", text)
+        for noise in ("5027", "다른 보험 안내", "홈페이지 게시물 관리", "게시글 상세보기"):
+            self.assertNotIn(noise, text)
+            self.assertTrue(any(noise in item["text"] for item in meta["excluded_screen_elements"]))
+        self.assertEqual(meta["page_metadata"], {"등록일": ["2024-12-11"], "조회수": ["5027"]})
+        self.assertTrue(any(table["rows"][0][0]["text"] == "조건" for table in meta["tables"]))
+        other_text, other_meta = html_extract(source.encode(), "other_site.html")
+        self.assertIn("다른 보험 안내", other_text)
+        self.assertNotIn("excluded_screen_elements", other_meta)
+
+    @unittest.skipUnless(importlib.util.find_spec("lxml"), "Optional ingestion dependency")
+    def test_real_gym_board_keeps_full_article_and_separates_screen_elements(self):
+        from lxml import html
+        from src.scripts.preprocess_data import decode_html
+
+        path = ROOT / "data/raw/consumer_sources/kca_fitness_closure_gym_c624ab16f714fd3f.html"
+        if not path.exists():
+            self.skipTest("Optional source-data regression check")
+        data = path.read_bytes()
+        text, meta = html_extract(data, path.name)
+        tree = html.fromstring(decode_html(data)[0])
+        article = tree.xpath('//td[@class="substance"]')[0]
+        article_text = re.sub(r"\s+", "", article.text_content())
+        self.assertIn(article_text, re.sub(r"\s+", "", text))
+        self.assertIn("등록일", meta["page_metadata"])
+        self.assertNotIn("홈페이지 게시물 관리", text)
+        self.assertNotIn("실손보험, 치료·입원 불인정 다툼 많아", text)
+        self.assertEqual(len(meta["excluded_screen_elements"]), 5)
+
     @unittest.skipUnless(importlib.util.find_spec("lxml"), "Optional ingestion dependency")
     def test_submission_popup_is_separated_without_removing_general_evidence(self):
         source = '''<div id="content"><h1>피해구제 접수방법</h1>
@@ -91,7 +210,7 @@ class RawPreprocessingTests(unittest.TestCase):
                     validate_source_hashes([unit], root / "data/raw")
 
     def test_fraction_geometry_uses_position_instead_of_extraction_order(self):
-        from src.evaluation.pdf_source_verification import fraction_pairs
+        from src.scripts.pdf_tables import fraction_pairs
 
         def box(top, x=300):
             return {"x0": x, "x1": x + 60, "top": top, "bottom": top + 8}
@@ -107,7 +226,7 @@ class RawPreprocessingTests(unittest.TestCase):
 
     @unittest.skipUnless(importlib.util.find_spec("pdfplumber"), "Optional ingestion dependency")
     def test_refund_attachment_confirms_four_fractions_with_scope_notes(self):
-        from src.evaluation.pdf_source_verification import REFUND_PDF, verify_refund_formulas
+        from src.scripts.pdf_tables import REFUND_PDF, verify_refund_formulas
 
         if not REFUND_PDF.exists():
             self.skipTest("Optional verification attachment")
