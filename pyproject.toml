@@ -12,6 +12,10 @@ dependencies = [
     "python-dotenv==1.1.1",
     "qdrant-client>=1.15.1,<2",
     "requests>=2.32,<3",
+    "fastembed>=0.9.1",
+    "langchain>=1.4.8",
+    "langchain-openai>=1.7.3",
+    "langchain-qdrant>=1.1.0",
 ]
 
 [dependency-groups]
