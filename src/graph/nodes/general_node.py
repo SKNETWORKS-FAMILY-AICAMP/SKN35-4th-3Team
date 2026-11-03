@@ -1,6 +1,6 @@
 from src.graph.state import State
 from src.const.model import create_llm
-from src.prompt.general_prompt import GENERAL_PROMPT
+from src.const.prompt.general_prompt import GENERAL_PROMPT
 from langchain_core.messages import SystemMessage , HumanMessage
 
 model = create_llm(temperature=0.3)

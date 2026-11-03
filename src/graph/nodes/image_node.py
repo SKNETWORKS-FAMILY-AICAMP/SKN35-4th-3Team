@@ -1,6 +1,6 @@
 from src.graph.state import State
 from langchain_core.messages import HumanMessage
-from src.prompt.image_prompt import IMAGE_PROMPT
+from src.const.prompt.image_prompt import IMAGE_PROMPT
 from src.const.model import create_llm
 # 노드 입니다.
 
