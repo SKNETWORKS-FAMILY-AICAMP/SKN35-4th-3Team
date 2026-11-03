@@ -1,5 +1,5 @@
-from django.shortcuts import render
+from django.http import JsonResponse
 
-# Create your views here.
-# 기능 구현
-# 강사님 프로젝트에서는 상품 목록 조회나 뭐 그런거 했다.
+
+def index(request):
+    return JsonResponse({"app": "members", "status": "ready"})

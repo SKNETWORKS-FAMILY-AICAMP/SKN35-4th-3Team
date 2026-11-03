@@ -16,6 +16,7 @@ dependencies = [
     "langchain>=1.4.8",
     "langchain-openai>=1.7.3",
     "langchain-qdrant>=1.1.0",
+    "pymupdf>=1.24,<2",
 ]
 
 [dependency-groups]
@@ -26,4 +27,11 @@ ingestion = [
 dev = [
     "pytest>=8,<10",
     "pytest-django>=4.8,<5",
+]
+gemini = [
+    "langchain-google-genai>=2,<4",
+]
+rerank = [
+    "sentence-transformers>=3,<6",
+    "torch>=2,<3",
 ]

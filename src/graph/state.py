@@ -3,7 +3,6 @@ from typing import NotRequired, Annotated
 
 from langgraph.graph import MessagesState
 from langgraph.graph.message import add_messages
-from src.vectorstore import VectorSearchHit
 
 class State(MessagesState):
     history : Annotated[list[str], add_messages]
@@ -15,7 +14,7 @@ class State(MessagesState):
 
     rewrite_query: NotRequired[str] # 재작성
     queries : NotRequired[list[str]] # 멀티쿼리 용
-    rankings: NotRequired[dict[str, list[VectorSearchHit]]]
+    rankings: NotRequired[dict[str, list[dict]]]
     documents : NotRequired[list[dict]] # 가져온 문서
 
     is_valid: NotRequired[bool] # 생성에 전달할 문서가 있는지 확인한 결과(근거 검증 아님)
@@ -57,3 +56,17 @@ class State(MessagesState):
     citation_latency_ms: NotRequired[float]
     judge_status: NotRequired[str]
     judge_input: NotRequired[dict | None]
+
+    # 판례 MCP 서브그래프 입출력입니다.
+    mcp_reference_candidate: NotRequired[dict]
+    mcp_top_n: NotRequired[int]
+    mcp_candidate_limit: NotRequired[int]
+    mcp_status: NotRequired[str]
+    mcp_result: NotRequired[dict]
+    mcp_reference_precedent: NotRequired[dict]
+    mcp_similar_precedents: NotRequired[list[dict]]
+    mcp_documents: NotRequired[list[dict]]
+    mcp_excluded_precedents: NotRequired[list[dict]]
+    mcp_error: NotRequired[dict | None]
+    mcp_similarity_score: NotRequired[float]
+    mcp_similarity_percent: NotRequired[str]

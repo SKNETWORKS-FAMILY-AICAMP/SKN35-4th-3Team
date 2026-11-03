@@ -10,22 +10,33 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+import os
 from pathlib import Path
+
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv(BASE_DIR / '.env', override=False)
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-iwjpj$jblqohxn3i+(zqq5t8m#pgudazl9h8b(1)10u83nk89h'
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-local-development-only')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DJANGO_DEBUG', 'True').lower() in {'1', 'true', 'yes', 'on'}
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    host.strip()
+    for host in os.getenv(
+        'DJANGO_ALLOWED_HOSTS',
+        '127.0.0.1,localhost,testserver',
+    ).split(',')
+    if host.strip()
+]
 
 
 # Application definition
@@ -37,9 +48,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'members',
-    'boards',
-    'chat',
+    'apps.members.apps.MembersConfig',
+    'apps.boards.apps.BoardsConfig',
+    'apps.chat.apps.ChatConfig',
 ]
 
 MIDDLEWARE = [
@@ -105,9 +116,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ko-kr'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
@@ -118,6 +129,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# 전처리·청킹 관리 명령어가 공통으로 사용하는 프로젝트 경로입니다.
+DATA_RAW_DIR = BASE_DIR / 'data' / 'raw'
+DATA_PROCESSED_DIR = BASE_DIR / 'data' / 'processed'
+DATA_CHUNK_DIR = BASE_DIR / 'data' / 'chunk'
+DATA_REPORT_DIR = BASE_DIR / 'docs' / 'data_reports'
+
+# 상담 첨부파일은 메모리에서 처리하며, 크기와 PDF 페이지 수를 제한합니다.
+CHAT_UPLOAD_MAX_BYTES = int(os.getenv('CHAT_UPLOAD_MAX_BYTES', str(10 * 1024 * 1024)))
+CHAT_PDF_MAX_PAGES = int(os.getenv('CHAT_PDF_MAX_PAGES', '5'))
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

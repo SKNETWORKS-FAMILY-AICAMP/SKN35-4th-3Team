@@ -1,11 +1,8 @@
 import os
-import openai
-import torch
 from functools import lru_cache
 from dotenv import load_dotenv
 from langchain_openai import OpenAIEmbeddings , ChatOpenAI
 from src.const.config import ENV_PATH, EMBED_DIMENSION, RERANK_CACHE_PATH
-from sentence_transformers import CrossEncoder
 
 load_dotenv(dotenv_path=ENV_PATH, override=False)
 
@@ -13,8 +10,17 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 
-OPENAI_LLM_MODEL = os.getenv("OPENAI_LLM_MODEL") or os.getenv("LLM_MODEL")
-OPENAI_EMBED_MODEL = os.getenv("OPENAI_EMBED_MODEL")
+OPENAI_LLM_MODEL = (
+    os.getenv("OPENAI_LLM_MODEL")
+    or os.getenv("OPENAI_MODEL")
+    or os.getenv("LLM_MODEL")
+    or "gpt-5-nano"
+)
+OPENAI_EMBED_MODEL = (
+    os.getenv("OPENAI_EMBED_MODEL")
+    or os.getenv("OPENAI_EMBEDDING_MODEL")
+    or "text-embedding-3-small"
+)
 RERANK_MODEL = os.getenv("RERANK_MODEL")
 
 GEMINI_LLM_MODEL = os.getenv("GEMINI_LLM_MODEL")
@@ -51,6 +57,13 @@ def create_llm(temperature : float = 0):
 def create_rerank_model():
     if not RERANK_MODEL:
         raise ValueError(".env에 RERANK_MODEL을 지정해야 합니다.")
+    try:
+        import torch
+        from sentence_transformers import CrossEncoder
+    except ModuleNotFoundError as error:
+        raise RuntimeError(
+            "리랭크 모델을 사용하려면 `uv sync --group rerank`를 실행하세요."
+        ) from error
     # 선택 의존성이라 모델을 사용하는 시점에만 로딩합니다.
     # 5600X급 6코어 환경에서 배치 추론이 병렬 처리되도록 물리 코어 수준을 사용합니다.
     torch.set_num_threads(min(6, os.cpu_count() or 4))
@@ -63,15 +76,17 @@ def create_rerank_model():
 
 # 테스트 용 GENIMI VER
 
-from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
-
 def create_embedding_gmn():
+    from langchain_google_genai import GoogleGenerativeAIEmbeddings
+
     return GoogleGenerativeAIEmbeddings(
         model=GEMINI_EMBED_MODEL,
         google_api_key=GOOGLE_API_KEY,
     )
 
 def create_llm_gmn(temperature: float = 0):
+    from langchain_google_genai import ChatGoogleGenerativeAI
+
     return ChatGoogleGenerativeAI(
         model=GEMINI_LLM_MODEL,
         temperature=temperature,
@@ -82,6 +97,6 @@ def create_llm_gmn(temperature: float = 0):
 @lru_cache(maxsize=1)
 def create_generator_llm():
     return create_llm().bind(
-        max_tokens=int(os.environ["GENERATOR_MAX_OUTPUT_TOKENS"]),
+        max_tokens=int(os.getenv("GENERATOR_MAX_OUTPUT_TOKENS", "1200")),
         response_format={"type": "json_object"},
     )

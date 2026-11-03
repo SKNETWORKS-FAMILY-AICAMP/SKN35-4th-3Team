@@ -5,9 +5,9 @@ from src.graph.nodes.image_node import image_node
 from src.graph.subgraphs.rag_graph.rag_graph import build_rag_graph
 from src.graph.subgraphs.mcp_graph.mcp_graph import build_mcp_graph
 from src.graph.nodes.general_node import general_node
-from src.const.model import create_llm , create_llm_gmn
+from src.const.model import create_llm
 from src.const.prompt.classify_prompt import CLASSIFY_PROMPT
-from src.history import format_history
+from src.rag.history import format_history
 from src.graph.nodes.generator_node import generator_node
 from src.graph.nodes.citation_node import citation_node
 
@@ -22,7 +22,8 @@ def route_start(state: State) -> str:
         if history else state["origin_query"]
     )
     message = [("system", CLASSIFY_PROMPT), ("user", user_content)]
-    label = llm.invoke(message).text.strip().lower()
+    response = llm.invoke(message)
+    label = str(response.content).strip().lower()
     return label if label in {"general", "rag", "mcp", "out_of_scope"} else "rag"
 
 def route_image(state: State) -> str:
@@ -34,7 +35,7 @@ def build_workflow():
     builder = StateGraph(State)
 
     builder.add_node("image", image_node)
-    builder.add_node("general", general_agent)
+    builder.add_node("general", general_node)
     builder.add_node("rag", build_rag_graph())
     builder.add_node("mcp", build_mcp_graph())
     builder.add_node("generator", generator_node)

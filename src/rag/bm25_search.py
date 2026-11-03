@@ -5,12 +5,15 @@ def bm25_search(query, client, embedder, top_k=20):
     vector = next(embedder.query_embed(query))
 
     results = client.query_points(
-        collection_name=os.environ["QDRANT_COLLECTION"],
+        collection_name=os.getenv(
+            "QDRANT_COLLECTION",
+            os.getenv("QDRANT_COLLECTION_NAME", "team_documents_openai_dev"),
+        ),
         query=models.SparseVector(
             indices=list(vector.indices),
             values=list(vector.values),
         ),
-        using="bm25",
+        using=os.getenv("QDRANT_SPARSE_VECTOR_NAME", "bm25"),
         limit=top_k,
         with_payload=True,
     ).points
