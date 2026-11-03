@@ -1,0 +1,204 @@
+{
+  "schema_version": 3,
+  "document_id": "001872_285279_20261008_appendix_000000E",
+  "title": "근로기준법",
+  "source_path": "data/raw/law_appendices/001872_285279_20261008_appendix_000000E.pdf",
+  "raw_sha256": "cb05ba17f5cf163ae6bae2242c3c04b766f23ca734d018a7671f811b93222120",
+  "units": [
+    {
+      "document_id": "001872_285279_20261008_appendix_000000E",
+      "title": "근로기준법",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=285279",
+      "document_type": "law",
+      "domains": [
+        "labor_general"
+      ],
+      "dates": {
+        "effective_date": "2026-10-08",
+        "article_effective_date": "2026-10-08",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-10"
+      },
+      "source_path": "data/raw/law_appendices/001872_285279_20261008_appendix_000000E.pdf",
+      "raw_sha256": "cb05ba17f5cf163ae6bae2242c3c04b766f23ca734d018a7671f811b93222120",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "unit_id": "001872_285279_20261008_appendix_000000E:p1:body",
+      "text": "■ 근로기준법 [별표]\n신체장해등급과 재해보상표(제80조 관련)",
+      "locator": "PDF 1페이지",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "pdf_body",
+      "removed_margin_lines": [],
+      "images": []
+    },
+    {
+      "document_id": "001872_285279_20261008_appendix_000000E",
+      "title": "근로기준법",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=285279",
+      "document_type": "law",
+      "domains": [
+        "labor_general"
+      ],
+      "dates": {
+        "effective_date": "2026-10-08",
+        "article_effective_date": "2026-10-08",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-10"
+      },
+      "source_path": "data/raw/law_appendices/001872_285279_20261008_appendix_000000E.pdf",
+      "raw_sha256": "cb05ba17f5cf163ae6bae2242c3c04b766f23ca734d018a7671f811b93222120",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "001872_285279_20261008_appendix_000000E:p1:table0",
+      "text": "등급 | 재해보상 | 등급 | 재해보상\n제1급 | 1,340일분 | 제8급 | 450일분\n제2급 | 1,190일분 | 제9급 | 350일분\n제3급 | 1,050일분 | 제10급 | 270일분\n제4급 | 920일분 | 제11급 | 200일분\n제5급 | 790일분 | 제12급 | 140일분\n제6급 | 670일분 | 제13급 | 90일분\n제7급 | 560일분 | 제14급 | 50일분",
+      "locator": "PDF 1페이지 / 표 1",
+      "embedding_candidate": true,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          58.049,
+          120.82799999999997,
+          505.648,
+          413.548
+        ],
+        "rows": [
+          [
+            "등급",
+            "재해보상",
+            "등급",
+            "재해보상"
+          ],
+          [
+            "제1급",
+            "1,340일분",
+            "제8급",
+            "450일분"
+          ],
+          [
+            "제2급",
+            "1,190일분",
+            "제9급",
+            "350일분"
+          ],
+          [
+            "제3급",
+            "1,050일분",
+            "제10급",
+            "270일분"
+          ],
+          [
+            "제4급",
+            "920일분",
+            "제11급",
+            "200일분"
+          ],
+          [
+            "제5급",
+            "790일분",
+            "제12급",
+            "140일분"
+          ],
+          [
+            "제6급",
+            "670일분",
+            "제13급",
+            "90일분"
+          ],
+          [
+            "제7급",
+            "560일분",
+            "제14급",
+            "50일분"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "■ 근로기준법 [별표]\n신체장해등급과 재해보상표(제80조 관련)\n등급 재해보상 등급 재해보상\n제1급 1,340일분 제8급 450일분\n제2급 1,190일분 제9급 350일분\n제3급 1,050일분 제10급 270일분\n제4급 920일분 제11급 200일분\n제5급 790일분 제12급 140일분\n제6급 670일분 제13급 90일분\n제7급 560일분 제14급 50일분",
+      "body_text": "■ 근로기준법 [별표]\n신체장해등급과 재해보상표(제80조 관련)",
+      "tables": [
+        {
+          "bbox": [
+            58.049,
+            120.82799999999997,
+            505.648,
+            413.548
+          ],
+          "rows": [
+            [
+              "등급",
+              "재해보상",
+              "등급",
+              "재해보상"
+            ],
+            [
+              "제1급",
+              "1,340일분",
+              "제8급",
+              "450일분"
+            ],
+            [
+              "제2급",
+              "1,190일분",
+              "제9급",
+              "350일분"
+            ],
+            [
+              "제3급",
+              "1,050일분",
+              "제10급",
+              "270일분"
+            ],
+            [
+              "제4급",
+              "920일분",
+              "제11급",
+              "200일분"
+            ],
+            [
+              "제5급",
+              "790일분",
+              "제12급",
+              "140일분"
+            ],
+            [
+              "제6급",
+              "670일분",
+              "제13급",
+              "90일분"
+            ],
+            [
+              "제7급",
+              "560일분",
+              "제14급",
+              "50일분"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        }
+      ],
+      "images": [],
+      "removed_margin_lines": []
+    }
+  ]
+}

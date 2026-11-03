@@ -1,0 +1,23 @@
+{
+  "raw_reextraction_performed": false,
+  "chunk_size": 900,
+  "overlap": 100,
+  "parent_count": 3694,
+  "chunk_count": 4276,
+  "new": {
+    "count": 4276,
+    "min_chars": 20,
+    "median_chars": 217,
+    "p95_chars": 883,
+    "max_chars": 900,
+    "under_100_chars": 913,
+    "over_2000_chars": 0,
+    "max_embedding_chars": 1069
+  },
+  "saved_files": [
+    "C:\\study\\SKN35-4th-3Team\\data\\chunk\\consumer_sources\\chunks.jsonl",
+    "C:\\study\\SKN35-4th-3Team\\data\\chunk\\guides\\chunks.jsonl",
+    "C:\\study\\SKN35-4th-3Team\\data\\chunk\\laws\\chunks.jsonl"
+  ],
+  "validation": "raw_hashes, unique_ids, offsets, full_text_coverage, size_limits passed"
+}

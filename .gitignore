@@ -46,3 +46,6 @@ htmlcov/
 media/ 
 
 .cache/
+
+# Previous datasets retained locally when replacing preprocessing outputs.
+.data_backups/

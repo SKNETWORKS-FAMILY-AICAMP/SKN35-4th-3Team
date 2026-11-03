@@ -1,0 +1,116 @@
+{
+  "schema_version": 3,
+  "document_id": "003979_289451_20260911_appendix_000200F",
+  "title": "소비자기본법 시행령",
+  "source_path": "data/raw/law_appendices/003979_289451_20260911_appendix_000200F.pdf",
+  "raw_sha256": "10a8a094cdc65a4a11953e540c4e7eb9a0617cb6bbffc61f780c3f1ae504c124",
+  "units": [
+    {
+      "document_id": "003979_289451_20260911_appendix_000200F",
+      "title": "소비자기본법 시행령",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=289451",
+      "document_type": "law",
+      "domains": [
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-09-11",
+        "article_effective_date": "2026-09-11",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/003979_289451_20260911_appendix_000200F.pdf",
+      "raw_sha256": "10a8a094cdc65a4a11953e540c4e7eb9a0617cb6bbffc61f780c3f1ae504c124",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "unit_id": "003979_289451_20260911_appendix_000200F:p1:body",
+      "text": "등 록 번 호 제 호\n소비자단체 등록증\n1. 명칭:\n2. 주된 사무소의 소재지:\n3. 대표자 성명:\n4. 주된 사업내용:\n「소비자기본법」제29조 및 같은 법 시행령 제23조에 따라 위와 같이 등록\n하였음을 증명합니다.\n년 월 일\n공정거래위원회 또는\n특별시장ㆍ광역시장 직인\n도지사ㆍ특별자치도지사\n210mm×297mm[백상지 150g/㎡]",
+      "locator": "PDF 1페이지 / 1. 명칭: > 2. 주된 사무소의 소재지: > 3. 대표자 성명:",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "pdf_body",
+      "removed_margin_lines": [],
+      "images": []
+    },
+    {
+      "document_id": "003979_289451_20260911_appendix_000200F",
+      "title": "소비자기본법 시행령",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=289451",
+      "document_type": "law",
+      "domains": [
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-09-11",
+        "article_effective_date": "2026-09-11",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/003979_289451_20260911_appendix_000200F.pdf",
+      "raw_sha256": "10a8a094cdc65a4a11953e540c4e7eb9a0617cb6bbffc61f780c3f1ae504c124",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "003979_289451_20260911_appendix_000200F:p1:table0",
+      "text": "■ 소비자기본법 시행령 [별지 제2호서식] <신설 2015.8.11. | >",
+      "locator": "PDF 1페이지 / 1. 명칭: > 2. 주된 사무소의 소재지: > 3. 대표자 성명: / 표 1",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          60.28766666666667,
+          61.851999999999975,
+          298.4,
+          70.84299999999996
+        ],
+        "rows": [
+          [
+            "■ 소비자기본법 시행령 [별지 제2호서식] <신설 2015.8.11.",
+            ">"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "■ 소비자기본법 시행령 [별지 제2호서식] <신설 2015.8.11.>\n등 록 번 호 제 호\n소비자단체 등록증\n1. 명칭:\n2. 주된 사무소의 소재지:\n3. 대표자 성명:\n4. 주된 사업내용:\n「소비자기본법」제29조 및 같은 법 시행령 제23조에 따라 위와 같이 등록\n하였음을 증명합니다.\n년 월 일\n공정거래위원회 또는\n특별시장ㆍ광역시장 직인\n도지사ㆍ특별자치도지사\n210mm×297mm[백상지 150g/㎡]",
+      "body_text": "등 록 번 호 제 호\n소비자단체 등록증\n1. 명칭:\n2. 주된 사무소의 소재지:\n3. 대표자 성명:\n4. 주된 사업내용:\n「소비자기본법」제29조 및 같은 법 시행령 제23조에 따라 위와 같이 등록\n하였음을 증명합니다.\n년 월 일\n공정거래위원회 또는\n특별시장ㆍ광역시장 직인\n도지사ㆍ특별자치도지사\n210mm×297mm[백상지 150g/㎡]",
+      "tables": [
+        {
+          "bbox": [
+            60.28766666666667,
+            61.851999999999975,
+            298.4,
+            70.84299999999996
+          ],
+          "rows": [
+            [
+              "■ 소비자기본법 시행령 [별지 제2호서식] <신설 2015.8.11.",
+              ">"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        }
+      ],
+      "images": [],
+      "removed_margin_lines": []
+    }
+  ]
+}

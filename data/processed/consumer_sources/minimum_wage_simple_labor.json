@@ -1,0 +1,70 @@
+{
+  "schema_version": 3,
+  "document_id": "minimum_wage_simple_labor",
+  "title": "최저임금법 제5조에 따른 단순노무직종 근로자 지정 고시",
+  "source_path": "data/raw/consumer_sources/minimum_wage_simple_labor_df8550c1d3d7570d.xml",
+  "raw_sha256": "df8550c1d3d7570dd9fe920885c4dbe8a75339f2592ca19a294a546a1c84e848",
+  "units": [
+    {
+      "document_id": "minimum_wage_simple_labor",
+      "title": "최저임금법 제5조에 따른 단순노무직종 근로자 지정 고시",
+      "source_url": "https://www.law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000118064",
+      "document_type": "administrative_rule",
+      "domains": [
+        "labor_wage"
+      ],
+      "dates": {
+        "effective_date": "2018-03-20",
+        "article_effective_date": null,
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": null
+      },
+      "source_path": "data/raw/consumer_sources/minimum_wage_simple_labor_df8550c1d3d7570d.xml",
+      "raw_sha256": "df8550c1d3d7570dd9fe920885c4dbe8a75339f2592ca19a294a546a1c84e848",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "unit_id": "minimum_wage_simple_labor:article0",
+      "text": "최저임금법 제5조제2항에 따른 \"단순노무업무로 고용노동부장관이 정하여 고시한 직종에 종사하는 근로자\"란 한국표준직업분류 상 대분류 9(단순노무 종사자)에 해당하는 사람을 말한다.",
+      "locator": "최저임금법 제5조제2항에 따른 \"단순노무업무로 고용노동부장관이 정하여 고시한 직종에 종사하는 근로자\"란 한국표준직업분류 상 대분류 9(단순노무 종사자)에 해당하는 사람을 말한다.",
+      "embedding_candidate": true,
+      "content_type": "administrative_rule",
+      "effective_date": "2018-03-20"
+    },
+    {
+      "document_id": "minimum_wage_simple_labor",
+      "title": "최저임금법 제5조에 따른 단순노무직종 근로자 지정 고시",
+      "source_url": "https://www.law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000118064",
+      "document_type": "administrative_rule",
+      "domains": [
+        "labor_wage"
+      ],
+      "dates": {
+        "effective_date": "2018-03-20",
+        "article_effective_date": null,
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": null
+      },
+      "source_path": "data/raw/consumer_sources/minimum_wage_simple_labor_df8550c1d3d7570d.xml",
+      "raw_sha256": "df8550c1d3d7570dd9fe920885c4dbe8a75339f2592ca19a294a546a1c84e848",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "unit_id": "minimum_wage_simple_labor:supplement0",
+      "text": "201803192018-23부칙 <제2018-23호,2018. 3. 19.>\n이 고시는 2018년 3월 20일부터 시행한다.",
+      "locator": "부칙",
+      "embedding_candidate": true,
+      "content_type": "supplement"
+    }
+  ]
+}

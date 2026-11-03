@@ -1,0 +1,190 @@
+{
+  "schema_version": 3,
+  "document_id": "consumer_dispute_standard_appendix_3_f6d4e6570d0bd34f",
+  "title": "소비자분쟁해결기준",
+  "source_path": "data/raw/consumer_sources/consumer_dispute_standard_appendix_3_f6d4e6570d0bd34f.pdf",
+  "raw_sha256": "f6d4e6570d0bd34f527d023e1a5f4ee13ff4a7c0730515b8cb6a7845296704e4",
+  "units": [
+    {
+      "document_id": "consumer_dispute_standard_appendix_3_f6d4e6570d0bd34f",
+      "title": "소비자분쟁해결기준",
+      "source_url": "https://www.law.go.kr/행정규칙/소비자분쟁해결기준",
+      "document_type": "administrative_rule",
+      "domains": [
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2025-12-18",
+        "article_effective_date": null,
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": null
+      },
+      "related_document_id": "consumer_dispute_standard",
+      "source_path": "data/raw/consumer_sources/consumer_dispute_standard_appendix_3_f6d4e6570d0bd34f.pdf",
+      "raw_sha256": "f6d4e6570d0bd34f527d023e1a5f4ee13ff4a7c0730515b8cb6a7845296704e4",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "unit_id": "consumer_dispute_standard_appendix_3_f6d4e6570d0bd34f:p1:body",
+      "text": "<별표 Ⅳ>\n품목별 내용연수표",
+      "locator": "PDF 1페이지",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "pdf_body",
+      "removed_margin_lines": [],
+      "images": []
+    },
+    {
+      "document_id": "consumer_dispute_standard_appendix_3_f6d4e6570d0bd34f",
+      "title": "소비자분쟁해결기준",
+      "source_url": "https://www.law.go.kr/행정규칙/소비자분쟁해결기준",
+      "document_type": "administrative_rule",
+      "domains": [
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2025-12-18",
+        "article_effective_date": null,
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": null
+      },
+      "related_document_id": "consumer_dispute_standard",
+      "source_path": "data/raw/consumer_sources/consumer_dispute_standard_appendix_3_f6d4e6570d0bd34f.pdf",
+      "raw_sha256": "f6d4e6570d0bd34f527d023e1a5f4ee13ff4a7c0730515b8cb6a7845296704e4",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "consumer_dispute_standard_appendix_3_f6d4e6570d0bd34f:p1:table0",
+      "text": "품 목 | 내 용 연 수\n농업용기기 | 사업자가 품질보증서에 표시\n한 부품보유기간으로 함.\n다만, 그 기간이 [별표Ⅲ]의\n부품보유기간에 기재된\n기간보다 짧거나 미기재한\n경우 [별표Ⅲ]의 부품보유\n기간으로 함\n침대, 책상, 장롱, 장식장, 책장 |\n보일러, 에어컨, TV, 전축, 냉장고, 정수기, 가습기/제습기, 전기청소기, 식탁,\n신발장, 문갑, 전자렌지 |\n비디오플레이어, DVD 플레이어, 전기(가스)오븐, 비데, 전기압력밥솥, 가스레인\n지, 유․무선전화기, 믹서기, 전기온수기, 냉온수기, 캠코더, 홈시어터, 안마의자,\n족욕기, 망원경, 현미경, 자동차, 소파, 화장대, 찬장 |\n선풍기, 냉풍기, 전기장판, 세탁기, 모터사이클, 카메라, 디지털피아노, 네비게\n이션, 난로(전기, 가스, 기름), 헬스기구, 골프채 |\n퍼스널 컴퓨터(완성품) 및 주변기기, 노트북PC, 휴대용음향기기(MP3, 카세트,\nCD 플레이어) |\n휴대폰, 스마트폰, 전기면도기, 전기조리기기(멀티쿠커, 튀김기, 다용도식품조리\n기, 전기토스터, 전기냄비, 전기프라이팬 등), 헤어드라이어 |\n라켓(테니스, 탁구, 배드민턴 등) 몸체(라켓에 부착된 라바 또는 끈 등은 제외),\n문구, 완구 |\n별도의 기간을 정하지 않은 경우로서 유사품목에 따를 수 없는 경우 | 5년",
+      "locator": "PDF 1페이지 / 표 1",
+      "embedding_candidate": true,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          58.049,
+          81.03099999999995,
+          548.585,
+          528.742
+        ],
+        "rows": [
+          [
+            "품 목",
+            "내 용 연 수"
+          ],
+          [
+            "농업용기기",
+            "사업자가 품질보증서에 표시\n한 부품보유기간으로 함.\n다만, 그 기간이 [별표Ⅲ]의\n부품보유기간에 기재된\n기간보다 짧거나 미기재한\n경우 [별표Ⅲ]의 부품보유\n기간으로 함"
+          ],
+          [
+            "침대, 책상, 장롱, 장식장, 책장",
+            null
+          ],
+          [
+            "보일러, 에어컨, TV, 전축, 냉장고, 정수기, 가습기/제습기, 전기청소기, 식탁,\n신발장, 문갑, 전자렌지",
+            null
+          ],
+          [
+            "비디오플레이어, DVD 플레이어, 전기(가스)오븐, 비데, 전기압력밥솥, 가스레인\n지, 유․무선전화기, 믹서기, 전기온수기, 냉온수기, 캠코더, 홈시어터, 안마의자,\n족욕기, 망원경, 현미경, 자동차, 소파, 화장대, 찬장",
+            null
+          ],
+          [
+            "선풍기, 냉풍기, 전기장판, 세탁기, 모터사이클, 카메라, 디지털피아노, 네비게\n이션, 난로(전기, 가스, 기름), 헬스기구, 골프채",
+            null
+          ],
+          [
+            "퍼스널 컴퓨터(완성품) 및 주변기기, 노트북PC, 휴대용음향기기(MP3, 카세트,\nCD 플레이어)",
+            null
+          ],
+          [
+            "휴대폰, 스마트폰, 전기면도기, 전기조리기기(멀티쿠커, 튀김기, 다용도식품조리\n기, 전기토스터, 전기냄비, 전기프라이팬 등), 헤어드라이어",
+            null
+          ],
+          [
+            "라켓(테니스, 탁구, 배드민턴 등) 몸체(라켓에 부착된 라바 또는 끈 등은 제외),\n문구, 완구",
+            null
+          ],
+          [
+            "별도의 기간을 정하지 않은 경우로서 유사품목에 따를 수 없는 경우",
+            "5년"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "<별표 Ⅳ>\n품목별 내용연수표\n품 목 내 용 연 수\n농업용기기\n침대, 책상, 장롱, 장식장, 책장\n보일러, 에어컨, TV, 전축, 냉장고, 정수기, 가습기/제습기, 전기청소기, 식탁,\n신발장, 문갑, 전자렌지\n비디오플레이어, DVD 플레이어, 전기(가스)오븐, 비데, 전기압력밥솥, 가스레인\n지, 유․무선전화기, 믹서기, 전기온수기, 냉온수기, 캠코더, 홈시어터, 안마의자, 사업자가 품질보증서에 표시\n족욕기, 망원경, 현미경, 자동차, 소파, 화장대, 찬장 한 부품보유기간으로 함.\n다만, 그 기간이 [별표Ⅲ]의\n부품보유기간에 기재된\n선풍기, 냉풍기, 전기장판, 세탁기, 모터사이클, 카메라, 디지털피아노, 네비게 기간보다 짧거나 미기재한\n이션, 난로(전기, 가스, 기름), 헬스기구, 골프채 경우 [별표Ⅲ]의 부품보유\n기간으로 함\n퍼스널 컴퓨터(완성품) 및 주변기기, 노트북PC, 휴대용음향기기(MP3, 카세트,\nCD 플레이어)\n휴대폰, 스마트폰, 전기면도기, 전기조리기기(멀티쿠커, 튀김기, 다용도식품조리\n기, 전기토스터, 전기냄비, 전기프라이팬 등), 헤어드라이어\n라켓(테니스, 탁구, 배드민턴 등) 몸체(라켓에 부착된 라바 또는 끈 등은 제외),\n문구, 완구\n별도의 기간을 정하지 않은 경우로서 유사품목에 따를 수 없는 경우 5년",
+      "body_text": "<별표 Ⅳ>\n품목별 내용연수표",
+      "tables": [
+        {
+          "bbox": [
+            58.049,
+            81.03099999999995,
+            548.585,
+            528.742
+          ],
+          "rows": [
+            [
+              "품 목",
+              "내 용 연 수"
+            ],
+            [
+              "농업용기기",
+              "사업자가 품질보증서에 표시\n한 부품보유기간으로 함.\n다만, 그 기간이 [별표Ⅲ]의\n부품보유기간에 기재된\n기간보다 짧거나 미기재한\n경우 [별표Ⅲ]의 부품보유\n기간으로 함"
+            ],
+            [
+              "침대, 책상, 장롱, 장식장, 책장",
+              null
+            ],
+            [
+              "보일러, 에어컨, TV, 전축, 냉장고, 정수기, 가습기/제습기, 전기청소기, 식탁,\n신발장, 문갑, 전자렌지",
+              null
+            ],
+            [
+              "비디오플레이어, DVD 플레이어, 전기(가스)오븐, 비데, 전기압력밥솥, 가스레인\n지, 유․무선전화기, 믹서기, 전기온수기, 냉온수기, 캠코더, 홈시어터, 안마의자,\n족욕기, 망원경, 현미경, 자동차, 소파, 화장대, 찬장",
+              null
+            ],
+            [
+              "선풍기, 냉풍기, 전기장판, 세탁기, 모터사이클, 카메라, 디지털피아노, 네비게\n이션, 난로(전기, 가스, 기름), 헬스기구, 골프채",
+              null
+            ],
+            [
+              "퍼스널 컴퓨터(완성품) 및 주변기기, 노트북PC, 휴대용음향기기(MP3, 카세트,\nCD 플레이어)",
+              null
+            ],
+            [
+              "휴대폰, 스마트폰, 전기면도기, 전기조리기기(멀티쿠커, 튀김기, 다용도식품조리\n기, 전기토스터, 전기냄비, 전기프라이팬 등), 헤어드라이어",
+              null
+            ],
+            [
+              "라켓(테니스, 탁구, 배드민턴 등) 몸체(라켓에 부착된 라바 또는 끈 등은 제외),\n문구, 완구",
+              null
+            ],
+            [
+              "별도의 기간을 정하지 않은 경우로서 유사품목에 따를 수 없는 경우",
+              "5년"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        }
+      ],
+      "images": [],
+      "removed_margin_lines": []
+    }
+  ]
+}

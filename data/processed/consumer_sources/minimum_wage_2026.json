@@ -1,0 +1,70 @@
+{
+  "schema_version": 3,
+  "document_id": "minimum_wage_2026",
+  "title": "2026년 적용 최저임금 고시",
+  "source_path": "data/raw/consumer_sources/minimum_wage_2026_c0a8b9413dbfebc6.xml",
+  "raw_sha256": "c0a8b9413dbfebc6e660bb48daa7e20843bced7d5f64a95ed4f0e2542ad139c5",
+  "units": [
+    {
+      "document_id": "minimum_wage_2026",
+      "title": "2026년 적용 최저임금 고시",
+      "source_url": "https://www.law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000262710",
+      "document_type": "administrative_rule",
+      "domains": [
+        "labor_wage"
+      ],
+      "dates": {
+        "effective_date": "2026-01-01",
+        "article_effective_date": null,
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": null
+      },
+      "source_path": "data/raw/consumer_sources/minimum_wage_2026_c0a8b9413dbfebc6.xml",
+      "raw_sha256": "c0a8b9413dbfebc6e660bb48daa7e20843bced7d5f64a95ed4f0e2542ad139c5",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "unit_id": "minimum_wage_2026:article0",
+      "text": "",
+      "locator": "빈 조문",
+      "embedding_candidate": false,
+      "content_type": "administrative_rule",
+      "effective_date": "2026-01-01"
+    },
+    {
+      "document_id": "minimum_wage_2026",
+      "title": "2026년 적용 최저임금 고시",
+      "source_url": "https://www.law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000262710",
+      "document_type": "administrative_rule",
+      "domains": [
+        "labor_wage"
+      ],
+      "dates": {
+        "effective_date": "2026-01-01",
+        "article_effective_date": null,
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": null
+      },
+      "source_path": "data/raw/consumer_sources/minimum_wage_2026_c0a8b9413dbfebc6.xml",
+      "raw_sha256": "c0a8b9413dbfebc6e660bb48daa7e20843bced7d5f64a95ed4f0e2542ad139c5",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "unit_id": "minimum_wage_2026:supplement0",
+      "text": "",
+      "locator": "부칙",
+      "embedding_candidate": false,
+      "content_type": "supplement"
+    }
+  ]
+}

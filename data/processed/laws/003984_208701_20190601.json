@@ -1,0 +1,73 @@
+{
+  "schema_version": 3,
+  "document_id": "003984_208701_20190601",
+  "title": "소송촉진 등에 관한 특례법 제3조제1항 본문의 법정이율에 관한 규정",
+  "source_path": "data/raw/laws/003984_208701_20190601.json",
+  "raw_sha256": "cb3ea141f1d83ba8b19da20a4f0f377b7bf5c87cd5c68bac5a06ea0bd51f604e",
+  "units": [
+    {
+      "document_id": "003984_208701_20190601",
+      "title": "소송촉진 등에 관한 특례법 제3조제1항 본문의 법정이율에 관한 규정",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=208701",
+      "document_type": "law",
+      "domains": [
+        "civil_general"
+      ],
+      "dates": {
+        "effective_date": "2019-06-01",
+        "article_effective_date": "2019-06-01",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/laws/003984_208701_20190601.json",
+      "raw_sha256": "cb3ea141f1d83ba8b19da20a4f0f377b7bf5c87cd5c68bac5a06ea0bd51f604e",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "version_scope": "current_at_collection",
+      "unit_id": "003984_208701_20190601:supplement0",
+      "text": "부칙 <제26553호,2015.9.25>\n\n제1조(시행일) 이 영은 2015년 10월 1일부터 시행한다.\n\n제2조(경과조치) ① 이 영의 개정규정에도 불구하고 이 영 시행 당시 법원에 계속 중인 사건으로서 제1심의 변론이 종결된 사건에 대해서는 종전의 규정에 따른다.\n\n② 이 영 시행 당시 법원에 계속 중인 사건으로서 제1심의 변론이 종결되지 아니한 사건에 대한 법정이율에 관하여는 2015년 9월 30일까지는 종전의 규정에 따른 이율에 의하고, 2015년 10월 1일부터는 이 영의 개정규정에 따른 이율에 의한다.",
+      "locator": "부칙 / 20150925",
+      "embedding_candidate": true,
+      "content_type": "supplement",
+      "temporal_scope": "historical_supplement"
+    },
+    {
+      "document_id": "003984_208701_20190601",
+      "title": "소송촉진 등에 관한 특례법 제3조제1항 본문의 법정이율에 관한 규정",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=208701",
+      "document_type": "law",
+      "domains": [
+        "civil_general"
+      ],
+      "dates": {
+        "effective_date": "2019-06-01",
+        "article_effective_date": "2019-06-01",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/laws/003984_208701_20190601.json",
+      "raw_sha256": "cb3ea141f1d83ba8b19da20a4f0f377b7bf5c87cd5c68bac5a06ea0bd51f604e",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "version_scope": "current_at_collection",
+      "unit_id": "003984_208701_20190601:supplement1",
+      "text": "부칙 <제29768호,2019.5.21>\n\n제1조(시행일) 이 영은 2019년 6월 1일부터 시행한다.\n\n제2조(경과조치) ① 이 영 시행 당시 법원에 계속 중인 사건으로서 제1심의 변론이 종결된 사건에 대한 법정이율은 이 영의 개정규정에도 불구하고 종전의 규정에 따른다.\n\n② 이 영 시행 당시 법원에 계속 중인 사건으로서 제1심의 변론이 종결되지 아니한 사건에 대한 법정이율은 2019년 5월 31일까지 발생한 분에 대해서는 종전의 규정에 따르고, 2019년 6월 1일 이후 발생하는 분에 대해서는 이 영의 개정규정에 따른다.",
+      "locator": "부칙 / 20190521",
+      "embedding_candidate": true,
+      "content_type": "supplement",
+      "temporal_scope": "historical_supplement"
+    }
+  ]
+}

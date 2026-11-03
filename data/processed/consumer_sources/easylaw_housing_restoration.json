@@ -1,0 +1,185 @@
+{
+  "schema_version": 3,
+  "document_id": "easylaw_housing_restoration",
+  "title": "임차인의 권리·의무: 반환·원상회복",
+  "source_path": "data/raw/consumer_sources/easylaw_housing_restoration_095ff325282e7a26.html",
+  "raw_sha256": "095ff325282e7a26f3522067c37976e75af69bb8d66984f2a8328b8cd3d981fe",
+  "units": [
+    {
+      "document_id": "easylaw_housing_restoration",
+      "title": "임차인의 권리·의무: 반환·원상회복",
+      "source_url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=4&cciNo=2&cnpClsNo=1&csmSeq=629&popMenu=ov",
+      "document_type": "official_guide",
+      "domains": [
+        "housing_lease"
+      ],
+      "dates": {
+        "effective_date": null,
+        "article_effective_date": null,
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": "2026-09-15",
+        "as_of": null
+      },
+      "source_path": "data/raw/consumer_sources/easylaw_housing_restoration_095ff325282e7a26.html",
+      "raw_sha256": "095ff325282e7a26f3522067c37976e75af69bb8d66984f2a8328b8cd3d981fe",
+      "extraction_origin": "raw",
+      "warnings": [
+        "본문 내 이미지는 다운로드·OCR하지 않음; 표의 조건·예외는 전체 근거에서 확인"
+      ],
+      "unit_id": "easylaw_housing_restoration:body",
+      "text": "임차인의 권리·의무\n\n임차인은 주택의 사용·수익권, 비용상환청구권, 부속물매수청구권 등의 권한을 가집니다.\n\n임차인은 차임지급의무, 임차물반환의무, 원상회복의무 등의 의무를 집니다.\n\n인쇄체크 임차인의 권리\n\n사용·수익권(임차권)\n\n임차인은 임대차계약을 통해 임차주택을 사용·수익할 수 있는 임차권을 취득하게 됩니다(「민법」 제618조). 이를 위해 임대인에게 임차주택의 인도를 청구할 수 있고, 그 임차기간 중 사용·수익에 필요한 상태를 유지해 줄 것을 청구할 수 있습니다.\n\n임차인이 제3자에게 임차권을 주장하려면, 대항력을 취득하거나 임대차등기를 해야 합니다(「주택임대차보호법」 제3조 및 「민법」 제621조제2항).\n\n임대차등기협력청구권\n\n임대인과 임차인은 당사자간의 반대약정이 없으면, 임차인은 임대인에게 주택임대차 등기에 협력할 것을 청구할 수 있습니다(「민법」 제621조제1항 및 「주택임대차보호법」 제3조의4).\n\n다만, 임차인은 임대인에게 임대차등기 절차에 협력해 줄 것을 청구할 수 있을 뿐이고, 등기청구권까지 주어져 있는 것은 아니므로 임대인이 협력하지 않으면 임차인은 ‘임차권설정등기절차를 이행하라’는 취지의 이행판결을 받아 단독으로 등기를 신청하거나 법원의 임차권등기명령제도를 이용하여 임대차등기를 할 수 있습니다(「주택임대차보호법」 제3조의3제1항, 「민법」 제621조제1항 및 「부동산등기법」 제23조제4항 참조).\n\n차임감액청구권\n\n임차인은 임대차계약의 존속 중에 약정한 차임이나 보증금이 임대주택에 대한 조세, 공과금, 그 밖의 부담의 증가나 경제사정의 변동으로 적절하지 않게 된 때에는 장래에 대하여 그 감액을 청구할 수 있습니다(「주택임대차보호법」 제7조제1항 전단).\n\n차임 감액금지의 특약은 임차인에게 불리하기 때문에 효력이 없습니다(「주택임대차보호법」 제10조, 「민법」 제652조 및 제628조).\n\n따라서 임차인은 차임감액금지특약을 하였더라도 경제사정의 변경 등을 원인으로 차임감액청구를 할 수 있습니다.\n\n임차인은 임차주택의 일부가 임차인의 과실 없이 멸실, 그 밖의 사유로 사용, 수익할 수 없는 때에는 그 부분의 비율에 의한 차임의 감액을 청구할 수 있습니다. 이 경우 그 잔존부분으로 임차의 목적을 달성할 수 없는 때에는 임차인은 계약을 해지할 수 있습니다(「민법」 제627조).\n\n※ 차임감액청구에 대한 보다 자세한 내용은 이 콘텐츠 <입주생활–임차료–차임 또는 보증금의 증감청구>에서 확인할 수 있습니다.\n\n부속물매수청구권 또는 철거권\n\n임차인은 임차주택의 사용편익을 위해 임대인의 동의를 얻어 이에 부속한 물건이 있는 때에는 임대차의 종료 시에 임대인에게 그 부속물의 매수를 청구할 수 있으며, 임대인으로부터 매수한 부속물에 대해서도 그 매수를 청구할 수 있습니다(「민법」 제646조).\n\n임차인은 부속물에 대해 임대인의 매수를 원하지 않는 경우 임차주택을 반환하는 때에 부속물을 철거할 수 있습니다(「민법」 제654조 및 제615조).\n\n필요비상환청구권\n\n임차인은 임차주택의 보존에 관해 필요비를 지출한 때에는 비용이 발생한 즉시 임대인에게 그 비용을 청구할 수 있습니다(「민법」 제626조제1항).\n\n※ “필요비”란 임대차계약이 목적에 따라 임차주택을 사용·수익하는데 적당한 상태를 보존, 유지하기 위해 필요한 모든 비용을 말합니다. 여기에는 임대인의 동의 없이 지출한 비용도 포함됩니다(「민법」 제203조제1항 및 제618조 참조).\n\n※ 「민법」에 따른 전세권의 경우 – 전세권자의 필요비상환청구권\n\n전세권자는 그 부동산의 현상을 유지하고 통상의 관리에 필요한 수선을 해야 하므로, 전세권자는 주택의 통상적 유지 및 관리를 위해 필요비를 지출한 경우에도 그 비용의 상환을 청구할 수 없습니다(「민법」 제309조).\n\n유익비상환청구권\n\n임차인이 유익비를 지출한 경우에는 임대인은 임대차 종료 시에 그 가액의 증가가 현존한 때에 한하여 임차인의 지출한 금액이나 그 증가액을 상환해야 합니다(「민법」 제626조제2항).\n\n※ “유익비”란 임차인이 임차물의 객관적 가치를 증가시키기 위하여 투입한 비용을 말합니다(「민법」 제203조제2항 및 대법원 1991. 8. 27. 선고 91다15591, 15607 반소 판결).\n\n인쇄체크 임차인의 의무\n\n차임지급의무\n\n임차인은 임차주택에 대한 사용·수익의 대가로 임대인에게 차임을 지급해야 합니다(「민법」 제618조).\n\n임차주택의 사용·수익에 따른 의무\n\n임차인은 계약이나 임차주택의 성질에 따라 정해진 용법으로 이를 사용·수익해야 할 의무를 부담합니다(「민법」 제610조제1항 및 제654조).\n\n임차인은 임대차계약 기간 동안 임차주택을 선량한 관리자의 주의로 이를 보존해야 합니다(「민법」 제374조).\n\n임차인은 임차주택의 수선이 필요하거나 그 주택에 대하여 권리를 주장하는 사람이 있을 때에는 임대인에게 통지해야 합니다. 다만, 임대인이 이미 그 사실을 알고 있는 경우에는 통지하지 않아도 됩니다(「민법」 제634조).\n\n임차인은 임대인이 임차주택의 보존에 필요한 행위를 하는 때에는 이를 거절하지 못합니다. 다만, 임대인이 임차인의 의사에 반하여 보존행위를 하는 경우 이로 인해 임차의 목적을 달성할 수 없는 때에는 계약을 해지할 수 있습니다(「민법」 제624조 및 제625조).\n\n임차주택의 반환의무 및 원상회복의무\n\n임차인은 주택임대차가 종료한 때에는 임대인에게 그 주택을 반환해야 합니다. 이 경우 임차주택을 원래의 상태로 회복하여 반환해야 합니다(「민법」 제615조 및 제654조). 임차인이 임차목적물을 수리하거나 변경한 때에는 원칙적으로 수리·변경 부분을 철거하여 임대 당시의 상태로 사용할 수 있도록 해야 합니다. 다만, 원상회복의무의 내용과 범위는 임대차계약의 체결 경위와 내용, 임대 당시 목적물의 상태, 임차인이 수리하거나 변경한 내용 등을 고려하여 구체적·개별적으로 정해야 합니다(대법원 2019. 8. 30. 선고 2017다268142 판결).\n\n이 정보는 2026년 9월 15일 기준으로 작성된 것입니다.\n\n생활법령정보는 법적 효력을 갖는 유권해석(결정, 판단)의 근거가 되지 않고, 각종 신고, 불복 청구 등의 증거자료로서의 효력은 없습니다.\n\n구체적인 법령에 대한 질의는 담당기관이나 국민신문고에 문의하시기 바랍니다.\n\n위 내용에 대한 홈페이지 개선의견은 홈페이지 개선의견을 이용해 주시기 바랍니다.",
+      "locator": "#contents > div without navigation classes",
+      "embedding_candidate": true,
+      "content_type": "html_body",
+      "evidence_metadata": {
+        "selector": "#contents > div without navigation classes",
+        "encoding": "utf-8-sig",
+        "tables": [],
+        "image_references": [
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_1.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow01.gif",
+            "alt": ""
+          },
+          {
+            "src": "/common/images/etc/btn_copy_address2.gif",
+            "alt": "주소복사"
+          },
+          {
+            "src": "/common/images/etc/btn_bookmark2.gif",
+            "alt": "즐겨찾기에추가"
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow01.gif",
+            "alt": ""
+          },
+          {
+            "src": "/common/images/etc/btn_copy_address2.gif",
+            "alt": "주소복사"
+          },
+          {
+            "src": "/common/images/etc/btn_bookmark2.gif",
+            "alt": "즐겨찾기에추가"
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          }
+        ],
+        "images_downloaded_or_ocr_performed": false
+      }
+    }
+  ]
+}

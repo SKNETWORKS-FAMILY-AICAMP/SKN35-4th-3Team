@@ -1,0 +1,225 @@
+{
+  "schema_version": 3,
+  "document_id": "easylaw_housing_termination",
+  "title": "주택임대차계약의 종료",
+  "source_path": "data/raw/consumer_sources/easylaw_housing_termination_99c0cd5e05a96ba2.html",
+  "raw_sha256": "99c0cd5e05a96ba24645b505a9b53ce954838520400767846d882fd344501477",
+  "units": [
+    {
+      "document_id": "easylaw_housing_termination",
+      "title": "주택임대차계약의 종료",
+      "source_url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=5&cciNo=1&cnpClsNo=1&csmSeq=629&popMenu=ov",
+      "document_type": "official_guide",
+      "domains": [
+        "housing_lease"
+      ],
+      "dates": {
+        "effective_date": null,
+        "article_effective_date": null,
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": "2026-09-15",
+        "as_of": null
+      },
+      "source_path": "data/raw/consumer_sources/easylaw_housing_termination_99c0cd5e05a96ba2.html",
+      "raw_sha256": "99c0cd5e05a96ba24645b505a9b53ce954838520400767846d882fd344501477",
+      "extraction_origin": "raw",
+      "warnings": [
+        "본문 내 이미지는 다운로드·OCR하지 않음; 표의 조건·예외는 전체 근거에서 확인"
+      ],
+      "unit_id": "easylaw_housing_termination:body",
+      "text": "주택임대차계약의 종료\n\n임대차계약은 기간의 정함이 있는 경우에는 그 기간이 만료됨으로써 종료됩니다.\n\n임차인 또는 임대인은 해지권유보의 특약이 있는 경우 등 일정한 경우에 한해 임대차계약을 중도에 해지할 수 있습니다.\n\n임대차가 종료되면, 임차인은 주택을 원상회복하여 임대인에게 반환하고, 임차보증금을 돌려받을 수 있습니다.\n\n인쇄체크 주택임대차의 종료 원인\n\n임대차 기간의 만료\n\n임대차는 임대차 기간의 정함이 있는 경우에는 그 기간의 만료로 종료됩니다.\n\n물론, 임대차 기간의 정함이 있는 경우에도 해지권 유보의 특약을 한 경우, 임차인이 파산선고를 받은 경우 등 해지사유가 있는 경우에는 계약해지의 통고로써 임대차계약을 중도에 해지할 수 있습니다(「민법」 제636조 및 제637조).\n\n임대인이 임대차기간이 끝나기 6개월 전부터 2개월 전까지의 기간에 임차인에게 갱신거절의 통지를 하거나, 계약조건을 변경하지 않으면 갱신하지 않는다는 뜻의 통지를 한 경우에는 임대차 기간이 끝난 때에 종료합니다(「주택임대차보호법」 제6조제1항 참조).\n\n※ 주택임대차 기간에 관한 자세한 내용은 본 콘텐츠 <주택임대차계약–임대차 계약–임대차계약서의 작성>에서 확인하실 수 있습니다.\n\n계약해지의 통고\n\n임차인은 임대차계약이 묵시적으로 갱신된 경우에는 언제든지 그 계약을 해지할 수 있으며, 이 경우 임차인이 계약해지를 통지하는 경우에는 임대인이 그 통지를 받은 날부터 3개월이 지나면 임대차는 종료됩니다(「주택임대차보호법」 제4조제1항 및 제6조의2).\n\n임차인 또는 임대인은 임대차계약을 체결하면서 그 계약서에 예를 들어 “전근, 취학 등 부득이한 사유가 생기면 임차인이 통보한 날부터 1개월 후에 계약이 해지된 것으로 본다” 라는 해지권 유보의 특약을 약정한 경우에는 임대차 기간의 약정이 있는 경우에도 그 부득이한 사유를 증명하고 중도에 임대차계약을 해지할 수 있으며, 이 경우 임대인이 해지통고를 받은 날부터 1개월이 지나면 임대차는 해지됩니다(「민법」 제635조 및 제636조).\n\n임차인의 파산\n\n임차인이 파산선고를 받은 경우에는 임대차 기간의 약정이 있는 경우에도 임대인 또는 파산관재인은 계약해지의 통고를 할 수 있고, 임차인이 해지통고를 받은 날부터 6개월이 지나면 임대차는 종료됩니다(「민법」 제637조제1항).\n\n이 경우 각 당사자는 상대방에 대해 계약해지로 생긴 손해배상을 청구하지 못합니다(「민법」 제637조제2항).\n\n즉시 해지\n\n임대차 기간의 약정이 있더라도 다음과 같은 해지 사유가 있는 경우에는 임대차계약을 중도에 해지할 수 있습니다. 이 경우에는 해지의 의사표시가 상대방에게 도달한 때에 임대차는 종료됩니다.\n\n임차인이 해지할 수 있는 경우\n\n√ 임대인이 임차인의 의사에 반하여 보존행위를 하는 경우 임차인이 이로 인해 임차의 목적을 달성할 수 없는 때(「민법」 제625조)\n\n√ 임차주택의 일부가 임차인의 과실 없이 멸실 그 밖의 사유로 사용·수익할 수 없는 경우 그 잔존부분으로 임차의 목적을 달성할 수 없는 때(「민법」 제627조)\n\n임대인이 해지할 수 있는 경우\n\n√ 임차인이 임대인의 동의 없이 임차권을 양도하거나 임차주택을 전대한 경우(「민법」 제629조제2항).\n\n√ 임차인이 2기(期)의 차임액(借賃額)에 달하도록 연체한 경우(「민법」 제640조, 「주택임대차보호법」 제6조제3항)\n\n√ 임차인이 임차주택을 계약 또는 그 주택의 성질에 따라 정하여진 용법으로 이를 사용, 수익하지 않은 경우(「민법」 제654조에 따른 제610조제1항의 준용)\n\n√ 그 밖에 임차인으로서의 의무를 현저히 위반한 경우\n\n※ 임대차계약의 해지 방법\n\n임대차계약을 중도에 해지하려는 경우에는 내용증명 우편으로 해지의 의사표시를 하는 편이 좋으며, 이 경우 내용증명 우편에는 중도해지의 사유와 임대차계약의 해지 의사를 표명하고, 임차보증금을 반환해 달라는 등의 내용을 기재하면 됩니다.\n\n가까운 우체국에 가서 내용증명서 3통을 작성하여 접수창구에 제출하면, 1통은 발송인이, 1통은 우체국이 각각 보관하고, 나머지 1통은 상대방에게 발송됩니다. 우체국에서는 그 내용증명서를 3년간 보관하기 때문에 보관기간 내에는 그 등본을 교부받을 수 있습니다(「우편법 시행규칙」 제48조 및 제55조).\n\n인쇄체크 임대차 종료의 효과\n\n임대차관계의 소멸 및 손해배상\n\n임대인 또는 임차인이 임대차계약을 해지한 때에는 임대차관계는 장래를 향해 그 효력이 소멸됩니다(「민법」 제550조).\n\n임대차계약의 해지는 손해배상의 청구에 영향을 미치지 않으므로, 상대방에게 고의 또는 과실이 있으면 그 손해배상을 청구할 수 있습니다(「민법」 제551조, 제390조 및 제750조).\n\n임차주택의 반환 및 임차보증금의 반환\n\n임대차가 종료되면, 임대차계약의 내용에 따라 임차인은 임차주택을 반환할 의무 등을 지게 되고, 임대인은 임차보증금을 반환할 의무를 지게 됩니다(「민법」 제536조).\n\n임차인이 임대차계약을 중도에 해지하는 경우 임차보증금을 돌려받기가 쉽지 않습니다. 이와 같이 임대차가 종료되었는데도 임대인이 보증금을 돌려주지 않는 경우에는 보증금을 반환해줄 때까지 이사를 가지 않는 것이 좋습니다. 이사를 가면 대항력과 우선변제권이 없어지기 때문입니다(대법원 2008. 3. 13 선고, 2007다54023 판결).\n\n그러나 임대차가 종료되더라도 임차인이 보증금을 돌려받을 때까지는 임대차관계가 존속하는 것으로 간주되므로, 임대인과 임차인은 임대차계약상의 권리의무를 그대로 가지게 됩니다(「주택임대차보호법」 제4조제2항).\n\n따라서 임차인은 차임지급의무를 지는 한편 보증금을 반환받을 때까지 임차주택의 인도를 거절하는 동시이행항변권을 가지게 되고, 임대인은 차임지급청구권을 가지는 한편 임차주택을 인도받을 때까지 보증금의 지급을 거절하는 동시이행항변권을 가지게 됩니다. 다만, 임차인은 반대의무인 임차주택의 인도를 하지 않더라도 집행권원을 받게 되면 강제집행을 개시할 수 있습니다(「주택임대차보호법」 제3조의2제1항 및 「민사집행법」 제41조).\n\n임차권등기명령신청권의 취득\n\n임차인은 임대차가 종료된 후 보증금을 반환받지 못한 경우 임차권등기명령을 신청할 수 있는 권한을 얻게 되고, 임대차등기명령에 따라 임차권등기를 마치면 대항력과 우선변제권을 취득하거나 유지할 수 있게 됩니다(「주택임대차보호법」 제3조의3제5항).\n\n따라서 임차인은 임대차등기를 마친 후 임차주택을 인도하고 이사를 가더라도 대항력과 우선변제권을 유지할 수 있으며, 그 경우에는 차임지급의무를 면하는 한편 보증금반환채권의 지체에 따른 지연손해금채권을 가지게 됩니다.\n\n※ 임차권등기명령신청에 관한 자세한 내용은 본 콘텐츠 <임대차관계 종료–보증금의 회수–임차권등기명령신청>에서 확인하실 수 있습니다.\n\n유익비상환청구 및 부속물매수청구\n\n임차인은 일정한 경우에 한해 임대인에게 유익비의 상환을 청구하거나 부속물의 매수를 청구할 수 있습니다(「민법」 제626조제2항 및 제646조).\n\n다만, 임대차계약이 임차인의 차임연체 등 채무불이행으로 해지된 경우에는 부속물의 매수를 청구할 수 없습니다(대법원 1990. 1. 23. 선고 88다카7245, 88다카7252 판결).\n\n※ 주택임대차 기간에 관한 자세한 내용은 본 콘텐츠 <임대차관계 종료–투하 비용의 회수–유익비상환청구> 및 <임대차관계 종료–투하 비용의 회수–부속물매수청구>에서 확인하실 수 있습니다.\n\n※ 「민법」에 따른 전세권의 경우–전세권의 소멸사유\n\n일반적인 소멸사유\n\n전세권은 물권의 일반적 소멸원인, 즉 존속기간의 만료, 혼동, 소멸시효, 전세권에 우선하는 저당권의 실행에 의한 경매, 토지수용 등으로 소멸합니다.\n\n전세권에 특유한 소멸사유\n\n전세권설정자의 소멸 청구\n\n√ 전세권설정자는 전세권자가 전세권설정계약 또는 그 건물의 성질에 따라 정해진 용법으로 이를 사용 수익하지 않은 경우에는 전세권의 소멸을 청구할 수 있습니다. 이 경우 전세권자에게 원상회복 또는 손해배상을 청구할 수 있습니다(「민법」 제311조).\n\n전세권의 소멸 통고\n\n√ 각 당사자는 전세권의 존속기간을 약정하지 아니한 때에는 언제든지 상대방에 대해 전세권의 소멸을 통고할 수 있고, 상대방이 이 통고를 받은 날로부터 6개월이 지나면 전세권은 소멸됩니다(「민법」 제313조).\n\n목적 부동산의 멸실\n\n√ 전세권의 목적물 전부가 불가항력으로 멸실된 때에는 전세권은 소멸됩니다. 이 경우 전세권자는 전세권설정자에 대해 전세권의 소멸을 통고하고 전세금의 반환을 청구할 수 있습니다(「민법」 제314조).\n\n√ 전세권의 목적물 전부가 전세권자의 귀책사유로 멸실된 때에는 전세권은 소멸하고, 전세권자는 손해를 배상할 책임을 지게 됩니다. 이 경우 전세권설정자는 전세금으로써 손해배상에 충당하고 남는 것이 있으면 반환해야 하며, 부족이 있으면 다시 청구할 수 있습니다(「민법」 제315조).\n\n√ 전세권의 목적물 일부가 불가항력으로 멸실된 때에는 그 멸실된 부분의 전세권은 소멸됩니다. 이 경우 전세권자가 그 잔존부분으로 전세권의 목적을 달성할 수 없는 때에는 전세권설정자에게 전세권의 소멸을 통고하고 전세금의 반환을 청구할 수 있습니다(「민법」 제314조).\n\n√ 전세권 목적물의 일부가 전세권자의 귀책사유로 멸실된 때에는 전세권설정자는 전세권자의 부동산 용법 위반을 이유로 전세권의 소멸을 청구할 수 있습니다(「민법」 제311조제1항). 이 경우 전세권설정자는 전세권이 소멸한 후 전세금으로써 손해배상에 충당하고 남는 것이 있으면 반환해야 하며, 부족이 있으면 다시 청구할 수 있습니다(「민법」 제315조).\n\n전세권의 포기\n\n√ 전세권자는 전세권의 존속기간을 약정하고 있더라도 자유로이 이를 포기할 수 있습니다. 그러나 전세권이 제3자의 권리의 목적이 된 때에는 제3자의 동의 없이는 포기할 수 없습니다(「민법」 제371조제2항).\n\n이 정보는 2026년 9월 15일 기준으로 작성된 것입니다.\n\n생활법령정보는 법적 효력을 갖는 유권해석(결정, 판단)의 근거가 되지 않고, 각종 신고, 불복 청구 등의 증거자료로서의 효력은 없습니다.\n\n구체적인 법령에 대한 질의는 담당기관이나 국민신문고에 문의하시기 바랍니다.\n\n위 내용에 대한 홈페이지 개선의견은 홈페이지 개선의견을 이용해 주시기 바랍니다.",
+      "locator": "#contents > div without navigation classes",
+      "embedding_candidate": true,
+      "content_type": "html_body",
+      "evidence_metadata": {
+        "selector": "#contents > div without navigation classes",
+        "encoding": "utf-8-sig",
+        "tables": [],
+        "image_references": [
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_1.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow01.gif",
+            "alt": ""
+          },
+          {
+            "src": "/common/images/etc/btn_copy_address2.gif",
+            "alt": "주소복사"
+          },
+          {
+            "src": "/common/images/etc/btn_bookmark2.gif",
+            "alt": "즐겨찾기에추가"
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow01.gif",
+            "alt": ""
+          },
+          {
+            "src": "/common/images/etc/btn_copy_address2.gif",
+            "alt": "주소복사"
+          },
+          {
+            "src": "/common/images/etc/btn_bookmark2.gif",
+            "alt": "즐겨찾기에추가"
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          }
+        ],
+        "images_downloaded_or_ocr_performed": false
+      }
+    }
+  ]
+}
