@@ -1,15 +1,15 @@
 from langgraph.graph import StateGraph, START, END
 from langgraph.checkpoint.memory import InMemorySaver
 from src.graph.state import State
-from src.graph.image_node import image_node
-from src.graph.rag_graph.rag_graph import build_rag_graph
-from src.graph.mcp_graph.mcp_graph import build_mcp_graph
-from src.graph.general_agent import general_agent
+from src.graph.nodes.image_node import image_node
+from src.graph.subgraphs.rag_graph.rag_graph import build_rag_graph
+from src.graph.subgraphs.mcp_graph.mcp_graph import build_mcp_graph
+from src.graph.nodes.general_node import general_node
 from src.const.model import create_llm , create_llm_gmn
-from src.prompt.classify_prompt import CLASSIFY_PROMPT
+from src.const.prompt.classify_prompt import CLASSIFY_PROMPT
 from src.history import format_history
-from src.graph.generator_node import generator_node
-from src.graph.rag_graph.citation_node import citation_node
+from src.graph.nodes.generator_node import generator_node
+from src.graph.nodes.citation_node import citation_node
 
 # 세션에 캐시된 이전 그래프를 교체할 때 올립니다.
 WORKFLOW_VERSION = 3
