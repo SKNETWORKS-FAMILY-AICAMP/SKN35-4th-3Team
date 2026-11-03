@@ -7,8 +7,8 @@
 
 ## RAG 담당자 인계 요약
 
-전처리와 청킹은 완료되어 있다. 임베딩 벡터 생성, 벡터 DB 적재, 서비스 검색·리랭킹,
-Django 요청 처리 연결은 아직 수행하지 않았다.
+전처리와 청킹은 완료되어 있으며 Django 관리 명령어로도 실행할 수 있다.
+임베딩 벡터 생성, 벡터 DB 적재, 서비스 검색·리랭킹, Django 상담 요청 처리 연결은 아직 수행하지 않았다.
 
 | 항목 | 현재 결과 |
 | --- | ---: |
@@ -95,8 +95,11 @@ assert chunk["text"] == parent["text"][chunk["start"]:chunk["end"]]
 
 ## 검증 결과와 인계 시 남은 사항
 
-최근 기본 테스트 43개와 Django 기본 점검을 통과했다. 원본 재추출과 저장된 전처리 결과의
+최근 기본 테스트 43개, Django 관리 명령어 연결 테스트 8개와 Django 기본 점검을 통과했다.
+원본 재추출과 저장된 전처리 결과의
 일치, 청크 재생성 일치, 원본 해시·중복 ID·본문 위치·전체 본문 포함 여부·길이 제한을 확인했다.
+Django 관리 명령어도 실제 원본 125개를 읽어 별도 임시 경로에 실행했으며,
+전처리 문서 125개와 청크 4,276개가 기존 결과와 모두 일치했다. 기존 데이터는 덮어쓰지 않았다.
 이 검사는 처리 재현성과 무결성 검사이며, 모든 PDF 표·이미지의 정확성을 보장하지 않는다.
 
 아래는 Django 연결 없이 수행한 오프라인 어휘 검색 실험이다. 한국어 단어·2글자 단위 BM25,
@@ -128,6 +131,7 @@ RAG 연결 후 실제 임베딩·후보 선택·재순위화·중복 및 문서 
 
 ```text
 data/
+├─ data_sources.json              # 원본별 제목·출처·날짜·주제 목록
 ├─ raw/                           # 수집 원본: 실행 중 수정하지 않음
 │  ├─ consumer_sources/
 │  ├─ guides/
@@ -152,8 +156,8 @@ data/
 | `src/scripts/chunk_data.py` | 청크 분할과 크기·위치·누락 검사 |
 | `src/scripts/data_io.py` | 자료 읽기·저장, 원본과 보완 출처의 해시 확인 |
 | `src/scripts/pdf_tables.py` | 검토한 PDF 표의 열·페이지 연결과 환불 수식 보완 |
-| `src/const/data_sources.json` | 원본별 제목·출처 URL·날짜·주제 설정 |
-| `requirements-ingestion.txt` | 원본 추출에 필요한 추가 의존성 |
+| `data/data_sources.json` | 원본별 제목·출처 URL·날짜·주제 설정 |
+| `pyproject.toml`의 `ingestion` 그룹 | 원본 추출에 필요한 추가 의존성 |
 | `tests/test_preprocessing.py` | 전처리와 출처 보존 테스트 |
 | `tests/test_chunking.py` | 청크 크기·위치·본문 포함 여부 테스트 |
 
@@ -162,28 +166,42 @@ data/
 프로젝트 루트에서 가상환경과 추출 의존성을 준비한다.
 
 ```powershell
-uv sync
-uv pip install -r requirements-ingestion.txt
+uv sync --group ingestion
 ```
 
 원본 전처리 (`raw/` → `processed/`):
 
 ```powershell
-.\.venv\Scripts\python.exe -m src.scripts.preprocess_data
+.\.venv\Scripts\python.exe manage.py preprocess_data
 ```
 
 전처리 결과 청킹 (`processed/` → `chunk/`):
 
 ```powershell
-.\.venv\Scripts\python.exe -m src.scripts.chunk_data --size 900 --overlap 100
+.\.venv\Scripts\python.exe manage.py chunk_data --size 900 --overlap 100
 ```
 
 각 명령은 해당 단계의 결과를 갱신한다. 원본 처리에 실패하면 전처리 결과를 교체하지 않고 보고서에 남긴다. 청킹 시 원본과 보완 출처의 해시가 달라지면 중단한다. 청크 크기는 본문 문자 수 기준이다.
+
+관리 명령어는 `apps/chat/management/commands/`에 있으며 기존 `src/scripts/` 함수를 호출한다.
+`config/settings.py`의 `DATA_RAW_DIR`, `DATA_PROCESSED_DIR`, `DATA_CHUNK_DIR`,
+`DATA_REPORT_DIR`로 경로를 지정한다. 기본 경로는 위 폴더 구조와 같다.
+입력·출력 경로가 서로 겹치거나 출력이 프로젝트의 `data/raw/`와 겹치면 실행을 중단한다.
+전처리 진행 상황과 완료 건수는 터미널에 출력하며, 실패는 `CommandError`로 알린다.
+두 단계는 순서대로 수동 실행한다. 서버 시작이나 상담 요청에서 자동 실행하지 않는다.
+
+Django를 통하지 않는 기존 실행 방법도 유지한다.
+
+```powershell
+.\.venv\Scripts\python.exe -m src.scripts.preprocess_data
+.\.venv\Scripts\python.exe -m src.scripts.chunk_data --size 900 --overlap 100
+```
 
 기본 동작 점검:
 
 ```powershell
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
+.\.venv\Scripts\python.exe manage.py test apps.chat -v 2
 .\.venv\Scripts\python.exe manage.py check
 ```
 

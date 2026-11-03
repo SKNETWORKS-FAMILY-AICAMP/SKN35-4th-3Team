@@ -15,6 +15,12 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# 데이터 준비 명령어의 입출력 위치. raw는 읽기 전용으로 사용한다.
+DATA_RAW_DIR = BASE_DIR / 'data/raw'
+DATA_PROCESSED_DIR = BASE_DIR / 'data/processed'
+DATA_CHUNK_DIR = BASE_DIR / 'data/chunk'
+DATA_REPORT_DIR = BASE_DIR / 'docs/data_reports'
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -37,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps.chat.apps.ChatConfig',
 ]
 
 MIDDLEWARE = [

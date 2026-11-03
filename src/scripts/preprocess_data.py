@@ -82,7 +82,7 @@ def iso_date(value):
 
 def catalog(root):
     """출처 설정을 읽는다. 설정 파일이 없으면 이전 형식의 메타데이터만 복구한다."""
-    saved = root / "src/const/data_sources.json"
+    saved = root / "data/data_sources.json"
     if saved.exists():
         return read_json(saved)
     result, document_meta = {}, {}
@@ -836,7 +836,7 @@ def preprocess_data(raw_dir=None, processed_dir=None, *, root=ROOT, report_dir=N
         raise ValueError("Raw and processed directories must not overlap")
     metadata = catalog(root)
     if processed_dir == (root / "data/processed").resolve():
-        metadata_path = root / "src/const/data_sources.json"
+        metadata_path = root / "data/data_sources.json"
         metadata_path.parent.mkdir(parents=True, exist_ok=True)
         metadata_path.write_text(json.dumps(metadata, ensure_ascii=False, indent=2), encoding="utf-8")
     excluded, file_records, documents, pdf_pages = [], [], [], {}
