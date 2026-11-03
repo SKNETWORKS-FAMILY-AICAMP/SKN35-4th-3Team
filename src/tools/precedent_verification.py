@@ -1,4 +1,8 @@
-"""공식 판례를 검증하고 사용자 질문과의 유사도를 계산합니다."""
+"""판례 후보를 공식 판례와 대조하고 유사도순으로 정리합니다.
+
+후보 정규화 → 공식 판례 조회 → 식별정보 검증 → 유사도 계산 → 정렬·제외
+순서로 처리하며, 공식 API에서 확인되지 않은 자료는 결과에 포함하지 않습니다.
+"""
 
 from __future__ import annotations
 
@@ -21,6 +25,37 @@ from src.tools.precedent_api import (
 )
 
 
+_CANDIDATE_FIELDS = frozenset(
+    {
+        "similarity_score",
+        "rerank_score",
+        "score",
+        "retrieval_rank",
+        "rank",
+        "score_type",
+        "precedent_id",
+        "case_number",
+        "case_name",
+        "court",
+        "decision_date",
+        "source_url",
+        "comparison_text",
+        "user_query",
+        "query",
+        "description",
+        "text",
+        "metadata",
+    }
+)
+
+_VERIFICATION_MESSAGES = {
+    "verified": "공식 판례의 식별 정보가 모두 일치합니다.",
+    "partial_match": "공식 판례는 확인했지만 일부 메타데이터가 일치하지 않습니다.",
+    "mismatch": "공식 판례와 핵심 식별 정보가 일치하지 않습니다.",
+}
+
+
+# 후보 입력 정규화
 def _optional_text(value: object) -> str | None:
     if value is None:
         return None
@@ -52,12 +87,37 @@ def _first(
     return None
 
 
+def _candidate_text(
+    candidate: Mapping[str, object],
+    metadata: Mapping[str, object],
+    *names: str,
+) -> str | None:
+    return _optional_text(_first(candidate, metadata, *names))
+
+
 def _positive_int(value: object, name: str, default: int) -> int:
     if value is None:
         return default
     if isinstance(value, bool) or not isinstance(value, int) or value < 1:
         raise ValueError(f"{name}는 양의 정수여야 합니다.")
     return value
+
+
+def _validate_result_limits(top_n: object, candidate_limit: object) -> None:
+    if (
+        isinstance(top_n, bool)
+        or not isinstance(top_n, int)
+        or not 1 <= top_n <= MAX_TOP_N
+    ):
+        raise ValueError(f"top_n은 1 이상 {MAX_TOP_N} 이하의 정수여야 합니다.")
+    if (
+        isinstance(candidate_limit, bool)
+        or not isinstance(candidate_limit, int)
+        or not top_n <= candidate_limit <= MAX_CANDIDATES
+    ):
+        raise ValueError(
+            f"candidate_limit은 top_n 이상 {MAX_CANDIDATES} 이하의 정수여야 합니다."
+        )
 
 
 def format_similarity_percent(
@@ -81,6 +141,7 @@ def format_similarity_percent(
     return f"{bounded_score * 100:.{digits}f}%"
 
 
+# 외부 검색 결과와 사용자 입력의 공통 후보 계약
 @dataclass(frozen=True)
 class PrecedentCandidate:
     """사용자 또는 외부 검색 단계가 MCP에 전달하는 판례 후보."""
@@ -128,41 +189,17 @@ class PrecedentCandidate:
             "retrieval_rank",
             default_rank,
         )
-        score_type = _optional_text(_first(candidate, metadata, "score_type"))
+        score_type = _candidate_text(candidate, metadata, "score_type")
         if similarity_score is not None and score_type is None:
             score_type = "external_similarity"
-        precedent_id = _optional_text(
-            _first(candidate, metadata, "precedent_id")
-        )
-        case_number = _optional_text(
-            _first(candidate, metadata, "case_number")
-        )
-        case_name = _optional_text(_first(candidate, metadata, "case_name"))
+        precedent_id = _candidate_text(candidate, metadata, "precedent_id")
+        case_number = _candidate_text(candidate, metadata, "case_number")
+        case_name = _candidate_text(candidate, metadata, "case_name")
         if not any((precedent_id, case_number, case_name)):
             raise ValueError(
                 "candidate에는 precedent_id, case_number, case_name 중 하나가 필요합니다."
             )
 
-        known = {
-            "similarity_score",
-            "rerank_score",
-            "score",
-            "retrieval_rank",
-            "rank",
-            "score_type",
-            "precedent_id",
-            "case_number",
-            "case_name",
-            "court",
-            "decision_date",
-            "source_url",
-            "comparison_text",
-            "user_query",
-            "query",
-            "description",
-            "text",
-            "metadata",
-        }
         return cls(
             similarity_score=similarity_score,
             retrieval_rank=rank,
@@ -170,26 +207,22 @@ class PrecedentCandidate:
             precedent_id=precedent_id,
             case_number=case_number,
             case_name=case_name,
-            court=_optional_text(_first(candidate, metadata, "court")),
-            decision_date=_optional_text(
-                _first(candidate, metadata, "decision_date")
-            ),
-            source_url=_optional_text(_first(candidate, metadata, "source_url")),
-            comparison_text=_optional_text(
-                _first(
-                    candidate,
-                    metadata,
-                    "comparison_text",
-                    "user_query",
-                    "query",
-                    "description",
-                    "text",
-                )
+            court=_candidate_text(candidate, metadata, "court"),
+            decision_date=_candidate_text(candidate, metadata, "decision_date"),
+            source_url=_candidate_text(candidate, metadata, "source_url"),
+            comparison_text=_candidate_text(
+                candidate,
+                metadata,
+                "comparison_text",
+                "user_query",
+                "query",
+                "description",
+                "text",
             ),
             extra={
                 str(key): value
                 for key, value in candidate.items()
-                if key not in known
+                if key not in _CANDIDATE_FIELDS
             },
         )
 
@@ -340,11 +373,10 @@ def _case_number_matches(candidate: str, official: str) -> bool:
     expected = _identity_text(candidate)
     if not expected:
         return False
-    official_parts = {
-        _identity_text(part)
-        for part in re.split(r"[,/\n]", official)
-        if _identity_text(part)
-    }
+    normalized_parts = (
+        _identity_text(part) for part in re.split(r"[,/\n]", official)
+    )
+    official_parts = {part for part in normalized_parts if part}
     return expected in official_parts or expected == _identity_text(official)
 
 
@@ -470,6 +502,26 @@ def _combined_similarity(
     return round(0.7 * identity_score + 0.3 * content_score, 6)
 
 
+def _identity_field(candidate: PrecedentCandidate) -> str:
+    if candidate.precedent_id:
+        return "precedent_id"
+    if candidate.case_number:
+        return "case_number"
+    return "case_name"
+
+
+def _verification_status(
+    candidate: PrecedentCandidate,
+    comparisons: Mapping[str, bool],
+) -> str:
+    if not comparisons.get(_identity_field(candidate), False):
+        return "mismatch"
+    if not all(comparisons.values()):
+        return "partial_match"
+    return "verified"
+
+
+# 공개 판례 검증 흐름
 def verify_precedent(
     api: PrecedentApiLike,
     candidate: PrecedentCandidate,
@@ -478,6 +530,8 @@ def verify_precedent(
 ) -> dict[str, object]:
     """판례 한 건을 공식 API와 대조합니다."""
 
+    # 1. 후보 식별정보로 공식 판례를 찾습니다.
+    candidate_data = candidate.to_dict()
     try:
         official = _resolve_official(api, candidate)
     except PrecedentApiError as error:
@@ -487,7 +541,7 @@ def verify_precedent(
             else "unavailable"
         )
         return {
-            **candidate.to_dict(),
+            **candidate_data,
             "verified": False,
             "verification_status": status,
             "verification_message": error.safe_message,
@@ -495,6 +549,7 @@ def verify_precedent(
             "mismatched_fields": [],
         }
 
+    # 2. 식별정보와 선택적 질문 유사도를 각각 계산합니다.
     comparisons = _comparison(candidate, official)
     comparison_text = query or candidate.comparison_text
     content_breakdown = (
@@ -512,27 +567,16 @@ def verify_precedent(
         identity_similarity,
         content_similarity,
     )
-    identity_field = (
-        "precedent_id"
-        if candidate.precedent_id
-        else "case_number"
-        if candidate.case_number
-        else "case_name"
-    )
     matched_fields = [name for name, matched in comparisons.items() if matched]
     mismatched_fields = [
         name for name, matched in comparisons.items() if not matched
     ]
-    if not comparisons.get(identity_field, False):
-        status = "mismatch"
-    elif mismatched_fields:
-        status = "partial_match"
-    else:
-        status = "verified"
+    status = _verification_status(candidate, comparisons)
 
+    # 3. 일치 상태와 공식 판례 근거를 하나의 검증 결과로 반환합니다.
     return {
-        **candidate.to_dict(),
-        "candidate": candidate.to_dict(),
+        **candidate_data,
+        "candidate": dict(candidate_data),
         "precedent_id": official.precedent_id,
         "case_number": official.case_number,
         "case_name": official.case_name,
@@ -540,13 +584,7 @@ def verify_precedent(
         "decision_date": official.decision_date,
         "verified": status == "verified",
         "verification_status": status,
-        "verification_message": (
-            "공식 판례의 식별 정보가 모두 일치합니다."
-            if status == "verified"
-            else "공식 판례는 확인했지만 일부 메타데이터가 일치하지 않습니다."
-            if status == "partial_match"
-            else "공식 판례와 핵심 식별 정보가 일치하지 않습니다."
-        ),
+        "verification_message": _VERIFICATION_MESSAGES[status],
         "matched_fields": matched_fields,
         "mismatched_fields": mismatched_fields,
         "identity_match_score": identity_similarity,
@@ -570,20 +608,12 @@ def verify_precedent_candidates(
 ) -> dict[str, object]:
     """외부 판례 후보를 공식 검증하고 MCP 유사도순 Top-N으로 반환합니다."""
 
+    # 1. 입력 범위를 검증하고 후보 형식을 정규화합니다.
     if isinstance(candidates, (str, bytes)) or not isinstance(candidates, Sequence):
         raise TypeError("candidates는 판례 후보 배열이어야 합니다.")
     if len(candidates) > MAX_CANDIDATES:
         raise ValueError(f"candidates는 최대 {MAX_CANDIDATES}건까지 지원합니다.")
-    if isinstance(top_n, bool) or not isinstance(top_n, int) or not 1 <= top_n <= MAX_TOP_N:
-        raise ValueError(f"top_n은 1 이상 {MAX_TOP_N} 이하의 정수여야 합니다.")
-    if (
-        isinstance(candidate_limit, bool)
-        or not isinstance(candidate_limit, int)
-        or not top_n <= candidate_limit <= MAX_CANDIDATES
-    ):
-        raise ValueError(
-            f"candidate_limit은 top_n 이상 {MAX_CANDIDATES} 이하의 정수여야 합니다."
-        )
+    _validate_result_limits(top_n, candidate_limit)
     if not candidates:
         return {
             "score_type": None,
@@ -608,26 +638,30 @@ def verify_precedent_candidates(
             "Top-N 비교에는 모든 후보가 동일한 score_type을 사용해야 합니다."
         )
 
+    # 2. 같은 점수 체계의 후보를 외부 검색 순서대로 제한합니다.
     ordered = sorted(
         normalized,
         key=lambda candidate: (
             -(candidate.similarity_score or 0.0),
             candidate.retrieval_rank,
-            candidate.precedent_id or candidate.case_number or candidate.case_name or "",
+            candidate.precedent_id
+            or candidate.case_number
+            or candidate.case_name
+            or "",
         ),
     )[:candidate_limit]
 
+    # 3. 각 후보를 공식 API로 검증해 포함·제외 결과를 나눕니다.
     verified: list[dict[str, object]] = []
     excluded: list[dict[str, object]] = []
-    checked_count = 0
     for candidate in ordered:
-        checked_count += 1
         result = verify_precedent(api, candidate, query=query)
         if result["verification_status"] == "verified":
             verified.append(result)
         else:
             excluded.append(result)
 
+    # 4. 요청 목적에 맞는 점수로 정렬하고 최종 Top-N을 반환합니다.
     ranking_field = "mcp_similarity_score" if query else "similarity_score"
     verified.sort(
         key=lambda result: (
@@ -649,7 +683,7 @@ def verify_precedent_candidates(
         ),
         "ranking_source": "mcp" if query else "external",
         "requested_top_n": top_n,
-        "checked_count": checked_count,
+        "checked_count": len(ordered),
         "verified_count": len(verified),
         "results": verified,
         "excluded": excluded,
@@ -665,20 +699,13 @@ def find_similar_precedents(
 ) -> dict[str, object]:
     """공식 API만 이용해 질문과 유사한 판례 Top-N을 계산합니다."""
 
+    # 1. 질문과 결과 범위를 검증하고 공식 검색어를 준비합니다.
     if not isinstance(query, str) or not query.strip():
         raise ValueError("query는 비어 있지 않은 문자열이어야 합니다.")
-    if isinstance(top_n, bool) or not isinstance(top_n, int) or not 1 <= top_n <= MAX_TOP_N:
-        raise ValueError(f"top_n은 1 이상 {MAX_TOP_N} 이하의 정수여야 합니다.")
-    if (
-        isinstance(candidate_limit, bool)
-        or not isinstance(candidate_limit, int)
-        or not top_n <= candidate_limit <= MAX_CANDIDATES
-    ):
-        raise ValueError(
-            f"candidate_limit은 top_n 이상 {MAX_CANDIDATES} 이하의 정수여야 합니다."
-        )
+    _validate_result_limits(top_n, candidate_limit)
 
     search_queries = _official_search_queries(query)
+    # 2. 공식 판례 검색 결과를 중복 없이 후보 수만큼 모읍니다.
     search_results: list[OfficialPrecedent] = []
     search_result_ids: set[str] = set()
     for search_query in search_queries:
@@ -691,13 +718,10 @@ def find_similar_precedents(
                 break
         if len(search_results) == candidate_limit:
             break
-    seen: set[str] = set()
+    # 3. 판례 상세를 재확인하고 질문과의 공식 텍스트 유사도를 계산합니다.
     scored: list[dict[str, object]] = []
     excluded: list[dict[str, object]] = []
     for summary in search_results:
-        if summary.precedent_id in seen:
-            continue
-        seen.add(summary.precedent_id)
         try:
             official = api.get_detail(summary.precedent_id)
         except PrecedentApiError as error:
@@ -723,6 +747,7 @@ def find_similar_precedents(
             }
         )
 
+    # 4. 유사도순으로 정렬하고 최종 Top-N 순위를 부여합니다.
     scored.sort(
         key=lambda result: (
             -float(result["mcp_similarity_score"]),

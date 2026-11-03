@@ -4,14 +4,24 @@ from __future__ import annotations
 
 import asyncio
 import unittest
+from types import SimpleNamespace
+from unittest.mock import Mock
 
 from src.graph.subgraphs.mcp_graph import build_mcp_graph, create_mcp_tool_nodes
-from src.tools.precedent_api import OfficialPrecedent, PrecedentApiError
+from src.tools.precedent_api import (
+    OfficialPrecedent,
+    PrecedentApiClient,
+    PrecedentApiError,
+)
 from src.tools.precedent_mcp import create_tool_service, parse_tool_response
 from src.tools.mcp_runtime import create_mcp_server
 from src.tools.precedent_verification import (
     find_similar_precedents,
     verify_precedent_candidates,
+)
+from src.tools.qdrant_precedent import (
+    DEFAULT_EMBEDDING_DIMENSION,
+    QdrantPrecedentRetriever,
 )
 
 
@@ -191,6 +201,90 @@ class PrecedentVerificationTests(unittest.TestCase):
         )
 
 
+class PrecedentOnlySearchTests(unittest.TestCase):
+    def test_official_api_target_cannot_be_overridden(self):
+        response = Mock(content=b"<PrecSearch />")
+        session = Mock()
+        session.get.return_value = response
+        api = PrecedentApiClient("test-oc", session=session)
+
+        api._request_xml(
+            "https://example.test",
+            target="standard_terms",
+        )
+
+        params = session.get.call_args.kwargs["params"]
+        self.assertEqual(params["target"], "prec")
+
+    def test_excludes_every_non_precedent_document_type(self):
+        non_precedent_documents = {
+            "standard_terms": "표준약관",
+            "mediation_case": "소비자분쟁조정 사례",
+            "administrative_rule": "행정규칙·고시·산정기준",
+        }
+        points = [
+            SimpleNamespace(
+                id="precedent-1",
+                score=0.8,
+                payload={
+                    "document_type": "precedent",
+                    "precedent_id": "147076",
+                    "case_name": "건물명도등",
+                },
+            ),
+            *(
+                SimpleNamespace(
+                    id=document_type,
+                    score=0.99,
+                    payload={
+                        "document_type": document_type,
+                        "precedent_id": document_type,
+                        "case_name": title,
+                    },
+                )
+                for document_type, title in non_precedent_documents.items()
+            ),
+        ]
+        client = Mock()
+        client.query_points.return_value = SimpleNamespace(points=points)
+        retriever = QdrantPrecedentRetriever(
+            client=client,
+            embed_query=lambda _: [0.0] * DEFAULT_EMBEDDING_DIMENSION,
+        )
+
+        results = retriever.search_candidates("임대차", limit=5)
+
+        self.assertEqual(
+            [result["precedent_id"] for result in results],
+            ["147076"],
+        )
+        query_filter = client.query_points.call_args.kwargs["query_filter"]
+        self.assertEqual(query_filter.must[0].match.value, "precedent")
+
+    def test_looks_up_reference_precedent_by_payload_before_api(self):
+        point = SimpleNamespace(
+            id="precedent-1",
+            payload={
+                "document_type": "precedent",
+                "precedent_id": "147076",
+                "case_name": "건물명도등",
+                "text": "임대차보증금 반환 판례 본문",
+            },
+        )
+        client = Mock()
+        client.scroll.return_value = ([point], None)
+        retriever = QdrantPrecedentRetriever(
+            client=client,
+            embed_query=lambda _: [0.0] * DEFAULT_EMBEDDING_DIMENSION,
+        )
+
+        result = retriever.lookup_candidate({"precedent_id": "147076"})
+
+        self.assertEqual(result["precedent_id"], "147076")
+        self.assertEqual(result["lookup_source"], "qdrant")
+        self.assertIn("임대차보증금", result["body"])
+
+
 class MCPToolServiceTests(unittest.TestCase):
     def setUp(self) -> None:
         self.service = create_tool_service(FakePrecedentApi(REAL_CASES))
@@ -250,6 +344,94 @@ class MCPToolServiceTests(unittest.TestCase):
         self.assertEqual(payload["results"][0]["precedent_id"], "147076")
         self.assertNotIn("external_similarity_score", payload["results"][0])
 
+    def test_natural_language_search_uses_qdrant_without_api_calls(self):
+        api = Mock()
+        retriever = Mock()
+        retriever.search_candidates.return_value = (
+            {
+                "precedent_id": "147076",
+                "case_name": "건물명도등",
+                "similarity_score": 0.91,
+                "source_url": "https://example.test/147076",
+            },
+            {
+                "precedent_id": "233339",
+                "case_name": "협박",
+                "similarity_score": 0.81,
+                "source_url": "https://example.test/233339",
+            },
+        )
+        service = create_tool_service(api, retriever)
+
+        payload = parse_tool_response(
+            service.find_similar_precedents(
+                "임대차 보증금 반환",
+                top_n=1,
+                candidate_limit=2,
+            )
+        )
+
+        self.assertEqual(payload["results"][0]["precedent_id"], "147076")
+        self.assertEqual(payload["results"][0]["similarity_rank"], 1)
+        self.assertEqual(payload["results"][0]["similarity_percent"], "91.0%")
+        api.search.assert_not_called()
+        api.get_detail.assert_not_called()
+
+    def test_specific_precedent_uses_qdrant_reference_without_api_calls(self):
+        api = Mock()
+        retriever = Mock()
+        retriever.lookup_candidate.return_value = {
+            "precedent_id": "147076",
+            "case_name": "건물명도등",
+            "body": "임대차보증금 반환 범위",
+            "lookup_source": "qdrant",
+        }
+        retriever.search_candidates.return_value = (
+            {
+                "precedent_id": "233339",
+                "case_name": "관련 판례",
+                "similarity_score": 0.82,
+            },
+        )
+        service = create_tool_service(api, retriever)
+
+        payload = parse_tool_response(
+            service.compare_precedent_similarity(
+                {"precedent_id": "147076"},
+                top_n=1,
+                candidate_limit=2,
+            )
+        )
+
+        self.assertEqual(
+            payload["reference_precedent"]["lookup_source"],
+            "qdrant",
+        )
+        self.assertEqual(payload["similar_precedents"][0]["precedent_id"], "233339")
+        api.search.assert_not_called()
+        api.get_detail.assert_not_called()
+
+    def test_specific_precedent_falls_back_to_api_when_qdrant_has_no_match(self):
+        api = Mock(wraps=FakePrecedentApi(REAL_CASES))
+        retriever = Mock()
+        retriever.lookup_candidate.return_value = None
+        retriever.search_candidates.return_value = ()
+        service = create_tool_service(api, retriever)
+
+        payload = parse_tool_response(
+            service.compare_precedent_similarity(
+                {"precedent_id": "147076"},
+                top_n=1,
+                candidate_limit=2,
+            )
+        )
+
+        self.assertEqual(
+            payload["reference_precedent"]["lookup_source"],
+            "official_api",
+        )
+        api.get_detail.assert_called_once_with("147076")
+
     def test_claimed_precedent_is_compared_with_official_text(self):
         payload = parse_tool_response(
             self.service.verify_precedent(
@@ -284,7 +466,7 @@ class MCPToolServiceTests(unittest.TestCase):
             "147076",
         )
 
-    def test_mcp_server_registers_direct_similarity_tool(self):
+    def test_mcp_server_registers_only_workflow_tools(self):
         server = create_mcp_server(self.service)
         tool_names = {
             tool.name for tool in asyncio.run(server.list_tools())
@@ -293,10 +475,6 @@ class MCPToolServiceTests(unittest.TestCase):
         self.assertEqual(
             tool_names,
             {
-                "health_check",
-                "get_precedent_detail",
-                "verify_precedent",
-                "verify_precedent_candidates",
                 "find_similar_precedents",
                 "compare_precedent_similarity",
             },

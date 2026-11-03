@@ -1,4 +1,8 @@
-"""국가법령정보센터 판례 API의 검색·상세 조회 클라이언트."""
+"""국가법령정보센터의 판례 API만 검색·상세 조회합니다.
+
+모든 요청은 ``target=prec``로 고정하며 표준약관, 분쟁조정 사례,
+행정규칙·고시 등 다른 법률 자료 유형은 이 계층에서 조회하지 않습니다.
+"""
 
 from __future__ import annotations
 
@@ -20,6 +24,11 @@ from src.const.precedent import (
     LAW_API_SEARCH_URL,
     LAW_PRECEDENT_SOURCE_URL,
 )
+
+
+_LINE_BREAK_PATTERN = re.compile(r"<br\s*/?>", re.IGNORECASE)
+_HTML_TAG_PATTERN = re.compile(r"<[^>]+>")
+_PRECEDENT_API_TARGET = "prec"
 
 
 class PrecedentApiError(RuntimeError):
@@ -68,8 +77,8 @@ class PrecedentApiLike(Protocol):
 
 def _clean_text(value: object) -> str:
     text = "" if value is None else str(value)
-    text = re.sub(r"<br\s*/?>", "\n", text, flags=re.IGNORECASE)
-    text = re.sub(r"<[^>]+>", " ", text)
+    text = _LINE_BREAK_PATTERN.sub("\n", text)
+    text = _HTML_TAG_PATTERN.sub(" ", text)
     return " ".join(html.unescape(text).split())
 
 
@@ -91,6 +100,21 @@ def _precedent_id(fields: dict[str, str]) -> str:
     return _clean_text(
         fields.get("판례정보일련번호") or fields.get("판례일련번호")
     )
+
+
+def _positive_int(value: object, name: str) -> int:
+    if isinstance(value, bool) or not isinstance(value, int) or value < 1:
+        raise ValueError(f"{name}는 양의 정수여야 합니다.")
+    return value
+
+
+def _normalize_precedent_id(value: object) -> str:
+    if not isinstance(value, str):
+        raise ValueError("precedent_id는 ASCII 숫자 문자열이어야 합니다.")
+    identifier = value.strip()
+    if not identifier.isascii() or not identifier.isdigit():
+        raise ValueError("precedent_id는 ASCII 숫자 문자열이어야 합니다.")
+    return identifier
 
 
 def _to_precedent(fields: dict[str, str]) -> OfficialPrecedent:
@@ -140,10 +164,10 @@ class PrecedentApiClient:
             response = self._session.get(
                 url,
                 params={
-                    "OC": self._oc,
-                    "target": "prec",
-                    "type": "XML",
                     **params,
+                    "OC": self._oc,
+                    "target": _PRECEDENT_API_TARGET,
+                    "type": "XML",
                 },
                 timeout=self._timeout,
             )
@@ -169,11 +193,12 @@ class PrecedentApiClient:
         display: int = 20,
         page: int = 1,
     ) -> tuple[OfficialPrecedent, ...]:
+        """검색어와 일치하는 공식 판례 목록을 조회합니다."""
+
         if not isinstance(query, str) or not query.strip():
             raise ValueError("query는 비어 있지 않은 문자열이어야 합니다.")
-        for name, value in (("display", display), ("page", page)):
-            if isinstance(value, bool) or not isinstance(value, int) or value < 1:
-                raise ValueError(f"{name}는 양의 정수여야 합니다.")
+        display = _positive_int(display, "display")
+        page = _positive_int(page, "page")
 
         root = self._request_xml(
             LAW_API_SEARCH_URL,
@@ -197,14 +222,9 @@ class PrecedentApiClient:
         return tuple(results)
 
     def get_detail(self, precedent_id: str) -> OfficialPrecedent:
-        if (
-            not isinstance(precedent_id, str)
-            or not precedent_id.strip().isascii()
-            or not precedent_id.strip().isdigit()
-        ):
-            raise ValueError("precedent_id는 ASCII 숫자 문자열이어야 합니다.")
+        """판례정보일련번호가 정확히 일치하는 공식 판례를 조회합니다."""
 
-        identifier = precedent_id.strip()
+        identifier = _normalize_precedent_id(precedent_id)
         root = self._request_xml(LAW_API_DETAIL_URL, ID=identifier)
         fields = _fields(root)
         if not fields or not _precedent_id(fields):

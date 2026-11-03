@@ -1,9 +1,13 @@
-# 판례 유사도·검증 MCP 서브그래프
+# 판례 유사도 검색 MCP 서브그래프
 
 사용자 질문을 3차 프로젝트의 기존 Qdrant OpenAI 컬렉션에서 검색합니다.
-`document_type=precedent`인 판례 후보만 가져온 뒤 국가법령정보센터 공식 API로
-실제 존재와 식별정보를 검증하고, 검증된 후보를 Qdrant 유사도순으로 반환합니다.
+`document_type=precedent`인 판례 후보만 가져와 Qdrant 유사도순으로 반환합니다.
+특정 기준 판례가 Qdrant에 없을 때만 국가법령정보센터 공식 API를 사용합니다.
 기존 Qdrant 데이터의 적재·수정·삭제는 수행하지 않습니다.
+
+이 서브그래프는 판례만 담당합니다. 법령·가이드 PDF·공식기관 안내·절차·
+소비자분쟁해결기준 별표 PDF는 RAG 영역이며, 소비자분쟁조정 사례·표준약관·
+행정규칙·고시·산정기준은 MCP 입력과 검색 대상에서 제외합니다.
 
 ## 입력
 
@@ -20,11 +24,11 @@
 
 ## 출력
 
-- `mcp_similar_precedents`: 공식 API에서 확인한 유사 판례 Top-N
-- `mcp_excluded_precedents`: 공식 상세 조회에 실패한 판례
+- `mcp_similar_precedents`: Qdrant 유사 판례 Top-N
+- `mcp_excluded_precedents`: 검색에서 제외된 판례
 - `similarity_score`: Qdrant Cosine 유사도 원본
 - `similarity_percent`: 화면 표시용 유사도 퍼센트 문자열
-- `verified_rank`: 공식 API 검증 후 Qdrant 유사도 기준 순위
+- `similarity_rank`: Qdrant 유사도 기준 순위
 - `source_url`: 공식 판례 출처
 
 `similarity_percent`는 Qdrant 점수를 읽기 쉽게 변환한 표시값이며 정답 확률이나
@@ -32,12 +36,11 @@
 
 ## MCP Tool
 
-- `find_similar_precedents`: 질문으로 공식 판례를 검색하고 Top-N 유사도 반환
-- `compare_precedent_similarity`: 기준 판례와 유사한 공식 판례 Top-N 비교
-- `verify_precedent`: 사용자가 제시한 판례 한 건을 공식 판례와 대조
-- `verify_precedent_candidates`: 여러 판례를 일괄 대조
-- `get_precedent_detail`: 공식 판례 상세 조회
-- `health_check`: 공식 API 연결 확인
+- `find_similar_precedents`: 자연어 질문으로 유사 판례 Top-N 검색
+- `compare_precedent_similarity`: 특정 기준 판례와 유사한 판례 Top-N 비교
+
+공식 API는 특정 기준 판례가 Qdrant에 없을 때의 fallback으로만 사용하며,
+별도 MCP Tool로 노출하지 않습니다.
 
 ## 실행 경계
 
