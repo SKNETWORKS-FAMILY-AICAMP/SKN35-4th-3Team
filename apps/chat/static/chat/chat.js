@@ -87,7 +87,13 @@ function renderSources(sources = []) {
     item.textContent = "표시할 출처가 없습니다.";
     list.append(item);
   } else {
+    const seen = new Set();
     sources.forEach((source) => {
+      // 같은 문서가 여러 조각(chunk)으로 나와도 한 번만 표시
+      const key = source.document_id || source.source_url || source.source_name || source.title;
+      if (key && seen.has(key)) return;
+      if (key) seen.add(key);
+
       const item = document.createElement("li");
       const label = source.source_name || source.title || source.document_id || "출처";
       if (source.source_url) {
@@ -106,28 +112,6 @@ function renderSources(sources = []) {
 
   block.append(list);
   return block;
-
-  const seenPrecedents = new Set();
-  sources.forEach((source) => {
-    const precedentKey = source.document_type === "precedent"
-      ? source.document_id || source.source_url
-      : null;
-    if (precedentKey && seenPrecedents.has(precedentKey)) return;
-    if (precedentKey) seenPrecedents.add(precedentKey);
-    const item = document.createElement("li");
-    const label = source.source_name || source.title || source.document_id || "출처";
-    if (source.source_url) {
-      const link = document.createElement("a");
-      link.href = source.source_url;
-      link.target = "_blank";
-      link.rel = "noreferrer";
-      link.textContent = label;
-      item.append(link);
-    } else {
-      item.textContent = label;
-    }
-    sourceList.append(item);
-  });
 }
 
 form.addEventListener("submit", async (event) => {
