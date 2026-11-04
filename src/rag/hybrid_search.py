@@ -1,3 +1,4 @@
+
 import os
 from functools import lru_cache
 
@@ -33,8 +34,16 @@ def _search_resources():
 
 
 # 2. Hybrid Search
-def hybrid_search(query: str, top_k: int = 20) -> dict:
-    """Dense와 BM25 검색을 각각 수행한다. RRF는 수행하지 않는다."""
+def hybrid_search(
+    query: str,
+    top_k: int = 40,
+    document_type: str | None = "law",
+    domain: str | None = None,
+) -> dict:
+    """Dense와 BM25 검색을 각각 수행한다. RRF는 수행하지 않는다.
+
+    document_type과 domain은 선택적 메타데이터 필터이다.
+    """
 
     if not isinstance(query, str) or not query.strip():
         raise ValueError("검색 질의는 비어 있지 않은 문자열이어야 합니다.")
@@ -46,11 +55,21 @@ def hybrid_search(query: str, top_k: int = 20) -> dict:
     client, dense_embedder, sparse_embedder = _search_resources()
 
     dense_results = dense_search(
-        query, client, dense_embedder, top_k
+        query,
+        client,
+        dense_embedder,
+        top_k,
+        document_type=document_type,
+        domain=domain,
     )
 
     bm25_results = bm25_search(
-        query, client, sparse_embedder, top_k
+        query,
+        client,
+        sparse_embedder,
+        top_k,
+        document_type=document_type,
+        domain=domain,
     )
 
     return {
@@ -64,11 +83,27 @@ if __name__ == "__main__":
     try:
         question = input("검색할 질문을 입력하세요: ").strip()
 
-        results = hybrid_search(question)
+        document_type = input(
+            "문서 유형 필터 (전체 검색은 Enter): "
+        ).strip() or None
 
-        print("Dense 검색 결과:", len(results["dense_results"]))
+        domain = input(
+            "법률 분야 필터 (전체 검색은 Enter): "
+        ).strip() or None
+
+        results = hybrid_search(
+            query=question,
+            document_type=document_type,
+            domain=domain,
+        )
+
+        print("\n[검색 조건]")
+        print("질문:", results["query"])
+        print("문서 유형:", document_type or "전체")
+        print("법률 분야:", domain or "전체")
+
+        print("\nDense 검색 결과:", len(results["dense_results"]))
         print("BM25 검색 결과:", len(results["bm25_results"]))
-
 
         print("\n[Dense 검색 결과]")
         for i, result in enumerate(results["dense_results"][:5], start=1):
@@ -87,6 +122,7 @@ if __name__ == "__main__":
             print("내용:", result["payload"].get("text", ""))
 
     finally:
-        client, _, _ = _search_resources()
-        client.close()
-        _search_resources.cache_clear()
+        if _search_resources.cache_info().currsize:
+            client, _, _ = _search_resources()
+            client.close()
+            _search_resources.cache_clear()
