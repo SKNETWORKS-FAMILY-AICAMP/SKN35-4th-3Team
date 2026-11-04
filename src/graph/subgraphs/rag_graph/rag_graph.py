@@ -31,16 +31,20 @@ def build_rag_graph():
     builder.add_node("generator" , generator_node)
 
     builder.add_edge(START, "planner")
-    builder.add_conditional_edges("planner", route_after_planning, {
-        "query_rewrite": "query_rewrite",
-        "multi_query": "multi_query",
-        "retriever": "retriever",
-    })
+    builder.add_conditional_edges("planner", route_after_planning,
+        {
+            "query_rewrite": "query_rewrite",
+            "multi_query": "multi_query",
+            "retriever": "retriever",
+        }
+    )
 
-    builder.add_conditional_edges("query_rewrite", route_after_rewrite, {
-        "multi_query": "multi_query",
-        "retriever": "retriever",
-    })
+    builder.add_conditional_edges("query_rewrite", route_after_rewrite,
+        {
+            "multi_query": "multi_query",
+            "retriever": "retriever",
+        }
+    )
 
     builder.add_edge("multi_query", "retriever")
     builder.add_edge("retriever", "rrf")
