@@ -12,12 +12,12 @@ from functools import cache
 from langgraph.graph import END, START, StateGraph
 
 from src.const.precedent import DEFAULT_CANDIDATE_LIMIT, DEFAULT_TOP_N
+from src.graph.state import MCPGraphState
 from src.graph.subgraphs.mcp_graph.nodes import (
     MCPToolServiceLike,
     create_compare_precedent_similarity_node,
     create_find_similar_precedents_node,
 )
-from src.graph.subgraphs.mcp_graph.state import MCPGraphState
 from src.tools.precedent_api import create_precedent_api_client
 from src.tools.precedent_mcp import MCPToolService, create_tool_service
 from src.tools.qdrant_precedent import create_precedent_retriever

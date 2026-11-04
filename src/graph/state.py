@@ -1,5 +1,5 @@
 # State 클래스 정의
-from typing import NotRequired, Annotated
+from typing import Annotated, NotRequired, TypedDict
 
 from langgraph.graph import MessagesState
 from langgraph.graph.message import add_messages
@@ -57,16 +57,42 @@ class State(MessagesState):
     judge_status: NotRequired[str]
     judge_input: NotRequired[dict | None]
 
-    # 판례 MCP 서브그래프 입출력입니다.
-    mcp_reference_candidate: NotRequired[dict]
+    # 판례 MCP 서브그래프 입출력입니다. 검색 중간값과 임베딩은 저장하지 않습니다.
+    mcp_reference_candidate: NotRequired[dict[str, object] | None]
     mcp_top_n: NotRequired[int]
     mcp_candidate_limit: NotRequired[int]
     mcp_status: NotRequired[str]
-    mcp_result: NotRequired[dict]
-    mcp_reference_precedent: NotRequired[dict]
-    mcp_similar_precedents: NotRequired[list[dict]]
-    mcp_documents: NotRequired[list[dict]]
-    mcp_excluded_precedents: NotRequired[list[dict]]
-    mcp_error: NotRequired[dict | None]
+    mcp_result: NotRequired[dict[str, object]]
+    mcp_reference_precedent: NotRequired[dict[str, object]]
+    mcp_similar_precedents: NotRequired[list[dict[str, object]]]
+    mcp_documents: NotRequired[list[dict[str, object]]]
+    mcp_excluded_precedents: NotRequired[list[dict[str, object]]]
+    mcp_error: NotRequired[dict[str, object] | None]
     mcp_similarity_score: NotRequired[float]
     mcp_similarity_percent: NotRequired[str]
+
+
+class MCPGraphState(TypedDict, total=False):
+    """판례 MCP 서브그래프의 외부 입출력만 관리하는 State."""
+
+    # 검색 입력
+    user_query: str
+    origin_query: str
+    rewrite_query: str
+    mcp_top_n: int
+    mcp_candidate_limit: int
+
+    # 특정 판례 비교 입력
+    mcp_reference_candidate: dict[str, object] | None
+
+    # MCP 처리 결과
+    mcp_status: str
+    mcp_result: dict[str, object]
+    mcp_reference_precedent: dict[str, object]
+    mcp_similar_precedents: list[dict[str, object]]
+    mcp_excluded_precedents: list[dict[str, object]]
+    mcp_error: dict[str, object] | None
+
+    # 상위 Workflow 전달 데이터
+    mcp_documents: list[dict[str, object]]
+    documents: list[dict[str, object]]

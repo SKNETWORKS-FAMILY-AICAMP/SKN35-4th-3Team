@@ -2,7 +2,7 @@ import io
 from unittest.mock import patch
 
 from django.core.files.uploadedfile import SimpleUploadedFile
-from django.test import TestCase
+from django.test import TestCase, override_settings
 from django.urls import reverse
 
 
@@ -46,3 +46,53 @@ class ChatWebTests(TestCase):
         state = graph.invoke.call_args.args[0]
         self.assertEqual(state["origin_query"], "계약 내용을 확인해 주세요.")
         self.assertEqual(len(state["images"]), 1)
+
+    @override_settings(CHAT_MAX_IMAGE_FILES=3)
+    @patch("src.graph.workflow.build_workflow")
+    def test_three_images_are_allowed(self, workflow):
+        graph = workflow.return_value
+        graph.invoke.return_value = {
+            "answer": "확인했습니다.",
+            "generation_status": "answered",
+            "sources": [],
+            "citations": [],
+        }
+        uploads = [
+            SimpleUploadedFile(
+                f"evidence-{index}.png",
+                b"png-image",
+                content_type="image/png",
+            )
+            for index in range(3)
+        ]
+
+        response = self.client.post(
+            reverse("chat:api"),
+            {"question": "첨부 이미지를 확인해 주세요.", "files": uploads},
+        )
+
+        self.assertEqual(response.status_code, 200)
+        state = graph.invoke.call_args.args[0]
+        self.assertEqual(len(state["images"]), 3)
+
+    @override_settings(CHAT_MAX_IMAGE_FILES=3)
+    @patch("src.graph.workflow.build_workflow")
+    def test_four_images_are_rejected(self, workflow):
+        uploads = [
+            SimpleUploadedFile(
+                f"evidence-{index}.jpg",
+                b"jpeg-image",
+                content_type="image/jpeg",
+            )
+            for index in range(4)
+        ]
+
+        response = self.client.post(
+            reverse("chat:api"),
+            {"question": "첨부 이미지를 확인해 주세요.", "files": uploads},
+        )
+
+        self.assertEqual(response.status_code, 400)
+        self.assertEqual(response.json()["status"], "invalid_request")
+        self.assertIn("최대 3장", response.json()["error"])
+        workflow.assert_not_called()
