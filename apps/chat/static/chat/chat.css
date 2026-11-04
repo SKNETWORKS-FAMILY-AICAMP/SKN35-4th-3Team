@@ -262,6 +262,14 @@ body::before {
 .attachment-image + .user-question, .attach-tag + .user-question { margin-top: 10px; }
 
 /* 입력 중 표시 */
+.waiting-message { max-width: 100%; }
+.waiting-line { display: flex; align-items: center; gap: 5px; }
+.waiting-line .typing { flex: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .waiting-line > span:last-child { animation: waiting-reveal 400ms ease-out; }
+}
+@keyframes waiting-reveal { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .typing i { animation: none !important; } }
 .typing { display: inline-flex; gap: 4px; margin-right: 6px; vertical-align: middle; }
 .typing i {
   width: 7px; height: 7px; border-radius: 50%;
@@ -527,3 +535,8 @@ button:disabled { opacity: .55; cursor: wait; }
 @media (prefers-reduced-motion: reduce) {
   .example-question { transition: none; }
 }
+
+.composer-footer { flex-wrap: wrap; }
+.full-guide-link { color: #72877a; font-size: 11px; text-decoration: none; }
+.full-guide-link:hover { text-decoration: underline; }
+.full-guide-link:focus-visible { outline: 2px solid #346e63; outline-offset: 3px; }

@@ -293,6 +293,37 @@ function renderSources(sources = []) {
   return block;
 }
 
+function showWaitingMessage(bubble, hasAttachments) {
+  const notes = [
+    "상담 답변을 기다리고 있어요.",
+    "답변이 도착하면 관련 출처도 함께 확인해 보세요.",
+    "날짜와 금액을 구체적으로 알려주시면 상담에 도움이 돼요.",
+    hasAttachments
+      ? "첨부파일이 있는 상담은 시간이 더 걸릴 수 있어요."
+      : "질문 내용에 따라 답변 준비 시간이 달라질 수 있어요.",
+    "추가로 궁금한 점은 답변을 받은 뒤 이어서 물어보세요.",
+  ];
+  const loading = document.createElement("div");
+  loading.className = "waiting-message";
+  const line = document.createElement("div");
+  line.className = "waiting-line";
+  const dots = document.createElement("span");
+  dots.className = "typing";
+  dots.setAttribute("aria-hidden", "true");
+  dots.innerHTML = "<i></i><i></i><i></i>";
+  const note = document.createElement("span");
+  line.append(dots, note);
+  loading.append(line);
+  bubble.append(loading);
+  let index = 0;
+  note.textContent = notes[index];
+  const timer = window.setInterval(() => {
+    index = (index + 1) % notes.length;
+    note.textContent = notes[index];
+  }, 6000);
+  return () => window.clearInterval(timer);
+}
+
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
 
@@ -353,10 +384,7 @@ form.addEventListener("submit", async (event) => {
 
   // 답변 말풍선 (로딩 상태)
   const botBubble = addMessage("bot");
-  const loading = document.createElement("span");
-  loading.innerHTML = '<span class="typing"><i></i><i></i><i></i></span>';
-  loading.append("상담 자료를 확인하고 있습니다.");
-  botBubble.append(loading);
+  const stopWaiting = showWaitingMessage(botBubble, attachedFiles.length > 0);
   scrollToBottom();
 
   try {
@@ -400,6 +428,7 @@ form.addEventListener("submit", async (event) => {
     message.textContent = error.message;
     botBubble.append(status, message);
   } finally {
+    stopWaiting();
     sendButton.disabled = false;
     newChatButton.disabled = false;
     scrollToBottom();
