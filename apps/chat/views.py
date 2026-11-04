@@ -2,6 +2,7 @@
 
 import base64
 import json
+import logging
 from uuid import uuid4
 
 from django.conf import settings
@@ -10,6 +11,9 @@ from django.shortcuts import render
 from django.views.decorators.http import require_GET, require_POST
 
 from src.rag.pdf_loader import attachment_to_images
+
+
+logger = logging.getLogger(__name__)
 
 
 @require_GET
@@ -114,6 +118,7 @@ def chat(request):
             config={"configurable": {"thread_id": thread_id}},
         )
     except Exception:
+        logger.exception("상담 workflow 실행 중 오류")
         return JsonResponse(
             {
                 "status": "service_error",

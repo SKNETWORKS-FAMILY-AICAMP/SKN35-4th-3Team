@@ -13,6 +13,11 @@ class State(MessagesState):
     images: NotRequired[list[str]]        # base64 또는 URL 리스트
 
     rewrite_query: NotRequired[str] # 재작성
+    facts: NotRequired[list[str]]
+    conditions: NotRequired[list[str]]
+    intents: NotRequired[list[str]]
+    needs_rewrite: NotRequired[bool]
+    needs_expansion: NotRequired[bool]
     queries : NotRequired[list[str]] # 멀티쿼리 용
     rankings: NotRequired[dict[str, list[dict]]]
     documents : NotRequired[list[dict]] # 가져온 문서

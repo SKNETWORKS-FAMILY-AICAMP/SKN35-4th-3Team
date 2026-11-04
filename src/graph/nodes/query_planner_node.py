@@ -7,12 +7,11 @@ from src.rag.query_planner import query_planner
 # state에 따라서 노드의 상태를 정의합니다.
 
 def route_after_planning(state: State):
-    if state["needs_rewrite"]:
+    if state.get("needs_rewrite", False):
         return "query_rewrite"
-    if state["needs_expansion"]:
+    if state.get("needs_expansion", False):
         return "multi_query"
-    else:
-        return "hybrid_search"
+    return "hybrid_search"
 
 def query_planner_node(state:State):
     # query_rewrite.py에서 정의한 함수의 리턴값만 받아서 다룰 예정
@@ -25,6 +24,10 @@ def query_planner_node(state:State):
     )
 
     return {
-        'rewrite_query': response['rewritten_query'],
+        "facts": response["facts"],
+        "conditions": response["conditions"],
+        "intents": response["intents"],
+        "needs_rewrite": response["needs_rewrite"],
+        "needs_expansion": response["needs_expansion"],
         "retry_count": state.get("retry_count", 0) + 1,
     }
