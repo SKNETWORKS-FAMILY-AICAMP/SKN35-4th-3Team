@@ -65,8 +65,6 @@ def query_planner(
         })
 
 
-
-
     except Exception as e:
         print(f"Query Planner 오류: {e}")
 

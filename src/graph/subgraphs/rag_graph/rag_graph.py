@@ -2,7 +2,7 @@ from langgraph.graph import StateGraph, START, END
 from src.graph.state import State
 from src.graph.nodes.query_planner_node import query_planner_node , route_after_planning
 from src.graph.nodes.multi_query_node import multi_query_node
-from graph.nodes.hybrid_search_node import hybrid_search_node
+from src.graph.nodes.hybrid_search_node import hybrid_search_node
 from src.graph.nodes.query_rewrite_node import query_rewrite_node , route_after_rewrite
 from src.graph.nodes.rrf_node import rrf_node
 from src.graph.nodes.rerank_node import rerank_node
