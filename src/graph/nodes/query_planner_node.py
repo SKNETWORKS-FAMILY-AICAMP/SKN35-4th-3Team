@@ -12,7 +12,7 @@ def route_after_planning(state: State):
     if state["needs_expansion"]:
         return "multi_query"
     else:
-        return "retriever"
+        return "hybrid_search"
 
 def query_planner_node(state:State):
     # query_rewrite.py에서 정의한 함수의 리턴값만 받아서 다룰 예정

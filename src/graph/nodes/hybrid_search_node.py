@@ -1,10 +1,10 @@
 """Multi-Query 결과를 Dense·BM25 후보 목록으로 검색합니다."""
 
 from src.graph.state import State
+from src.rag.hybrid_search import hybrid_search
 
 
-def retriever_node(state: State):
-    from src.rag.hybrid_search import hybrid_search
+def hybrid_search_node(state: State):
 
     queries = state.get("queries") or [
         state.get("rewrite_query") or state["origin_query"]
