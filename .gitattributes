@@ -1,2 +1,2 @@
-# Preserve the reviewed XML bytes: source validation uses its exact SHA-256.
-/data/raw/consumer_sources/consumer_dispute_standard_64e922b28e0d2e2b.xml -text
+# Preserve source bytes: processed evidence validates exact raw SHA-256 hashes.
+/data/raw/** -text
