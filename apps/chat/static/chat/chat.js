@@ -12,7 +12,13 @@ function renderSources(sources = []) {
     sourceList.append(item);
     return;
   }
+  const seenPrecedents = new Set();
   sources.forEach((source) => {
+    const precedentKey = source.document_type === "precedent"
+      ? source.document_id || source.source_url
+      : null;
+    if (precedentKey && seenPrecedents.has(precedentKey)) return;
+    if (precedentKey) seenPrecedents.add(precedentKey);
     const item = document.createElement("li");
     const label = source.source_name || source.title || source.document_id || "출처";
     if (source.source_url) {
