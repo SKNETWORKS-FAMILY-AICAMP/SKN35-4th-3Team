@@ -139,6 +139,7 @@ DATA_REPORT_DIR = BASE_DIR / 'docs' / 'data_reports'
 # 상담 첨부파일은 메모리에서 처리하며, 크기와 PDF 페이지 수를 제한합니다.
 CHAT_UPLOAD_MAX_BYTES = int(os.getenv('CHAT_UPLOAD_MAX_BYTES', str(10 * 1024 * 1024)))
 CHAT_PDF_MAX_PAGES = int(os.getenv('CHAT_PDF_MAX_PAGES', '5'))
+CHAT_MAX_IMAGE_FILES = int(os.getenv('CHAT_MAX_IMAGE_FILES', '3'))
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

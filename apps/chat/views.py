@@ -40,9 +40,30 @@ def _question(request) -> str:
     return value.strip()
 
 
+def _is_image_attachment(uploaded) -> bool:
+    """PDF를 제외한 PNG·JPG·JPEG 첨부인지 확인합니다."""
+
+    content_type = uploaded.content_type or ""
+    suffix = uploaded.name.lower().rsplit(".", 1)[-1]
+    if content_type == "application/pdf" or suffix == "pdf":
+        return False
+    return content_type in {"image/png", "image/jpeg"} or suffix in {
+        "png",
+        "jpg",
+        "jpeg",
+    }
+
+
 def _attachment_images(request) -> list[str]:
+    uploads = list(request.FILES.getlist("files"))
+    image_count = sum(_is_image_attachment(uploaded) for uploaded in uploads)
+    if image_count > settings.CHAT_MAX_IMAGE_FILES:
+        raise ValueError(
+            f"이미지는 최대 {settings.CHAT_MAX_IMAGE_FILES}장까지 첨부할 수 있습니다."
+        )
+
     images: list[str] = []
-    for uploaded in request.FILES.getlist("files"):
+    for uploaded in uploads:
         if uploaded.size > settings.CHAT_UPLOAD_MAX_BYTES:
             raise ValueError(
                 f"첨부파일은 {settings.CHAT_UPLOAD_MAX_BYTES}바이트 이하여야 합니다."
