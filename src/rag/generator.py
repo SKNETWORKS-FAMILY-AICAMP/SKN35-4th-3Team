@@ -40,6 +40,12 @@ def build_context(documents: list[dict]) -> dict:
         source_id = f"S{len(sources) + 1}"
 
         source = {
+            "precedent_id": metadata.get("precedent_id"),
+            "case_number": metadata.get("case_number"),
+            "case_name": metadata.get("case_name"),
+            "court": metadata.get("court"),
+            "decision_date": metadata.get("decision_date"),
+
             "source_id": source_id,
             "point_id": document.get("point_id"),
             "document_id": metadata.get("document_id"),
@@ -125,6 +131,16 @@ def validate_output(output: dict, sources: list[dict]) -> dict:
             "답변 완료 상태에는 answer와 claims가 필요합니다."
         )
 
+    if status == "answered":
+        # LLM이 따로 작성한 claims는 답변을 누락하거나 바꿔 쓸 수 있습니다.
+        # 최종 답변 자체를 검증하여 문자 일치 오류와 검증 대상 누락을 방지합니다.
+        claims = [{
+            "text": answer.strip(),
+            "source_ids": list(dict.fromkeys(
+                sid for claim in claims for sid in claim["source_ids"]
+            )),
+        }]
+
     return {
         "status": status,
         "answer": answer.strip(),
@@ -156,6 +172,8 @@ def generator(state: dict, *, llm=None) -> dict:
         "generation_status": "insufficient_evidence",
         "model_name": model_name,
         "token_usage": {},
+        "output_validation_error": None,
+        "generation_attempts": 0,
     }
 
     prepared = build_context(
@@ -182,7 +200,7 @@ def generator(state: dict, *, llm=None) -> dict:
             },
         )
 
-        message = model.invoke([
+        messages = [
             SystemMessage(content=GENERATOR_PROMPT),
             HumanMessage(
                 content=(
@@ -190,21 +208,35 @@ def generator(state: dict, *, llm=None) -> dict:
                     f"검색 자료(JSON):\n{prepared['context']}"
                 )
             ),
-        ])
+        ]
 
-        response["token_usage"] = (
-            getattr(message, "usage_metadata", None) or {}
-        )
-
-        if not isinstance(message.content, str):
-            raise ValueError("LLM 응답이 문자열이 아닙니다.")
-
-        output = json.loads(message.content)
-
-        validated = validate_output(
-            output=output,
-            sources=prepared["sources"],
-        )
+        # 형식 오류는 검사를 완화하지 않고 오류를 알려 한 번만 재생성합니다.
+        for attempt in range(2):
+            response["generation_attempts"] = attempt + 1
+            message = model.invoke(messages)
+            usage = getattr(message, "usage_metadata", None) or {}
+            for key, value in usage.items():
+                if isinstance(value, (int, float)):
+                    response["token_usage"][key] = response["token_usage"].get(key, 0) + value
+            try:
+                if not isinstance(message.content, str):
+                    raise ValueError("LLM 응답이 문자열이 아닙니다.")
+                output = json.loads(message.content)
+                validated = validate_output(output, prepared["sources"])
+                break
+            except (TypeError, ValueError) as error:
+                if attempt == 1:
+                    raise
+                messages.extend([
+                    message,
+                    HumanMessage(content=(
+                        f"출력 검증에 실패했습니다: {error}\n"
+                        "같은 검색 자료만 사용하여 JSON 전체를 다시 작성하세요. "
+                        "claims.text는 최종 answer에서 그대로 복사하고, "
+                        "각 claim에는 자료에 존재하는 source_id를 연결하세요. "
+                        "검사를 통과하기 위해 핵심 주장이나 근거를 임의로 삭제하지 마세요."
+                    )),
+                ])
 
         response.update(
             answer=validated["answer"],
@@ -219,7 +251,7 @@ def generator(state: dict, *, llm=None) -> dict:
                 }
             ],
             generation_status=(
-                "generated_unverified"
+                "answered_unverified"
                 if validated["status"] == "answered"
                 else validated["status"]
             ),

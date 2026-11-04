@@ -51,6 +51,13 @@ class State(MessagesState):
     # Citation 구조 검사 결과입니다. 의미적 Judge는 아직 실행하지 않습니다.
     citations: NotRequired[list[dict]]
     citation_validation_status: NotRequired[str]
+
+    verification_passed: NotRequired[bool]
+    citation_evaluations: NotRequired[list[dict]]
+    review_notes: NotRequired[list[str]]
+    citation_error: NotRequired[str]
+
+
     validation_errors: NotRequired[list[dict]]
     validation_warnings: NotRequired[list[dict]]
     citation_validity_rate: NotRequired[float | None]
