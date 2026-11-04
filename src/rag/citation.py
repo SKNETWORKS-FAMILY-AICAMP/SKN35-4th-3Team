@@ -1,63 +1,217 @@
-"""Generator의 주장별 출처 ID를 실제 검색 출처와 대조합니다."""
 
+"""Generator 답변의 출처와 법적 근거를 검증합니다."""
+
+import json
+import os
 from time import perf_counter
 
+from dotenv import load_dotenv
+from langchain_core.messages import HumanMessage, SystemMessage
+from langchain_openai import ChatOpenAI
 
-def citation(state: dict) -> dict[str, object]:
+from src.const.prompt.citation_prompt import CITATION_PROMPT
+
+load_dotenv()
+
+
+def citation(state: dict, *, llm=None) -> dict:
+    """Generator 결과를 검증하고 인용 출처를 연결합니다."""
+
     started = perf_counter()
-    status = state.get("generation_status")
-    if status != "generated_unverified":
+
+    if state.get("generation_status") != "generated_unverified":
         return {
-            "answer": state.get("answer", ""),
-            "citations": [],
-            "sources": [],
             "citation_validation_status": "skipped",
-            "validation_errors": [],
             "citation_latency_ms": round((perf_counter() - started) * 1000, 1),
         }
 
-    source_list = state.get("context_sources") or []
+    sources = state.get("context_sources") or []
+    documents = state.get("context_documents") or []
+    claims = state.get("claims") or []
+
     source_map = {
-        source.get("source_id"): source
-        for source in source_list
+        source["source_id"]: source
+        for source in sources
         if isinstance(source, dict) and source.get("source_id")
     }
-    claims = state.get("claims") or []
-    errors: list[dict[str, object]] = []
-    used_ids: list[str] = []
-    if not claims:
-        errors.append({"code": "missing_claim_mapping"})
+
+    # 기존 코드의 출처 ID 검증
+    errors = []
     for claim in claims:
         ids = claim.get("source_ids") if isinstance(claim, dict) else None
         if not isinstance(ids, list) or not ids:
             errors.append({"code": "claim_without_citation"})
-            continue
-        for source_id in ids:
-            if source_id not in source_map:
-                errors.append(
-                    {"code": "unknown_citation", "source_id": source_id}
-                )
-            elif source_id not in used_ids:
-                used_ids.append(source_id)
+        elif any(sid not in source_map for sid in ids):
+            errors.append({"code": "unknown_citation"})
 
-    citations = [source_map[source_id] for source_id in used_ids]
-    passed = not errors
-    return {
-        "answer": (
-            state.get("answer", "")
-            if passed
-            else "인용 출처를 확인할 수 없어 답변을 보류합니다."
-        ),
-        "citations": citations if passed else [],
-        "sources": citations if passed else [],
-        "used_document_ids": list(
-            dict.fromkeys(
-                source.get("document_id") or source.get("point_id")
-                for source in citations
-                if source.get("document_id") or source.get("point_id")
-            )
-        ),
-        "citation_validation_status": "passed" if passed else "failed",
+    if not claims:
+        errors.append({"code": "missing_claim_mapping"})
+
+    if not documents or not source_map:
+        errors.append({"code": "missing_context"})
+
+    result = {
+        "generation_status": "verification_failed",
+        "verification_passed": False,
+        "citation_validation_status": "failed",
+        "citations": [],
+        "sources": [],
+        "used_document_ids": [],
+        "citation_evaluations": [],
         "validation_errors": errors,
-        "citation_latency_ms": round((perf_counter() - started) * 1000, 1),
+        "review_notes": [],
     }
+
+    if not errors:
+        try:
+            model = llm if llm is not None else ChatOpenAI(
+                model=os.environ["OPENAI_MODEL"],
+                temperature=0,
+                model_kwargs={
+                    "response_format": {"type": "json_object"}
+                },
+            )
+
+            response = model.invoke([
+                SystemMessage(content=CITATION_PROMPT),
+                HumanMessage(content=json.dumps({
+                    "question": state.get("origin_query", ""),
+                    "answer": state.get("answer", ""),
+                    "claims": claims,
+                    "documents": documents,
+                }, ensure_ascii=False, default=str)),
+            ])
+
+            output = json.loads(response.content)
+            evaluations = output.get("evaluations", [])
+
+            if not isinstance(evaluations, list):
+                raise ValueError("evaluations는 목록이어야 합니다.")
+
+            used_ids = list(dict.fromkeys(
+                sid
+                for item in evaluations
+                if isinstance(item, dict)
+                and item.get("verdict") in ("supported", "partial")
+                for sid in item.get("source_ids", [])
+                if sid in source_map
+            ))
+
+            citations = [source_map[sid] for sid in used_ids]
+            passed = output.get("passed") is True and bool(citations)
+
+            result.update(
+                generation_status=(
+                    "answered" if passed else "verification_failed"
+                ),
+                verification_passed=passed,
+                citation_validation_status=(
+                    "passed" if passed else "failed"
+                ),
+                citations=citations,
+                sources=citations,
+                used_document_ids=list(dict.fromkeys(
+                    source.get("document_id") or source.get("point_id")
+                    for source in citations
+                    if source.get("document_id") or source.get("point_id")
+                )),
+                citation_evaluations=evaluations,
+                review_notes=output.get("review_notes", []),
+            )
+
+        except Exception as error:
+            result.update(
+                generation_status="generated_unverified",
+                citation_validation_status="error",
+                validation_errors=[{"code": "citation_error"}],
+                review_notes=["근거 검증을 완료하지 못했습니다."],
+                citation_error=str(error),
+            )
+
+    result["citation_latency_ms"] = round(
+        (perf_counter() - started) * 1000, 1
+    )
+
+    return result
+
+
+# =================================
+# test
+
+
+if __name__ == "__main__":
+    from src.rag.query_planner import query_planner
+    from src.rag.query_rewrite import query_rewrite
+    from src.rag.multi_query import multi_query
+    from src.rag.hybrid_search import hybrid_search
+    from src.rag.rrf import rrf
+    from src.rag.rerank import rerank
+    from src.rag.generator import generator
+
+    question = input("질문을 입력하세요: ").strip()
+
+    # 1. Query Planner
+    print("\n[1. Query Planner]")
+    plan = query_planner(question)
+    print(plan)
+
+    # 2. Query Rewrite
+    print("\n[2. Query Rewrite]")
+    rewritten = query_rewrite(question)
+    print(rewritten)
+
+    # 3. Multi-Query
+    print("\n[3. Multi-Query]")
+    expanded = multi_query(rewritten)
+    print(expanded)
+
+    # 4. Hybrid Search
+    print("\n[4. Hybrid Search]")
+    queries = [question, rewritten, *expanded]
+    search_results = [
+        hybrid_search(query, top_k=40)
+        for query in dict.fromkeys(queries)
+    ]
+
+    # 5. RRF
+    print("\n[5. RRF]")
+    fused = rrf(search_results, top_k=40)
+
+    # 6. Rerank
+    print("\n[6. Rerank]")
+    documents = rerank(question, fused, top_k=5)
+
+    # 7. Generator
+    print("\n[7. Generator]")
+    state = generator({
+        "origin_query": question,
+        "documents": documents,
+    })
+
+    print("답변:", state["answer"])
+    print("상태:", state["generation_status"])
+
+    # 8. Citation
+    print("\n[8. Citation]")
+    result = citation({
+        **state,
+        "origin_query": question,
+    })
+
+    state.update(result)
+
+    print("\n[최종 답변]")
+    print(state["answer"])
+
+    print("\n[최종 상태]")
+    print(state["generation_status"])
+
+    print("\n[검증 결과]")
+    print(json.dumps({
+        "verification_passed": state.get("verification_passed"),
+        "citation_validation_status": state.get("citation_validation_status"),
+        "citations": state.get("citations", []),
+        "review_notes": state.get("review_notes", []),
+        "validation_errors": state.get("validation_errors", []),
+        "citation_latency_ms": state.get("citation_latency_ms"),
+    }, ensure_ascii=False, indent=2))
