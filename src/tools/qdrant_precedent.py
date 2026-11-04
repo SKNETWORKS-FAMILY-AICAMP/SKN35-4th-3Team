@@ -1,4 +1,4 @@
-"""3차 프로젝트 Qdrant에서 판례 후보만 읽기 전용으로 검색합니다.
+"""4차 Qdrant 컬렉션에서 판례 후보만 읽기 전용으로 검색합니다.
 
 질문 임베딩 → ``document_type=precedent`` 필터 검색 → 비판례 재검증 →
 판례별 최고 점수 청크 병합 → 순위 부여 순서로 후보를 만듭니다.
@@ -18,7 +18,7 @@ from dotenv import load_dotenv
 from src.const.precedent import DEFAULT_ENV_PATH, LAW_PRECEDENT_SOURCE_URL
 
 
-DEFAULT_COLLECTION = "team_documents_openai_dev"
+DEFAULT_COLLECTION = "SKN35-4th-3Team"
 DEFAULT_EMBEDDING_MODEL = "text-embedding-3-small"
 DEFAULT_EMBEDDING_DIMENSION = 1536
 _PRECEDENT_DOCUMENT_TYPE = "precedent"
@@ -126,7 +126,7 @@ def _candidate_identity(
 
 @dataclass
 class QdrantPrecedentRetriever:
-    """질문 임베딩과 기존 Qdrant 컬렉션을 연결하는 판례 검색기."""
+    """질문 임베딩과 4차 Qdrant 컬렉션을 연결하는 판례 검색기."""
 
     client: QdrantClientLike
     embed_query: Callable[[str], Sequence[float]]
@@ -134,7 +134,7 @@ class QdrantPrecedentRetriever:
     vector_name: str | None = None
 
     def _create_query_vector(self, query: str) -> tuple[float, ...]:
-        """검색 질문을 3차 컬렉션 규격의 임베딩으로 변환합니다."""
+        """검색 질문을 4차 컬렉션 규격의 임베딩으로 변환합니다."""
 
         try:
             vector = tuple(float(value) for value in self.embed_query(query))
@@ -149,7 +149,7 @@ class QdrantPrecedentRetriever:
         ):
             raise PrecedentSearchError(
                 "invalid_response",
-                "질문 임베딩이 3차 Qdrant 벡터 규격과 일치하지 않습니다.",
+                "질문 임베딩이 4차 Qdrant 벡터 규격과 일치하지 않습니다.",
             )
         return vector
 
@@ -331,7 +331,7 @@ class QdrantPrecedentRetriever:
 def create_precedent_retriever(
     env_path: str | Path | None = None,
 ) -> QdrantPrecedentRetriever:
-    """3차 OpenAI 컬렉션 규격으로 읽기 전용 판례 검색기를 만듭니다."""
+    """4차 OpenAI 컬렉션 규격으로 읽기 전용 판례 검색기를 만듭니다."""
 
     load_dotenv(
         Path(env_path) if env_path is not None else DEFAULT_ENV_PATH,
@@ -348,7 +348,7 @@ def create_precedent_retriever(
         raise ValueError("EMBEDDING_DIMENSION은 정수여야 합니다.") from None
     if model != DEFAULT_EMBEDDING_MODEL or dimension != DEFAULT_EMBEDDING_DIMENSION:
         raise ValueError(
-            "3차 Qdrant 검색은 text-embedding-3-small, 1536차원만 지원합니다."
+            "4차 Qdrant 검색은 text-embedding-3-small, 1536차원만 지원합니다."
         )
 
     from openai import OpenAI

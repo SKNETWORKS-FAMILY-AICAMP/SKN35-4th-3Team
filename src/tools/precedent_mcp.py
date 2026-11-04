@@ -44,7 +44,7 @@ _QDRANT_RESULT_FIELDS = {
     "ranking_source": "qdrant",
     "score_type": "qdrant_cosine_similarity",
     "score_description": (
-        "3차 Qdrant OpenAI 벡터의 Cosine 유사도이며 정답 확률이 아닙니다."
+        "4차 컬렉션에 복사된 판례 OpenAI 벡터의 Cosine 유사도이며 정답 확률이 아닙니다."
     ),
 }
 
@@ -255,7 +255,7 @@ class MCPToolService:
                     candidate_limit=request.candidate_limit,
                 )
             else:
-                # 1. 판례 전용 Qdrant에서 의미상 유사한 후보를 검색합니다.
+                # 1. 4차 Qdrant에서 판례 필터로 유사한 후보를 검색합니다.
                 candidates = self.retriever.search_candidates(
                     request.query,
                     limit=request.candidate_limit,

@@ -106,6 +106,28 @@ function renderSources(sources = []) {
 
   block.append(list);
   return block;
+
+  const seenPrecedents = new Set();
+  sources.forEach((source) => {
+    const precedentKey = source.document_type === "precedent"
+      ? source.document_id || source.source_url
+      : null;
+    if (precedentKey && seenPrecedents.has(precedentKey)) return;
+    if (precedentKey) seenPrecedents.add(precedentKey);
+    const item = document.createElement("li");
+    const label = source.source_name || source.title || source.document_id || "출처";
+    if (source.source_url) {
+      const link = document.createElement("a");
+      link.href = source.source_url;
+      link.target = "_blank";
+      link.rel = "noreferrer";
+      link.textContent = label;
+      item.append(link);
+    } else {
+      item.textContent = label;
+    }
+    sourceList.append(item);
+  });
 }
 
 form.addEventListener("submit", async (event) => {

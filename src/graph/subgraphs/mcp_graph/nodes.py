@@ -65,7 +65,11 @@ def _tool_result(
         "mcp_result": payload,
         "mcp_similar_precedents": documents,
         "mcp_documents": documents,
-        "documents": documents,
+        "documents": [{
+                        **d,
+                        "text": d.get("body") or "",
+                        "metadata": {**d, "source_name": d.get("case_name"), "document_type": "precedent"},}
+                    for d in documents],
         "mcp_excluded_precedents": excluded,
         "mcp_error": dict(error) if isinstance(error, Mapping) else None,
     }
