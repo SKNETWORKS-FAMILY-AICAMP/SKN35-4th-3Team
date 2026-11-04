@@ -7,6 +7,14 @@ from django.urls import reverse
 
 
 class ChatWebTests(TestCase):
+    def test_home_links_to_chat(self):
+        response = self.client.get(reverse("chat:home"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "chat/home.html")
+        self.assertContains(response, f'href="{reverse("chat:index")}"')
+        self.assertNotContains(response, 'id="chat-form"')
+
     def test_index_describes_chat_api(self):
         response = self.client.get(reverse("chat:index"))
 

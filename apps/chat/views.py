@@ -17,6 +17,12 @@ logger = logging.getLogger(__name__)
 
 
 @require_GET
+def home(request):
+    """상담 서비스 소개와 시작 화면을 표시합니다."""
+    return render(request, "chat/home.html")
+
+
+@require_GET
 def index(request):
     """Django 기반 생활법률 상담 화면을 표시합니다."""
 

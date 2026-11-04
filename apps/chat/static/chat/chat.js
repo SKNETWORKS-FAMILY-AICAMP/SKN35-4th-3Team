@@ -5,7 +5,55 @@ const fileInput = document.querySelector("#files");
 const fileList = document.querySelector("#file-list");
 const sendButton = form.querySelector("button[type='submit']");
 const newChatButton = document.querySelector("#new-chat");
+document.querySelectorAll(".example-question").forEach((button) => {
+  button.addEventListener("click", () => {
+    if (textarea.disabled || sendButton.disabled) return;
+    const example = button.dataset.question;
+    // Keep any draft the user has already written.
+    textarea.value = textarea.value.trim()
+      ? `${textarea.value.trimEnd()}\n\n${example}`
+      : example;
+    textarea.dispatchEvent(new Event("input", { bubbles: true }));
+    textarea.focus();
+    textarea.setSelectionRange(textarea.value.length, textarea.value.length);
+  });
+});
 const welcomeMessage = messages.firstElementChild.cloneNode(true);
+const helpButton = document.querySelector("#chat-help");
+const helpTooltip = document.querySelector("#chat-help-tooltip");
+const helpWrap = helpButton.parentElement;
+let helpPinned = false;
+function showHelp(visible) {
+  helpTooltip.hidden = !visible;
+  helpButton.setAttribute("aria-expanded", String(visible));
+}
+helpWrap.addEventListener("mouseenter", () => showHelp(true));
+helpWrap.addEventListener("mouseleave", () => {
+  if (!helpPinned && !helpWrap.contains(document.activeElement)) showHelp(false);
+});
+helpButton.addEventListener("focus", () => showHelp(true));
+helpWrap.addEventListener("focusout", (event) => {
+  if (!helpWrap.contains(event.relatedTarget)) {
+    helpPinned = false;
+    showHelp(false);
+  }
+});
+helpButton.addEventListener("click", () => {
+  helpPinned = !helpPinned;
+  showHelp(helpPinned);
+});
+document.addEventListener("click", (event) => {
+  if (!helpWrap.contains(event.target)) {
+    helpPinned = false;
+    showHelp(false);
+  }
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    helpPinned = false;
+    showHelp(false);
+  }
+});
 const conversationIndex = document.querySelector("#conversation-index-list");
 const conversationPreview = document.querySelector("#conversation-preview");
 let conversationEntries = [];
