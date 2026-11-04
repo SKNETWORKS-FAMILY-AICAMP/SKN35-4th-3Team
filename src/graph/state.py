@@ -57,23 +57,23 @@ class State(MessagesState):
     judge_status: NotRequired[str]
     judge_input: NotRequired[dict | None]
 
-    # 판례 MCP 서브그래프 입출력입니다.
-    mcp_reference_candidate: NotRequired[dict]
+    # 판례 MCP 서브그래프 입출력입니다. 검색 중간값과 임베딩은 저장하지 않습니다.
+    mcp_reference_candidate: NotRequired[dict[str, object] | None]
     mcp_top_n: NotRequired[int]
     mcp_candidate_limit: NotRequired[int]
     mcp_status: NotRequired[str]
-    mcp_result: NotRequired[dict]
-    mcp_reference_precedent: NotRequired[dict]
-    mcp_similar_precedents: NotRequired[list[dict]]
-    mcp_documents: NotRequired[list[dict]]
-    mcp_excluded_precedents: NotRequired[list[dict]]
-    mcp_error: NotRequired[dict | None]
+    mcp_result: NotRequired[dict[str, object]]
+    mcp_reference_precedent: NotRequired[dict[str, object]]
+    mcp_similar_precedents: NotRequired[list[dict[str, object]]]
+    mcp_documents: NotRequired[list[dict[str, object]]]
+    mcp_excluded_precedents: NotRequired[list[dict[str, object]]]
+    mcp_error: NotRequired[dict[str, object] | None]
     mcp_similarity_score: NotRequired[float]
     mcp_similarity_percent: NotRequired[str]
 
 
 class MCPGraphState(TypedDict, total=False):
-    """판례 검색·비교 MCP 서브그래프에서 사용하는 State."""
+    """판례 MCP 서브그래프의 외부 입출력만 관리하는 State."""
 
     # 검색 입력
     user_query: str
@@ -83,7 +83,7 @@ class MCPGraphState(TypedDict, total=False):
     mcp_candidate_limit: int
 
     # 특정 판례 비교 입력
-    mcp_reference_candidate: dict[str, object]
+    mcp_reference_candidate: dict[str, object] | None
 
     # MCP 처리 결과
     mcp_status: str

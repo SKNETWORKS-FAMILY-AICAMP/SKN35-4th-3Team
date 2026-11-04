@@ -18,6 +18,9 @@ PRECEDENT = {
     "body": "임대차 종료 후 보증금 반환 범위를 판단한 판례이다.",
     "source_url": "https://www.law.go.kr/LSW/precInfoP.do?precSeq=147076",
     "similarity_score": 0.8,
+    "similarity_rank": 1,
+    "ranking_source": "qdrant",
+    "score_type": "qdrant_cosine_similarity",
 }
 
 
@@ -42,6 +45,10 @@ class MCPToolNodeTests(unittest.TestCase):
         context = build_context(result["documents"], 1000)
         self.assertEqual(context["documents"][0]["text"], PRECEDENT["body"])
         self.assertEqual(context["sources"][0]["source_url"], PRECEDENT["source_url"])
+        self.assertEqual(
+            result["documents"][0]["metadata"]["ranking_source"],
+            "qdrant",
+        )
         tool.assert_called_once_with(
             "임대차 보증금 판례", top_n=5, candidate_limit=20
         )
@@ -49,17 +56,22 @@ class MCPToolNodeTests(unittest.TestCase):
     def test_compare_tool_returns_reference_and_similar_precedents(self):
         reference = {"precedent_id": "147076", "case_name": "기준 판례"}
         similar = {**PRECEDENT, "precedent_id": "233339"}
+        excluded = {
+            **PRECEDENT,
+            "exclusion_reason": "reference_precedent",
+        }
         tool = Mock(return_value=serialize_tool_response(
             "success",
             reference_precedent=reference,
             similar_precedents=[similar],
-            excluded=[],
+            excluded=[excluded],
         ))
         node = create_compare_precedent_similarity_node(tool)
         result = node({"mcp_reference_candidate": {"precedent_id": "147076"}})
 
         self.assertEqual(result["mcp_reference_precedent"], reference)
         self.assertEqual(result["mcp_similar_precedents"], [similar])
+        self.assertEqual(result["mcp_excluded_precedents"], [excluded])
         self.assertEqual(result["documents"][0]["text"], similar["body"])
         tool.assert_called_once_with(
             {"precedent_id": "147076"}, top_n=5, candidate_limit=20

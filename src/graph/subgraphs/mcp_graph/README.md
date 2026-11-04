@@ -2,7 +2,9 @@
 
 사용자 질문을 3차 프로젝트의 기존 Qdrant OpenAI 컬렉션에서 검색합니다.
 `document_type=precedent`인 판례 후보만 가져와 Qdrant 유사도순으로 반환합니다.
-특정 기준 판례가 Qdrant에 없을 때만 국가법령정보센터 공식 API를 사용합니다.
+Qdrant 결과가 최종 요청 수보다 부족하면 국가법령정보센터 공식 API 결과로
+부족한 수량을 보완합니다. 특정 기준 판례는 Qdrant에서 먼저 조회하고, 없을
+때 공식 API로 조회한 뒤 후보 통합이 끝난 마지막 단계에서 제외합니다.
 기존 Qdrant 데이터의 적재·수정·삭제는 수행하지 않습니다.
 
 이 서브그래프는 판례만 담당합니다. 법령·가이드 PDF·공식기관 안내·절차·
@@ -24,23 +26,24 @@
 
 ## 출력
 
-- `mcp_similar_precedents`: Qdrant 유사 판례 Top-N
+- `mcp_similar_precedents`: Qdrant 우선·공식 API 보완 유사 판례 Top-N
 - `mcp_excluded_precedents`: 검색에서 제외된 판례
-- `similarity_score`: Qdrant Cosine 유사도 원본
+- `similarity_score`: Qdrant 또는 공식 API 출처별 유사도 원본
 - `similarity_percent`: 화면 표시용 유사도 퍼센트 문자열
-- `similarity_rank`: Qdrant 유사도 기준 순위
+- `similarity_rank`: Qdrant 우선·공식 API 보완 기준 최종 순위
 - `source_url`: 공식 판례 출처
 
-`similarity_percent`는 Qdrant 점수를 읽기 쉽게 변환한 표시값이며 정답 확률이나
-법률적 신뢰 확률이 아닙니다. 계산과 정렬에는 변환 전 원본 점수를 사용합니다.
+`similarity_percent`는 출처별 유사도 점수를 읽기 쉽게 변환한 표시값이며 정답
+확률이나 법률적 신뢰 확률이 아닙니다. Qdrant Cosine과 공식 API 텍스트 유사도는
+직접 비교하지 않고, Qdrant 순위를 우선한 뒤 부족한 수량만 공식 API로 채웁니다.
 
 ## MCP Tool
 
 - `find_similar_precedents`: 자연어 질문으로 유사 판례 Top-N 검색
 - `compare_precedent_similarity`: 특정 기준 판례와 유사한 판례 Top-N 비교
 
-공식 API는 특정 기준 판례가 Qdrant에 없을 때의 fallback으로만 사용하며,
-별도 MCP Tool로 노출하지 않습니다.
+공식 API는 기준 판례가 Qdrant에 없거나 Qdrant 유사 판례가 요청 수보다 부족할
+때만 fallback으로 사용하며, 별도 MCP Tool로 노출하지 않습니다.
 
 ## 실행 경계
 
