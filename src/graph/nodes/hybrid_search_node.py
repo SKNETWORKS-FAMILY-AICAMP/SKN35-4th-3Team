@@ -11,7 +11,7 @@ def hybrid_search_node(state: State):
     ]
     rankings: dict[str, list[dict]] = {}
     for index, query in enumerate(queries):
-        result = hybrid_search(query, top_k=20)
+        result = hybrid_search(query, top_k=40, document_type="law")
         rankings[f"query_{index}_dense"] = result["dense_results"]
         rankings[f"query_{index}_bm25"] = result["bm25_results"]
     return {"rankings": rankings}

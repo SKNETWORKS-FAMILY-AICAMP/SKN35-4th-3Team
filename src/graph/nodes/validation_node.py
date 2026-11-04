@@ -1,5 +1,5 @@
 from src.graph.state import State
-from src.rag.rerank import MIN_RELEVANCE_SCORE
+#from src.rag.rerank import MIN_RELEVANCE_SCORE
 import math
 
 MAX_RETRY = 2
@@ -10,7 +10,9 @@ def validation_node(state: State):
     score = state.get("score")
 
     has_score = score is not None and math.isfinite(float(score))
-    has_evidence = bool(documents) and has_score and float(score) >= MIN_RELEVANCE_SCORE
+    
+    #has_evidence = bool(documents) and has_score and float(score) >= MIN_RELEVANCE_SCORE
+    has_evidence = bool(documents)
     if has_evidence:
         return {"is_valid": True, "validation_reason": "usable_evidence_found"}
 
