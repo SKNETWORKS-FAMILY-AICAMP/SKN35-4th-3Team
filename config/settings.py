@@ -146,3 +146,17 @@ CHAT_MAX_IMAGE_FILES = int(os.getenv('CHAT_MAX_IMAGE_FILES', '3'))
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# EC2의 journalctl에서도 상담 처리 시간과 예외를 확인합니다.
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {'chat_console': {'class': 'logging.StreamHandler'}},
+    'loggers': {
+        'apps.chat': {
+            'handlers': ['chat_console'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    },
+}

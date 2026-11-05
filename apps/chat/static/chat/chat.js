@@ -1,3 +1,28 @@
+async function readChatResponse(response) {
+  const serverErrors = {
+    502: "답변 처리 서버와 연결이 끊겼습니다. 서버 재시작 또는 종료 여부를 확인해 주세요. (502)",
+    503: "현재 상담 서버를 사용할 수 없습니다. 잠시 후 다시 시도해 주세요. (503)",
+    504: "서버의 답변 대기 시간을 초과했습니다. 잠시 후 다시 시도해 주세요. (504)",
+  };
+  const fallback = serverErrors[response.status]
+    || `상담 요청을 처리하지 못했습니다. (HTTP ${response.status})`;
+  const contentType = response.headers.get("content-type") || "";
+  if (!contentType.toLowerCase().includes("application/json")) {
+    throw new Error(response.ok ? "서버 응답 형식이 올바르지 않습니다." : fallback);
+  }
+  let payload;
+  try {
+    payload = await response.json();
+  } catch {
+    throw new Error(response.ok ? "서버 응답을 읽지 못했습니다." : fallback);
+  }
+  if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
+    throw new Error(response.ok ? "서버 응답 형식이 올바르지 않습니다." : fallback);
+  }
+  if (!response.ok) throw new Error(payload.error || fallback);
+  return payload;
+}
+
 const form = document.querySelector("#chat-form");
 const messages = document.querySelector("#messages");
 const textarea = document.querySelector("#question");
@@ -395,8 +420,7 @@ form.addEventListener("submit", async (event) => {
       headers: { "X-Requested-With": "XMLHttpRequest" },
     });
     setProgress(1, "서버 응답을 받았어요. 답변을 확인하고 있어요.");
-    const payload = await response.json();
-    if (!response.ok) throw new Error(payload.error || "요청 처리에 실패했습니다.");
+    const payload = await readChatResponse(response);
 
     botBubble.replaceChildren();
 

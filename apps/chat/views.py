@@ -3,6 +3,7 @@
 import base64
 import json
 import logging
+import time
 from uuid import uuid4
 
 from django.conf import settings
@@ -114,14 +115,17 @@ def chat(request):
             json_dumps_params={"ensure_ascii": False},
         )
 
-    from src.graph.workflow import build_workflow
-
     thread_id = request.session.get("chat_thread_id")
     if not thread_id:
         thread_id = uuid4().hex
         request.session["chat_thread_id"] = thread_id
 
+    request_id = uuid4().hex
+    started = time.perf_counter()
+    logger.info("chat started request_id=%s", request_id)
     try:
+        from src.graph.workflow import build_workflow
+
         result = build_workflow().invoke(
             {
                 "origin_query": question,
@@ -133,55 +137,27 @@ def chat(request):
             config={"configurable": {"thread_id": thread_id}},
         )
     except Exception:
-        logger.exception("상담 workflow 실행 중 오류")
+        logger.exception(
+            "chat failed request_id=%s elapsed_seconds=%.2f",
+            request_id,
+            time.perf_counter() - started,
+        )
         return JsonResponse(
             {
                 "status": "service_error",
                 "error": "상담 처리 중 오류가 발생했습니다.",
+                "request_id": request_id,
             },
             status=503,
             json_dumps_params={"ensure_ascii": False},
         )
 
-    print(
-        "\n[답변 상태 추적]",
-        json.dumps(
-            {
-                "question": question,
-                "graph_generation_status": result.get("generation_status"),
-                "response_status": result.get("generation_status") or "answered",
-                "answered_by_fallback": not bool(result.get("generation_status")),
-                "citation_validation_status": result.get("citation_validation_status"),
-                "validation_errors": result.get("validation_errors", []),
-                "output_validation_error": result.get("output_validation_error"),
-                "generation_attempts": result.get("generation_attempts"),
-                "citations": result.get("citations", []),
-
-                # 실제 생성한 답변
-                "answer": result.get("answer", ""),
-
-                # 답변의 주장과 연결된 출처 ID
-                "claims": result.get("claims", []),
-
-                # Generator·Citation에 전달한 근거 본문
-                "context_documents": result.get("context_documents", []),
-
-                # Citation의 상세 검증 결과
-                "verification_passed": result.get("verification_passed"),
-                "citation_evaluations": result.get("citation_evaluations", []),
-                "review_notes": result.get("review_notes", []),
-                "citation_error": result.get("citation_error"),
-                "mcp_status": result.get("mcp_status"),
-                "mcp_error": result.get("mcp_error"),
-                "mcp_result": result.get("mcp_result"),
-                "documents": result.get("documents", []),
-
-            },
-            ensure_ascii=False,
-            indent=2,
-            default=str,
-        ),
-        flush=True,
+    logger.info(
+        "chat completed request_id=%s elapsed_seconds=%.2f status=%s citation_status=%s",
+        request_id,
+        time.perf_counter() - started,
+        result.get("generation_status") or "answered",
+        result.get("citation_validation_status"),
     )
 
     return JsonResponse(

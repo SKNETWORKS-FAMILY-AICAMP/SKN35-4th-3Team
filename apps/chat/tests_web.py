@@ -41,6 +41,30 @@ class ChatWebTests(TestCase):
         self.assertEqual(response.status_code, 400)
         self.assertEqual(response.json()["status"], "invalid_request")
 
+    @patch("src.graph.workflow.build_workflow", side_effect=RuntimeError("test failure"))
+    def test_workflow_failure_returns_json_with_request_id(self, workflow):
+        with self.assertLogs("apps.chat.views", level="INFO") as logs:
+            response = self.client.post(reverse("chat:api"), {"question": "질문"})
+        self.assertEqual(response.status_code, 503)
+        payload = response.json()
+        self.assertEqual(payload["status"], "service_error")
+        self.assertEqual(len(payload["request_id"]), 32)
+        self.assertIn(payload["request_id"], "\n".join(logs.output))
+
+    @patch("src.graph.workflow.build_workflow")
+    def test_workflow_completion_logs_elapsed_time_without_answer_dump(self, workflow):
+        workflow.return_value.invoke.return_value = {
+            "answer": "private answer",
+            "generation_status": "answered",
+        }
+        with self.assertLogs("apps.chat.views", level="INFO") as logs:
+            response = self.client.post(reverse("chat:api"), {"question": "질문"})
+        self.assertEqual(response.status_code, 200)
+        output = "\n".join(logs.output)
+        self.assertIn("chat completed", output)
+        self.assertIn("elapsed_seconds=", output)
+        self.assertNotIn("private answer", output)
+
     @patch("src.rag.pdf_loader.pdf_to_images", return_value=[b"png-page"])
     @patch("src.graph.workflow.build_workflow")
     def test_pdf_is_converted_and_passed_to_workflow(self, workflow, convert):
