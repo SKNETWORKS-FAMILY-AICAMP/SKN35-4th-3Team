@@ -12,6 +12,9 @@ from src.graph.nodes.citation_node import citation_node
 from src.graph.nodes.summary_node import is_summary_request, summary_node
 from src.graph.nodes.precedent_query_node import is_precedent_lookup, precedent_query_node
 from functools import lru_cache
+from time import perf_counter
+import logging
+from src.graph.timing import timed
 
 
 # 세션에 캐시된 이전 그래프를 교체할 때 올립니다.
@@ -27,7 +30,9 @@ def route_start(state: State) -> str:
         if history else state["origin_query"]
     )
     message = [("system", CLASSIFY_PROMPT), ("user", user_content)]
+    started = perf_counter()
     response = llm.invoke(message)
+    logging.getLogger("apps.chat.stages").info("chat stage=classify elapsed_seconds=%.2f", perf_counter() - started)
     label = str(response.content).strip().lower()
     return label if label in {"general", "rag", "mcp", "out_of_scope"} else "rag"
 
@@ -42,13 +47,13 @@ def route_image(state: State) -> str:
 def build_workflow():
     builder = StateGraph(State)
 
-    builder.add_node("image", image_node)
-    builder.add_node("general", general_node)
+    builder.add_node("image", timed(image_node, "image"))
+    builder.add_node("general", timed(general_node, "general"))
     builder.add_node("rag", build_rag_graph())
     builder.add_node("mcp", build_mcp_graph())
-    builder.add_node("generator", generator_node)
-    builder.add_node("citation", citation_node)
-    builder.add_node("summary", summary_node)
+    builder.add_node("generator", timed(generator_node, "generator"))
+    builder.add_node("citation", timed(citation_node, "citation"))
+    builder.add_node("summary", timed(summary_node, "summary"))
     builder.add_node("precedent_query", precedent_query_node)
 
     builder.add_conditional_edges(START , route_image ,

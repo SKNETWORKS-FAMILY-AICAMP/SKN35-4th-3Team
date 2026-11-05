@@ -1,6 +1,7 @@
 from concurrent.futures import ThreadPoolExecutor
 import json
 from types import SimpleNamespace
+import os
 from unittest.mock import patch
 
 from django.test import SimpleTestCase
@@ -11,9 +12,27 @@ from src.graph.workflow import build_workflow, route_image
 from src.rag.rerank import _load_rerank, get_rerank
 from src.graph.nodes.precedent_query_node import is_precedent_lookup, precedent_query_node
 from src.graph.workflow import route_start
+from src.const.llm_settings import llm_settings
+from src.graph.nodes.rerank_node import rerank_node
 
 
 class FollowupTests(SimpleTestCase):
+    def test_deployment_reasoning_and_output_budgets(self):
+        with patch.dict(os.environ, {"LLM_REASONING_EFFORT": "minimal", "GENERATOR_MAX_OUTPUT_TOKENS": "3200"}, clear=True):
+            self.assertEqual(llm_settings("gpt-5-nano", "generator"), {"reasoning_effort": "minimal", "max_tokens": 3200})
+            self.assertEqual(llm_settings("gpt-4.1-mini"), {})
+            self.assertEqual(llm_settings("gpt-5.1"), {})
+        with patch.dict(os.environ, {}, clear=True):
+            self.assertEqual(llm_settings("gpt-5-nano"), {})
+
+    @patch("src.graph.nodes.rerank_node.rerank", return_value=[])
+    def test_reranker_limits_only_the_highest_ranked_candidates(self, reranker):
+        documents = [{"point_id": str(index)} for index in range(40)]
+        with patch.dict(os.environ, {"RERANK_CANDIDATE_LIMIT": "20"}):
+            rerank_node({"origin_query": "질문", "documents": documents})
+        self.assertEqual(reranker.call_args.kwargs["documents"], documents[:20])
+        self.assertEqual(len(documents), 40)
+
     @patch("src.graph.subgraphs.mcp_graph.graph._default_mcp_service")
     @patch("src.graph.nodes.generator_node.generator")
     def test_precedent_graph_receives_context_and_returns_source_metadata(self, generator, service):

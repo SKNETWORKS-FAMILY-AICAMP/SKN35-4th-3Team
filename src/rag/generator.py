@@ -9,6 +9,7 @@ from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_openai import ChatOpenAI
 from src.const.prompt.generator_prompt import GENERATOR_PROMPT
 from src.rag.history import format_history
+from src.const.llm_settings import llm_settings
 
 
 load_dotenv()
@@ -197,6 +198,7 @@ def generator(state: dict, *, llm=None) -> dict:
         model = llm if llm is not None else ChatOpenAI(
             model=model_name,
             temperature=0,
+            **llm_settings(model_name, "generator"),
             model_kwargs={
                 "response_format": {"type": "json_object"}
             },

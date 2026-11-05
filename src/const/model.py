@@ -3,6 +3,7 @@ from functools import lru_cache
 from dotenv import load_dotenv
 from langchain_openai import OpenAIEmbeddings , ChatOpenAI
 from src.const.config import ENV_PATH, EMBED_DIMENSION, RERANK_CACHE_PATH
+from src.const.llm_settings import llm_settings
 
 load_dotenv(dotenv_path=ENV_PATH, override=False)
 
@@ -49,7 +50,8 @@ def create_llm(temperature : float = 0):
     return ChatOpenAI(
         model=OPENAI_LLM_MODEL,
         temperature=temperature,
-        api_key=OPENAI_API_KEY
+        api_key=OPENAI_API_KEY,
+        **llm_settings(OPENAI_LLM_MODEL),
     )
 
 # .env의 리랭크 모델을 CPU에서 생성합니다.

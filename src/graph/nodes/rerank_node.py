@@ -23,12 +23,13 @@
 
 from src.graph.state import State
 from src.rag.rerank import rerank
+import os
 
 
 def rerank_node(state: State):
     documents = rerank(
         query=state["origin_query"],
-        documents=state.get("documents") or [],
+        documents=(state.get("documents") or [])[:max(5, int(os.getenv("RERANK_CANDIDATE_LIMIT", "40")))],
         top_k=5,
     )
 

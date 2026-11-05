@@ -10,6 +10,7 @@ from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_openai import ChatOpenAI
 
 from src.const.prompt.citation_prompt import CITATION_PROMPT
+from src.const.llm_settings import llm_settings
 
 load_dotenv()
 
@@ -124,6 +125,7 @@ def citation(state: dict, *, llm=None) -> dict:
         model = llm if llm is not None else ChatOpenAI(
             model=os.environ["OPENAI_MODEL"],
             temperature=0,
+            **llm_settings(os.environ["OPENAI_MODEL"], "citation"),
             model_kwargs={
                 "response_format": {"type": "json_object"}
             },
