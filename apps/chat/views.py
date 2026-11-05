@@ -143,6 +143,47 @@ def chat(request):
             json_dumps_params={"ensure_ascii": False},
         )
 
+    print(
+        "\n[답변 상태 추적]",
+        json.dumps(
+            {
+                "question": question,
+                "graph_generation_status": result.get("generation_status"),
+                "response_status": result.get("generation_status") or "answered",
+                "answered_by_fallback": not bool(result.get("generation_status")),
+                "citation_validation_status": result.get("citation_validation_status"),
+                "validation_errors": result.get("validation_errors", []),
+                "output_validation_error": result.get("output_validation_error"),
+                "generation_attempts": result.get("generation_attempts"),
+                "citations": result.get("citations", []),
+
+                # 실제 생성한 답변
+                "answer": result.get("answer", ""),
+
+                # 답변의 주장과 연결된 출처 ID
+                "claims": result.get("claims", []),
+
+                # Generator·Citation에 전달한 근거 본문
+                "context_documents": result.get("context_documents", []),
+
+                # Citation의 상세 검증 결과
+                "verification_passed": result.get("verification_passed"),
+                "citation_evaluations": result.get("citation_evaluations", []),
+                "review_notes": result.get("review_notes", []),
+                "citation_error": result.get("citation_error"),
+                "mcp_status": result.get("mcp_status"),
+                "mcp_error": result.get("mcp_error"),
+                "mcp_result": result.get("mcp_result"),
+                "documents": result.get("documents", []),
+
+            },
+            ensure_ascii=False,
+            indent=2,
+            default=str,
+        ),
+        flush=True,
+    )
+
     return JsonResponse(
         {
             "status": result.get("generation_status") or "answered",
