@@ -164,11 +164,14 @@ def chat(request):
         request.session["chat_conversations"] = conversations
 
     logger.info(
-        "chat completed request_id=%s elapsed_seconds=%.2f status=%s citation_status=%s",
+        "chat completed request_id=%s elapsed_seconds=%.2f status=%s citation_status=%s mcp_status=%s precedent_count=%s source_count=%s",
         request_id,
         time.perf_counter() - started,
         result.get("generation_status") or "answered",
         result.get("citation_validation_status"),
+        result.get("mcp_status"),
+        len(result.get("mcp_similar_precedents") or []),
+        len(result.get("sources") or []),
     )
 
     return JsonResponse(

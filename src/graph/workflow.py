@@ -10,6 +10,7 @@ from src.rag.history import format_history
 from src.graph.nodes.generator_node import generator_node
 from src.graph.nodes.citation_node import citation_node
 from src.graph.nodes.summary_node import is_summary_request, summary_node
+from src.graph.nodes.precedent_query_node import is_precedent_lookup, precedent_query_node
 from functools import lru_cache
 
 
@@ -17,6 +18,8 @@ from functools import lru_cache
 WORKFLOW_VERSION = 3
 
 def route_start(state: State) -> str:
+    if is_precedent_lookup(state["origin_query"]):
+        return "mcp"
     llm = create_llm()
     history = format_history(state.get("messages"), max_turns=2)
     user_content = (
@@ -46,16 +49,18 @@ def build_workflow():
     builder.add_node("generator", generator_node)
     builder.add_node("citation", citation_node)
     builder.add_node("summary", summary_node)
+    builder.add_node("precedent_query", precedent_query_node)
 
     builder.add_conditional_edges(START , route_image ,
-        {"image": "image", "summary": "summary", "general": "general", "out_of_scope": "general", "rag": "rag", "mcp": "mcp"})
+        {"image": "image", "summary": "summary", "general": "general", "out_of_scope": "general", "rag": "rag", "mcp": "precedent_query"})
     
     builder.add_conditional_edges("image", route_start,
-        {"general": "general", "out_of_scope" : "general", "rag": "rag", "mcp" : "mcp"})
+        {"general": "general", "out_of_scope" : "general", "rag": "rag", "mcp" : "precedent_query"})
     
     builder.add_edge("general", END)
     builder.add_edge("summary", END)
     builder.add_edge("rag", "citation")
+    builder.add_edge("precedent_query", "mcp")
     builder.add_edge("mcp", "generator")
     builder.add_edge("generator", "citation")
     builder.add_edge("citation", END)
