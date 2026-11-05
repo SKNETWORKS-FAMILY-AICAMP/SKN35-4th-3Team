@@ -19,6 +19,18 @@ CITATION_PROMPT = """
 - 존재하지 않는 출처나 법적 근거를 만들어내지 마세요.
 - 단순한 문체 차이는 허용하되 사실이나 법률관계의 차이는 허용하지 마세요.
 
+[출처 사용 규칙]
+- 각 claim의 allowed_source_ids에 포함된 출처만 사용할 수 있습니다.
+- claim의 documents에 포함되지 않은 출처는 사용하지 마세요.
+- 다른 claim의 source_id를 현재 claim에 추가하지 마세요.
+- 평가 결과의 source_ids는 allowed_source_ids의 부분집합이어야 합니다.
+- 근거가 부족하면 새로운 source_id를 추가하지 말고 partial 또는 unsupported로 판단하세요.
+
+각 claim은 다음 정보를 포함합니다.
+- text: 검증할 주장
+- allowed_source_ids: 사용할 수 있는 출처 ID
+- documents: 해당 주장에 연결된 문서
+
 다음 JSON 객체만 반환하세요.
 {
   "passed": true,

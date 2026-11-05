@@ -42,7 +42,7 @@ class MCPToolNodeTests(unittest.TestCase):
             result["documents"][0]["metadata"]["source_name"],
             PRECEDENT["case_name"],
         )
-        context = build_context(result["documents"], 1000)
+        context = build_context(result["documents"])
         self.assertEqual(context["documents"][0]["text"], PRECEDENT["body"])
         self.assertEqual(context["sources"][0]["source_url"], PRECEDENT["source_url"])
         self.assertEqual(

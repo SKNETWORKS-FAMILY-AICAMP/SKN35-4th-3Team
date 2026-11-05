@@ -5,7 +5,11 @@ from unittest.mock import Mock
 
 from src.const.precedent import MIN_QDRANT_PRECEDENT_SIMILARITY
 from src.tools.precedent_api import OfficialPrecedent, PrecedentApiError
-from src.tools.precedent_mcp import create_tool_service, parse_tool_response
+from src.tools.precedent_mcp import (
+    _official_fallback_query,
+    create_tool_service,
+    parse_tool_response,
+)
 
 
 def _candidate(identifier: str, score: float) -> dict[str, object]:
@@ -35,6 +39,14 @@ def _official(identifier: str) -> OfficialPrecedent:
 
 
 class MCPRelevanceFallbackTests(unittest.TestCase):
+    def test_official_queries_prioritize_legal_issue_phrases(self):
+        query = _official_fallback_query(
+            "임대인이 직접 거주하겠다는 이유로 계약갱신을 거절한 경우, "
+            "실제 거주 의사의 입증책임을 판단한 판례를 찾아주세요."
+        )
+
+        self.assertEqual(query, "임대인 실거주")
+
     def test_high_similarity_results_skip_official_api(self):
         api, retriever = Mock(), Mock()
         retriever.search_candidates.return_value = (

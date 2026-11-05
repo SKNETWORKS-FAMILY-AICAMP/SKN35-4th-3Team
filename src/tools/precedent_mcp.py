@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import logging
 import math
+import re
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 
@@ -50,6 +51,23 @@ _QDRANT_RESULT_FIELDS = {
         "4차 컬렉션에 복사된 판례 OpenAI 벡터의 Cosine 유사도이며 정답 확률이 아닙니다."
     ),
 }
+
+
+def _official_fallback_query(query: str) -> str:
+    """일반 질문에서 공식 API 검색에 사용할 핵심 판례 쟁점을 선택합니다."""
+
+    normalized = " ".join(query.split())
+    has_actual_residence = bool(re.search(
+        r"실거주|실제\s*거주|직접\s*거주|거주하",
+        normalized,
+    ))
+    if "임대인" in normalized and has_actual_residence:
+        return "임대인 실거주"
+    if re.search(r"계약\s*갱신", normalized) and "거절" in normalized:
+        return "계약갱신 거절"
+    if has_actual_residence and re.search(r"입증\s*책임", normalized):
+        return "실거주 입증책임"
+    return normalized
 
 
 def _reference_search_text(official: Mapping[str, object]) -> str:
@@ -337,16 +355,22 @@ class MCPToolService:
             "searched_count": 0,
         }
         fallback_error: dict[str, str] | None = None
+        official_fallback_query: str | None = None
         fallback_used = len(qdrant_qualified) < top_n
         if fallback_used:
             official_top_n = min(
                 search_limit,
                 top_n + (1 if reference else 0),
             )
+            official_fallback_query = (
+                query
+                if reference is not None
+                else _official_fallback_query(query)
+            )
             try:
                 official_result = find_similar_precedents(
                     self.api,
-                    query,
+                    official_fallback_query,
                     top_n=official_top_n,
                     candidate_limit=search_limit,
                 )
@@ -408,6 +432,7 @@ class MCPToolService:
             ),
             "fallback_used": fallback_used,
             "fallback_error": fallback_error,
+            "official_fallback_query": official_fallback_query,
             "results": results,
             "excluded": excluded,
             **ranking_fields,
