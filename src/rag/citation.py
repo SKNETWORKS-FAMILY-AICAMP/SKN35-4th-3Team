@@ -109,6 +109,7 @@ def citation(state: dict, *, llm=None) -> dict:
         "used_document_ids": [],
         "citation_evaluations": [],
         "validation_errors": errors,
+        "validation_warnings": [],
         "review_notes": [],
     }
 
@@ -128,13 +129,28 @@ def citation(state: dict, *, llm=None) -> dict:
             },
         )
 
+        scoped_claims = []
+        for claim in claims:
+            allowed_source_ids = list(dict.fromkeys(
+                source_id
+                for source_id in claim["source_ids"]
+                if source_id in document_map
+            ))
+            scoped_claims.append({
+                "text": claim["text"],
+                "allowed_source_ids": allowed_source_ids,
+                "documents": [
+                    document_map[source_id]
+                    for source_id in allowed_source_ids
+                ],
+            })
+
         response = model.invoke([
             SystemMessage(content=CITATION_PROMPT),
             HumanMessage(content=json.dumps({
                 "question": question,
                 "answer": answer,
-                "claims": claims,
-                "documents": documents,
+                "claims": scoped_claims,
             }, ensure_ascii=False, default=str)),
         ])
 
@@ -168,6 +184,8 @@ def citation(state: dict, *, llm=None) -> dict:
 
         # 4. 평가 결과 및 출처 ID 검증
         verified_ids = []
+        normalized_evaluations = []
+        validation_warnings = []
         all_supported = True
 
         for index, (claim, evaluation) in enumerate(
@@ -195,21 +213,41 @@ def citation(state: dict, *, llm=None) -> dict:
                     f"{index}번 평가의 source_ids가 목록이 아닙니다."
                 )
 
-            # Generator가 연결한 출처만 허용
-            if any(
-                not isinstance(sid, str)
-                or sid not in claim["source_ids"]
-                or sid not in document_map
-                for sid in evaluated_ids
-            ):
-                raise ValueError(
-                    f"{index}번 평가에 허용되지 않은 출처가 있습니다."
+            allowed_ids = set(claim["source_ids"])
+            valid_evaluated_ids = list(dict.fromkeys(
+                source_id
+                for source_id in evaluated_ids
+                if (
+                    isinstance(source_id, str)
+                    and source_id in allowed_ids
+                    and source_id in document_map
                 )
+            ))
+            unexpected_ids = [
+                source_id
+                for source_id in evaluated_ids
+                if (
+                    not isinstance(source_id, str)
+                    or source_id not in allowed_ids
+                    or source_id not in document_map
+                )
+            ]
+            if unexpected_ids:
+                validation_warnings.append({
+                    "code": "unexpected_source_ids",
+                    "claim_index": index,
+                    "source_ids": unexpected_ids,
+                })
 
-            if verdict != "supported" or not evaluated_ids:
+            normalized_evaluations.append({
+                **evaluation,
+                "source_ids": valid_evaluated_ids,
+            })
+
+            if verdict != "supported" or not valid_evaluated_ids:
                 all_supported = False
             else:
-                verified_ids.extend(evaluated_ids)
+                verified_ids.extend(valid_evaluated_ids)
 
         # 5. 최종 검증 통과 여부
         passed = (
@@ -248,7 +286,8 @@ def citation(state: dict, *, llm=None) -> dict:
                 if source.get("document_id")
                 or source.get("point_id")
             )),
-            citation_evaluations=evaluations,
+            citation_evaluations=normalized_evaluations,
+            validation_warnings=validation_warnings,
             review_notes=review_notes,
         )
 

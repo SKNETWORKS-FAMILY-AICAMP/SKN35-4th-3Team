@@ -4,7 +4,7 @@ import unittest
 from types import SimpleNamespace
 from unittest.mock import Mock
 
-from src.tools.precedent_api import OfficialPrecedent
+from src.tools.precedent_api import OfficialPrecedent, PrecedentApiError
 from src.tools.precedent_mcp import create_tool_service, parse_tool_response
 from src.tools.qdrant_precedent import QdrantPrecedentRetriever
 
@@ -120,6 +120,56 @@ class PrecedentCallTests(unittest.TestCase):
             ["147076", "233339"],
         )
         self.assertEqual(len(result["results"]), 2)
+
+    def test_qdrant_and_official_results_use_the_same_official_link_format(self):
+        client, api = Mock(), Mock()
+        client.query_points.return_value = SimpleNamespace(points=[
+            _point("qdrant", "precedent", 0.81, precedent_id="147076"),
+        ])
+        official = _official("233339")
+        api.search.return_value = (official,)
+        api.get_detail.return_value = official
+
+        result = parse_tool_response(
+            self._service(client, api).find_similar_precedents(
+                "임대차 보증금 반환", top_n=2, candidate_limit=3
+            )
+        )
+
+        self.assertEqual(
+            [row["source_url"] for row in result["results"]],
+            [
+                "https://www.law.go.kr/LSW/precInfoP.do?precSeq=147076",
+                "https://www.law.go.kr/LSW/precInfoP.do?precSeq=233339",
+            ],
+        )
+
+    def test_official_api_error_keeps_qdrant_partial_result(self):
+        client, api = Mock(), Mock()
+        client.query_points.return_value = SimpleNamespace(points=[
+            _point("qdrant", "precedent", 0.81, precedent_id="147076"),
+        ])
+        api.search.side_effect = PrecedentApiError(
+            "connection_error",
+            "공식 판례 API 연결에 실패했습니다.",
+        )
+
+        result = parse_tool_response(
+            self._service(client, api).find_similar_precedents(
+                "임대차 보증금 반환", top_n=2, candidate_limit=3
+            )
+        )
+
+        self.assertEqual(result["status"], "success")
+        self.assertEqual(
+            [row["precedent_id"] for row in result["results"]],
+            ["147076"],
+        )
+        self.assertTrue(result["fallback_used"])
+        self.assertEqual(
+            result["fallback_error"]["code"],
+            "connection_error",
+        )
 
     def test_specific_search_fetches_extra_candidate_then_excludes_reference(self):
         api, retriever = Mock(), Mock()
