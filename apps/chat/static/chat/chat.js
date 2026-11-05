@@ -403,7 +403,7 @@ form.addEventListener("submit", async (event) => {
     if (payload.status) {
       const status = document.createElement("p");
       status.className = "status";
-      status.textContent = payload.status;
+      status.textContent = "answered";
       botBubble.append(status);
     }
 
