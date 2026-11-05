@@ -8,6 +8,8 @@ from dotenv import load_dotenv
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_openai import ChatOpenAI
 from src.const.prompt.generator_prompt import GENERATOR_PROMPT
+from src.rag.history import format_history
+
 
 load_dotenv()
 
@@ -200,15 +202,36 @@ def generator(state: dict, *, llm=None) -> dict:
             },
         )
 
+        # messages = [
+        #     SystemMessage(content=GENERATOR_PROMPT),
+        #     HumanMessage(
+        #         content=(
+        #             f"사용자의 원본 질문:\n{question.strip()}\n\n"
+        #             f"검색 자료(JSON):\n{prepared['context']}"
+        #         )
+        #     ),
+        # ]
+
+        history = format_history(
+            state.get("messages"),
+            max_turns=5,
+            max_chars=8000,
+        )
+
         messages = [
             SystemMessage(content=GENERATOR_PROMPT),
             HumanMessage(
                 content=(
+                    "이전 대화는 현재 질문의 대상과 상황을 이해하는 데 사용하세요. "
+                    "이전 답변 자체를 법적 근거로 사용하지 말고, "
+                    "법적 설명은 아래 검색 자료를 근거로 작성하세요.\n\n"
+                    f"이전 대화:\n{history or '없음'}\n\n"
                     f"사용자의 원본 질문:\n{question.strip()}\n\n"
                     f"검색 자료(JSON):\n{prepared['context']}"
                 )
             ),
         ]
+
 
         # 형식 오류는 검사를 완화하지 않고 오류를 알려 한 번만 재생성합니다.
         for attempt in range(2):

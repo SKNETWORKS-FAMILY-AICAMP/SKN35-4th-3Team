@@ -10,6 +10,8 @@ from src.const.prompt.classify_prompt import CLASSIFY_PROMPT
 from src.rag.history import format_history
 from src.graph.nodes.generator_node import generator_node
 from src.graph.nodes.citation_node import citation_node
+from functools import lru_cache
+
 
 # 세션에 캐시된 이전 그래프를 교체할 때 올립니다.
 WORKFLOW_VERSION = 3
@@ -31,6 +33,7 @@ def route_image(state: State) -> str:
         return "image"
     return route_start(state)
 
+@lru_cache(maxsize=1)
 def build_workflow():
     builder = StateGraph(State)
 
