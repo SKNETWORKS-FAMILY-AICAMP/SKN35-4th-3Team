@@ -52,6 +52,7 @@ class FollowupTests(SimpleTestCase):
         self.assertIn("보증금", query)
         self.assertEqual(result["sources"][0]["source_url"], source["source_url"])
         self.assertEqual(result["mcp_status"], "success")
+        generator.assert_not_called()
 
     @patch("src.graph.workflow.create_llm")
     def test_explicit_precedent_lookup_bypasses_law_only_route(self, llm):
@@ -96,6 +97,14 @@ class FollowupTests(SimpleTestCase):
         result = summary_node({"origin_query": "요약해줘", "messages": [AIMessage(content=answer)]})
         self.assertEqual(result["answer"], "요약 결과")
         self.assertIn(answer, llm.return_value.invoke.call_args.args[0][0].content)
+
+    @patch("src.graph.nodes.summary_node.create_llm")
+    def test_summary_keeps_previous_law_and_precedent_sources(self, llm):
+        llm.return_value.invoke.return_value = SimpleNamespace(content="요약 결과")
+        source = {"source_name": "법령", "source_url": "https://www.law.go.kr/법령/주택임대차보호법"}
+        result = summary_node({"origin_query": "요약해줘", "messages": [AIMessage(content="이전 답변", additional_kwargs={"sources": [], "retrieved_sources": [source]})]})
+        self.assertEqual(result["sources"], [])
+        self.assertEqual(result["context_sources"], [source])
 
     @patch("src.graph.nodes.summary_node.create_llm")
     def test_graph_summary_restores_serialized_session_messages(self, llm):

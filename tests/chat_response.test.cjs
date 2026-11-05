@@ -8,6 +8,7 @@ const source = fs.readFileSync(path.join(__dirname, '../apps/chat/static/chat/ch
 const context = vm.createContext({});
 vm.runInContext(source.split('const form =')[0], context);
 const readChatResponse = context.readChatResponse;
+const chatSources = context.chatSources;
 
 function response(status, type, payload) {
   return {
@@ -46,4 +47,20 @@ test('malformed JSON does not expose the raw parsing exception', async () => {
 
 test('invalid JSON response shape is rejected', async () => {
   await assert.rejects(readChatResponse(response(200, 'application/json', null)), /응답 형식/);
+});
+
+test('empty verified sources do not hide retrieved legislation links', () => {
+  const source = { source_name: '법령', source_url: 'https://www.law.go.kr/' };
+  const display = chatSources({ sources: [], citations: [], retrieved_sources: [source] });
+  assert.equal(display.sources[0], source);
+  assert.equal(display.heading, '검색된 법령·판례');
+  assert.match(display.notice, /검증은 완료되지 않았습니다/);
+});
+
+test('primary sources remain primary when extra retrieved documents exist', () => {
+  const source = { source_name: '판례' };
+  const display = chatSources({ sources: [source], retrieved_sources: [{ source_name: '다른 문서' }] });
+  assert.equal(display.sources[0], source);
+  assert.equal(display.sources.length, 1);
+  assert.equal(display.notice, '');
 });

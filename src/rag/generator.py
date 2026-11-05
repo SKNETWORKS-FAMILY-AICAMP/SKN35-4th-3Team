@@ -220,8 +220,12 @@ def generator(state: dict, *, llm=None) -> dict:
             max_chars=8000,
         )
 
+        concise = os.getenv("GENERATOR_CONCISE", "false").lower() in {"true", "1"}
+        prompt = GENERATOR_PROMPT
+        if concise:
+            prompt += "\n\n핵심 요건·기한·예외는 보존하면서 중복 설명을 줄이세요. 네 항목을 합쳐 8문장 안팎으로 간결하게 답하세요. 질문과 관련 없는 내용을 늘리지 마세요."
         messages = [
-            SystemMessage(content=GENERATOR_PROMPT),
+            SystemMessage(content=prompt),
             HumanMessage(
                 content=(
                     "이전 대화는 현재 질문의 대상과 상황을 이해하는 데 사용하세요. "

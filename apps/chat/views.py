@@ -157,7 +157,10 @@ def chat(request):
     if answer and result.get("generation_status") not in {"llm_error", "invalid_output"}:
         conversations[conversation_id] = (history + [
             {"role": "user", "content": question[:16000]},
-            {"role": "assistant", "content": answer[:16000]},
+            {"role": "assistant", "content": answer[:16000], "additional_kwargs": {
+                "sources": result.get("sources") or [],
+                "retrieved_sources": result.get("context_sources") or [],
+            }},
         ])[-10:]
         while len(conversations) > 5:
             del conversations[next(iter(conversations))]
@@ -179,6 +182,8 @@ def chat(request):
             "status": result.get("generation_status") or "answered",
             "answer": result.get("answer", ""),
             "sources": result.get("sources", []),
+            "retrieved_sources": result.get("context_sources") or [],
+            "citation_validation_status": result.get("citation_validation_status"),
             "citations": result.get("citations", []),
             "mcp_similarity_percent": result.get("mcp_similarity_percent"),
             "mcp_similar_precedents": result.get(

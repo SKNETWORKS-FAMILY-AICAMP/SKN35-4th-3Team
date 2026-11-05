@@ -23,6 +23,18 @@ async function readChatResponse(response) {
   return payload;
 }
 
+function chatSources(payload) {
+  const primary = payload.sources?.length ? payload.sources : (payload.citations || []);
+  const retrieved = payload.retrieved_sources || [];
+  return {
+    sources: primary.length ? primary : retrieved,
+    heading: primary.length ? "법령·판례 출처" : "검색된 법령·판례",
+    notice: !primary.length && retrieved.length
+      ? "답변의 근거 검증은 완료되지 않았습니다. 아래 검색 자료의 원문을 확인하세요."
+      : "",
+  };
+}
+
 const form = document.querySelector("#chat-form");
 const messages = document.querySelector("#messages");
 const textarea = document.querySelector("#question");
@@ -276,14 +288,19 @@ fileInput.addEventListener("change", () => {
   renderFiles();
 });
 
-function renderSources(sources = []) {
+function renderSources(sources = [], heading = "법령·판례 출처", notice = "") {
   const block = document.createElement("div");
   block.className = "sources-block";
 
   const title = document.createElement("p");
   title.className = "sources-title";
-  title.textContent = "확인된 출처";
+  title.textContent = heading;
   block.append(title);
+  if (notice) {
+    const note = document.createElement("p");
+    note.textContent = notice;
+    block.append(note);
+  }
 
   const list = document.createElement("ul");
   list.className = "sources";
@@ -301,7 +318,8 @@ function renderSources(sources = []) {
       if (key) seen.add(key);
 
       const item = document.createElement("li");
-      const label = source.source_name || source.title || source.document_id || "출처";
+      const name = source.source_name || source.case_name || source.title || source.document_id || "출처";
+      const label = [name, source.case_number, source.article].filter(Boolean).join(" · ");
       if (source.source_url) {
         const link = document.createElement("a");
         link.href = source.source_url;
@@ -439,8 +457,9 @@ form.addEventListener("submit", async (event) => {
     answer.textContent = payload.answer || "답변이 없습니다.";
     botBubble.append(answer);
 
-    botBubble.append(renderSources(payload.sources || payload.citations));
-    if ((payload.sources || payload.citations || []).length > 0) {
+    const sourceDisplay = chatSources(payload);
+    botBubble.append(renderSources(sourceDisplay.sources, sourceDisplay.heading, sourceDisplay.notice));
+    if (sourceDisplay.sources.length > 0) {
       addDetailsButton(botBubble);
     }
     setProgress(3, "답변과 출처를 확인해 보세요.");

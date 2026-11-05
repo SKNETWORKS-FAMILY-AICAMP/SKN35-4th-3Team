@@ -51,7 +51,8 @@ class ChatWebTests(TestCase):
         response = self.client.post(reverse("chat:api"), {"question": "요약해줘", "conversation_id": "one"})
         self.assertEqual(response.status_code, 200)
         state = workflow.return_value.invoke.call_args.args[0]
-        self.assertEqual(state["messages"][-1], {"role": "assistant", "content": "이전 상담 답변"})
+        self.assertEqual(state["messages"][-1]["role"], "assistant")
+        self.assertEqual(state["messages"][-1]["content"], "이전 상담 답변")
         self.assertNotIn("queries", state)
 
     @patch("src.graph.workflow.build_workflow")
@@ -60,6 +61,20 @@ class ChatWebTests(TestCase):
         self.client.post(reverse("chat:api"), {"question": "첫 질문", "conversation_id": "one"})
         self.client.post(reverse("chat:api"), {"question": "새 상담", "conversation_id": "two"})
         self.assertEqual(workflow.return_value.invoke.call_args.args[0]["messages"], [])
+
+    @patch("src.graph.workflow.build_workflow")
+    def test_retrieved_law_remains_available_when_answer_verification_fails(self, workflow):
+        source = {"source_name": "주택임대차보호법", "source_url": "https://www.law.go.kr/법령/주택임대차보호법"}
+        workflow.return_value.invoke.return_value = {
+            "answer": "답변", "generation_status": "verification_failed",
+            "sources": [], "context_sources": [source], "citation_validation_status": "failed",
+        }
+        response = self.client.post(reverse("chat:api"), {"question": "질문"})
+        self.assertEqual(response.json()["sources"], [])
+        self.assertEqual(response.json()["retrieved_sources"], [source])
+        self.assertEqual(response.json()["citation_validation_status"], "failed")
+        stored = self.client.session["chat_conversations"]["default"][-1]
+        self.assertEqual(stored["additional_kwargs"]["retrieved_sources"], [source])
 
     @patch("src.graph.workflow.build_workflow", side_effect=RuntimeError("test failure"))
     def test_workflow_failure_returns_json_with_request_id(self, workflow):
