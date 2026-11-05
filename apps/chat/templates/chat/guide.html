@@ -1,0 +1,49 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>이용 가이드 — LAW:MATE</title>
+  <link rel="stylesheet" href="{% static 'chat/home.css' %}">
+  <link rel="stylesheet" href="{% static 'chat/guide.css' %}">
+</head>
+<body>
+  <div class="landing">
+    <header class="header">
+      <a class="wordmark" href="{% url 'chat:home' %}" aria-label="LAW:MATE 홈">LAW<span>:</span>MATE<span class="wordmark-note">당신 곁의 법률 메이트</span></a>
+      <nav class="header-nav" aria-label="메인 메뉴"><a class="guide-link" href="{% url 'chat:home' %}">홈으로</a><a class="header-link" href="{% url 'chat:index' %}">상담 시작하기 <span aria-hidden="true">↗</span></a></nav>
+    </header>
+    <main class="guide-main">
+      <div class="guide-heading"><p class="eyebrow">LAW:MATE GUIDE</p><h1>처음이어도 괜찮아요.<br>이렇게 시작해 보세요.</h1><p>어떤 질문을 할지, 어떻게 설명할지 막막하다면<br>아래 예시를 참고해 나의 이야기를 들려주세요.</p></div>
+      <nav class="guide-index" aria-label="가이드 목차"><a href="#topics">01 질문할 수 있는 주제</a><a href="#writing">02 질문 작성하기</a><a href="#attachments">03 파일 첨부하기</a><a href="#answers">04 답변 확인하기</a></nav>
+      <section id="topics" class="guide-section" aria-labelledby="topics-title">
+        <div class="section-heading"><span>01</span><div><h2 id="topics-title">이런 주제로 질문해 보세요</h2><p>생활 속 법률 문제와 관련 자료를 찾는 데 도움을 드려요.</p></div></div>
+        <div class="topic-grid">
+          <article><span class="topic-symbol" aria-hidden="true">⌂</span><h3>주거 · 임대차</h3><p>전세·월세, 보증금 반환, 임대차 계약</p><blockquote>“계약이 끝났는데 보증금을 돌려받지 못했어요. 무엇부터 준비해야 하나요?”</blockquote></article>
+          <article><span class="topic-symbol" aria-hidden="true">▤</span><h3>근로 · 임금</h3><p>임금체불, 해고, 최저임금 관련 질문</p><blockquote>“퇴사 후에도 급여를 받지 못했어요. 임금체불 진정에 필요한 자료가 궁금해요.”</blockquote></article>
+          <article><span class="topic-symbol" aria-hidden="true">↺</span><h3>소비 · 환불</h3><p>온라인 쇼핑, 서비스 해지, 소비자 피해</p><blockquote>“헬스장을 중도 해지하고 싶어요. 환불 기준과 관련 분쟁조정 사례를 알려주세요.”</blockquote></article>
+          <article><span class="topic-symbol" aria-hidden="true">§</span><h3>계약 · 금전 분쟁</h3><p>빌려준 돈, 계약 불이행, 손해배상</p><blockquote>“빌려준 돈을 약속한 날짜에 받지 못했어요. 대응 방법과 준비할 자료가 궁금해요.”</blockquote></article>
+          <article><span class="topic-symbol" aria-hidden="true">≡</span><h3>신청 · 대응 절차</h3><p>피해구제, 분쟁조정, 소송·집행 절차</p><blockquote>“소비자분쟁조정은 어떻게 신청하나요? 준비할 서류와 절차를 알려주세요.”</blockquote></article>
+          <article><span class="topic-symbol" aria-hidden="true">⌕</span><h3>법령 · 판례 · 약관 찾기</h3><p>관련 조문, 판결문, 표준약관, 분쟁조정 사례</p><blockquote>“임대차 보증금 반환과 관련된 판례를 찾아주세요. 사건번호가 있으면 함께 알려주세요.”</blockquote></article>
+        </div>
+        <p class="section-note">생활법률과 관계없는 질문은 안내가 제한될 수 있어요. 검색되는 자료에 따라 답변 범위가 달라질 수 있습니다.</p>
+      </section>
+      <section id="writing" class="guide-section" aria-labelledby="writing-title">
+        <div class="section-heading"><span>02</span><div><h2 id="writing-title">날짜 · 금액 · 상황을 함께 적어주세요</h2><p>법률 용어를 몰라도 괜찮아요. 있었던 일을 순서대로 설명해 주세요.</p></div></div>
+        <div class="writing-example"><div><h3>질문에 담으면 좋은 내용</h3><ul><li>누구와 어떤 일이 있었는지</li><li>사건 날짜와 약속한 기한</li><li>관련 금액과 현재까지의 상황</li><li>가장 궁금한 점과 원하는 해결 방향</li></ul></div><div class="sample-question"><span>이렇게 물어보세요</span><p>월세 계약이 10월 31일에 끝났고 이사도 마쳤어요. 보증금 1,000만 원을 아직 받지 못했고, 임대인은 다음 세입자가 들어오면 준다고 합니다. 지금 준비할 자료와 대응 절차를 알고 싶어요.</p></div></div>
+      </section>
+      <section id="attachments" class="guide-section" aria-labelledby="attachments-title">
+        <div class="section-heading"><span>03</span><div><h2 id="attachments-title">관련 서류도 함께 보여주세요</h2><p>입력창의 ＋ 버튼으로 파일을 선택한 뒤, 질문과 함께 전송하세요.</p></div></div>
+        <div class="attachment-guide"><div><h3>이미지</h3><p>PNG · JPG · JPEG<br>이미지는 최대 {{ image_max_files }}장까지</p></div><div><h3>PDF</h3><p>계약서·거래 내역 등의 PDF<br>파일당 앞 {{ pdf_max_pages }}페이지까지 분석해요.</p></div><div><h3>첨부 전 확인</h3><p>글자가 선명하게 보이는 파일을 골라주세요.<br>불필요한 개인정보는 가린 뒤 첨부해 주세요.</p></div></div>
+      </section>
+      <section id="answers" class="guide-section" aria-labelledby="answers-title">
+        <div class="section-heading"><span>04</span><div><h2 id="answers-title">답변과 근거를 함께 확인하세요</h2><p>답변을 읽고, 내 상황과 맞는 내용인지 살펴보세요.</p></div></div>
+        <ol class="answer-guide"><li><strong>답변 읽기</strong><p>질문에 대한 설명과 안내 내용을 확인하세요.</p></li><li><strong>출처 확인하기</strong><p>‘확인된 출처’에서 참고 자료를 살펴보세요. 출처가 있는 답변은 ‘자세히 보기’로도 확인할 수 있어요.</p></li><li><strong>이어서 질문하기</strong><p>빠뜨린 상황을 덧붙이거나, 이해하기 어려운 부분을 다시 물어보세요. Enter로 전송하고 Shift+Enter로 줄바꿈해요.</p></li></ol>
+      </section>
+      <div class="guide-cta"><div><h2>이제, 당신의 이야기를 들려주세요.</h2><p>AI가 제공하는 정보는 참고용이며 전문적인 법률 자문을 대신하지 않습니다.</p></div><a class="start-button" href="{% url 'chat:index' %}">상담 시작하기 <span aria-hidden="true">↗</span></a></div>
+    </main>
+    <footer><span>LAW:MATE · 당신의 일상, 든든한 동행</span><a href="{% url 'chat:home' %}">메인페이지로 돌아가기 ↑</a></footer>
+  </div>
+</body>
+</html>

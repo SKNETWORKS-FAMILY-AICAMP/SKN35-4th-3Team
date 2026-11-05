@@ -7,6 +7,27 @@ from django.urls import reverse
 
 
 class ChatWebTests(TestCase):
+    @override_settings(CHAT_PDF_MAX_PAGES=4, CHAT_MAX_IMAGE_FILES=2)
+    def test_guide_topics_limits_and_navigation(self):
+        response = self.client.get(reverse("chat:guide"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "chat/guide.html")
+        for topic in ["주거 · 임대차", "근로 · 임금", "소비 · 환불", "계약 · 금전 분쟁", "신청 · 대응 절차", "법령 · 판례 · 약관 찾기"]:
+            self.assertContains(response, topic)
+        self.assertContains(response, "최대 2장")
+        self.assertContains(response, "앞 4페이지")
+        self.assertContains(response, f'href="{reverse("chat:index")}"')
+        for name in ["chat:home", "chat:index"]:
+            self.assertContains(self.client.get(reverse(name)), f'href="{reverse("chat:guide")}"')
+
+    def test_home_links_to_chat(self):
+        response = self.client.get(reverse("chat:home"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "chat/home.html")
+        self.assertContains(response, f'href="{reverse("chat:index")}"')
+        self.assertNotContains(response, 'id="chat-form"')
+
     def test_index_describes_chat_api(self):
         response = self.client.get(reverse("chat:index"))
 

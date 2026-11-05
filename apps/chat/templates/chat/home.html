@@ -1,0 +1,68 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="어렵게 느껴지는 생활법률, LAW:MATE와 함께 관련 법령과 판례부터 차근차근 확인해 보세요.">
+  <title>LAW:MATE — 일상의 고민에, 법의 길을 잇다</title>
+  <link rel="stylesheet" href="{% static 'chat/home.css' %}">
+</head>
+<body>
+  <div class="landing">
+    <header class="header">
+      <a class="wordmark" href="{% url 'chat:home' %}" aria-label="LAW:MATE 홈">LAW<span>:</span>MATE<span class="wordmark-note">당신 곁의 법률 메이트</span></a>
+      <nav class="header-nav" aria-label="메인 메뉴">
+        <a class="guide-link" href="{% url 'chat:guide' %}">이용 가이드</a>
+        <a class="header-link" href="{% url 'chat:index' %}">상담 시작하기 <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> LEGAL GUIDANCE FOR EVERYDAY LIFE</p>
+          <h1 id="hero-title">막막한 법률 고민,<br>이제 <em>함께</em> 풀어가요.</h1>
+          <p class="intro">어디서부터 시작해야 할지 모를 때.<br>당신의 이야기를 듣고, 관련 법령과 판례에서<br class="desktop-break"> 해결의 실마리를 찾아드릴게요.</p>
+          <a class="start-button" href="{% url 'chat:index' %}">시작하기 <span aria-hidden="true">↗</span></a>
+          <p class="start-note">일상 언어로 편하게 이야기해 주세요.</p>
+        </div>
+        <div class="hero-art" role="img" aria-label="빛의 궤도 안에서 균형을 이루는 법의 저울">
+          <div class="art-glow"></div>
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
+          <div class="orbit-dot dot-one"></div><div class="orbit-dot dot-two"></div>
+          <span class="art-label label-top">COMPLEXITY</span><span class="art-label label-bottom">CLARITY</span>
+          <div class="scale-wrap">
+            <svg class="scale" viewBox="0 0 400 400" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="metal" x1="90" y1="80" x2="310" y2="330" gradientUnits="userSpaceOnUse"><stop stop-color="#afc6ad"/><stop offset=".45" stop-color="#346453"/><stop offset="1" stop-color="#183e32"/></linearGradient>
+                <linearGradient id="gold" x1="100" y1="130" x2="300" y2="270"><stop stop-color="#d4bd82"/><stop offset="1" stop-color="#9a7a3f"/></linearGradient>
+              </defs>
+              <ellipse cx="200" cy="337" rx="101" ry="13" fill="#244d3c" opacity=".07"/>
+              <path d="M200 94V309" stroke="url(#metal)" stroke-width="12" stroke-linecap="round"/>
+              <path d="M164 316h72l20 13H144l20-13Z" fill="url(#metal)"/>
+              <circle cx="200" cy="89" r="13" fill="url(#gold)"/>
+              <g class="scale-beam">
+                <path d="M91 143Q145 148 200 128Q255 148 309 143" stroke="url(#metal)" stroke-width="9" stroke-linecap="round"/>
+                <path d="m112 146-40 102m40-102 40 102m136-102-40 102m40-102 40 102" stroke="url(#gold)" stroke-width="2.5"/>
+                <path d="M65 248h94c-5 29-19 43-47 43s-42-14-47-43ZM241 248h94c-5 29-19 43-47 43s-42-14-47-43Z" fill="url(#metal)"/>
+                <path d="M65 248h94m82 0h94" stroke="#c4af78" stroke-width="3" stroke-linecap="round"/>
+              </g>
+              <circle cx="200" cy="132" r="7" fill="#c4af78"/>
+            </svg>
+          </div>
+          <div class="floating-note note-one"><span aria-hidden="true">§</span> 복잡한 법률을 쉽게</div>
+          <div class="floating-note note-two"><span class="note-spark" aria-hidden="true">✧</span> 근거를 따라, 차근차근</div>
+          <p class="art-caption">당신의 일상에 균형을 더하다</p>
+        </div>
+      </section>
+      <section class="features" aria-label="LAW:MATE 이용 방법">
+        <div class="feature"><span class="feature-number">01 / LISTEN</span><h2>당신의 이야기부터</h2><p>어려운 법률 용어 없이<br>겪고 있는 상황을 들려주세요.</p></div>
+        <div class="feature"><span class="feature-number">02 / FIND</span><h2>근거에서 찾는 실마리</h2><p>관련 법령과 판례를 검색해<br>상황에 맞는 정보를 정리해요.</p></div>
+        <div class="feature"><span class="feature-number">03 / UNDERSTAND</span><h2>서류도 함께 살펴봐요</h2><p>이미지와 PDF를 첨부하면<br>상담에 필요한 내용을 확인해요.</p></div>
+      </section>
+    </main>
+    <footer><span>LAW:MATE <span class="footer-dot">·</span> 당신의 일상, 든든한 동행</span><p>AI가 제공하는 법률 정보는 참고용이며, 전문적인 법률 자문을 대신하지 않습니다.</p></footer>
+  </div>
+  <script src="{% static 'chat/home.js' %}" defer></script>
+</body>
+</html>

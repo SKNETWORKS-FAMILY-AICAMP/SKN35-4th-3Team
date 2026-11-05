@@ -17,6 +17,21 @@ logger = logging.getLogger(__name__)
 
 
 @require_GET
+def home(request):
+    """상담 서비스 소개와 시작 화면을 표시합니다."""
+    return render(request, "chat/home.html")
+
+
+@require_GET
+def guide(request):
+    """상담 주제와 서비스 이용 방법을 안내합니다."""
+    return render(request, "chat/guide.html", {
+        "pdf_max_pages": settings.CHAT_PDF_MAX_PAGES,
+        "image_max_files": settings.CHAT_MAX_IMAGE_FILES,
+    })
+
+
+@require_GET
 def index(request):
     """Django 기반 생활법률 상담 화면을 표시합니다."""
 
