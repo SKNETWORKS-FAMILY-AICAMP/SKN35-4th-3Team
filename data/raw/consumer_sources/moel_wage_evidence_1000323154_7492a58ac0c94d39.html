@@ -1,0 +1,300 @@
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+<meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=no;" />
+<title> :: 고용노동부 모바일페이지 고객센터 :: </title>
+<link rel="stylesheet" type="text/css" href="/css/common.css"/>
+<script type="text/javascript" src="/js/menulayer.js"></script>
+<script type="text/javaScript" language="javascript" defer="defer">
+<!--
+	window.addEventListener('load', function() { setTimeout(scrollTo, 0, 0, 1); }, false);
+	
+	/* 글 등록 function */
+	function fn_regist() {
+	   	document.viewForm.action = "rtmregist.do";
+	   	document.viewForm.submit();		
+	}
+	
+	/* 답변알림 */
+	function fn_channel() {
+		if(document.getElementsByName("channel")[0].checked) {
+			document.viewForm.phn1.style.display = "";
+			document.viewForm.phn2.style.display = "";
+			document.viewForm.phn3.style.display = "";
+		} else {
+			document.viewForm.phn1.style.display = "none";
+			document.viewForm.phn2.style.display = "none";
+			document.viewForm.phn3.style.display = "none";
+		}
+	}
+	
+	/* 숫자체크 */
+	function isNum(obj) {
+		var sValue = obj.value;
+		var idx = sValue.length;
+		var ValidChars = "0123456789";
+		var isNumber = true;
+		var Char;
+		for(i = 0; i < idx && isNumber == true; i++) {
+			Char = sValue.charAt(i);
+			if(ValidChars.indexOf(Char) == -1) {
+				alert("전화번호를 정확히 입력해주세요");
+				obj.value = "";
+				obj.focus();
+				isNumber = false;
+			}
+		}
+		
+		return isNumber;
+	}
+	
+	function fn_valid() {
+		if(!fc_chk_byte3(200)) {
+			alert( "입력 길이 제한을 초과하였습니다.\r\n" + "(한글 100자, 영문 200자 이하)");
+			return;
+		}
+
+		if(document.viewForm.askcntn.value == "추가 질문을 남겨주세요") {
+			alert("상담 내용을 입력해주세요");
+			return;
+		}
+
+		if(document.viewForm.mblphn1.value == "" ||
+		   document.viewForm.mblphn2.value == "" ||
+		   document.viewForm.mblphn3.vaule == "") {
+		   	alert("전화번호를 정확히 입력해주세요");
+		   	return;
+		} 
+		if(document.viewForm.askcntn.value == "") {
+			alert("상담 내용을 입력해주세요");
+			return;
+		}				
+		
+		fn_regist();
+	}
+	
+	var clr = "true";
+	
+	function fn_clear() {
+		if(clr == "true") {
+			document.viewForm.askcntn.value = "";
+			clr = "false";
+		}
+	}
+
+	function fc_chk_byte2(aro_name,ari_max) {
+		var ls_str     = aro_name.value; // 이벤트가 일어난 컨트롤의 value 값
+		var li_str_len = ls_str.length;  // 전체길이
+
+		// 변수초기화
+		var li_max      = ari_max; // 제한할 글자수 크기
+		var i           = 0;  // for문에 사용
+		var li_byte     = 0;  // 한글일경우는 2 그밗에는 1을 더함
+		var li_len      = 0;  // substring하기 위해서 사용
+		var ls_one_char = ""; // 한글자씩 검사한다
+		var ls_str2     = ""; // 글자수를 초과하면 제한할수 글자전까지만 보여준다.
+
+		for(i=0; i< li_str_len; i++)
+		{
+		// 한글자추출
+		ls_one_char = ls_str.charAt(i);
+
+		// 한글이면 2를 더한다.
+		if (escape(ls_one_char).length > 4)
+		{
+		li_byte += 2;
+		}
+		// 그밗의 경우는 1을 더한다.
+		else
+		{
+		li_byte++;
+		}
+
+		// 전체 크기가 li_max를 넘지않으면
+		if(li_byte <= li_max)
+		{
+		li_len = i + 1;
+		}
+		}
+
+		// 전체길이를 초과하면
+		if(li_byte > li_max)
+		{
+		alert( "입력 길이 제한을 초과하였습니다.\r\n" + "(한글 " + (ari_max / 2) + "자, 영문 " + ari_max + "자 이하)");
+		ls_str2 = ls_str.substr(0, li_len);
+		aro_name.value = ls_str2;
+
+		}
+		aro_name.focus();   
+	}
+
+	function fc_chk_byte3(ari_max) {
+		var ls_str     = document.viewForm.askcntn.value; // 이벤트가 일어난 컨트롤의 value 값
+		var li_str_len = ls_str.length;  // 전체길이
+
+		// 변수초기화
+		var li_max      = ari_max; // 제한할 글자수 크기
+		var i           = 0;  // for문에 사용
+		var li_byte     = 0;  // 한글일경우는 2 그밗에는 1을 더함
+		var li_len      = 0;  // substring하기 위해서 사용
+		var ls_one_char = ""; // 한글자씩 검사한다
+		var ls_str2     = ""; // 글자수를 초과하면 제한할수 글자전까지만 보여준다.
+
+		for(i=0; i< li_str_len; i++)
+		{
+		// 한글자추출
+		ls_one_char = ls_str.charAt(i);
+
+		// 한글이면 2를 더한다.
+		if (escape(ls_one_char).length > 4)
+		{
+		li_byte += 2;
+		}
+		// 그밗의 경우는 1을 더한다.
+		else
+		{
+		li_byte++;
+		}
+
+		// 전체 크기가 li_max를 넘지않으면
+		if(li_byte <= li_max)
+		{
+		li_len = i + 1;
+		}
+		}
+
+		// 전체길이를 초과하면
+		if(li_byte > li_max) return false;
+		
+		return true;
+	}
+-->
+</script>    
+</head>
+<body class="mainbg">
+<form name="viewForm" method="post" action="" onsubmit="return false;">
+<input type="hidden" name="id" value="1000323154"/>
+<input type="hidden" name="hrnkcnslid" value="1000323154"/>
+<span id="menulayer"></span>
+<div class="top">
+       <h1 class="top_h1"><img src="/images/tit_counc.gif" alt="상담신청"/></h1>
+       <p class="top_li"><img src="/images/bt_layermenu.gif" alt="전체메뉴" onclick="fn_menu()"/><img src="/images/bt_tohome.gif" alt="홈" onclick="location.href='faqlist.do'"/></p>
+</div>
+<div id="tab">
+	<!-- tab1 -->
+	<p class="tab01"><img src="/images/tab_tit_counc01_on.gif" alt="실시간상담" onclick="location.href='rtmlist.do'"/></p>
+	<!-- tab2 -->
+	<!-- 2015.03.23 상담예약 변경--> 
+	<!-- <p class="tab02"><img src="/images/tab_tit_counc02.gif" alt="상담예약" onclick="location.href='rsvform.do'"/></p> -->
+</div>
+
+
+<div style="padding-top:0px">
+	<dl> 
+		<dt class="body02"><img src="/images/img_quest.gif" alt="질의"/></dt> 
+		<dd class="body03_g"><div class="pic_right"><img src="/images/photo/0/1000000000.gif" alt="사용자사진"/></div>
+			연말정산 미지급 임금체불 해당하는지, 임금체불시 연체이자 신청하려면 어떤 서류로 요청해야하는지알려주세요
+		</dd>
+		<dd>
+			<div align="left" class="title_count1" style="color:gray;font-weight:bold">
+			<!-- 신청인 : null&nbsp;/&nbsp; -->
+			신청일 : 2026.05.14 13:08
+			</div>
+		</dd>
+	</dl>
+</div>
+
+<p style="height:15px"></p>
+<div style="padding-top:0px">
+	<dl> 
+		<dt class="body02"><img src="/images/img_answ.gif" alt="답변"/></dt> 
+		<dd class="body03_g"><div class="pic_right"><img src="/images/photo/0/1000000000.gif" width="40px" height="40px" alt="상담사사진"/></div>고용노동부 1350모바일 상담을 이용해 주셔서 감사합니다. 
+
+(진정신고) 재직근로자의 임금은 정기지급일 이후, 퇴직근로자의 임금 및 퇴직금은 퇴직일로부터 14일 이내 지급받지 못한 경우 근무지 관할 노동청에서 진정 제기가능합니다.(근기법제49조 임금채권 소멸시효는 3년입니다.)
+
+- 진정 제기 시 귀하의 구체적 근로사실관계 입증자료(예: 급여자료,근로계약서, 근로시간 증빙자료등)를 준비하여 상담하시면 보다 원활한 상담을 받으실 수 있으며, 
+별도 증빙이 어려운 경우 진정 제기 이후 담당감독관 출석 이후 대질 조사 등의 방법으로 확인 가능할 것이니 자세한 확인 및 상담은 사업장 소재지 관할 지방고용노동지청으로 질의하여 추가 상담 받으시길 바랍니다.
+
+◆ 진정제기 방법(택1)
+① 인터넷을 통한 진정 제기 : &lt;고용노동부 홈페이지(www.moel.go.kr) → 민원 → 민원신청 → 온라인 민원신청 → &quot;진정서&quot; 검색 → 신청(처리기간 25일 이내&lt;토요일, 공휴일 제외&gt;)
+② 사업장 관할 지방고용노동청에 방문하여 신고
+
+(지연이자) 임금체불액 지연이자로 인한 채권발생은 근로기준법에서 다루질 않아 민사로 해결해야 할 부분으로 해당 채권에 관한 금전문제는 대한법률구조공단(국번없이 132번)으로 문의하여 상담을 받아보시기 바랍니다. </dd> 
+		<dd>
+			<div align="left" class="title_count1" style="color:gray;font-weight:bold">
+			답변일 : 2026.05.14 13:09
+			</div>
+		</dd>
+	</dl>
+	<!-- <div class="btn_right"><img src="/images/bt_recomm.gif" alt="추천"/></div> -->
+</div>
+
+<p style="height:15px"></p>
+
+<div style="padding-top:0px">
+	<dl> 
+		<dt class="body02"><img src="/images/img_quest.gif" alt="질의"/></dt> 
+		<dd class="body03_g"><div class="pic_right"><img src="/images/photo/0/1000000000.gif" alt="사용자사진"/></div>
+			급여체불로노동청에민원신청해서담당자가배치됐는데사건에답이없습니다
+		</dd>
+		<dd>
+			<div align="left" class="title_count1" style="color:gray;font-weight:bold">
+			<!-- 신청인 : null&nbsp;/&nbsp; -->
+			신청일 : 2026.08.21 11:04
+			</div>
+		</dd>
+	</dl>
+</div>
+
+<p style="height:15px"></p>
+<div style="padding-top:0px">
+	<dl> 
+		<dt class="body02"><img src="/images/img_answ.gif" alt="답변"/></dt> 
+		<dd class="body03_g"><div class="pic_right"><img src="/images/photo/0/1000000000.gif" width="40px" height="40px" alt="상담사사진"/></div>고용노동부 1350 모바일 상담입니다.
+
+1350 모바일 상담은 노동관계법령에 따라 간단하고 단순한 사항에 대해 신속히 안내하는 상담 방식으로, 실무 처리 권한이 없고, 내부 행정전산조회 등이 불가능합니다.
+
+귀 질의와 관련하여 번거로우시겠지만, 보다 정확한 안내를 받으시기 위하여 관할 지방고용노동관서 노동기준조사과를 통해 근로감독관의 도움을 받으시길 바랍니다.
+
+관할 지방고용노동관서의 연락처는 &amp;lt;고용노동부 홈페이지(www.moel.go.kr) → 기관소개 → 조직안내 → 소속기관&amp;gt;에서 확인하실 수 있습니다.</dd> 
+		<dd>
+			<div align="left" class="title_count1" style="color:gray;font-weight:bold">
+			답변일 : 2026.08.21 11:27
+			</div>
+		</dd>
+	</dl>
+	<!-- <div class="btn_right"><img src="/images/bt_recomm.gif" alt="추천"/></div> -->
+</div>
+
+<p style="height:15px"></p>
+
+
+<p style="height:20px"></p>
+<div align="center" id="test" style="display:block">
+
+<p><textarea class="put01" name="askcntn" onclick="fn_clear()" cols="" rows="" style="color:gray" onkeyup="fc_chk_byte2(this,200);">실시간 상담 질문 내용을 입력하세요. 실시간 상담은 모두에게 공개되며, 글자 수 제한이 있으니 100자 이내로 작성하여 주시기 바랍니다.</textarea></p>
+
+</div> 
+<p style="height:20px"></p>
+<div>&nbsp;&nbsp;
+	<img src="/images/timg_mblphn.gif" height="11px" alt="전화번호"/>&nbsp;
+	<input type="text" size="7" maxlength="3" class="put02" name="mblphn1" onblur="isNum(this)" id="phn1" value=""/>
+	<input type="text" size="7" maxlength="4" class="put02" name="mblphn2" onblur="isNum(this)" id="phn2" value=""/>
+	<input type="text" size="7" maxlength="4" class="put02" name="mblphn3" onblur="isNum(this)" id="phn3" value=""/>
+</div>
+<hr/>
+<div><p style="height:5px"></p></div>
+<div align="center"><input type="image" class="put_btn" src="/images/bbtn_quickque.gif" alt="빠른질문" onclick="fn_valid();"/></div>
+<div><p style="height:25px"></p></div>
+
+<p style="height:20px"></p>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,444 @@
+{
+  "schema_version": 3,
+  "document_id": "007196_284567_20260317_appendix_000500F",
+  "title": "방문판매 등에 관한 법률 시행규칙",
+  "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000500F.pdf",
+  "raw_sha256": "deba4a6c41796ff078ed217c581d4de0c71a853be7299516440e342680881bfc",
+  "units": [
+    {
+      "document_id": "007196_284567_20260317_appendix_000500F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000500F.pdf",
+      "raw_sha256": "deba4a6c41796ff078ed217c581d4de0c71a853be7299516440e342680881bfc",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "unit_id": "007196_284567_20260317_appendix_000500F:p1:body",
+      "text": "■ 방문판매 등에 관한 법률 시행규칙 [별지 제5호서식] <개정 2020. 12. 4.>\n[ ]휴업\n[ ]방문판매업\n[ ]폐업 신고서\n[ ]전화권유판매업\n[ ]영업재개\n신고번호\n전화번호\n신고인\n대표자의 성명\n(서명 또는 인)\n까지\n신고\n항목\n사유\n「방문판매 등에 관한 법률」 제5조제3항, 같은 법 시행령 제8조제5항 및 같은 법 시행규칙 제7조에\n따라 위와 같이 ([ ]휴업 [ ]폐업 [ ]영업재개)를 신고합니다.\n년 월 일\n신고인 (서명 또는 인)\n※ 위 신고인 대표자와 동일인이 아닌 경우에만 적습니다.\n공정거래위원회\n귀하\n특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수ㆍ구청장\n수수료\n첨부서류\n없음\n210mm× 297mm[백상지 80g/㎡]",
+      "locator": "PDF 1페이지",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "pdf_body",
+      "removed_margin_lines": [],
+      "images": []
+    },
+    {
+      "document_id": "007196_284567_20260317_appendix_000500F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000500F.pdf",
+      "raw_sha256": "deba4a6c41796ff078ed217c581d4de0c71a853be7299516440e342680881bfc",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "007196_284567_20260317_appendix_000500F:p1:table0",
+      "text": "접수번호 | 접수일 | 처리기간 | 3일",
+      "locator": "PDF 1페이지 / 표 1",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          59.488,
+          150.91500000000005,
+          540.1895000000001,
+          173.57000000000005
+        ],
+        "rows": [
+          [
+            "접수번호",
+            "접수일",
+            "처리기간",
+            "3일"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    },
+    {
+      "document_id": "007196_284567_20260317_appendix_000500F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000500F.pdf",
+      "raw_sha256": "deba4a6c41796ff078ed217c581d4de0c71a853be7299516440e342680881bfc",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "007196_284567_20260317_appendix_000500F:p1:table1",
+      "text": "상호\n소재지",
+      "locator": "PDF 1페이지 / 표 2",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          100.866,
+          179.20399999999995,
+          384.993,
+          237.94000000000005
+        ],
+        "rows": [
+          [
+            "상호"
+          ],
+          [
+            "소재지"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    },
+    {
+      "document_id": "007196_284567_20260317_appendix_000500F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000500F.pdf",
+      "raw_sha256": "deba4a6c41796ff078ed217c581d4de0c71a853be7299516440e342680881bfc",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "007196_284567_20260317_appendix_000500F:p1:table2",
+      "text": "기간 | 부터\n휴업 |\n폐업 |\n영업재개 |",
+      "locator": "PDF 1페이지 / 표 3",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          100.866,
+          275.578,
+          346.014,
+          388.495
+        ],
+        "rows": [
+          [
+            "기간",
+            "부터"
+          ],
+          [
+            "휴업",
+            ""
+          ],
+          [
+            "폐업",
+            ""
+          ],
+          [
+            "영업재개",
+            ""
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    },
+    {
+      "document_id": "007196_284567_20260317_appendix_000500F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000500F.pdf",
+      "raw_sha256": "deba4a6c41796ff078ed217c581d4de0c71a853be7299516440e342680881bfc",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "007196_284567_20260317_appendix_000500F:p1:table3",
+      "text": "방문판매업 신고증 또는 전화권유판매업 신고증 원본(폐업을 신고할 때만 제출합니다)\n※ 신고증을 분실ㆍ훼손한 경우에는 아래 하단에 그 사유를 기재하고 신고증을 첨부하지 않을 수\n있습니다.\n[신고증 분실ㆍ훼손 사유]",
+      "locator": "PDF 1페이지 / 표 4",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          113.459,
+          597.906,
+          487.778,
+          664.313
+        ],
+        "rows": [
+          [
+            "방문판매업 신고증 또는 전화권유판매업 신고증 원본(폐업을 신고할 때만 제출합니다)\n※ 신고증을 분실ㆍ훼손한 경우에는 아래 하단에 그 사유를 기재하고 신고증을 첨부하지 않을 수\n있습니다."
+          ],
+          [
+            "[신고증 분실ㆍ훼손 사유]"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    },
+    {
+      "document_id": "007196_284567_20260317_appendix_000500F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000500F.pdf",
+      "raw_sha256": "deba4a6c41796ff078ed217c581d4de0c71a853be7299516440e342680881bfc",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "007196_284567_20260317_appendix_000500F:p1:table4",
+      "text": "처리절차 | | | |\n신고서 작성 è 접수 è 검토 è 처리 | | | |\n| 신고인 | | 처리기관: 공정거래위원회 또는 특별자치시ㆍ특별자치도ㆍ시ㆍ군ㆍ구 |",
+      "locator": "PDF 1페이지 / 표 5",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          59.488,
+          671.3855,
+          540.1895000000001,
+          757.092
+        ],
+        "rows": [
+          [
+            "처리절차",
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "신고서 작성 è 접수 è 검토 è 처리",
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "",
+            "신고인",
+            "",
+            "처리기관: 공정거래위원회 또는 특별자치시ㆍ특별자치도ㆍ시ㆍ군ㆍ구",
+            ""
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "■ 방문판매 등에 관한 법률 시행규칙 [별지 제5호서식] <개정 2020. 12. 4.>\n[ ]휴업\n[ ]방문판매업\n[ ]폐업 신고서\n[ ]전화권유판매업\n[ ]영업재개\n접수번호 접수일 처리기간 3일\n상호 신고번호\n소재지 전화번호\n신고인\n대표자의 성명\n(서명 또는 인)\n기간 부터 까지\n휴업\n신고\n항목\n폐업\n영업재개\n사유\n「방문판매 등에 관한 법률」 제5조제3항, 같은 법 시행령 제8조제5항 및 같은 법 시행규칙 제7조에\n따라 위와 같이 ([ ]휴업 [ ]폐업 [ ]영업재개)를 신고합니다.\n년 월 일\n신고인 (서명 또는 인)\n※ 위 신고인 대표자와 동일인이 아닌 경우에만 적습니다.\n공정거래위원회\n귀하\n특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수ㆍ구청장\n방문판매업 신고증 또는 전화권유판매업 신고증 원본(폐업을 신고할 때만 제출합니다)\n※ 신고증을 분실ㆍ훼손한 경우에는 아래 하단에 그 사유를 기재하고 신고증을 첨부하지 않을 수\n수수료\n첨부서류\n있습니다. 없음\n[신고증 분실ㆍ훼손 사유]\n처리절차\n신고서 작성 è 접수 è 검토 è 처리\n신고인 처리기관: 공정거래위원회 또는 특별자치시ㆍ특별자치도ㆍ시ㆍ군ㆍ구\n210mm× 297mm[백상지 80g/㎡]",
+      "body_text": "■ 방문판매 등에 관한 법률 시행규칙 [별지 제5호서식] <개정 2020. 12. 4.>\n[ ]휴업\n[ ]방문판매업\n[ ]폐업 신고서\n[ ]전화권유판매업\n[ ]영업재개\n신고번호\n전화번호\n신고인\n대표자의 성명\n(서명 또는 인)\n까지\n신고\n항목\n사유\n「방문판매 등에 관한 법률」 제5조제3항, 같은 법 시행령 제8조제5항 및 같은 법 시행규칙 제7조에\n따라 위와 같이 ([ ]휴업 [ ]폐업 [ ]영업재개)를 신고합니다.\n년 월 일\n신고인 (서명 또는 인)\n※ 위 신고인 대표자와 동일인이 아닌 경우에만 적습니다.\n공정거래위원회\n귀하\n특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수ㆍ구청장\n수수료\n첨부서류\n없음\n210mm× 297mm[백상지 80g/㎡]",
+      "tables": [
+        {
+          "bbox": [
+            59.488,
+            150.91500000000005,
+            540.1895000000001,
+            173.57000000000005
+          ],
+          "rows": [
+            [
+              "접수번호",
+              "접수일",
+              "처리기간",
+              "3일"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        },
+        {
+          "bbox": [
+            100.866,
+            179.20399999999995,
+            384.993,
+            237.94000000000005
+          ],
+          "rows": [
+            [
+              "상호"
+            ],
+            [
+              "소재지"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        },
+        {
+          "bbox": [
+            100.866,
+            275.578,
+            346.014,
+            388.495
+          ],
+          "rows": [
+            [
+              "기간",
+              "부터"
+            ],
+            [
+              "휴업",
+              ""
+            ],
+            [
+              "폐업",
+              ""
+            ],
+            [
+              "영업재개",
+              ""
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        },
+        {
+          "bbox": [
+            113.459,
+            597.906,
+            487.778,
+            664.313
+          ],
+          "rows": [
+            [
+              "방문판매업 신고증 또는 전화권유판매업 신고증 원본(폐업을 신고할 때만 제출합니다)\n※ 신고증을 분실ㆍ훼손한 경우에는 아래 하단에 그 사유를 기재하고 신고증을 첨부하지 않을 수\n있습니다."
+            ],
+            [
+              "[신고증 분실ㆍ훼손 사유]"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        },
+        {
+          "bbox": [
+            59.488,
+            671.3855,
+            540.1895000000001,
+            757.092
+          ],
+          "rows": [
+            [
+              "처리절차",
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              "신고서 작성 è 접수 è 검토 è 처리",
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              "",
+              "신고인",
+              "",
+              "처리기관: 공정거래위원회 또는 특별자치시ㆍ특별자치도ㆍ시ㆍ군ㆍ구",
+              ""
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        }
+      ],
+      "images": [],
+      "removed_margin_lines": []
+    }
+  ]
+}

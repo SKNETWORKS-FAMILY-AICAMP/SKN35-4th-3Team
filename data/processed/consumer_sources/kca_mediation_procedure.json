@@ -1,0 +1,77 @@
+{
+  "schema_version": 3,
+  "document_id": "kca_mediation_procedure",
+  "title": "한국소비자원 소비자분쟁조정 절차 및 성립 효력 안내",
+  "source_path": "data/raw/consumer_sources/kca_mediation_procedure_30422ca02b9d5a45.html",
+  "raw_sha256": "30422ca02b9d5a45a056c8501be866eff5cd3643b83cc3d3ae6baadad9b0e6bb",
+  "units": [
+    {
+      "document_id": "kca_mediation_procedure",
+      "title": "한국소비자원 소비자분쟁조정 절차 및 성립 효력 안내",
+      "source_url": "https://www.kca.go.kr/odr/bj/ma/bjInfo.do",
+      "document_type": "official_guide",
+      "domains": [
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": null,
+        "article_effective_date": null,
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": null
+      },
+      "source_path": "data/raw/consumer_sources/kca_mediation_procedure_30422ca02b9d5a45.html",
+      "raw_sha256": "30422ca02b9d5a45a056c8501be866eff5cd3643b83cc3d3ae6baadad9b0e6bb",
+      "extraction_origin": "raw",
+      "warnings": [
+        "본문 내 이미지는 다운로드·OCR하지 않음; 표의 조건·예외는 전체 근거에서 확인"
+      ],
+      "unit_id": "kca_mediation_procedure:body",
+      "text": "분쟁조정안내\n\n분쟁조정이란?\n\n소비자상담을 통해 접수된 소비자피해 사건은 피해구제, 분쟁조정 등의 절차를 거쳐 처리됩니다.\n\n소비자분쟁은 민사를 통한 해결이 원칙이지만, 비용과 시간이 많이 소요될 수 있습니다. 소비자 분쟁조정은 이를 대체할 수 있는 분쟁해결방법으로서,\n\n소송에 비해 비용이 적게 들고 간편하다는 장점이 있습니다.\n\n소비자분쟁조정위원회는 양 당사자가 공동의 합의안을 이끌어 낼 수 있도록 공정하고 객관적인 조정결정을 내리고 있습니다.\n\n소비자분쟁조정위원회 개최 후, 분쟁조정 결과에 대한 양 당사자의 수락으로 조정이 성립되면, 확정판결과 동일한 ‘재판상 화해 효력’이 발생하며,\n\n소비자는 관할 법원에 강제집행을 신청할 수 있습니다.\n\n분쟁조정 절차 안내\n\n01.조정요청\n\n피해구제에서 합의가 이루어지지 않은 경우 소비자분쟁조정위원회에 분쟁조정을 신청합니다.\n\n국가나 지방자치단체의 장은 소비자분쟁이 해결되지 않는 경우 위원회에 직접 조정을 신청 접수할 수 있습니다. (소비자기본법 제65조 제1항)\n\n02. 소비자분쟁조정위원회\n\n조정위원회는 위원장 1명을 포함한 150명 이내의 위원으로 구성하며,\n\n위원장을 포함한 5명은 상임으로 하고, 나머지는 비상임으로 합니다. (소비자기본법 제61조 제1항)\n\n03. 사건검토\n\n객관적이고 공정한 조정결정을 위하여 필요한 경우, 사실조사, 시험검사, 전문위원회 자문 등을 추가 진행합니다.\n\n04 . 분쟁조정회의 개최\n\n상임위원을 포함하여 3~11명의 위원이 사건을 심의·의결합니다.\n\n05. 조정결정\n\n위원장은 분쟁조정을 마친 후 당사자에게 그 분쟁조정의 내용을 통지하고 양 당사자는 그 통지를 받은 날부터 15일 이내에\n\n분쟁조정의 내용에 대한 수락 여부를 조정위원회에 서면으로 통보하여야 하며, 15일 이내에 의사표시가 없는 때에는 조정이 성립되어\n\n그 분쟁조정의 내용은 재판상 화해와 동일한 효력을 갖습니다.(소비자기본법 제67조)\n\n06. 종료\n\n조정위원회는 조정신청을 받은 날부터 30일 이내에 분쟁조정을 마쳐야 하나 정당한 사유로 인해\n\n30일 이내에 그 분쟁조정을 마칠 수 없는 때에는 그 기간을 연장할 수 있습니다.(소비자기본법 제66조)\n\n분쟁조정 절차도",
+      "locator": "#content",
+      "embedding_candidate": true,
+      "content_type": "html_body",
+      "evidence_metadata": {
+        "selector": "#content",
+        "encoding": "utf-8-sig",
+        "tables": [],
+        "image_references": [
+          {
+            "src": "/odr/assets/images/kca_icon_06.png",
+            "alt": "조정요청"
+          },
+          {
+            "src": "/odr/assets/images/kca_icon_09.png",
+            "alt": "소비자분쟁조정위원회"
+          },
+          {
+            "src": "/odr/assets/images/kca_icon_03.png",
+            "alt": "사건검토"
+          },
+          {
+            "src": "/odr/assets/images/kca_icon_08.png",
+            "alt": "사건검토"
+          },
+          {
+            "src": "/odr/assets/images/kca_icon_05.png",
+            "alt": "조정결정"
+          },
+          {
+            "src": "/odr/assets/images/kca_icon_07.png",
+            "alt": "종료"
+          },
+          {
+            "src": "/odr/assets/images/pop4.png",
+            "alt": "분쟁조정 절차도"
+          }
+        ],
+        "images_downloaded_or_ocr_performed": false
+      }
+    }
+  ]
+}

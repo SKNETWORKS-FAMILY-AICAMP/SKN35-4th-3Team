@@ -1,0 +1,195 @@
+{
+  "schema_version": 3,
+  "document_id": "008480_282351_20260102_appendix_000200F",
+  "title": "최저임금법 시행규칙",
+  "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000200F.pdf",
+  "raw_sha256": "ceb92937137e627bcb093e89666f123ab3a5ccdee3ceebe8b9aca05aaed8cef2",
+  "units": [
+    {
+      "document_id": "008480_282351_20260102_appendix_000200F",
+      "title": "최저임금법 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=282351",
+      "document_type": "law",
+      "domains": [
+        "labor_wage"
+      ],
+      "dates": {
+        "effective_date": "2026-01-02",
+        "article_effective_date": "2026-01-02",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000200F.pdf",
+      "raw_sha256": "ceb92937137e627bcb093e89666f123ab3a5ccdee3ceebe8b9aca05aaed8cef2",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "unit_id": "008480_282351_20260102_appendix_000200F:p1:body",
+      "text": "■ 최저임금법 시행규칙 [별지 제2호서식]\n[ ] 정신\n장애로 인한 최저임금 적용 제외 인가서\n[ ] 신체\n※ [ ]에는 해당하는 곳에 √표시를 합니다.\n상호(법인명)\n성명(대표자) 생년월일\n신청인\n주소(사업장 소재지)\n사업의 종류\n성명 생년월일\n장애인\n근로자 주소\n인가 내용\n. . ~ . . (1년)\n「최저임금법 시행령」 제6조와 「최저임금법 시행규칙」 제3조제3항에 따라 위와 같이 최저임금 적용\n제외를 인가합니다.\n년 월 일\n○○지방고용노동(지청)장 직인\n210mm×297mm(백상지 80g/㎡)",
+      "locator": "PDF 1페이지",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "pdf_body",
+      "removed_margin_lines": [],
+      "images": []
+    },
+    {
+      "document_id": "008480_282351_20260102_appendix_000200F",
+      "title": "최저임금법 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=282351",
+      "document_type": "law",
+      "domains": [
+        "labor_wage"
+      ],
+      "dates": {
+        "effective_date": "2026-01-02",
+        "article_effective_date": "2026-01-02",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000200F.pdf",
+      "raw_sha256": "ceb92937137e627bcb093e89666f123ab3a5ccdee3ceebe8b9aca05aaed8cef2",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "008480_282351_20260102_appendix_000200F:p1:table0",
+      "text": "<개정 2016. 6. 16. | >",
+      "locator": "PDF 1페이지 / 표 1",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          213.485,
+          60.773000000000025,
+          293.242,
+          68.80499999999995
+        ],
+        "rows": [
+          [
+            "<개정 2016. 6. 16.",
+            ">"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    },
+    {
+      "document_id": "008480_282351_20260102_appendix_000200F",
+      "title": "최저임금법 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=282351",
+      "document_type": "law",
+      "domains": [
+        "labor_wage"
+      ],
+      "dates": {
+        "effective_date": "2026-01-02",
+        "article_effective_date": "2026-01-02",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000200F.pdf",
+      "raw_sha256": "ceb92937137e627bcb093e89666f123ab3a5ccdee3ceebe8b9aca05aaed8cef2",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "008480_282351_20260102_appendix_000200F:p1:table1",
+      "text": "장애의 상태\n장애인근로자의 취급업무\n장애인근로자가 지급받을\n임금액\n인가기간",
+      "locator": "PDF 1페이지 / 표 2",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          115.858,
+          330.359,
+          233.155,
+          472.763
+        ],
+        "rows": [
+          [
+            "장애의 상태"
+          ],
+          [
+            "장애인근로자의 취급업무"
+          ],
+          [
+            "장애인근로자가 지급받을\n임금액"
+          ],
+          [
+            "인가기간"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "■ 최저임금법 시행규칙 [별지 제2호서식] <개정 2016. 6. 16.>\n[ ] 정신\n장애로 인한 최저임금 적용 제외 인가서\n[ ] 신체\n※ [ ]에는 해당하는 곳에 √표시를 합니다.\n상호(법인명)\n성명(대표자) 생년월일\n신청인\n주소(사업장 소재지)\n사업의 종류\n성명 생년월일\n장애인\n근로자 주소\n장애의 상태\n장애인근로자의 취급업무\n인가 내용\n장애인근로자가 지급받을\n임금액\n인가기간 . . ~ . . (1년)\n「최저임금법 시행령」 제6조와 「최저임금법 시행규칙」 제3조제3항에 따라 위와 같이 최저임금 적용\n제외를 인가합니다.\n년 월 일\n○○지방고용노동(지청)장 직인\n210mm×297mm(백상지 80g/㎡)",
+      "body_text": "■ 최저임금법 시행규칙 [별지 제2호서식]\n[ ] 정신\n장애로 인한 최저임금 적용 제외 인가서\n[ ] 신체\n※ [ ]에는 해당하는 곳에 √표시를 합니다.\n상호(법인명)\n성명(대표자) 생년월일\n신청인\n주소(사업장 소재지)\n사업의 종류\n성명 생년월일\n장애인\n근로자 주소\n인가 내용\n. . ~ . . (1년)\n「최저임금법 시행령」 제6조와 「최저임금법 시행규칙」 제3조제3항에 따라 위와 같이 최저임금 적용\n제외를 인가합니다.\n년 월 일\n○○지방고용노동(지청)장 직인\n210mm×297mm(백상지 80g/㎡)",
+      "tables": [
+        {
+          "bbox": [
+            213.485,
+            60.773000000000025,
+            293.242,
+            68.80499999999995
+          ],
+          "rows": [
+            [
+              "<개정 2016. 6. 16.",
+              ">"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        },
+        {
+          "bbox": [
+            115.858,
+            330.359,
+            233.155,
+            472.763
+          ],
+          "rows": [
+            [
+              "장애의 상태"
+            ],
+            [
+              "장애인근로자의 취급업무"
+            ],
+            [
+              "장애인근로자가 지급받을\n임금액"
+            ],
+            [
+              "인가기간"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        }
+      ],
+      "images": [],
+      "removed_margin_lines": []
+    }
+  ]
+}

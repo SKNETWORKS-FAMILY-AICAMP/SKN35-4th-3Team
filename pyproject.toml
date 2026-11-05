@@ -1,0 +1,39 @@
+[project]
+name = "skn35-4th-3team"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "django==5.2.7",
+    "langgraph>=1.0,<2",
+    "mcp>=2,<3",
+    "openai>=2.7,<3",
+    "python-dotenv==1.1.1",
+    "qdrant-client>=1.15.1,<2",
+    "requests>=2.32,<3",
+    "fastembed>=0.9.1",
+    "langchain>=1.4.8",
+    "langchain-openai>=1.7.3",
+    "langchain-qdrant>=1.1.0",
+    "pymupdf>=1.24,<2",
+    "sentence-transformers>=5.7.0",
+    "langchain-core>=1.7.4",
+]
+
+[dependency-groups]
+ingestion = [
+    "pdfplumber==0.11.9",
+    "lxml==6.1.1",
+]
+dev = [
+    "pytest>=8,<10",
+    "pytest-django>=4.8,<5",
+]
+gemini = [
+    "langchain-google-genai>=2,<4",
+]
+rerank = [
+    "sentence-transformers>=3,<6",
+    "torch>=2,<3",
+]

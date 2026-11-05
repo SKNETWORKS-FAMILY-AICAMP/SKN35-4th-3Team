@@ -1,0 +1,317 @@
+{
+  "schema_version": 3,
+  "document_id": "easylaw_civil_enforcement",
+  "title": "금전거래: 강제집행의 요건·집행문·재산명시·대상 재산",
+  "source_path": "data/raw/consumer_sources/easylaw_civil_enforcement_344f615b7ca0b3e2.html",
+  "raw_sha256": "344f615b7ca0b3e2daad9990ce08c5f9666577640fbd6f1beaae9425614ed545",
+  "units": [
+    {
+      "document_id": "easylaw_civil_enforcement",
+      "title": "금전거래: 강제집행의 요건·집행문·재산명시·대상 재산",
+      "source_url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=4&cciNo=7&cnpClsNo=1&csmSeq=272&popMenu=ov",
+      "document_type": "official_guide",
+      "domains": [
+        "fitness_refund"
+      ],
+      "dates": {
+        "effective_date": null,
+        "article_effective_date": null,
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": "2026-09-15",
+        "as_of": null
+      },
+      "source_path": "data/raw/consumer_sources/easylaw_civil_enforcement_344f615b7ca0b3e2.html",
+      "raw_sha256": "344f615b7ca0b3e2daad9990ce08c5f9666577640fbd6f1beaae9425614ed545",
+      "extraction_origin": "raw",
+      "warnings": [
+        "본문 내 이미지는 다운로드·OCR하지 않음; 표의 조건·예외는 전체 근거에서 확인"
+      ],
+      "unit_id": "easylaw_civil_enforcement:body",
+      "text": "강제집행\n\n채권자가 대여금지급청구소송에서 승소의 종국판결을 받거나 독촉절차에서 확정된 지급명령을 받는 등 대여금 청구에 관한 집행권원을 부여받은 경우에는 채무자의 재산에 대해 강제집행을 신청할 수 있습니다.\n\n강제집행의 대상이 되는 채무자의 재산에는 부동산, 동산, 예금 등이 있고, 채권자는 압류된 채무자의 재산을 현금화한 대금으로 순위에 따라 변제받게 됩니다.\n\n인쇄체크 강제집행\n\n강제집행의 의의\n\n“강제집행”이란 국가의 공권력을 행사하여 사법상의 청구권을 강제적으로 실현시키기 위한 절차를 말합니다.\n\n판결절차가 권리의 확정에 의해 분쟁을 관념적으로 해결해주는 절차라면 강제집행절차는 판결절차의 후속단계로서 분쟁을 사실적·종국적으로 해결해주는 절차라고 할 수 있습니다.\n\n인쇄체크 집행문의 부여\n\n집행권원의 의의\n\n“집행권원”이란 강제집행절차에 들어가기 위해 필요한 것으로, 공적인 기관이 일정한 사법상 이행청구권의 존재와 범위를 표시하고 집행력을 부여한 공정증서를 말합니다.\n\n대여금 청구에 관한 집행권원의 종류는 다음과 같습니다(「민사집행법」 제24조, 제56조 및 제291조).\n\n√ 대여금 지급 청구의 소의 확정된 종국판결\n\n√ 대여금 지급 청구의 소의 가집행선고 있는 종국판결\n\n√ 확정된 지급명령\n\n√ 공증인이 일정한 금액의 지급이나 대체물 또는 유가증권의 일정한 수량의 급여를 목적으로 하는 청구에 관하여 작성한 공정증서로서 채무자가 강제집행을 승낙한 취지가 적혀 있는 것\n\n√ 소송상 화해, 청구의 인낙 등 그 밖에 확정판결과 같은 효력을 가지는 것\n\n√ 가압류명령\n\n집행문의 부여\n\n강제집행은 집행문이 있는 판결정본(이하 “집행력 있는 정본”이라 함)이 있어야 할 수 있습니다(「민사집행법」 제28조제1항).\n\n집행문은 신청에 따라 제1심 법원의 법원사무관 등이 내어 주며, 소송기록이 상급심에 있는 때에는 그 법원의 법원사무관 등이 내어 줍니다(「민사집행법」 제28조제2항).\n\n※ 집행문부여신청서는 <대한민국 법원 전자소송포털>에서 확인할 수 있습니다.\n\n집행문의 부여\n\n집행문의 부여는 모든 집행권원에 필요한 것이 원칙이지만 집행의 신속·간이성을 위해 확정된 지급명령, 확정된 이행권고결정, 가압류명령이 있을 때에는 집행문을 부여받지 않아도 됩니다(「민사집행법」 제58조제1항 본문, 제292조 및「소액사건심판법」 제5조의8제1항 본문).\n\n다만, 지급명령 및 이행권고결정은 집행에 조건이 붙은 경우, 당사자의 승계인을 위하여 집행하는 경우 또는 당사자의 승계인에 대하여 집행하는 경우에는 집행문을 부여받아야 하며, 가압류명령도 가압류 재판 후 채권자나 채무자의 승계가 있는 경우에는 집행문을 덧붙여야 합니다(「민사집행법」 제58조제1항 단서 및 제292조제1항, 「소액사건심판법」 제5조의8제1항 단서 ).\n\n인쇄체크 재산명시절차\n\n재산명시절차의 의의\n\n“재산명시절차”란 금전채권에 기초한 강제집행을 할 경우 채무자의 재산을 쉽게 찾을 수 없는 때에 채무자로 하여금 자신의 재산상태를 명시한 재산목록을 법원에 선서 제출하게 하고, 채무자 명의의 재산에 대해 공공기관·금융기관 등에 조회하며, 재산명시기일에 출석하지 않거나 재산목록을 제출하지 않는 경우 등에 채무불이행자 명부에 등재하는 것을 말합니다.\n\n재산명시절차는 재산명시선서, 재산조회, 채무불이행자 명부등재 등의 세 가지를 골자로 합니다.\n\n재산명시신청\n\n금전의 지급을 목적으로 하는 집행권원에 기초하여 강제집행을 개시할 수 있는 채권자는 채무자의 보통재판적이 있는 곳의 법원에 채무자의 재산명시를 요구하는 신청을 할 수 있습니다(「민사집행법」 제61조제1항).\n\n신청은 서면으로 하며, 채권자·채무자 및 대리인의 표시, 채무자가 이행하지 않는 금전채무액, 신청취지 및 신청사유를 적습니다(「민사집행규칙」 제25조제1항).\n\n※ 재산명시신청서는 <대한민국 법원 전자소송포털>에서 확인할 수 있습니다.\n\n재산조회\n\n재산명시절차의 관할 법원은 다음의 어느 하나에 해당하는 경우에는 그 재산명시를 신청한 채권자의 신청에 따라 개인의 재산 및 신용에 관한 전산망을 관리하는 공공기관·금융기관·단체 등에 채무자명의의 재산에 관하여 조회할 수 있습니다(「민사집행법」 제74조).\n\n재산명시명령이 채무자에게 송달불능으로 채권자가 주소보정명령을 받고도 채무자의 주소불명으로 이를 이행할 수 없었던 경우\n\n재산명시절차에서 채무자가 제출한 재산목록의 재산만으로는 집행채권의 만족을 얻기에 부족한 경우\n\n정당한 이유 없는 채무자의 명시기일 불출석·재산목록제출거부 또는 선서거부, 또는 채무자의 허위재산목록 제출의 경우\n\n※ 재산조회신청서는 <대한민국 법원 전자소송포털>에서 확인할 수 있습니다.\n\n채무불이행자 명부 등재신청\n\n집행권원이 생긴 후 6개월 내에 채무자가 채무를 이행하지 않거나 정당한 사유 없이 명시기일에 불출석·재산목록 제출을 거부·선서거부 또는 거짓의 재산목록을 제출하는 등 재산명시절차에 비협조적인 경우, 채권자는 법원에 그 채무자를 채무불이행자명부에 올리도록 신청할 수 있습니다(「민사집행법」 제70조제1항).\n\n※ 채무불이행자 명부등재 신청서는 <대한민국 법원 전자소송포털>에서 확인할 수 있습니다.\n\n인쇄체크 채무자재산의 압류 및 현금화\n\n강제집행의 유형\n\n대여금 청구에 관한 강제집행은 집행대상인 재산의 종류에 따라 부동산집행, 선박 등 준부동산집행(「민사집행법」 제78조부터 제171조까지), 자동차·건설기계·소형선박(「자동차 등 특정동산 저당법」 제3조제2호에 따른 소형선박을 말함) 및 항공기(「자동차 등 특정동산 저당법」 제3조제4호에 따른 항공기 및 경량항공기를 말함)집행(「민사집행법」 제187조), 유체동산 및 채권집행(「민사집행법」 제172조부터 제186조까지)으로 분류됩니다.\n\n부동산집행\n\n부동산에 대한 강제집행은 채권자의 신청에 따라 그 부동산이 있는 지방법원의 관할로 이루어집니다(「민사집행법」 제78조제1항 및 제79조).\n\n부동산의 강제집행은 강제경매와 강제관리의 방법으로 이루어집니다(「민사집행법」 제78조제2항).\n\n“강제경매”란 강제집행절차를 통한 부동산의 매각절차를 말하며, ① 강제경매의 개시(「민사집행법」 제83조), ② 매각준비절차(「민사집행법」 제84조), ③ 매각기일·매각결정기일의 공고(「민사집행법」 제104조), ④ 매각실시절차(「민사집행규칙」 제72조), ⑤ 대금납부(「민사집행법」 제142조), ⑥ 배당(「민사집행법」 제145조)의 순서로 이루어집니다.\n\n“강제관리”란 채무자의 부동산을 강제적으로 관리·수익하여 그 수익으로 채권자의 금전채권을 만족시키는 부동산집행의 방법을 말하며, ① 강제관리개시결정(「민사집행법」 제164조), ② 배당(「민사집행법」 제169조)의 순서로 이루어집니다.\n\n강제집행과 강제관리의 신청은 서면으로 해야 하며, 채권자는 채권자·채무자와 법원, 부동산 및 경매의 이유가 된 채권액과 집행권원을 기재한 서면을 작성하여 관할법원에 제출해야 합니다(「민사집행법」 제81조).\n\n※ 부동산강제경매신청서는 <대한민국 법원 전자소송포털>에서 확인할 수 있습니다.\n\n준부동산에 대한 강제집행\n\n부동산 이외에 등기할 수 있는 선박, 자동차·건설기계·소형선박(「자동차 등 특정동산 저당법」 제3조제2호에 따른 소형선박을 말함) 및 항공기(「자동차 등 특정동산 저당법」 제3조제4호에 따른 항공기 및 경량항공기를 말함)에 관해서는 부동산에 준한 집행절차가 마련되어 있습니다(「민사집행법」 제172조부터 제186조까지 및 제187조).\n\n유체동산·채권에 대한 강제집행\n\n유체동산과 채무자가 가지는 제3자에 대한 채권에 관해서도 강제집행절차가 마련되어 있습니다(「민사집행법」 제188조부터 제274조까지).\n\n유체동산에 대한 강제집행은 ① 압류(「민사집행법」 제189조), ② 입찰 또는 호가매매(「민사집행법」 제199조), ③ 배당(「민사집행규칙」 제155조)으로 진행됩니다.\n\n채권에 대한 강제집행은 ① 압류(「민사집행법」 제223조), ② 추심명령·전부명령(「민사집행법」 제229조)으로 진행됩니다.\n\n※ 채권의 압류 및 전부명령신청서는 <대한민국 법원 전자소송포털>에서 확인할 수 있습니다.\n\n인쇄체크 채권자의 만족\n\n부동산집행·준부동산집행\n\n배당요구의 종기까지 경매신청을 한 압류채권자, 배당요구의 종기까지 배당요구를 한 채권자, 첫 경매개시결정등기 전에 등기된 가압류채권자가 있는 경우에는 함께 배당을 받게 됩니다(「민사집행법」 제148조 및 「민사집행규칙」 제185조).\n\n부동산강제집행의 경우 매각대금으로 배당에 참가한 모든 채권자를 만족하게 할 수 없는 때에는 법원은 「민법」·「상법」, 그 밖의 법률에 의한 우선순위에 따라 배당해야 하며, 이는 준부동산집행에도 준용됩니다(「민사집행법」 제145조제2항 및 제172조).\n\n최우선순위인 집행비용(「민사집행법」 제53조제1항)을 제외한 배당의 순위는 다음과 같습니다.\n\n1. 최종 3개월분의 노임채권·최종 3년간 퇴직금채권과 재해보상채권, 주택의 소액보증금채권·상가건물의 소액보증금채권\n\n2. 조세 중 해당 부동산에 부과된 세금\n\n3. 담보권에 앞서는 일반조세\n\n4. 조세의 법정기일 후에 설정된 저당권·가등기담보권·전세권·등기명령에 다라 등기된 임차권·확정일자를 갖춘 주택임대차보증금·상가건물임대차보증금채권\n\n5. 임금·퇴직금·재해보상금 그 밖에 근로관계채권\n\n6. 법정기일 등이 저당권·전세권의 설정보다 이후인 그 밖의 조세채권\n\n7. 의료보험채권·연금보험료채권·고용보험료나 산업재해보험료채권\n\n8. 일반채권\n\n※ 대여금 채권은 일반채권이므로 8순위에 해당됩니다.\n\n※ 부동산의 강제관리 시에는 부동산수익에서 그 부동산이 부담하는 조세, 그 밖의 공과금을 뺀 뒤에 관리비용을 변제하고, 그 나머지 금액이 채권자에게 지급됩니다(「민사집행법」 제169조제1항).\n\n유체동산의 강제집행\n\n유체동산에 대한 집행은 채권자의 서면신청에 기하여(「민사집행법」 제4조) 집행관이 목적물을 압류함으로써 개시됩니다(「민사집행법」 제189조제1항).\n\n집행관은 입찰 또는 호가경매의 방법으로 압류물을 적정한 가격에 매각하여 현금화합니다(「민사집행법」 제199조).\n\n압류채권자는 압류물의 매각대금에서 배당을 받음으로써 채권의 만족을 얻게 됩니다(「민사집행법」 제217조부터 제221조까지).\n\n채권의 강제집행\n\n채권의 강제집행이란 채무자가 제3채무자에 대하여 갖고 있는 금전채권을 강제집행의 대상으로 하는 경우(예컨대, B에 대해 1억원의 대여금 채권을 가지고 있는 A가 C에 대한 B의 5천만원의 매매대금채권을 강제집행하는 경우)를 말합니다.\n\n금전채권에 대한 압류명령의 신청은 채권자가 서면으로 해야 하며(「민사집행법」 제4조) 신청서에는 채권자·채무자·제3채무자 및 집행권원을 표시하는 외에(「민사집행규칙」 제159조) 특히 압류할 채권을 특정하기 위하여 압류할 채권의 종류와 액수를 밝혀야 합니다(「민사집행법」 제225조).\n\n압류채권의 현금화와 이를 통한 채권의 만족은 추심명령, 전부명령에 의하여 이루어집니다.\n\n※ 집행법원으로부터 추심명령을 받은 압류채권자는 제3채무자로부터 피압류채권을 추심하여 채권의 만족을 얻게 됩니다. 이때 압류채권자는 추심금을 지금 받은 사실을 집행법원에 신고해야 합니다(「민사집행법」 제236조제1항).\n\n※ 압류채권자는 법원의 전부명령을 통하여 제3채무자에 대한 채무자의 채권을 양도받음으로써 채권의 만족을 얻게 됩니다. 전부명령이 확정되면 전부명령이 제3채무자에게 송달된 때에 채무자가 채무를 변제한 것으로 봅니다(「민사집행법」 제231조).\n\n이 정보는 2026년 9월 15일 기준으로 작성된 것입니다.\n\n생활법령정보는 법적 효력을 갖는 유권해석(결정, 판단)의 근거가 되지 않고, 각종 신고, 불복 청구 등의 증거자료로서의 효력은 없습니다.\n\n구체적인 법령에 대한 질의는 담당기관이나 국민신문고에 문의하시기 바랍니다.\n\n위 내용에 대한 홈페이지 개선의견은 홈페이지 개선의견을 이용해 주시기 바랍니다.",
+      "locator": "#contents > div without navigation classes",
+      "embedding_candidate": true,
+      "content_type": "html_body",
+      "evidence_metadata": {
+        "selector": "#contents > div without navigation classes",
+        "encoding": "utf-8-sig",
+        "tables": [],
+        "image_references": [
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_1.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow01.gif",
+            "alt": ""
+          },
+          {
+            "src": "/common/images/etc/btn_copy_address2.gif",
+            "alt": "주소복사"
+          },
+          {
+            "src": "/common/images/etc/btn_bookmark2.gif",
+            "alt": "즐겨찾기에추가"
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow01.gif",
+            "alt": ""
+          },
+          {
+            "src": "/common/images/etc/btn_copy_address2.gif",
+            "alt": "주소복사"
+          },
+          {
+            "src": "/common/images/etc/btn_bookmark2.gif",
+            "alt": "즐겨찾기에추가"
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow01.gif",
+            "alt": ""
+          },
+          {
+            "src": "/common/images/etc/btn_copy_address2.gif",
+            "alt": "주소복사"
+          },
+          {
+            "src": "/common/images/etc/btn_bookmark2.gif",
+            "alt": "즐겨찾기에추가"
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow01.gif",
+            "alt": ""
+          },
+          {
+            "src": "/common/images/etc/btn_copy_address2.gif",
+            "alt": "주소복사"
+          },
+          {
+            "src": "/common/images/etc/btn_bookmark2.gif",
+            "alt": "즐겨찾기에추가"
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow01.gif",
+            "alt": ""
+          },
+          {
+            "src": "/common/images/etc/btn_copy_address2.gif",
+            "alt": "주소복사"
+          },
+          {
+            "src": "/common/images/etc/btn_bookmark2.gif",
+            "alt": "즐겨찾기에추가"
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow04.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow03.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          },
+          {
+            "src": "https://www.easylaw.go.kr/CSP/images/icon_arrow02.gif",
+            "alt": ""
+          }
+        ],
+        "images_downloaded_or_ocr_performed": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,2363 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<!-- heard start -->
+
+
+
+
+
+
+
+
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no, address=no, email=no">
+  <meta name="naver-site-verification" content="1284cf3a5d279d4773764a236293e3241028fb8a">
+  <title>고용노동부 노동포털</title>
+  <meta name="description" content="언제어디서나 맞춤형 노동행정서비스">
+  <meta property="og:title" content="고용노동부 노동포털">
+  <meta property="og:description" content="언제어디서나 맞춤형 노동행정서비스">
+  <meta property="og:url" content="https://labor.moel.go.kr">
+  <meta property="og:image" content="/favicon/logo-meta.png">
+  <meta name="keywords" content="노동포털, 노동, 임금체불, 파견, 근로감독관, 직장내괴롭힘, 취업규칙, 대지급금, 사내복지기금, 우리사주, 노무법인, 노사협의회, 도산, 체당금, 고용노동부, 노동부, 노동부 민원, 
+  		고용노동부 민원, 임금체불 진정, 노동부 신고, 체불확인서, 노동법 교육, 퇴직금 계산기, 근로조건 자율개선, 노무관리, 퇴직연금">
+  <!-- E : mobile -->
+
+  <link rel="stylesheet" href="/assets/css/style.css??ver=20240324">
+  <script src="/assets/js/jquery-2.2.4.js"></script>
+  <script src="/assets/js/jquery-ui.js"></script>
+  <script src="/assets/js/swiper-bundle.min.js"></script>
+
+  <script src="/assets/js/common.js?ver=20240324"></script>
+
+	<meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+	<link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon/favicon.ico" type="image/x-icon">
+
+  <!-- 라온키보드보안 로드 -->
+	<!-- document.write 미사용을 위해 호출방식 변경 html 페이지의 경우 아래와 같이 개별 호출, jsp의 경우 /raonnx/jsp/raonnx.jsp 호출   -->
+	<script charset='utf-8' src='/raonsecure/raonnx/cmn/TouchEnNx.js'></script>
+	<script charset='utf-8' src='/raonsecure/raonnx/cmn/json2.js'></script>
+	<script charset='utf-8' src='/raonsecure/raonnx/cmn/TouchEnNx_exproto.js'></script>
+	<script charset='utf-8' src='/raonsecure/raonnx/cmn/TouchEnNx_install.js'></script>
+	<script charset='utf-8' src='/raonsecure/raonnx/cmn/TouchEnNx_daemon.js'></script>
+	<script charset='utf-8' src='/raonsecure/raonnx/nxKey/js/nxkey_config.js'></script>
+	<script charset='utf-8' src='/raonsecure/raonnx/nxKey/js/TouchEnNxKey_Interface.js'></script>
+	<script charset='utf-8' src='/raonsecure/raonnx/nxKey/js/TouchEnNxKey.js'></script>
+	<script charset='utf-8' src='/raonsecure/raonnx/cmn/TouchEnNx_loader.js'></script>
+	<!-- 라온가상키패드 로드 -->
+	<script src="/raonsecure/transkey/transkey.js"></script>
+	<link rel="stylesheet" type="text/css" href="/raonsecure/transkey/transkey.css">
+	<!-- 키보드보안 및 가상키패드 선택사용 로드 -->
+	<script src="/raonsecure/demo/raon_util.js"></script>
+    
+	<!-- <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="js/selectivizr.js">
+	 -->
+	<!--[if lte IE 9]>+
+	</script>
+	<![endif]-->
+  </head>
+<!-- heard end -->
+<body>
+<script>
+$(document).ready(function(){
+	$('#exDownload').click(function(){
+		location.href = "/minwonSysInfo/exDownload.do";
+	});
+	
+	$('#cancelWageDownload').click(function(){
+		location.href = "/minwonSysInfo/cancelWageDownload.do";
+	});
+	
+	$("span[id^='tab02']").prop("tabindex","0")
+	
+	$('#tab02Hide1').hide();
+	$('#tab02Hide2').hide();
+	$('#tab02Hide3').hide();
+	
+	$('#tab02Content1').hide();
+	$('#tab02Content2').hide();
+	$('#tab02Content3').hide();
+	
+	//웹 접근성 aria 속성추가
+	$("span[id^='tab02Show']").each(function() {
+		const $el = $(this);
+		
+		$el.attr({
+			 'role' : 'button'
+			,'aria-expanded':'false'
+		});
+	});
+	
+	//웹 접근성 키보드 입력시 클릭이벤트 추가
+	$("span[id^='tab02'").on('keydown',function(e) {
+	    if(e.key === 'Enter' || e.key === ' ') {
+	        $(this).trigger('click');
+	    }
+	});
+	
+	$('#tab02Show1').click(function(){
+		$('#tab02Hide1').show();
+		$('#tab02Show1').hide();
+		$('#tab02Content1').show();
+		const isExpanded = $(this).attr('aria-expanded') === 'true';
+		$(this).attr('aria-expanded', !isExpanded);
+	});
+	
+	$('#tab02Hide1').click(function(){
+		$('#tab02Show1').show();
+		$('#tab02Hide1').hide();
+		$('#tab02Content1').hide();
+		const isExpanded = $(this).attr('aria-expanded') === 'true';
+		$(this).attr('aria-expanded', !isExpanded);
+	});
+	
+	$('#tab02Show2').click(function(){
+		$('#tab02Hide2').show();
+		$('#tab02Show2').hide();
+		$('#tab02Content2').show();
+		const isExpanded = $(this).attr('aria-expanded') === 'true';
+		$(this).attr('aria-expanded', !isExpanded);
+	});
+	
+	$('#tab02Hide2').click(function(){
+		$('#tab02Show2').show();
+		$('#tab02Hide2').hide();
+		$('#tab02Content2').hide();
+		const isExpanded = $(this).attr('aria-expanded') === 'true';
+		$(this).attr('aria-expanded', !isExpanded);
+	});
+	
+	$('#tab02Show3').click(function(){
+		$('#tab02Hide3').show();
+		$('#tab02Show3').hide();
+		$('#tab02Content3').show();
+		const isExpanded = $(this).attr('aria-expanded') === 'true';
+		$(this).attr('aria-expanded', !isExpanded);
+	});
+	
+	$('#tab02Hide3').click(function(){
+		$('#tab02Show3').show();
+		$('#tab02Hide3').hide();
+		$('#tab02Content3').hide();
+		const isExpanded = $(this).attr('aria-expanded') === 'true';
+		$(this).attr('aria-expanded', !isExpanded);
+	});
+	
+});
+</script>
+    <!-- wrap -->
+    <div id="wrap">
+
+      <!-- header top start -->
+	  
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		var anyidAdaptor = anyidAdaptor || {};
+
+		//이용기관 로그인
+		anyidAdaptor.orgLogin = function(data) {
+			//AnyID 사용자 아닌 경우 기존 로그인 화면 사용하도록 처리
+			alert("정부통합인증(Any-ID) 사용자가 아니시라면 노동포털 로그인 기능을 사용해주시기 바랍니다.");
+			
+			//비회원 로그인 시 주민등록번호or사업자등록번호 누락으로 인해 로그인 기능 보류
+			/*
+			$("#anyIdSsob").val(data.ssob);
+			$("#anyIdTag").val(data.txId);
+			$("#anyIdUserSeCd").val(data.userSeCd);
+			$("#anyIdForm").submit();
+			*/
+		}
+		
+		/*이용기관 문구수정 영역 Start*/
+		anyidAdaptor.JoinConfirm = function(portalJoinUri, memberData){
+			if(!confirm('Any-ID 사용자등록 하시겠습니까?')) {
+				anyidAdaptor.orgLogin(anyidAdaptor.certData);
+				return;
+			}else{
+				anyidAdaptor.receiveAnyIdJoin(portalJoinUri, memberData);
+			}
+		}
+		/*이용기관 문구수정 영역 End*/
+
+		anyidAdaptor.portalJoinUri = "null";
+		anyidAdaptor.certData = null;
+		anyidAdaptor.ssoByPass = "0";
+		anyidAdaptor.niRegYn = "null";
+		anyidAdaptor.agencyContextPath = "";
+
+		//AnyID 로그인 모듈을 통한 인증 성공
+		anyidAdaptor.success = function(data){
+			if(anyidAdaptor.ssoByPass != 0 || !data.useSso) { //SSO 로그인 아닌 경우 이용기관 로그인 처리
+				anyidAdaptor.orgLogin(data);
+			} else { //SSO 로그인을 위한 회원가입여부 확인
+				anyidAdaptor.certData = data;
+				anyidAdaptor.userCheck();
+			}
+		}
+		
+		//회원가입여부 확인
+		anyidAdaptor.userCheck = function(){
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST", anyidAdaptor.agencyContextPath + "/oidc/userCheck", true);
+			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState === 4 && xhr.status === 200) {
+					var response = JSON.parse(xhr.responseText);
+					if (response.success) {
+						anyidAdaptor.ssoLogin(); //정보 확인후 SSO 로그인 처리
+					} else {
+						setTimeout(function() {
+							anyidAdaptor.receiveAnyIdJoin(response.uri, response.data); //비회원인 경우 회원가입 화면 호출
+						}, 100);
+					}
+				}
+			};
+		
+			let jsonObject = new Object();
+			jsonObject.txId = anyidAdaptor.certData.txId;
+			jsonObject.ssob = anyidAdaptor.certData.ssob;
+			jsonObject.userSeCd = anyidAdaptor.certData.userSeCd;
+			
+			let jsonStr = JSON.stringify(jsonObject);
+			let encodedString = btoa(jsonStr);
+			
+			var data = "data=" + encodedString + "&txId=" + anyidAdaptor.certData.txId;
+			xhr.send(data);
+			
+		}
+
+		//회원가입 화면 호출
+		anyidAdaptor.receiveAnyIdJoin = function(portalJoinUri, memberData){
+		
+			var url = portalJoinUri+encodeURIComponent(memberData);
+			anyidAdaptor.popup(url,"openAnyIdRegistUserIdv",700,740);
+		
+			window.addEventListener("message", function(event) {
+				var result;
+				try {
+					result = JSON.parse(event.data);
+				} catch (error) {
+					console.error("Received message is not valid JSON:", error);
+					return;
+				}
+				
+				if(!result.funcName || (result.funcName !== "trmsAgreComplete" && result.funcName !== "registUserComplete")) {
+					return;
+				}
+				if(result.status === "success") {
+					if(result.trmsAgreYn == "Y"){
+						anyidAdaptor.ssoLogin();
+					}else{
+						anyidAdaptor.orgLogin(anyidAdaptor.certData);
+					}
+				}else{
+					anyidAdaptor.orgLogin(anyidAdaptor.certData);
+				}
+			}, false);
+		}
+
+		// 팝업 호출
+		anyidAdaptor.popup = function(url, name, width, height){
+			let left = (screen.width) ? (screen.width-width)/2 : 0;
+			let top = (screen.height) ? (screen.height-height)/2 : 0;
+			let popup=window.open(url, name ,"resizable=yes,toolbar=no,scrollbars=yes,location=no,top="+top+"px,left="+left+"px,width="+width+"px,height="+height+"px");
+			if(popup){
+				popup.focus();
+			}
+		}
+		
+		//SSO 로그인 요청
+		anyidAdaptor.ssoLogin = function(){
+			let jsonObject = new Object();
+			jsonObject.txId = anyidAdaptor.certData.txId;
+			jsonObject.ssob = anyidAdaptor.certData.ssob;
+			jsonObject.userSeCd = anyidAdaptor.certData.userSeCd;
+			jsonObject.afData = anyidAdaptor.certData.afData;
+			let jsonStr = JSON.stringify(jsonObject);
+			
+			let encodedString = btoa(jsonStr);
+			var baseUrl = window.location.origin + anyidAdaptor.agencyContextPath + "/oidc/ssoLogin";
+			var urlWithParams = baseUrl + "?data=" + encodedString;
+			window.location.href = urlWithParams;
+		}
+		
+		anyidAdaptor.ssoLoginPageSub = function(baseUrl, endPoint, acrValues){
+			var subUrl = "";
+			
+			if(endPoint && endPoint.trim() !== "") {
+				subUrl = "?endPoint=" + encodeURIComponent(endPoint);
+			}
+			
+			if(!acrValues && acrValues.trim() == "") {
+				acrValues = "3";
+			}
+			
+			if(acrValues && acrValues.trim() !== "") {
+				if(subUrl == ""){
+				subUrl = "?";
+				}else{
+					subUrl = subUrl + "&";
+				}
+				subUrl = subUrl + "acrValues=" + acrValues;
+			}
+			
+			window.location.replace(baseUrl+subUrl);
+		}
+
+		//SSO 로그아웃
+		anyidAdaptor.ssoLogout = function(endPoint) {
+			endPoint = typeof endPoint !== 'undefined' ? endPoint : "/";
+			var baseUrl = window.location.origin + anyidAdaptor.agencyContextPath + "/oidc/ssoLogout";
+			baseUrl = baseUrl + "?endPoint=" + encodeURIComponent(endPoint);
+			window.location.replace(baseUrl);
+		}
+
+		anyidAdaptor.reAuthLevel = function(endPoint, acrValues){
+			endPoint = typeof endPoint !== 'undefined' ? endPoint : "/";
+			var baseUrl = window.location.origin + anyidAdaptor.agencyContextPath + "/oidc/reAuthLevel";
+			anyidAdaptor.ssoLoginPageSub(baseUrl, endPoint, acrValues);
+		}
+
+		anyidAdaptor.ssoLoginPage = function(endPoint, acrValues){
+			endPoint = typeof endPoint !== 'undefined' ? endPoint : "/";
+			var baseUrl = window.location.origin + anyidAdaptor.agencyContextPath + "/oidc/auth";
+			anyidAdaptor.ssoLoginPageSub(baseUrl, endPoint, acrValues);
+		}
+		
+		anyidAdaptor.ssoSvcToSvc = function(url, endPoint){
+			var baseUrl = url + "/oidc/svcToSvc?endPoint=" + encodeURIComponent(endPoint);
+			window.open(baseUrl, "_blank");
+		}
+
+
+	</script>
+</head>
+<body>
+
+<form id="anyIdForm" action="/login/checkSsob.do" method="post">
+	<input type="hidden" name="ssob" id="anyIdSsob">
+	<input type="hidden" name="userSeCd" id="anyIdUserSeCd">
+	<input type="hidden" name="tag" id="anyIdTag">
+</form>
+
+</body>
+</html>
+
+
+
+<script>
+	$(document).ready(function(){
+		init();
+		getPopkeyword();
+		//웹 접근성 추가
+		$('.checkbox').each(function(){
+			var $this = $(this);
+			if ($this.find('input:not([disabled]), button:not([disabled]), select:not([disabled]), textarea:not([disabled]), a[href]').length) {
+				$this.removeAttr('tabindex');   // 네이티브 컨트롤이 있으면 중복 탭 정지점 제거
+			} else {
+				$this.attr('tabindex', '0');    // 없는 경우만 기존 동작 유지
+			}
+		});
+	});
+	
+	$(window).on('scroll',function(){
+		var scrollTop = $(this).scrollTop();
+		if(scrollTop > 0){
+			$('#labor-krds-masthead').hide();
+			$('#header').css('top','0');
+			$('#gnbWrap').css('top','0');
+		}else{
+			$('#labor-krds-masthead').show();
+			$('#header').css('top','32px');
+			$('#gnbWrap').css('top','32px');
+		}
+	});
+	
+	function getCookie1(cname) {
+		var name = cname + "=";
+		var decodedCookie = unescape(document.cookie);
+		var ca = decodedCookie.split(';');
+		for(var i = 0; i<ca.length; i++){
+			var c = ca[i];
+			while(c.charAt(0) == ' '){
+				c = c.substring(1);
+			}
+			if(c.indexOf(name) == 0){
+				return c.substring(name.length, c.length);
+			}
+		}
+		return "";
+	}
+	function pad(n, width) {
+		n = n + '';
+		return n.length >= width ? n : new Array(width - n.length + 1).join('0')+n;
+	}
+	
+	var objLeftTime;
+	var objClickInfo;
+	var latestTime;
+	var expireTime;
+	var timeInterval = 1000; // 1초 간격 호출
+	const timeRefreshNoti = 1000 * 60 * 5;
+	var refreshTimeConfirm = false;
+	var firstLocalTime = 0;
+	var elapsedLocalTime = 0;
+	var stateExpiredTime = false;
+	var logoutUrl = "/securityout.do";
+	var timer;
+	
+	function init() {
+		objLeftTime = document.querySelector("#leftTimeInfo");
+		if(objLeftTime == null){
+			//console.log("leftTimeInfo ID is not exist!");
+			return;
+		}
+		objClickInfo = document.querySelector("[data-reqtimebtn]");
+		//console.log(objLeftTime.textContent);
+		
+		latestTime = getCookie1("egovLatestServerTime");
+		expireTime = getCookie1("egovExpireSessionTime");
+		//console.log("latestTime :: "+latestTime);
+		//console.log("expireTime :: "+expireTime);
+		
+		elapsedTime = 0;
+		refreshTimeConfirm = false;
+		firstLocalTime = (new Date()).getTime();
+		showRemaining();
+		
+		timer = setInterval(showRemaining, timeInterval); // 1초 간격 호출
+	}
+		
+	function showRemaining() {
+		elapsedLocalTime = (new Date()).getTime() - firstLocalTime;
+		
+		var timeRemaining = expireTime - latestTime - elapsedLocalTime;
+		if(timeRemaining <= timeRefreshNoti && refreshTimeConfirm == false){
+			refreshTimeConfirm = true;
+			fn_layer('layerRefreshTime', document.querySelector(".pcViewTimeText"), 410);
+		}
+		if(timeRemaining < timeInterval){
+			clearInterval(timer);
+			//objLeftTime.innerHTML = "00:00:00";
+			objLeftTime.innerHTML = "00:00";
+			objClickInfo.text = '시간만료';
+			stateExpiredTime = true;
+			alert('로그인 세션기간이 만료되었습니다.');
+			$("#sessionInfo").hide();
+			
+			//parent.frames["_content"].location.href = logoutUrl;
+			document.logoutForm.submit();
+			return;
+		}
+		var timeHour = Math.floor((timeRemaining/1000/60) / 60);
+		var timeMin = Math.floor((timeRemaining/1000/60) % 60);
+		var timeSec = Math.floor((timeRemaining/1000) % 60);
+			
+		//objLeftTime.innerHTML = pad(timeHour,2)+":"+ pad(timeMin,2) +":"+ pad(timeSec,2);
+		objLeftTime.innerHTML = pad(timeMin,2) +":"+ pad(timeSec,2);
+	}
+	
+	function reqTimeAjax() {
+		if(stateExpiredTime == true){
+			alert("시간을 연장할수 없습니다.");
+		}
+		let result = fetch('/login/refreshSessionTimeout.do?loginButton=click', {
+			method: 'get',
+			//body: JSON.stringify(param),
+			headers:{
+				'Content-Type': 'application/json'
+			}
+		});
+		
+		result.then(function(response){
+			latestTime = getCookie1("egovLatestServerTime");
+			expireTime = getCookie1("egovExpireSessionTime");
+			//console.log("response:"+response);
+			init();
+		}).catch(function(ex){
+			console.log('err', ex);
+		});
+		/* $.ajax({
+			url:'/login/refreshSessionTimeout.do',
+			type:'get',
+			data:{},
+			success: function(data) {
+				latestTime = getCookie1("egovLatestServerTime");
+				expireTime = getCookie1("egovExpireSessionTime");
+				init();
+			},
+			error: function(err) {
+				alert("err :"+err);
+			}
+		}); */
+		return false;
+	}
+	
+	function logout() {
+		$("#sessionInfo").hide();
+		//parent.frames["_content"].location.href = logoutUrl;
+		document.logoutForm.submit();
+	}
+		
+	function doSearchRecommend(query) {
+		var searchForm = document.rcmd; 
+		searchForm.query.value = query;
+		searchForm.submit();
+	}
+	
+	var num ="";
+	function offPopword() {
+		str ="";
+		
+		if(num === ""){
+		$(".popwordOff").html(str);
+		$("#popoff").html("추천기능 켜기");
+		num = "off";
+		} else {
+			str += "<div class=\"recommendPopup\"><ul></ul></div>"
+			$(".popwordOff").html(str);
+			$("#popoff").html("추천기능 끄기");
+			getPopkeyword();
+			num="";
+		}
+	}
+	
+	function getPopkeyword() {
+		var target		= "popword";
+		var range		= "day";
+		var collection  = "_ALL_";
+	  var datatype   = "json";
+		$.ajax({
+		  type: "POST",
+		  url: "/search/popword.do",
+		  dataType: datatype,
+		  data: { "target" : target, "range" : range, "collection" : collection , "datatype" : datatype },
+		  success: function(text) {
+				let html = "";
+				var topStr = new Array();
+				var popup = "";
+				
+				if(text.hasOwnProperty('Data')){
+			  	for(var i=0; i<text.Data.Query.length; i++) {
+				  	var id = i+1;
+		  			html += '<a href="" class="swiper-slide" onClick="javascript:doSearchRecommend(\''+text.Data.Query[i].content+'\');return false;"># ' + text.Data.Query[i].content + '</a>';
+						
+						topStr[i] += "<button type=\"submit\" form=\"search\" onClick=\"javascript:doSearchRecommend('"+text.Data.Query[i].content+"')\">";
+						topStr[i] += "<strong>"+id+"</strong>";
+						topStr[i] += "<span>"+text.Data.Query[i].content+"</span>";
+						
+						popup += "<li>";
+						//popup += "<a href=\"\" onClick=\"javascript:doSearchRecommend('"+text.Data.Query[i].content+"')\" id=\"popword\">";
+						//popup += "<a href=\"\" onClick=\"return false\" id=\"popword\">";
+						popup += "<button type=\"submit\" form=\"search\" onClick=\"javascript:doSearchRecommend('"+text.Data.Query[i].content+"')\">"+text.Data.Query[i].content+"</button>";
+						//popup += "</a>";
+						popup += "</li>";
+				  }
+					  
+			  	for(var i=0; i<text.Data.Query.length; i++) {
+			  		$(".recommendWordsTop"+i).html(topStr[i].replace('undefined',''));
+			  		
+			  		var recommendItem = $(".recommendArea dd ol li");
+			  		recommendItem.find("button").on("focus", function(){
+			  			recommendItem.removeAttr("style");
+			  			recommendItem.find(":last-child button").focusout().closest().removeAttr("style");
+			  			$(this).closest("li").css({"z-index":"1"})
+			  		});
+			  	}
+				}
+				
+		  	const recomElem = document.querySelector('[data-mainrecom]');
+		  	if(recomElem){
+	  			recomElem.innerHTML = html;
+		  	}
+		 		$(".recommendPopup > ul").html(popup);
+			},
+		  error : function(request, status, error){
+			  console.log(error);
+		  }
+		});
+	}
+	
+	// ajax request, response Object
+	const GnbCallFetch = (function() {
+		return {
+			getFetchOption: function(requestMethod, paramObj) {
+				return {
+					method: requestMethod,
+					headers:{
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify(paramObj)
+				}
+			},
+			getFileUploadFetchOpion: function(requestMethod, formDataObj) {
+				return {
+					method: requestMethod,
+					headers:{},
+					body: formDataObj
+				}
+			},
+			getByFetch: function(url, options, processFunc) {
+				const res = fetch(url, options);
+				res.then(function(res) {
+					return res.json();
+				})
+				.then(function(data) {
+					if (data) {
+						processFunc(data);
+					}
+				});
+			},
+			getByFetchThen: function(url, options, processFunc, thenProcessFunc) {
+				const res = fetch(url, options);
+				res.then(function(res) {
+					return res.json();
+				})
+				.then(function(data) {
+					if (data) {
+						processFunc(data);
+						return data;
+					}
+				})
+				.then(function(data) {
+					thenProcessFunc(data);
+				});
+			}
+			
+		};
+	})();
+	
+	// GNB Object
+	const GNB = (function() {
+		const userVerificationURL = "/jido/user-verification.do";
+		const supervisorSearchResultURL = "/jido/supervisor-search-result.do";
+		return {
+			// 기업 회원 유무 조회
+			goSupervisor: function() {
+				const params = {};
+				
+				GnbCallFetch.getByFetch(userVerificationURL, GnbCallFetch.getFetchOption('POST', params), this.resGoSupervisor);
+			},
+			// 기업 회원 유무에 따른 분기 처리
+			resGoSupervisor: function(data) {
+				
+				if (data.resCode === 'S') {
+					location.href = supervisorSearchResultURL;
+				}
+				
+				if (data.resCode === 'F') {
+					alert('근로감독 결과 조회 메뉴는 기업 회원만 사용할 수 있는 메뉴입니다.\n개인회원은 접근이 불가하니 양해 바랍니다.');
+				}
+			}
+		};
+	})();
+
+	//회원가입버튼 등  민원마당으로 이동클릭시 
+	function fn_sso_join(obj){
+		const data = {};	
+		if(obj == 'memberJoin' || obj == 'idFind' || obj == 'pwFind'){
+			data.loginYn = 'N';
+		}else if(obj == 'updateJoin' || obj == 'updateGpki' || obj == 'minwonList'){
+			data.loginYn = 'Y';	
+		}else{
+			data.loginYn = 'N';
+		}
+		
+		data.loginType = obj;
+		$.ajax({
+			url:'/sso/ssoJoin.do',
+			method: 'post',
+			data: JSON.stringify(data),
+			async: false,
+			contentType: 'application/json',
+			success:function(res){
+				if(res.resCode == 'S'){
+					console.log(res.encryptData);
+					var pop_title = "minwon";
+					window.open("", pop_title);
+					$('.encryptData').val(res.encryptData);
+					document.form_sso.target = pop_title;
+					document.form_sso.action = "https://minwon.moel.go.kr/ssoLogin.do"; 
+					document.form_sso.submit();
+				}else{
+					alert('처리중 오류가 발생했습니다. 다시 시도해주시기 바랍니다.');
+				}
+			}, error : function(err){
+				alert('error');
+				console.log(err);
+			}
+		});
+	}
+
+	function fn_ic_minwon(){
+		alert('산업안전 분야 민원은 민원마당을 통하여 신청 가능합니다.\n 민원마당 사이트로 이동됩니다.');
+		var pop_ic_minwon = "ic_minwon";
+		window.open("", pop_ic_minwon);
+		document.form_ic_minwon.target = pop_ic_minwon;
+		document.form_ic_minwon.action = "https://minwon.moel.go.kr/minwon2008/lc_minwon/lc_form_apply.do"; 
+		document.form_ic_minwon.submit();
+	}
+
+	//SNSNR3 김정학 AnyID 로그아웃
+	function fn_logout_anyid(){
+		if(confirm('로그아웃 하시겠습니까?')){
+			var domain = location.origin;
+			anyidAdaptor.ssoLogout(domain + '/securityout.do'); //AnyID SSO 로그아웃 이후 endpoint로 기존 로그아웃 경로 호출
+			//anyidAdaptor.ssoLogout('/securityout.do'); //AnyID SSO 로그아웃 이후 endpoint로 기존 로그아웃 경로 호출
+		}
+	}
+	
+	function fn_logout(){
+		if(confirm('로그아웃 하시겠습니까?')){
+			location.href= "/securityout.do";
+		}
+	}
+	
+	function clickReqTimeAjax(obj){
+		reqTimeAjax();
+		fn_layer_close(obj);
+	}
+	
+	function fnClickDclrList(obj){
+		//fn_layer('layerDclrPop', obj, 460);
+		fn_layer('layerPopDclrPrcs',obj,1000);
+	}
+	
+	function toAdd() {
+		fn_layer_close(this);
+		
+			fn_layer('layerDclrPop',null, 460);
+		
+	}
+	
+	function fnGoDclrPage(){
+		location.href = "/dclr/dclr_list.do";
+	}
+	
+</script>
+	    <!-- skipNav -->
+	    <dl id="skipNav">
+	      <dt>바로가기 메뉴</dt>
+	      <dd><a href="#container">본문 바로가기</a></dd>
+	      <dd><a href="#gnb">주메뉴 바로가기</a></dd>
+	      <dd><a href="#footer">풋터 바로가기</a></dd>
+	    </dl>
+	    <!-- //skipNav -->
+	    
+		<!-- KRDS 공식 전자정부 누리집 배너 -->
+		<div id="labor-krds-masthead">
+		    <div class="labor-krds-masthead__wrap">
+		        <div class="labor-krds-masthead__inner">
+		            <span class="labor-krds-masthead__text">
+		                이 누리집은 대한민국 공식 전자정부 누리집입니다.
+		            </span>
+		        </div>
+		    </div>
+		</div>
+		<!-- //KRDS 공식 전자정부 누리집 배너 -->
+
+    <div id="header">
+      <form id="logoutForm" name="logoutForm" action="/securityout.do" method="post">
+  	  </form>
+  	  <form name="form_sso" method="post">
+				<input class="encryptData" type="hidden" name="encryptData" value="">
+			</form>
+  	  <form name="form_ic_minwon" method="post">
+				<input id="large_category_idx" type="hidden" name="large_category_idx" value="8">
+				<input id="middle_category_idx" type="hidden" name="middle_category_idx" value="44">
+				<input id="tot_middle_category_idx" type="hidden" name="tot_middle_category_idx" value="44">
+				<input id="large_category_cd" type="hidden" name="large_category_cd" value="080000">
+			</form>		
+      <!-- inner -->
+      <div class="inner">
+        <h1><a href="/main/main.do" title="메인페이지로 이동"><span class="hide">고용노동부 노동포털 로고</span></a></h1>
+        <!-- gnbWrap -->
+				<div id="gnbWrap" class="gnbWrap">
+        	<!-- inner -->
+        	<div class="inner">
+	          <!-- userArea -->
+	          <div class="userArea">
+	            
+							<!-- 로그인 전 -->
+							<div class="inBox loginBefore">
+								<div class="util">
+									
+									<a href="/login/security.do" class="login"><em>로그인</em></a>
+									<!-- 노동포털 회원가입 시작할때 변경해야함 -->
+									<a href="/join/join_choice.do" class="signup">회원가입</a>
+									<!-- <a href="javascript:void(0);" onclick="fn_sso_join('memberJoin');" class="btn">회원가입</a> -->
+								</div>
+							</div>
+							<!--// 로그인 전 -->
+							
+						</div>
+						<!--// userArea -->
+		        <!-- btnArea -->
+		        <div class="btnArea tbMNone">
+		          <a href="javascript:void(0)" class="btnSearch" onclick="fn_layer('searchPop', this, 600)"><span class="hide">검색</span></a>
+		        </div>
+		        <!--// btnArea -->
+		         <!-- mFindMenu -->
+                    <!-- <div class="mFindMenu">
+                        <input type="text" title="메뉴명" placeholder="찾고자 하는 메뉴명을 입력해 주세요">
+                    </div> -->
+                    <!--// mFindMenu -->
+						<!-- gnb -->
+	          <div id="gnb">
+	            <ul>
+	              <li class="more">
+	                <div><button type="button">민원신청&middot;조회</button></div>
+	                <dl>
+	                  <dt>민원신청&middot;조회</dt>
+	                  <dd class="more">
+	                    <a href="">민원제도 안내</a>
+	                      <ul>
+	                        <li><a href="/minwonSysInfo/wagesolway.do">체불임금해결방법</a></li>
+	                        <li><a href="/minwonSysInfo/parttimehelpway.do">아르바이트피해구제방법</a></li>
+	                        <li><a href="/minwonSysInfo/minwagesys.do">최저임금제도</a></li>
+	                      </ul>	                    
+	                  </dd>
+	                  <dd class="more">
+	                    <a href="">민원신청</a>
+	                    <ul>
+	                    	<li><a href="/minwonApply/minwonApply.do?searchGubun=1">근로기준 분야 민원신청</a></li>
+	                    	<!-- <li><a href="javascript:void(0)" onclick="fn_ic_minwon();" title="새창열기">산업안전 분야 민원신청</a></li> -->
+	                    	<li><a href="/minwonApply/minwonApply.do?searchGubun=1&searchRlm=2" >산업안전 분야 민원신청</a></li>
+	                    	<li><a href="https://www.moel.go.kr/minwon/qnaApply.do" target="_blank" class="moveLink" title="새창열기" >질의민원</a></li>
+	                    	<li><a href="https://www.moel.go.kr/minwon/fastcounsel/fastcounselList.do" target="_blank" class="moveLink" title="새창열기">빠른인터넷상담</a></li>
+	                    <!-- 
+	                      <li><a href="/minwonApply/minwonApply.do?searchGubun=2">진정·청원</a></li>
+	                      <li><a href="/minwonApply/minwonApply.do?searchGubun=3">취업규칙·퇴직연금</a></li>
+	                      <li><a href="/minwonApply/minwonApply.do?searchGubun=4">인허가</a></li>
+	                      <li><a href="/minwonApply/minwonApply.do?searchGubun=5">도산·대지급금</a></li>
+	                      <li><a href="/minwonApply/minwonApply.do?searchGubun=6">파견사업</a></li>
+	                      <li><a href="/minwonApply/minwonApply.do?searchGubun=7">고용평등</a></li>
+	                      <li><a href="/minwonApply/minwonApply.do?searchGubun=8">노동조합</a></li>
+	                      <li><a href="/minwonApply/minwonApply.do?searchGubun=9">사내복지기금·우리사주</a></li>
+	                      <li><a href="/minwonApply/minwonApply.do?searchGubun=10">노사협의회</a></li>
+	                      <li><a href="/minwonApply/minwonApply.do?searchGubun=11">노무법인</a></li>
+	                     -->
+	                    </ul>
+	                  </dd>
+	                  <dd class="more">
+	                    <a href="">민원조회</a>
+	                    <ul>
+	                      <li><a href="/my/my_minwon_list.do">나의민원 조회</a></li>
+	                      <li><a href="/my/my_minwon_icdn_list.do">나의 피신고사건 조회</a></li>
+	                      <li><a href="/my/my_minwon_nomusa_list.do">나의 대리사건 조회</a></li>
+	                      
+	                    </ul>
+	                  </dd>
+	                  <dd>
+											<a href="/anmtDclrCntr/main.do">노동분야 상담·신고센터</a>
+										</dd>
+	                  <dd class="more">
+	                    <a href="">안전일터 신고센터</a>
+	                    <ul>
+	                      <li><a href="/saveWkplDclrCntr/riskSttnDclrInfo.do">위험상황 신고하기</a></li>
+	                      <li><a href="/saveWkplDclrCntr/saveWkplDclrCntrPrcsRsltInqCert.do">처리결과 조회</a></li>
+	                    </ul>
+	                 		</dd>
+	                   
+	                  
+	                </dl>
+	              </li>
+	              <li class="more">
+				  <div><button type="button">노동행정정보</button></div>
+	                <dl>
+	                
+	                  <dt>노동행정정보</dt>
+	                  <dd><a href="/mybizis/resultList.do">지도감독&middot;조사 결과 조회</a></dd>
+	                 <!--  <dd><a href="javascript:void(0);" onclick="GNB.goSupervisor();">지도감독 결과 조회</a></dd> -->
+	                  <dd><a href="http://labor.moel.go.kr/pap" target="_blank" class="moveLink" title="새창열기">노동조합 회계공시</a></dd>
+	                  <!-- <dd><a href="https://labor.moel.go.kr/timeoff" target="_blank" class="moveLink" title="새창열기">노조근무시간면제사용정보공개</a></dd> -->
+	                  
+	                 <dd><a href="/inforls/dsgnInst.do">고용부 지정 전문기관 현황</a></dd>
+	                  <!-- <dd><a href="" target="_blank" title="새창열기" class="moveLink">중대재해 통계</a></dd> -->
+
+	                  <dd><a href="/arrstat/sttcStusList.do" >임금체불 통계현황</a></dd>
+	                </dl>
+	              </li>
+	              <li class="more">
+	                <div><button type="button">노동길라잡이</button></div>
+	                <dl>
+	                  <dt>노동길라잡이</dt>
+	                  <dd><a href="/cmmt/statute_list.do">노동관계법령 정보</a></dd>
+	                  <dd><a href="/cmmt/iqrs_list.do">노동분야 질의회시 조회</a></dd>
+	                  <dd><a href="/cmmt/labor_manage_guide.do">노무관리 가이드북</a></dd>
+	                  <dd><a href="/jido/self-check.do">노동관계법 준수 자가진단</a></dd>
+	                  <dd><a href="/cmmt/edu_list.do">노동법 교육 자료</a></dd>
+	                  <dd><a href="/cmmt/data_list.do">자료실</a></dd>
+	                  <dd class="more"><a href="">근로조건 계산기</a>
+	                  	<ul>
+	                      <li><a href="javascript:void(0);" onClick="window.open('http://www.moel.go.kr/miniWageMain.do', '최저임금 계산기'); return false;" title="새창열기">최저임금</a></li>
+	                      <li><a href="/cmmt/calAnnlVctn.do" onClick="javascript:window.open(this.href, '연차 계산기'); return false;" title="새창열기">연차개수</a></li>
+	                      <li><a href="/cmmt/calRtrmnt.do" onClick="window.open(this.href, '퇴직금 계산기'); return false;" title="새창열기">퇴직금</a></li>
+	                    </ul>
+	                  </dd>
+	                </dl>
+	              </li>
+	              <li class="more">
+	                <div><button type="button">알림·소통</button></div>
+	                <dl>
+	                  <dt>알림·소통</dt>
+	                  <dd><a href="/portalGuide/portal_guide.do">노동포털 소개</a></dd>
+	                  <dd><a href="/portalGuide/competence_find.do">관할관서 안내</a></dd>
+	                  <dd><a href="/cmmt/notice_list.do">공지사항</a></dd>
+	                  <dd><a href="/cmmt/faq_list.do">자주하는질문</a></dd>
+	                    
+	                  <dd><a href="/dclr/dclr_list.do" onclick="fnClickDclrList(this);return false;">이용불편신고 및 개선의견</a></dd>
+	                   
+	                   <dd class="more">
+	                    <a href="">노동포털 이용안내</a>
+	                    <ul>
+	                    	<li><a href="/applyGuide/portal_follow.do">노동포털 따라하기</a></li>
+	                    	<li><a href="/applyGuide/security_guide.do">보안프로그램 설치 안내</a></li>
+	                    	<li><a href="/applyGuide/support_guide.do">원격지원</a></li>
+	                    </ul>
+	                  </dd>
+	                </dl>
+	              </li>
+	            </ul>
+	          	<button type="button" class="btnMenuClose"><em><span class="hide">메뉴 닫기</span></em></button>
+	          </div>
+	          <!--// gnb -->
+	        </div>
+	        <!--// inner -->
+        </div>
+        <!--// gnbWrap -->
+        <!-- btnArea -->
+        <div class="btnArea tbPcNone">
+        
+			<a href="/login/security.do" class="login"><em>로그인</em></a>
+        
+          <a href="javascript:void(0)" class="btnSearch" onclick="fn_layer('searchPop', this, 600)"><span class="hide">검색</span></a>
+          <button type="button" class="btnMenu"><em><span class="hide">메뉴 열기</span></em></button>
+        </div>
+        <!--// btnArea -->
+      </div>
+      <!--// inner -->
+
+      <!-- searchPop -->
+      <div class="layerPop" id="searchPop">
+        <!-- inner -->
+        <div class="inner">
+          <!-- cont -->
+          <div class="cont">
+            <!-- search -->
+            <div class="search">
+              <form action="/search/search.do" method=post id="search" name="rcmd">
+              	<input type="text" name="query" title="검색어 입력" placeholder="검색어를 입력하세요.">
+            		<button type="submit" form="search" class="btnSearch" onclick="location.href='/portal/main/search.do';">검색</button>
+              </form>
+            </div>
+            <!--// search -->
+            <!-- recom -->
+            <div class="recom">
+            	<!-- popwordOff -->
+              <div class="popwordOff">
+              	<h2 class="hide">추천검색어</h2>
+              	<!-- recommendPopup -->
+              	<div class="recommendPopup">
+              		<ul>
+              		
+              		</ul>
+                </div>
+                <!--// recommendPopup -->
+            	</div>
+            	<!--// popwordOff -->
+
+             	<!-- btnArea -->
+              <div class="btnArea">
+                 <button type="button" class="btn" id="popoff" onclick="javascript:offPopword();">추천기능 끄기</button>
+              </div>
+              <!--// btnArea -->
+            </div>
+            <!--// recom -->
+          </div>
+          <!--// cont -->
+          <a href="javascript:void(0)" onclick="fn_layer_close(this)">닫기</a>
+        </div>
+        <!--// inner -->
+      </div>
+      <!--// searchPop -->
+      
+		<div class="layerPop" id="layerRefreshTime">
+			<div class="inner">
+			    <strong class="tit">로그인 시간 만료 안내</strong>
+			    <div class="cont">
+			        <p class="txtC">
+			            로그인 유지시간이 5분 뒤 만료합니다.<br>
+			            연장 하시겠습니까?
+			        </p>
+			        <!-- btnBottom -->
+			<div class="btnBottom">
+			    <button type="button" class="btn" onclick="clickReqTimeAjax(this)">연장</button>
+			    <button type="button" class="btn btnWhite" onclick="fn_layer_close(this)">취소</button>
+			</div>
+			<!--// btnBottom -->
+			</div>
+			<a href="javascript:void(0)" onclick="fn_layer_close(this)">닫기</a>
+			    </div>
+		</div>
+    </div>
+
+<div class="layerPop" id="layerPopDclrPrcs">
+	<div class="inner">
+		<strong class="tit">희망 처리절차를 선택해 주세요</strong>
+		<div class="cont">
+			<div>
+			<!-- grid -->
+			<div class="grid">
+				<a href="/my/my_minwon_list.do" class="item">
+					<div class="subject">
+						<span>노동포털에 민원을 신청했는데, 진행상황이나 처리결과가 궁금하신가요? 노동포털 나의민원에서 제공하는 담당자 연락처로 문의해 보세요.</span>
+					</div>
+					<div>
+						<ul class="dotList">
+							<strong>[나의민원] 바로가기</strong>
+						</ul>
+					</div>
+				</a>
+				<a href="https://www.epeople.go.kr/nep/pttn/negativePttn/NegativePttnCotents.npaid" target="_blank" class="item" title="새창열기">
+					<div class="subject">
+						<span>민원 처리를 지연하거나 부당한 처리결과에 불만이 있으신가요? 국민신문고 소극행정에 신고하세요.</span>
+					</div>
+					<div>
+						<ul class="dotList">
+							<strong>[국민신문고 소극행정] 바로가기</strong>
+						</ul>
+					</div>
+				</a>
+				<a href="https://www.epeople.go.kr/nep/prpsl/prplCont/gnrlPrpslNtrcnContent.npaid" target="_blank" class="item" title="새창열기">
+					<div class="subject">
+						<span>고용노동부 정책과 관련하여 제도 개선을 건의하실 것이 있으신가요? 국민신문고 국민제안을 이용해 보세요.</span>
+					</div>
+					<div>
+						<ul class="dotList">
+							<strong>[국민신문고 국민제안] 바로가기</strong>
+						</ul>
+					</div>
+				</a>
+				<a href="https://www.moel.go.kr/participate/praise/praiseList.do" target="_blank" class="item" title="새창열기">
+					<div class="subject">
+						<span>고용노동부 직원을 칭찬하고 싶으신가요? 고용노동부 홈페이지 '칭찬합시다'에 글을 올려주세요.</span>
+					</div>
+					<div>
+						<ul class="dotList">
+							<strong>[칭찬합시다] 바로가기</strong>
+						</ul>
+					</div>
+				</a>
+				<a href="javascript:void(0)" class="item" onclick="toAdd()"> 
+					<div class="subject">
+						<span>노동포털 사이트 이용 시 오류가 생겼거나, 불편한 사항이 있어 기능 개선을 건의하고 싶으신가요?</span> 
+					</div>
+					<div>
+						<ul class="dotList">
+							<strong>[이용불편신고 및 기능개선] 바로가기</strong>
+						</ul>
+					</div>
+				</a>
+			</div>
+			<!--// grid -->
+			</div>
+			<!-- btnBottom -->
+			<div class="btnBottom v2">
+				<button type="button" class="btn" onclick="fn_layer_close(this)">닫기</button>
+			</div>
+			<!--// btnBottom -->
+		</div>
+		<a href="javascript:void(0)" onclick="fn_layer_close(this)">닫기</a>
+	</div>
+</div>
+
+    <!-- 이용불편신고 및 개선의견 안내 팝업 -->
+<div class="layerPop" id="layerDclrPop">
+    <div class="inner">
+        <strong class="tit">이용불편신고 및 개선의견 안내</strong>
+        <div class="cont">
+            <p class="align-center">
+                이용불편신고 및 개선의견은<br/>
+                간편인증이나 로그인 후 이용이 가능합니다.<br/>
+                간편인증이나 로그인을 하시겠습니까?
+            </p>
+            <!-- btnBottom -->
+            <div class="btnBottom">
+				<button type="button" class="btn" onclick="fnGoDclrPage()">확인</button>
+				<button type="button" class="btn btnWhite" onclick="fn_layer_close(this)">취소</button>
+			</div>
+            <!-- // btnBottom -->
+        </div>
+        <a href="javascript:void(0)" onclick="fn_layer_close(this)">닫기</a>
+    </div>
+</div>
+<!--//이용불편신고 및 개선의견 안내 팝업-->
+    
+    <script>
+		// 연차개수
+    var popupWidth1 = document.body.offsetWidth - 40;
+    var popupHeight1 = window.screen.height - 100;
+    var popupX1 = (document.body.offsetWidth / 2) - (popupWidth1 / 2);
+    var popupY1 = (window.screen.height / 2) - (popupHeight1 / 2);
+
+    // 퇴직금
+    var popupWidth2 = 1600;
+    var popupHeight2 = 800;
+    var popupX2 = (document.body.offsetWidth / 2) - (popupWidth2 / 2);
+    var popupY2 = (window.screen.height / 2) - (popupHeight2 / 2);
+    </script>
+    <!-- 2025-12-24 (네이버 애널리틱스 제거하고 xtractor 솔루션으로 분석) -->
+<!--     <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+		<script type="text/javascript">
+		if(!wcs_add) var wcs_add = {};
+		wcs_add["wa"] = "2af305db2260a8";
+		if(window.wcs) {
+		wcs_do();
+		} 
+		</script> -->
+		 
+	<script type="text/javascript" src="/share/js/UserScriptConf.js"></script>
+		
+      <!--// header top end -->
+
+	<!-- container -->
+	<div id="container">
+		<!-- pageTit -->
+		<div class="pageTit">
+			<h2>민원제도 안내</h2>
+		</div>
+		<!--// pageTit -->
+		<!-- contents -->
+		<div class="contents">
+			<script>
+			$(function(){
+				$("title").text("체불임금 해결 방법 < 민원제도 안내 < 민원신청·조회 < 고용노동부 노동포털");
+			})
+			</script>
+			<!-- infoBox -->
+			<div class="infoBox">
+				<p>체불임금을 받기 위해서 취할 수 있는 다양한 방법들을 안내해 드립니다.</p>
+				<p class="cRed">* 만 15세부터 만34세 근로자는 "청소년 근로권익센터"를 통해 공인노무사가 상담 진정사건 대리 등 지원</p>
+				<a href="http://www.youthlabor.co.kr" target="_blank"  class="btnS btnWhite" title="새창열기"><span class="icoLink cBlack">청소년 근로 권익센터</span></a>
+			</div>
+			<!--// infoBox -->
+
+			<!-- topTit -->
+			<div class="topTit">
+				<h3>체불임금 해결 방법</h3>
+			</div>
+			<!--// topTit -->
+
+			<!-- tabArea -->
+			<div class="tabArea v1 tabFunc">
+				<ul role="tablist">
+					<li class="curr"><button role="tab" id="tab01" aria-controls="tabpanel01">진정/고소</button></li>
+					<li><button role="tab" id="tab02" aria-controls="tabpanel02">임금체불 근로자 지원제도</button></li>
+					<li><button role="tab" id="tab03" aria-controls="tabpanel03">임금체불 사업주 안내사항</button></li>
+					<li><button role="tab" id="tab04" aria-controls="tabpanel04">민사소송</button></li>
+					<li><button role="tab" id="tab05" aria-controls="tabpanel05">회사도산시 해결방법</button></li>
+				</ul>
+				<!-- 진정/고소 -->
+				<div role="tabpanel" id="tabpanel01" aria-labelledby="tab01">
+					<!-- titArea -->
+					<div class="titArea">
+						<h4>진정/고소</h4>
+					</div>
+					<!--// titArea -->
+					<ul class="dotList">
+						<li>임금을 지급받지 못한 근로자는 밀린 임금을 지급 받을 수 있도록 해달라고 요구(진정)하거나, 사용자를 근로기준법 위반으로 처벌해 달라고 요구(고소)할 수 있습니다.</li>
+					</ul>
+
+					<!-- titArea -->
+					<div class="titArea">
+						<h4>신청방법</h4>
+					</div>
+					<!--// titArea -->
+					<ul class="dotList">
+						<li>홈페이지 "노동포털"에서 온라인으로 "임금체불 진정"을 제기하거나, 사업장 소재지 관할 고용노동관서 고객지원실을 방문하여 사전 상담 후 진정 또는 고소하실 수 있습니다.</li>
+					</ul>
+
+					<!-- titArea -->
+					<div class="titArea">
+						<h4>진정 제기</h4>
+					</div>
+					<!--// titArea -->
+					<ul class="dotList">
+						<li>홈페이지 "노동포털" &gt; 민원신청·조회 - 민원신청 - 근로기준 분야 민원신청 &gt; <a href="../minwonRqst/SN001.do" class="btnLink">"진정서(임금체불, 기타 근로기준 분야)" 신청</a></li>
+					</ul>
+					<!-- btnLeft -->
+					<div class="btnLeft">
+						<button type="button" id="exDownload" class="btnS btnWhite" title="한글문서 다운로드"><span class="icoLink icoDownload">진정서 입력 예</span></button>
+					</div>
+					<!--// btnLeft -->
+
+					<!-- titArea -->
+					<div class="titArea">
+						<h4>진정 취하</h4>
+					</div>
+					<!--// titArea -->
+					<ul class="dotList">
+						<li>홈페이지 "노동포털" &gt; 마이페이지-나의민원 &gt; 로그인 &gt; "진정 취하" 버튼 클릭</li>
+					</ul>
+					<!-- btnLeft -->
+					<div class="btnLeft">
+						<button type="button" id="cancelWageDownload" class="btnS btnWhite" title="한글문서 다운로드"><span class="icoLink icoDownload">취하서식</span></button>
+					</div>
+					<!--// btnLeft -->
+
+					<!-- titArea -->
+					<div class="titArea">
+						<h4>처리절차</h4>
+					</div>
+					<!--// titArea -->
+					<ul class="numList">
+						<li>
+							① 근로감독관이 진정인과 피진정인에게 출석을 요구하여 조사 진행
+							<ul>
+								<li>- 처리기간은 25일(토요일·공휴일 제외)이며, 2차에 걸쳐 연장 가능</li>
+								<li>- 진정인이 2회 이상 불출석 시, 신고의사가 없는 것으로 간주되어 사건을 종결(향후 재 진정 가능)</li>
+							</ul>
+						</li>
+						<li>② 근로감독관의 조사로 임금체불 등 법 위반 사실이 확인되는 경우 사업주에게 시정지시 → 법 위반이 시정되면 사건을 종결</li>
+						<li>
+							③ 시정지시 미이행 시 형사입건 후 수사 착수 후 검찰에 송치
+							<ul>
+								<li>- 임금체불 사업주는 3년 이하의 징역 또는 3,000만원 이하의 벌금형에 처함</li>
+							</ul>
+						</li>
+					</ul>
+					<!-- contBox -->
+					<div class="contBox imgWrap">
+						<div>
+							<img src="../assets/images/img0201-01.png" alt="체불임금 해결 방법 진정/고소의 처리 절차">
+							<img src="../assets/images/img0201-01-m.png" alt="체불임금 해결 방법 진정/고소의 처리 절차">
+						</div>
+						<div class="hide">
+							진정인이 진정제기를 하면 이후 근로감독관이 피진정인에게 출석을 요구하여 사실관계조사를 진행합니다. 처리기간은 토요일 공휴일을 제외한 25일이며, 2차에 걸쳐 연장이 가능합니다. 1차는 근로감독관의 직권, 2차는 진정인의 동의가 필요합니다. 체불임금이 확정되면 근로감독관이 피진정인에게 임금 지급을 지시합니다. 이후 지급이 완료되면 사건을 종결합니다. 만약 피진정인이 시정지시를 미이행 하면 형사입건 후 수사를 착수하고 이후 검찰에 송치됩니다. 이때 기간은 2개월 이며, 검사의 지휘에 따라 연장 될 수 있습니다. 임금체불 사업주는 3년 이하의 징역 또는 3,000만원 이하의 벌금형에 처하게 됩니다. 
+						</div>
+					</div>
+					<!--// contBox -->
+				</div>
+				<!--// 진정/고소 -->
+				<!-- 민사소송 -->
+				<div role="tabpanel" id="tabpanel02" aria-labelledby="tab02">
+					<!-- titArea -->
+					<div class="titArea" style="display: flex; align-items: center;">
+						<h4>간이대지급금</h4>
+						<span id="tab02Show1" style="cursor: pointer; display: flex; align-items: center; font-size: 15px;"><img style="margin: 5px;" src="/assets/images/common/ico-next.png" alt="">자세히 보기</span>
+						<span id="tab02Hide1" style="cursor: pointer; display: flex; align-items: center; font-size: 15px;"><img style="margin: 5px;" src="/assets/images/common/ico-prev.png" alt="">닫기</span>
+					</div>
+					<div class="infoBox">
+						<p>퇴직 또는 재직 근로자가 사업주로부터 지급받지 못한 임금등의지급을 근로복지공단에 청구하면 사업주를 대신하여 지급받을 수 있는 제도입니다.</p>
+					</div>
+					<div id="tab02Content1" style="margin-top: 10px;">
+						<div class="titArea">
+							<h4>[지원대상 및 지원내용]</h4>
+						</div>
+						<!--// titArea -->
+							<ul class="numList">
+								<li>
+									<strong>1. 퇴직자</strong>
+										<ul>
+											<li>
+												<strong>(1) 지원대상</strong>
+													<ul>
+														<li>
+															① 근로자 요건 
+															<ul>
+																<li>- 확정판결 등에 따른 대지급금- 퇴직일의다음날부터 2년 이내 소송 등을 제기한 퇴직 근로자 또는</li>
+																<li>- 체불확인서에 따른 대지급금- 퇴직일의다음날부터 1년 이내 진정 등을 제기한 퇴직 근로자</li>
+															</ul>
+														</li>
+														<li>
+															② 사업주 요건
+															<ul>
+																<li>- 산업재해보상보험법 적용대상 사업으로 해당 근로자의 퇴직일까지 6개월 이상 사업가동</li>
+															</ul>
+														</li>
+													</ul>
+											</li>
+											<li>
+												<strong>(2) 지원내용</strong>
+												<ul>
+													<li>
+														· 최종 3개월분의 임금(또는 휴업수당, 출산 전후 휴가기간 중 급여), 최종 3년간의 퇴직급여등 중 체불액
+													</li>
+													<li>
+														* 최대 1,000만원 상한(임금 등 700만원, 퇴직급여 등 700만원)
+													</li>
+												</ul>
+											</li>
+										</ul>
+								</li>
+								<li>
+									<strong>2. 재직자(시급기준, 최저임금의 110% 미만)</strong>
+										<ul>
+											<li>
+												<strong>(1) 지원대상</strong>
+													<ul>
+														<li>
+															① 근로자 요건
+															<ul>
+																<li>- 마지막 체불 발생일의 다음날부터 2년 이내 소송 등을 제기한 재직 근로자 또는</li>
+																<li>- 마지막 체불 발생일의 다음날부터 1년 이내 진정 등을 제기한 재직 근로자</li>
+															</ul>
+														</li>
+														<li>
+															② 사업주 요건
+															<ul>
+																<li>- 산업재해보상보험법 적용대상 사업으로 근로자가 소송 또는 진정 등을 제기한 날 이전 마지막 체불일까지 6개월 이상 가동사업</li>
+															</ul>
+														</li>
+													</ul>
+											</li>
+											<li>
+												<strong>(2) 지원내용</strong>
+												<ul>
+													<li>
+														· 최종 3개월분의 임금(또는 휴업수당, 출산 전후 휴가기간 중 급여), 중 체불액
+													</li>
+													<li>
+														* 700만원 상한
+													</li>
+												</ul>
+											</li>
+										</ul>
+								</li>
+							</ul>
+						<div class="titArea">
+							<h4>[지원절차]</h4>
+						</div>
+							<ul class="numList">
+								<li>
+									<strong>1. 확정판결 등에 따른 대지급금</strong>
+								</li>
+							</ul>
+							<div class="contBox imgWrap" style="text-align: left; padding: 0px; border-radius: 0px; background: none;">
+								<div>
+									<img src="../assets/images/img-wagesolway-01.png" alt="STEP 01 민사소송 STEP 02 판결 등이 확정된 날부터 1년 이내에 간이대지급금 지급청구서를 근로복지공단에 제출 STEP 03 지급요건 확인 STEP 04 지급 또는 부지급 통지">
+									<img src="../assets/images/img-wagesolway-01_m.png" alt="STEP 01 민사소송 STEP 02 판결 등이 확정된 날부터 1년 이내에 간이대지급금 지급청구서를 근로복지공단에 제출 STEP 03 지급요건 확인 STEP 04 지급 또는 부지급 통지">
+								</div>
+							</div>
+							<ul class="numList">
+								<li>
+									<strong>2. 체불확인서에 따른 대지급금</strong>
+								</li>
+							</ul>
+							<div class="contBox imgWrap" style="text-align: left; padding: 0px; border-radius: 0px; background: none;">
+								<div>
+									<img src="../assets/images/img-wagesolway-02.png" alt="STEP 01 지방고용노동청에 임금체불 진정 신청 STEP 02 지방고용노동청으로부터 체불 임금등 사업주 확인서 신청 및 발부 STEP 03 체불 임금등 사업주 확인서 발급일로부터 6개월 이내 간이대지급금 지급청구서를 근로복지공단에 제출 STEP04 지급요건 확인 STEP 05 지급 또는 부지급 통지">
+									<img src="../assets/images/img-wagesolway-02_m.png" alt="STEP 01 지방고용노동청에 임금체불 진정 신청 STEP 02 지방고용노동청으로부터 체불 임금등 사업주 확인서 신청 및 발부 STEP 03 체불 임금등 사업주 확인서 발급일로부터 6개월 이내 간이대지급금 지급청구서를 근로복지공단에 제출 STEP04 지급요건 확인 STEP 05 지급 또는 부지급 통지">
+								</div>
+							</div>
+						<div class="titArea">
+							<h4>[필요서류]</h4>
+						</div>
+							<ul class="numList">
+								<li>
+									· (확정판결 등에 따른 대지급금) 판결문 등 집행권원정본 및 사본
+								</li>
+								<li>
+									· 확정증명원정본 및 사본
+								</li>
+								<li>
+									· 체불임금 등 사업주 확인서 원본 또는 사본
+								</li>
+							</ul>
+						<div class="titArea">
+							<h4>[비고]</h4>
+						</div>
+							<ul class="numList">
+								<li>
+									근로복지공단 ☏ 1588-0075,<a href="https://total.comwel.or.kr" class="btnLink" style="margin-left: 2%;">고용산재보험토탈서비스(https://total.comwel.or.kr)</a>
+								</li>
+							</ul>
+					</div>
+					<!-- titArea -->
+					<div class="titArea" style="display: flex; align-items: center;">
+						<h4>체불근로자 생계비 융자</h4>
+						<span id="tab02Show2" style="cursor: pointer; display: flex; align-items: center; font-size: 15px;"><img style="margin: 5px;" src="/assets/images/common/ico-next.png" alt="">자세히 보기</span>
+						<span id="tab02Hide2" style="cursor: pointer; display: flex; align-items: center; font-size: 15px;"><img style="margin: 5px;" src="/assets/images/common/ico-prev.png" alt="">닫기</span>
+					</div>
+					<div class="infoBox">
+						<p>사업주로부터 임금등을지급받지 못한 근로자(퇴직한 근로자 포함)가 생활안정을 위하여 근로복지공단에 신청하면 생계비에 필요한 비용을 융자받을 수 있는 제도입니다.</p>
+					</div>
+					<div id="tab02Content2" style="margin-top: 10px;">
+						<div class="titArea">
+							<h4>[지원대상 및 지원내용]</h4>
+						</div>
+							<ul class="numList">
+								<li>
+									<strong>1. 지원대상</strong>
+										<ul>
+											<li>
+												○ <strong class="cSecondary">(재직자)</strong> 체불 사업장(폐업된 경우는 제외)에서 재직 중
+											</li>
+											<li>
+												○ <strong class="cSecondary">(퇴직자)</strong> 체불 사업장에서 융자신청일 이전 6개월 이내에 퇴직
+												<ul>
+													<li>
+														* 건설일용근로자는 신청일 이전 180일 이내에 고용보험 근로내용확인신고서상 근로일수가 30일 이상
+													</li>
+												</ul>
+											</li>
+											<li>
+												○ <strong class="cSecondary">(체불요건)</strong> 신청일 이전 1년동안 1개월분이상 임금 등이 체불
+												<ul>
+													<li>
+														* 건설일용근로자는 전년도 건설업임금실태조사(개별직종노임단가) 중 하반기 보통인부 노임단가 5일분 금액 이상이 체불
+													</li>
+												</ul>
+											</li>
+										</ul>
+								</li>
+								<li>
+									<strong>2. 지원내용</strong>
+										<ul>
+											<li>
+												○ <strong class="cSecondary">(융자금액)</strong>
+													<ul>
+														<li>
+															① <strong>재직자</strong> - 체불액 범위에서 해당 근로자의 신청금액
+															<ul>
+																<li>* 총 1천만원 한도, 고용위기지역 또는 특별고용지원업종 재직자는 2천만원 한도</li>
+															</ul>
+														</li>
+														<li>
+															② <strong>퇴직자</strong> - 최종 3개월간 임금(휴업수당, 출산 전후 휴가기간 중 급여), 최종 3년분의 퇴직급여등 중 체불액(총 1천만원 한도)
+														</li>
+													</ul>
+											</li>
+											<li>○ <strong class="cSecondary">(융자금리/조건)</strong> 연 1.5% / 1년(또는 2년) 거치 4년(또는 4년) 원금균등분할상환</li>
+											<li>○ <strong class="cSecondary">(보증)</strong> 별도 담보제공 없음(공단의 신용보증지원, 보증료연 1% 별도)</li>
+										</ul>
+								</li>
+							</ul>
+						<div class="titArea">
+							<h4>[지원절차]</h4>
+						</div>
+						<div class="contBox imgWrap" style="text-align: left; padding: 0px; border-radius: 0px; background: none;">
+							<div>
+								<img src="../assets/images/img-wagesolway-03.png" style="" alt="융자 및 보증신청 융자결정 보증서 발행 및 은행통보 융자실행(기업은행)">
+								<img src="../assets/images/img-wagesolway-03_m.png" alt="융자 및 보증신청 융자결정 보증서 발행 및 은행통보 융자실행(기업은행)">
+							</div>
+						</div>
+						<div class="titArea">
+							<h4>[필요서류]</h4>
+						</div>
+						<ul class="numList">
+							<li>○ <strong class="cSecondary">(건설일용근로자)</strong> 아래 서류 중 어느 하나
+								<ul>
+									<li>- 체불확인서(고용보험법상 근로내용 확인신고가 있는 경우에 한함)</li>
+									<li>- 체불임금등·사업주확인서</li>
+									<li>- 사업주가 근로자에게 미지급 임금 등을 지급하라는 판결문 등</li>
+								</ul>
+							</li>
+							<li>○ <strong class="cSecondary">(건설일용근로자 외)</strong> 아래 서류 중 어느 하나
+								<ul>
+									<li>- 체불확인서(재직자에 한함)</li>
+									<li>- 체불임금등·사업주확인서</li>
+									<li>- 사업주가 근로자에게 미지급 임금 등을 지급하라는 판결문 등(재직자에 한함)</li>
+								</ul>
+							</li>
+						</ul>
+						<div class="titArea">
+							<h4>[비고]</h4>
+						</div>
+						<ul class="numList">
+							<li>근로복지공단 ☏ 1588-0075,<a href="https://welfare.comwel.co.kr" class="btnLink" style="margin-left: 2%;">근로복지넷(https://welfare.comwel.co.kr)</a></li>
+						</ul>
+					</div>
+					<!-- titArea -->
+					<div class="titArea" style="display: flex; align-items: center;">
+						<h4>무료 법률구조</h4>
+						<span id="tab02Show3" style="cursor: pointer; display: flex; align-items: center; font-size: 15px;"><img style="margin: 5px;" src="/assets/images/common/ico-next.png" alt="">자세히 보기</span>
+						<span id="tab02Hide3" style="cursor: pointer; display: flex; align-items: center; font-size: 15px;"><img style="margin: 5px;" src="/assets/images/common/ico-prev.png" alt="">닫기</span>
+					</div>
+					<div class="infoBox">
+						<p>법률구조공단이 체불 피해근로자에게 임금 및 퇴직금 관련 민사 소송대리 등의 무료법률구조를 지원하는 제도입니다.</p>
+					</div>
+					<div id="tab02Content3" style="margin-top: 10px;">
+						<div class="titArea">
+							<h4>[지원대상 및 지원내용]</h4>
+						</div>
+							<ul class="numList">
+								<li>
+								 <strong>1. 지원대상</strong>
+										<ul>
+											<li>
+												○ 체불 당시 최종 3개월분의월평균임금이 400만원 미만인 근로자
+											</li>
+										</ul>
+								</li>
+								<li>
+									<strong>2. 지원내용</strong>
+										<ul>
+											<li>
+												○ 소송비용 및 변호사 보수비용 지원(패소 시 상대방 소송비용 지원하지 않음)
+											</li>
+										</ul>
+								</li>
+							</ul>
+						<div class="titArea">
+							<h4>[신청절차]</h4>
+						</div>
+						<div class="contBox imgWrap" style="text-align: left; padding: 0px; border-radius: 0px; background: none;">
+							<div>
+								<img src="../assets/images/img-wagesolway-04.png" style="" alt="구조신청 사실조사 구조결정 구조계약체결 소송수행">
+								<img src="../assets/images/img-wagesolway-04_m.png" alt="구조신청 사실조사 구조결정 구조계약체결 소송수행">
+							</div>
+						</div>
+						<div class="titArea">
+							<h4>[필요서류]</h4>
+						</div>
+						<ul class="numList">
+							<li>○ <strong class="cSecondary">(공통)</strong> 체불 임금등·사업주 확인서, 근로자의 주민등록등본 각 1부 </li>
+							<li>○ <strong class="cSecondary">(사업주가 법인인 경우)</strong> 법인등기부등본 1부(가압류, 강제집행 시 각 1부 추가)</li>
+							<li>○ <strong class="cSecondary">(가압류하는 경우)</strong>
+								<ul>
+									<li>- 부동산 가압류: 부동산등기부등본 토지, 건물 각 1부</li>
+									<li>- 자동차 가압류: 자동차등록원부 1부</li>
+									<li>- 채권 가압류: 사업주 소재지(또는 영업장소) 부동산등기부등본 1부, 제3채무자 인적사항(법인인 경우 등기부등본) 및 가압류할채권의 표시</li>
+								</ul>
+							</li>
+						</ul>
+						<div class="titArea">
+							<h4>[비고]</h4>
+						</div>
+						<ul class="numList">
+							<li>대한법률구조공단<a href="www.klac.or.kr" class="btnLink" style="margin-left: 2%;">(www.klac.or.kr)</a>, 전자접수<a href="http://support.klac.or.kr" class="btnLink" style="margin-left: 2%;">(http://support.klac.or.kr)</a>,  ☏ 지역번호 + 132
+						</ul>
+					</div>
+				</div>
+				<!--// 민사소송 -->
+				<!-- 회사도산시 해결방법 -->
+				<div role="tabpanel" id="tabpanel03" aria-labelledby="tab03">
+					<div class="titArea">
+						<h4>체불청산지원 사업주 융자</h4>
+					</div>
+					<div class="infoBox">
+						<p>사업주가 근로자에게 임금등을 지급하지 못한 경우, 근로복지공단에 신청하여 체불 임금등을 지급하는 데 필요한 비용을 융자받을 수 있는 제도입니다.</p>
+					</div>
+						<ul class="numList">
+							<li>
+								<strong>1. 지원대상</strong>
+									<ul>
+										<li><strong class="cSecondary">(사업주)</strong> 융자신청일 현재 가동 중이고(휴·폐업 제외) 체불이 발생한 경우로서, 융자요건 확인 신청일 이전 6개월 이상 산재보험 적용된 사업장</li>
+										<li>* 한국신용정보원 연체정보등록 등 사업주 제외</li>
+										<li><strong class="cSecondary">(근로자)</strong> 신청일 현재 해당 사업장에서 6개월 이상 계속 근로하거나, 해당 사업장 6개월 이상 계속 근로하고 확인 신청일 전 1년 이내 퇴직한 근로자</li>
+									</ul>
+							</li>
+							<li>
+								<strong>2. 지원내용</strong>
+									<ul>
+										<li><strong class="cSecondary">(융자금액)</strong> 사업주당 최대 1억 5천만원(근로자 1인당 1,500만원)</li>
+										<li><strong class="cSecondary">(융자금리)</strong> 신용·연대보증 연 3.7%, 담보 연 2.2%</li>
+										<li><strong class="cSecondary">(상환방법)</strong> 1년(또는 2년) 거치, 3년(또는 4년) 분기별 원금균등분할상환</li>
+									</ul>
+							</li>
+							<li>
+							 <strong>3. 신청절차</strong>
+							 </li>
+							 		<li>
+										<div class="contBox imgWrap" style="text-align: left; padding: 0px; border-radius: 0px; margin-bottom: 0px !important; background: none;">
+											<div>
+												<img src="../assets/images/img-wagesolway-05.png" style="" alt="STEP 01 체불금액, 신용조건 등 대상 사업주 요건 확인 후 사업주 통지 지방노동관서 STEP 02 융자금액, 융자요건 확인 후 융자예정자 결정, 사업주 및 금융기관 통지 근로복지공단 STEP 03 융자약정 체결 후 근로자 계좌로 융자금 입금">
+												<img src="../assets/images/img-wagesolway-05_m.png" alt="STEP 01 체불금액, 신용조건 등 대상 사업주 요건 확인 후 사업주 통지 지방노동관서 STEP 02 융자금액, 융자요건 확인 후 융자예정자 결정, 사업주 및 금융기관 통지 근로복지공단 STEP 03 융자약정 체결 후 근로자 계좌로 융자금 입금">
+											</div>
+										</div>
+							 		</li>
+							<li>
+								<strong>4. 안내·문의</strong>
+									<ul>
+										<li>고용노동부 <a href="www.moel.go.kr" class="btnLink" style="margin-right: 1%;">www.moel.go.kr</a>☎ 1350 (온라인 신청(노동포털): <a href="labor.moel.go.kr" class="btnLink">labor.moel.go.kr</a>)</li>
+										<li>근로복지공단 <a href="https://welfare.comwel.or.kr" class="btnLink" style="margin-right: 1%;">https://welfare.comwel.or.kr</a>☎ 1588-0075</li>
+									</ul>
+							</li>
+						</ul>
+					<div class="titArea">
+						<h4>상습임금체불 근절법(개정 근로기준법,'25.10.23. 시행)</h4>
+					</div>
+						<ul class="numList">
+							<li>
+								<strong>1. 상습체불 사업주</strong>
+									<ul>
+										<li class="warnBox"><strong style="border: 4px solid #DD0000;">상습체불사업주는 신용제재 등 경제적 제재를 받게 됩니다.</strong></li>
+										<li><strong class="cSecondary">(요건)</strong> 직전연도 1년간</li>
+										<li><strong>① 3개월분임금</strong> 이상 체불(퇴직금 제외) 또는 </li>
+										<li><strong>② 5회 이상 체불 & 체불총액3천만원</strong>(퇴직금 포함) 이상</li>
+										<li>* 사업주가 사망, 파산, 도산 또는 체불임금 전액 청산한 경우 등은 제외</li>
+										<li><strong class="cSecondary">(제재 내용)</strong></li>
+										<li>① 신용정보기관에 체불자료제공 → <strong>금융기관</strong>에서 대출·이자율 산정 등 금융거래 시 활용</li>
+										<li>② 국가·자치단체, 공공기관 <strong>보조·지원사업</strong>(지원금 등) <strong>참여·지원 제한</strong></li>
+										<li>③ 국가·지방계약법상 <strong>입찰참가자격 사전심사, 낙찰자 결정 시 감점</strong> 등</li>
+									</ul>
+							</li>
+							<li>
+								<strong>2. 명단공개 사업주</strong>
+									<ul>
+										<li class="warnBox"><strong style="border: 4px solid #DD0000;">명단공개사업주는 출국이 금지될 수 있으며, 또다시 체불하면 반드시 처벌됩니다.</strong></li>
+										<li><strong class="cSecondary">(요건)</strong> 명단공개 기준일 이전 3년 이내 2회 이상 유죄 확정되고 기준일 이전 1년 이내 3천만원 이상 체불</li>
+										<li><strong class="cSecondary">(제재 내용)</strong></li>
+										<li>① 명단공개(3년) + <strong class="cRed">명단공개기간 동안 출국금지</strong>(단, 체불임금 지급 시 해제)</li>
+										<li>② 명단공개(3년) + <strong class="cRed">명단공개기간 중 체불</strong>할 경우 근로자 의사와 관계없이 <strong class="cRed">반드시 형사처벌</strong>(반의사불벌죄적용제외)</li>
+									</ul>
+							</li>
+							<li>
+								<strong>3. 손해배상 청구</strong>
+									<ul>
+										<li class="warnBox"><strong style="border: 4px solid #DD0000;">근로자는 법원에 체불임금의 3배 이내 손해배상을 청구할 수 있습니다.</strong></li>
+										<li><strong class="cSecondary">(요건)</strong></li>
+										<li>① <strong>명백한 고의</strong>로 체불 또는</li>
+										<li>② 1년 동안 임금을 <strong>체불한 기간이 3개월 이상</strong> 또는</li>
+										<li>③ <strong>체불액이 3개월 이상의 통상임금</strong>에 해당할 경우</li>
+									</ul>
+							</li>
+						</ul>		
+				</div>
+				<!--// 회사도산시 해결방법 -->
+				<!-- 간이대지급금 -->
+				<div role="tabpanel" id="tabpanel04" aria-labelledby="tab04">
+					<!-- titArea -->
+					<div class="titArea">
+						<h4>민사소송</h4>
+					</div>
+					<!--// titArea -->
+					<ul class="dotList">
+						<li>임금을 지급받지 못한 근로자는 밀린 임금을 지급 받을 수 있도록 해달라고 요구(진정)하거나, 사용자를 근로기준법 위반으로 처벌해 달라고 요구(고소)할 수 있습니다.</li>
+					</ul>
+					<!-- flex flexWrap v3  -->
+					<div class="flex flexWrap v3">
+						<div class="flexItem">
+							<strong>사용재산 가압류</strong>
+							<p>해당법인</p>
+						</div>
+						<div class="flexItem">
+							<strong>소액사건 심판, 민사소송</strong>
+							<p>해당법인</p>
+						</div>
+						<div class="flexItem">
+							<strong>강제집행</strong>
+							<p>동산:집행관, 부동산:해당법인</p>
+						</div>
+					</div>
+					<!--// flex flexItem  -->
+
+					<!-- titArea -->
+					<div class="titArea">
+						<h4>신청방법</h4>
+					</div>
+					<!--// titArea -->
+					<ul class="dotList">
+						<li>업장 소재지 관할 또는 근로자 주소지 관할 지방법원에 민사소송을 제기하여 확정 판결을 받은 후 강제집행</li>
+					</ul>
+					<!-- contBox -->
+					<div class="contBox imgWrap">
+						<div>
+							<img src="../assets/images/img0201-02.png" alt="체불임금 해결 방법 민사소송의 신청방법">
+							<img src="../assets/images/img0201-02-m.png" alt="체불임금 해결 방법 민사소송의 신청방법">
+						</div>
+						<div class="hide">
+							사업장 소재지 관할 또는 근로자 주소지 관할 지방법원에 소를 제기합니다. 이후 법원에 이행권고 결정 후 결정서를 송부합니다. 이의가 없을 경우 결정서 내용대로 강제집행을 진행합니다. 단, 사업주의 재산이 있어야 강제집행을 통해 체불임금을 받을 수 있으므로 사전에 사업주의 재산을 파악, 가압류를 하는 것이 중요합니다. 만약 해당 사업주가 이의가 있을 경우 변론 기일을 지정하고 변론을 한 후에 판결을 진행합니다. 집행문이 부여되고 집행문을 토대로 강제집행을 진행합니다. 
+						</div>
+					</div>
+					<!--// contBox -->
+
+					<!-- titArea -->
+					<div class="titArea">
+						<h4>참고사항</h4>
+					</div>
+					<!--// titArea -->
+					<ul class="dotList">
+						<li>사업주의 재산이 있어야 강제집행을 통해 체불임금을 받을 수 있으므로 사전에 사업주의 재산을 파악. 가압류를 하는 것이 중요함</li>
+						<li>대한법률구조공단에서 체불임금 관련 법률상담을 무료로 지원합니다.</li>
+					</ul>
+					<!-- btnLeft -->
+					<div class="btnLeft">
+						<a href="https://www.klac.or.kr" target="_blank"  class="btnS btnWhite" title="새창열기"><span class="icoLink cBlack">대한법률 구조공단 바로가기</span></a>
+					</div>
+					<!--// btnLeft -->
+				</div>
+				<!--// 간이대지급금 -->
+				<!-- 체불청산지원 사업주융자제도 -->
+				<div role="tabpanel" id="tabpanel05" aria-labelledby="tab05">
+					<!-- titArea -->
+					<div class="titArea">
+						<h4>대상</h4>
+					</div>
+					<!--// titArea -->
+					<ul class="dotList">
+						<li><span class="cRed">산재보험 적용대상으로서 6월 이상 사업을 한 뒤 도산한 사업장</span>에서 파산의 선고.회생절차개시의 결정.사실상 도산인정 신청일(퇴직기준일)의 1년 전이 되는 날 이후 3년 이내에 당해 사업 또는 사업장에서 퇴직한 근로자</li>
+					</ul>
+
+					<!-- titArea -->
+					<div class="titArea">
+						<h4>신청방법</h4>
+					</div>
+					<!--// titArea -->
+					<ul class="dotList">
+						<li>기업의 도산 인정일로부터 2년 이내에 관할 지방고용노동관서의 장에게 청구</li>
+						<li>기업의 도산으로 인하여 임금ㆍ휴업수당 및 퇴직금을 지급 받지 못하고 퇴직한 경우 국가가 사업주를 대신하여 체불임금 등을 지급</li>
+						<li>임금채권보장제도
+							<ul>
+								<li>- 재판상 도산 : 파산의 선고, 회생절차개시의 결정</li>
+								<li>- 사실상 도산 : 300인 이하 사업장은 지방고용노동관서장이 도산사실 인정가능 (근로자가 퇴직한 날의 다음날부터 1년 이내에 도산등사실 인정을 신청하여야 함)</li>
+							</ul>
+						</li>
+					</ul>
+
+					<!-- titArea -->
+					<div class="titArea">
+						<h4>대지급금 상한액</h4>
+					</div>
+					<!--// titArea -->
+					<ul class="dotList">
+						<li>대지급금 상한액 고시
+							<ul>
+								<li>- 20.1.1 이후 파산선고, 회생절차개시결정이 있는 경우 및 도산 등 사실인정 신청서가 접수된 경우</li>
+							</ul>
+						</li>
+					</ul>
+					<!-- contBox -->
+					<div class="contBox">
+						<!-- colTable -->
+						<div class="colTable scrollX2">
+							<table>
+								<caption>구분[대지급금 종류(입금, 퇴직 급여 등, 휴업수당)], 퇴직당시 연령[30세 미만, 30세이상 40세미만, 40세이상 50세미만, 50세이상 60세미만, 60세 이상] 항목으로 구성된 20.1.1 이후 파산선고, 회생절차개시결정이 있는 경우 및 도산 등 사실인정 신청서가 접수된 경우 대지급금 상한액 고시 정보 표</caption>
+								<colgroup>
+									<col style="width:15%">
+									<col style="width:15%">
+									<col style="width:auto">
+									<col style="width:auto">
+									<col style="width:auto">
+									<col style="width:auto">
+									<col style="width:auto">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col" colspan="2" rowspan="2">구분</th>
+										<th scope="col" colspan="5">퇴직당시 연령</th>
+									</tr>
+									<tr>
+										<th scope="col">30세 미만</th>
+										<th scope="col">30세 이상<br>40세 미만</th>
+										<th scope="col">40세 이상<br>50세 미만</th>
+										<th scope="col">50세 이상<br>60세 미만</th>
+										<th scope="col">60세 이상</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row" rowspan="3">대지급금<br>종류</th>
+										<th scope="row">임금</th>
+										<td>220</td>
+										<td>310</td>
+										<td>350</td>
+										<td>330</td>
+										<td>230</td>
+									</tr>
+									<tr>
+										<th scope="row">퇴직 급여 등</th>
+										<td>220</td>
+										<td>310</td>
+										<td>350</td>
+										<td>330</td>
+										<td>230</td>
+									</tr>
+									<tr>
+										<th scope="row">휴업수당</th>
+										<td>154</td>
+										<td>217</td>
+										<td>245</td>
+										<td>231</td>
+										<td>161</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!--// colTable -->
+						<!-- txtArea -->
+						<div class="txtArea">
+							<p class="txt">(단위 : 만원) </p>
+						</div>
+						<!--// txtArea -->
+					</div>
+					<!--// contBox -->
+
+					<p class="txt">- 20.1.1 이전</p>
+					<!-- contBox -->
+					<div class="contBox">
+						<!-- colTable -->
+						<div class="colTable scrollX2">
+							<table>
+								<caption>구분[대지급금 종류(임금 및 퇴직금, 휴업수당)], 퇴직당시 연령[30세 미만, 30세이상 40세미만, 40세이상 50세미만, 50세이상 60세미만, 60세 이상] 항목으로 구성된 20.1.1 이전 대지급금 상한액 고시 정보 표</caption>
+								<colgroup>
+									<col style="width:15%">
+									<col style="width:15%">
+									<col style="width:auto">
+									<col style="width:auto">
+									<col style="width:auto">
+									<col style="width:auto">
+									<col style="width:auto">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col" colspan="2" rowspan="2">구분</th>
+										<th scope="col" colspan="5">퇴직당시 연령</th>
+									</tr>
+									<tr>
+										<th scope="col">30세 미만</th>
+										<th scope="col">30세 이상<br>40세 미만</th>
+										<th scope="col">40세 이상<br>50세 미만</th>
+										<th scope="col">50세 이상<br>60세 미만</th>
+										<th scope="col">60세 이상</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row" rowspan="2">대지급금<br>종류</th>
+										<th scope="row">임금, 퇴직금</th>
+										<td>180</td>
+										<td>260</td>
+										<td>300</td>
+										<td>280</td>
+										<td>210</td>
+									</tr>
+									<tr>
+										<th scope="row">휴업수당</th>
+										<td>126</td>
+										<td>182</td>
+										<td>210</td>
+										<td>196</td>
+										<td>147</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!--// colTable -->
+						<!-- txtArea -->
+						<div class="txtArea">
+							<p class="txt cRed">비고: 임금과 휴업수당은 1월분, 퇴직금은 1년분 기준임 </p>
+							<p class="txt">(단위 : 만원) </p>
+						</div>
+						<!--// txtArea -->
+					</div>
+					<!--// contBox -->
+					<!-- titArea -->
+					<div class="titArea">
+						<h4>대지급금 조력지원</h4>
+					</div>
+					<!--// titArea -->
+					<ul class="dotList">
+						<li>30인 미만의 사업장에서 기업의 도산 등으로 임금을 받지 못하고 퇴직한 근로자가 대지급금을 신청할 수 있도록 공인노무사 등의 조력을 받을 수 있도록 지원</li>
+						<li>지방고용노동관서에 방문하여 대지급금 조력지원 대상 확인 및 조력담당 노무사 추천 → (지정노무사) 도산 등 사실인정 및 대지급금 신청</li>
+					</ul>
+				</div>
+				<!--// 체불청산지원 사업주융자제도 -->
+				
+			</div>
+			<!--// tabArea -->
+		</div>
+		<!--// contents -->
+	</div>
+	<!--// container -->
+
+      <!-- footer -->
+ 	  
+
+<!-- footer -->
+	<div id="footer">
+        <!-- bottom -->
+		<div class="bottom">
+            <!-- inner -->
+            <div class="inner">
+                <p class="logo"><span class="hide">고용노동부 노동포털</span></p>
+                <div class="wrap">
+                	<div class="footerInfo">
+	                    <address>
+	                        <span>(30117) 세종특별자치시 한누리대로 422</span>
+	                        <span>정부세종청사 11동 고용노동부</span>
+	                    </address>
+	                    <p><strong>고용노동부 고객상담센터 1350</strong> <span>(유료, 평일 09시~18시)</span></p>
+	                </div>
+	                 <!-- familySite -->
+	                <div class="familySite">
+	                    <a href="">관련기관</a>
+	                    <ul>
+	                        <li><a href="https://www.work.go.kr" target="_blank" title="새창열기">워크넷</a></li>
+	                        <li><a href="https://www.ei.go.kr" target="_blank" title="새창열기">고용보험</a></li>
+	                        <li><a href="https://www.hrd.go.kr" target="_blank" title="새창열기">직업훈련</a></li>
+	                        <li><a href="https://www.eps.go.kr" target="_blank" title="새창열기">외국인고용허가</a></li>
+	                        <li><a href="https://www.gov.kr" target="_blank" title="새창열기">정부 24</a></li>
+	                        <li><a href="http://www.nlrc.go.kr" target="_blank" title="새창열기">중앙노동위원회</a></li>
+	                        <li><a href="http://www.hrdkorea.or.kr" target="_blank" title="새창열기">한국산업인력공단</a></li>
+	                        <li><a href="http://www.worldjob.or.kr" target="_blank" title="새창열기">월드잡 플러스</a></li>
+	                        <li><a href="https://www.hrd4u.or.kr/hrd4u/main.do" target="_blank" title="새창열기">청년취업 아카데미</a></li>
+	                        <li><a href="https://www.kead.or.kr" target="_blank" title="새창열기">한국장애인고용공단</a></li>
+	                        <li><a href="http://www.kcomwel.or.kr" target="_blank" title="새창열기">근로복지공단</a></li>
+	                        <li><a href="http://www.worktogether.or.kr" target="_blank" title="새창열기">장애인고용포털</a></li>
+	                        <li><a href="http://www.cwma.or.kr" target="_blank" title="새창열기">건설근로자공제회</a></li>
+	                        <li><a href="https://www.cwma.or.kr/cid/main/new/main.do" target="_blank" title="새창열기">건설일드림넷 직업훈련</a></li>
+	                        <li><a href="http://www.socialenterprise.or.kr" target="_blank" title="새창열기">한국사회적기업진흥원</a></li>
+	                        <li><a href="http://www.nosa.or.kr" target="_blank" title="새창열기">노사발전재단</a></li>
+	                    </ul>
+	                </div>
+	                <!--// familySite -->
+	                <div class="footerUtil">
+	                    <ul>
+	                        <li class="cPrimary"><a href="http://www.moel.go.kr/site/protect/protectList.do" target="_blank" title="새창열기">개인정보처리방침</a></li>
+	                        <li><a href="" onclick="fn_layer('layerUtlzTrms', this, 800); return false;" title="팝업열기">이용약관</a></li>
+	                        <li><a href="http://www.moel.go.kr/site/copyright/copyrightList.do" target="_blank" title="새창열기">저작권정책</a></li>
+	                        <li><a href="javascript:void(0)" onclick="fn_layer('emailPop', this, 580)" title="팝업열기">이메일 무단수집 거부</a></li>
+	                        <li class="tel" style="max-width:300px"><a href="javascript:void(0)" onclick="fn_layer('contactPop', this, 920)" title="팝업열기" style="max-width:200px" >문의전화 연락처 안내</a></li>
+	                        <li> 
+	                       			<img style="max-width:80px;" title="WA 품질인증 마크, 웹와치(WebWatch) 2026.08.03 ~ 2027.08.02" alt="과학기술정보통신부 WA(WEB접근성) 품질인증 마크,웹와치(WebWatch) 2026.08.03 ~ 2027.08.02" src="../assets/images/common/new/WA_Mark.png"/>
+	                    		</li>
+	                    </ul>
+	                    <div>
+	                        <p class="copyright">Copyright(c)Ministry of Employment and Labor.All rights reserved</p>
+	                    </div>
+	                </div>
+                </div>
+            </div>
+            <!--// inner -->
+        </div>
+        <!-- bottom -->
+	</div>
+	<!--// footer -->
+
+<!-- 이메일 무단수집 거부 팝업 -->
+			<div class="layerPop" id="emailPop">
+	      <div class="inner">
+	        <strong class="tit">이메일 무단수집 거부</strong>
+	        <div class="cont">
+	          <p class="txt txtC cGray">
+							고용노동부 노동포털 회원에게 무차별적으로 보내지는 <br>
+							메일을 차단하기 위해 본 웹사이트는 게시된 이메일 주소가 <br>
+							전자우편 수집 프로그램이나 그 밖의 기술적 장치를 <br>
+							이용하여 무단으로 수집되는 것을 거부하며, 이를 위반 시 <br>
+							정보통신망법에 의해 처벌됨을 유념하시기 바랍니다.
+	          </p>
+	        </div>
+	        <a href="javascript:void(0)" onclick="fn_layer_close(this)">닫기</a>
+	      </div>
+	    </div>
+	   <!--// 이메일 무단수집 거부 팝업-->
+	   
+	   
+	   <!-- 문의 연락처 안내 팝업 -->
+	   <div class="layerPop v4" id="contactPop">
+	      <div class="inner">
+	        <p class="tit">
+	          <strong>문의 연락처 안내
+	            <span>(평일) 09:00 ~ 18:00</span></strong>
+	        </p>
+	        <div class="cont">
+	          <div class="rowTable col align-left">
+	            <table>
+	              <caption>문의할 분야, 문의할 분야별 설명, 연락처 항목으로 구성된 문의 연락처 안내 표</caption>
+	              <colgroup>
+	                <col style="width:auto">
+	                <col style="width:auto">
+	                <col style="width:auto">
+	              </colgroup>
+	              <tbody>
+	                <tr>
+	                  <th scope="row">고용노동분야 전화상담</th>
+	                  <td>
+	                    <ul class="dotList">
+	                      <li>실업급여, 직업훈련, 취업, </li>
+	                      <li>임금체불, 부당해고, 출산휴가 등</li>
+	                    </ul>
+	                  </td>
+	                  <td>국번없이 <a href="tel:1350" class="mLink">1350</a><br>
+	                    (유료, 고용노동부 고객상담센터)</td>
+	                </tr>
+	                <tr>
+	                  <th scope="row">나의 민원</th>
+	                  <td>
+	                    <ul class="dotList">
+	                      <li>처리상태 확인</li>
+	                    </ul>
+	                  </td>
+	                  <td>국번없이 <a href="tel:1350" class="mLink">1350</a><br>
+	                    (ARS연결 후 2번)</td>
+	                </tr>
+	                <tr>
+	                  <th scope="row">1350 전화 장애 문의</th>
+	                  <td>
+	                    <ul class="dotList">
+	                      <li>1350 전화 장애 문의</li>
+	                    </ul>
+	                  </td>
+	                  <td><a href="tel:052-702-5016" class="mLink">052-702-5016</a></td>
+	                </tr>
+	                <tr>
+	                  <th scope="row">국민신문고</th>
+	                  <td>
+	                    <ul class="dotList">
+	                      <li>질의민원 시스템 이용문의</li>
+	                    </ul>
+	                  </td>
+	                  <td><a href="tel:1600-8172" class="mLink">1600-8172</a><br>
+	                    (국민신문고 시스템문의)</td>
+	                </tr>
+	                <tr>
+	                  <th scope="row">한국고용정보원</th>
+	                  <td>
+	                    <ul class="dotList">
+	                      <li>HRD-Net, 고용보험, 워크넷 시스템 이용문의</li>
+	                    </ul>
+	                  </td>
+	                  <td><a href="tel:1577-7114" class="mLink">1577-7114</a><br>
+	                    (한국고용정보원 시스템 문의)</td>
+	                </tr>
+	                <tr>
+	                  <th scope="row">키보드 보안솔루션 오류</th>
+	                  <td>
+	                    <ul class="dotList">
+	                      <li>키보드 입력이 정상적으로 되지 않는 경우</li>
+	                    </ul>
+	                  </td>
+	                  <td><a href="tel:02-561-4545" class="mLink">02-561-4545</a> (라온시큐어)</td>
+	                </tr>
+	                <tr>
+	                  <th scope="row">공동 인증서</th>
+	                  <td>
+	                    <ul class="dotList">
+	                      <li>보안프로그램 설치창이 반복하여 뜰 경우</li>
+	                    </ul>
+	                  </td>
+	                  <td><a href="tel:02-2233-5533" class="mLink">02-2233-5533</a> (드림시큐리티)</td>
+	                </tr>
+	                <tr>
+	                  <th scope="row">노동포털 전산장애 문의</th>
+	                  <td>
+	                    <ul class="dotList">
+	                      <li>노동포털 사용 중 장애 발생</li>
+	                    </ul>
+	                  </td>
+	                  <td><a href="tel:02-6347-3900" class="mLink">02-6347-3900</a></td>
+	                </tr>
+	              </tbody>
+	            </table>
+	          </div>
+	        </div>
+	        <a href="javascript:void(0)" onclick="fn_layer_close(this)">닫기</a>
+	      </div>
+	    </div>
+	   <!--// 문의 연락처 안내 거부 팝업-->
+	   
+<!-- 이용약관 팝업 -->
+<div class="layerPop" id="layerUtlzTrms">
+    <div class="inner">
+        <strong class="tit">이용약관</strong>
+        <div class="cont">
+            <!-- infoBox -->
+            <div class="infoBox">
+				<p>고용노동부 노동포털 사이트에서 제공하는 서비스의 이용조건 및 절차, 이용자와 당 사이트의 권리, 의무 책임사항과 기타 필요한 사항을 규정합니다.</p>
+			</div>
+            <!--// infoBox -->
+            <!-- titArea -->
+            <div class="titArea">
+				<h4>고용노동부 노동포털 이용약관</h4>
+			</div>
+            <!--// titArea -->
+            <!-- termsWrap -->
+            <div class="contBox termsWrap">
+				<!-- terms -->
+				<div class="terms" tabindex="0">
+					<strong>제1장 총칙</strong>
+					<dl>
+						<dt>제1조(목적)</dt>
+						<dd>
+							<p>본 약관은 고용노동부 노동포털 사이트 (이하 "당 사이트")가 제공하는 회원서비스(이하 "서비스")를 이용함에 있어 이용자와 당 사이트간의 권리·의무 및 책임사항과 기타 필요한 사항을 규정함을 목적으로 한다.</p>
+						</dd>
+					</dl>
+					<dl>
+						<dt>제2조(용어의 정의)</dt>
+						<dd>
+							<ul>
+								<li>① 본 약관에서 사용하는 용어의 정의는 다음과 같다.
+									<ul>
+										<li>1. 이용자: 본 약관에 따라 당 사이트가 제공하는 서비스를 받는 회원 및 비회원</li>
+										<li>2. 가 입: 당 사이트가 제공하는 신청서 양식에 해당 정보를 기입하고, 본 약관에 동의하여 서비스 이용계약을 완료시키는 행위</li>
+										<li>3. 회 원: 당 사이트에 접속하여 이 약관에 동의하고, 아이디와 비밀번호를 발급받아 당 사이트가 제공하는 서비스를 이용하는 자</li>
+										<li>4. 비회원: 회원가입하지 않고 당 사이트가 제공하는 서비스를 이용하는자</li>
+										<li>5. 아이디(ID):  이용자 식별과 이용자의 서비스 이용을 위하여 이용자가 선정하고 당 사이트가 승인하는 문자와 숫자의 조합</li>
+										<li>6. 비밀번호: 이용자와 회원ID가 일치하는지를 확인하고 통신상의 자신의 비밀보호를 위하여 이용자 자신이 선정한 문자와 숫자의 조합.</li>
+										<li>7. 탈퇴: 회원이 이용계약을 종료 시키는 행위</li>
+									</ul>
+								</li>
+								<li>② 본 약관에서 사용하는 용어의 정의는 제1항에서 정하는 것을 제외하고는 관계법령에 따른다.
+							</li></ul>
+						</dd>
+					</dl>
+					<dl>
+						<dt>제3조(약관의 효력과 변경)</dt>
+						<dd>
+							<ul>
+								<li>① 이 약관은 서비스 화면에 게시하거나 기타의 방법으로 공지함으로써 이용자에게 공시하고, 이에 동의한 이용자가 서비스에 가입함으로써 효력이 발생한다.</li>
+								<li>② 당 사이트는 필요하다고 인정되는 경우 본 약관을 변경할 수 있으며, 약관을 변경할 경우 변경 사유를 명시하여 적용일자 7일전 부터 공지한다. 또한 이용자는 변경 공지 후, 약관 변경에 대한 명시적인 거부 의사를 표시하지 아니한 경우 이용자가 약관에 동의한 것으로 간주한다.</li>
+								<li>③ 이용자는 변경된 약관에 동의하지 않는 경우 서비스 이용을 중단하고 회원을 탈퇴할 수 있다.</li>
+								<li>④ 이용자가 이 약관의 내용에 동의하는 경우 당 사이트의  서비스 제공행위 및 이용자의 서비스 이용행위에는 이 약관이 우선적으로 적용되며, 이 약관에 명시되지 않은 사항에 대해서는 전기통신기본법, 전기통신사업법, 정보통신윤리위원회심의규정, 정보통신 윤리강령, 프로그램보호법, 정보통신망 이용촉진 및 정보보호등에 관한 법률 등 관련 법령 규정에 따른다.</li>
+							</ul>
+						</dd>
+					</dl>
+					
+					<strong>제2장 서비스 이용계약</strong>
+					<dl>
+						<dt>제4조(이용 계약의 성립·변경 등)</dt>
+						<dd>
+							<ul>
+								<li>① 서비스 이용계약은 회원이 되고자 하는 자(가입신청자)가 이 약관의 내용에 대하여 동의 한 후, 당 사이트가 정하는 회원가입 신청 양식에 요구하는 사항을 제출함으로써 체결된다.</li>
+								<li>② 당 사이트는 다음 각 호에 해당하는 경우에 대하여는 가입을 해지 할 수 있다.
+									<ul>
+										<li>1. 실명이 아니거나 타인의 명의를 사용하여 신청하였을 때</li>
+										<li>2. 신청서의 내용을 허위로 기재하였을 때</li>
+										<li>3. 다른 사람의 당 사이트 서비스 이용을 방해하거나 그 정보를 도용하는 등의 행위를 하였을 때</li>
+										<li>4. 14세 미만의 아동이 법정대리인의 동의를 얻지 아니한 경우</li>
+										<li>5. 기타 이용신청에 필요한 요건이 미비 되었을 때</li>
+									</ul>
+								</li>
+								<li>③ 이용신청은 서비스의 회원정보 화면에서 이용자가 당 사이트에서 요구하는 가입신청 양식에 개인의 가입정보를 기록하는 방식으로 신청한다.</li>
+								<li>④ 이용자는 서비스 이용을 위해 필요한 자신의 정보를 회원정보관리를 통해 언제든지 열람하고 수정 할 수 있다.</li>
+								<li>⑤ 당 사이트는 다음 각 호에 해당하는 경우 그 사유가 해소될 때까지 이용계약 성립을 유보할 수 있다.
+									<ul>
+										<li>1. 기술 상의 장애사유로 인한 서비스 중단의 경우(디스크장애, 시스템 다운 등)</li>
+										<li>2. 전기통신사업법에 의한 통신사업자가 전기통신 서비스를 중지하는 경우</li>
+										<li>3. 긴급한 시스템점검, 증설 및 교체설비의 보수를 위한 부득이한 경우</li>
+										<li>4. 서비스 이용의 폭주 등 기타 업무상 불가피한 사유가 있는 경우</li>
+									</ul>
+								</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl>
+						<dt>제5조(회원정보 사용에 대한 동의)</dt>
+						<dd>
+							<ul>
+								<li>① 당 사이트가 처리하는 모든 개인정보는 개인정보보호법 등 관련 법령상의 규정을 준수하여 이용자의 개인정보보호 및 권익을 보호한다.</li>
+								<li>② 당 사이트는 서비스 제공과 관련하여 수집된 회원의 신상정보를 본인의 승낙없이 제3자에게 누설, 배포하지 않는다. 단, 범죄에 대한 수사상의 목적이 있거나 정보통신윤리위원회 및 전기통신기본법 등 기타 법령상 절차에 따른 요청이 있는 경우, 타 정부 시스템과의 사용자 단일 로그인을 위한 경우, 이용자가 스스로 개인정보를 공개한 경우에는 그러하지 아니한다.</li>
+								<li>③ 이용자가 본 약관에 따라 이용신청을 하는 것은 당 사이트가 신청서에 기재된 회원정보를 수집, 이용하는 것에 동의한 것으로 간주한다.</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl>
+						<dt>제6조 (사용자의 정보 보안)</dt>
+						<dd>
+							<ul>
+								<li>① 가입신청자가 당 사이트 서비스 가입 절차를 완료하는 순간부터 회원은 입력한 정보의 비밀을 유지할 책임이 있다.</li>
+								<li>② 이용자의 ID와 비밀번호에 관한 모든 관리 책임은 회원에게 있으며 회원ID와 비밀번호가 부정하게 사용되었다는 사실을 발견한 경우에는 즉시 당 사이트에 신고하여야 한다. 신고를 하지 않음으로 인한 모든 책임은 회원 본인에게 있다.</li>
+								<li>③ 이용자는 당 사이트 서비스 사용을 종료할 경우 정확하게 접속을 종료하여야 한다. 정확히 종료하지 않음으로써 제3자가 정보를 이용하는 등의 결과로 발생하는 손해 및 손실에 대해서, 당 사이트는 책임을 부담하지 않는다.</li>
+							</ul>
+						</dd>
+					</dl>
+					
+					<strong>제3장 서비스 제공 및 이용</strong>
+					<dl>
+						<dt>제7조(서비스 이용시간)</dt>
+						<dd>
+							<ul>
+								<li>① 서비스는 당 사이트의 업무상, 기술상 특별한 지장이 없는 경우 연중무휴, 1일 24시간 제공함을 원칙으로 한다.</li>
+								<li>② 당 사이트는 정기점검, 서버교체 등 운영상 상당한 이유가 있는 경우 서비스의 제공을 일시적으로 중단 할 수 있다. 이 경우, 당 사이트는 해당 내용을 이용자에게 사전 고지한다.</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl>
+						<dt>제8조(서비스의 변경·중지 및 정보의 저장과 사용)</dt>
+						<dd>
+							<ul>
+								<li>① 당 사이트는 상당한 이유가 있는 경우에 운영상, 기술상의 필요에 따라 제공하고 있는 전부 또는 일부 서비스를 변경할 수 있다.</li>
+								<li>② 서비스의 내용, 이용방법, 이용시간 등에 대하여 변경이 있는 경우에는 변경사항을 당 사이트를 통해 사전 고지한다.</li>
+								<li>③ 당 사이트는 서비스를 영구적으로 중단하여야 할 경우 서비스 중단 1개월 전에 사전 고지한다. 이 기간동안 사용자가 고지내용을 인지하지 못한 것에 대하여 당 사이트는 책임을 부담하지 아니한다. 또한 상당한 이유가 있는 부득이한 사정이 있을 경우, 위 사전 고지기간은 감축되거나 생략될 수 있다.</li>
+								<li>④ 서비스 중단에 의해 본 서비스에 보관되거나 전송된 데이터 및 기타 통신 메시지 등의 내용이 손실·삭제된 경우에 대해서, 당 사이트는 책임을 부담하지 아니한다.</li>
+								<li>⑤ 당 사이트는 제공되는 서비스의 일부 또는 전부를 당 사이트의 정책 및 운영의 필요상 수정, 중단, 변경할 수 있으며, 이에 대하여 관련법에 특별한 규정이 없는 한 이용자에게 별도의 보상을 하지 아니한다.</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl>
+						<dt>제9조(정보제공 및 홍보물 게재)</dt>
+						<dd>
+							<ul>
+								<li>① 당 사이트는 이용자가 서비스 이용 중 필요하다고 인정되는 다양한 정보를 공지하거나 전자우편 등의 방법으로 제공할 수 있다. 다만, 회원이 원치 않을 경우 수신을 거부 할 수 있도록 하여야 한다.</li>
+								<li>② 당 사이트는 서비스에 적절하다고 판단하거나 활용 가능성 있는 홍보물을 게재할 수 있다.</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl>
+						<dt>제10조(게시물 또는 내용물의 삭제)</dt>
+						<dd>
+							<ul>
+								<li>① 당 사이트는 회원이 게시하거나 등록하는 서비스 내의 모든 내용물이 다음 각 호의 경우에 해당된다고 판단되는 경우 사전 통지 없이 삭제할 수 있으며, 이에 대해 당 사이트는 어떠한 책임도 지지 않는다.
+									<ul>
+										<li>1. 당 사이트, 다른 회원 또는 제3자를 비방하거나 중상 모략으로 명예를 손상시키는 내용인 경우</li>
+										<li>2. 공공질서 및 미풍양속에 위반되는 내용인 경우</li>
+										<li>3. 범죄적 행위에 결부된다고 인정되는 내용일 경우</li>
+										<li>4. 제3자의 저작권 등 기타 권리를 침해하는 내용인 경우</li>
+										<li>5. 서비스 성격에 부합하지 않는 정보의 경우</li>
+										<li>6. 기타 관계 법령 및 당 사이트에서 정한 규정 등에 위배되는 경우</li>
+									</ul>
+								</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl>
+						<dt>제11조(게시물의 저작권)</dt>
+						<dd>
+							<ul>
+								<li>① 이용자가 서비스 내에 게시한 게시물의 저작권은 이용자에게 있다.</li>
+								<li>② 이용자의 게시물이 타인의 저작권, 프로그램 저작권 등을 침해함으로써 발생하는 민, 형사상의 책임은 전적으로 이용자가 부담하여야 한다.</li>
+								<li>③ 이용자는 서비스를 이용하여 얻은 정보를 가공, 판매하는 행위 등 서비스에 게재된 자료를 상업적으로 사용할 수 없다.</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl>
+						<dt>제12조(당 사이트의 소유권)</dt>
+						<dd>
+							<ul>
+								<li>① 당 사이트가 제공하는 서비스, 그에 필요한 소프트웨어, 이미지, 마크, 로고, 디자인, 서비스명칭, 정보 및 상표 등과 관련된 지적재산권 및 기타 권리는 고용노동부에게 소유권이 있다</li>
+								<li>② 이용자는 당 사이트가 명시적으로 승인한 경우를 제외하고는 전항의 소정의 각 재산에 대해 전부 혹은 일부 수정, 배포, 상업적 이용 행위 등을 할 수 없으며, 제3자로 하여금 이와 같은 행위를 하도록 허락할 수 없다.</li>
+							</ul>
+						</dd>
+					</dl>
+					
+					<strong>제4장 계약 당사자의 의무</strong>
+					<dl>
+						<dt>제13조(회원의 의무)</dt>
+						<dd>
+							<ul>
+								<li>① 회원으로 가입하고자 하는 자는, 회원가입 시에 요구되는 정보를 정확하게 기입하여야한다. 또한 회원은 기입항목에 대한 변동사항이 생겼을 경우, 잘못된 정보로 인해 서비스 제공에 문제가 발생하지 않도록 주소, 연락처 등 자신의 정보를 정확히 갱신하여야 한다.</li>
+								<li>② 당 사이트의 회원으로 가입된 자는 다음 행위를 하여서는 아니된다.
+									<ul>
+										<li>1. 신청 또는 변경 시 허위내용의 등록</li>
+										<li>2. 타인의 정보 도용</li>
+										<li>3. 당 사이트가 게시한 정보의 변경</li>
+										<li>4. 당 사이트가 정한 정보 이외의 정보(컴퓨터 프로그램 등) 등의 송신 또는 게시</li>
+										<li>5. 당 사이트 및 기타 제3자의 명예를 손상시키거나 업무를 방해하는 행위</li>
+										<li>6. 외설 또는 폭력적인 메시지 등을 서비스에 공개 또는 게시하는 행위</li>
+										<li>7. 회사의 동의 없이 영리를 목적으로 서비스를 사용하는 행위</li>
+										<li>8. 기타 불법적이거나 부당한 행위</li>
+									</ul>
+								</li>
+								<li>③ 관계법, 이 약관의 규정, 이용안내 및 서비스와 관련하여 공지한 주의사항, 당사이트가 통지하는 사항 등을 준수하여야 하며, 기타 당 사이트의 업무에 방해되는 행위를 하여서는 안된다.</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl>
+						<dt>제14조(당 사이트의 개인정보보호 의무)</dt>
+						<dd>
+							<ul>
+								<li>① 당 사이트는 관련법과 본 약관을 준수하며, 계속적이고 안정적으로 서비스를 제공하기 위해 노력할 의무가 있다.</li>
+								<li>② 당 사이트는 개인정보보호법 등 관련 법령이 정하는 바에 따라 이용자의 개인정보를 보호하여야 하며, 개인정보 수집·사용·관리에 대해서는 관련법 및 고용노동부 개인정보처리방침이 적용된다.</li>
+							</ul>
+						</dd>
+					</dl>
+					
+					<strong>제5장 계약해지</strong>
+					<dl>
+						<dt>제15조(계약해지 및 이용제한)</dt>
+						<dd>
+							<ul>
+								<li>① 회원이 이용계약을 해지하고자 하실 때에는 회원 본인이 직접 인터넷을 통해 당 사이트에 해지(탈퇴) 신청을 하여야 한다.</li>
+								<li>② 당 사이트는  보안 및 아이디 정책, 서비스의 원활한 제공 등과 같은 이유로 회원의 ID 및 비밀번호 변경을 요구하거나 변경 할 수 있다.</li>
+								<li>③ 당 사이트는 회원이 다음 각 호에 해당하는 행위를 하였을 경우 사전통지 없이 서비스 이용을 일정기간 제한할 수 있다.
+									<ul>
+										<li>1. 비 실명가입, 주민등록번호의 도용 등 회원이 제공한 데이터가 허위임이 판명된 경우</li>
+										<li>2. 범죄적 행위에 관련되는 경우</li>
+										<li>3. 국익 또는 사회적 공익을 저해할 목적으로 서비스 이용을 계획 또는 실행할 경우</li>
+										<li>4. 타인의 서비스 아이디 및 비밀 번호를 도용한 경우</li>
+										<li>5. 타인의 명예를 손상시키거나 불이익을 주는 경우</li>
+										<li>6. 서비스에 위해를 가하는 등 서비스의 건전한 이용을 저해하는 경우</li>
+										<li>7. 기타 관련법령 등을 위배하는 경우</li>
+									</ul>
+								</li>
+							</ul>
+						</dd>
+					</dl>
+					
+					<strong>제6장 기타</strong>
+					<dl>
+						<dt>제16조(양도금지)</dt>
+						<dd>회원은 서비스의 이용권한, 기타 이용계약 상의 지위를 타인에게 양도 및 증여할 수 없으며, 이를 담보로 제공할 수 없다.</dd>
+					</dl>
+					<dl>
+						<dt>제17조(손해배상)</dt>
+						<dd>당 사이트는 제공되는 서비스와 관련하여 회원에게 어떠한 손해가 발생하더라도 당 사이트가 고의로 행한 범죄행위를 제외하고 이에 대하여 책임을 부담하지 아니한다.</dd>
+					</dl>
+					<dl>
+						<dt>제18조(면책조항)</dt>
+						<dd>
+							<ul>
+								<li>① 당사이트는 천재지변 또는 이에 준하는 불가항력으로 인하여 서비스를 제공할 수 없는 경우에는 서비스 제공에 관한 책임이 면제된다.</li>
+								<li>② 당사이트는 이용자의 컴퓨터 오류에 의해 손해가 발생한 경우, 또는 회원이 신상정보를 부실하게 기재하여 손해가 발생한 경우 책임을 지지 아니한다.</li>
+								<li>③ 당사이트는 이용자가 서비스를 이용하여 기대하는 이익이나 서비스를 통하여 얻은 자료로 인한 손해에 관하여 책임을 지지 아니한다.</li>
+								<li>④ 당사이트는 이용자가 서비스에 게재한 정보, 자료, 사실의 신뢰도, 정확성 등의 내용에 관하여는 책임을 지지 아니한다.</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl>
+						<dt>제19조(관할법원)</dt>
+						<dd>
+							<ul>
+								<li>① 서비스 이용과 관련하여 당 사이트와 이용자 사이에 분쟁이 발생한 경우, 당 사이트와 이용자는 분쟁을 원만하게 해결하기 위하여 필요한 노력을 하여야 한다.</li>
+								<li>② 제1항의 규정에도 불구하고 발생한 분쟁에 대하여 는 대한민국 법을 적용하며, 본 분쟁으로 인한 소는 고용노동부 주소지의 관할 법원에 제기한다.</li>
+							</ul>
+						</dd>
+					</dl>
+					
+					<dl>
+						<dt>부칙</dt>
+						<dd>(시행일) 본 약관은 2023년 2월 00일부터 시행됩니다. </dd>
+					</dl>
+				</div>
+				<!--// terms -->
+			</div>
+            <!--// termsWrap -->
+        </div>
+        <a href="javascript:void(0)" onclick="fn_layer_close(this)">닫기</a>
+    </div>
+</div>
+<!--// 이용약관 팝업 -->	
+      <!--// footer -->
+
+    </div>
+    <!--// wrap -->
+  </body>
+</html>

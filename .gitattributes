@@ -1,0 +1,2 @@
+# Preserve source bytes: processed evidence validates exact raw SHA-256 hashes.
+/data/raw/** -text

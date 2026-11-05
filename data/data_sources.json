@@ -1,0 +1,1332 @@
+{
+  "data/raw/consumer_sources/consumer_dispute_standard_64e922b28e0d2e2b.xml": {
+    "document_id": "consumer_dispute_standard",
+    "title": "소비자분쟁해결기준",
+    "source_url": "https://www.law.go.kr/행정규칙/소비자분쟁해결기준",
+    "document_type": "administrative_rule",
+    "domains": [
+      "consumer_general"
+    ],
+    "dates": {
+      "effective_date": "2025-12-18",
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/continual_contract_refund_6b47303e7142fc41.xml": {
+    "document_id": "continual_contract_refund",
+    "title": "계속거래 등의 해지·해제에 따른 위약금 및 대금의 환급에 관한 산정기준",
+    "source_url": "https://www.law.go.kr/admRulLsInfoP.do?admRulId=38299&efYd=0",
+    "document_type": "administrative_rule",
+    "domains": [
+      "fitness_refund"
+    ],
+    "dates": {
+      "effective_date": "2019-11-19",
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/easylaw_civil_enforcement_344f615b7ca0b3e2.html": {
+    "document_id": "easylaw_civil_enforcement",
+    "title": "금전거래: 강제집행의 요건·집행문·재산명시·대상 재산",
+    "source_url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=4&cciNo=7&cnpClsNo=1&csmSeq=272&popMenu=ov",
+    "document_type": "official_guide",
+    "domains": [
+      "fitness_refund"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": "2026-09-15",
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/easylaw_consumer_payment_order_ea994a1979330dba.html": {
+    "document_id": "easylaw_consumer_payment_order",
+    "title": "소비자분쟁해결: 지급명령 신청하기",
+    "source_url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=5&cciNo=1&cnpClsNo=2&csmSeq=669",
+    "document_type": "official_guide",
+    "domains": [
+      "fitness_refund"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": "2026-09-15",
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/easylaw_consumer_small_claim_3650e2b8cbaaccd3.html": {
+    "document_id": "easylaw_consumer_small_claim",
+    "title": "소비자분쟁해결: 소액사건심판 신청하기",
+    "source_url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=5&cciNo=1&cnpClsNo=1&csmSeq=669",
+    "document_type": "official_guide",
+    "domains": [
+      "fitness_refund"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": "2026-09-15",
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/easylaw_housing_distribution_b665db61357ab62b.html": {
+    "document_id": "easylaw_housing_distribution",
+    "title": "보증금 회수: 배당요구",
+    "source_url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=5&cciNo=2&cnpClsNo=5&csmSeq=629&popMenu=ov",
+    "document_type": "official_guide",
+    "domains": [
+      "housing_lease"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": "2026-09-15",
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/easylaw_housing_restoration_095ff325282e7a26.html": {
+    "document_id": "easylaw_housing_restoration",
+    "title": "임차인의 권리·의무: 반환·원상회복",
+    "source_url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=4&cciNo=2&cnpClsNo=1&csmSeq=629&popMenu=ov",
+    "document_type": "official_guide",
+    "domains": [
+      "housing_lease"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": "2026-09-15",
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/easylaw_housing_termination_99c0cd5e05a96ba2.html": {
+    "document_id": "easylaw_housing_termination",
+    "title": "주택임대차계약의 종료",
+    "source_url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=5&cciNo=1&cnpClsNo=1&csmSeq=629&popMenu=ov",
+    "document_type": "official_guide",
+    "domains": [
+      "housing_lease"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": "2026-09-15",
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/easylaw_payment_order_application_95a740b53c356d13.html": {
+    "document_id": "easylaw_payment_order_application",
+    "title": "나홀로 민사소송: 지급명령 신청 절차",
+    "source_url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=3&cciNo=3&cnpClsNo=2&csmSeq=568",
+    "document_type": "official_guide",
+    "domains": [
+      "fitness_refund"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": "2026-09-15",
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/ftc_terms_46118_file_5b139f26_fcf0aa7eecd0b131.hwpx": {
+    "document_id": "ftc_terms_46118_file_5b139f26",
+    "title": "[10048호] 체력단련장(헬스장) 이용 표준약관",
+    "source_url": "https://www.ftc.go.kr/www/downloadBbsFile.do?atchmnflNo=50868",
+    "document_type": "standard_terms",
+    "domains": [
+      "consumer_general"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": "2025-05-23",
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/ftc_terms_47762_file_05d51a47_c57b37993e3956ba.hwpx": {
+    "document_id": "ftc_terms_47762_file_05d51a47",
+    "title": "[제10083호]요가·필라테스 표준약관 (2026. 7. 16. 제정)",
+    "source_url": "https://www.ftc.go.kr/www/downloadBbsFile.do?atchmnflNo=54236",
+    "document_type": "standard_terms",
+    "domains": [
+      "consumer_general"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": "2026-07-16",
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/kca_case_1003164054_d051f101fa29e5e1.html": {
+    "document_id": "kca_case_1003164054",
+    "title": "맞춤제작을 이유로 반품을 거절당한 한복의 청약철회 요구",
+    "source_url": "https://www.kca.go.kr/odr/bj/br/osBjDecisionExamDetW.do?brdId=00000007&dataStts=Y&seq=1003164054",
+    "document_type": "mediation_case",
+    "domains": [
+      "shopping_return"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": "2021-07-16",
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/kca_case_1003604873_e157fd0bf9c121c6.html": {
+    "document_id": "kca_case_1003604873",
+    "title": "하자가 지속 발생하는 반지의 반품 및 구입대금 환급 요구",
+    "source_url": "https://www.kca.go.kr/odr/bj/br/osBjDecisionExamDetW.do?brdId=00000007&dataStts=Y&seq=1003604873",
+    "document_type": "mediation_case",
+    "domains": [
+      "shopping_return"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": "2023-12-20",
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/kca_case_1003640779_9ce0ceec579098a5.html": {
+    "document_id": "kca_case_1003640779",
+    "title": "양도받은 필라테스 강습계약 해지에 따른 환급 요구",
+    "source_url": "https://www.kca.go.kr/odr/bj/br/osBjDecisionExamDetW.do?brdId=00000007&dataStts=Y&seq=1003640779",
+    "document_type": "mediation_case",
+    "domains": [
+      "fitness_refund"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": "2024-03-20",
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/kca_case_1003641375_83af2d2845fa537b.html": {
+    "document_id": "kca_case_1003641375",
+    "title": "안내와 다르게 판매한 새우젓의 반품 및 환급 요구",
+    "source_url": "https://www.kca.go.kr/odr/bj/br/osBjDecisionExamDetW.do?brdId=00000007&dataStts=Y&seq=1003641375",
+    "document_type": "mediation_case",
+    "domains": [
+      "shopping_return"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": "2024-03-20",
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/kca_case_1003641715_f501641ba298f828.html": {
+    "document_id": "kca_case_1003641715",
+    "title": "해외직구 가방의 과도한 반품 배송비 조정 요구",
+    "source_url": "https://www.kca.go.kr/odr/bj/br/osBjDecisionExamDetW.do?brdId=00000007&dataStts=Y&seq=1003641715",
+    "document_type": "mediation_case",
+    "domains": [
+      "shopping_return"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": "2024-03-20",
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/kca_case_1003739114_63d4b26cb7f7f468.html": {
+    "document_id": "kca_case_1003739114",
+    "title": "그룹필라테스 폐강으로 인한 중도해지에 따른 잔여이용료 환급 요구",
+    "source_url": "https://www.kca.go.kr/odr/bj/br/osBjDecisionExamDetW.do?brdId=00000007&dataStts=Y&seq=1003739114",
+    "document_type": "mediation_case",
+    "domains": [
+      "fitness_refund"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": "2024-10-14",
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/kca_case_1003817065_808f552f2da36aeb.html": {
+    "document_id": "kca_case_1003817065",
+    "title": "헬스장 이용 계약의 중도해지 및 잔여대금 환급 요구",
+    "source_url": "https://www.kca.go.kr/odr/bj/br/osBjDecisionExamDetW.do?brdId=00000007&dataStts=Y&seq=1003817065",
+    "document_type": "mediation_case",
+    "domains": [
+      "fitness_refund"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": "2025-02-13",
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/kca_case_1003890245_1814d21e1873b6f5.html": {
+    "document_id": "kca_case_1003890245",
+    "title": "과대 광고한 가정용 온풍기 반품 후 환급 요구",
+    "source_url": "https://www.kca.go.kr/odr/bj/br/osBjDecisionExamDetW.do?brdId=00000007&dataStts=Y&seq=1003890245",
+    "document_type": "mediation_case",
+    "domains": [
+      "shopping_return"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": "2025-07-03",
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/kca_case_1003892039_935b3cc418eb4f8f.html": {
+    "document_id": "kca_case_1003892039",
+    "title": "PT 강습 계약 해지에 따른 잔여 대금 환급 요구",
+    "source_url": "https://www.kca.go.kr/odr/bj/br/osBjDecisionExamDetW.do?brdId=00000007&dataStts=Y&seq=1003892039",
+    "document_type": "mediation_case",
+    "domains": [
+      "fitness_refund"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": "2025-07-03",
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/kca_case_1003892170_04b05e15688f90d3.html": {
+    "document_id": "kca_case_1003892170",
+    "title": "PT 수강 계약해지에 따른 잔여 대금 환급 및 배상 요구",
+    "source_url": "https://www.kca.go.kr/odr/bj/br/osBjDecisionExamDetW.do?brdId=00000007&dataStts=Y&seq=1003892170",
+    "document_type": "mediation_case",
+    "domains": [
+      "fitness_refund"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": "2025-07-03",
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/kca_case_1003940398_7891d2ba00baa19d.html": {
+    "document_id": "kca_case_1003940398",
+    "title": "잘못된 정보 제공으로 인해 반품된 의류 구매대금 전액 환급 요구",
+    "source_url": "https://www.kca.go.kr/odr/bj/br/osBjDecisionExamDetW.do?brdId=00000007&dataStts=Y&seq=1003940398",
+    "document_type": "mediation_case",
+    "domains": [
+      "shopping_return"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": "2025-10-28",
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/kca_case_1003941875_4544e34afa87ee89.html": {
+    "document_id": "kca_case_1003941875",
+    "title": "PT 수강 및 헬스장 이용계약 중도해지에 따른 대금 환급 요구",
+    "source_url": "https://www.kca.go.kr/odr/bj/br/osBjDecisionExamDetW.do?brdId=00000007&dataStts=Y&seq=1003941875",
+    "document_type": "mediation_case",
+    "domains": [
+      "fitness_refund"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": "2025-10-27",
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/kca_damage_redress_procedure_a76de09b87f6e095.html": {
+    "document_id": "kca_damage_redress_procedure",
+    "title": "한국소비자원 피해구제 절차 및 처리 제외 안내",
+    "source_url": "https://www.kca.go.kr/odr/pg/ma/pgProcssInfo.do",
+    "document_type": "official_guide",
+    "domains": [
+      "fitness_refund"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/kca_fitness_closure_gym_c624ab16f714fd3f.html": {
+    "document_id": "kca_fitness_closure_gym",
+    "title": "헬스장 계약·폐업 피해예방 안내",
+    "source_url": "https://www.kca.go.kr/home/sub.do?menukey=4005&mode=view&no=1003802911",
+    "document_type": "official_guide",
+    "domains": [
+      "fitness_refund"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/kca_fitness_closure_pilates_0c85b3eaed61bd88.html": {
+    "document_id": "kca_fitness_closure_pilates",
+    "title": "필라테스 폐업 피해예방 및 대응 안내",
+    "source_url": "https://www.kca.go.kr/webzine/board/view?div=kca_2505&linkId=839&menuId=MENU00307",
+    "document_type": "official_guide",
+    "domains": [
+      "fitness_refund"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/kca_mediation_procedure_30422ca02b9d5a45.html": {
+    "document_id": "kca_mediation_procedure",
+    "title": "한국소비자원 소비자분쟁조정 절차 및 성립 효력 안내",
+    "source_url": "https://www.kca.go.kr/odr/bj/ma/bjInfo.do",
+    "document_type": "official_guide",
+    "domains": [
+      "consumer_general"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/kca_overseas_checklist_8a7c044d6fb1eb22.html": {
+    "document_id": "kca_overseas_checklist",
+    "title": "해외직구 체크리스트",
+    "source_url": "https://www.kca.go.kr/home/sub.do?menukey=7827",
+    "document_type": "official_guide",
+    "domains": [
+      "shopping_return"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/kca_overseas_returns_bc2e743fc2f1ec0b.html": {
+    "document_id": "kca_overseas_returns",
+    "title": "해외직구 수령·반품 단계 유의사항",
+    "source_url": "https://www.kca.go.kr/home/sub.do?menukey=7830",
+    "document_type": "official_guide",
+    "domains": [
+      "shopping_return"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/kca_overseas_types_8b985f72ecc984e9.html": {
+    "document_id": "kca_overseas_types",
+    "title": "해외직구 유형 및 과정",
+    "source_url": "https://www.kca.go.kr/home/sub.do?menukey=7825",
+    "document_type": "official_guide",
+    "domains": [
+      "shopping_return"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/kca_pilates_1003941650_1066de99b588fb09.html": {
+    "document_id": "kca_pilates_1003941650",
+    "title": "필라테스 계약 중도해지에 따른 환급 요구",
+    "source_url": "https://www.kca.go.kr/odr/bj/br/osBjDecisionExamDetW.do?brdId=00000007&dataStts=Y&seq=1003941650",
+    "document_type": "mediation_case",
+    "domains": [
+      "fitness_refund"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": "2025-10-27",
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/kca_redress_requirements_f5048b0525c401e4.html": {
+    "document_id": "kca_redress_requirements",
+    "title": "한국소비자원 피해구제 신청 요건 및 신청서 양식 안내",
+    "source_url": "https://www.kca.go.kr/odr/pg/ma/pgProcssInfo1.do",
+    "document_type": "official_guide",
+    "domains": [
+      "consumer_general"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/kca_redress_submission_c98aa847ed1f68d5.html": {
+    "document_id": "kca_redress_submission",
+    "title": "한국소비자원 피해구제 접수 방법 및 증빙서류 안내",
+    "source_url": "https://www.kca.go.kr/odr/pg/ma/pgProcssInfo2.do",
+    "document_type": "official_guide",
+    "domains": [
+      "consumer_general"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/minimum_wage_2026_c0a8b9413dbfebc6.xml": {
+    "document_id": "minimum_wage_2026",
+    "title": "2026년 적용 최저임금 고시",
+    "source_url": "https://www.law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000262710",
+    "document_type": "administrative_rule",
+    "domains": [
+      "labor_wage"
+    ],
+    "dates": {
+      "effective_date": "2026-01-01",
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/minimum_wage_simple_labor_df8550c1d3d7570d.xml": {
+    "document_id": "minimum_wage_simple_labor",
+    "title": "최저임금법 제5조에 따른 단순노무직종 근로자 지정 고시",
+    "source_url": "https://www.law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000118064",
+    "document_type": "administrative_rule",
+    "domains": [
+      "labor_wage"
+    ],
+    "dates": {
+      "effective_date": "2018-03-20",
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/moel_wage_evidence_1000323154_7492a58ac0c94d39.html": {
+    "document_id": "moel_wage_evidence_1000323154",
+    "title": "임금체불 진정 준비자료와 증빙 부족 시 조사 안내",
+    "source_url": "https://1350.moel.go.kr/rtmview.do?id=1000323154",
+    "document_type": "official_guide",
+    "domains": [
+      "labor_wage"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": "2026-05-14",
+      "as_of": null
+    }
+  },
+  "data/raw/consumer_sources/moel_wage_procedure_9c52aa51a2d0ec54.html": {
+    "document_id": "moel_wage_procedure",
+    "title": "임금체불 진정·고소 신고 및 처리 절차",
+    "source_url": "https://labor.moel.go.kr/minwonSysInfo/wagesolway.do",
+    "document_type": "official_guide",
+    "domains": [
+      "labor_wage"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": null
+    }
+  },
+  "data/raw/guides/[pdf]주택임대차.pdf": {
+    "document_id": "guide_23ffe4c8fd5715cb",
+    "title": "찾기쉬운 생활법령 - 주택임대차",
+    "source_url": null,
+    "document_type": "official_guide",
+    "domains": [
+      "housing_lease"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": "2026-09-15",
+      "as_of": null
+    }
+  },
+  "data/raw/guides/[pdf]인터넷 쇼핑.pdf": {
+    "document_id": "guide_383b62bce56bf1ce",
+    "title": "찾기쉬운 생활법령 - 인터넷 쇼핑",
+    "source_url": null,
+    "document_type": "official_guide",
+    "domains": [
+      "shopping_return"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": "2026-09-15",
+      "as_of": null
+    }
+  },
+  "data/raw/guides/[pdf]해고근로자.pdf": {
+    "document_id": "guide_cad7b1de1e4dc64c",
+    "title": "찾기쉬운 생활법령 - 해고근로자",
+    "source_url": null,
+    "document_type": "official_guide",
+    "domains": [
+      "labor_dismissal"
+    ],
+    "dates": {
+      "effective_date": null,
+      "article_effective_date": null,
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": "2026-09-15",
+      "as_of": null
+    }
+  },
+  "data/raw/laws/000129_218303_20200526.json": {
+    "document_id": "000129_218303_20200526",
+    "title": "최저임금법",
+    "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=218303",
+    "document_type": "law",
+    "domains": [
+      "labor_wage"
+    ],
+    "dates": {
+      "effective_date": "2020-05-26",
+      "article_effective_date": "2020-05-26",
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": "2026-10-11"
+    }
+  },
+  "data/raw/laws/000354_290239_20261002.json": {
+    "document_id": "000354_290239_20261002",
+    "title": "방문판매 등에 관한 법률",
+    "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=290239",
+    "document_type": "law",
+    "domains": [
+      "fitness_refund",
+      "consumer_general"
+    ],
+    "dates": {
+      "effective_date": "2026-10-02",
+      "article_effective_date": "2026-10-02",
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": "2026-10-11"
+    }
+  },
+  "data/raw/laws/000355_289407_20260908.json": {
+    "document_id": "000355_289407_20260908",
+    "title": "할부거래에 관한 법률",
+    "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=289407",
+    "document_type": "law",
+    "domains": [
+      "fitness_refund",
+      "consumer_general"
+    ],
+    "dates": {
+      "effective_date": "2026-09-08",
+      "article_effective_date": "2026-09-08",
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": "2026-10-11"
+    }
+  },
+  "data/raw/laws/001215_286417_20260602.json": {
+    "document_id": "001215_286417_20260602",
+    "title": "소송촉진 등에 관한 특례법",
+    "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=286417",
+    "document_type": "law",
+    "domains": [
+      "civil_general"
+    ],
+    "dates": {
+      "effective_date": "2026-06-02",
+      "article_effective_date": "2026-06-02",
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": "2026-10-11"
+    }
+  },
+  "data/raw/laws/001248_276291_20260102.json": {
+    "document_id": "001248_276291_20260102",
+    "title": "주택임대차보호법",
+    "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=276291",
+    "document_type": "law",
+    "domains": [
+      "housing_lease"
+    ],
+    "dates": {
+      "effective_date": "2026-01-02",
+      "article_effective_date": "2026-01-02",
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": "2026-10-10"
+    }
+  },
+  "data/raw/laws/001589_283837_20260911.json": {
+    "document_id": "001589_283837_20260911",
+    "title": "소비자기본법",
+    "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=283837",
+    "document_type": "law",
+    "domains": [
+      "consumer_general"
+    ],
+    "dates": {
+      "effective_date": "2026-09-11",
+      "article_effective_date": "2026-09-11",
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": "2026-10-11"
+    }
+  },
+  "data/raw/laws/001654_283713_20260828.json": {
+    "document_id": "001654_283713_20260828",
+    "title": "공인중개사법",
+    "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=283713",
+    "document_type": "law",
+    "domains": [
+      "housing_lease"
+    ],
+    "dates": {
+      "effective_date": "2026-08-28",
+      "article_effective_date": "2026-08-28",
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": "2026-10-10"
+    }
+  },
+  "data/raw/laws/001706_284415_20260317.json": {
+    "document_id": "001706_284415_20260317",
+    "title": "민법",
+    "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284415",
+    "document_type": "law",
+    "domains": [
+      "civil_general"
+    ],
+    "dates": {
+      "effective_date": "2026-03-17",
+      "article_effective_date": "2026-03-17",
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": "2026-10-10"
+    }
+  },
+  "data/raw/laws/001872_285279_20261008.json": {
+    "document_id": "001872_285279_20261008",
+    "title": "근로기준법",
+    "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=285279",
+    "document_type": "law",
+    "domains": [
+      "labor_general"
+    ],
+    "dates": {
+      "effective_date": "2026-10-08",
+      "article_effective_date": "2026-10-08",
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": "2026-10-10"
+    }
+  },
+  "data/raw/laws/003058_270551_20251023.json": {
+    "document_id": "003058_270551_20251023",
+    "title": "근로기준법 시행령",
+    "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=270551",
+    "document_type": "law",
+    "domains": [
+      "labor_general"
+    ],
+    "dates": {
+      "effective_date": "2025-10-23",
+      "article_effective_date": "2025-10-23",
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": "2026-10-10"
+    }
+  },
+  "data/raw/laws/003572_286997_20260701.json": {
+    "document_id": "003572_286997_20260701",
+    "title": "방문판매 등에 관한 법률 시행령",
+    "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=286997",
+    "document_type": "law",
+    "domains": [
+      "fitness_refund",
+      "consumer_general"
+    ],
+    "dates": {
+      "effective_date": "2026-07-01",
+      "article_effective_date": "2026-07-01",
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": "2026-10-11"
+    }
+  },
+  "data/raw/laws/003979_289451_20260911.json": {
+    "document_id": "003979_289451_20260911",
+    "title": "소비자기본법 시행령",
+    "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=289451",
+    "document_type": "law",
+    "domains": [
+      "consumer_general"
+    ],
+    "dates": {
+      "effective_date": "2026-09-11",
+      "article_effective_date": "2026-09-11",
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": "2026-10-11"
+    }
+  },
+  "data/raw/laws/003984_208701_20190601.json": {
+    "document_id": "003984_208701_20190601",
+    "title": "소송촉진 등에 관한 특례법 제3조제1항 본문의 법정이율에 관한 규정",
+    "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=208701",
+    "document_type": "law",
+    "domains": [
+      "civil_general"
+    ],
+    "dates": {
+      "effective_date": "2019-06-01",
+      "article_effective_date": "2019-06-01",
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": "2026-10-11"
+    }
+  },
+  "data/raw/laws/004950_287183_20260701.json": {
+    "document_id": "004950_287183_20260701",
+    "title": "주택임대차보호법 시행령",
+    "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=287183",
+    "document_type": "law",
+    "domains": [
+      "housing_lease"
+    ],
+    "dates": {
+      "effective_date": "2026-07-01",
+      "article_effective_date": "2026-07-01",
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": "2026-10-11"
+    }
+  },
+  "data/raw/laws/005247_206564_20190101.json": {
+    "document_id": "005247_206564_20190101",
+    "title": "최저임금법 시행령",
+    "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=206564",
+    "document_type": "law",
+    "domains": [
+      "labor_wage"
+    ],
+    "dates": {
+      "effective_date": "2019-01-01",
+      "article_effective_date": "2019-01-01",
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": "2026-10-11"
+    }
+  },
+  "data/raw/laws/005498_287001_20260701.json": {
+    "document_id": "005498_287001_20260701",
+    "title": "할부거래에 관한 법률 시행령",
+    "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=287001",
+    "document_type": "law",
+    "domains": [
+      "fitness_refund",
+      "consumer_general"
+    ],
+    "dates": {
+      "effective_date": "2026-07-01",
+      "article_effective_date": "2026-07-01",
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": "2026-10-11"
+    }
+  },
+  "data/raw/laws/007196_284567_20260317.json": {
+    "document_id": "007196_284567_20260317",
+    "title": "방문판매 등에 관한 법률 시행규칙",
+    "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+    "document_type": "law",
+    "domains": [
+      "fitness_refund",
+      "consumer_general"
+    ],
+    "dates": {
+      "effective_date": "2026-03-17",
+      "article_effective_date": "2026-03-17",
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": "2026-10-11"
+    }
+  },
+  "data/raw/laws/008480_282351_20260102.json": {
+    "document_id": "008480_282351_20260102",
+    "title": "최저임금법 시행규칙",
+    "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=282351",
+    "document_type": "law",
+    "domains": [
+      "labor_wage"
+    ],
+    "dates": {
+      "effective_date": "2026-01-02",
+      "article_effective_date": "2026-01-02",
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": "2026-10-11"
+    }
+  },
+  "data/raw/laws/009290_268837_20260201.json": {
+    "document_id": "009290_268837_20260201",
+    "title": "민사집행법",
+    "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=268837",
+    "document_type": "law",
+    "domains": [
+      "civil_general"
+    ],
+    "dates": {
+      "effective_date": "2026-02-01",
+      "article_effective_date": "2026-02-01",
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": "2026-10-11"
+    }
+  },
+  "data/raw/laws/009318_282793_20260721.json": {
+    "document_id": "009318_282793_20260721",
+    "title": "전자상거래 등에서의 소비자보호에 관한 법률",
+    "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=282793",
+    "document_type": "law",
+    "domains": [
+      "shopping_return",
+      "consumer_general"
+    ],
+    "dates": {
+      "effective_date": "2026-07-21",
+      "article_effective_date": "2026-07-21",
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": "2026-10-10"
+    }
+  },
+  "data/raw/laws/009325_272631_20250712.json": {
+    "document_id": "009325_272631_20250712",
+    "title": "민사집행규칙",
+    "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=272631",
+    "document_type": "law",
+    "domains": [
+      "civil_general"
+    ],
+    "dates": {
+      "effective_date": "2025-07-12",
+      "article_effective_date": "2025-07-12",
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": "2026-10-11"
+    }
+  },
+  "data/raw/laws/009338_288143_20260721.json": {
+    "document_id": "009338_288143_20260721",
+    "title": "전자상거래 등에서의 소비자보호에 관한 법률 시행령",
+    "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=288143",
+    "document_type": "law",
+    "domains": [
+      "shopping_return",
+      "consumer_general"
+    ],
+    "dates": {
+      "effective_date": "2026-07-21",
+      "article_effective_date": "2026-07-21",
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": "2026-10-11"
+    }
+  },
+  "data/raw/laws/009883_284455_20260918.json": {
+    "document_id": "009883_284455_20260918",
+    "title": "근로자퇴직급여 보장법",
+    "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284455",
+    "document_type": "law",
+    "domains": [
+      "labor_wage"
+    ],
+    "dates": {
+      "effective_date": "2026-09-18",
+      "article_effective_date": "2026-09-18",
+      "unit_effective_date": null,
+      "promulgation_date": null,
+      "judgment_date": null,
+      "decision_date": null,
+      "updated_date": null,
+      "terms_revision_date": null,
+      "information_as_of": null,
+      "as_of": "2026-10-10"
+    }
+  }
+}

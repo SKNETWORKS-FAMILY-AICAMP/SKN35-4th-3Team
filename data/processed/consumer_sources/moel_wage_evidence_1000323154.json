@@ -1,0 +1,53 @@
+{
+  "schema_version": 3,
+  "document_id": "moel_wage_evidence_1000323154",
+  "title": "임금체불 진정 준비자료와 증빙 부족 시 조사 안내",
+  "source_path": "data/raw/consumer_sources/moel_wage_evidence_1000323154_7492a58ac0c94d39.html",
+  "raw_sha256": "7492a58ac0c94d39e099c999175696084026eddf014736756bc5afdb52e4af5a",
+  "units": [
+    {
+      "document_id": "moel_wage_evidence_1000323154",
+      "title": "임금체불 진정 준비자료와 증빙 부족 시 조사 안내",
+      "source_url": "https://1350.moel.go.kr/rtmview.do?id=1000323154",
+      "document_type": "official_guide",
+      "domains": [
+        "labor_wage"
+      ],
+      "dates": {
+        "effective_date": null,
+        "article_effective_date": null,
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": "2026-05-14",
+        "as_of": null
+      },
+      "source_path": "data/raw/consumer_sources/moel_wage_evidence_1000323154_7492a58ac0c94d39.html",
+      "raw_sha256": "7492a58ac0c94d39e099c999175696084026eddf014736756bc5afdb52e4af5a",
+      "extraction_origin": "raw",
+      "warnings": [
+        "본문 내 이미지는 다운로드·OCR하지 않음; 표의 조건·예외는 전체 근거에서 확인"
+      ],
+      "unit_id": "moel_wage_evidence_1000323154:body",
+      "text": "고용노동부 1350모바일 상담을 이용해 주셔서 감사합니다.\n\n(진정신고) 재직근로자의 임금은 정기지급일 이후, 퇴직근로자의 임금 및 퇴직금은 퇴직일로부터 14일 이내 지급받지 못한 경우 근무지 관할 노동청에서 진정 제기가능합니다.(근기법제49조 임금채권 소멸시효는 3년입니다.)\n\n- 진정 제기 시 귀하의 구체적 근로사실관계 입증자료(예: 급여자료,근로계약서, 근로시간 증빙자료등)를 준비하여 상담하시면 보다 원활한 상담을 받으실 수 있으며,\n별도 증빙이 어려운 경우 진정 제기 이후 담당감독관 출석 이후 대질 조사 등의 방법으로 확인 가능할 것이니 자세한 확인 및 상담은 사업장 소재지 관할 지방고용노동지청으로 질의하여 추가 상담 받으시길 바랍니다.\n\n◆ 진정제기 방법(택1)\n① 인터넷을 통한 진정 제기 : <고용노동부 홈페이지(www.moel.go.kr) → 민원 → 민원신청 → 온라인 민원신청 → \"진정서\" 검색 → 신청(처리기간 25일 이내<토요일, 공휴일 제외>)\n② 사업장 관할 지방고용노동청에 방문하여 신고\n\n(지연이자) 임금체불액 지연이자로 인한 채권발생은 근로기준법에서 다루질 않아 민사로 해결해야 할 부분으로 해당 채권에 관한 금전문제는 대한법률구조공단(국번없이 132번)으로 문의하여 상담을 받아보시기 바랍니다.",
+      "locator": ".body03_g",
+      "embedding_candidate": true,
+      "content_type": "html_body",
+      "evidence_metadata": {
+        "selector": ".body03_g",
+        "encoding": "cp949",
+        "tables": [],
+        "image_references": [
+          {
+            "src": "/images/photo/0/1000000000.gif",
+            "alt": "상담사사진"
+          }
+        ],
+        "images_downloaded_or_ocr_performed": false
+      }
+    }
+  ]
+}

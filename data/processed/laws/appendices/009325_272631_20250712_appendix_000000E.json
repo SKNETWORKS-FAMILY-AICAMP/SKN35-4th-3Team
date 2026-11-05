@@ -1,0 +1,448 @@
+{
+  "schema_version": 3,
+  "document_id": "009325_272631_20250712_appendix_000000E",
+  "title": "민사집행규칙",
+  "source_path": "data/raw/law_appendices/009325_272631_20250712_appendix_000000E.pdf",
+  "raw_sha256": "975125c7d0c2b93a239d0eed9dc77eb46a28b0adc3784df30cc8a6454a4c559d",
+  "units": [
+    {
+      "document_id": "009325_272631_20250712_appendix_000000E",
+      "title": "민사집행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=272631",
+      "document_type": "law",
+      "domains": [
+        "civil_general"
+      ],
+      "dates": {
+        "effective_date": "2025-07-12",
+        "article_effective_date": "2025-07-12",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/009325_272631_20250712_appendix_000000E.pdf",
+      "raw_sha256": "975125c7d0c2b93a239d0eed9dc77eb46a28b0adc3784df30cc8a6454a4c559d",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "unit_id": "009325_272631_20250712_appendix_000000E:p1:body",
+      "text": "",
+      "locator": "PDF 1페이지",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "pdf_body",
+      "removed_margin_lines": [],
+      "images": []
+    },
+    {
+      "document_id": "009325_272631_20250712_appendix_000000E",
+      "title": "민사집행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=272631",
+      "document_type": "law",
+      "domains": [
+        "civil_general"
+      ],
+      "dates": {
+        "effective_date": "2025-07-12",
+        "article_effective_date": "2025-07-12",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/009325_272631_20250712_appendix_000000E.pdf",
+      "raw_sha256": "975125c7d0c2b93a239d0eed9dc77eb46a28b0adc3784df30cc8a6454a4c559d",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "009325_272631_20250712_appendix_000000E:p1:table0",
+      "text": "■ 민사집행규칙 [별표] <개정 2018. 12. 31. | >",
+      "locator": "PDF 1페이지 / 표 1",
+      "embedding_candidate": true,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          64.525,
+          60.773000000000025,
+          252.584,
+          69.76400000000001
+        ],
+        "rows": [
+          [
+            "■ 민사집행규칙 [별표] <개정 2018. 12. 31.",
+            ">"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    },
+    {
+      "document_id": "009325_272631_20250712_appendix_000000E",
+      "title": "민사집행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=272631",
+      "document_type": "law",
+      "domains": [
+        "civil_general"
+      ],
+      "dates": {
+        "effective_date": "2025-07-12",
+        "article_effective_date": "2025-07-12",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/009325_272631_20250712_appendix_000000E.pdf",
+      "raw_sha256": "975125c7d0c2b93a239d0eed9dc77eb46a28b0adc3784df30cc8a6454a4c559d",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "009325_272631_20250712_appendix_000000E:p1:table1",
+      "text": "순\n번 | 기관ㆍ단체 | 조회할 재산\n1 | 법원행정처 | 토지ㆍ건물의 소유권\n2 | 국토교통부 | 건물의 소유권\n3 | 특허청 | 특허권ㆍ실용신안권ㆍ디자인권ㆍ상표권\n4 | (삭제) | (삭제)\n5 | 「은행법」에 따른 은행,\n「한국산업은행법」에 따른 한\n국산업은행 및 「중소기업은행\n법」에 따른 중소기업은행 | 「금융실명거래 및 비밀보장에 관한 법\n률」 제2조제2호에 따른 금융자산(다음부\n터 \"금융자산\"이라 한다) 중 계좌별로 시\n가 합계액이 50만원 이상인 것\n6 | 「자본시장과 금융투자업에 관\n한 법률」에 따른 투자매매업자,\n투자중개업자, 집합투자업자, 신\n탁업자, 증권금융회사, 종합금융\n회사 및 명의개서대행회사 | 금융자산 중 계좌별로 시가 합계액이 50\n만원 이상인 것\n7 | 「상호저축은행법」에 따른 상\n호저축은행 및 상호저축은행중\n앙회 | 금융자산 중 계좌별로 시가 합계액이 50\n만원 이상인 것\n8 | 「농업협동조합법」에 따른 지\n역조합 및 품목조합 | 금융자산 중 계좌별로 시가 합계액이 50\n만원 이상인 것\n9 | 「수산업협동조합법」에 따른\n조합 및 중앙회 | 금융자산 중 계좌별로 시가 합계액이 50\n만원 이상인 것\n10 | 「신용협동조합법」에 따른 신\n용협동조합 및 신용협동조합중\n앙회 | 금융자산 중 계좌별로 시가 합계액이 50\n만원 이상인 것\n11 | 「산림조합법」에 따른 지역조\n합, 전문조합 및 중앙회 | 금융자산 중 계좌별로 시가 합계액이 50\n만원 이상인 것\n12 | 「새마을금고법」에 따른 금고\n및 중앙회 | 금융자산 중 계좌별로 시가 합계액이 50\n만원 이상인 것\n13 | (삭제) | (삭제)\n14 | (삭제) | (삭제)\n15 | 「보험업법」에 따른 보험회사 | 해약환급금이 50만원 이상인 보험계약\n16 | 과학기술정보통신부 | 금융자산 중 계좌별로 시가 합계액이 50\n만원 이상인 것",
+      "locator": "PDF 1페이지 / 표 2",
+      "embedding_candidate": true,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          59.488,
+          86.06600000000003,
+          513.804,
+          806.238
+        ],
+        "rows": [
+          [
+            "순\n번",
+            "기관ㆍ단체",
+            "조회할 재산"
+          ],
+          [
+            "1",
+            "법원행정처",
+            "토지ㆍ건물의 소유권"
+          ],
+          [
+            "2",
+            "국토교통부",
+            "건물의 소유권"
+          ],
+          [
+            "3",
+            "특허청",
+            "특허권ㆍ실용신안권ㆍ디자인권ㆍ상표권"
+          ],
+          [
+            "4",
+            "(삭제)",
+            "(삭제)"
+          ],
+          [
+            "5",
+            "「은행법」에 따른 은행,\n「한국산업은행법」에 따른 한\n국산업은행 및 「중소기업은행\n법」에 따른 중소기업은행",
+            "「금융실명거래 및 비밀보장에 관한 법\n률」 제2조제2호에 따른 금융자산(다음부\n터 \"금융자산\"이라 한다) 중 계좌별로 시\n가 합계액이 50만원 이상인 것"
+          ],
+          [
+            "6",
+            "「자본시장과 금융투자업에 관\n한 법률」에 따른 투자매매업자,\n투자중개업자, 집합투자업자, 신\n탁업자, 증권금융회사, 종합금융\n회사 및 명의개서대행회사",
+            "금융자산 중 계좌별로 시가 합계액이 50\n만원 이상인 것"
+          ],
+          [
+            "7",
+            "「상호저축은행법」에 따른 상\n호저축은행 및 상호저축은행중\n앙회",
+            "금융자산 중 계좌별로 시가 합계액이 50\n만원 이상인 것"
+          ],
+          [
+            "8",
+            "「농업협동조합법」에 따른 지\n역조합 및 품목조합",
+            "금융자산 중 계좌별로 시가 합계액이 50\n만원 이상인 것"
+          ],
+          [
+            "9",
+            "「수산업협동조합법」에 따른\n조합 및 중앙회",
+            "금융자산 중 계좌별로 시가 합계액이 50\n만원 이상인 것"
+          ],
+          [
+            "10",
+            "「신용협동조합법」에 따른 신\n용협동조합 및 신용협동조합중\n앙회",
+            "금융자산 중 계좌별로 시가 합계액이 50\n만원 이상인 것"
+          ],
+          [
+            "11",
+            "「산림조합법」에 따른 지역조\n합, 전문조합 및 중앙회",
+            "금융자산 중 계좌별로 시가 합계액이 50\n만원 이상인 것"
+          ],
+          [
+            "12",
+            "「새마을금고법」에 따른 금고\n및 중앙회",
+            "금융자산 중 계좌별로 시가 합계액이 50\n만원 이상인 것"
+          ],
+          [
+            "13",
+            "(삭제)",
+            "(삭제)"
+          ],
+          [
+            "14",
+            "(삭제)",
+            "(삭제)"
+          ],
+          [
+            "15",
+            "「보험업법」에 따른 보험회사",
+            "해약환급금이 50만원 이상인 보험계약"
+          ],
+          [
+            "16",
+            "과학기술정보통신부",
+            "금융자산 중 계좌별로 시가 합계액이 50\n만원 이상인 것"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    },
+    {
+      "document_id": "009325_272631_20250712_appendix_000000E",
+      "title": "민사집행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=272631",
+      "document_type": "law",
+      "domains": [
+        "civil_general"
+      ],
+      "dates": {
+        "effective_date": "2025-07-12",
+        "article_effective_date": "2025-07-12",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/009325_272631_20250712_appendix_000000E.pdf",
+      "raw_sha256": "975125c7d0c2b93a239d0eed9dc77eb46a28b0adc3784df30cc8a6454a4c559d",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "unit_id": "009325_272631_20250712_appendix_000000E:p2:body",
+      "text": "",
+      "locator": "PDF 2페이지",
+      "embedding_candidate": false,
+      "page_number": 2,
+      "content_type": "pdf_body",
+      "removed_margin_lines": [],
+      "images": []
+    },
+    {
+      "document_id": "009325_272631_20250712_appendix_000000E",
+      "title": "민사집행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=272631",
+      "document_type": "law",
+      "domains": [
+        "civil_general"
+      ],
+      "dates": {
+        "effective_date": "2025-07-12",
+        "article_effective_date": "2025-07-12",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/009325_272631_20250712_appendix_000000E.pdf",
+      "raw_sha256": "975125c7d0c2b93a239d0eed9dc77eb46a28b0adc3784df30cc8a6454a4c559d",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "009325_272631_20250712_appendix_000000E:p2:table0",
+      "text": "17 | 한국교통안전공단 | 자동차ㆍ건설기계의 소유권",
+      "locator": "PDF 2페이지 / 표 1",
+      "embedding_candidate": true,
+      "page_number": 2,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          59.488,
+          59.45500000000004,
+          513.804,
+          84.38800000000003
+        ],
+        "rows": [
+          [
+            "17",
+            "한국교통안전공단",
+            "자동차ㆍ건설기계의 소유권"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "■ 민사집행규칙 [별표] <개정 2018. 12. 31.>\n순\n기관ㆍ단체 조회할 재산\n번\n1 법원행정처 토지ㆍ건물의 소유권\n2 국토교통부 건물의 소유권\n3 특허청 특허권ㆍ실용신안권ㆍ디자인권ㆍ상표권\n4 (삭제) (삭제)\n「은행법」에 따른 은행, 「금융실명거래 및 비밀보장에 관한 법\n「한국산업은행법」에 따른 한 률」 제2조제2호에 따른 금융자산(다음부\n5\n국산업은행 및 「중소기업은행 터 \"금융자산\"이라 한다) 중 계좌별로 시\n법」에 따른 중소기업은행 가 합계액이 50만원 이상인 것\n「자본시장과 금융투자업에 관\n한 법률」에 따른 투자매매업자,\n금융자산 중 계좌별로 시가 합계액이 50\n6 투자중개업자, 집합투자업자, 신\n만원 이상인 것\n탁업자, 증권금융회사, 종합금융\n회사 및 명의개서대행회사\n「상호저축은행법」에 따른 상\n금융자산 중 계좌별로 시가 합계액이 50\n7 호저축은행 및 상호저축은행중\n만원 이상인 것\n앙회\n「농업협동조합법」에 따른 지 금융자산 중 계좌별로 시가 합계액이 50\n8\n역조합 및 품목조합 만원 이상인 것\n「수산업협동조합법」에 따른 금융자산 중 계좌별로 시가 합계액이 50\n9\n조합 및 중앙회 만원 이상인 것\n「신용협동조합법」에 따른 신\n금융자산 중 계좌별로 시가 합계액이 50\n10 용협동조합 및 신용협동조합중\n만원 이상인 것\n앙회\n「산림조합법」에 따른 지역조 금융자산 중 계좌별로 시가 합계액이 50\n11\n합, 전문조합 및 중앙회 만원 이상인 것\n「새마을금고법」에 따른 금고 금융자산 중 계좌별로 시가 합계액이 50\n12\n및 중앙회 만원 이상인 것\n13 (삭제) (삭제)\n14 (삭제) (삭제)\n15 「보험업법」에 따른 보험회사 해약환급금이 50만원 이상인 보험계약\n금융자산 중 계좌별로 시가 합계액이 50\n16 과학기술정보통신부\n만원 이상인 것",
+      "body_text": "",
+      "tables": [
+        {
+          "bbox": [
+            64.525,
+            60.773000000000025,
+            252.584,
+            69.76400000000001
+          ],
+          "rows": [
+            [
+              "■ 민사집행규칙 [별표] <개정 2018. 12. 31.",
+              ">"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        },
+        {
+          "bbox": [
+            59.488,
+            86.06600000000003,
+            513.804,
+            806.238
+          ],
+          "rows": [
+            [
+              "순\n번",
+              "기관ㆍ단체",
+              "조회할 재산"
+            ],
+            [
+              "1",
+              "법원행정처",
+              "토지ㆍ건물의 소유권"
+            ],
+            [
+              "2",
+              "국토교통부",
+              "건물의 소유권"
+            ],
+            [
+              "3",
+              "특허청",
+              "특허권ㆍ실용신안권ㆍ디자인권ㆍ상표권"
+            ],
+            [
+              "4",
+              "(삭제)",
+              "(삭제)"
+            ],
+            [
+              "5",
+              "「은행법」에 따른 은행,\n「한국산업은행법」에 따른 한\n국산업은행 및 「중소기업은행\n법」에 따른 중소기업은행",
+              "「금융실명거래 및 비밀보장에 관한 법\n률」 제2조제2호에 따른 금융자산(다음부\n터 \"금융자산\"이라 한다) 중 계좌별로 시\n가 합계액이 50만원 이상인 것"
+            ],
+            [
+              "6",
+              "「자본시장과 금융투자업에 관\n한 법률」에 따른 투자매매업자,\n투자중개업자, 집합투자업자, 신\n탁업자, 증권금융회사, 종합금융\n회사 및 명의개서대행회사",
+              "금융자산 중 계좌별로 시가 합계액이 50\n만원 이상인 것"
+            ],
+            [
+              "7",
+              "「상호저축은행법」에 따른 상\n호저축은행 및 상호저축은행중\n앙회",
+              "금융자산 중 계좌별로 시가 합계액이 50\n만원 이상인 것"
+            ],
+            [
+              "8",
+              "「농업협동조합법」에 따른 지\n역조합 및 품목조합",
+              "금융자산 중 계좌별로 시가 합계액이 50\n만원 이상인 것"
+            ],
+            [
+              "9",
+              "「수산업협동조합법」에 따른\n조합 및 중앙회",
+              "금융자산 중 계좌별로 시가 합계액이 50\n만원 이상인 것"
+            ],
+            [
+              "10",
+              "「신용협동조합법」에 따른 신\n용협동조합 및 신용협동조합중\n앙회",
+              "금융자산 중 계좌별로 시가 합계액이 50\n만원 이상인 것"
+            ],
+            [
+              "11",
+              "「산림조합법」에 따른 지역조\n합, 전문조합 및 중앙회",
+              "금융자산 중 계좌별로 시가 합계액이 50\n만원 이상인 것"
+            ],
+            [
+              "12",
+              "「새마을금고법」에 따른 금고\n및 중앙회",
+              "금융자산 중 계좌별로 시가 합계액이 50\n만원 이상인 것"
+            ],
+            [
+              "13",
+              "(삭제)",
+              "(삭제)"
+            ],
+            [
+              "14",
+              "(삭제)",
+              "(삭제)"
+            ],
+            [
+              "15",
+              "「보험업법」에 따른 보험회사",
+              "해약환급금이 50만원 이상인 보험계약"
+            ],
+            [
+              "16",
+              "과학기술정보통신부",
+              "금융자산 중 계좌별로 시가 합계액이 50\n만원 이상인 것"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        }
+      ],
+      "images": [],
+      "removed_margin_lines": []
+    },
+    {
+      "page_number": 2,
+      "raw_text": "17 한국교통안전공단 자동차ㆍ건설기계의 소유권",
+      "body_text": "",
+      "tables": [
+        {
+          "bbox": [
+            59.488,
+            59.45500000000004,
+            513.804,
+            84.38800000000003
+          ],
+          "rows": [
+            [
+              "17",
+              "한국교통안전공단",
+              "자동차ㆍ건설기계의 소유권"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        }
+      ],
+      "images": [],
+      "removed_margin_lines": []
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": 3,
+  "document_id": "008480_282351_20260102_appendix_000400F",
+  "title": "최저임금법 시행규칙",
+  "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000400F.pdf",
+  "raw_sha256": "e460ccfa21dfc9bb57c31efaae99f59b223d2742349ca052d24756edb573d96a",
+  "units": [
+    {
+      "document_id": "008480_282351_20260102_appendix_000400F",
+      "title": "최저임금법 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=282351",
+      "document_type": "law",
+      "domains": [
+        "labor_wage"
+      ],
+      "dates": {
+        "effective_date": "2026-01-02",
+        "article_effective_date": "2026-01-02",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/008480_282351_20260102_appendix_000400F.pdf",
+      "raw_sha256": "e460ccfa21dfc9bb57c31efaae99f59b223d2742349ca052d24756edb573d96a",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "unit_id": "008480_282351_20260102_appendix_000400F:p1:body",
+      "text": "[별지 제4호서식] [별지 제2호서식]으로 이동 <2011.12.19>",
+      "locator": "PDF 1페이지",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "pdf_body",
+      "removed_margin_lines": [],
+      "images": []
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "[별지 제4호서식] [별지 제2호서식]으로 이동 <2011.12.19>",
+      "body_text": "[별지 제4호서식] [별지 제2호서식]으로 이동 <2011.12.19>",
+      "tables": [],
+      "images": [],
+      "removed_margin_lines": []
+    }
+  ]
+}

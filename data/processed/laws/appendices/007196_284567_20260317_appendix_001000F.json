@@ -1,0 +1,386 @@
+{
+  "schema_version": 3,
+  "document_id": "007196_284567_20260317_appendix_001000F",
+  "title": "방문판매 등에 관한 법률 시행규칙",
+  "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001000F.pdf",
+  "raw_sha256": "69b09ecb5452fbb040227a9b1f47ff0a15c94f50d0a9d828d4d54491838fd2a0",
+  "units": [
+    {
+      "document_id": "007196_284567_20260317_appendix_001000F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001000F.pdf",
+      "raw_sha256": "69b09ecb5452fbb040227a9b1f47ff0a15c94f50d0a9d828d4d54491838fd2a0",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "unit_id": "007196_284567_20260317_appendix_001000F:p1:body",
+      "text": "■ 방문판매 등에 관한 법률 시행규칙 [별지 제10호서식] <개정 2025. 5. 8.>\n[ ] 다단계판매업\n등록 변경 신고서\n[ ] 후원방문판매업\n법인등록번호\n전화번호\n주민등록번호(외국인등록번호)\n신고인\n전화번호\n사업자등록번호\n변경 전\n신고\n사항 변경 후\n변경\n사유\n「방문판매 등에 관한 법률」 제13조제2항ㆍ제29조제3항, 같은 법 시행령 제20조제3항 및 같은 법 시행\n규칙 제12조에 따라 위와 같이 등록 변경을 신고합니다.\n년 월 일\n신고인 (서명 또는 인)\n※ 위 신고인 대표자와 동일인이 아닌 경우에만 적습니다.\n공정거래위원회ㆍ특별시장ㆍ광역시장ㆍ\n귀하\n특별자치시장ㆍ도지사ㆍ특별자치도지사\n신고인(대표자)\n첨부서류\n수수료\n없음\n담당 공무원\n확인사항\n행정정보 공동이용 동의서\n본인은 이 건 업무처리와 관련하여 「전자정부법」 제36조제1항에 따른 행정정보의 공동이용을 통하여 담당 공무원이 위의 담당 공무원 확\n인사항 중 제2호를 확인하는 것에 동의합니다. *확인에 동의하지 않는 경우 신고인이 직접 관련 서류를 제출해야 합니다.\n신청인(대표자)\n(서명 또는 인)\n210mm× 297mm[백상지 80g/㎡]",
+      "locator": "PDF 1페이지",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "pdf_body",
+      "removed_margin_lines": [],
+      "images": []
+    },
+    {
+      "document_id": "007196_284567_20260317_appendix_001000F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001000F.pdf",
+      "raw_sha256": "69b09ecb5452fbb040227a9b1f47ff0a15c94f50d0a9d828d4d54491838fd2a0",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "007196_284567_20260317_appendix_001000F:p1:table0",
+      "text": "접수번호 | | 접수일 | | | 처리기간 | 3일",
+      "locator": "PDF 1페이지 / 표 1",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          59.488,
+          116.39300000000003,
+          540.1894,
+          139.048
+        ],
+        "rows": [
+          [
+            "접수번호",
+            "",
+            "접수일",
+            "",
+            "",
+            "처리기간",
+            "3일"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    },
+    {
+      "document_id": "007196_284567_20260317_appendix_001000F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001000F.pdf",
+      "raw_sha256": "69b09ecb5452fbb040227a9b1f47ff0a15c94f50d0a9d828d4d54491838fd2a0",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "007196_284567_20260317_appendix_001000F:p1:table1",
+      "text": "상호\n소재지\n대표자의 성명 (서명 또는 인)\n주소\n전자우편주소",
+      "locator": "PDF 1페이지 / 표 2",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          100.866,
+          144.68200000000002,
+          384.993,
+          287.80499999999995
+        ],
+        "rows": [
+          [
+            "상호"
+          ],
+          [
+            "소재지"
+          ],
+          [
+            "대표자의 성명 (서명 또는 인)"
+          ],
+          [
+            "주소"
+          ],
+          [
+            "전자우편주소"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    },
+    {
+      "document_id": "007196_284567_20260317_appendix_001000F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001000F.pdf",
+      "raw_sha256": "69b09ecb5452fbb040227a9b1f47ff0a15c94f50d0a9d828d4d54491838fd2a0",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "007196_284567_20260317_appendix_001000F:p1:table2",
+      "text": "1. 변경사항을 증명하는 서류\n2. 판매업 등록증(등록증 기재사항이 변경된 경우만 해당합니다)\n1. 법인 등기사항증명서(법인인 경우만 해당합니다)\n2. 사업자등록증명(주민등록번호가 제외된 사업자등록증명을 말합니다)\n3. 건물등기사항증명서(소재지 변경 확인에 필요한 경우만 해당합니다)",
+      "locator": "PDF 1페이지 / 표 3",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          124.37299999999999,
+          541.088,
+          496.773,
+          610.133
+        ],
+        "rows": [
+          [
+            "1. 변경사항을 증명하는 서류\n2. 판매업 등록증(등록증 기재사항이 변경된 경우만 해당합니다)"
+          ],
+          [
+            "1. 법인 등기사항증명서(법인인 경우만 해당합니다)\n2. 사업자등록증명(주민등록번호가 제외된 사업자등록증명을 말합니다)\n3. 건물등기사항증명서(소재지 변경 확인에 필요한 경우만 해당합니다)"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    },
+    {
+      "document_id": "007196_284567_20260317_appendix_001000F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001000F.pdf",
+      "raw_sha256": "69b09ecb5452fbb040227a9b1f47ff0a15c94f50d0a9d828d4d54491838fd2a0",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "007196_284567_20260317_appendix_001000F:p1:table3",
+      "text": "처리절차 | | | | |\n등록증\n신고서 작성 è 접수 è 검토 è 결재 è è 등록증 재발급\n변경사항 기재 | | | | |\n| 신고인 | | 처리기관: 공정거래위원회 또는 특별시ㆍ광역시ㆍ특별자치시ㆍ도ㆍ특별자치도 | |",
+      "locator": "PDF 1페이지 / 표 4",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          59.488,
+          691.883,
+          540.1894,
+          762.8449999999999
+        ],
+        "rows": [
+          [
+            "처리절차",
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "등록증\n신고서 작성 è 접수 è 검토 è 결재 è è 등록증 재발급\n변경사항 기재",
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "",
+            "신고인",
+            "",
+            "처리기관: 공정거래위원회 또는 특별시ㆍ광역시ㆍ특별자치시ㆍ도ㆍ특별자치도",
+            "",
+            ""
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "■ 방문판매 등에 관한 법률 시행규칙 [별지 제10호서식] <개정 2025. 5. 8.>\n[ ] 다단계판매업\n등록 변경 신고서\n[ ] 후원방문판매업\n접수번호 접수일 처리기간 3일\n상호 법인등록번호\n소재지 전화번호\n대표자의 성명 (서명 또는 인) 주민등록번호(외국인등록번호)\n신고인\n주소 전화번호\n전자우편주소 사업자등록번호\n변경 전\n신고\n사항 변경 후\n변경\n사유\n「방문판매 등에 관한 법률」 제13조제2항ㆍ제29조제3항, 같은 법 시행령 제20조제3항 및 같은 법 시행\n규칙 제12조에 따라 위와 같이 등록 변경을 신고합니다.\n년 월 일\n신고인 (서명 또는 인)\n※ 위 신고인 대표자와 동일인이 아닌 경우에만 적습니다.\n공정거래위원회ㆍ특별시장ㆍ광역시장ㆍ\n귀하\n특별자치시장ㆍ도지사ㆍ특별자치도지사\n신고인(대표자) 1. 변경사항을 증명하는 서류\n첨부서류 2. 판매업 등록증(등록증 기재사항이 변경된 경우만 해당합니다)\n수수료\n1. 법인 등기사항증명서(법인인 경우만 해당합니다) 없음\n담당 공무원\n2. 사업자등록증명(주민등록번호가 제외된 사업자등록증명을 말합니다)\n확인사항\n3. 건물등기사항증명서(소재지 변경 확인에 필요한 경우만 해당합니다)\n행정정보 공동이용 동의서\n본인은 이 건 업무처리와 관련하여 「전자정부법」 제36조제1항에 따른 행정정보의 공동이용을 통하여 담당 공무원이 위의 담당 공무원 확\n인사항 중 제2호를 확인하는 것에 동의합니다. *확인에 동의하지 않는 경우 신고인이 직접 관련 서류를 제출해야 합니다.\n신청인(대표자)\n(서명 또는 인)\n처리절차\n등록증\n신고서 작성 è 접수 è 검토 è 결재 è è 등록증 재발급\n변경사항 기재\n신고인 처리기관: 공정거래위원회 또는 특별시ㆍ광역시ㆍ특별자치시ㆍ도ㆍ특별자치도\n210mm× 297mm[백상지 80g/㎡]",
+      "body_text": "■ 방문판매 등에 관한 법률 시행규칙 [별지 제10호서식] <개정 2025. 5. 8.>\n[ ] 다단계판매업\n등록 변경 신고서\n[ ] 후원방문판매업\n법인등록번호\n전화번호\n주민등록번호(외국인등록번호)\n신고인\n전화번호\n사업자등록번호\n변경 전\n신고\n사항 변경 후\n변경\n사유\n「방문판매 등에 관한 법률」 제13조제2항ㆍ제29조제3항, 같은 법 시행령 제20조제3항 및 같은 법 시행\n규칙 제12조에 따라 위와 같이 등록 변경을 신고합니다.\n년 월 일\n신고인 (서명 또는 인)\n※ 위 신고인 대표자와 동일인이 아닌 경우에만 적습니다.\n공정거래위원회ㆍ특별시장ㆍ광역시장ㆍ\n귀하\n특별자치시장ㆍ도지사ㆍ특별자치도지사\n신고인(대표자)\n첨부서류\n수수료\n없음\n담당 공무원\n확인사항\n행정정보 공동이용 동의서\n본인은 이 건 업무처리와 관련하여 「전자정부법」 제36조제1항에 따른 행정정보의 공동이용을 통하여 담당 공무원이 위의 담당 공무원 확\n인사항 중 제2호를 확인하는 것에 동의합니다. *확인에 동의하지 않는 경우 신고인이 직접 관련 서류를 제출해야 합니다.\n신청인(대표자)\n(서명 또는 인)\n210mm× 297mm[백상지 80g/㎡]",
+      "tables": [
+        {
+          "bbox": [
+            59.488,
+            116.39300000000003,
+            540.1894,
+            139.048
+          ],
+          "rows": [
+            [
+              "접수번호",
+              "",
+              "접수일",
+              "",
+              "",
+              "처리기간",
+              "3일"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        },
+        {
+          "bbox": [
+            100.866,
+            144.68200000000002,
+            384.993,
+            287.80499999999995
+          ],
+          "rows": [
+            [
+              "상호"
+            ],
+            [
+              "소재지"
+            ],
+            [
+              "대표자의 성명 (서명 또는 인)"
+            ],
+            [
+              "주소"
+            ],
+            [
+              "전자우편주소"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        },
+        {
+          "bbox": [
+            124.37299999999999,
+            541.088,
+            496.773,
+            610.133
+          ],
+          "rows": [
+            [
+              "1. 변경사항을 증명하는 서류\n2. 판매업 등록증(등록증 기재사항이 변경된 경우만 해당합니다)"
+            ],
+            [
+              "1. 법인 등기사항증명서(법인인 경우만 해당합니다)\n2. 사업자등록증명(주민등록번호가 제외된 사업자등록증명을 말합니다)\n3. 건물등기사항증명서(소재지 변경 확인에 필요한 경우만 해당합니다)"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        },
+        {
+          "bbox": [
+            59.488,
+            691.883,
+            540.1894,
+            762.8449999999999
+          ],
+          "rows": [
+            [
+              "처리절차",
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              "등록증\n신고서 작성 è 접수 è 검토 è 결재 è è 등록증 재발급\n변경사항 기재",
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              "",
+              "신고인",
+              "",
+              "처리기관: 공정거래위원회 또는 특별시ㆍ광역시ㆍ특별자치시ㆍ도ㆍ특별자치도",
+              "",
+              ""
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        }
+      ],
+      "images": [],
+      "removed_margin_lines": []
+    }
+  ]
+}

@@ -1,0 +1,2280 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>피해구제 요건 및 양식</title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+		<meta name="description" content="소비자 민원상담 및 피해구제, 보상규정, 교육프로그램, 법령, 보호시책 제공." />
+		
+
+		<!-- content script -->
+		
+			<link id="contextPathHolder" data-contextPath="/odr" />
+			<link rel="stylesheet" href="/odr/assets/css/XEIcon-2.2.0/xeicon.min.css" />
+			<link rel="stylesheet" href="/odr/assets/css/jquery-ui.min.css" />
+			<link rel="stylesheet" href="/odr/assets/css/base.css?1791697168495" />
+			<link rel="stylesheet" href="/odr/assets/css/style.css?1791697168495" />
+			<link rel="stylesheet" href="/odr/assets/css/bcsub.css?1791697168495" />
+			<link rel="stylesheet" href="/odr/assets/css/style_custom.css?1791697168495" />
+			<link rel="stylesheet" href="/odr/assets/css/bcsub_custom.css?1791697168495" />
+			<link rel="stylesheet" href="/odr/assets/css/attach.css?1791697168495" />
+			<link rel="stylesheet" href="/odr/assets/css/ai_attach.css?1791697168495" />
+			<link rel="stylesheet" href="/odr/assets/css/cropper.min.css?1791697168495" />
+
+			<script src="/odr/assets/js/jquery-1.12.4.min.js"></script>
+			<script src="/odr/assets/js/namhung2022/jquery-migrate-1.4.1.min.js"></script>
+			<script src="/odr/assets/js/namhung2022/jquery.menu.js"></script>
+			<script src="/odr/assets/js/namhung2022/common.js"></script>
+			<script src="/odr/assets/js/namhung2022/wrest.js"></script>
+
+			<script src="/odr/assets/tracer/tracerapi.js"></script>
+			
+			<script src="/odr/assets/js/jquery-ui.min.js"></script>
+			<script src="/odr/assets/js/Chart.min.js"></script>
+			<script src="/odr/assets/js/common.js?1791697168495"></script>
+			<script src="/odr/assets/js/attach.js?1791697168495"></script>
+			<script src="/odr/assets/js/cropper.min.js?1791697168495"></script>
+			<script src="/odr/assets/js/libheif.min.js?1791697168495"></script>
+			<script src="/odr/assets/tracer/tracerapi.js"></script>
+		
+		<script>
+			// document.oncontextmenu = function () {return false;}
+		</script>
+	</head>
+
+	<body>
+		<div id="warp">
+			<div class="layer_pop" id="layerLoading">
+				<div class="loading_box">
+					<div></div>
+					<p>처리중...</p>    
+				</div>
+				<div class="layer_bg"></div>
+			</div>
+			
+		<style>
+			.header_info {
+				float: right;
+				padding: 3px 0;
+			}
+
+			.header_info a {
+				display: inline-block;
+				color: #fff;
+				line-height: 28px;
+				text-align: right;
+			}
+
+			.header_info a:last-child:after {
+				display: none;
+			}
+
+			.header_info {
+				display: inline-flex;
+				flex-direction: row;
+				align-items: baseline;
+			}
+
+			.header_info span {
+				padding-right: 20px;
+				color: white;
+			}
+
+			.header_info .extend_btn {
+				overflow: hidden;
+				float: right;
+				border: 2px solid #a4aab8;
+				border-radius: 50px;
+				padding: 0px 13px;
+				line-height: 16px;
+				margin: 1px 16px;
+				background-color: #1c749a;
+			}
+
+			.header_info .extend_btn span {
+				font-size: 13px;
+			}
+
+			.header_info .extend_btn a {
+				font-size: 13px;
+			}
+			
+		</style>
+		
+		<style>
+			#waitPage{
+				position:fixed;
+				width:100%;
+				height:100%;
+				z-index:9999;
+				top:0;
+				left:0;
+			}
+        </style>
+		<script>
+			var clientIp = "211.227.11.242";
+
+			$(document).ready(function(){
+				$("#waitPage").load("/odr/assets/tracer/wait_default.html");
+				if(clientIp != "127.0.0.1") {
+					checkInAPI();
+				}
+			});
+		
+			function showRealPage() {
+				$("#waitPage").css("display","none");
+			}
+			
+			function showWaitPage(type) {
+				$("#waitPage").css("display","block");
+				$("#isWaitPage").css("display","none");
+				$("#isRejectPage").css("display","none");
+				$("isNotUse").css("display","none");
+				
+				if ( type == 'W' ) {
+					$("#isWaitPage").css("display","block");
+				} else if ( type == 'NE' ) {
+					$("#isNotUse").css("display","block");
+				} else if ( type == 'R' ) {
+					$("#isRejectPage").css("display","block");
+				}
+			}
+		
+			function checkInAPI() {
+				var host="www.kca.go.kr";
+				var port="80";
+				var pageUrl="www.kca.go.kr/odr";
+				var ip = clientIp;
+				var loginId = clientIp;
+
+				callTracerApiInput(host, ip, loginId, port, pageUrl, this);
+			}
+			
+			function checkOutAPI() {
+				var host="www.kca.go.kr";
+				var port="80";
+				var pageUrl="www.kca.go.kr/odr";
+				var ip = clientIp;
+				var loginId = clientIp;
+
+				callTracerApiOutput(host, ip, loginId, port, pageUrl, this);
+			}
+
+			function callBackTracer() {
+
+			}
+		</script>		
+		
+		<header>
+			<div id="waitPage" style="display:none"></div>
+			<div class="header_bar">
+				<div class="container header_bar_in">
+					
+					
+						<div class="header_link">
+							<a href="/odr/op.do">온라인협력사</a>
+							<a href="/odr/biz.do">사업자</a>
+							<a href="/odr/cmit.do">조정위원</a>
+							
+						</div>
+					
+				</div>
+			</div>
+			<div class="gnb_area">
+				<div class="container gnb_area_in">
+					<h1 class="logo">
+						<a href="/odr/">
+							<img src="/odr/assets/images/logo.png?1791697168495" alt="한국소비자원" />
+						</a>
+					</h1>
+					<nav class="gnb">
+						<ul>
+							
+								<li class="depth_1_list" data-menu="data-menu1">
+									<a href="#" onclick="return false;">나의사건</a>
+									<div class="depth_2_wrap">
+										<!-- pc 서브메뉴, 위 1차메뉴 data-menu 속성값을 아래 div id와 매칭해서 표시 -->
+										<div class="menu_list" id="data-menu1" style="user-select: auto">
+											<div class="depth_2_titel">
+												<h2>나의사건</h2>
+											</div>
+											<div class="depth_2_menu_box">
+												<ul class="depth_2_menu">
+													<li class="depth_2_list">
+														<a href="/odr/cm/me/meIcdt.do">나의사건조회</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</li>
+							
+							<li class="depth_1_list" data-menu="data-menu2">
+								<a href="#" onclick="return false;">피해구제</a>
+								<div class="depth_2_wrap">
+									<!-- pc 서브메뉴, 위 1차메뉴 data-menu 속성값을 아래 div id와 매칭해서 표시 -->
+									<div class="menu_list" id="data-menu2" style="user-select: auto">
+										<div class="depth_2_titel">
+											<h2>피해구제</h2>
+										</div>
+										<div class="depth_2_menu_box">
+											<ul class="depth_2_menu">
+												<li class="depth_2_list">
+													<a href="/odr/pg/ma/pgProcssInfo.do">피해구제안내</a>
+													<ul class="depth_3_menu">
+														<li class="depth_3_list">
+															<a href="/odr/pg/ma/pgProcssInfo.do">피해구제 절차 안내</a>
+														</li>
+														<li class="depth_3_list">
+															<a href="/odr/pg/ma/pgProcssInfo1.do">피해구제 요건 및 양식</a>
+														</li>
+														<li class="depth_3_list">
+															<a href="/odr/pg/ma/pgProcssInfo2.do">피해구제 접수방법</a>
+														</li>
+														<li class="depth_3_list">
+															<a href="/odr/pg/ma/pgProcssInfo3.do">섬유·신발제품 심의안내</a>
+														</li>
+														<li class="depth_3_list">
+															<a href="/odr/pg/ma/pgProofContents.do">내용증명 안내 및 작성</a>
+														</li>
+													</ul>
+												</li>
+												<li class="depth_2_list">
+													<a href="/odr/pg/ma/cnsutInfo.do">상담신청</a>
+													<ul class="depth_3_menu">
+														<li class="depth_3_list">
+															<a href="/odr/pg/ma/cnsutInfo.do">소비자상담 절차 안내</a>
+														</li>
+														<li class="depth_3_list">
+															<a href="/odr/pg/ma/cnsutInfo1.do">상담신청 방법</a>
+														</li>
+													</ul>
+												</li>
+												
+													<li class="depth_2_list">
+														<a href="/odr/pg/pr/aiCnSutList.do">온라인피해구제신청</a>
+													</li>
+												
+											</ul>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="depth_1_list" data-menu="data-menu3">
+								<a href="#" onclick="return false;">분쟁조정</a>
+								<div class="depth_2_wrap">
+									<div class="menu_list" id="data-menu3" style="user-select: auto">
+										<div class="depth_2_titel">
+											<h2>분쟁조정</h2>
+										</div>
+										<div class="depth_2_menu_box">
+											<ul class="depth_2_menu">
+												<li class="depth_2_list">
+													<a href="/odr/bj/ma/bjInfo.do">분쟁조정안내</a>
+												</li>
+												<li class="depth_2_list">
+													<a href="/odr/bj/br/bjGrpIncidentInfo.do">집단분쟁조정</a>
+													<ul class="depth_3_menu">
+														<li class="depth_3_list">
+															<a href="/odr/bj/br/bjGrpIncidentInfo.do">집단분쟁조정 절차안내</a>
+														</li>
+														<li class="depth_3_list" >
+															<a href="/odr/bj/br/bjGrpIncidentInfo1.do">집단분쟁조정 신청</a>
+														</li>
+														<li class="depth_3_list">
+															<a href="/odr/bj/br/bjGrpIncidentList.do">집단분쟁조정 참가신청</a>
+														</li>
+													</ul>
+												</li>
+												<li class="depth_2_list">
+													<a href="/odr/bj/ma/lwstSport.do">소송지원</a>
+													<ul class="depth_3_menu">
+														<li class="depth_3_list">
+															<a href="/odr/bj/ma/lwstSport.do">소송지원안내</a>
+														</li>
+														
+															<li class="depth_3_list">
+																<a href="/odr/bj/br/selectMyBjList.do">일반사건신청</a>
+															</li>
+															<li class="depth_3_list">
+																<a href="/odr/bj/br/findIncident.do">집단사건신청</a>
+															</li>
+														
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="depth_1_list" data-menu="data-menu4">
+								<a href="#" onclick="return false;">피해예방·사례정보</a>
+								<div class="depth_2_wrap">
+									<div class="menu_list" id="data-menu4" style="user-select: auto">
+										<div class="depth_2_titel">
+											<h2>피해예방·사례정보</h2>
+										</div>
+										<div class="depth_2_menu_box">
+											<ul class="depth_2_menu">
+												<li class="depth_2_list">
+													<a href="/odr/cm/in/rsltnCrtral.do">소비자분쟁해결기준</a>
+												</li>
+												<li class="depth_2_list">
+													<a href="/odr/cm/in/exmplPgItem.do">피해구제사례</a>
+													<ul class="depth_3_menu">
+														<li class="depth_3_list">
+															<a href="/odr/cm/in/exmplPgItem.do">품목별 피해구제사례</a>
+														</li>
+														<li class="depth_3_list">
+															<a href="/odr/cm/in/exmplPgFiber.do">섬유제품 심의 사례</a>
+														</li>
+														<li class="depth_3_list">
+															<a href="/odr/cm/in/pgExmplBook.do">피해구제 사례집</a>
+														</li>
+													</ul>
+												</li>
+												<li class="depth_2_list">
+													<a href="/odr/cm/in/exmplBjItem.do">분쟁조정결정사례</a>
+													<ul class="depth_3_menu">
+														<li class="depth_3_list">
+															<a href="/odr/cm/in/exmplBjItem.do">품목별 분쟁조정결정사례</a>
+														</li>
+														<li class="depth_3_list">
+															<a href="/odr/cm/in/bjCaseBook.do">분쟁조정 사례집</a>
+														</li>
+														<li class="depth_3_list">
+															<a href="https://www.kca.go.kr/brochure/dspreExmpl/index.html" title="분쟁조정 사례집 e-book 새창열림" target="dspreExmpl">분쟁조정 사례집 e-book</a>
+														</li>
+														
+													</ul>
+												</li>
+												<li class="depth_2_list">
+													<a href="/odr/cm/in/dmgePrvnInfo.do">피해예방주의보</a>
+													<ul class="depth_3_menu">
+														<li class="depth_3_list">
+															<a href="/odr/cm/in/dmgePrvnInfo.do">피해예방주의보</a>
+														</li>
+														<li class="depth_3_list">
+															<a href="/odr/cm/in/youtubeList.do">동영상자료</a>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="depth_1_list" data-menu="data-menu5">
+								<a href="#" onclick="return false;">알림소식</a>
+								<div class="depth_2_wrap">
+									<div class="menu_list" id="data-menu5" style="user-select: auto">
+										<div class="depth_2_titel">
+											<h2>알림소식</h2>
+										</div>
+										<div class="depth_2_menu_box">
+											<ul class="depth_2_menu">
+												<li class="depth_2_list">
+													<a href="/odr/cm/cm/notice.do">공지사항</a>
+												</li>
+												<li class="depth_2_list">
+													<a href="/odr/cm/cm/news.do">보도자료</a>
+												</li>
+												<li class="depth_2_list">
+													<a href="/odr/cm/cm/faq.do">자주묻는질문</a>
+													<!-- <a href="#" onclick="gotoPage('/cm/cm/faq')">자주묻는질문</a> -->
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</li>
+							
+						</ul>
+					</nav>
+					<div class="gnb_btn">
+						<a href="#" class="search_btn" data-menu="data-menu-search">
+							<img src="/odr/assets/images/search.png" alt="검색" />
+						</a>
+						<a href="#" class="menu_btn menu_btn_pc" data-menu="data-menu-all">
+							<span></span>
+							<span></span>
+							<span></span>
+						</a>
+						<a href="#" class="menu_btn menu_btn_m" data-menu="data-menu-all">
+							<span></span>
+							<span></span>
+							<span></span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="depth_2_wrap">
+				<div class="menu_list menu_list_all" id="data-menu-all" style="user-select: auto; padding-top: 40px">
+					<!--<div class="depth_2_titel">
+						<h2>SITEMEP</h2>
+					</div>-->
+					<div class="top_all_nav_box">
+						<ul class="top_all_nav_menu">
+							
+								<li class="top_all_nav_list">
+									<a>나의사건</a>
+									<ul class="depth_all_nav_menu">
+										<li class="depth_all_nav_list">
+											<a href="/odr/cm/me/meIcdt.do">나의사건조회</a>
+										</li>
+									</ul>
+								</li>
+							
+							<li class="top_all_nav_list">
+								<a>피해구제</a>
+								<ul class="depth_all_nav_menu">
+									<li class="depth_all_nav_list">
+										<a href="/odr/pg/ma/pgProcssInfo.do">피해구제안내</a>
+										<ul class="depth_2_all_nav_menu">
+											<li class="depth_2_all_nav_list">
+												<a href="/odr/pg/ma/pgProcssInfo.do">- 피해구제 절차 안내</a>
+											</li>
+											<li class="depth_2_all_nav_list">
+												<a href="/odr/pg/ma/pgProcssInfo1.do">- 피해구제 요건 및 양식</a>
+											</li>
+											<li class="depth_2_all_nav_list">
+												<a href="/odr/pg/ma/pgProcssInfo2.do">- 피해구제 접수방법</a>
+											</li>
+											<li class="depth_2_all_nav_list">
+												<a href="/odr/pg/ma/pgProcssInfo3.do">- 섬유·신발제품 심의안내</a>
+											</li>
+											<li class="depth_2_all_nav_list">
+												<a href="/odr/pg/ma/pgProofContents.do">- 내용증명 안내 및 작성</a>
+											</li>
+										</ul>
+									</li>
+									<li class="depth_all_nav_list">
+										<a href="/odr/pg/ma/cnsutInfo.do">상담신청</a>
+										<ul class="depth_2_all_nav_menu">
+											<li class="depth_2_all_nav_list">
+												<a href="/odr/pg/ma/cnsutInfo.do">- 소비자상담 절차 안내</a>
+											</li>
+											<li class="depth_2_all_nav_list">
+												<a href="/odr/pg/ma/cnsutInfo1.do">- 상담신청 방법</a>
+											</li>
+										</ul>
+									</li>
+									
+										<li class="depth_all_nav_list">
+											<a href="/odr/pg/pr/aiCnSutList.do">온라인피해구제신청</a>
+										</li>
+									
+								</ul>
+							</li>
+							<li class="top_all_nav_list">
+								<a>분쟁조정</a>
+								<ul class="depth_all_nav_menu">
+									<li class="depth_all_nav_list">
+										<a href="/odr/bj/ma/bjInfo.do">분쟁조정안내</a>
+									</li>
+									<li class="depth_all_nav_list">
+										<a href="/odr/bj/br/bjGrpIncidentInfo.do">집단분쟁조정</a>
+										<ul class="depth_2_all_nav_menu">
+											<li class="depth_2_all_nav_list">
+												<a href="/odr/bj/br/bjGrpIncidentInfo.do">- 집단분쟁조정 절차안내</a>
+											</li>
+											<li class="depth_2_all_nav_list">
+												<a href="/odr/bj/br/bjGrpIncidentInfo1.do">- 집단분쟁조정 신청</a>
+											</li>
+											<li class="depth_2_all_nav_list">
+												<a href="/odr/bj/br/bjGrpIncidentList.do">- 집단분쟁조정 참가신청</a>
+											</li>
+										</ul>
+									</li>
+									<li class="depth_all_nav_list">
+										<a href="/odr/bj/ma/lwstSport.do">소송지원</a>
+										<ul class="depth_2_all_nav_menu">
+											<li class="depth_2_all_nav_list">
+												<a href="/odr/bj/ma/lwstSport.do">- 소송지원안내</a>
+											</li>
+											<li class="depth_2_all_nav_list">
+												<a href="/odr/bj/br/selectMyBjList.do">- 일반사건신청</a>
+											</li>
+											<li class="depth_2_all_nav_list">
+												<a href="/odr/bj/br/findIncident.do">- 집단사건신청</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="top_all_nav_list">
+								<a>피해예방·사례정보</a>
+								<ul class="depth_all_nav_menu">
+									<li class="depth_all_nav_list">
+										<a href="/odr/cm/in/rsltnCrtral.do">소비자분쟁해결기준</a>
+									</li>
+									<li class="depth_all_nav_list">
+										<a href="/odr/cm/in/exmplPgItem.do">피해구제사례</a>
+										<ul class="depth_2_all_nav_menu">
+											<li class="depth_2_all_nav_list">
+												<a href="/odr/cm/in/exmplPgItem.do">- 품목별 피해구제사례</a>
+											</li>
+											<li class="depth_2_all_nav_list">
+												<a href="/odr/cm/in/exmplPgFiber.do">- 섬유제품심의사례</a>
+											</li>
+											<li class="depth_2_all_nav_list">
+												<a href="/odr/cm/in/pgExmplBook.do">- 피해구제사례집</a>
+											</li>
+										</ul>
+									</li>
+									<li class="depth_all_nav_list">
+										<a href="/odr/cm/in/exmplBjItem.do">분쟁조정결정사례</a>
+										<ul class="depth_2_all_nav_menu">
+											<li class="depth_2_all_nav_list">
+												<a href="/odr/cm/in/exmplBjItem.do">- 품목별 분쟁조정결정사례</a>
+											</li>
+											<li class="depth_2_all_nav_list">
+												<a href="/odr/cm/in/bjCaseBook.do">- 분쟁조정사례집</a>
+											</li>
+											<li class="depth_2_all_nav_list">
+												<a href="https://www.kca.go.kr/brochure/dspreExmpl/index.html" title="분쟁조정 사례집 e-book 새창열림" target="dspreExmpl">- 분쟁조정사례집 e-book</a>
+											</li>
+											
+										</ul>
+									</li>
+									<li class="depth_all_nav_list">
+										<a href="/odr/cm/in/dmgePrvnInfo.do">피해예방주의보</a>
+										<ul class="depth_2_all_nav_menu">
+											<li class="depth_2_all_nav_list">
+												<a href="/odr/cm/in/dmgePrvnInfo.do">- 피해예방주의보</a>
+											</li>
+											<li class="depth_2_all_nav_list">
+												<a href="/odr/cm/in/youtubeList.do">- 동영상자료</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="top_all_nav_list">
+								<a>알림소식</a>
+								<ul class="depth_all_nav_menu">
+									<li class="depth_all_nav_list">
+										<a href="/odr/cm/cm/notice.do">공지사항</a>
+									</li>
+									<li class="depth_all_nav_list">
+										<a href="/odr/cm/cm/news.do">보도자료</a>
+									</li>
+									<li class="depth_all_nav_list">
+										<a href="/odr/cm/cm/faq.do">자주묻는질문</a>
+									</li>
+								</ul>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="t_common_bg2" style="user-select: auto; display: none"></div>
+
+			<div class="total_search" id="totalSearch" style="display: none">
+				<div class="inner">
+					<h3>통합검색</h3>
+					<div class="search_bar cmm_srch">
+						<!-- <label for="totSearchValue">통합검색</label> -->
+						<div class="bar">
+							<form id="totalSearchForm" name="totalSearchForm">
+								<div>
+									<input type="text" id="totalSearchKeyword" name="totalSearchKeyword" title="통합검색 검색어 입력" value="" placeholder="검색어를 입력하세요." maxlength="100" autocomplete="off"/>
+									<div id="auto_comp_div" class="auto_comp">
+										<ul id="auto_comp_ul">
+										</ul>
+									</div>
+								</div>
+								<!-- <button onclick="fn_totalSearch()">검색</button> -->
+							</form>
+						</div>
+						<button type="button" class="btn_default btn_ico dark_gray search" onclick="fn_totalSearch()">검색하기</button>
+					</div>
+
+					<div class="close_btn">
+						<button type="button" class="btn_type search_close" onclick="fn_HideTotalSearchBar()"></button>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!-- 모바일 메뉴 시작 =============================================================================================================================== -->
+		<div class="t_common_bg" style="user-select: auto; display: none"></div>
+		<div class="t_right_menu" style="user-select: auto">
+			<!-- 모바일 메뉴 닫기, 이미지 적용하기 -->
+			<a class="close" style="user-select: auto; display: none">
+				<img src="/odr/assets/images/m_menu_close.png" alt="메뉴 닫기" style="user-select: auto" />
+			</a>
+
+			<!-- 모바일 메뉴 상단, 사용하지않을경우 해당 div 삭제 -->
+			<div class="top" style="user-select: auto; padding: 15px 0 10px 0 !important">
+				<div class="m_menu_logo_box">
+					<a href="/odr/" title="한국소비자원모바일" class="m_menu_logo" style="user-select: auto">
+						<img src="/odr/assets/images/flogo.png" alt="한국소비자원" />
+					</a>
+				</div>
+				<!-- <div class="click_area" style="user-select: auto">
+					<a title="로그인 페이지 바로가기" class="info" style="user-select: auto"> 로그인 </a>
+				</div> -->
+			</div>
+
+			<!-- 모바일 메뉴-->
+			<div class="toggle_tab" style="user-select: auto; margin-top: 73px !important">
+				<ul class="clearfix" style="user-select: auto">
+					<!-- li가 메뉴 묶음, li안에 2차,3차메뉴 표시 -->
+					
+						<li style="user-select: auto">
+							<!-- 1차메뉴-->
+							<a href="/odr/cm/me/meIcdt.do" style="user-select: auto" class="arrow_none">나의사건</a>
+						</li>
+					
+
+					<li style="user-select: auto">
+						<!-- 1차메뉴-->
+						<a style="user-select: auto">피해구제</a>
+
+						<ul class="clearfix" style="user-select: auto">
+							<!-- 2차메뉴-->
+							<li style="user-select: auto">
+								<a href="/odr/pg/ma/pgProcssInfo.do" style="user-select: auto" class="arrow_none">피해구제안내</a>
+								<ul class="clearfix" style="user-select: auto">
+									<!-- 3차메뉴-->
+									<li class="quick_go" style="user-select: auto">
+										<a href="/odr/pg/ma/pgProcssInfo.do" title="피해구제 절차 안내" style="user-select: auto">피해구제 절차 안내</a>
+									</li>
+									<li class="quick_go" style="user-select: auto">
+										<a href="/odr/pg/ma/pgProcssInfo1.do" title="피해구제 요건 및 양식" style="user-select: auto">피해구제 요건 및 양식</a>
+									</li>
+									<li class="quick_go" style="user-select: auto">
+										<a href="/odr/pg/ma/pgProcssInfo2.do" title="피해구제 접수방법" style="user-select: auto">피해구제 접수방법</a>
+									</li>
+									<li class="quick_go" style="user-select: auto">
+										<a href="/odr/pg/ma/pgProcssInfo3.do" title="섬유·신발제품 심의안내" style="user-select: auto">섬유·신발제품 심의안내</a>
+									</li>
+									<li class="quick_go" style="user-select: auto">
+										<a href="/odr/pg/ma/pgProofContents.do" title="내용증명 안내 및 작성" style="user-select: auto">내용증명 안내 및 작성</a>
+									</li>
+								</ul>
+							</li>
+							<li style="user-select: auto">
+								<a href="/odr/pg/ma/cnsutInfo.do" style="user-select: auto" class="arrow_none">상담신청</a>
+								<ul class="clearfix" style="user-select: auto">
+									<!-- 3차메뉴-->
+									<li class="quick_go" style="user-select: auto">
+										<a href="/odr/pg/ma/cnsutInfo.do" title="소비자상담 절차 안내" style="user-select: auto">소비자상담 절차 안내</a>
+									</li>
+									<li class="quick_go" style="user-select: auto">
+										<a href="/odr/pg/ma/cnsutInfo1.do" title="상담신청 방법" style="user-select: auto">상담신청 방법</a>
+									</li>
+								</ul>
+							</li>
+							
+								<li style="user-select: auto">
+									<a href="/odr/pg/pr/aiCnSutList.do" style="user-select: auto" class="arrow_none">온라인피해구제신청</a>
+								</li>
+							
+						</ul>
+					</li>
+					<li style="user-select: auto">
+						<!-- 1차메뉴-->
+						<a style="user-select: auto">분쟁조정</a>
+
+						<ul class="clearfix" style="user-select: auto">
+							<!-- 2차메뉴-->
+							<li style="user-select: auto">
+								<a href="/odr/bj/ma/bjInfo.do" style="user-select: auto" class="arrow_none">분쟁조정안내</a>
+							</li>
+							<li style="user-select: auto">
+								<a href="/odr/bj/br/bjGrpIncidentInfo.do" style="user-select: auto" class="arrow_none">집단분쟁조정</a>
+								<ul class="clearfix" style="user-select: auto">
+									<!-- 3차메뉴-->
+									<li class="quick_go" style="user-select: auto">
+										<a href="/odr/bj/br/bjGrpIncidentInfo.do" title="집단분쟁조정 절차 안내" style="user-select: auto">집단분쟁조정 절차 안내</a>
+									</li>
+									<li class="quick_go" style="user-select: auto;" >
+										<a href="/odr/bj/br/bjGrpIncidentInfo1.do" title="집단분쟁조정 신청" style="user-select: auto">집단분쟁조정 신청</a>
+									</li>
+									<li class="quick_go" style="user-select: auto">
+										<a href="/odr/bj/br/bjGrpIncidentList.do" title="피해구제 접수방법" style="user-select: auto">집단분쟁조정 참가신청</a>
+									</li>
+								</ul>
+							</li>
+							<li style="user-select: auto">
+								<a href="/odr/bj/ma/lwstSport.do" style="user-select: auto">소송지원</a>
+								<ul class="clearfix" style="user-select: auto">
+									<!-- 3차메뉴-->
+									<li class="quick_go" style="user-select: auto">
+										<a href="/odr/bj/ma/lwstSport.do" style="user-select: auto">소송지원안내</a>
+									</li>
+									
+										<li class="quick_go" style="user-select: auto">
+											<a style="user-select: auto" href="/odr/bj/br/selectMyBjList.do">일반사건신청</a>
+										</li>
+										<li class="quick_go" style="user-select: auto">
+											<a style="user-select: auto" href="/odr/bj/br/findIncident.do">집단사건신청</a>
+										</li>
+									
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li style="user-select: auto">
+						<!-- 1차메뉴-->
+						<a style="user-select: auto">피해예방·사례정보</a>
+
+						<ul class="clearfix" style="user-select: auto">
+							<!-- 2차메뉴-->
+							<li style="user-select: auto">
+								<a href="/odr/cm/in/rsltnCrtral.do" style="user-select: auto" class="arrow_none">소비자분쟁해결기준</a>
+							</li>
+							<li style="user-select: auto">
+								<a style="user-select: auto">피해구제사례</a>
+								<ul class="clearfix" style="user-select: auto">
+									<!-- 3차메뉴-->
+									<li class="quick_go" style="user-select: auto">
+										<a href="/odr/cm/in/exmplPgItem.do" title="품목별피해구제사례" style="user-select: auto">품목별 피해구제사례</a>
+									</li>
+									<li class="quick_go" style="user-select: auto">
+										<a href="/odr/cm/in/exmplPgFiber.do" title="섬유제품심의사례" style="user-select: auto">섬유제품심의사례</a>
+									</li>
+									<li class="quick_go" style="user-select: auto">
+										<a href="/odr/cm/in/pgExmplBook.do" title="피해구제사례집" style="user-select: auto">피해구제사례집</a>
+									</li>
+								</ul>
+							</li>
+							<li style="user-select: auto">
+								<a style="user-select: auto">분쟁조정결정사례</a>
+								<ul class="clearfix" style="user-select: auto">
+									<!-- 3차메뉴-->
+									<li class="quick_go" style="user-select: auto">
+										<a href="/odr/cm/in/exmplBjItem.do" title="품목별분쟁조정결정사례" style="user-select: auto">품목별 분쟁조정결정사례</a>
+									</li>
+									<li class="quick_go" style="user-select: auto">
+										<a href="/odr/cm/in/bjCaseBook.do" title="분쟁조정사례집" style="user-select: auto">분쟁조정사례집</a>
+									</li>
+									<li class="quick_go" style="user-select: auto">
+										<a href="https://www.kca.go.kr/brochure/dspreExmpl/index.html" title="분쟁조정사례집 새창열림" style="user-select: auto" target="dspreExmpl">분쟁조정사례집 e-book</a>
+									</li>
+									
+								</ul>
+							</li>
+							<li style="user-select: auto">
+								<a style="user-select: auto">피해예방주의보</a>
+								<ul class="clearfix" style="user-select: auto">
+									<!-- 3차메뉴-->
+									<li class="quick_go" style="user-select: auto">
+										<a href="/odr/cm/in/dmgePrvnInfo.do" title="피해예방" style="user-select: auto">피해예방주의보</a>
+									</li>
+									<li class="quick_go" style="user-select: auto">
+										<a href="/odr/cm/in/youtubeList.do" style="user-select: auto">동영상자료</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li style="user-select: auto">
+						<!-- 1차메뉴-->
+						<a style="user-select: auto">알림소식</a>
+
+						<ul class="clearfix" style="user-select: auto">
+							<!-- 2차메뉴-->
+							<li style="user-select: auto">
+								<a href="/odr/cm/cm/notice.do" style="user-select: auto" class="arrow_none">공지사항</a>
+							</li>
+							<li style="user-select: auto">
+								<a href="/odr/cm/cm/news.do" style="user-select: auto" class="arrow_none">보도자료</a>
+							</li>
+							<li style="user-select: auto">
+								<a href="/odr/cm/cm/faq.do" style="user-select: auto" class="arrow_none">자주묻는질문</a>
+							</li>
+						</ul>
+					</li>
+
+					
+				</ul>
+			</div>
+		</div>
+		<!-- 모바일 메뉴 종료 =============================================================================================================================== -->
+
+		<!-- <form name="messageForm" id="messageForm">
+			<input type="hidden" id="loginMsg" name="loginMsg" value="${loginMsg}" />
+			<input type="hidden" id="loginRst" name="loginRst" value="${loginRst}" />
+		</form> -->
+		<!-- <form name="resultDiv" id="resultDiv">
+			<input type="hidden" id="resultMsg" name="resultMsg" th:value="${resultMsg}" />
+		</form> -->
+		<script>
+			var fileserver = "https:\/\/www.kca.go.kr\/bft";
+
+			$(function () {
+				//pc메뉴 스크립트 시작
+				$(".gnb li").on("mouseover", function () {
+					var activeMenu = $(this).attr("data-menu");
+					$(".gnb, .search_btn").addClass("active");
+					$(".gnb li, .menu_btn_pc, .search_btn").removeClass("active");
+					$(".depth_2_wrap .menu_list").removeClass("active");
+					$("#totalSearch").hide();
+					$(this).addClass("active");
+					$("#" + activeMenu).addClass("active");
+					$(".gnb li, .menu_btn_pc, .search_btn").removeClass("remove_active");
+					$(".t_common_bg2").css("display","none");
+				});
+
+				$(".gnb li").focusin(function () {
+					var activeMenu = $(this).attr("data-menu");
+					$(".gnb, .search_btn").addClass("active");
+					$(".gnb li, .menu_btn_pc, .search_btn").removeClass("active");
+					$(".depth_2_wrap .menu_list").removeClass("active");
+					$("#totalSearch").hide();
+					$(this).addClass("active");
+					$("#" + activeMenu).addClass("active");
+					$(".gnb li, .menu_btn_pc, .search_btn").removeClass("remove_active");
+					$(".t_common_bg2").css("display","none");
+				});
+
+				$(".gnb, .depth_2_wrap").on("mouseover", function () {
+					$("header").addClass("active");
+					$(".depth_2_wrap").addClass("active");
+					$(".depth_2_wrap").stop().fadeIn(200);
+					//$(".depth_2_wrap").stop().show();
+					$(".gnb, .search_btn").addClass("active");
+
+					$(".gnb li, .menu_btn_pc, .search_btn").removeClass("remove_active");
+				});
+
+				$(".gnb, .depth_2_wrap").focusin(function () {
+					$("header").addClass("active");
+					$(".depth_2_wrap").addClass("active");
+					$(".depth_2_wrap").stop().fadeIn(200);
+					//$(".depth_2_wrap").stop().show();
+					$(".gnb, .search_btn").addClass("active");
+
+					$(".gnb li, .menu_btn_pc, .search_btn").removeClass("remove_active");
+				});
+
+				$("header").on("mouseleave", function () {
+					$("header").removeClass("active");
+					$(".gnb, .menu_btn_pc, .search_btn").removeClass("active");
+					$(".depth_2_wrap").removeClass("active");
+					//$(".depth_2_wrap").fadeOut(600);
+					$(".depth_2_wrap").hide();
+					//$(".depth2_bg").stop().fadeOut(200);
+					$(".gnb li, .menu_btn_pc, .search_btn").addClass("remove_active");
+					$(".gnb li, .menu_btn_pc, .search_btn").removeClass("active");
+				});
+
+				$("header").focusout(function () {
+					$("header").removeClass("active");
+					$(".gnb, .menu_btn_pc, .search_btn").removeClass("active");
+					$(".depth_2_wrap").removeClass("active");
+					// $("#totalSearch").hide();
+					//$(".depth_2_wrap").fadeOut(600);
+					// $(".depth_2_wrap").hide();
+					//$(".depth2_bg").stop().fadeOut(200);
+					$(".gnb li, .menu_btn_pc, .search_btn").addClass("remove_active");
+					$(".gnb li, .menu_btn_pc, .search_btn").removeClass("active");
+					// $(".t_common_bg2").css("display","none");
+				});
+
+				$(".depth_2_wrap").on("mouseleave", function(){
+					$("header").removeClass("active");
+					$(".gnb, .menu_btn_pc, .search_btn").removeClass("active");
+					$(".depth_2_wrap").removeClass("active");
+					$(".depth_2_wrap").hide();
+					$(".gnb li, .menu_btn_pc, .search_btn").addClass("remove_active");
+					$(".gnb li, .menu_btn_pc, .search_btn").removeClass("active");
+					$(".t_common_bg2").css("display","none");
+				});
+
+				$(".menu_btn_pc").on("click", function (e) {
+					if ($(this).attr("class") == "menu_btn menu_btn_pc active") {
+						$("header").removeClass("active");
+						$(".gnb, .menu_btn_pc, .search_btn").removeClass("active");
+						$(".depth_2_wrap").removeClass("active");
+						//$(".depth_2_wrap").fadeOut(600);
+						$(".depth_2_wrap").hide();
+						//$(".depth2_bg").stop().fadeOut(200);
+						$(".gnb li, .menu_btn_pc, .search_btn").addClass("remove_active");
+						$(".gnb li, .menu_btn_pc, .search_btn").removeClass("active");
+						$(".t_common_bg2").css("display","none");
+					} else {
+						var activeMenu = $(this).attr("data-menu");
+						$(".gnb, .menu_btn_pc, .search_btn").addClass("active");
+						$(".gnb li, .menu_btn_pc, .search_btn").removeClass("active");
+						$(".depth_2_wrap .menu_list").removeClass("active");
+						$(this).addClass("active");
+						$('#' + activeMenu).addClass("active");
+						$(".gnb li, .menu_btn_pc, .search_btn").removeClass("remove_active");
+						$("#totalSearch").hide();
+						$("header").addClass("active");
+						$(".depth_2_wrap").addClass("active");
+						$(".depth_2_wrap").stop().fadeIn(200);
+						//$(".depth_2_wrap").stop().show();
+						$(".gnb, .search_btn").addClass("active");
+
+						$(".gnb li, .search_btn").removeClass("remove_active");
+						$(".t_common_bg2").css("display","block");
+					}
+				});
+				//pc메뉴 스크립트 종료
+
+				//mobile메뉴 스크립트 시작
+
+				$(".menu_btn_m").on("click", function (e) {
+					e.preventDefault();
+
+					$(".t_common_bg").fadeIn(200, function () {
+						$(".t_right_menu").addClass("active");
+						$(".t_right_menu .close").fadeIn(500);
+					});
+
+					return false;
+				});
+
+				$(".t_common_bg, .t_right_menu .close").on("click", function () {
+					$(".t_right_menu").removeClass("active");
+					$(".t_right_menu .close").hide();
+
+					setTimeout(function () {
+						$(".t_common_bg").fadeOut(200);
+					}, 300);
+				});
+
+				// toggle - 1차
+				$(".toggle_tab > ul:first-child > li > a").on("click", function (e) {
+					if ($(this).siblings("ul").length) {
+						e.preventDefault();
+					} else {
+						$(this).addClass("link_direct");
+					}
+
+					if ($(this).hasClass("active_toggle")) {
+						$(this).removeClass("active_toggle");
+						$(this).siblings("ul").stop().slideUp();
+						$(this).siblings("ul").removeClass("active_toggle");
+					} else {
+						$(this).parent().siblings("li").find("ul").slideUp();
+						$(this).parent().siblings("li").children("a").removeClass("active_toggle");
+						$(this).addClass("active_toggle");
+						$(this).siblings("ul").addClass("active_toggle");
+						$(this).siblings("ul").stop().slideDown();
+					}
+				});
+
+				// toggle - 2차
+				$(".toggle_tab > ul:first-child > li > ul > li > a").on("click", function (e) {
+					if ($(this).siblings("ul").html() != undefined) {
+						e.preventDefault();
+						$(this).siblings("ul").slideDown().addClass("active");
+
+						if ($(this).hasClass("active")) {
+							$(this).removeClass("active");
+							$(this).siblings("ul").slideUp();
+						} else {
+							$(this).parent().siblings("li").find("ul").slideUp();
+							$(this).parent().siblings("li").children("a").removeClass("active");
+							$(this).addClass("active");
+							$(this).siblings("ul").slideDown();
+						}
+					}
+				});
+				//mobile메뉴 스크립트 종료
+
+				$(".search_btn").on("click", function (e) {
+					if ($("#totalSearch").css("display") == "block") {
+						$("header").removeClass("active");
+						$(".gnb, .menu_btn_pc, .search_btn").removeClass("active");
+						$(".depth_2_wrap").removeClass("active");
+						$("#totalSearch").hide();
+						//$(".depth_2_wrap").fadeOut(600);
+						$(".depth_2_wrap").hide();
+						//$(".depth2_bg").stop().fadeOut(200);
+						$(".gnb li, .menu_btn_pc, .search_btn").addClass("remove_active");
+						$(".gnb li, .menu_btn_pc, .search_btn").removeClass("active");
+						$(".t_common_bg2").css("display","none");
+					} else {
+						$(".gnb, .menu_btn_pc, .search_btn").addClass("active");
+						$(".gnb li, .menu_btn_pc, .search_btn").removeClass("active");
+						$(".depth_2_wrap .menu_list").removeClass("active");
+						$(".gnb li, .menu_btn_pc, .search_btn").removeClass("remove_active");
+						$("header").addClass("active");
+						$(".depth_2_wrap").removeClass("active");
+						//$(".depth_2_wrap").stop().show();
+						$(".gnb").addClass("active");
+						$(".gnb li").removeClass("remove_active");
+						$("#totalSearch").fadeIn(100, function () {
+						})
+						$("#totalSearchKeyword").focus();
+						$(".t_common_bg2").css("display","block");
+					}
+
+				});
+			});
+
+			function fn_totalSearch(searchTxt) {
+				var totalSearchKeyword;
+				if (searchTxt != null && searchTxt != '') {
+					totalSearchKeyword = searchTxt;
+				} else {
+					if (fn_isNullCheck($("#totalSearchKeyword"), "검색어")) return;
+					totalSearchKeyword = $('#totalSearchKeyword').val();
+					$('#totalSearchKeyword').val('');
+				}
+
+				var newForm = document.createElement('form');
+				newForm.method = 'POST'
+				newForm.action = contextPath + '/cm/search.do';
+				newForm.name = 'totalSearchForm';
+
+				var data = document.createElement('input');
+				data.setAttribute("type", 'hidden');
+				data.setAttribute("name", 'searchKeyword');
+				data.setAttribute("value", totalSearchKeyword);
+
+				newForm.appendChild(data);
+				document.body.appendChild(newForm);
+				newForm.submit();
+			}
+			
+			const clickAutoComplete = function(srchKeyword) {
+				fn_totalSearch(srchKeyword);
+				
+			}
+			
+			const getAutoComplete = function(event, inp, divclass) {
+			var data = 'autoComplete='+inp.val();
+			 inp.autocomplete({
+			 	source : function(request, response) {
+			 		$.ajax({
+			 			type:'POST',
+				 		url: contextPath + "/cm/getAutoComplete",
+				 		data: data,
+				 		success: function(result) {
+				 			response(
+				 				$.map(result.result, function(item) {
+				 					return {
+				 						label : item.highlight,
+				 						value : item.word
+				 					
+				 					}
+				 				})
+				 				
+				 			)
+				 		
+				 		}
+			 		});
+			 	},
+			 	select: function(event, ui) {
+				 	clickAutoComplete(ui.item.value);
+				},
+				focus: function(event, ui) {
+					return false;
+		 		},
+				position: { my: 'right top', at : 'right bottom'},
+		 		close: function(event){
+				 			
+				}
+			 }).autocomplete("instance")._renderItem = function(ul, item) {
+			 	return $("<li>").append("<div class='"+divclass+"'><img src='"+contextPath+'/assets/images/search.png\'/>'+item.label+"</div>").appendTo(ul);
+			 
+			 };
+			}
+
+			const isTotalSearchEnterKey = function(event) {
+				
+				if (event.keyCode == 13) {
+					event.preventDefault();
+					fn_totalSearch();
+				}
+			};
+
+			const fn_HideTotalSearchBar = function() {
+				$("#totalSearch").hide();
+				$(".t_common_bg2").css("display","none");
+			}
+
+			$(document).ready(function () {
+
+				$("input[name=totalSearchKeyword]").on("keydown", function (event) {
+					isTotalSearchEnterKey(event);
+				});
+				
+				$("input[name=totalSearchKeyword]").on("keyup", function (event) {
+					var inp = $("input[name=totalSearchKeyword]");
+					var dv = $('#auto_comp_div');
+					var ul = $('#auto_comp_ul');
+					getAutoComplete(event, inp, 'total_search_autocomplete');
+				});
+				
+				
+
+				let session = {"DEV_SERVER":false,"allowFile":"pdf,txt,hwp,hwpx,doc,docx,xls,xlsx,ppt,pptx,png,jpg,jpeg,bmp,asf,avi,mp3,mp4,zip,egg,m4a,rtf,3gp,flv,tif,tiff","CURRENT_URL":"\/pg\/ma\/pgProcssInfo1.do","fileServer":"https:\/\/www.kca.go.kr\/bft","ts":1791697168495};
+
+				if ((session.certVO != null && session.certVO != "") || (session.userSe != null && session.userSe != "")) {
+					let sessionExpireTime = fn_getCookie("sessionExpireTime");
+
+					sessionExpireTime *= 1;
+					let expireTime = new Date(sessionExpireTime);
+
+					i_gRemainSecond = Math.floor((expireTime - new Date()) / 1000);
+					fn_setViewTimer();
+				}
+			});
+
+			window.onload = function () {
+				if(navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1 || navigator.userAgent.indexOf("MSIE") != -1){
+					alert("익스플로러에서는 해당 사이트가 원활하게 작동되지 않습니다.\n 다른 브라우저를 이용해 주시길 바랍니다.");
+				}
+				deviceInfo = checkDeviceType();
+				// console.log(deviceInfo);
+
+				let resultMsg = null;
+
+				if (!fn_isEmpty(resultMsg)) {
+					alert(resultMsg);
+				}
+			}
+		</script>
+	
+			<section id="container">
+	<script>
+		$(document).ready(function () {
+			if (fn_getCookie("layerPopupNotice1") != "Y") {
+				openLayer("#layerPopupNotice1");
+			}
+			//openLayer("#layerPopupNotice");
+			
+			
+			$('.require_col.col1').css('width','10%');
+			$('.require_col.col2').css('width','10%');
+			
+		});
+
+		function closeWin(key) {
+			if ($("#todaycloseyn").prop("checked")) {
+				fn_setCookie("layerPopupNotice" + key, "Y", 1);
+			}
+			$("#layerPopupNotice" + key + "").hide();
+		}
+
+		function selectTab(tabId) {
+			for (let i = 1; i <= 4; i++) {
+				if (i == tabId) {
+					$("#tab0" + tabId).css("display", "block");
+					$("#tabId0" + tabId).addClass("tabon");
+				} else {
+					$("#tab0" + i).css("display", "none");
+					$("#tabId0" + i).removeClass("tabon");
+				}
+			}
+		}
+	</script>
+
+	<!-- content tiltle -->
+	
+	<!-- <div class="tit_h2_wrap">
+			<div class="tit_h2_area">
+				<h2 class="tit_h2" th:text="${pageTitle}"></h2>
+			</div>
+		</div> -->
+	<div class="tit_h2_wrap">
+		<!-- <div class="tit_h2_area">
+				<h2 class="tit_h2" th:text="${pageTitle}"></h2>
+			</div> -->
+		<div class="tit_h2_area add_slogan">
+			<h2 class="tit_h2">피해구제안내</h2>
+			<p class="bcs_subslogan">소비자와 함께 만드는 행복한 세상</p>
+		</div>
+	</div>
+
+
+	<div class="bc_cnb">
+		<div class="bc_cnb_wrp">
+			<ul>
+				<li class="home">
+					<a href="/odr/">
+						<!-- <i class="xi-home"></i> -->
+					</a>
+				</li>
+				<li>
+					<a href="#">피해구제</a>
+					<ul class="clearfix subMul m_action" style="display: none">
+						
+							<li>
+								<a class="dep1_t" href="/odr/cm/me/meIcdt.do">나의사건</a>
+							</li>
+						
+						<li class="on">
+							<a class="dep1_t" href="/odr/pg/ma/pgProcssInfo.do" title="선택됨">피해구제</a>
+						</li>
+						<li>
+							<a class="dep1_t" href="/odr/bj/ma/bjInfo.do">분쟁조정</a>
+						</li>
+						<li>
+							<a class="dep1_t" href="/odr/cm/in/rsltnCrtral.do">피해예방·사례정보</a>
+						</li>
+						<li>
+							<a class="dep1_t" href="/odr/cm/cm/notice.do">알림소식</a>
+						</li>
+						
+					</ul>
+				</li>
+				<li>
+					<a href="#">피해구제안내</a>
+					<ul class="clearfix subMul m_action" style="display: none">
+						<li class="on">
+							<a class="dep1_t" href="/odr/pg/ma/pgProcssInfo.do" title="선택됨">피해구제안내</a>
+						</li>
+						<li>
+							<a class="dep1_t" href="/odr/pg/ma/cnsutInfo.do">상담신청</a>
+						</li>
+						
+							<li>
+								<a class="dep1_t" href="/odr/pg/pr/aiCnSutList.do">온라인피해구제신청</a>
+							</li>
+						
+					</ul>
+				</li>
+				<li>
+					<a href="#">피해구제 요건 및 양식</a>
+					<ul class="clearfix subMul m_action" style="display: none">
+						<li>
+							<a class="dep1_t" href="/odr/pg/ma/pgProcssInfo.do">피해구제 절차 안내</a>
+						</li>
+						<li class="on">
+							<a class="dep1_t" href="/odr/pg/ma/pgProcssInfo1.do" title="선택됨">피해구제 요건 및 양식</a>
+						</li>
+						<li>
+							<a class="dep1_t" href="/odr/pg/ma/pgProcssInfo2.do">피해구제 접수방법</a>
+						</li>
+						<li>
+							<a class="dep1_t" href="/odr/pg/ma/pgProcssInfo3.do">섬유·신발제품 심의안내</a>
+						</li>
+						<li>
+							<a class="dep1_t" href="/odr/pg/ma/pgProofContents.do">내용증명 안내 및 작성</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(".bc_cnb_wrp > ul > li")
+			.not(".home")
+			.find(" > a")
+			.click(function () {
+				if ($(this).parent().hasClass("on")) {
+					$(this).parent().removeClass("on");
+					$(this).siblings("ul").hide();
+				} else {
+					$(".bc_cnb_wrp > ul > li").removeClass("on");
+					$(".bc_cnb_wrp ul ul").hide();
+					$(this).parent().addClass("on");
+					$(this).siblings("ul").show();
+				}
+				return false;
+			});
+		$(".bc_cnb_wrp ul ul")
+			.find("li:last-child a")
+			.on("focusout", function () {
+				$(".bc_cnb_wrp > ul > li").removeClass("on");
+				$(".bc_cnb_wrp ul ul").hide();
+			});
+		$("body").click(function (e) {
+			if (!$(e.target).is(".bc_cnb_wrp > ul > li > a")) {
+				$(".bc_cnb_wrp ul ul").hide();
+				$(".bc_cnb_wrp > ul > li").removeClass("on");
+			}
+		});
+	</script>
+
+	<style>
+		.require_file li .btn_area a{font-size:14px; line-height:25px; padding:5px 22px;}
+		.require_file li .btn_area{font-size:0;margin-top:0px;}
+	</style>
+
+	<!-- //content tiltle -->
+
+	<!-- content -->
+	<div id="content" class="cmm_content pgf_fld cnslt_wrap">
+		<div class="content_in w1350">
+			<div class="content_txt">
+				<h3 class="content_title">피해구제 요건 및 양식</h3>
+				
+	<div class="location_area">
+		
+			<a href="/odr/main"><i class="xi-home"></i></a>
+			
+		
+			
+			
+				
+				<span>피해구제안내</span>
+			
+		
+			
+			
+				<strong class="current">피해구제 요건 및 양식</strong>
+				
+			
+		
+	</div>
+
+			</div>
+			<!-- <div class="cmm_srch_tab tabstyle02">
+				<ul class="tabmenu_mt tabmenu_s02">
+					<li>
+						<a href="#" id="tabId01" onclick="selectTab(1)" class="tabon">절차안내</a>
+					</li>
+					<li>
+						<a href="#" id="tabId02" onclick="selectTab(2)">피해구제 요건 및 양식</a>
+					</li>
+					<li>
+						<a href="#" id="tabId03" onclick="selectTab(3)">피해구제 접수방법</a>
+					</li>
+					<li>
+						<a href="#" id="tabId04" onclick="selectTab(4)">섬유·신발제품 심의안내</a>
+					</li>
+				</ul>
+			</div> -->
+
+			<div class="cnsut_wrp mt50">
+				<h4 class="bcs_tit_st1">피해구제 접수 해당 요건</h4>
+				<div class="cnsut_box">
+					<ul class="step_ul">
+						<li class="step_li">
+							<div class="step_w">
+								<div class="step_txtbx strife_txtbx">
+									<ul class="bc_dotul strife_txt">
+										<li>소비자가 사업자가 제공하는 물품 또는 용역을 사용하거나 이용하는 과정에서 피해가 발생할 경우 피해구제 접수를 할 수 있습니다.</li>
+										<li class="mt20">다만, 아래 사항에 해당될 경우 <span>피해구제 대상에서 제외</span>됩니다.</li>
+										<p class="mt10">- 사업자의 부도 , 폐업 등으로 연락이 불가능하거나 소재파악이 안 되는 경우</p>
+										<p class="mt10">- 신청인(소비자)의 주장을 입증(입증서류 미제출 포함)할 수 없는 경우</p>
+										<p class="mt10">- 영리활동과 관련하여 발생한 분쟁, 임금 등 근로자와 고용인 사이의 분쟁, 개인간 거래 등 소비자와 사업자 사이의
+											분쟁이 아닌 경우</p>
+										<p class="mt10">- 국가 또는 지방자치단체가 제공한 물품 등으로 인하여 발생한 피해인 경우</p>
+										<p class="mt10">- 소비자분쟁조정위원회에 준하는 분쟁조정기구에 피해구제가 신청되어 있거나 피해구제절차를 거친 경우</p>
+										<p class="mt10">- 법원에 소송 진행중인 경우 등</p>
+									</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<style>
+				@media screen and (max-width:768px){
+					.st_sp{font-size:14px}
+				}
+
+			</style>
+			<h4 class="bcs_tit_st1" style="margin-bottom:unset !important;">피해구제 접수 신청서 양식</h4>
+			<div class="mt10" style="margin-bottom: 10px">
+				<i class="xi-info"></i>
+				<strong class="st_sp">일반분야를 제외한 
+					<span class="st_sp" style="color: #ec5d31;">모든 전문분야 피해구제 신청시 ①신청서와 ②각 필수제출 서류 두가지 모두 제출</span>
+					되어야 합니다.(하나라도 제출되지 않을 경우 접수불가능합니다.)
+				</strong>
+			</div>
+			<div class="incd_list_tb opodrtable_contrl">
+				<table class="bcs_table_style_01 tb_txtnum04 require_table">
+					<caption>
+						피해구제 접수 신청서 양식 제공
+					</caption>
+					<colgroup>
+						<col class="require_col col1" />
+						<col class="require_col col2" />
+						<col class="require_col col3" />
+						<col class="require_col col4" />
+						<col class="require_col col5" />
+						<col class="require_col col6" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" colspan="2">피해구제 분야</th>
+							<th scope="col" colspan="2">신청서 양식 및 필수제출서류</th>
+							<th scope="col" >작성 예시</th>
+							<th scope="col" >필독사항</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td colspan="2">일반분야</td>
+							<td><a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041557&bid=00000152&did=1003625146"
+									title="새창" target="_blank" class="f_type_01">HWP<i class="xi-download"></i></a>
+							</td>
+							<td><a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041551&bid=00000152&did=1003625146"
+									title="새창" target="_blank" class="f_type_02">DOC<i
+										class="xi-download"></i></a>
+							</td>
+							<td>
+								<a href="https://www.kca.go.kr/home/synapviewer.do?fno=10048026&bid=00000152&did=1003912527"
+									title="새창" target="_blank" class="f_type_03">견본<i
+										class="xi-external-link"></i></a>
+							</td>
+							<td rowspan="6">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036756&bid=00000152&did=1003419054"
+									title="새창" target="_blank" class="f_type_01">HWP<i class="xi-download"></i></a>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036755&bid=00000152&did=1003419054"
+									title="새창" target="_blank" class="f_type_02 f_type_mt15">DOC<i
+										class="xi-download"></i></a>
+							</td>
+						</tr>
+						<tr>
+							<td rowspan="5">전문분야</td>
+							<td>섬유·신발</td>
+							<td>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041554&bid=00000152&did=1003625146"
+									title="새창" target="_blank" class="f_type_01">HWP<i class="xi-download"></i></a>
+							</td>
+							<td style="border-right: 1px solid #e1e1e1;">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041548&bid=00000152&did=1003625146"
+									title="새창" target="_blank" class="f_type_02">DOC<i class="xi-download"></i></a>
+							</td>
+							<td>
+								<a href="https://www.kca.go.kr/home/synapviewer.do?fno=10048023&bid=00000152&did=1003912527"
+									title="새창" target="_blank" class="f_type_03">견본<i
+										class="xi-external-link"></i></a>
+							</td>
+						</tr>
+						<tr>
+							<td>의료</td>
+							<td>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041555&bid=00000152&did=1003625146"
+									title="새창" target="_blank" class="f_type_01">HWP<i class="xi-download"></i></a>
+							</td>
+							<td style="border-right: 1px solid #e1e1e1;">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041549&bid=00000152&did=1003625146"
+									title="새창" target="_blank" class="f_type_02">DOC<i class="xi-download"></i></a>
+							</td>
+							<td>
+								<a href="https://www.kca.go.kr/home/synapviewer.do?fno=10048024&bid=00000152&did=1003912527"
+									title="새창" target="_blank" class="f_type_03">견본<i
+										class="xi-external-link"></i></a>
+							</td>
+						</tr>
+						<tr>
+							<td>금융</td>
+							<td>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041552&bid=00000152&did=1003625146"
+									title="새창" target="_blank" class="f_type_01">HWP<i class="xi-download"></i></a>
+							</td>
+							<td style="border-right: 1px solid #e1e1e1;">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041546&bid=00000152&did=1003625146"
+									title="새창" target="_blank" class="f_type_02">DOC<i class="xi-download"></i></a>
+							</td>
+							<td>
+								<a href="https://www.kca.go.kr/home/synapviewer.do?fno=10048021&bid=00000152&did=1003912527"
+									title="새창" target="_blank" class="f_type_03">견본<i
+										class="xi-external-link"></i></a>
+							</td>
+						</tr>
+						<tr>
+							<td>보험</td>
+							<td>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041553&bid=00000152&did=1003625146"
+									title="새창" target="_blank" class="f_type_01">HWP<i class="xi-download"></i></a>
+							</td>
+							<td style="border-right: 1px solid #e1e1e1;">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041547&bid=00000152&did=1003625146"
+									title="새창" target="_blank" class="f_type_02">DOC<i class="xi-download"></i></a>
+							</td>
+							<td>
+								<a href="https://www.kca.go.kr/home/synapviewer.do?fno=10048022&bid=00000152&did=1003912527"
+									title="새창" target="_blank" class="f_type_03">견본<i
+										class="xi-external-link"></i></a>
+							</td>
+						</tr>
+						<tr>
+							<td>자동차</td>
+							<td>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041556&bid=00000152&did=1003625146"
+									title="새창" target="_blank" class="f_type_01">HWP<i class="xi-download"></i></a>
+							</td>
+							<td style="border-right: 1px solid #e1e1e1;">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041550&bid=00000152&did=1003625146"
+									title="새창" target="_blank" class="f_type_02">DOC<i class="xi-download"></i></a>
+							</td>
+							<td>
+								<a href="https://www.kca.go.kr/home/synapviewer.do?fno=10048025&bid=00000152&did=1003912527"
+									title="새창" target="_blank" class="f_type_03">견본<i
+										class="xi-external-link"></i></a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+
+
+			<div class="require_table_m">
+				<p class="require_table_tit bgr_dd">필독사항</p>
+				<div class="require_file_box">
+					<ul class="strife_txt require_file">
+						<li>
+							<div class="btn_area mgt_n">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036756&bid=00000152&did=1003419054"
+									target="_blank" title="파일다운로드">HWP
+									<i class="xi-download"></i>
+								</a>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036755&bid=00000152&did=1003419054"
+									target="_blank" title="파일다운로드">DOC
+									<i class="xi-download"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<table class="fiber_table" style="width:100%">
+					<caption>
+						피해구제 신청 시 필수제출서류
+					</caption>
+					<colgroup>
+						<col class="fiber_col_m col1">
+						<col class="fiber_col_m col2">
+					</colgroup>
+					<tbody>
+						<tr>
+							<td class="require_table_tit" colspan="2" style="padding: 10px 10px 10px 10px ">필수제출서류</td>
+						</tr>
+						<tr>
+							<td class="fiber_txt_ct">일반분야</td>
+							<td>
+								<div class="bc_dotul strife_txt require_file">
+									<ul>
+										<li>
+											<div class="btn_area">
+												<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041557&bid=00000152&did=1003625146"
+													target="_blank" title="파일다운로드">HWP
+													<i class="xi-download"></i>
+												</a>
+												<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041551&bid=00000152&did=1003625146"
+													target="_blank" title="파일다운로드">DOC
+													<i class="xi-download"></i>
+												</a>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="fiber_txt_ct">섬유·신발</td>
+							<td>
+								<div class="bc_dotul strife_txt require_file">
+									<ul>
+										<li>
+											<div class="btn_area">
+												<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041554&bid=00000152&did=1003625146"
+													target="_blank" title="파일다운로드">HWP
+													<i class="xi-download"></i>
+												</a>
+												<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041548&bid=00000152&did=1003625146"
+													target="_blank" title="파일다운로드">DOC
+													<i class="xi-download"></i>
+												</a>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="fiber_txt_ct">의료</td>
+							<td>
+								<div class="bc_dotul strife_txt require_file">
+									<ul>
+										<li>
+											<div class="btn_area">
+												<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041555&bid=00000152&did=1003625146"
+													target="_blank" title="파일다운로드">HWP
+													<i class="xi-download"></i>
+												</a>
+												<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041549&bid=00000152&did=1003625146"
+													target="_blank" title="파일다운로드">DOC
+													<i class="xi-download"></i>
+												</a>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="fiber_txt_ct">금융</td>
+							<td>
+								<div class="bc_dotul strife_txt require_file">
+									<ul>
+										<li>
+											<div class="btn_area">
+												<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041552&bid=00000152&did=1003625146"
+													target="_blank" title="파일다운로드">HWP
+													<i class="xi-download"></i>
+												</a>
+												<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041546&bid=00000152&did=1003625146"
+													target="_blank" title="파일다운로드">DOC
+													<i class="xi-download"></i>
+												</a>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="fiber_txt_ct">보험</td>
+							<td>
+								<div class="bc_dotul strife_txt require_file">
+									<ul>
+										<li>
+											<div class="btn_area">
+												<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041553&bid=00000152&did=1003625146"
+													target="_blank" title="파일다운로드">HWP
+													<i class="xi-download"></i>
+												</a>
+												<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041547&bid=00000152&did=1003625146"
+													target="_blank" title="파일다운로드">DOC
+													<i class="xi-download"></i>
+												</a>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="fiber_txt_ct">자동차</td>
+							<td>
+								<div class="bc_dotul strife_txt require_file">
+									<ul>
+										<li>
+											<div class="btn_area">
+												<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041556&bid=00000152&did=1003625146"
+													target="_blank" title="파일다운로드">HWP
+													<i class="xi-download"></i>
+												</a>
+												<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041550&bid=00000152&did=1003625146"
+													target="_blank" title="파일다운로드">DOC
+													<i class="xi-download"></i>
+												</a>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<table class="fiber_table" style="width:100%; margin-top: 30px;">
+					<caption>
+						피해구제 제출서류 작성 예시
+					</caption>
+					<colgroup>
+						<col class="fiber_col_m col1">
+						<col class="fiber_col_m col2">
+					</colgroup>
+					<tbody>
+						<tr>
+							<td class="require_table_tit" colspan="2" style="padding: 10px 10px 10px 10px ">작성 예시</td>
+						</tr>
+						<tr>
+							<td class="fiber_txt_ct">일반분야</td>
+							<td>
+								<div class="bc_dotul strife_txt require_file">
+									<ul>
+										<li>
+											<div class="btn_area">
+												<a href="https://www.kca.go.kr/home/synapviewer.do?fno=10048026&bid=00000152&did=1003912527"
+													target="_blank" title="파일바로보기" style="background: #2ca025;">견본
+													<i class="xi-external-link"></i>
+												</a>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="fiber_txt_ct">섬유·신발</td>
+							<td>
+								<div class="bc_dotul strife_txt require_file">
+									<ul>
+										<li>
+											<div class="btn_area">
+												<a href="https://www.kca.go.kr/home/synapviewer.do?fno=10048023&bid=00000152&did=1003912527"
+													target="_blank" title="파일바로보기" style="background: #2ca025;">견본
+													<i class="xi-external-link"></i>
+												</a>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="fiber_txt_ct">의료</td>
+							<td>
+								<div class="bc_dotul strife_txt require_file">
+									<ul>
+										<li>
+											<div class="btn_area">
+												<a href="https://www.kca.go.kr/home/synapviewer.do?fno=10048024&bid=00000152&did=1003912527"
+													target="_blank" title="파일바로보기" style="background: #2ca025;">견본
+													<i class="xi-external-link"></i>
+												</a>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="fiber_txt_ct">금융</td>
+							<td>
+								<div class="bc_dotul strife_txt require_file">
+									<ul>
+										<li>
+											<div class="btn_area">
+												<a href="https://www.kca.go.kr/home/synapviewer.do?fno=10048021&bid=00000152&did=1003912527"
+													target="_blank" title="파일바로보기" style="background: #2ca025;">견본
+													<i class="xi-external-link"></i>
+												</a>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="fiber_txt_ct">보험</td>
+							<td>
+								<div class="bc_dotul strife_txt require_file">
+									<ul>
+										<li>
+											<div class="btn_area">
+												<a href="https://www.kca.go.kr/home/synapviewer.do?fno=10048022&bid=00000152&did=1003912527"
+													target="_blank" title="파일바로보기" style="background: #2ca025;">견본
+													<i class="xi-external-link"></i>
+												</a>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="fiber_txt_ct">자동차</td>
+							<td>
+								<div class="bc_dotul strife_txt require_file">
+									<ul>
+										<li>
+											<div class="btn_area">
+												<a href="https://www.kca.go.kr/home/synapviewer.do?fno=10048025&bid=00000152&did=1003912527"
+													target="_blank" title="파일바로보기" style="background: #2ca025;">견본
+													<i class="xi-external-link"></i>
+												</a>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--
+			<div class="require_table_m">
+				<p class="require_table_tit bgr_dd">신청서양식</p>
+				<div class="require_file_box">
+					<ul class="strife_txt require_file">
+						<li>
+							<div class="btn_area mgt_n">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041361&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">HWP
+									<i class="xi-download"></i>
+								</a>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041355&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">DOC
+									<i class="xi-download"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<p class="require_table_tit bgr_dd">필독사항</p>
+				<div class="require_file_box">
+					<ul class="strife_txt require_file">
+						<li>
+							<div class="btn_area mgt_n">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036756&bid=00000152&did=1003419054"
+									target="_blank" title="파일다운로드">HWP
+									<i class="xi-download"></i>
+								</a>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036755&bid=00000152&did=1003419054"
+									target="_blank" title="파일다운로드">DOC
+									<i class="xi-download"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<p class="require_table_tit">일반분야</p>
+				<div class="require_file_box">
+					<ul class="bc_dotul strife_txt require_file">
+						<li>
+							필수제출서류
+							<ol>
+								없음
+							</ol>
+						</li>
+						
+					</ul>
+				</div>
+				<p class="require_table_tit">섬유·신발</p>
+				<div class="require_file_box">
+					<ul class="bc_dotul strife_txt require_file">
+						<li>
+							필수제출서류
+							<div class="btn_area">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041352&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">HWP
+									<i class="xi-download"></i>
+								</a>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041358&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">DOC
+									<i class="xi-download"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<p class="require_table_tit">의료</p>
+				<div class="require_file_box">
+					<ul class="bc_dotul strife_txt require_file">
+						<li>
+							필수제출서류
+							<div class="btn_area">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041353&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">HWP
+									<i class="xi-download"></i>
+								</a>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041359&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">DOC
+									<i class="xi-download"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<p class="require_table_tit">금융</p>
+				<div class="require_file_box">
+					<ul class="bc_dotul strife_txt require_file">
+						<li>
+							필수제출서류
+							<div class="btn_area">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041350&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">HWP
+									<i class="xi-download"></i>
+								</a>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041356&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">DOC
+									<i class="xi-download"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<p class="require_table_tit">보험</p>
+				<div class="require_file_box">
+					<ul class="bc_dotul strife_txt require_file">
+						<li>
+							필수제출서류
+							<div class="btn_area">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041351&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">HWP
+									<i class="xi-download"></i>
+								</a>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041357&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">DOC
+									<i class="xi-download"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<p class="require_table_tit">자동차</p>
+				<div class="require_file_box">
+					<ul class="bc_dotul strife_txt require_file">
+						<li>
+							필수제출서류
+							<div class="btn_area">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041354&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">HWP
+									<i class="xi-download"></i>
+								</a>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10041360&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">DOC
+									<i class="xi-download"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			-->
+			
+			<!--
+			<div class="require_table_m">
+				<p class="require_table_tit bgr_dd">필독사항</p>
+				<div class="require_file_box">
+					<ul class="strife_txt require_file">
+						<li>
+							<div class="btn_area mgt_n">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036756&bid=00000152&did=1003419054"
+									target="_blank" title="파일다운로드">HWP
+									<i class="xi-download"></i>
+								</a>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036755&bid=00000152&did=1003419054"
+									target="_blank" title="파일다운로드">DOC
+									<i class="xi-download"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<p class="require_table_tit">의료·병원</p>
+				<div class="require_file_box">
+					<ul class="bc_dotul strife_txt require_file">
+						<li>
+							신청서 양식
+							<div class="btn_area">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036762&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">HWP
+									<i class="xi-download"></i>
+								</a>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036761&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">DOC
+									<i class="xi-download"></i>
+								</a>
+							</div>
+						</li>
+						<li>
+							작성예시 및 제출서류 안내
+							<div class="btn_area">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036778&bid=00000152&did=1003419260"
+									target="_blank" title="파일다운로드">HWP
+									<i class="xi-download"></i>
+								</a>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036777&bid=00000152&did=1003419260"
+									target="_blank" title="파일다운로드">DOC
+									<i class="xi-download"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<p class="require_table_tit">금융·보험</p>
+				<div class="require_file_box">
+					<ul class="bc_dotul strife_txt require_file">
+						<li>
+							신청서 양식
+							<div class="btn_area">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036758&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">HWP
+									<i class="xi-download"></i>
+								</a>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036757&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">DOC
+									<i class="xi-download"></i>
+								</a>
+							</div>
+						</li>
+						<li>
+							작성예시 및 제출서류 안내
+							<div class="btn_area">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036774&bid=00000152&did=1003419260"
+									target="_blank" title="파일다운로드">HWP
+									<i class="xi-download"></i>
+								</a>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036773&bid=00000152&did=1003419260"
+									target="_blank" title="파일다운로드">DOC
+									<i class="xi-download"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<p class="require_table_tit">자동차</p>
+				<div class="require_file_box">
+					<ul class="bc_dotul strife_txt require_file">
+						<li>
+							신청서 양식
+							<div class="btn_area">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036768&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">HWP
+									<i class="xi-download"></i>
+								</a>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036767&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">DOC
+									<i class="xi-download"></i>
+								</a>
+							</div>
+						</li>
+						<li>
+							작성예시 및 제출서류 안내
+							<div class="btn_area">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036784&bid=00000152&did=1003419260"
+									target="_blank" title="파일다운로드">HWP
+									<i class="xi-download"></i>
+								</a>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036783&bid=00000152&did=1003419260"
+									target="_blank" title="파일다운로드">DOC
+									<i class="xi-download"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<p class="require_table_tit">자동차(하자)</p>
+				<div class="require_file_box">
+					<ul class="bc_dotul strife_txt require_file">
+						<li>
+							신청서 양식
+							<div class="btn_area">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036766&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">HWP
+									<i class="xi-download"></i>
+								</a>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036765&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">DOC
+									<i class="xi-download"></i>
+								</a>
+							</div>
+						</li>
+						<li>
+							작성예시 및 제출서류 안내
+							<div class="btn_area">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036782&bid=00000152&did=1003419260"
+									target="_blank" title="파일다운로드">HWP
+									<i class="xi-download"></i>
+								</a>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036781&bid=00000152&did=1003419260"
+									target="_blank" title="파일다운로드">DOC
+									<i class="xi-download"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<p class="require_table_tit">정보통신</p>
+				<div class="require_file_box">
+					<ul class="bc_dotul strife_txt require_file">
+						<li>
+							신청서 양식
+							<div class="btn_area">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036770&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">HWP
+									<i class="xi-download"></i>
+								</a>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036769&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">DOC
+									<i class="xi-download"></i>
+								</a>
+							</div>
+						</li>
+						<li>
+							작성예시 및 제출서류 안내
+							<div class="btn_area">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036786&bid=00000152&did=1003419260"
+									target="_blank" title="파일다운로드">HWP
+									<i class="xi-download"></i>
+								</a>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036785&bid=00000152&did=1003419260"
+									target="_blank" title="파일다운로드">DOC
+									<i class="xi-download"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<p class="require_table_tit">섬유·신발</p>
+				<div class="require_file_box">
+					<ul class="bc_dotul strife_txt require_file">
+						<li>
+							신청서 양식
+							<div class="btn_area">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036760&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">HWP
+									<i class="xi-download"></i>
+								</a>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036759&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">DOC
+									<i class="xi-download"></i>
+								</a>
+							</div>
+						</li>
+						<li>
+							작성예시 및 제출서류 안내
+							<div class="btn_area">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036776&bid=00000152&did=1003419260"
+									target="_blank" title="파일다운로드">HWP
+									<i class="xi-download"></i>
+								</a>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036775&bid=00000152&did=1003419260"
+									target="_blank" title="파일다운로드">DOC
+									<i class="xi-download"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<p class="require_table_tit">헬스장·요가·필라테스</p>
+				<div class="require_file_box">
+					<ul class="bc_dotul strife_txt require_file">
+						<li>
+							신청서 양식
+							<div class="btn_area">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036772&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">HWP
+									<i class="xi-download"></i>
+								</a>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036771&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">DOC
+									<i class="xi-download"></i>
+								</a>
+							</div>
+						</li>
+						<li>
+							작성예시 및 제출서류 안내
+							<div class="btn_area">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036788&bid=00000152&did=1003419260"
+									target="_blank" title="파일다운로드">HWP
+									<i class="xi-download"></i>
+								</a>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036787&bid=00000152&did=1003419260"
+									target="_blank" title="파일다운로드">DOC
+									<i class="xi-download"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<p class="require_table_tit">일반(기타)</p>
+				<div class="require_file_box">
+					<ul class="bc_dotul strife_txt require_file">
+						<li>
+							신청서 양식
+							<div class="btn_area">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036764&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">HWP
+									<i class="xi-download"></i>
+								</a>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036763&bid=00000152&did=1003419156"
+									target="_blank" title="파일다운로드">DOC
+									<i class="xi-download"></i>
+								</a>
+							</div>
+						</li>
+						<li>
+							작성예시 및 제출서류 안내
+							<div class="btn_area">
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036780&bid=00000152&did=1003419260"
+									target="_blank" title="파일다운로드">HWP
+									<i class="xi-download"></i>
+								</a>
+								<a href="https://www.kca.go.kr/home/board/downloadlink.do?fno=10036779&bid=00000152&did=1003419260"
+									target="_blank" title="파일다운로드">DOC
+									<i class="xi-download"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			-->
+			<div class="require_ref">
+				<i class="xi-info"></i>참조 : 소비자분쟁해결기준
+				<span><a href="/odr/cm/in/rsltnCrtral.do" class="link_btn_tb step_link_btn">소비자분쟁해결기준</a> </span>
+			</div>
+			<div class="strife_btn">
+				<a href="/odr/pg/ma/pgProcssInfo2.do" class="btn_default go_link btn_tbl">피해구제 접수방법 바로가기</a>
+				<a href="/odr/pg/ma/pgProcssInfo3.do" class="btn_default go_link btn_tbl">섬유제품심의위원회 안내 바로가기</a>
+			</div>
+			<div class="cnsut_wrp mt50">
+				<h4 class="bcs_tit_st1">개인정보 관련 안내</h4>
+				<div class="cnsut_box">
+					<ul class="step_ul">
+						<li class="step_li">
+							<div class="step_w">
+								<div class="step_txtbx strife_txtbx">
+									<ul class="bc_dotul strife_txt">
+										<li>신청인의 개인정보 보유기간은 5년, 공익 목적 이외에 사용되지 않도록 최대한 노력하고 있으며, 피해구제 업무를 위해 필요한 경우 신청인의
+											성명, 주소, 연락처 등 개인정보와 사건개요가 피신청인(사업자)에게 통지 될 수 있습니다.</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<div class="strife_btn">
+						<a href="https://www.kca.go.kr/home/sub.do?menukey=4108" target="_blank"
+							class="btn_default go_link btn_tbl">한국소비자원 개인정보처리방침 바로가기 </a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- content_in END -->
+	</div>
+	<!-- //content -->
+	
+
+	<div class="float_btn">
+		<div class="catting_cs">
+			<a href="#none" onclick="fn_openChat()">
+				<div class="catting_img_box">
+					<img src="/odr/assets/images/catting_cs.gif" alt="소망챗" />
+				</div>
+				<p>소망챗</p>
+			</a>
+		</div>
+	</div>
+
+
+</section>
+			
+		<footer id="footer">
+			<div class="f_menu">
+				<ul class="f_menu_in">
+					<li>
+						<a href="https://www.kca.go.kr/home/sub.do?menukey=4108" target="_blank">개인정보처리방침</a>
+					</li>
+					<li>
+						<a href="https://www.kca.go.kr/home/sub.do?menukey=4111" target="_blank">저작권정책</a>
+					</li>
+					<!-- <li>
+					<A HREF="#">이용안내</A>
+				</LI> -->
+				</ul>
+			</div>
+			<div class="footer_in">
+				<div class="flogo">
+					<img src="/odr/assets/images/flogo.png?1791697168495" alt="한국소비자원" />
+				</div>
+				<div class="ftxt">
+					<p class="f_info">(우)27738 충청북도 음성군 맹동면 용두로 54 충북혁신도시 한국소비자원</p>
+					<p class="f_tel">사업자등록 번호 : 229-82-01080 / 대표전화 : 043-880-5500</p>
+					<p class="copy">Copyright© 2013 KOREA CONSUMER AGENCY, All Right Reserved.</p>
+				</div>
+				
+			</div>
+		</footer>
+	
+			<div>
+				<form>
+					<input type="hidden" id="mediaSe" />
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

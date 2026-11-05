@@ -1,0 +1,515 @@
+{
+  "schema_version": 3,
+  "document_id": "007196_284567_20260317_appendix_001200F",
+  "title": "방문판매 등에 관한 법률 시행규칙",
+  "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001200F.pdf",
+  "raw_sha256": "c5d7162f3a9d0180f8c3821ec78231cebe23b4b003b2902d08cc59ad400e369e",
+  "units": [
+    {
+      "document_id": "007196_284567_20260317_appendix_001200F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001200F.pdf",
+      "raw_sha256": "c5d7162f3a9d0180f8c3821ec78231cebe23b4b003b2902d08cc59ad400e369e",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "unit_id": "007196_284567_20260317_appendix_001200F:p1:body",
+      "text": "■ 방문판매 등에 관한 법률 시행규칙 [별지 제12호서식]\n최종소비자 판매비중 확인서\n(앞 쪽)\n210mm× 297mm[백상지 80g/㎡]",
+      "locator": "PDF 1페이지",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "pdf_body",
+      "removed_margin_lines": [],
+      "images": []
+    },
+    {
+      "document_id": "007196_284567_20260317_appendix_001200F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001200F.pdf",
+      "raw_sha256": "c5d7162f3a9d0180f8c3821ec78231cebe23b4b003b2902d08cc59ad400e369e",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "007196_284567_20260317_appendix_001200F:p1:table0",
+      "text": "기본 사항 | | |\n상호 | | 사업자등록번호 |\n소재지 | | |\n대표자의 성명 | | |\n최종소비자 판매비중 | | |\n산정기간 | 년 월 일부터 년 월 일까지\n(등록 직전 사업연도 1년 기준) | |\n①공급가격\n합계액 | ￦ (금 원정)\n(1년간 후원방문판매업자가 판매원에게 공급한 재화등의 가격 × 판매원에게 공급한 재화등의 수량) | |\n②판매가격\n합계액 | ￦ (금 원정)\n(1년간 후원방문판매업자가 판매원에게 공급한 재화등의 가격 × 판매원이 소비자에게 판매한 재화등의\n수량) | |\n최종소비자\n판매비중 | ( ) %\n(① 판매가격 합계액 ÷ ② 공급가격 합계액) × 100 | |\n본인은 「방문판매 등에 관한 법률」 제29조제2항 및 같은 법 시행령 제36조, 별표\n1 제2호라목, 같은 법 시행규칙 제21조에 따라 최종소비자 판매비중을 위와 같이 확\n인하여 제출합니다. | | |\n년 월 일\n대표자의 성명\n(서명 또는 인)\n공정거래위원회ㆍ특별시장ㆍ광역시장ㆍ\n귀하\n특별자치시장ㆍ도지사ㆍ특별자치도지사 | | |\n| | |\n첨부서류 | 직전 사업연도의 후원방문판매 사업 부문 매출액을 증명하는 서류(세무조정계산서, 회계감사보고서\n등을 말합니다) | |",
+      "locator": "PDF 1페이지 / 표 1",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          59.488,
+          108.96100000000001,
+          540.189,
+          748.102
+        ],
+        "rows": [
+          [
+            "기본 사항",
+            null,
+            null,
+            null
+          ],
+          [
+            "상호",
+            "",
+            "사업자등록번호",
+            ""
+          ],
+          [
+            "소재지",
+            "",
+            null,
+            null
+          ],
+          [
+            "대표자의 성명",
+            "",
+            null,
+            null
+          ],
+          [
+            "최종소비자 판매비중",
+            null,
+            null,
+            null
+          ],
+          [
+            "산정기간",
+            "년 월 일부터 년 월 일까지\n(등록 직전 사업연도 1년 기준)",
+            null,
+            null
+          ],
+          [
+            "①공급가격\n합계액",
+            "￦ (금 원정)\n(1년간 후원방문판매업자가 판매원에게 공급한 재화등의 가격 × 판매원에게 공급한 재화등의 수량)",
+            null,
+            null
+          ],
+          [
+            "②판매가격\n합계액",
+            "￦ (금 원정)\n(1년간 후원방문판매업자가 판매원에게 공급한 재화등의 가격 × 판매원이 소비자에게 판매한 재화등의\n수량)",
+            null,
+            null
+          ],
+          [
+            "최종소비자\n판매비중",
+            "( ) %\n(① 판매가격 합계액 ÷ ② 공급가격 합계액) × 100",
+            null,
+            null
+          ],
+          [
+            "본인은 「방문판매 등에 관한 법률」 제29조제2항 및 같은 법 시행령 제36조, 별표\n1 제2호라목, 같은 법 시행규칙 제21조에 따라 최종소비자 판매비중을 위와 같이 확\n인하여 제출합니다.",
+            null,
+            null,
+            null
+          ],
+          [
+            "년 월 일\n대표자의 성명\n(서명 또는 인)\n공정거래위원회ㆍ특별시장ㆍ광역시장ㆍ\n귀하\n특별자치시장ㆍ도지사ㆍ특별자치도지사",
+            null,
+            null,
+            null
+          ],
+          [
+            "",
+            null,
+            null,
+            null
+          ],
+          [
+            "첨부서류",
+            "직전 사업연도의 후원방문판매 사업 부문 매출액을 증명하는 서류(세무조정계산서, 회계감사보고서\n등을 말합니다)",
+            null,
+            null
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    },
+    {
+      "document_id": "007196_284567_20260317_appendix_001200F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001200F.pdf",
+      "raw_sha256": "c5d7162f3a9d0180f8c3821ec78231cebe23b4b003b2902d08cc59ad400e369e",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "unit_id": "007196_284567_20260317_appendix_001200F:p2:body",
+      "text": "(뒤 쪽)",
+      "locator": "PDF 2페이지",
+      "embedding_candidate": false,
+      "page_number": 2,
+      "content_type": "pdf_body",
+      "removed_margin_lines": [],
+      "images": []
+    },
+    {
+      "document_id": "007196_284567_20260317_appendix_001200F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_001200F.pdf",
+      "raw_sha256": "c5d7162f3a9d0180f8c3821ec78231cebe23b4b003b2902d08cc59ad400e369e",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "007196_284567_20260317_appendix_001200F:p2:table0",
+      "text": "월별 공급가격 합계액 및 판매가격 합계액 | |\n기 간 | 공급가격 합계액 | 판매가격 합계액\n. . . ~ . . . | ￦ | ￦\n. . . ~ . . . | ￦ | ￦\n. . . ~ . . . | ￦ | ￦\n. . . ~ . . . | ￦ | ￦\n. . . ~ . . . | ￦ | ￦\n. . . ~ . . . | ￦ | ￦\n. . . ~ . . . | ￦ | ￦\n. . . ~ . . . | ￦ | ￦\n. . . ~ . . . | ￦ | ￦\n. . . ~ . . . | ￦ | ￦\n. . . ~ . . . | ￦ | ￦\n. . . ~ . . . | ￦ | ￦\n계 | ￦ | ￦",
+      "locator": "PDF 2페이지 / 표 1",
+      "embedding_candidate": false,
+      "page_number": 2,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          58.049,
+          82.94899999999996,
+          538.031,
+          758.41
+        ],
+        "rows": [
+          [
+            "월별 공급가격 합계액 및 판매가격 합계액",
+            null,
+            null
+          ],
+          [
+            "기 간",
+            "공급가격 합계액",
+            "판매가격 합계액"
+          ],
+          [
+            ". . . ~ . . .",
+            "￦",
+            "￦"
+          ],
+          [
+            ". . . ~ . . .",
+            "￦",
+            "￦"
+          ],
+          [
+            ". . . ~ . . .",
+            "￦",
+            "￦"
+          ],
+          [
+            ". . . ~ . . .",
+            "￦",
+            "￦"
+          ],
+          [
+            ". . . ~ . . .",
+            "￦",
+            "￦"
+          ],
+          [
+            ". . . ~ . . .",
+            "￦",
+            "￦"
+          ],
+          [
+            ". . . ~ . . .",
+            "￦",
+            "￦"
+          ],
+          [
+            ". . . ~ . . .",
+            "￦",
+            "￦"
+          ],
+          [
+            ". . . ~ . . .",
+            "￦",
+            "￦"
+          ],
+          [
+            ". . . ~ . . .",
+            "￦",
+            "￦"
+          ],
+          [
+            ". . . ~ . . .",
+            "￦",
+            "￦"
+          ],
+          [
+            ". . . ~ . . .",
+            "￦",
+            "￦"
+          ],
+          [
+            "계",
+            "￦",
+            "￦"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "■ 방문판매 등에 관한 법률 시행규칙 [별지 제12호서식]\n최종소비자 판매비중 확인서\n(앞 쪽)\n기본 사항\n상호 사업자등록번호\n소재지\n대표자의 성명\n최종소비자 판매비중\n년 월 일부터 년 월 일까지\n산정기간 (등록 직전 사업연도 1년 기준)\n①공급가격 ￦ (금 원정)\n합계액 (1년간 후원방문판매업자가 판매원에게 공급한 재화등의 가격 × 판매원에게 공급한 재화등의 수량)\n￦ (금 원정)\n②판매가격\n(1년간 후원방문판매업자가 판매원에게 공급한 재화등의 가격 × 판매원이 소비자에게 판매한 재화등의\n합계액\n수량)\n최종소비자 ( ) %\n판매비중\n(① 판매가격 합계액 ÷ ② 공급가격 합계액) × 100\n본인은 「방문판매 등에 관한 법률」 제29조제2항 및 같은 법 시행령 제36조, 별표\n1 제2호라목, 같은 법 시행규칙 제21조에 따라 최종소비자 판매비중을 위와 같이 확\n인하여 제출합니다.\n년 월 일\n대표자의 성명\n(서명 또는 인)\n공정거래위원회ㆍ특별시장ㆍ광역시장ㆍ\n귀하\n특별자치시장ㆍ도지사ㆍ특별자치도지사\n직전 사업연도의 후원방문판매 사업 부문 매출액을 증명하는 서류(세무조정계산서, 회계감사보고서\n첨부서류\n등을 말합니다)\n210mm× 297mm[백상지 80g/㎡]",
+      "body_text": "■ 방문판매 등에 관한 법률 시행규칙 [별지 제12호서식]\n최종소비자 판매비중 확인서\n(앞 쪽)\n210mm× 297mm[백상지 80g/㎡]",
+      "tables": [
+        {
+          "bbox": [
+            59.488,
+            108.96100000000001,
+            540.189,
+            748.102
+          ],
+          "rows": [
+            [
+              "기본 사항",
+              null,
+              null,
+              null
+            ],
+            [
+              "상호",
+              "",
+              "사업자등록번호",
+              ""
+            ],
+            [
+              "소재지",
+              "",
+              null,
+              null
+            ],
+            [
+              "대표자의 성명",
+              "",
+              null,
+              null
+            ],
+            [
+              "최종소비자 판매비중",
+              null,
+              null,
+              null
+            ],
+            [
+              "산정기간",
+              "년 월 일부터 년 월 일까지\n(등록 직전 사업연도 1년 기준)",
+              null,
+              null
+            ],
+            [
+              "①공급가격\n합계액",
+              "￦ (금 원정)\n(1년간 후원방문판매업자가 판매원에게 공급한 재화등의 가격 × 판매원에게 공급한 재화등의 수량)",
+              null,
+              null
+            ],
+            [
+              "②판매가격\n합계액",
+              "￦ (금 원정)\n(1년간 후원방문판매업자가 판매원에게 공급한 재화등의 가격 × 판매원이 소비자에게 판매한 재화등의\n수량)",
+              null,
+              null
+            ],
+            [
+              "최종소비자\n판매비중",
+              "( ) %\n(① 판매가격 합계액 ÷ ② 공급가격 합계액) × 100",
+              null,
+              null
+            ],
+            [
+              "본인은 「방문판매 등에 관한 법률」 제29조제2항 및 같은 법 시행령 제36조, 별표\n1 제2호라목, 같은 법 시행규칙 제21조에 따라 최종소비자 판매비중을 위와 같이 확\n인하여 제출합니다.",
+              null,
+              null,
+              null
+            ],
+            [
+              "년 월 일\n대표자의 성명\n(서명 또는 인)\n공정거래위원회ㆍ특별시장ㆍ광역시장ㆍ\n귀하\n특별자치시장ㆍ도지사ㆍ특별자치도지사",
+              null,
+              null,
+              null
+            ],
+            [
+              "",
+              null,
+              null,
+              null
+            ],
+            [
+              "첨부서류",
+              "직전 사업연도의 후원방문판매 사업 부문 매출액을 증명하는 서류(세무조정계산서, 회계감사보고서\n등을 말합니다)",
+              null,
+              null
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        }
+      ],
+      "images": [],
+      "removed_margin_lines": []
+    },
+    {
+      "page_number": 2,
+      "raw_text": "(뒤 쪽)\n월별 공급가격 합계액 및 판매가격 합계액\n기 간 공급가격 합계액 판매가격 합계액\n. . . ~ . . . ￦ ￦\n. . . ~ . . . ￦ ￦\n. . . ~ . . . ￦ ￦\n. . . ~ . . . ￦ ￦\n. . . ~ . . . ￦ ￦\n. . . ~ . . . ￦ ￦\n. . . ~ . . . ￦ ￦\n. . . ~ . . . ￦ ￦\n. . . ~ . . . ￦ ￦\n. . . ~ . . . ￦ ￦\n. . . ~ . . . ￦ ￦\n. . . ~ . . . ￦ ￦\n계 ￦ ￦",
+      "body_text": "(뒤 쪽)",
+      "tables": [
+        {
+          "bbox": [
+            58.049,
+            82.94899999999996,
+            538.031,
+            758.41
+          ],
+          "rows": [
+            [
+              "월별 공급가격 합계액 및 판매가격 합계액",
+              null,
+              null
+            ],
+            [
+              "기 간",
+              "공급가격 합계액",
+              "판매가격 합계액"
+            ],
+            [
+              ". . . ~ . . .",
+              "￦",
+              "￦"
+            ],
+            [
+              ". . . ~ . . .",
+              "￦",
+              "￦"
+            ],
+            [
+              ". . . ~ . . .",
+              "￦",
+              "￦"
+            ],
+            [
+              ". . . ~ . . .",
+              "￦",
+              "￦"
+            ],
+            [
+              ". . . ~ . . .",
+              "￦",
+              "￦"
+            ],
+            [
+              ". . . ~ . . .",
+              "￦",
+              "￦"
+            ],
+            [
+              ". . . ~ . . .",
+              "￦",
+              "￦"
+            ],
+            [
+              ". . . ~ . . .",
+              "￦",
+              "￦"
+            ],
+            [
+              ". . . ~ . . .",
+              "￦",
+              "￦"
+            ],
+            [
+              ". . . ~ . . .",
+              "￦",
+              "￦"
+            ],
+            [
+              ". . . ~ . . .",
+              "￦",
+              "￦"
+            ],
+            [
+              ". . . ~ . . .",
+              "￦",
+              "￦"
+            ],
+            [
+              "계",
+              "￦",
+              "￦"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        }
+      ],
+      "images": [],
+      "removed_margin_lines": []
+    }
+  ]
+}

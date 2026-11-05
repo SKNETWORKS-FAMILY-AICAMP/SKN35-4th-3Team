@@ -1,0 +1,389 @@
+{
+  "schema_version": 3,
+  "document_id": "kca_redress_requirements",
+  "title": "한국소비자원 피해구제 신청 요건 및 신청서 양식 안내",
+  "source_path": "data/raw/consumer_sources/kca_redress_requirements_f5048b0525c401e4.html",
+  "raw_sha256": "f5048b0525c401e490afe2cf7e89fba8f882477c0a5f23a25d89c3cce6668857",
+  "units": [
+    {
+      "document_id": "kca_redress_requirements",
+      "title": "한국소비자원 피해구제 신청 요건 및 신청서 양식 안내",
+      "source_url": "https://www.kca.go.kr/odr/pg/ma/pgProcssInfo1.do",
+      "document_type": "official_guide",
+      "domains": [
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": null,
+        "article_effective_date": null,
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": null
+      },
+      "source_path": "data/raw/consumer_sources/kca_redress_requirements_f5048b0525c401e4.html",
+      "raw_sha256": "f5048b0525c401e490afe2cf7e89fba8f882477c0a5f23a25d89c3cce6668857",
+      "extraction_origin": "raw",
+      "warnings": [
+        "본문 내 이미지는 다운로드·OCR하지 않음; 표의 조건·예외는 전체 근거에서 확인"
+      ],
+      "unit_id": "kca_redress_requirements:body",
+      "text": "피해구제 요건 및 양식\n\n피해구제 접수 해당 요건\n\n소비자가 사업자가 제공하는 물품 또는 용역을 사용하거나 이용하는 과정에서 피해가 발생할 경우 피해구제 접수를 할 수 있습니다.\n\n다만, 아래 사항에 해당될 경우 피해구제 대상에서 제외됩니다.\n\n- 사업자의 부도 , 폐업 등으로 연락이 불가능하거나 소재파악이 안 되는 경우\n\n- 신청인(소비자)의 주장을 입증(입증서류 미제출 포함)할 수 없는 경우\n\n- 영리활동과 관련하여 발생한 분쟁, 임금 등 근로자와 고용인 사이의 분쟁, 개인간 거래 등 소비자와 사업자 사이의\n분쟁이 아닌 경우\n\n- 국가 또는 지방자치단체가 제공한 물품 등으로 인하여 발생한 피해인 경우\n\n- 소비자분쟁조정위원회에 준하는 분쟁조정기구에 피해구제가 신청되어 있거나 피해구제절차를 거친 경우\n\n- 법원에 소송 진행중인 경우 등\n\n피해구제 접수 신청서 양식\n\n일반분야를 제외한\n모든 전문분야 피해구제 신청시 ①신청서와 ②각 필수제출 서류 두가지 모두 제출\n되어야 합니다.(하나라도 제출되지 않을 경우 접수불가능합니다.)\n\n피해구제 접수 신청서 양식 제공\n\n피해구제 분야 |\n신청서 양식 및 필수제출서류 |\n작성 예시 |\n필독사항 |\n\n일반분야 |\nHWP\n|\nDOC\n|\n\n견본\n|\n\nHWP\nDOC\n|\n\n전문분야 |\n섬유·신발 |\n\nHWP\n|\n\nDOC\n|\n\n견본\n|\n\n의료 |\n\nHWP\n|\n\nDOC\n|\n\n견본\n|\n\n금융 |\n\nHWP\n|\n\nDOC\n|\n\n견본\n|\n\n보험 |\n\nHWP\n|\n\nDOC\n|\n\n견본\n|\n\n자동차 |\n\nHWP\n|\n\nDOC\n|\n\n견본\n|\n\n필독사항\n\nHWP\n\nDOC\n\n피해구제 신청 시 필수제출서류\n\n필수제출서류 |\n\n일반분야 |\n\nHWP\n\nDOC\n\n|\n\n섬유·신발 |\n\nHWP\n\nDOC\n\n|\n\n의료 |\n\nHWP\n\nDOC\n\n|\n\n금융 |\n\nHWP\n\nDOC\n\n|\n\n보험 |\n\nHWP\n\nDOC\n\n|\n\n자동차 |\n\nHWP\n\nDOC\n\n|\n\n피해구제 제출서류 작성 예시\n\n작성 예시 |\n\n일반분야 |\n\n견본\n\n|\n\n섬유·신발 |\n\n견본\n\n|\n\n의료 |\n\n견본\n\n|\n\n금융 |\n\n견본\n\n|\n\n보험 |\n\n견본\n\n|\n\n자동차 |\n\n견본\n\n|\n\n참조 : 소비자분쟁해결기준\n소비자분쟁해결기준\n\n피해구제 접수방법 바로가기\n섬유제품심의위원회 안내 바로가기\n\n개인정보 관련 안내\n\n신청인의 개인정보 보유기간은 5년, 공익 목적 이외에 사용되지 않도록 최대한 노력하고 있으며, 피해구제 업무를 위해 필요한 경우 신청인의\n성명, 주소, 연락처 등 개인정보와 사건개요가 피신청인(사업자)에게 통지 될 수 있습니다.\n\n한국소비자원 개인정보처리방침 바로가기",
+      "locator": "#content",
+      "embedding_candidate": true,
+      "content_type": "html_body",
+      "evidence_metadata": {
+        "selector": "#content",
+        "encoding": "utf-8-sig",
+        "tables": [
+          {
+            "table_index": 0,
+            "rows": [
+              [
+                {
+                  "text": "피해구제 분야",
+                  "rowspan": "1",
+                  "colspan": "2"
+                },
+                {
+                  "text": "신청서 양식 및 필수제출서류",
+                  "rowspan": "1",
+                  "colspan": "2"
+                },
+                {
+                  "text": "작성 예시",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "필독사항",
+                  "rowspan": "1",
+                  "colspan": "1"
+                }
+              ],
+              [
+                {
+                  "text": "일반분야",
+                  "rowspan": "1",
+                  "colspan": "2"
+                },
+                {
+                  "text": "HWP",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "DOC",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "견본",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "HWP\nDOC",
+                  "rowspan": "6",
+                  "colspan": "1"
+                }
+              ],
+              [
+                {
+                  "text": "전문분야",
+                  "rowspan": "5",
+                  "colspan": "1"
+                },
+                {
+                  "text": "섬유·신발",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "HWP",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "DOC",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "견본",
+                  "rowspan": "1",
+                  "colspan": "1"
+                }
+              ],
+              [
+                {
+                  "text": "의료",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "HWP",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "DOC",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "견본",
+                  "rowspan": "1",
+                  "colspan": "1"
+                }
+              ],
+              [
+                {
+                  "text": "금융",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "HWP",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "DOC",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "견본",
+                  "rowspan": "1",
+                  "colspan": "1"
+                }
+              ],
+              [
+                {
+                  "text": "보험",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "HWP",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "DOC",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "견본",
+                  "rowspan": "1",
+                  "colspan": "1"
+                }
+              ],
+              [
+                {
+                  "text": "자동차",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "HWP",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "DOC",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "견본",
+                  "rowspan": "1",
+                  "colspan": "1"
+                }
+              ]
+            ],
+            "merged_cells_preserved": true
+          },
+          {
+            "table_index": 1,
+            "rows": [
+              [
+                {
+                  "text": "필수제출서류",
+                  "rowspan": "1",
+                  "colspan": "2"
+                }
+              ],
+              [
+                {
+                  "text": "일반분야",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "HWP\n\nDOC",
+                  "rowspan": "1",
+                  "colspan": "1"
+                }
+              ],
+              [
+                {
+                  "text": "섬유·신발",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "HWP\n\nDOC",
+                  "rowspan": "1",
+                  "colspan": "1"
+                }
+              ],
+              [
+                {
+                  "text": "의료",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "HWP\n\nDOC",
+                  "rowspan": "1",
+                  "colspan": "1"
+                }
+              ],
+              [
+                {
+                  "text": "금융",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "HWP\n\nDOC",
+                  "rowspan": "1",
+                  "colspan": "1"
+                }
+              ],
+              [
+                {
+                  "text": "보험",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "HWP\n\nDOC",
+                  "rowspan": "1",
+                  "colspan": "1"
+                }
+              ],
+              [
+                {
+                  "text": "자동차",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "HWP\n\nDOC",
+                  "rowspan": "1",
+                  "colspan": "1"
+                }
+              ]
+            ],
+            "merged_cells_preserved": true
+          },
+          {
+            "table_index": 2,
+            "rows": [
+              [
+                {
+                  "text": "작성 예시",
+                  "rowspan": "1",
+                  "colspan": "2"
+                }
+              ],
+              [
+                {
+                  "text": "일반분야",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "견본",
+                  "rowspan": "1",
+                  "colspan": "1"
+                }
+              ],
+              [
+                {
+                  "text": "섬유·신발",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "견본",
+                  "rowspan": "1",
+                  "colspan": "1"
+                }
+              ],
+              [
+                {
+                  "text": "의료",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "견본",
+                  "rowspan": "1",
+                  "colspan": "1"
+                }
+              ],
+              [
+                {
+                  "text": "금융",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "견본",
+                  "rowspan": "1",
+                  "colspan": "1"
+                }
+              ],
+              [
+                {
+                  "text": "보험",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "견본",
+                  "rowspan": "1",
+                  "colspan": "1"
+                }
+              ],
+              [
+                {
+                  "text": "자동차",
+                  "rowspan": "1",
+                  "colspan": "1"
+                },
+                {
+                  "text": "견본",
+                  "rowspan": "1",
+                  "colspan": "1"
+                }
+              ]
+            ],
+            "merged_cells_preserved": true
+          }
+        ],
+        "image_references": [],
+        "images_downloaded_or_ocr_performed": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,312 @@
+{
+  "schema_version": 3,
+  "document_id": "007196_284567_20260317_appendix_000302F",
+  "title": "방문판매 등에 관한 법률 시행규칙",
+  "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000302F.pdf",
+  "raw_sha256": "60071277ea16d4cac12dcf1f0809e4cd8bb6e0e102d7c9086119353066205f17",
+  "units": [
+    {
+      "document_id": "007196_284567_20260317_appendix_000302F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000302F.pdf",
+      "raw_sha256": "60071277ea16d4cac12dcf1f0809e4cd8bb6e0e102d7c9086119353066205f17",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "unit_id": "007196_284567_20260317_appendix_000302F:p1:body",
+      "text": "■ 방문판매 등에 관한 법률 시행규칙 [별지 제3호의2서식] <신설 2017. 6. 20.>\n[ ] 방문판매업 신고증\n[ ] 전화권유판매업 신고증\n재발급 신청서\n[ ] 다단계판매업 등록증\n[ ] 후원방문판매업 등록증\n법인등록번호\n전화번호\n신청인 생년월일(외국인등록번호)\n전화번호\n사업자등록번호\n재발급 [ ] 분실 [ ] 훼손\n사유\n※ 재발급 신청 사유를 해당란에 √ 표 하십시오.\n「방문판매 등에 관한 법률 시행규칙」 제5조제3항 또는 제11조제6항에 따라 위와 같이 방문판매업\n신고증, 전화권유판매업 신고증, 다단계판매업 등록증 또는 후원방문판매업 등록증의 재발급을 신청합\n니다.\n년 월 일\n신청인 (서명 또는 인)\n※ 위 신고인 대표자와 동일인이 아닌 경우에만 적습니다.\n공정거래위원회ㆍ특별시장ㆍ광역시장ㆍ특별자치시장ㆍ\n귀하\n도지사ㆍ특별자치도지사ㆍ시장ㆍ군수ㆍ구청장\n기존 방문판매업 신고증, 전화권유판매업 신고증, 다단계판매업 등록증 또는 후원방문판매업 등록증(신고증 수수료\n첨부서류\n또는 등록증이 훼손되어 재발급을 신청하는 경우에만 해당합니다) 없음\n210mm× 297mm[백상지 80g/㎡]",
+      "locator": "PDF 1페이지",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "pdf_body",
+      "removed_margin_lines": [],
+      "images": []
+    },
+    {
+      "document_id": "007196_284567_20260317_appendix_000302F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000302F.pdf",
+      "raw_sha256": "60071277ea16d4cac12dcf1f0809e4cd8bb6e0e102d7c9086119353066205f17",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "007196_284567_20260317_appendix_000302F:p1:table0",
+      "text": "접수번호 | | 접수일 | | | 처리기간 | 즉시",
+      "locator": "PDF 1페이지 / 표 1",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          59.488,
+          156.788,
+          530.195,
+          179.44399999999996
+        ],
+        "rows": [
+          [
+            "접수번호",
+            "",
+            "접수일",
+            "",
+            "",
+            "처리기간",
+            "즉시"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    },
+    {
+      "document_id": "007196_284567_20260317_appendix_000302F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000302F.pdf",
+      "raw_sha256": "60071277ea16d4cac12dcf1f0809e4cd8bb6e0e102d7c9086119353066205f17",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "007196_284567_20260317_appendix_000302F:p1:table1",
+      "text": "상호\n소재지\n대표자의 성명 (서명 또는 인)\n주소",
+      "locator": "PDF 1페이지 / 표 2",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          102.425,
+          185.197,
+          386.432,
+          300.751
+        ],
+        "rows": [
+          [
+            "상호"
+          ],
+          [
+            "소재지"
+          ],
+          [
+            "대표자의 성명 (서명 또는 인)"
+          ],
+          [
+            "주소"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    },
+    {
+      "document_id": "007196_284567_20260317_appendix_000302F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000302F.pdf",
+      "raw_sha256": "60071277ea16d4cac12dcf1f0809e4cd8bb6e0e102d7c9086119353066205f17",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "007196_284567_20260317_appendix_000302F:p1:table2",
+      "text": "처리절차 | | | | |\n신청서 작성 è 접수 è 검토 è 결재 è 발급 | | | | |\n| 신청인 | | 처리기관: 공정거래위원회 또는 특별시ㆍ광역시ㆍ특별자치시ㆍ도ㆍ특별자치도ㆍ시ㆍ군ㆍ구 | |",
+      "locator": "PDF 1페이지 / 표 3",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          59.488,
+          601.142,
+          530.195,
+          714.778
+        ],
+        "rows": [
+          [
+            "처리절차",
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "신청서 작성 è 접수 è 검토 è 결재 è 발급",
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "",
+            "신청인",
+            "",
+            "처리기관: 공정거래위원회 또는 특별시ㆍ광역시ㆍ특별자치시ㆍ도ㆍ특별자치도ㆍ시ㆍ군ㆍ구",
+            "",
+            ""
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "■ 방문판매 등에 관한 법률 시행규칙 [별지 제3호의2서식] <신설 2017. 6. 20.>\n[ ] 방문판매업 신고증\n[ ] 전화권유판매업 신고증\n재발급 신청서\n[ ] 다단계판매업 등록증\n[ ] 후원방문판매업 등록증\n접수번호 접수일 처리기간 즉시\n상호 법인등록번호\n소재지 전화번호\n신청인 대표자의 성명 (서명 또는 인) 생년월일(외국인등록번호)\n주소 전화번호\n사업자등록번호\n재발급 [ ] 분실 [ ] 훼손\n사유\n※ 재발급 신청 사유를 해당란에 √ 표 하십시오.\n「방문판매 등에 관한 법률 시행규칙」 제5조제3항 또는 제11조제6항에 따라 위와 같이 방문판매업\n신고증, 전화권유판매업 신고증, 다단계판매업 등록증 또는 후원방문판매업 등록증의 재발급을 신청합\n니다.\n년 월 일\n신청인 (서명 또는 인)\n※ 위 신고인 대표자와 동일인이 아닌 경우에만 적습니다.\n공정거래위원회ㆍ특별시장ㆍ광역시장ㆍ특별자치시장ㆍ\n귀하\n도지사ㆍ특별자치도지사ㆍ시장ㆍ군수ㆍ구청장\n기존 방문판매업 신고증, 전화권유판매업 신고증, 다단계판매업 등록증 또는 후원방문판매업 등록증(신고증 수수료\n첨부서류\n또는 등록증이 훼손되어 재발급을 신청하는 경우에만 해당합니다) 없음\n처리절차\n신청서 작성 è 접수 è 검토 è 결재 è 발급\n신청인 처리기관: 공정거래위원회 또는 특별시ㆍ광역시ㆍ특별자치시ㆍ도ㆍ특별자치도ㆍ시ㆍ군ㆍ구\n210mm× 297mm[백상지 80g/㎡]",
+      "body_text": "■ 방문판매 등에 관한 법률 시행규칙 [별지 제3호의2서식] <신설 2017. 6. 20.>\n[ ] 방문판매업 신고증\n[ ] 전화권유판매업 신고증\n재발급 신청서\n[ ] 다단계판매업 등록증\n[ ] 후원방문판매업 등록증\n법인등록번호\n전화번호\n신청인 생년월일(외국인등록번호)\n전화번호\n사업자등록번호\n재발급 [ ] 분실 [ ] 훼손\n사유\n※ 재발급 신청 사유를 해당란에 √ 표 하십시오.\n「방문판매 등에 관한 법률 시행규칙」 제5조제3항 또는 제11조제6항에 따라 위와 같이 방문판매업\n신고증, 전화권유판매업 신고증, 다단계판매업 등록증 또는 후원방문판매업 등록증의 재발급을 신청합\n니다.\n년 월 일\n신청인 (서명 또는 인)\n※ 위 신고인 대표자와 동일인이 아닌 경우에만 적습니다.\n공정거래위원회ㆍ특별시장ㆍ광역시장ㆍ특별자치시장ㆍ\n귀하\n도지사ㆍ특별자치도지사ㆍ시장ㆍ군수ㆍ구청장\n기존 방문판매업 신고증, 전화권유판매업 신고증, 다단계판매업 등록증 또는 후원방문판매업 등록증(신고증 수수료\n첨부서류\n또는 등록증이 훼손되어 재발급을 신청하는 경우에만 해당합니다) 없음\n210mm× 297mm[백상지 80g/㎡]",
+      "tables": [
+        {
+          "bbox": [
+            59.488,
+            156.788,
+            530.195,
+            179.44399999999996
+          ],
+          "rows": [
+            [
+              "접수번호",
+              "",
+              "접수일",
+              "",
+              "",
+              "처리기간",
+              "즉시"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        },
+        {
+          "bbox": [
+            102.425,
+            185.197,
+            386.432,
+            300.751
+          ],
+          "rows": [
+            [
+              "상호"
+            ],
+            [
+              "소재지"
+            ],
+            [
+              "대표자의 성명 (서명 또는 인)"
+            ],
+            [
+              "주소"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        },
+        {
+          "bbox": [
+            59.488,
+            601.142,
+            530.195,
+            714.778
+          ],
+          "rows": [
+            [
+              "처리절차",
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              "신청서 작성 è 접수 è 검토 è 결재 è 발급",
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              "",
+              "신청인",
+              "",
+              "처리기관: 공정거래위원회 또는 특별시ㆍ광역시ㆍ특별자치시ㆍ도ㆍ특별자치도ㆍ시ㆍ군ㆍ구",
+              "",
+              ""
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        }
+      ],
+      "images": [],
+      "removed_margin_lines": []
+    }
+  ]
+}

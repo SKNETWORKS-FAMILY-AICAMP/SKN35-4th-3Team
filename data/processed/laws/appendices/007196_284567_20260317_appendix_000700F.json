@@ -1,0 +1,392 @@
+{
+  "schema_version": 3,
+  "document_id": "007196_284567_20260317_appendix_000700F",
+  "title": "방문판매 등에 관한 법률 시행규칙",
+  "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000700F.pdf",
+  "raw_sha256": "48a6ae951ac99864c725503049127d13f1708224dc0b62744cadfd3535cc4b83",
+  "units": [
+    {
+      "document_id": "007196_284567_20260317_appendix_000700F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000700F.pdf",
+      "raw_sha256": "48a6ae951ac99864c725503049127d13f1708224dc0b62744cadfd3535cc4b83",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "unit_id": "007196_284567_20260317_appendix_000700F:p1:body",
+      "text": "■ 방문판매 등에 관한 법률 시행규칙 [별지 제7호서식] <개정 2025. 5. 8.>\n[ ] 다단계판매업\n등록신청서\n[ ] 후원방문판매업\n법인등록번호\n전화번호\n주민등록번호(외국인등록번호)\n전화번호\n신청인\n사업자등록번호\n자본금의 규모\n참고 사항 [ ]건강식품, [ ]화장품/미용용품, [ ]교육/도서, [ ]생활용품/세제류, [ ]회원권/상품권, [ ]가전,\n[ ]컴퓨터/사무용품, [ ]통신기기, [ ]자동차/자동차용품, [ ]의류/패션, [ ]기타\n(취급품목)\n「방문판매 등에 관한 법률」 제13조제1항·제29조제3항, 같은 법 시행령 제20조제1항 및 같은 법 시\n행규칙 제11조제1항에 따라 위와 같이 등록을 신청합니다.\n년 월 일\n신청인 (서명 또는 인)\n※ 위 신청인 대표자와 동일인이 아닌 경우에만 적습니다.\n공정거래위원회·특별시장·광역시장·\n귀하\n특별자치시장·도지사·특별자치도지사\n신청인(대표자)\n첨부서류\n수수료\n없음\n담당공무원\n확인사항\n행정정보 공동이용 동의서\n본인은 이 건 업무처리와 관련하여 「전자정부법」 제36조제1항에 따른 행정정보의 공동이용을 통하여 담당 공무원이 위의 담당 공무원 확\n인사항 중 제2호 및 제3호를 확인하는 것에 동의합니다.\n*확인에 동의하지 않는 경우에는 신청인이 직접 관련 서류를 제출해야 합니다.\n신청인(대표자)\n(서명 또는 인)\n210mm× 297mm[백상지 80g/㎡]",
+      "locator": "PDF 1페이지",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "pdf_body",
+      "removed_margin_lines": [],
+      "images": []
+    },
+    {
+      "document_id": "007196_284567_20260317_appendix_000700F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000700F.pdf",
+      "raw_sha256": "48a6ae951ac99864c725503049127d13f1708224dc0b62744cadfd3535cc4b83",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "007196_284567_20260317_appendix_000700F:p1:table0",
+      "text": "접수번호 | | 접수일 | | | 처리기간 | 7일",
+      "locator": "PDF 1페이지 / 표 1",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          59.488,
+          133.414,
+          538.1162857142857,
+          156.06899999999996
+        ],
+        "rows": [
+          [
+            "접수번호",
+            "",
+            "접수일",
+            "",
+            "",
+            "처리기간",
+            "7일"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    },
+    {
+      "document_id": "007196_284567_20260317_appendix_000700F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000700F.pdf",
+      "raw_sha256": "48a6ae951ac99864c725503049127d13f1708224dc0b62744cadfd3535cc4b83",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "007196_284567_20260317_appendix_000700F:p1:table1",
+      "text": "상호\n소재지\n대표자의 성명\n(서명 또는 인)\n주소\n전자우편주소",
+      "locator": "PDF 1페이지 / 표 2",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          100.626,
+          161.70299999999997,
+          383.194,
+          306.625
+        ],
+        "rows": [
+          [
+            "상호"
+          ],
+          [
+            "소재지"
+          ],
+          [
+            "대표자의 성명\n(서명 또는 인)"
+          ],
+          [
+            "주소"
+          ],
+          [
+            "전자우편주소"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    },
+    {
+      "document_id": "007196_284567_20260317_appendix_000700F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000700F.pdf",
+      "raw_sha256": "48a6ae951ac99864c725503049127d13f1708224dc0b62744cadfd3535cc4b83",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "007196_284567_20260317_appendix_000700F:p1:table2",
+      "text": "1. 자본금의 규모를 증명하는 서류(다단계판매업의 경우에만 제출합니다)\n2. 「방문판매 등에 관한 법률」 제37조에 따른 소비자피해보상보험계약등의 체결을 증명하는 서류 또는 같\n은 법 제29조제2항에 따른 최종소비자 판매비중이 70% 이상임을 증명하는 별지 제12호서식의 최\n종소비자 판매비중 확인서(후원방문판매업만 해당합니다)\n3. 후원수당의 산정 및 지급 기준에 관한 서류\n4. 재고관리, 후원수당 지급 등 판매의 방법에 관한 사항을 적은 서류\n5. 회사의 영업일을 적은 서류\n1. 법인 등기사항증명서(법인인 경우만 해당합니다)\n2. 발기인의 주민등록표 초본(법인의 설립등기 전에 신청하는 경우만 해당합니다)\n3. 사업자등록증명(주민등록번호가 제외된 사업자등록증명을 말합니다)",
+      "locator": "PDF 1페이지 / 표 3",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          124.37299999999999,
+          512.3199999999999,
+          496.773,
+          637.463
+        ],
+        "rows": [
+          [
+            "1. 자본금의 규모를 증명하는 서류(다단계판매업의 경우에만 제출합니다)\n2. 「방문판매 등에 관한 법률」 제37조에 따른 소비자피해보상보험계약등의 체결을 증명하는 서류 또는 같\n은 법 제29조제2항에 따른 최종소비자 판매비중이 70% 이상임을 증명하는 별지 제12호서식의 최\n종소비자 판매비중 확인서(후원방문판매업만 해당합니다)\n3. 후원수당의 산정 및 지급 기준에 관한 서류\n4. 재고관리, 후원수당 지급 등 판매의 방법에 관한 사항을 적은 서류\n5. 회사의 영업일을 적은 서류"
+          ],
+          [
+            "1. 법인 등기사항증명서(법인인 경우만 해당합니다)\n2. 발기인의 주민등록표 초본(법인의 설립등기 전에 신청하는 경우만 해당합니다)\n3. 사업자등록증명(주민등록번호가 제외된 사업자등록증명을 말합니다)"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    },
+    {
+      "document_id": "007196_284567_20260317_appendix_000700F",
+      "title": "방문판매 등에 관한 법률 시행규칙",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=284567",
+      "document_type": "law",
+      "domains": [
+        "fitness_refund",
+        "consumer_general"
+      ],
+      "dates": {
+        "effective_date": "2026-03-17",
+        "article_effective_date": "2026-03-17",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/007196_284567_20260317_appendix_000700F.pdf",
+      "raw_sha256": "48a6ae951ac99864c725503049127d13f1708224dc0b62744cadfd3535cc4b83",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "007196_284567_20260317_appendix_000700F:p1:table3",
+      "text": "처리절차 | | | | | |\n신청서 작성 è 접수 è 검토 è 기안·결재 è 등록증 작성 è 등록증 발급 | | | | | |\n| 신청인 | | 처리기관: 공정거래위원회 또는 특별시·광역시·특별자치시·도· 특별자치도 | | |",
+      "locator": "PDF 1페이지 / 표 4",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          59.488,
+          716.9355,
+          538.1162857142857,
+          782.264
+        ],
+        "rows": [
+          [
+            "처리절차",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "신청서 작성 è 접수 è 검토 è 기안·결재 è 등록증 작성 è 등록증 발급",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "",
+            "신청인",
+            "",
+            "처리기관: 공정거래위원회 또는 특별시·광역시·특별자치시·도· 특별자치도",
+            "",
+            "",
+            ""
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "■ 방문판매 등에 관한 법률 시행규칙 [별지 제7호서식] <개정 2025. 5. 8.>\n[ ] 다단계판매업\n등록신청서\n[ ] 후원방문판매업\n접수번호 접수일 처리기간 7일\n상호 법인등록번호\n소재지 전화번호\n대표자의 성명 주민등록번호(외국인등록번호)\n(서명 또는 인)\n주소 전화번호\n신청인\n전자우편주소 사업자등록번호\n자본금의 규모\n참고 사항 [ ]건강식품, [ ]화장품/미용용품, [ ]교육/도서, [ ]생활용품/세제류, [ ]회원권/상품권, [ ]가전,\n[ ]컴퓨터/사무용품, [ ]통신기기, [ ]자동차/자동차용품, [ ]의류/패션, [ ]기타\n(취급품목)\n「방문판매 등에 관한 법률」 제13조제1항·제29조제3항, 같은 법 시행령 제20조제1항 및 같은 법 시\n행규칙 제11조제1항에 따라 위와 같이 등록을 신청합니다.\n년 월 일\n신청인 (서명 또는 인)\n※ 위 신청인 대표자와 동일인이 아닌 경우에만 적습니다.\n공정거래위원회·특별시장·광역시장·\n귀하\n특별자치시장·도지사·특별자치도지사\n1. 자본금의 규모를 증명하는 서류(다단계판매업의 경우에만 제출합니다)\n2. 「방문판매 등에 관한 법률」 제37조에 따른 소비자피해보상보험계약등의 체결을 증명하는 서류 또는 같\n은 법 제29조제2항에 따른 최종소비자 판매비중이 70% 이상임을 증명하는 별지 제12호서식의 최\n신청인(대표자)\n종소비자 판매비중 확인서(후원방문판매업만 해당합니다)\n첨부서류\n3. 후원수당의 산정 및 지급 기준에 관한 서류\n4. 재고관리, 후원수당 지급 등 판매의 방법에 관한 사항을 적은 서류 수수료\n5. 회사의 영업일을 적은 서류 없음\n1. 법인 등기사항증명서(법인인 경우만 해당합니다)\n담당공무원\n2. 발기인의 주민등록표 초본(법인의 설립등기 전에 신청하는 경우만 해당합니다)\n확인사항\n3. 사업자등록증명(주민등록번호가 제외된 사업자등록증명을 말합니다)\n행정정보 공동이용 동의서\n본인은 이 건 업무처리와 관련하여 「전자정부법」 제36조제1항에 따른 행정정보의 공동이용을 통하여 담당 공무원이 위의 담당 공무원 확\n인사항 중 제2호 및 제3호를 확인하는 것에 동의합니다.\n*확인에 동의하지 않는 경우에는 신청인이 직접 관련 서류를 제출해야 합니다.\n신청인(대표자)\n(서명 또는 인)\n처리절차\n신청서 작성 è 접수 è 검토 è 기안·결재 è 등록증 작성 è 등록증 발급\n신청인 처리기관: 공정거래위원회 또는 특별시·광역시·특별자치시·도· 특별자치도\n210mm× 297mm[백상지 80g/㎡]",
+      "body_text": "■ 방문판매 등에 관한 법률 시행규칙 [별지 제7호서식] <개정 2025. 5. 8.>\n[ ] 다단계판매업\n등록신청서\n[ ] 후원방문판매업\n법인등록번호\n전화번호\n주민등록번호(외국인등록번호)\n전화번호\n신청인\n사업자등록번호\n자본금의 규모\n참고 사항 [ ]건강식품, [ ]화장품/미용용품, [ ]교육/도서, [ ]생활용품/세제류, [ ]회원권/상품권, [ ]가전,\n[ ]컴퓨터/사무용품, [ ]통신기기, [ ]자동차/자동차용품, [ ]의류/패션, [ ]기타\n(취급품목)\n「방문판매 등에 관한 법률」 제13조제1항·제29조제3항, 같은 법 시행령 제20조제1항 및 같은 법 시\n행규칙 제11조제1항에 따라 위와 같이 등록을 신청합니다.\n년 월 일\n신청인 (서명 또는 인)\n※ 위 신청인 대표자와 동일인이 아닌 경우에만 적습니다.\n공정거래위원회·특별시장·광역시장·\n귀하\n특별자치시장·도지사·특별자치도지사\n신청인(대표자)\n첨부서류\n수수료\n없음\n담당공무원\n확인사항\n행정정보 공동이용 동의서\n본인은 이 건 업무처리와 관련하여 「전자정부법」 제36조제1항에 따른 행정정보의 공동이용을 통하여 담당 공무원이 위의 담당 공무원 확\n인사항 중 제2호 및 제3호를 확인하는 것에 동의합니다.\n*확인에 동의하지 않는 경우에는 신청인이 직접 관련 서류를 제출해야 합니다.\n신청인(대표자)\n(서명 또는 인)\n210mm× 297mm[백상지 80g/㎡]",
+      "tables": [
+        {
+          "bbox": [
+            59.488,
+            133.414,
+            538.1162857142857,
+            156.06899999999996
+          ],
+          "rows": [
+            [
+              "접수번호",
+              "",
+              "접수일",
+              "",
+              "",
+              "처리기간",
+              "7일"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        },
+        {
+          "bbox": [
+            100.626,
+            161.70299999999997,
+            383.194,
+            306.625
+          ],
+          "rows": [
+            [
+              "상호"
+            ],
+            [
+              "소재지"
+            ],
+            [
+              "대표자의 성명\n(서명 또는 인)"
+            ],
+            [
+              "주소"
+            ],
+            [
+              "전자우편주소"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        },
+        {
+          "bbox": [
+            124.37299999999999,
+            512.3199999999999,
+            496.773,
+            637.463
+          ],
+          "rows": [
+            [
+              "1. 자본금의 규모를 증명하는 서류(다단계판매업의 경우에만 제출합니다)\n2. 「방문판매 등에 관한 법률」 제37조에 따른 소비자피해보상보험계약등의 체결을 증명하는 서류 또는 같\n은 법 제29조제2항에 따른 최종소비자 판매비중이 70% 이상임을 증명하는 별지 제12호서식의 최\n종소비자 판매비중 확인서(후원방문판매업만 해당합니다)\n3. 후원수당의 산정 및 지급 기준에 관한 서류\n4. 재고관리, 후원수당 지급 등 판매의 방법에 관한 사항을 적은 서류\n5. 회사의 영업일을 적은 서류"
+            ],
+            [
+              "1. 법인 등기사항증명서(법인인 경우만 해당합니다)\n2. 발기인의 주민등록표 초본(법인의 설립등기 전에 신청하는 경우만 해당합니다)\n3. 사업자등록증명(주민등록번호가 제외된 사업자등록증명을 말합니다)"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        },
+        {
+          "bbox": [
+            59.488,
+            716.9355,
+            538.1162857142857,
+            782.264
+          ],
+          "rows": [
+            [
+              "처리절차",
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              "신청서 작성 è 접수 è 검토 è 기안·결재 è 등록증 작성 è 등록증 발급",
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              "",
+              "신청인",
+              "",
+              "처리기관: 공정거래위원회 또는 특별시·광역시·특별자치시·도· 특별자치도",
+              "",
+              "",
+              ""
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        }
+      ],
+      "images": [],
+      "removed_margin_lines": []
+    }
+  ]
+}

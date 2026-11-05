@@ -1,0 +1,361 @@
+{
+  "schema_version": 3,
+  "document_id": "004950_287183_20260701_appendix_000100E",
+  "title": "주택임대차보호법 시행령",
+  "source_path": "data/raw/law_appendices/004950_287183_20260701_appendix_000100E.pdf",
+  "raw_sha256": "9500277f40b52926f7eb8299612fed3b465c190baef977445c45da4a2aae150d",
+  "units": [
+    {
+      "document_id": "004950_287183_20260701_appendix_000100E",
+      "title": "주택임대차보호법 시행령",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=287183",
+      "document_type": "law",
+      "domains": [
+        "housing_lease"
+      ],
+      "dates": {
+        "effective_date": "2026-07-01",
+        "article_effective_date": "2026-07-01",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/004950_287183_20260701_appendix_000100E.pdf",
+      "raw_sha256": "9500277f40b52926f7eb8299612fed3b465c190baef977445c45da4a2aae150d",
+      "extraction_origin": "raw",
+      "warnings": [],
+      "unit_id": "004950_287183_20260701_appendix_000100E:p1:body",
+      "text": "■ 주택임대차보호법 시행령 [별표 1]\n조정위원회의 설치 및 관할구역(제21조 관련)",
+      "locator": "PDF 1페이지",
+      "embedding_candidate": false,
+      "page_number": 1,
+      "content_type": "pdf_body",
+      "removed_margin_lines": [],
+      "images": []
+    },
+    {
+      "document_id": "004950_287183_20260701_appendix_000100E",
+      "title": "주택임대차보호법 시행령",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=287183",
+      "document_type": "law",
+      "domains": [
+        "housing_lease"
+      ],
+      "dates": {
+        "effective_date": "2026-07-01",
+        "article_effective_date": "2026-07-01",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/004950_287183_20260701_appendix_000100E.pdf",
+      "raw_sha256": "9500277f40b52926f7eb8299612fed3b465c190baef977445c45da4a2aae150d",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "004950_287183_20260701_appendix_000100E:p1:table0",
+      "text": "<개정 2026. 6. 23. | >",
+      "locator": "PDF 1페이지 / 표 1",
+      "embedding_candidate": true,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          219.602,
+          56.577999999999975,
+          309.074,
+          65.56799999999998
+        ],
+        "rows": [
+          [
+            "<개정 2026. 6. 23.",
+            ">"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    },
+    {
+      "document_id": "004950_287183_20260701_appendix_000100E",
+      "title": "주택임대차보호법 시행령",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=287183",
+      "document_type": "law",
+      "domains": [
+        "housing_lease"
+      ],
+      "dates": {
+        "effective_date": "2026-07-01",
+        "article_effective_date": "2026-07-01",
+        "unit_effective_date": null,
+        "promulgation_date": null,
+        "judgment_date": null,
+        "decision_date": null,
+        "updated_date": null,
+        "terms_revision_date": null,
+        "information_as_of": null,
+        "as_of": "2026-10-11"
+      },
+      "source_path": "data/raw/law_appendices/004950_287183_20260701_appendix_000100E.pdf",
+      "raw_sha256": "9500277f40b52926f7eb8299612fed3b465c190baef977445c45da4a2aae150d",
+      "extraction_origin": "raw",
+      "warnings": [
+        "병합 셀의 빈칸을 임의로 채우지 않음; 전체 표와 조건을 함께 확인"
+      ],
+      "unit_id": "004950_287183_20260701_appendix_000100E:p1:table1",
+      "text": "기관 | 지부, 지사 또는\n사무소 | 관할구역\n공단 | 서울중앙지부 | 서울특별시, 강원특별자치도\n| 수원지부 | 인천광역시, 경기도\n| 대전지부 | 대전광역시, 세종특별자치시, 충청북도, 충청남도\n| 대구지부 | 대구광역시, 경상북도\n| 부산지부 | 부산광역시, 울산광역시, 경상남도\n| 광주지부 | 전남광주통합특별시, 전북특별자치도, 제주특별자치도\n공사 | 충북지역본부 | 충청북도\n| 제주지역본부 | 제주특별자치도\n부동산원 | 서울동부지사 | 서울특별시\n| 전주지사 | 전북특별자치도\n| 춘천지사 | 강원특별자치도\n| 고양지사 | 경기도\n| 성남지사 |\n| 대전지사 | 세종특별자치시\n| 포항지사 | 경상북도\n| 인천지사 | 인천광역시\n| 창원지사 | 경상남도\n| 울산지사 | 울산광역시",
+      "locator": "PDF 1페이지 / 표 2",
+      "embedding_candidate": true,
+      "page_number": 1,
+      "content_type": "table",
+      "table": {
+        "bbox": [
+          58.049,
+          129.938,
+          519.8,
+          665.2719999999999
+        ],
+        "rows": [
+          [
+            "기관",
+            "지부, 지사 또는\n사무소",
+            "관할구역"
+          ],
+          [
+            "공단",
+            "서울중앙지부",
+            "서울특별시, 강원특별자치도"
+          ],
+          [
+            null,
+            "수원지부",
+            "인천광역시, 경기도"
+          ],
+          [
+            null,
+            "대전지부",
+            "대전광역시, 세종특별자치시, 충청북도, 충청남도"
+          ],
+          [
+            null,
+            "대구지부",
+            "대구광역시, 경상북도"
+          ],
+          [
+            null,
+            "부산지부",
+            "부산광역시, 울산광역시, 경상남도"
+          ],
+          [
+            null,
+            "광주지부",
+            "전남광주통합특별시, 전북특별자치도, 제주특별자치도"
+          ],
+          [
+            "공사",
+            "충북지역본부",
+            "충청북도"
+          ],
+          [
+            null,
+            "제주지역본부",
+            "제주특별자치도"
+          ],
+          [
+            "부동산원",
+            "서울동부지사",
+            "서울특별시"
+          ],
+          [
+            null,
+            "전주지사",
+            "전북특별자치도"
+          ],
+          [
+            null,
+            "춘천지사",
+            "강원특별자치도"
+          ],
+          [
+            null,
+            "고양지사",
+            "경기도"
+          ],
+          [
+            null,
+            "성남지사",
+            null
+          ],
+          [
+            null,
+            "대전지사",
+            "세종특별자치시"
+          ],
+          [
+            null,
+            "포항지사",
+            "경상북도"
+          ],
+          [
+            null,
+            "인천지사",
+            "인천광역시"
+          ],
+          [
+            null,
+            "창원지사",
+            "경상남도"
+          ],
+          [
+            null,
+            "울산지사",
+            "울산광역시"
+          ]
+        ],
+        "merged_cells_policy": "null cells preserved, not forward-filled"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "■ 주택임대차보호법 시행령 [별표 1] <개정 2026. 6. 23.>\n조정위원회의 설치 및 관할구역(제21조 관련)\n지부, 지사 또는\n기관 관할구역\n사무소\n서울중앙지부 서울특별시, 강원특별자치도\n수원지부 인천광역시, 경기도\n대전지부 대전광역시, 세종특별자치시, 충청북도, 충청남도\n공단\n대구지부 대구광역시, 경상북도\n부산지부 부산광역시, 울산광역시, 경상남도\n광주지부 전남광주통합특별시, 전북특별자치도, 제주특별자치도\n충북지역본부 충청북도\n공사\n제주지역본부 제주특별자치도\n서울동부지사 서울특별시\n전주지사 전북특별자치도\n춘천지사 강원특별자치도\n고양지사\n경기도\n성남지사\n부동산원\n대전지사 세종특별자치시\n포항지사 경상북도\n인천지사 인천광역시\n창원지사 경상남도\n울산지사 울산광역시",
+      "body_text": "■ 주택임대차보호법 시행령 [별표 1]\n조정위원회의 설치 및 관할구역(제21조 관련)",
+      "tables": [
+        {
+          "bbox": [
+            219.602,
+            56.577999999999975,
+            309.074,
+            65.56799999999998
+          ],
+          "rows": [
+            [
+              "<개정 2026. 6. 23.",
+              ">"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        },
+        {
+          "bbox": [
+            58.049,
+            129.938,
+            519.8,
+            665.2719999999999
+          ],
+          "rows": [
+            [
+              "기관",
+              "지부, 지사 또는\n사무소",
+              "관할구역"
+            ],
+            [
+              "공단",
+              "서울중앙지부",
+              "서울특별시, 강원특별자치도"
+            ],
+            [
+              null,
+              "수원지부",
+              "인천광역시, 경기도"
+            ],
+            [
+              null,
+              "대전지부",
+              "대전광역시, 세종특별자치시, 충청북도, 충청남도"
+            ],
+            [
+              null,
+              "대구지부",
+              "대구광역시, 경상북도"
+            ],
+            [
+              null,
+              "부산지부",
+              "부산광역시, 울산광역시, 경상남도"
+            ],
+            [
+              null,
+              "광주지부",
+              "전남광주통합특별시, 전북특별자치도, 제주특별자치도"
+            ],
+            [
+              "공사",
+              "충북지역본부",
+              "충청북도"
+            ],
+            [
+              null,
+              "제주지역본부",
+              "제주특별자치도"
+            ],
+            [
+              "부동산원",
+              "서울동부지사",
+              "서울특별시"
+            ],
+            [
+              null,
+              "전주지사",
+              "전북특별자치도"
+            ],
+            [
+              null,
+              "춘천지사",
+              "강원특별자치도"
+            ],
+            [
+              null,
+              "고양지사",
+              "경기도"
+            ],
+            [
+              null,
+              "성남지사",
+              null
+            ],
+            [
+              null,
+              "대전지사",
+              "세종특별자치시"
+            ],
+            [
+              null,
+              "포항지사",
+              "경상북도"
+            ],
+            [
+              null,
+              "인천지사",
+              "인천광역시"
+            ],
+            [
+              null,
+              "창원지사",
+              "경상남도"
+            ],
+            [
+              null,
+              "울산지사",
+              "울산광역시"
+            ]
+          ],
+          "merged_cells_policy": "null cells preserved, not forward-filled"
+        }
+      ],
+      "images": [],
+      "removed_margin_lines": []
+    }
+  ]
+}
