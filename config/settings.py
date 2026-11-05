@@ -129,6 +129,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # 전처리·청킹 관리 명령어가 공통으로 사용하는 프로젝트 경로입니다.
 DATA_RAW_DIR = BASE_DIR / 'data' / 'raw'
