@@ -1,6 +1,7 @@
 """RRF 검색 결과를 Cross-Encoder로 리랭킹합니다."""
 
 import math
+import os
 import time
 from functools import lru_cache
 from typing import Any
@@ -8,7 +9,7 @@ from typing import Any
 from sentence_transformers import CrossEncoder
 
 
-MODEL_NAME = "BAAI/bge-reranker-v2-m3"
+MODEL_NAME = os.getenv("RERANK_MODEL") or "nlpai-lab/KURE-Reranker-nano"
 
 
 # ==================================================

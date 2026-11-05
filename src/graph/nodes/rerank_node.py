@@ -22,12 +22,20 @@
 
 
 from src.graph.state import State
+from src.rag.rerank import rerank
 
 
 def rerank_node(state: State):
-    documents = state.get("documents") or []
+    documents = rerank(
+        query=state["origin_query"],
+        documents=state.get("documents") or [],
+        top_k=5,
+    )
 
     return {
-        "documents": documents[:5],
-        "score": None,
+        "documents": documents,
+        "score": max(
+            (doc["rerank_score"] for doc in documents),
+            default=None,
+        ),
     }
