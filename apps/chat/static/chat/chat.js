@@ -194,8 +194,10 @@ function setProgress(step, description, failed = false) {
 }
 
 let selectedFiles = [];
+let conversationId = `${Date.now()}-${Math.random().toString(36).slice(2)}`;
 
 newChatButton.addEventListener("click", () => {
+  conversationId = `${Date.now()}-${Math.random().toString(36).slice(2)}`;
   conversationEntries = [];
   conversationIndex.replaceChildren();
   hideConversationPreview();
@@ -358,6 +360,7 @@ form.addEventListener("submit", async (event) => {
 
   // 입력창을 비우기 전에 전송 데이터 먼저 만들기 (csrf 토큰, question, files 포함)
   const formData = new FormData(form);
+  formData.set("conversation_id", conversationId);
   const attachedFiles = [...selectedFiles];
   document.querySelector("#attachment-stage-note").textContent = attachedFiles.length
     ? `이미지·PDF ${attachedFiles.length}개 확인`

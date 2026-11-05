@@ -115,10 +115,10 @@ def chat(request):
             json_dumps_params={"ensure_ascii": False},
         )
 
-    thread_id = request.session.get("chat_thread_id")
-    if not thread_id:
-        thread_id = uuid4().hex
-        request.session["chat_thread_id"] = thread_id
+    payload = json.loads(request.body or b"{}") if request.content_type == "application/json" else request.POST
+    conversation_id = str(payload.get("conversation_id") or "default")[:100]
+    conversations = request.session.get("chat_conversations", {})
+    history = conversations.get(conversation_id, [])
 
     request_id = uuid4().hex
     started = time.perf_counter()
@@ -133,8 +133,8 @@ def chat(request):
                 "images": images,
                 "answer": "",
                 "documents": [],
+                "messages": history,
             },
-            config={"configurable": {"thread_id": thread_id}},
         )
     except Exception:
         logger.exception(
@@ -151,6 +151,17 @@ def chat(request):
             status=503,
             json_dumps_params={"ensure_ascii": False},
         )
+
+    # 최종 답변을 세션 DB에 보관해 worker 교체와 재시작 후에도 이어갑니다.
+    answer = result.get("answer", "")
+    if answer and result.get("generation_status") not in {"llm_error", "invalid_output"}:
+        conversations[conversation_id] = (history + [
+            {"role": "user", "content": question[:16000]},
+            {"role": "assistant", "content": answer[:16000]},
+        ])[-10:]
+        while len(conversations) > 5:
+            del conversations[next(iter(conversations))]
+        request.session["chat_conversations"] = conversations
 
     logger.info(
         "chat completed request_id=%s elapsed_seconds=%.2f status=%s citation_status=%s",

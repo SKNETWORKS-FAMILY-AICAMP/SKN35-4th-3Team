@@ -41,6 +41,26 @@ class ChatWebTests(TestCase):
         self.assertEqual(response.status_code, 400)
         self.assertEqual(response.json()["status"], "invalid_request")
 
+    @patch("src.graph.workflow.build_workflow")
+    def test_followup_restores_final_answer_from_session_for_new_graph(self, workflow):
+        workflow.return_value.invoke.return_value = {"answer": "이전 상담 답변", "generation_status": "answered"}
+        self.client.post(reverse("chat:api"), {"question": "보증금 문의", "conversation_id": "one"})
+        # 프로세스 캐시를 쓰지 않는 새 workflow에서도 세션의 최종 답변을 전달합니다.
+        workflow.reset_mock()
+        workflow.return_value.invoke.return_value = {"answer": "요약", "generation_status": "answered"}
+        response = self.client.post(reverse("chat:api"), {"question": "요약해줘", "conversation_id": "one"})
+        self.assertEqual(response.status_code, 200)
+        state = workflow.return_value.invoke.call_args.args[0]
+        self.assertEqual(state["messages"][-1], {"role": "assistant", "content": "이전 상담 답변"})
+        self.assertNotIn("queries", state)
+
+    @patch("src.graph.workflow.build_workflow")
+    def test_new_conversation_does_not_inherit_previous_answer(self, workflow):
+        workflow.return_value.invoke.return_value = {"answer": "이전 답변"}
+        self.client.post(reverse("chat:api"), {"question": "첫 질문", "conversation_id": "one"})
+        self.client.post(reverse("chat:api"), {"question": "새 상담", "conversation_id": "two"})
+        self.assertEqual(workflow.return_value.invoke.call_args.args[0]["messages"], [])
+
     @patch("src.graph.workflow.build_workflow", side_effect=RuntimeError("test failure"))
     def test_workflow_failure_returns_json_with_request_id(self, workflow):
         with self.assertLogs("apps.chat.views", level="INFO") as logs:

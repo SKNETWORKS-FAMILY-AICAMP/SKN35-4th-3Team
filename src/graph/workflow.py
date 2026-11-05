@@ -1,5 +1,4 @@
 from langgraph.graph import StateGraph, START, END
-from langgraph.checkpoint.memory import InMemorySaver
 from src.graph.state import State
 from src.graph.nodes.image_node import image_node
 from src.graph.subgraphs.rag_graph.rag_graph import build_rag_graph
@@ -10,6 +9,7 @@ from src.const.prompt.classify_prompt import CLASSIFY_PROMPT
 from src.rag.history import format_history
 from src.graph.nodes.generator_node import generator_node
 from src.graph.nodes.citation_node import citation_node
+from src.graph.nodes.summary_node import is_summary_request, summary_node
 from functools import lru_cache
 
 
@@ -31,6 +31,8 @@ def route_start(state: State) -> str:
 def route_image(state: State) -> str:
     if state.get("images"):
         return "image"
+    if is_summary_request(state["origin_query"]):
+        return "summary"
     return route_start(state)
 
 @lru_cache(maxsize=1)
@@ -43,17 +45,21 @@ def build_workflow():
     builder.add_node("mcp", build_mcp_graph())
     builder.add_node("generator", generator_node)
     builder.add_node("citation", citation_node)
+    builder.add_node("summary", summary_node)
 
     builder.add_conditional_edges(START , route_image ,
-        {"image": "image", "general": "general", "out_of_scope": "general", "rag": "rag", "mcp": "mcp"})
+        {"image": "image", "summary": "summary", "general": "general", "out_of_scope": "general", "rag": "rag", "mcp": "mcp"})
     
     builder.add_conditional_edges("image", route_start,
         {"general": "general", "out_of_scope" : "general", "rag": "rag", "mcp" : "mcp"})
     
     builder.add_edge("general", END)
+    builder.add_edge("summary", END)
     builder.add_edge("rag", "citation")
     builder.add_edge("mcp", "generator")
     builder.add_edge("generator", "citation")
     builder.add_edge("citation", END)
 
-    return builder.compile(checkpointer=InMemorySaver())
+    # 각 요청은 세션 DB에서 복원한 messages로 시작합니다.
+    # 이전 요청의 검색 후보·검증 상태가 다음 요청에 섞이지 않습니다.
+    return builder.compile()

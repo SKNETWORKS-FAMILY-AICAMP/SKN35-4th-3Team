@@ -3,13 +3,19 @@
 import math
 import os
 import time
+import logging
+from threading import Lock
 from functools import lru_cache
 from typing import Any
 
 from sentence_transformers import CrossEncoder
+import torch
 
 
 MODEL_NAME = os.getenv("RERANK_MODEL") or "nlpai-lab/KURE-Reranker-nano"
+_model_lock = Lock()
+_prediction_lock = Lock()
+logger = logging.getLogger("apps.chat.rerank")
 
 
 # ==================================================
@@ -17,12 +23,24 @@ MODEL_NAME = os.getenv("RERANK_MODEL") or "nlpai-lab/KURE-Reranker-nano"
 # ==================================================
 
 @lru_cache(maxsize=1)
-def get_rerank() -> CrossEncoder:
-    return CrossEncoder(
+def _load_rerank() -> CrossEncoder:
+    # 작은 EC2에서도 사용 가능한 CPU를 활용하고 과도한 스레드는 제한합니다.
+    threads = max(1, min(os.cpu_count() or 1, int(os.getenv("RERANK_CPU_THREADS", "2"))))
+    torch.set_num_threads(threads)
+    started = time.perf_counter()
+    model = CrossEncoder(
         MODEL_NAME,
         device="cpu",
-        max_length=1024,
+        max_length=int(os.getenv("RERANK_MAX_LENGTH", "1024")),
     )
+    logger.info("rerank model loaded seconds=%.2f threads=%s model=%s", time.perf_counter() - started, threads, MODEL_NAME)
+    return model
+
+
+def get_rerank() -> CrossEncoder:
+    # lru_cache만으로는 동시 최초 요청의 중복 모델 로딩을 막을 수 없습니다.
+    with _model_lock:
+        return _load_rerank()
 
 
 # ==================================================
@@ -137,11 +155,14 @@ def rerank(
     # 2. Cross-Encoder 점수 계산
     model = get_rerank()
 
-    scores = model.predict(
-        pairs,
-        batch_size=batch_size,
-        show_progress_bar=False,
-    )
+    with _prediction_lock:
+        started = time.perf_counter()
+        scores = model.predict(
+            pairs,
+            batch_size=batch_size,
+            show_progress_bar=False,
+        )
+        logger.info("rerank completed seconds=%.2f candidates=%s", time.perf_counter() - started, len(pairs))
 
     # 3. CE 점수 저장
     reranked = []
