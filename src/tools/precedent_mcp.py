@@ -8,6 +8,7 @@ MCP SDK Tool 등록은 ``src.tools.mcp_runtime``이 담당합니다.
 from __future__ import annotations
 
 import logging
+import math
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 
@@ -15,6 +16,7 @@ from src.const.precedent import (
     DEFAULT_CANDIDATE_LIMIT,
     DEFAULT_TOP_N,
     MAX_CANDIDATES,
+    MIN_QDRANT_PRECEDENT_SIMILARITY,
 )
 from src.tools.precedent_contracts import (
     ComparePrecedentSimilarityRequest,
@@ -237,6 +239,32 @@ def _exclude_reference(
     return kept, excluded
 
 
+def _filter_qdrant_similarity(
+    candidates: Sequence[Mapping[str, object]],
+) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
+    """최소 유사도 이상인 Qdrant 판례만 유효 후보로 분류합니다."""
+
+    kept: list[dict[str, object]] = []
+    excluded: list[dict[str, object]] = []
+    for raw_candidate in candidates:
+        candidate = dict(raw_candidate)
+        score = candidate.get("similarity_score")
+        is_valid_score = (
+            isinstance(score, (int, float))
+            and not isinstance(score, bool)
+            and math.isfinite(float(score))
+        )
+        if is_valid_score and float(score) >= MIN_QDRANT_PRECEDENT_SIMILARITY:
+            kept.append(candidate)
+            continue
+        excluded.append({
+            **candidate,
+            "exclusion_reason": "low_similarity",
+            "minimum_similarity_score": MIN_QDRANT_PRECEDENT_SIMILARITY,
+        })
+    return kept, excluded
+
+
 def _finalize_candidates(
     candidates: Sequence[Mapping[str, object]],
     top_n: int,
@@ -291,10 +319,17 @@ class MCPToolService:
             qdrant_candidates,
             search_limit,
         )
-        qdrant_kept, qdrant_excluded = _exclude_reference(
+        qdrant_kept, qdrant_reference_excluded = _exclude_reference(
             qdrant_ranked,
             reference,
         )
+        qdrant_qualified, qdrant_similarity_excluded = (
+            _filter_qdrant_similarity(qdrant_kept)
+        )
+        qdrant_excluded = [
+            *qdrant_reference_excluded,
+            *qdrant_similarity_excluded,
+        ]
 
         official_result: dict[str, object] = {
             "results": [],
@@ -302,7 +337,7 @@ class MCPToolService:
             "searched_count": 0,
         }
         fallback_error: dict[str, str] | None = None
-        fallback_used = len(qdrant_kept) < top_n
+        fallback_used = len(qdrant_qualified) < top_n
         if fallback_used:
             official_top_n = min(
                 search_limit,
@@ -326,9 +361,9 @@ class MCPToolService:
             official_candidates,
             reference,
         )
-        merged = _merge_candidates(qdrant_kept, official_kept)
+        merged = _merge_candidates(qdrant_qualified, official_kept)
         results = _finalize_candidates(merged, top_n)
-        official_added_count = max(0, len(merged) - len(qdrant_kept))
+        official_added_count = max(0, len(merged) - len(qdrant_qualified))
 
         official_excluded = official_result.get("excluded", [])
         excluded = [*qdrant_excluded, *official_reference_excluded]
@@ -339,7 +374,7 @@ class MCPToolService:
                 if isinstance(item, Mapping)
             )
 
-        if official_added_count and qdrant_kept:
+        if official_added_count and qdrant_qualified:
             ranking_fields = {
                 "ranking_source": "qdrant_then_official_api",
                 "score_type": "source_specific",
@@ -365,6 +400,9 @@ class MCPToolService:
                 official_result.get("searched_count", 0) or 0
             ),
             "qdrant_searched_count": len(qdrant_candidates),
+            "qdrant_qualified_count": len(qdrant_qualified),
+            "qdrant_low_similarity_count": len(qdrant_similarity_excluded),
+            "minimum_qdrant_similarity": MIN_QDRANT_PRECEDENT_SIMILARITY,
             "official_searched_count": int(
                 official_result.get("searched_count", 0) or 0
             ),
