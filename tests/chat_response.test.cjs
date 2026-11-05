@@ -54,7 +54,7 @@ test('empty verified sources do not hide retrieved legislation links', () => {
   const display = chatSources({ sources: [], citations: [], retrieved_sources: [source] });
   assert.equal(display.sources[0], source);
   assert.equal(display.heading, '검색된 법령·판례');
-  assert.match(display.notice, /검증은 완료되지 않았습니다/);
+  assert.equal(display.notice, undefined);
 });
 
 test('primary sources remain primary when extra retrieved documents exist', () => {
@@ -62,5 +62,5 @@ test('primary sources remain primary when extra retrieved documents exist', () =
   const display = chatSources({ sources: [source], retrieved_sources: [{ source_name: '다른 문서' }] });
   assert.equal(display.sources[0], source);
   assert.equal(display.sources.length, 1);
-  assert.equal(display.notice, '');
+  assert.equal(display.notice, undefined);
 });

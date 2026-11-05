@@ -29,9 +29,6 @@ function chatSources(payload) {
   return {
     sources: primary.length ? primary : retrieved,
     heading: primary.length ? "법령·판례 출처" : "검색된 법령·판례",
-    notice: !primary.length && retrieved.length
-      ? "답변의 근거 검증은 완료되지 않았습니다. 아래 검색 자료의 원문을 확인하세요."
-      : "",
   };
 }
 
@@ -288,7 +285,7 @@ fileInput.addEventListener("change", () => {
   renderFiles();
 });
 
-function renderSources(sources = [], heading = "법령·판례 출처", notice = "") {
+function renderSources(sources = [], heading = "법령·판례 출처") {
   const block = document.createElement("div");
   block.className = "sources-block";
 
@@ -296,11 +293,6 @@ function renderSources(sources = [], heading = "법령·판례 출처", notice =
   title.className = "sources-title";
   title.textContent = heading;
   block.append(title);
-  if (notice) {
-    const note = document.createElement("p");
-    note.textContent = notice;
-    block.append(note);
-  }
 
   const list = document.createElement("ul");
   list.className = "sources";
@@ -458,7 +450,7 @@ form.addEventListener("submit", async (event) => {
     botBubble.append(answer);
 
     const sourceDisplay = chatSources(payload);
-    botBubble.append(renderSources(sourceDisplay.sources, sourceDisplay.heading, sourceDisplay.notice));
+    botBubble.append(renderSources(sourceDisplay.sources, sourceDisplay.heading));
     if (sourceDisplay.sources.length > 0) {
       addDetailsButton(botBubble);
     }
